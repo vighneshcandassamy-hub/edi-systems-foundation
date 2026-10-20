@@ -18,3 +18,7 @@ The master diagram is a conceptual relationship map, not a deployment topology. 
 ## Prospective implementation design
 
 The [implementation specification](../docs/implementation/README.md) maps the current conceptual authorities and the owner-supplied overview to software responsibilities, alternatives, proposed contracts and verification gates. It uses existing LLMs under declared priors, preserves the source snapshots and historical review statuses, and does not claim runtime qualification. Its [decision record](../docs/decisions/ADR-002-implementation-architecture.md) explains the eight logical owners and conditional technology choices.
+
+## Evolved EDI engineering diagram
+
+The [v0.8 integrated master](world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) retains the seven-chapter foundation and expands its single diagram with explicit EDI reasoning, student/teacher roles, admission and future training. Its [diagram-only view](../docs/implementation/INTEGRATED_REASONING_DIAGRAM.md) and [integration specification](../docs/implementation/REASONING_INTEGRATION.md) distinguish design from implementation/qualification. Original conceptual snapshots remain preserved authorities for their scopes.

@@ -2,6 +2,8 @@
 
 Version 0.3 — 20 October 2026. Status: researched and documented proposal; runtime not implemented. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 
+The owner-requested [full integrated reasoning diagram](INTEGRATED_REASONING_DIAGRAM.md) and [reasoning/model decision](REASONING_INTEGRATION.md) are a separate v0.4 structural extension. They retain all detailed seven-chapter nodes, add explicit student/teacher guidance and a dormant future training path, and recommend fixed pretrained weights initially. Historical v0.3 qualification/checker reports do not assess this unqualified extension.
+
 ## Recommendation
 
 Use a hybrid architecture: a replaceable LLM proposes interpretations and testable mechanisms; a typed temporal world model retains evidence, alternatives, nonlinear laws and history; appropriate numerical/causal tools execute scoped tests; independent outcomes support explicit revision. Start with a modular Python application, Postgres, source-native artifact storage and one selected reasoning provider. Add specialist frameworks only when a requirement and measured limitation justify them.
