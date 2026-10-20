@@ -1,0 +1,136 @@
+flowchart TB
+    subgraph INQUIRY["Inquiry, scope and evaluation"]
+        direction TB
+        Q["Question and modeling purpose"]
+        B["Boundaries, resolution and horizons"]
+        V["Affected parties, values and criteria"]
+        Q -.->|"Selects relevant scope"| B
+        Q -.->|"Defines assessment question"| V
+    end
+    subgraph EVIDENCE["Observation, evidence and interpretation"]
+        direction TB
+        O["Observations and source reports"]
+        R["Preserved records and provenance"]
+        ME["Identity, meaning, units and time"]
+        HY["Alternative explanations and unknowns"]
+        O -.->|"Record original account"| R
+        R -.->|"Qualify interpretation"| ME
+        R -.->|"Support or challenge"| HY
+    end
+    subgraph REPRESENTATION["Shared system description"]
+        direction TB
+        M["Versioned system model"]
+        ORG["Elements, composition and hierarchy"]
+        IF["Directed interfaces and dependencies"]
+        ST["Stocks, resources and buffers"]
+        FL["Flows and transformations"]
+        LAW["Joint response laws and nonlinear domains"]
+        TM["Memory, delays and pending commitments"]
+        LIM["Capacities, constraints and boundary inputs"]
+        FB["Balancing and reinforcing paths"]
+        M -.->|"Describes organization"| ORG
+        M -.->|"Specifies candidate mechanisms"| LAW
+        ORG -.->|"Defines participants and connections"| IF
+        IF -->|"Carries transfers"| FL
+        ST -->|"Conditions rates"| LAW
+        LAW -->|"Governs processes"| FL
+        FL -->|"Changes accumulation"| ST
+        TM -->|"Retained conditions"| LAW
+        LIM -->|"Limits realized rates"| FL
+        FB -.->|"References complete return paths"| LAW
+    end
+    subgraph AGENCY["Actor information, purpose and action"]
+        direction TB
+        SE["Sensing and communication"]
+        PE["Received information, perception and memory"]
+        FR["Owned assumptions and interpretive frames"]
+        GO["Purposes, incentives and reference standards"]
+        PI["Current versioned policy"]
+        INT["Intended action"]
+        EX["Realized execution"]
+        SE -->|"Delivery, attention and timing"| PE
+        FR -->|"Shapes interpretation"| PE
+        FR -->|"May shape priorities"| GO
+        PE -->|"Available decision inputs"| INT
+        GO -->|"Desired conditions"| INT
+        PI -->|"Current response rule"| INT
+        INT -->|"Attempted action"| EX
+    end
+    subgraph CAPABILITY["Persistence, repair and organizational development"]
+        direction TB
+        CD["Constituent and interface condition"]
+        SUP["Shared support and restorative alternatives"]
+        RP["Maintenance and repair"]
+        GE["Variation, generation, selection and retention"]
+        CH["Actual organizational change"]
+        CD -->|"May trigger restoration"| RP
+        SUP -->|"Enables or limits"| RP
+        RP -->|"May restore capability"| CD
+        GE -->|"Produces retained changes"| CH
+        SUP -->|"Resources and dependencies"| GE
+    end
+    subgraph ANALYSIS["Conditional analysis and system diagnosis"]
+        direction TB
+        SC["Initial history, drivers and disturbances"]
+        LEV["Intervention targets and proposed changes"]
+        AN["Simulation or qualitative analysis"]
+        PR["Conditional predictions"]
+        BH["Events, patterns and operating regimes"]
+        OUT["Local, wider and delayed consequences"]
+        TRAP["Eight conditional system-trap assessments"]
+        SC -.->|"Defines conditions"| AN
+        LEV -.->|"Defines hypothetical changes"| AN
+        AN -.->|"Produces expectations"| PR
+        PR -.->|"Characterize behavior"| BH
+        PR -.->|"Evaluate consequences"| OUT
+        TRAP -.->|"Candidate interacting mechanisms"| AN
+    end
+    subgraph LEARNING["Comparison, inquiry and model revision"]
+        direction TB
+        ER["Original expectations and error records"]
+        CMP["Evidence, prediction and outcome comparison"]
+        REV["Retain, revise, reject or investigate"]
+        PR -.->|"Preserve original expectation"| ER
+        R -.->|"Independent comparison evidence"| ER
+        ER -.->|"Discrepancies and rival causes"| CMP
+        CMP -.->|"Justified review decision"| REV
+    end
+    subgraph ADAPTATION["Policy review, authority and adoption"]
+        direction TB
+        PM["Actor monitoring and policy review"]
+        PP["Candidate policy amendment"]
+        AU["Authority, resources and implementation"]
+        AD["Adopted and implemented change"]
+        PM -->|"Specified review mechanism"| PP
+        PP -->|"Submitted for decision"| AU
+        AU -->|"May implement, refuse or defer"| AD
+    end
+    B -.->|"Scopes shared description"| M
+    ME -.->|"Defines correspondence"| M
+    HY -.->|"Candidate account"| M
+    M -.->|"Analyzed model version"| AN
+    IF -->|"Carries signals"| SE
+    ST -->|"Condition available to sensing"| SE
+    LIM -->|"Actual execution constraints"| EX
+    CD -->|"Sensing and actuation capability"| SE
+    CD -->|"Enables or restricts response"| EX
+    EX -->|"Realized process effects"| FL
+    LIM -->|"Finite repair resources"| RP
+    LIM -->|"Finite development resources"| GE
+    CH -->|"Changes membership or connections"| ORG
+    CH -->|"Changes interfaces"| IF
+    CH -->|"May change governing mechanisms"| LAW
+    PE -->|"Actually available experience"| PM
+    PI -->|"Current policy under review"| PM
+    GO -->|"Owned review criteria"| PM
+    AD -->|"Implements a new policy version"| PI
+    AD -->|"May implement structural change"| CH
+    AD -->|"May change information channels"| SE
+    V -.->|"Criteria and distribution"| CMP
+    OUT -.->|"Consequences under those criteria"| CMP
+    BH -.->|"Candidate trap evidence"| TRAP
+    M -.->|"Shared structural hypotheses"| TRAP
+    REV -.->|"Revises explanation"| HY
+    REV -.->|"Updates model with rationale"| M
+    REV -.->|"May reconsider scope"| B
+    REV -.->|"Selects further scenarios"| SC
