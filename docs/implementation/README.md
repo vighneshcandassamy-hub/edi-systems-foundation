@@ -1,6 +1,6 @@
 # EDI implementation architecture and technique assessment
 
-Version 0.3 — 20 October 2026. Status: researched and documented proposal; runtime not implemented. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
+Research specification version 0.3 — 20 October 2026. The research below retains its original proposed status. A subsequent [shared foundation/C1 code increment](FOUNDATION_C1_RUNTIME.md), code version 0.2.0, implements a limited local path without qualification. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 
 The owner-requested [full integrated reasoning diagram](INTEGRATED_REASONING_DIAGRAM.md) and [reasoning/model decision](REASONING_INTEGRATION.md) are a separate v0.4 structural extension. They retain all detailed seven-chapter nodes, add explicit student/teacher guidance and a dormant future training path, and recommend fixed pretrained weights initially. Historical v0.3 qualification/checker reports do not assess this unqualified extension.
 

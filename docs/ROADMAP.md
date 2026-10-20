@@ -8,3 +8,9 @@
 6. Compare against strong alternatives after the integrated implementation works and the comparison protocol is frozen.
 
 This is a proposed continuation order. No benchmark, paid job or deployment is launched by this repository import.
+
+## Owner-directed structure-first checkpoint, 20 October 2026
+
+Shared owner modules/contracts and the first local C1 source implementation are present in code version 0.2.0. [The runtime guide](implementation/FOUNDATION_C1_RUNTIME.md) records partial/full scope, backend binding, usage and deferred qualification. Syntax/import checks alone have run; no product test or benchmark ran. This overrides the earlier default of qualifying each slice immediately: the owner requested structure before qualification.
+
+Continue with minimal C3 hosting/admission/versioned reads, then C2 derivation connected to C1/C3, then C4 reasoning, C5 analysis, C6 assessment and C7 agency. Grow C0 scheduling and resource control as each real consumer needs them. Runtime/integration/scientific gates remain separate and open until their cases run.

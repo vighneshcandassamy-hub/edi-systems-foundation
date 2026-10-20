@@ -8,6 +8,7 @@ The current assets are stored on the architecture branch through [draft PR #1](h
 
 | Asset group | Current entry point | Contents / status |
 | --- | --- | --- |
+| First code increment | [Runtime guide](implementation/FOUNDATION_C1_RUNTIME.md) / [source](../src/edi/) / [local examples](../examples/observation/) | Shared contracts/eight owner modules; partial C0 and first local C1; all product qualification deferred. These new files are outside the preceding 82-file storage audit. |
 | Full integrated architecture | [Master v0.8](../architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) | Seven-chapter foundation plus explicit reasoning, teacher/student and separate future training structure. |
 | Integrated diagram | [Rendered Markdown](implementation/INTEGRATED_REASONING_DIAGRAM.md) / [Mermaid source](implementation/INTEGRATED_REASONING.mmd) | 98 nodes/286 named connections; all original 82 nodes/241 connections retained. |
 | Consolidated tools and mathematics | [Reference v1.0](implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md) | Eight owners/32 functions, 24 tool families, 22 mathematical techniques, model roles, initial/conditional choices and open bindings. |
@@ -29,4 +30,4 @@ The current assets are stored on the architecture branch through [draft PR #1](h
 
 ## Next development step
 
-Create the integrated code structure aligned with the full diagram: eight owner modules and shared typed contracts; persistence/source/identity/time/delta/refinement records; owner ports and orchestration; replaceable student/teacher and mathematical adapters. Distinguish implemented functions from declared or unsupported adapters. Keep fixed weights initially and future training separate. This storage task does not start that implementation or run qualification/tests.
+The shared structure and local C1 source implementation are now present; see the runtime guide for their limits and unrun cases. Next implement the minimal C3 hosting/admission/versioned-read skeleton, followed by C2 interpretation, integrating through the prepared read interfaces. Fixed weights/future training remain separate. No qualification or scientific-comparison status is implied by source storage.

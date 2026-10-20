@@ -1,6 +1,6 @@
 # EDI Systems Foundation — checkpoint
 
-Date: 20 October 2026. Version: 0.1.0-architecture.
+Date: 20 October 2026. Code version: 0.2.0; conceptual source baseline retained.
 
 ## What is stored
 
@@ -16,7 +16,7 @@ The conceptual documents have consistency/traceability reviews. The master archi
 
 ## Current scope
 
-The baseline is stored. The current task researches and documents the implementation architecture and technology tradeoffs before any runtime development. It does not migrate the earlier runtime, run inference/benchmarks or establish superiority, throughput, cost, energy, availability or arbitrary scalability.
+The baseline and research are stored. The authorized shared-foundation/C1 source increment is implemented below, with product qualification deferred. No earlier runtime was migrated; no inference/benchmark, superiority, throughput, cost, energy, availability or arbitrary scalability result is established.
 
 ## Remote status
 
@@ -55,3 +55,13 @@ The open integrated master was updated under its existing document identity to v
 ## Complete GitHub storage audit
 
 On 20 October 2026, all 82 tracked files at remote architecture-branch revision `1dd1dbbedd48a8f3676f014fa2011737b854c84b` were fetched and matched against local committed content hashes; zero missing/mismatched files. [Asset index](docs/ASSET_INDEX.md) and [storage audit](evidence/github_asset_verification.json) record the scope and paths. New index/audit/navigation files are published after that input inventory. Latest design assets remain in draft PR #1; main still holds the earlier foundation. This verifies file persistence only; no architecture qualification or product tests ran.
+
+## Shared foundation and C1 code checkpoint
+
+20 October 2026. Input remote architecture revision `0fd018e60373ca08551ebd7d57ac859dbc8b64fd`. The owner authorized building the shared foundation and then Observation C1. [Runtime specification](docs/implementation/FOUNDATION_C1_RUNTIME.md), [ADR-003](docs/decisions/ADR-003-local-observation-runtime.md), [source](src/edi/) and [source review](docs/implementation/evidence/foundation-c1-source-review.json) describe the delivered increment.
+
+Code version 0.2.0: eight owner modules, shared typed records/ports, partial C0 composition and bounded C1 native file/finite-stream intake, immutable source/epoch registry, byte/occurrence identity separation, transactional chunk/metadata/log commits, retry/status, bounded payload reads/replay, checkpoints, coverage and backup. C2-C7, student/teacher/vLLM and mathematical adapters remain declared/unavailable. SQLite is the first finite local backend; Postgres/object storage remains a later adapter. Source identity continuity is registered/reported, not inferred physical recognition. No HA/scalability/latency result is claimed.
+
+Only Python AST syntax, application imports and CLI parser construction were checked using existing Python 3.14.0, SQLite 3.50.4 and Pydantic 2.12.5. No package installation, Runtime instantiation, recording/replay example, product/qualification test, inference, training, scientific comparison or benchmark ran. The owner's structure-first instruction defers qualification. Contract/runtime/integration gates remain open; the self-review is not independent. Historical reports and original architecture snapshots are unchanged.
+
+Prepared interfaces retain all 28 pairs/56 lane dispositions, with operation-restricted C1 read facades; no direct C4-C5/C7 execution or cross-owner database writes are introduced. Next: minimal C3 hosting/admission/versioned reads, followed by C2 derivation against C1/C3. This checkpoint is published on the existing private architecture branch/draft PR; main remains the earlier foundation. Publication content hashes are checked separately from product qualification.

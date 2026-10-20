@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Version:** 0.1.0-architecture. **Status:** conceptual architecture and requirements baseline. Runtime implementation, learning performance and empirical qualification remain open.
+**Code version:** 0.2.0. **Status:** shared Python foundation and first local Observation C1 implementation; unqualified. C0 is partial, C2-C7 are declared/unavailable. Learning performance and empirical qualification remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
@@ -12,7 +12,15 @@ This repository brings together the integrated seven-chapter architecture, the a
 - [Full integrated architecture v0.8](architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) and [integrated diagram](docs/implementation/INTEGRATED_REASONING_DIAGRAM.md).
 - [Consolidated architecture, tools and mathematics reference v1.0](docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md).
 
-Latest design/reference additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. This is structure/specification work; runtime, training and qualification remain open.
+Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
+
+## First code increment
+
+[Runtime specification and local-use guide](docs/implementation/FOUNDATION_C1_RUNTIME.md) describe the [shared code](src/edi/), [local examples](examples/observation/), [backend decision](docs/decisions/ADR-003-local-observation-runtime.md) and [scoped source review](docs/implementation/evidence/foundation-c1-source-review.json).
+
+C1 preserves original bytes, registered source/epoch continuity, immutable occurrence receipts, hashes, bounded replay/range reads, checkpoints and backups. Its initial SQLite adapter commits chunks, metadata and the replay/outbox log in one transaction. PostgreSQL/object storage remains a later adapter. No model inference is needed for recording/replay. See the guide for finite limits and deferred connector, retention, HA and qualification work.
+
+Only syntax/import/CLI-parser checks have run for this code. The sample workflow and product/qualification tests have not run, following the owner's structure-first instruction.
 
 ## Foundation and supporting documents
 
