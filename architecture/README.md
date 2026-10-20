@@ -14,3 +14,7 @@ The first defines the shared model and its relationships. The second anchors ter
 Before implementing or modifying a component, reconcile its functions, requirements, native values, authority, identity, timing, source status, shared dependencies and resource contracts with the two current authorities. Keep semantic-neutral hosting aspirations distinct from the user's initial LLM-assisted implementation direction.
 
 The master diagram is a conceptual relationship map, not a deployment topology. The interface-review skill enumerates actual components separately from this capability and concept catalogue.
+
+## Prospective implementation design
+
+The [implementation specification](../docs/implementation/README.md) maps the current conceptual authorities and the owner-supplied overview to software responsibilities, alternatives, proposed contracts and verification gates. It uses existing LLMs under declared priors, preserves the source snapshots and historical review statuses, and does not claim runtime qualification. Its [decision record](../docs/decisions/ADR-002-implementation-architecture.md) explains the eight logical owners and conditional technology choices.

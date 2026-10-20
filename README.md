@@ -13,6 +13,7 @@ This repository brings together the integrated seven-chapter architecture, the a
 3. [Architecture precedence](architecture/README.md) — how current foundations relate to retained component plans.
 4. [Project state](STATE.md), [development roadmap](docs/ROADMAP.md) and [baseline decision](docs/decisions/ADR-001-foundation-baseline.md).
 5. [Component review skill](.agents/skills/edi-component-review/SKILL.md) and [interface review skill](.agents/skills/edi-interface-review/SKILL.md).
+6. [Implementation architecture and technique assessment](docs/implementation/README.md) — current model/framework tradeoffs, component specifications, requirements flowdown, proposed interfaces and prospective verification profiles, documented before runtime development.
 
 ## Retained component plans
 

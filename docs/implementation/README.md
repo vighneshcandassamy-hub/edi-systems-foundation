@@ -1,9 +1,42 @@
-# EDI implementation design and tradeoffs
+# EDI implementation architecture and technique assessment
 
-Status: research in progress, 20 October 2026. This branch documents choices before runtime implementation.
+Version 0.1 — 20 October 2026. Status: researched and documented proposal; runtime not implemented. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 
-Baseline: `830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a`. Conceptual authority: the integrated Chapters 1–7 architecture and appendix reference. The owner-supplied overview is the coverage map for the implementation assessment.
+## Recommendation
 
-Planned deliverables: component and model tradeoffs, shared model and schema specification, directed interface contracts, requirement-to-function traceability, operating profiles, proposed verification cases and explicit adoption gates. Preferences will be distinguished from measured results. No inference benchmark or runtime implementation is authorized by this documentation task.
+Use a hybrid architecture: a replaceable LLM proposes interpretations and testable mechanisms; a typed temporal world model retains evidence, alternatives, nonlinear laws and history; appropriate numerical/causal tools execute scoped tests; independent outcomes support explicit revision. Start with a modular Python application, Postgres, source-native artifact storage and one selected reasoning provider. Add specialist frameworks only when a requirement and measured limitation justify them.
 
-See [research scope](RESEARCH_SCOPE.md).
+Preferred first reasoning path: hosted `gpt-6.1-sol` for quality-oriented development, with Qwen3.5-9B as the first local candidate if offline/local deployment is required. Larger Qwen3.6-35B-A3B, current Claude models, Gemini 3.8 Flash and DeepSeek-V4 are compared rather than assumed inferior or automatically mixed into every task. No provider winner or performance advantage is established by this document.
+
+## Complete specification package
+
+| Asset | Contents |
+| --- | --- |
+| [Tradeoffs](TRADEOFFS.md) | Whole-system alternatives; current reasoning/perception models; parsing, identity, retrieval/storage, orchestration, curiosity, causal inference, numerical/latent world models, uncertainty and policy/planning choices. |
+| [Component specifications](COMPONENTS.md) | Eight logical owners, 32 functions, nine representation families, inputs/outputs/state/authority/failures and capability-by-capability integration. |
+| [Contracts](CONTRACTS.md) | Proposed typed records, admission semantics, operation families, identity/time/delivery/recovery/retention/resource rules, shared dependencies and composed feedback paths. |
+| [Directed interface catalogue](INTERFACES.json) | All 28 unordered component pairs / 56 directed lanes; 40 required operation/result contracts and explicit justified no-links/prohibited bypasses; eleven contract facets and a whole-system feedback review. |
+| [Traceability catalogue](TRACEABILITY.json) | All 42 nodes / 69 connections in the supplied overview; 54 I7 requirements, 20 appendix requirements, 43 retained observation/substrate requirements, eight downstream obligations and 16 EDI system requirements, allocated through 28 implementation requirements and 32 functions to prospective cases. |
+| [Verification and critical review](VERIFICATION.md) | Forty proposed cases; finite DEV1 profile and later HA profile; matched controls, failure analysis, KISS/Five Whys/MECE review, adoption conditions and development sequence. |
+| [Primary-source register](SOURCES.md) / [machine register](SOURCES.json) | 51 primary references checked during the research, with the narrow support and limitations used for decisions. |
+| [Scope](RESEARCH_SCOPE.md) / [preserved supplied overview](OVERVIEW.mmd) | Research boundary and the exact node/edge content of the owner's overview. |
+| [Component self-review](evidence/component-review.json) / [document checks](evidence/document-checks.json) / [interface checks](evidence/interface-checks.json) | Scoped review and checker results. These are documentation evidence, never successful runtime or intelligence tests. |
+
+## Authority and interpretation
+
+Input repository baseline: `830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a`. The [seven-chapter master](../../architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md) and [appendix reference](../../architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md) remain the unchanged conceptual/semantic authorities. The provided overview is a compact presentation, not a replacement for the detailed conceptual master or its 346 catalogue allocations.
+
+Eight software modules are not eight new cognitive primitives or a service per diagram box. Domain state, model state and EDI operational state are distinct. Structural priors, imported pretrained knowledge and uncertainty remain visible. A graph edge does not supply an executable causal mechanism, and a fit to one behavior does not identify a unique system structure.
+
+This is the new prospective implementation proposal. Historical plans/reviews retain their original status. Architecture consistency is separate from concrete schema/contract readiness, runtime integration, scientific evidence and production capacity. Existing model scenarios and all new product cases remain planned and unrun.
+
+## Check the documentation
+
+```text
+python scripts/check_implementation_docs.py
+python .agents/skills/edi-interface-review/scripts/interface_matrix.py docs/implementation/INTERFACES.json --root .
+python .agents/skills/edi-component-review/scripts/review_gate.py docs/implementation/evidence/component-review.json --root .
+python scripts/verify_baseline.py
+```
+
+The next implementation artifact is the concrete typed contracts and one source/identity/time fixture for the first chosen capability. No runtime build or inference benchmark was started in this assessment.

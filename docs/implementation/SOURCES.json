@@ -1,0 +1,466 @@
+{
+  "schema": "edi-primary-source-register-v1",
+  "retrieved": "2026-10-20",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "OpenAI model catalog",
+      "url": "https://developers.openai.com/api/docs/models",
+      "support": "Current hosted reasoning/vision model IDs and advertised price tiers; provider claims, not EDI measurements.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S02",
+      "title": "Claude model overview",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "support": "Current reasoning, vision and tool-use lineup; vendor latency labels are not matched EDI measurements.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S03",
+      "title": "Gemini model catalog",
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "support": "Current multimodal model lineup and endpoint names; verify account and regional availability at binding.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S04",
+      "title": "Qwen3.5-9B model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "support": "Small open-weight multimodal candidate; deployment and task quality require qualification.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S05",
+      "title": "Qwen3.6-35B-A3B model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+      "support": "Vision encoder plus language model, 35B total/3B active parameters; active parameters do not determine resident weight memory.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S06",
+      "title": "DeepSeek-V4 preview",
+      "url": "https://deepseek.com/en/news/v4-preview/",
+      "support": "Pro/Flash reasoning alternatives and API IDs; do not infer unlisted modality support.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S07",
+      "title": "Docling supported formats",
+      "url": "https://docling-project.github.io/docling/usage/supported_formats/",
+      "support": "Structured document conversions; source-native retention remains necessary.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S08",
+      "title": "FFmpeg documentation",
+      "url": "https://ffmpeg.org/ffmpeg.html",
+      "support": "Media stream conversion; explicit stream/time mapping is an EDI contract.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S09",
+      "title": "Splink documentation",
+      "url": "https://moj-analytical-services.github.io/splink/index.html",
+      "support": "Probabilistic linkage for structured records; not universal cross-modal physical identity.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S10",
+      "title": "Qwen3-Embedding-0.6B",
+      "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B",
+      "support": "Text embeddings; retrieval representation must remain versioned and separate from identity.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S11",
+      "title": "Qwen3-VL-Embedding-2B",
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-Embedding-2B",
+      "support": "Multimodal retrieval candidate; alignment is not causal or identity proof.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S12",
+      "title": "PostgreSQL JSON types",
+      "url": "https://www.postgresql.org/docs/current/datatype-json.html",
+      "support": "JSON/JSONB storage; preserve original bytes outside normalized JSONB.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S13",
+      "title": "PostgreSQL transaction isolation",
+      "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "support": "Transaction semantics and retry obligations; bitemporal semantics are application-owned.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S14",
+      "title": "pgvector",
+      "url": "https://github.com/pgvector/pgvector/blob/master/README.md",
+      "support": "Exact/approximate vector search and filtered-recall considerations.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S15",
+      "title": "Graphiti",
+      "url": "https://github.com/getzep/graphiti/blob/main/README.md",
+      "support": "Incremental temporal context graphs and provenance; automatic invalidation needs EDI admission controls.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S16",
+      "title": "Microsoft GraphRAG",
+      "url": "https://github.com/microsoft/graphrag",
+      "support": "Graph-oriented retrieval/indexing; repository currently states maintenance mode and indexing cost caution.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S17",
+      "title": "LightRAG",
+      "url": "https://github.com/HKUDS/LightRAG",
+      "support": "Alternative graph-assisted retrieval implementation; not an executable dynamics engine.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S18",
+      "title": "Neo4j graph database",
+      "url": "https://neo4j.com/docs/getting-started/graph-database/",
+      "support": "Property graph representation and traversal; does not supply response laws by itself.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S19",
+      "title": "W3C SHACL",
+      "url": "https://www.w3.org/TR/shacl/",
+      "support": "RDF shape validation; shape validity is distinct from empirical truth.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S20",
+      "title": "LangGraph persistence",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "support": "Thread checkpoints versus cross-thread stores; neither defines EDI knowledge admission.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S21",
+      "title": "Temporal workflows",
+      "url": "https://docs.temporal.io/workflows",
+      "support": "Durable workflow service alternative for later operational complexity.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S22",
+      "title": "ReAct",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "support": "Research pattern for interleaving reasoning and tool actions; not a guarantee of true mechanisms.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S23",
+      "title": "Tree of Thoughts",
+      "url": "https://arxiv.org/abs/2305.10601",
+      "support": "Explicit branching/search alternative; token and evaluation costs need controls.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S24",
+      "title": "DSPy",
+      "url": "https://arxiv.org/abs/2310.03714",
+      "support": "Program/prompt optimization alternative once reliable development examples and metrics exist.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S25",
+      "title": "PySD",
+      "url": "https://pysd.readthedocs.io/en/master/",
+      "support": "Vensim/XMILE translation and system-dynamics simulation, with documented unsupported functions.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S26",
+      "title": "SciPy solve_ivp",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html",
+      "support": "ODE methods, event roots, stiff/nonstiff distinctions; not a universal delay/DAE solver.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S27",
+      "title": "SimPy",
+      "url": "https://simpy.readthedocs.io/en/latest/",
+      "support": "Discrete-event process simulation; continuous and hybrid coupling must be specified separately.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S28",
+      "title": "Mesa",
+      "url": "https://mesa.readthedocs.io/latest/",
+      "support": "Agent-based modeling; modeled humans need evidence-qualified rules.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S29",
+      "title": "Tigramite",
+      "url": "https://github.com/jakobrunge/tigramite",
+      "support": "Time-series causal discovery with method-specific assumptions, including stationarity and confounding distinctions.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S30",
+      "title": "DoWhy",
+      "url": "https://github.com/py-why/dowhy",
+      "support": "Causal effect identification, estimation and refutation under explicit assumptions.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S31",
+      "title": "PySINDy",
+      "url": "https://pysindy.readthedocs.io/en/stable/",
+      "support": "Sparse nonlinear system identification; library and measurement choices are priors.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S32",
+      "title": "PyMC overview",
+      "url": "https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/pymc_overview.html",
+      "support": "Bayesian modeling and inference; prior/likelihood specification remains a modeling obligation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S33",
+      "title": "PyMC predictive checks",
+      "url": "https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/posterior_predictive.html",
+      "support": "Prior/posterior predictive checks; a good fit does not uniquely identify structure.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S34",
+      "title": "Chronos forecasting",
+      "url": "https://github.com/amazon-science/chronos-forecasting",
+      "support": "Chronos-2 pretrained numerical forecasting, including covariates; not causal intervention evidence.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S35",
+      "title": "TimesFM",
+      "url": "https://github.com/google-research/timesfm",
+      "support": "Current repository lists TimesFM 3.0 with separately restricted weights; 2.5 weights retain Apache-2.0 per repository notice.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S36",
+      "title": "BoTorch",
+      "url": "https://botorch.org/",
+      "support": "Bayesian optimization and acquisition functions; EDI experiment utility and constraints must be supplied.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S37",
+      "title": "CVXPY",
+      "url": "https://www.cvxpy.org/",
+      "support": "Convex optimization modeling; nonlinear nonconvex dynamics require an appropriate alternative or qualification.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S38",
+      "title": "OR-Tools",
+      "url": "https://developers.google.com/optimization",
+      "support": "Constraint/discrete optimization candidate; model feasibility is not real-world feasibility.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S39",
+      "title": "V-JEPA 2",
+      "url": "https://arxiv.org/abs/2506.09985",
+      "support": "Representative latent video prediction/planning research; scope does not establish a general social/ecological world model.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S40",
+      "title": "DreamerV3",
+      "url": "https://arxiv.org/abs/2301.04104",
+      "support": "Representative learned world-model RL across task environments; reward, experience and interface assumptions still apply.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S41",
+      "title": "VIME",
+      "url": "https://arxiv.org/abs/1605.09674",
+      "support": "Information-gain exploration research; does not prescribe EDI's multi-objective inquiry scheduler.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S42",
+      "title": "MAPIE",
+      "url": "https://github.com/scikit-learn-contrib/MAPIE",
+      "support": "Conformal prediction intervals and risk-control tooling; guarantees depend on the chosen method and assumptions.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S43",
+      "title": "River ADWIN",
+      "url": "https://riverml.xyz/latest/api/drift/ADWIN/",
+      "support": "Adaptive-window drift detector; an alert does not identify a causal change.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S44",
+      "title": "Pydantic strict mode",
+      "url": "https://pydantic.dev/docs/validation/latest/concepts/strict_mode/",
+      "support": "Typed boundary validation; schema correctness does not establish semantic or causal correctness.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S45",
+      "title": "Pint",
+      "url": "https://pint.readthedocs.io/en/stable/",
+      "support": "Units and dimensional calculations; source interpretation and conversions must remain explicit.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S46",
+      "title": "vLLM structured outputs",
+      "url": "https://docs.vllm.ai/en/latest/features/structured_outputs/",
+      "support": "Constrained-output serving candidate; syntax compliance is not factual validation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S47",
+      "title": "OpenAI structured outputs",
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "support": "Schema-constrained output capability; refusal, truncation and semantic validation require handling.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S48",
+      "title": "OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/",
+      "support": "Operational observability; use complete path cost and failure accounting.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S49",
+      "title": "SQLAlchemy",
+      "url": "https://docs.sqlalchemy.org/en/20/intro.html",
+      "support": "SQL Core/ORM persistence tooling; inspected documentation identifies 2.1 as current and 2.0 as maintenance.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S50",
+      "title": "Alembic",
+      "url": "https://alembic.sqlalchemy.org/en/latest/",
+      "support": "Versioned SQL schema migrations; EDI model-semantic migration is a separate operation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S51",
+      "title": "FastAPI",
+      "url": "https://fastapi.tiangolo.com/",
+      "support": "Optional HTTP boundary; an in-process port remains the first implementation form.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    }
+  ]
+}
+

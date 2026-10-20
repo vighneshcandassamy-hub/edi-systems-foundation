@@ -1,0 +1,4568 @@
+{
+  "schema": "edi-implementation-plan-v1",
+  "version": "0.1",
+  "date": "2026-10-20",
+  "status": "design_only",
+  "mission": {
+    "id": "EDI-MIS-001",
+    "statement": "Develop a system that can observe unfamiliar inputs with or without an external goal, develop its own representations and relationships, investigate uncertainty, and retain revisable evidence-based knowledge that improves future prediction, interpretation and decisions.",
+    "rationale": "Consolidates the owner's stated EDI mission; no claim of realization.",
+    "status": "proposed",
+    "parents": []
+  },
+  "source_pin": {
+    "repository": "vighneshcandassamy-hub/edi-systems-foundation",
+    "commit": "830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a",
+    "master": "architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md",
+    "master_sha256": "ce39263a3eda5ef3ac3bd5aef92dfc55cf549dcc0ce0c48a96cce080c8b011ef",
+    "master_library_id": "libfile_7b9b477f82208191ab94058fbf22e04e",
+    "master_library_version": "5",
+    "appendix": "architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md",
+    "appendix_sha256": "0f6e880fac6814c137e22f3677542b35c1b092f977462f1a91124c975b7676b6"
+  },
+  "components": [
+    {
+      "id": "C0",
+      "name": "Inquiry and coordination",
+      "proposed_package": "edi.inquiry",
+      "function_ids": [
+        "F00",
+        "F01",
+        "F02",
+        "F03"
+      ],
+      "overview_nodes": [
+        "Q",
+        "B",
+        "V"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "C1",
+      "name": "Observation and evidence",
+      "proposed_package": "edi.observe",
+      "function_ids": [
+        "F10",
+        "F11",
+        "F12",
+        "F13"
+      ],
+      "overview_nodes": [
+        "O",
+        "R"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "C2",
+      "name": "Interpretation and correspondence",
+      "proposed_package": "edi.interpret",
+      "function_ids": [
+        "F20",
+        "F21",
+        "F22",
+        "F23"
+      ],
+      "overview_nodes": [
+        "ME"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "C3",
+      "name": "Shared world-model substrate",
+      "proposed_package": "edi.world",
+      "function_ids": [
+        "F30",
+        "F31",
+        "F32",
+        "F33"
+      ],
+      "overview_nodes": [
+        "M",
+        "ORG",
+        "IF",
+        "ST",
+        "FL",
+        "LAW",
+        "TM",
+        "LIM",
+        "FB",
+        "CD",
+        "SUP",
+        "RP",
+        "GE",
+        "CH"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "C4",
+      "name": "Reasoning and inquiry development",
+      "proposed_package": "edi.reason",
+      "function_ids": [
+        "F40",
+        "F41",
+        "F42",
+        "F43"
+      ],
+      "overview_nodes": [
+        "HY",
+        "LEV",
+        "TRAP"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "C5",
+      "name": "Analysis and dynamics",
+      "proposed_package": "edi.analyze",
+      "function_ids": [
+        "F50",
+        "F51",
+        "F52",
+        "F53"
+      ],
+      "overview_nodes": [
+        "SC",
+        "AN",
+        "PR",
+        "BH",
+        "OUT"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "C6",
+      "name": "Assessment and learning",
+      "proposed_package": "edi.assess",
+      "function_ids": [
+        "F60",
+        "F61",
+        "F62",
+        "F63"
+      ],
+      "overview_nodes": [
+        "ER",
+        "CMP",
+        "REV"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "C7",
+      "name": "Agency and adoption",
+      "proposed_package": "edi.agency",
+      "function_ids": [
+        "F70",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "overview_nodes": [
+        "SE",
+        "PE",
+        "FR",
+        "GO",
+        "PI",
+        "INT",
+        "EX",
+        "PM",
+        "PP",
+        "AU",
+        "AD"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "status": "specified_not_implemented"
+    }
+  ],
+  "functions": [
+    {
+      "id": "F00",
+      "title": "Define inquiry",
+      "component_id": "C0",
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "F01",
+      "title": "Scope causal and evaluative boundaries",
+      "component_id": "C0",
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R09",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "Schedule and bound work",
+      "component_id": "C0",
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R23",
+        "IMP-R24"
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "Deliver supported findings",
+      "component_id": "C0",
+      "requirement_ids": [
+        "IMP-R18"
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "Receive native information",
+      "component_id": "C1",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R25"
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "Preserve and attribute occurrences",
+      "component_id": "C1",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R04",
+        "IMP-R20",
+        "IMP-R25",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "Select and replay evidence",
+      "component_id": "C1",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R04"
+      ]
+    },
+    {
+      "id": "F13",
+      "title": "Bound capture and recovery",
+      "component_id": "C1",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R24"
+      ]
+    },
+    {
+      "id": "F20",
+      "title": "Decode native content",
+      "component_id": "C2",
+      "requirement_ids": [
+        "IMP-R03",
+        "IMP-R21",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "F21",
+      "title": "Qualify identity and meaning",
+      "component_id": "C2",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R21"
+      ]
+    },
+    {
+      "id": "F22",
+      "title": "Derive retrieval features",
+      "component_id": "C2",
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R21"
+      ]
+    },
+    {
+      "id": "F23",
+      "title": "Submit attributed claims",
+      "component_id": "C2",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "F30",
+      "title": "Instantiate and compose representations",
+      "component_id": "C3",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R05",
+        "IMP-R06",
+        "IMP-R07",
+        "IMP-R08",
+        "IMP-R11",
+        "IMP-R13",
+        "IMP-R14",
+        "IMP-R25",
+        "IMP-R27",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "F31",
+      "title": "Admit versioned changes",
+      "component_id": "C3",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R04",
+        "IMP-R05",
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R17",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R24",
+        "IMP-R26",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "F32",
+      "title": "Expose scoped temporal views",
+      "component_id": "C3",
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R05",
+        "IMP-R11",
+        "IMP-R17",
+        "IMP-R25"
+      ]
+    },
+    {
+      "id": "F33",
+      "title": "Maintain derived projections",
+      "component_id": "C3",
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R24"
+      ]
+    },
+    {
+      "id": "F40",
+      "title": "Propose rival mechanisms",
+      "component_id": "C4",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R15",
+        "IMP-R22"
+      ]
+    },
+    {
+      "id": "F41",
+      "title": "Investigate system relationships",
+      "component_id": "C4",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R15",
+        "IMP-R22"
+      ]
+    },
+    {
+      "id": "F42",
+      "title": "Rank discriminating tests",
+      "component_id": "C4",
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R19"
+      ]
+    },
+    {
+      "id": "F43",
+      "title": "Expand system-of-systems frontier",
+      "component_id": "C4",
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R18"
+      ]
+    },
+    {
+      "id": "F50",
+      "title": "Compile supported mechanisms",
+      "component_id": "C5",
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "F51",
+      "title": "Execute isolated scenarios",
+      "component_id": "C5",
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R11",
+        "IMP-R13",
+        "IMP-R14",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R19",
+        "IMP-R22",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "F52",
+      "title": "Assess sensitivity and uncertainty",
+      "component_id": "C5",
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R13",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R22",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "F53",
+      "title": "Expose conditional trajectories",
+      "component_id": "C5",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R16"
+      ]
+    },
+    {
+      "id": "F60",
+      "title": "Seal original expectations",
+      "component_id": "C6",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "F61",
+      "title": "Compare independent outcomes",
+      "component_id": "C6",
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R10",
+        "IMP-R19",
+        "IMP-R22",
+        "IMP-R26",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "F62",
+      "title": "Diagnose discrepancies",
+      "component_id": "C6",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R12",
+        "IMP-R17",
+        "IMP-R22",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "F63",
+      "title": "Recommend revision and findings",
+      "component_id": "C6",
+      "requirement_ids": [
+        "IMP-R12",
+        "IMP-R17",
+        "IMP-R18",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "F70",
+      "title": "Qualify actor-visible information",
+      "component_id": "C7",
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R11",
+        "IMP-R25"
+      ]
+    },
+    {
+      "id": "F71",
+      "title": "Assess intended action",
+      "component_id": "C7",
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R15",
+        "IMP-R23",
+        "IMP-R25"
+      ]
+    },
+    {
+      "id": "F72",
+      "title": "Authorize and reconcile execution",
+      "component_id": "C7",
+      "requirement_ids": [
+        "IMP-R12",
+        "IMP-R19",
+        "IMP-R23"
+      ]
+    },
+    {
+      "id": "F73",
+      "title": "Adopt owned policy versions",
+      "component_id": "C7",
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R15",
+        "IMP-R23"
+      ]
+    }
+  ],
+  "overview_nodes": [
+    {
+      "id": "Q",
+      "label": "Question and modeling purpose",
+      "primary_processor": "C0",
+      "state_owner": "C0",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "B",
+      "label": "Boundaries, resolution and horizons",
+      "primary_processor": "C0",
+      "state_owner": "C0",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "V",
+      "label": "Affected parties, values and criteria",
+      "primary_processor": "C0",
+      "state_owner": "C0",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "O",
+      "label": "Observations and source reports",
+      "primary_processor": "C1",
+      "state_owner": "C1",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "R",
+      "label": "Preserved records and provenance",
+      "primary_processor": "C1",
+      "state_owner": "C1",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "ME",
+      "label": "Identity, meaning, units and time",
+      "primary_processor": "C2",
+      "state_owner": "C2",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "HY",
+      "label": "Alternative explanations and unknowns",
+      "primary_processor": "C4",
+      "state_owner": "C4",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "M",
+      "label": "Versioned system model",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "ORG",
+      "label": "Elements, composition and hierarchy",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "IF",
+      "label": "Directed interfaces and dependencies",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "ST",
+      "label": "Stocks, resources and buffers",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "FL",
+      "label": "Flows and transformations",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "LAW",
+      "label": "Joint response laws and nonlinear domains",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "TM",
+      "label": "Memory, delays and pending commitments",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "LIM",
+      "label": "Capacities, constraints and boundary inputs",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "FB",
+      "label": "Balancing and reinforcing paths",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "SE",
+      "label": "Sensing and communication",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "PE",
+      "label": "Received information, perception and memory",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "FR",
+      "label": "Owned assumptions and interpretive frames",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "GO",
+      "label": "Purposes, incentives and reference standards",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "PI",
+      "label": "Current versioned policy",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "INT",
+      "label": "Intended action",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "EX",
+      "label": "Realized execution",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "CD",
+      "label": "Constituent and interface condition",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "SUP",
+      "label": "Shared support and restorative alternatives",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "RP",
+      "label": "Maintenance and repair",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "GE",
+      "label": "Variation, generation, selection and retention",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "CH",
+      "label": "Actual organizational change",
+      "primary_processor": "C3",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "SC",
+      "label": "Initial history, drivers and disturbances",
+      "primary_processor": "C5",
+      "state_owner": "C5",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "LEV",
+      "label": "Intervention targets and proposed changes",
+      "primary_processor": "C4",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "AN",
+      "label": "Simulation or qualitative analysis",
+      "primary_processor": "C5",
+      "state_owner": "C5",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "PR",
+      "label": "Conditional predictions",
+      "primary_processor": "C5",
+      "state_owner": "C5",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "BH",
+      "label": "Events, patterns and operating regimes",
+      "primary_processor": "C5",
+      "state_owner": "C5",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "OUT",
+      "label": "Local, wider and delayed consequences",
+      "primary_processor": "C5",
+      "state_owner": "C5",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "TRAP",
+      "label": "Eight conditional system-trap assessments",
+      "primary_processor": "C4",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "ER",
+      "label": "Original expectations and error records",
+      "primary_processor": "C6",
+      "state_owner": "C6",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "CMP",
+      "label": "Evidence, prediction and outcome comparison",
+      "primary_processor": "C6",
+      "state_owner": "C6",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "REV",
+      "label": "Retain, revise, reject or investigate",
+      "primary_processor": "C6",
+      "state_owner": "C6",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "PM",
+      "label": "Actor monitoring and policy review",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "PP",
+      "label": "Candidate policy amendment",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "AU",
+      "label": "Authority, resources and implementation",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    },
+    {
+      "id": "AD",
+      "label": "Adopted and implemented change",
+      "primary_processor": "C7",
+      "state_owner": "C3",
+      "meaning": "Conceptual/model-content node; processor allocation is not a deployed service. Domain actor and domain repair state are distinguished from EDI operational state."
+    }
+  ],
+  "overview_edges": [
+    {
+      "id": "OV-E001",
+      "from": "Q",
+      "to": "B",
+      "label": "Selects relevant scope",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E002",
+      "from": "Q",
+      "to": "V",
+      "label": "Defines assessment question",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E003",
+      "from": "O",
+      "to": "R",
+      "label": "Record original account",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E004",
+      "from": "R",
+      "to": "ME",
+      "label": "Qualify interpretation",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E005",
+      "from": "R",
+      "to": "HY",
+      "label": "Support or challenge",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E006",
+      "from": "M",
+      "to": "ORG",
+      "label": "Describes organization",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E007",
+      "from": "M",
+      "to": "LAW",
+      "label": "Specifies candidate mechanisms",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E008",
+      "from": "ORG",
+      "to": "IF",
+      "label": "Defines participants and connections",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E009",
+      "from": "IF",
+      "to": "FL",
+      "label": "Carries transfers",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E010",
+      "from": "ST",
+      "to": "LAW",
+      "label": "Conditions rates",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E011",
+      "from": "LAW",
+      "to": "FL",
+      "label": "Governs processes",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E012",
+      "from": "FL",
+      "to": "ST",
+      "label": "Changes accumulation",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E013",
+      "from": "TM",
+      "to": "LAW",
+      "label": "Retained conditions",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E014",
+      "from": "LIM",
+      "to": "FL",
+      "label": "Limits realized rates",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E015",
+      "from": "FB",
+      "to": "LAW",
+      "label": "References complete return paths",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E016",
+      "from": "SE",
+      "to": "PE",
+      "label": "Delivery, attention and timing",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E017",
+      "from": "FR",
+      "to": "PE",
+      "label": "Shapes interpretation",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E018",
+      "from": "FR",
+      "to": "GO",
+      "label": "May shape priorities",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E019",
+      "from": "PE",
+      "to": "INT",
+      "label": "Available decision inputs",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E020",
+      "from": "GO",
+      "to": "INT",
+      "label": "Desired conditions",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E021",
+      "from": "PI",
+      "to": "INT",
+      "label": "Current response rule",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E022",
+      "from": "INT",
+      "to": "EX",
+      "label": "Attempted action",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E023",
+      "from": "CD",
+      "to": "RP",
+      "label": "May trigger restoration",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E024",
+      "from": "SUP",
+      "to": "RP",
+      "label": "Enables or limits",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E025",
+      "from": "RP",
+      "to": "CD",
+      "label": "May restore capability",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E026",
+      "from": "GE",
+      "to": "CH",
+      "label": "Produces retained changes",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E027",
+      "from": "SUP",
+      "to": "GE",
+      "label": "Resources and dependencies",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E028",
+      "from": "SC",
+      "to": "AN",
+      "label": "Defines conditions",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E029",
+      "from": "LEV",
+      "to": "AN",
+      "label": "Defines hypothetical changes",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E030",
+      "from": "AN",
+      "to": "PR",
+      "label": "Produces expectations",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E031",
+      "from": "PR",
+      "to": "BH",
+      "label": "Characterize behavior",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E032",
+      "from": "PR",
+      "to": "OUT",
+      "label": "Evaluate consequences",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E033",
+      "from": "TRAP",
+      "to": "AN",
+      "label": "Candidate interacting mechanisms",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E034",
+      "from": "PR",
+      "to": "ER",
+      "label": "Preserve original expectation",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E035",
+      "from": "R",
+      "to": "ER",
+      "label": "Independent comparison evidence",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E036",
+      "from": "ER",
+      "to": "CMP",
+      "label": "Discrepancies and rival causes",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E037",
+      "from": "CMP",
+      "to": "REV",
+      "label": "Justified review decision",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E038",
+      "from": "PM",
+      "to": "PP",
+      "label": "Specified review mechanism",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E039",
+      "from": "PP",
+      "to": "AU",
+      "label": "Submitted for decision",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E040",
+      "from": "AU",
+      "to": "AD",
+      "label": "May implement, refuse or defer",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E041",
+      "from": "B",
+      "to": "M",
+      "label": "Scopes shared description",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E042",
+      "from": "ME",
+      "to": "M",
+      "label": "Defines correspondence",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E043",
+      "from": "HY",
+      "to": "M",
+      "label": "Candidate account",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E044",
+      "from": "M",
+      "to": "AN",
+      "label": "Analyzed model version",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E045",
+      "from": "IF",
+      "to": "SE",
+      "label": "Carries signals",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E046",
+      "from": "ST",
+      "to": "SE",
+      "label": "Condition available to sensing",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E047",
+      "from": "LIM",
+      "to": "EX",
+      "label": "Actual execution constraints",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E048",
+      "from": "CD",
+      "to": "SE",
+      "label": "Sensing and actuation capability",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E049",
+      "from": "CD",
+      "to": "EX",
+      "label": "Enables or restricts response",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E050",
+      "from": "EX",
+      "to": "FL",
+      "label": "Realized process effects",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E051",
+      "from": "LIM",
+      "to": "RP",
+      "label": "Finite repair resources",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E052",
+      "from": "LIM",
+      "to": "GE",
+      "label": "Finite development resources",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E053",
+      "from": "CH",
+      "to": "ORG",
+      "label": "Changes membership or connections",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E054",
+      "from": "CH",
+      "to": "IF",
+      "label": "Changes interfaces",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E055",
+      "from": "CH",
+      "to": "LAW",
+      "label": "May change governing mechanisms",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E056",
+      "from": "PE",
+      "to": "PM",
+      "label": "Actually available experience",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E057",
+      "from": "PI",
+      "to": "PM",
+      "label": "Current policy under review",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E058",
+      "from": "GO",
+      "to": "PM",
+      "label": "Owned review criteria",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E059",
+      "from": "AD",
+      "to": "PI",
+      "label": "Implements a new policy version",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E060",
+      "from": "AD",
+      "to": "CH",
+      "label": "May implement structural change",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E061",
+      "from": "AD",
+      "to": "SE",
+      "label": "May change information channels",
+      "notation": "-->",
+      "role": "modeled_system_interaction",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E062",
+      "from": "V",
+      "to": "CMP",
+      "label": "Criteria and distribution",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E063",
+      "from": "OUT",
+      "to": "CMP",
+      "label": "Consequences under those criteria",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E064",
+      "from": "BH",
+      "to": "TRAP",
+      "label": "Candidate trap evidence",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E065",
+      "from": "M",
+      "to": "TRAP",
+      "label": "Shared structural hypotheses",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E066",
+      "from": "REV",
+      "to": "HY",
+      "label": "Revises explanation",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E067",
+      "from": "REV",
+      "to": "M",
+      "label": "Updates model with rationale",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E068",
+      "from": "REV",
+      "to": "B",
+      "label": "May reconsider scope",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    },
+    {
+      "id": "OV-E069",
+      "from": "REV",
+      "to": "SC",
+      "label": "Selects further scenarios",
+      "notation": "-.->",
+      "role": "description_or_analysis_dependency",
+      "runtime_api": false,
+      "implementation_treatment": "Preserve participant/meaning/time/authority in shared model or scoped workflow; software ports are independently specified in INTERFACES.json."
+    }
+  ],
+  "system_requirements": [
+    {
+      "id": "EDI-SYS-001",
+      "title": "Operating modes",
+      "statement": "The system shall support continuing observation both before an external task and while pursuing a supplied goal.",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R07",
+        "IMP-R09",
+        "IMP-R18"
+      ]
+    },
+    {
+      "id": "EDI-SYS-002",
+      "title": "Heterogeneous information",
+      "statement": "The system shall accept source-native digitally supplied information through extensible interfaces while distinguishing capture, decoding and understanding.",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R03",
+        "IMP-R25"
+      ]
+    },
+    {
+      "id": "EDI-SYS-003",
+      "title": "Semantic neutrality",
+      "statement": "The system shall distinguish host/acquisition assumptions and imported knowledge from representations or relationships learned from its own observations.",
+      "implementation_ids": [
+        "IMP-R03",
+        "IMP-R21",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "EDI-SYS-004",
+      "title": "Endogenous representations",
+      "statement": "The system shall develop and revise representations from allowed observations under declared learning assumptions.",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R08",
+        "IMP-R14",
+        "IMP-R17"
+      ]
+    },
+    {
+      "id": "EDI-SYS-005",
+      "title": "Relationship discovery",
+      "statement": "The system shall form competing testable relationships without promoting unsupported patterns to established laws.",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R13",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "EDI-SYS-006",
+      "title": "Uncertainty",
+      "statement": "The system shall preserve unknowns and distinguish acquired evidence, reports, interpretations and uncertainty about each.",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R04",
+        "IMP-R07",
+        "IMP-R08",
+        "IMP-R11",
+        "IMP-R25",
+        "IMP-R26",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "EDI-SYS-007",
+      "title": "Investigation",
+      "statement": "The system shall be able to investigate uncertainty by requesting informative observations or permitted interventions.",
+      "implementation_ids": [
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R23"
+      ]
+    },
+    {
+      "id": "EDI-SYS-008",
+      "title": "Revision",
+      "statement": "The system shall revise unsupported beliefs and operational associations when new evidence contradicts them without rewriting acquired evidence.",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R17"
+      ]
+    },
+    {
+      "id": "EDI-SYS-009",
+      "title": "Persistent experience",
+      "statement": "The system shall retain addressable evidence and identity history across sessions and declared retention periods.",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R02",
+        "IMP-R04",
+        "IMP-R20",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "EDI-SYS-010",
+      "title": "Prediction and what-if",
+      "statement": "The system shall use supported knowledge for prospective prediction and explicitly scoped counterfactual analysis.",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R10",
+        "IMP-R11",
+        "IMP-R13",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "EDI-SYS-011",
+      "title": "Transfer",
+      "statement": "The system shall evaluate whether prior learned structure improves unfamiliar related tasks against strong reset, conventional-memory and unrelated-history controls.",
+      "implementation_ids": [
+        "IMP-R22"
+      ]
+    },
+    {
+      "id": "EDI-SYS-012",
+      "title": "Interpretation and proactive findings",
+      "statement": "The system shall communicate interpretations and strategically useful new findings with evidence and uncertainty, including when no explicit question requested a finding.",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R15",
+        "IMP-R18",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "EDI-SYS-013",
+      "title": "Resource efficiency",
+      "statement": "The system shall operate within declared compute, memory, storage, latency and inference budgets and account for complete task costs.",
+      "implementation_ids": [
+        "IMP-R09",
+        "IMP-R16",
+        "IMP-R19",
+        "IMP-R21"
+      ]
+    },
+    {
+      "id": "EDI-SYS-014",
+      "title": "Audit and reproducibility",
+      "statement": "The system shall preserve provenance, versions, decisions and evidence sufficient to reconstruct supported claims.",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R05",
+        "IMP-R10",
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R16",
+        "IMP-R17",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R22",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "EDI-SYS-015",
+      "title": "Reliable scalable operation",
+      "statement": "The system shall provide explicit capacity, durability, recovery and availability guarantees for qualified deployment profiles.",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R24"
+      ]
+    },
+    {
+      "id": "EDI-SYS-016",
+      "title": "Permitted actions and introspection",
+      "statement": "The system shall distinguish proposed commands, authorized execution, reported acknowledgement, measured outcome and its own operational telemetry.",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R15",
+        "IMP-R23",
+        "IMP-R25"
+      ]
+    }
+  ],
+  "upstream_requirements": [
+    {
+      "id": "I7-R01",
+      "title": "Preserve identity, organization and overlapping views.",
+      "original_row": "| I7-R01 | Preserve identity, organization and overlapping views. | C1-R01/R02/R05; C2-R01/R05/R06 | C3-R07/R08/R10 | Retained prior obligation | I7-T01 |",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R05"
+      ]
+    },
+    {
+      "id": "I7-R02",
+      "title": "Distinguish stocks, flows, information and response with coherent accounting.",
+      "original_row": "| I7-R02 | Distinguish stocks, flows, information and response with coherent accounting. | C1-R03/R06/R07/R08; C2-R02/R07/R09 | C3-R02/R03 | C4-R06 | I7-T02/I7-T15 |",
+      "implementation_ids": [
+        "IMP-R03",
+        "IMP-R06",
+        "IMP-R16"
+      ]
+    },
+    {
+      "id": "I7-R03",
+      "title": "Preserve complete relevant temporal state.",
+      "original_row": "| I7-R03 | Preserve complete relevant temporal state. | C1-R06/R09/R13; C2-R04/R07 | C3-R02/R03/R05 | C4-R10 | I7-T03 |",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R16",
+        "IMP-R20",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "I7-R04",
+      "title": "Preserve conditional joint mechanisms, limits and shared resources.",
+      "original_row": "| I7-R04 | Preserve conditional joint mechanisms, limits and shared resources. | C1-R07/R11/R13; C2-R02/R03/R05/R06/R09/R10 | C3-R02/R08 | C4-R06 | I7-T04/I7-T16 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R16"
+      ]
+    },
+    {
+      "id": "I7-R05",
+      "title": "Distinguish purposes, references and criteria at relevant levels.",
+      "original_row": "| I7-R05 | Distinguish purposes, references and criteria at relevant levels. | C1-R04/R12; C2-R02/R08/R12 | C3-R01/R11 | C4-R14, C4-R16 | I7-T05/I7-T27 |",
+      "implementation_ids": [
+        "IMP-R07"
+      ]
+    },
+    {
+      "id": "I7-R06",
+      "title": "Qualify resilience by functioning, regime, disturbance and horizon.",
+      "original_row": "| I7-R06 | Qualify resilience by functioning, regime, disturbance and horizon. | C1-R08/R13; C2-R01/R03/R11 | C3-R01/R04 | C4-R05 | I7-T06 |",
+      "implementation_ids": [
+        "IMP-R13"
+      ]
+    },
+    {
+      "id": "I7-R07",
+      "title": "Represent compensation, repair and restoration support without automatic success.",
+      "original_row": "| I7-R07 | Represent compensation, repair and restoration support without automatic success. | C1-R07/R11/R13; C2-R03/R05/R06/R10 | C3-R02/R03 | C4-R05 | I7-T07 |",
+      "implementation_ids": [
+        "IMP-R13"
+      ]
+    },
+    {
+      "id": "I7-R08",
+      "title": "Represent real organizational development separately from model revision.",
+      "original_row": "| I7-R08 | Represent real organizational development separately from model revision. | C1-R02/R05/R14; C2-R06/R13 | C3-R05/R06 | Retained prior obligation | I7-T08 |",
+      "implementation_ids": [
+        "IMP-R14",
+        "IMP-R17"
+      ]
+    },
+    {
+      "id": "I7-R09",
+      "title": "Preserve directed interfaces and conditional decomposability.",
+      "original_row": "| I7-R09 | Preserve directed interfaces and conditional decomposability. | C1-R10/R11/R13; C2-R05/R06 | C3-R08/R09 | C4-R06 | I7-T09 |",
+      "implementation_ids": [
+        "IMP-R05"
+      ]
+    },
+    {
+      "id": "I7-R10",
+      "title": "Compare coordination and autonomy, including local–collective conflict.",
+      "original_row": "| I7-R10 | Compare coordination and autonomy, including local–collective conflict. | C1-R04/R12; C2-R08/R12 | C3-R10/R11 | C4-R14, C4-R16 | I7-T10 |",
+      "implementation_ids": [
+        "IMP-R07"
+      ]
+    },
+    {
+      "id": "I7-R11",
+      "title": "Retain sources, alternatives, unknowns and distinction between event and structure.",
+      "original_row": "| I7-R11 | Retain sources, alternatives, unknowns and distinction between event and structure. | C1-R14; C2-R04/R13 | C3-R12 | C4-R01, C4-R02, C4-R15 | I7-T11/I7-T26/I7-T28 |",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R08",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "I7-R12",
+      "title": "Assess conditional behavior, wider causes and decision relevance separately.",
+      "original_row": "| I7-R12 | Assess conditional behavior, wider causes and decision relevance separately. | C1-R13/R14; C2-R12/R13 | C3-R01/R04/R09/R11/R12 | C4-R01, C4-R02, C4-R03, C4-R05, C4-R16 | I7-T12/I7-T27/I7-T28 |",
+      "implementation_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R18"
+      ]
+    },
+    {
+      "id": "I7-R13",
+      "title": "Qualify pattern reuse through domain roles, mechanism correspondence, units, timing and applicability.",
+      "original_row": "| I7-R13 | Qualify pattern reuse through domain roles, mechanism correspondence, units, timing and applicability. | C1-R13/R14; C2-R06/R13 | C3-R12 | Retained prior obligation | I7-T13 |",
+      "implementation_ids": [
+        "IMP-R08",
+        "IMP-R21",
+        "IMP-R22"
+      ]
+    },
+    {
+      "id": "I7-R14",
+      "title": "Preserve referent, quantity, history and commitment meaning across structural transitions.",
+      "original_row": "| I7-R14 | Preserve referent, quantity, history and commitment meaning across structural transitions. | C1-R05/R06/R07; C2-R07/R08/R13 | C3-R05/R06 | Retained prior obligation | I7-T14 |",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R05",
+        "IMP-R14",
+        "IMP-R17",
+        "IMP-R20",
+        "IMP-R21"
+      ]
+    },
+    {
+      "id": "I7-R15",
+      "title": "Represent actor-specific information, interpretation and perceived options separately from intended action and realized effects.",
+      "original_row": "| I7-R15 | Represent actor-specific information, interpretation and perceived options separately from intended action and realized effects. | C1-R04/R14; C2-R04/R07 | C3-R09/R11/R12 | C4-R12, C4-R13, C4-R14 | I7-T17/I7-T18/I7-T19 |",
+      "implementation_ids": [
+        "IMP-R11"
+      ]
+    },
+    {
+      "id": "I7-R16",
+      "title": "Qualify nonlinear response domains and distinguish operating-point, parameter, rule and topology explanations.",
+      "original_row": "| I7-R16 | Qualify nonlinear response domains and distinguish operating-point, parameter, rule and topology explanations. | C1-R13/R14; C2-R10/R11/R13 | C3-R01/R12 | C4-R03, C4-R04, C4-R05 | I7-T21 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R16",
+        "IMP-R22"
+      ]
+    },
+    {
+      "id": "I7-R17",
+      "title": "Compare query-specific views with explicit boundary closure, shared identity and output correspondence.",
+      "original_row": "| I7-R17 | Compare query-specific views with explicit boundary closure, shared identity and output correspondence. | C1-R10; C2-R05/R06 | C3-R07/R09 | C4-R06, C4-R07 | I7-T23/I7-T24 |",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R09",
+        "IMP-R18"
+      ]
+    },
+    {
+      "id": "I7-R18",
+      "title": "Represent joint, uncertain and evolving constraints with compatible quantities and shared resources.",
+      "original_row": "| I7-R18 | Represent joint, uncertain and evolving constraints with compatible quantities and shared resources. | C1-R07/R12; C2-R09/R10 | C3-R02/R08 | C4-R08, C4-R09 | I7-T22 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R19"
+      ]
+    },
+    {
+      "id": "I7-R19",
+      "title": "Assess stage-specific delays, relevance and foresight under incomplete commitments and uncertain inputs.",
+      "original_row": "| I7-R19 | Assess stage-specific delays, relevance and foresight under incomplete commitments and uncertain inputs. | C1-R09/R13; C2-R07/R08/R13 | C3-R02/R04 | C4-R10, C4-R11 | I7-T25 |",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R09",
+        "IMP-R16",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "I7-R20",
+      "title": "Distinguish passive records, proposed information interventions and changes in examined feedback channels.",
+      "original_row": "| I7-R20 | Distinguish passive records, proposed information interventions and changes in examined feedback channels. | C1-R03/R14; C2-R04/R08 | C3-R05/R09/R12 | C4-R15 | I7-T20 |",
+      "implementation_ids": [
+        "IMP-R10",
+        "IMP-R11",
+        "IMP-R25"
+      ]
+    },
+    {
+      "id": "I7-R21",
+      "title": "Conditional archetype assessment",
+      "original_row": "| I7-R21 | Conditional archetype assessment | Represent structural conditions, evidence, contradiction, missing paths, rivals and several simultaneous candidates; a label cannot establish cause. | C5-R01, C5-R02, C5-R16 | I7-T29, I7-T30, I7-T31, I7-T32, I7-T61, I7-T62, I7-T67, I7-T68 |",
+      "implementation_ids": [
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R22",
+      "title": "Incidence and commons governance",
+      "original_row": "| I7-R22 | Incidence and commons governance | Represent private/shared benefits and burdens, erodable resource or sink dynamics, access, user feedback and bounded governance. | C5-R03, C5-R04 | I7-T33, I7-T34, I7-T35, I7-T36 |",
+      "implementation_ids": [
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R23",
+      "title": "Endogenous references and relative competition",
+      "original_row": "| I7-R23 | Endogenous references and relative competition | Separate actual/perceived histories, reference updates, corrective responses and reciprocal rival comparisons; no forced pathological or exponential outcome. | C5-R02, C5-R05, C5-R06 | I7-T29, I7-T30, I7-T31, I7-T32, I7-T37, I7-T38, I7-T39, I7-T40, I7-T41, I7-T42, I7-T43, I7-T44 |",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R24",
+      "title": "Reward to future opportunity",
+      "original_row": "| I7-R24 | Reward to future opportunity | Represent allocation, conversion, future means, shared constraints, entry, diversification and influence on countervailing rules. | C5-R07, C5-R08 | I7-T45, I7-T46, I7-T47, I7-T48 |",
+      "implementation_ids": [
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R25",
+      "title": "Intervention and corrective capacity",
+      "original_row": "| I7-R25 | Intervention and corrective capacity | Distinguish relief, signal masking, original correction, capacity erosion/rebuilding, beneficial specialization and intervenor limits. | C5-R09, C5-R10 | I7-T49, I7-T50, I7-T51, I7-T52 |",
+      "implementation_ids": [
+        "IMP-R13",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R26",
+      "title": "Purpose, rule, indicator and outcome",
+      "original_row": "| I7-R26 | Purpose, rule, indicator and outcome | Separate intended outcome, formal target, effort, proxy, compliance and actual consequence, including distribution and nonmarket effects. | C5-R11, C5-R12 | I7-T53, I7-T54, I7-T55, I7-T56, I7-T57, I7-T58, I7-T59, I7-T60 |",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R27",
+      "title": "Adaptive rule responses",
+      "original_row": "| I7-R27 | Adaptive rule responses | Allow actor strategies and governance to change after rule redesign; purpose, intent, compliance and noncompliance require their own evidence. | C5-R11 | I7-T53, I7-T54, I7-T55, I7-T56 |",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R28",
+      "title": "Qualified opportunities and transitions",
+      "original_row": "| I7-R28 | Qualified opportunities and transitions | Specify target mechanism, adoption, authority, resources, timing, carry-over and adverse or wider responses for each proposed way out. | C5-R15 | I7-T35, I7-T39, I7-T44, I7-T48, I7-T51, I7-T55, I7-T59, I7-T63, I7-T64, I7-T66 |",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R15",
+        "IMP-R23"
+      ]
+    },
+    {
+      "id": "I7-R29",
+      "title": "Specialization and changed regimes",
+      "original_row": "| I7-R29 | Specialization and changed regimes | Evaluate selected performance, other relevant functions and adaptation to changed rules or operating conditions without condemning all specialization. | C5-R13 | I7-T65 |",
+      "implementation_ids": [
+        "IMP-R13",
+        "IMP-R15",
+        "IMP-R22"
+      ]
+    },
+    {
+      "id": "I7-R30",
+      "title": "Composed traps and shared referents",
+      "original_row": "| I7-R30 | Composed traps and shared referents | Preserve one accounting and identity per shared process or resource across patterns, with delayed interfaces and boundary closure. | C5-R14 | I7-T60, I7-T62, I7-T63, I7-T64 |",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R31",
+      "title": "Qualified intervention and leverage inquiry",
+      "original_row": "| I7-R31 | Qualified intervention and leverage inquiry | Record target, direction, baseline, adoption, criteria, resources, timing and uncertainty. Categories overlap and list order does not determine effect or preference. | C6-R01, C6-R14, C6-R15, C6-R16 | I7-T105, I7-T106, I7-T107, I7-T108, I7-T109, I7-T110, I7-T111, I7-T112, I7-T113, I7-T114, I7-T115, I7-T116, I7-T120, I7-T124 |",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R15",
+        "IMP-R23"
+      ]
+    },
+    {
+      "id": "I7-R32",
+      "title": "Parameter meaning and critical ranges",
+      "original_row": "| I7-R32 | Parameter meaning and critical ranges | Preserve units, applicable rule, adjustability, operating range, threshold uncertainty and exceptions to shallow-parameter intuition. | C6-R02 | I7-T69, I7-T70, I7-T71, I7-T105, I7-T120 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R33",
+      "title": "Buffers and usable capacity",
+      "original_row": "| I7-R33 | Buffers and usable capacity | Separate installed capacity, usable reserve, access, replenishment, relevant flow scale, cost and flexibility. | C6-R03 | I7-T72, I7-T73, I7-T74, I7-T117 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R13",
+        "IMP-R15",
+        "IMP-R19"
+      ]
+    },
+    {
+      "id": "I7-R34",
+      "title": "Physical arrangement and cohort history",
+      "original_row": "| I7-R34 | Physical arrangement and cohort history | Specify topology, shared bottlenecks, construction, age/lifetime history, replacement and carry-over. | C6-R04 | I7-T75, I7-T76, I7-T77, I7-T109, I7-T117 |",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R14",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R35",
+      "title": "Relative timing and feasible correction",
+      "original_row": "| I7-R35 | Relative timing and feasible correction | Represent stage-specific delay, response intensity, driving rate, pending effects and irreversible conditions without a universal fastest-is-best rule. | C6-R05 | I7-T78, I7-T79, I7-T80, I7-T120 |",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "I7-R36",
+      "title": "Corrective and driving mechanisms",
+      "original_row": "| I7-R36 | Corrective and driving mechanisms | Compare disturbance-relative balancing ability and conditional reinforcing gain, including dormant/common dependencies, limits and useful reinforcing processes. | C6-R06, C6-R07 | I7-T81, I7-T82, I7-T83, I7-T84, I7-T85, I7-T86, I7-T121 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R13",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R37",
+      "title": "Information topology and adverse response",
+      "original_row": "| I7-R37 | Information topology and adverse response | Distinguish hidden recording, new paths, tuned channels, resource versus price signals, received meaning and possible harmful action. | C6-R08 | I7-T87, I7-T88, I7-T89, I7-T121, I7-T123 |",
+      "implementation_ids": [
+        "IMP-R11",
+        "IMP-R15",
+        "IMP-R25"
+      ]
+    },
+    {
+      "id": "I7-R38",
+      "title": "Rules and authority over rules",
+      "original_row": "| I7-R38 | Rules and authority over rules | Separate physical law, institutional rule, norm, belief, interpretation, enforcement and amendment authority; allow adaptation. | C6-R09 | I7-T90, I7-T91, I7-T92, I7-T119, I7-T122 |",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R15",
+        "IMP-R23"
+      ]
+    },
+    {
+      "id": "I7-R39",
+      "title": "Resource-supported generation and selection",
+      "original_row": "| I7-R39 | Resource-supported generation and selection | Specify repertoire access, variation, experiment resources, selection, retention and actual structural change. | C6-R10 | I7-T93, I7-T94, I7-T95, I7-T119 |",
+      "implementation_ids": [
+        "IMP-R14",
+        "IMP-R15",
+        "IMP-R19"
+      ]
+    },
+    {
+      "id": "I7-R40",
+      "title": "Purpose, selection and adoption",
+      "original_row": "| I7-R40 | Purpose, selection and adoption | Distinguish viability, local reference, attributed wider purpose, stated mission and actual selection; goal changes need a mediated adoption path. | C6-R11 | I7-T96, I7-T97, I7-T98, I7-T119, I7-T122 |",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R12",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R41",
+      "title": "Owned interpretive assumptions",
+      "original_row": "| I7-R41 | Owned interpretive assumptions | Keep actor/community frames separate from analyst assumptions and physics; retain heterogeneity, timing, evidence and mediated change. | C6-R12 | I7-T99, I7-T100, I7-T101, I7-T118, I7-T122, I7-T123 |",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R11",
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "I7-R42",
+      "title": "Reconsideration without evidence loss",
+      "original_row": "| I7-R42 | Reconsideration without evidence loss | Expose assumptions, compare empirical and normative differences, retain revision triggers and permit qualified decisions without asserting enlightenment or automatic cognitive flexibility. | C6-R13 | I7-T102, I7-T103, I7-T104, I7-T118, I7-T123, I7-T124 |",
+      "implementation_ids": [
+        "IMP-R08",
+        "IMP-R15",
+        "IMP-R17",
+        "IMP-R22"
+      ]
+    },
+    {
+      "id": "I7-R43",
+      "title": "Behavior-grounded inquiry",
+      "original_row": "| I7-R43 | Behavior-grounded inquiry | Preserve level, rate, variability, extremes, aggregation, timing and remedy-independent problem framing. | I7-T125, I7-T126, I7-T127 |",
+      "implementation_ids": [
+        "IMP-R09",
+        "IMP-R18"
+      ]
+    },
+    {
+      "id": "I7-R44",
+      "title": "Meaning and cross-domain correspondence",
+      "original_row": "| I7-R44 | Meaning and cross-domain correspondence | Define source terms, referents, constructs, scales, aggregation and time; reconcile domain accounts without treating relabeling as a causal intervention. | I7-T134, I7-T135, I7-T136, I7-T161, I7-T162, I7-T163, I7-T171, I7-T173, I7-T174, I7-T175, I7-T176, I7-T177, I7-T178, I7-T179, I7-T180, I7-T181, I7-T182, I7-T183, I7-T184, I7-T187 |",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R21",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "I7-R45",
+      "title": "Qualitative concerns and measurement discipline",
+      "original_row": "| I7-R45 | Qualitative concerns and measurement discipline | Retain attributed importance, uncertain mechanisms and legitimate qualitative assessment; ordinal labels do not license cardinal arithmetic or invented calibration. | I7-T137, I7-T138, I7-T139, I7-T187 |",
+      "implementation_ids": [
+        "IMP-R03",
+        "IMP-R07",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "I7-R46",
+      "title": "Owned versioned policy response",
+      "original_row": "| I7-R46 | Owned versioned policy response | Identify policy owner, available input, rule/version, reference, timing and actual execution constraints. Changing action alone is not policy learning. | I7-T140, I7-T141, I7-T172, I7-T185 |",
+      "implementation_ids": [
+        "IMP-R11",
+        "IMP-R12"
+      ]
+    },
+    {
+      "id": "I7-R47",
+      "title": "Monitoring, review and adopted amendment",
+      "original_row": "| I7-R47 | Monitoring, review and adopted amendment | Specify monitoring, owned expectations, trigger/cadence, update mechanism or unknown, allowed proposal, authority, resources and adoption with state/history carry-over. | I7-T142, I7-T171, I7-T172, I7-T173, I7-T174, I7-T175, I7-T176, I7-T177, I7-T178, I7-T179, I7-T180, I7-T181, I7-T182, I7-T183, I7-T184, I7-T185, I7-T192 |",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R17",
+        "IMP-R23"
+      ]
+    },
+    {
+      "id": "I7-R48",
+      "title": "Inspectable expectations and error inquiry",
+      "original_row": "| I7-R48 | Inspectable expectations and error inquiry | Preserve original forecasts, independent evidence, correspondence, discrepancy, rival causes and rationale for retention, revision, rejection or further inquiry. | I7-T128, I7-T129, I7-T130, I7-T152, I7-T153, I7-T154, I7-T171, I7-T173, I7-T174, I7-T175, I7-T176, I7-T177, I7-T178, I7-T179, I7-T180, I7-T181, I7-T182, I7-T183, I7-T184, I7-T185, I7-T191 |",
+      "implementation_ids": [
+        "IMP-R08",
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R22",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "I7-R49",
+      "title": "Responsibility and consequence feedback",
+      "original_row": "| I7-R49 | Responsibility and consequence feedback | Separate causal influence, burden incidence, knowledge, decision rights, capacity and normative attribution; feedback alone neither assigns blame nor ensures correction. | I7-T149, I7-T150, I7-T151, I7-T190 |",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R18",
+        "IMP-R23",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "I7-R50",
+      "title": "Affected-party and evaluative coverage",
+      "original_row": "| I7-R50 | Affected-party and evaluative coverage | Keep causal scope, affected parties and whose interests count distinct. Attribute qualitative priorities, disagreements and omitted distributed effects without a compulsory global utility. | I7-T143, I7-T144, I7-T145, I7-T164, I7-T165, I7-T166, I7-T171, I7-T173, I7-T174, I7-T175, I7-T176, I7-T177, I7-T178, I7-T179, I7-T180, I7-T181, I7-T182, I7-T183, I7-T184, I7-T186 |",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R18",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "I7-R51",
+      "title": "Nested time scales and horizons",
+      "original_row": "| I7-R51 | Nested time scales and horizons | Separate physical timing, cadence, planning horizon and value weighting. Retain slow state, fast thresholds and residual obligations beyond the reporting endpoint. | I7-T158, I7-T159, I7-T160, I7-T189 |",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R16",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "I7-R52",
+      "title": "Reference integrity and reasoned change",
+      "original_row": "| I7-R52 | Reference integrity and reasoned change | Preserve observed conduct, report selection, original/current standard and revision rationale. Distinguish improvement, erosion and legitimate deliberative revision. | I7-T167, I7-T168, I7-T169, I7-T188 |",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R12",
+        "IMP-R17"
+      ]
+    },
+    {
+      "id": "I7-R53",
+      "title": "Information integrity and actor-visible change",
+      "original_row": "| I7-R53 | Information integrity and actor-visible change | Preserve source, measurement/reporting status, transformations, availability, receipt and interpretation. Published or reported improvement is not automatically verified physical improvement. | I7-T131, I7-T132, I7-T133, I7-T171, I7-T173, I7-T174, I7-T175, I7-T176, I7-T177, I7-T178, I7-T179, I7-T180, I7-T181, I7-T182, I7-T183, I7-T184, I7-T188, I7-T190 |",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R03",
+        "IMP-R04",
+        "IMP-R10",
+        "IMP-R11",
+        "IMP-R21",
+        "IMP-R25",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "I7-R54",
+      "title": "Bounded practice and implementation",
+      "original_row": "| I7-R54 | Bounded practice and implementation | Expose assumptions, useful existing capability, justified simplification and unresolved mechanisms; allow provisional decisions without claiming omniscience, automatic adoption or a competent universal learner. | I7-T128, I7-T129, I7-T130, I7-T146, I7-T147, I7-T148, I7-T155, I7-T156, I7-T157, I7-T170, I7-T171, I7-T173, I7-T174, I7-T175, I7-T176, I7-T177, I7-T178, I7-T179, I7-T180, I7-T181, I7-T182, I7-T183, I7-T184, I7-T188, I7-T191, I7-T192 |",
+      "implementation_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R22",
+        "IMP-R24"
+      ]
+    }
+  ],
+  "appendix_requirements": [
+    {
+      "id": "AF-R01",
+      "title": "Preserve shared identity and scope",
+      "original_row": "| AF-R01 | Preserve shared identity and scope | One referent can participate in multiple views; no duplicate stock, resource or commitment. | AD18; AP31; AP33 | I7-R01, I7-R09, I7-R17 | AF-T01 |",
+      "implementation_ids": [
+        "IMP-R05"
+      ]
+    },
+    {
+      "id": "AF-R02",
+      "title": "Separate descriptive role and evidence status",
+      "original_row": "| AF-R02 | Separate descriptive role and evidence status | Event, state, pattern, structure and mechanism are independent of measured, reported, inferred or assumed status. | AD05; AP04; AP38 | I7-R11, I7-R43 | AF-T02 |",
+      "implementation_ids": [
+        "IMP-R03",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "AF-R03",
+      "title": "Use explicit accumulation and gross-flow accounting",
+      "original_row": "| AF-R03 | Use explicit accumulation and gross-flow accounting | Declare units, conversion, initial state and interval; constant level does not mean zero flows. | AD04; AD07; AD16; AP05–AP09 | I7-R02, I7-R03 | AF-T03, AF-T22 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R16"
+      ]
+    },
+    {
+      "id": "AF-R04",
+      "title": "Preserve joint constraints and resource closure",
+      "original_row": "| AF-R04 | Preserve joint constraints and resource closure | Include relevant sources/sinks, renewal, complementary inputs, shared capacities and changes in limiting conditions. | AD09; AP23–AP25; AP32–AP35 | I7-R04, I7-R17, I7-R18 | AF-T04 |",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R06"
+      ]
+    },
+    {
+      "id": "AF-R05",
+      "title": "Qualify mechanism form and applicability",
+      "original_row": "| AF-R05 | Qualify mechanism form and applicability | Linear, nonlinear, threshold and regime claims need domain and source status; topology alone supplies no trajectory. | AD10–AD12; AD15; AP17–AP18; AP30 | I7-R04, I7-R13, I7-R16, I7-R32 | AF-T05 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R08"
+      ]
+    },
+    {
+      "id": "AF-R06",
+      "title": "Require complete feedback and actual feasibility",
+      "original_row": "| AF-R06 | Require complete feedback and actual feasibility | Trace stock-to-rate return, reference, disturbances, timing, support and actuation; polarity does not certify stability. | AD02; AD06; AP12–AP16 | I7-R04, I7-R19, I7-R36 | AF-T06 |",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R11",
+        "IMP-R13"
+      ]
+    },
+    {
+      "id": "AF-R07",
+      "title": "Respect causal time, delay and commitments",
+      "original_row": "| AF-R07 | Respect causal time, delay and commitments | Later evidence cannot affect earlier action; retain pending effects, physical timing, relevant history and horizons. | AP14; AP19–AP20; AP35–AP36; AG12 | I7-R03, I7-R14, I7-R19, I7-R35, I7-R51 | AF-T07 |",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "AF-R08",
+      "title": "Keep actor knowledge owned and bounded",
+      "original_row": "| AF-R08 | Keep actor knowledge owned and bounded | Available data, receipt, attention, interpretation, policy, intention and realized effect remain distinct. | AD03; AP02; AP37; AG03 | I7-R15, I7-R37, I7-R41, I7-R53 | AF-T08 |",
+      "implementation_ids": [
+        "IMP-R11"
+      ]
+    },
+    {
+      "id": "AF-R09",
+      "title": "Qualify resilience and repair",
+      "original_row": "| AF-R09 | Qualify resilience and repair | Specify disturbance, function/regime, horizon, dependencies, support and finite recovery ability. | AD13; AP10; AP26–AP27; AG08 | I7-R06, I7-R07, I7-R25, I7-R36 | AF-T09 |",
+      "implementation_ids": [
+        "IMP-R13"
+      ]
+    },
+    {
+      "id": "AF-R10",
+      "title": "Separate actual organization change from learning claims and model revision",
+      "original_row": "| AF-R10 | Separate actual organization change from learning claims and model revision | Describe generating/selection/retention process and carry-over; novelty alone is not useful intelligence. | AD14; AP28; AL04 | I7-R08, I7-R14, I7-R39 | AF-T10 |",
+      "implementation_ids": [
+        "IMP-R14"
+      ]
+    },
+    {
+      "id": "AF-R11",
+      "title": "Keep hierarchy, authority, local goals and wider effects separate",
+      "original_row": "| AF-R11 | Keep hierarchy, authority, local goals and wider effects separate | Composition is not a command relation; compare autonomy, coordination, consequence incidence and ability to respond. | AD08; AD17; AP29; AG07; AG09 | I7-R09, I7-R10, I7-R49, I7-R50 | AF-T11 |",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R07",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "AF-R12",
+      "title": "Treat scenarios as conditional and test several adequacy questions",
+      "original_row": "| AF-R12 | Treat scenarios as conditional and test several adequacy questions | Preserve model version, initial history, driver assumptions, interventions, uncertainty and alternative explanations. | AP21–AP22; AP39; AM01–AM09 | I7-R11, I7-R12, I7-R13, I7-R31 | AF-T12 |",
+      "implementation_ids": [
+        "IMP-R08",
+        "IMP-R10",
+        "IMP-R16"
+      ]
+    },
+    {
+      "id": "AF-R13",
+      "title": "Use archetypes as conditional diagnostic views",
+      "original_row": "| AF-R13 | Use archetypes as conditional diagnostic views | Require actual mechanism evidence and allow overlapping trap assessments over shared referents. | AD01; AT01–AT08 | I7-R21, I7-R30 | AF-T13 |",
+      "implementation_ids": [
+        "IMP-R15"
+      ]
+    },
+    {
+      "id": "AF-R14",
+      "title": "Require explicit intervention and adoption contracts",
+      "original_row": "| AF-R14 | Require explicit intervention and adoption contracts | Record target/direction, authority, resources, timing, transition and criteria; list rank does not determine benefit. | AT01–AT08; AL12–AL01 | I7-R28, I7-R31, I7-R38, I7-R40 | AF-T14 |",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R15",
+        "IMP-R23"
+      ]
+    },
+    {
+      "id": "AF-R15",
+      "title": "Control meanings, derived variables and domain correspondence",
+      "original_row": "| AF-R15 | Control meanings, derived variables and domain correspondence | Define variable role, unit/scale, operations, source term, aggregation and time; renaming does not create a mechanism. | AD07; AD10–AD11; AG04; AG13; AM01–AM09 | I7-R02, I7-R13, I7-R44 | AF-T15, AF-T22 |",
+      "implementation_ids": [
+        "IMP-R03",
+        "IMP-R21"
+      ]
+    },
+    {
+      "id": "AF-R16",
+      "title": "Retain qualitative values and distinct purpose/reference/proxy/outcome",
+      "original_row": "| AF-R16 | Retain qualitative values and distinct purpose/reference/proxy/outcome | Attribute concerns and scope; do not manufacture cardinal arithmetic, a global welfare function or automatic moral facts. | AD17–AD18; AT08; AG05; AG07; AG14–AG15 | I7-R05, I7-R26, I7-R40, I7-R45, I7-R50, I7-R52 | AF-T16 |",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R27"
+      ]
+    },
+    {
+      "id": "AF-R17",
+      "title": "Distinguish response, policy amendment and explanatory revision",
+      "original_row": "| AF-R17 | Distinguish response, policy amendment and explanatory revision | Each process has its own owner, evidence, state, updater or unknown, and adoption authority. | AD03; AD14; AG06; AG10 | I7-R08, I7-R15, I7-R46, I7-R47, I7-R48 | AF-T17 |",
+      "implementation_ids": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R17"
+      ]
+    },
+    {
+      "id": "AF-R18",
+      "title": "Preserve original evidence and expectations across revision",
+      "original_row": "| AF-R18 | Preserve original evidence and expectations across revision | No recycled prediction becomes independent evidence; retain source dependencies, corrections, old forecasts and unresolved discrepancies. | AP38–AP40; AG02; AG03; AG10 | I7-R11, I7-R42, I7-R48, I7-R53 | AF-T18 |",
+      "implementation_ids": [
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R26"
+      ]
+    },
+    {
+      "id": "AF-R19",
+      "title": "Declare executable numerical conventions and source ambiguities",
+      "original_row": "| AF-R19 | Declare executable numerical conventions and source ambiguities | Time step, scheduling, solver, kernel, prehistory, lookup curves, conversion and boundary treatment must be explicit. | AM01–AM09 | I7-R02, I7-R03, I7-R13, I7-R14, I7-R44 | AF-T19, AF-T21, AF-T23, AF-T24 |",
+      "implementation_ids": [
+        "IMP-R16",
+        "IMP-R28"
+      ]
+    },
+    {
+      "id": "AF-R20",
+      "title": "Use this asset as a versioned semantic reference",
+      "original_row": "| AF-R20 | Use this asset as a versioned semantic reference | Source meanings, engineering extensions, open reproduction questions and runtime claims have separate status. | AP38–AP40; AG10; section 1 authority policy | I7-R11, I7-R42, I7-R44, I7-R54 | AF-T20 |",
+      "implementation_ids": [
+        "IMP-R21",
+        "IMP-R26"
+      ]
+    }
+  ],
+  "retained_requirements": [
+    {
+      "id": "OBS-R001",
+      "title": "Continuous extensible intake",
+      "statement": "The observation layer shall receive configured live, historical, file and composite inputs without requiring a question or a known semantic class.",
+      "acceptance": "Mixed replay continues through goal changes and unknown media types; counts reconcile.",
+      "implementation_ids": [
+        "IMP-R01"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R002",
+      "title": "Native fidelity",
+      "statement": "The layer shall preserve received bytes and exact typed values, including precision, missingness and native structure within declared retention.",
+      "acceptance": "Digest/byte comparison and native-value comparisons match all acquired complete and partial payloads.",
+      "implementation_ids": [
+        "IMP-R01"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R003",
+      "title": "Source continuity",
+      "statement": "The layer shall maintain scoped persistent deliverer/producer/channel identities, aliases and acquisition epochs without conflating producer with subject.",
+      "acceptance": "Restarts, alias changes, recycled names and moved sensors resolve using dated evidence or explicit unknowns.",
+      "implementation_ids": [
+        "IMP-R02"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R004",
+      "title": "Subject association",
+      "statement": "The layer shall expose evidence-backed subject associations across time/modalities, allowing multiple subjects and unresolved identity.",
+      "acceptance": "All supported deterministic bindings match fixture truth; intentionally indistinguishable subjects remain unresolved.",
+      "implementation_ids": [
+        "IMP-R02"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R005",
+      "title": "Reversible identity history",
+      "statement": "The layer shall retain valid-time and recorded-time association assertions and reversible correction/retraction history.",
+      "acceptance": "A mistaken association is retracted without changing raw records; historical and current queries return their declared versions.",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R17"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R006",
+      "title": "Time and order",
+      "statement": "The layer shall preserve source times, clocks, epochs and ordering limits separately from receipt and commit times.",
+      "acceptance": "Clock reset, variable sample timing and two-year-late arrivals do not fabricate source order.",
+      "implementation_ids": [
+        "IMP-R04"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R007",
+      "title": "Acquired versus derived",
+      "statement": "The layer shall preserve lineage and distinguish native receipt from transformations, reports, simulations, predictions and model outputs where their origin is known.",
+      "acceptance": "Each derived result pins parent/procedure/version; unknown generation method is explicit, not guessed.",
+      "implementation_ids": [
+        "IMP-R26"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R008",
+      "title": "Composition and selectors",
+      "statement": "The layer shall preserve supplied nested composition and address supported parts with revision-specific selectors.",
+      "acceptance": "Native container survives; selectors address correct parts/revisions and malformed recursive expansion is bounded.",
+      "implementation_ids": [
+        "IMP-R03",
+        "IMP-R05"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R009",
+      "title": "Unknown and unsupported states",
+      "statement": "The layer shall capture admitted opaque content while exposing missing, partial, reference-only, unsupported and failed-processing states.",
+      "acceptance": "Unknown optional extensions round-trip; unknown required interpretation is unsupported; empty bytes differ from no payload.",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R08"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R010",
+      "title": "Durable commit acknowledgement",
+      "statement": "The layer shall acknowledge a requested supported durable level only after required payloads and commit metadata meet that level.",
+      "acceptance": "No acknowledged record loses required payload/metadata under the selected declared fault model.",
+      "implementation_ids": [
+        "IMP-R20"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R011",
+      "title": "Idempotent retry",
+      "statement": "The layer shall resolve retries using scoped occurrence/idempotency identity while preserving distinct byte-identical occurrences.",
+      "acceptance": "Delivery repeats do not create duplicate occurrences; independent identical inputs retain separate origins.",
+      "implementation_ids": [
+        "IMP-R20"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R012",
+      "title": "Crash recovery",
+      "statement": "The layer shall recover staged work, committed records, outbox effects and consumer cursors without silent loss or repetition of committed effects.",
+      "acceptance": "Kill-point recovery reconstructs accepted records and resumes each cursor; unknown outcomes remain queryable.",
+      "implementation_ids": [
+        "IMP-R20"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R013",
+      "title": "Bounded processing",
+      "statement": "The layer shall bound queues, recursive parsing, query work and optional worker resources independently of raw intake.",
+      "acceptance": "Worker/parser overload stays within configured bounds and cannot stall admitted intake within its own declared budget.",
+      "implementation_ids": [
+        "IMP-R19"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R014",
+      "title": "Admission and coverage",
+      "statement": "The layer shall apply declared admission/backpressure/sampling policy and expose known or unknown acquisition gaps and losses.",
+      "acceptance": "Offered/admitted/rejected/dropped/unknown counts reconcile and no silent sampling occurs.",
+      "implementation_ids": [
+        "IMP-R19"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R015",
+      "title": "Latency and throughput",
+      "statement": "The layer shall meet a prospectively pinned capacity and latency profile including queueing, durability and stated concurrent reads/workers.",
+      "acceptance": "Profile P0 or P1 workload meets specified latency/throughput/memory criteria; no target is reported as achieved without evidence.",
+      "implementation_ids": [
+        "IMP-R19"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R016",
+      "title": "No required model tokens",
+      "statement": "The mandatory intake, commit, registered-identity lookup and replay path shall require zero model inference calls and model tokens.",
+      "acceptance": "Instrumentation and dependency-failure checks observe zero model calls on that path; optional workers counted separately.",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R19"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R017",
+      "title": "Bounded evidence access",
+      "statement": "The layer shall provide paginated source/time/region/part access with native precision, commit cursors and projection freshness.",
+      "acceptance": "Bounded queries retrieve exact requested retained evidence or explicit unavailable/limit status without full-history serialization.",
+      "implementation_ids": [
+        "IMP-R19",
+        "IMP-R26"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R018",
+      "title": "Availability and fault profiles",
+      "statement": "The layer shall distinguish local recovery from replicated HA and expose acknowledgement/failover semantics for each supported profile.",
+      "acceptance": "P1 meets specified SLI/failover/RPO under pinned metadata-and-payload topology; minority/no-authority writes cannot diverge.",
+      "implementation_ids": [
+        "IMP-R24"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R019",
+      "title": "Capacity expansion",
+      "statement": "The layer shall support qualified expansion without changing evidence/identity semantics or requiring global per-observation identity scans.",
+      "acceptance": "N-to-2N experiment and hot-source/read-mix cases meet the declared expansion criterion or record the bottleneck.",
+      "implementation_ids": [
+        "IMP-R19",
+        "IMP-R24"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R020",
+      "title": "Retention and restoration",
+      "statement": "The layer shall retain or explicitly retire payloads and their required schemas, configuration, calibration and identity dependencies under separate policies.",
+      "acceptance": "Restore reconstructs permitted retained evidence/identity; eviction or lost keys/decoders produces explicit unavailable status.",
+      "implementation_ids": [
+        "IMP-R20"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R021",
+      "title": "Schema longevity",
+      "statement": "The layer shall version schemas/profiles/descriptors, preserve unknown optional metadata and prohibit silent reinterpretation of historical fields.",
+      "acceptance": "Old/new readers round-trip supported extensions and reject unsupported critical interpretation while retaining native data.",
+      "implementation_ids": [
+        "IMP-R21"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R022",
+      "title": "Identity uncertainty and conflict",
+      "statement": "The layer shall keep reported, candidate and operationally accepted bindings distinct and prevent disputed equivalence propagation.",
+      "acceptance": "Adversarial fixture has no forced false merge; conflicts invalidate shortcuts; learned natural-data accuracy remains separately unqualified.",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R08"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R023",
+      "title": "Acquisition requests",
+      "statement": "The layer shall execute supported acquisition-setting requests within declared capabilities and record requested/actual/denied/failed outcomes.",
+      "acceptance": "Repeated request IDs are accounted and commands, acknowledgements and measured outcomes remain distinct.",
+      "implementation_ids": [
+        "IMP-R09",
+        "IMP-R23"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R024",
+      "title": "Scope and parser isolation",
+      "statement": "The layer shall enforce declared scope access and resource isolation for intake, query and optional decoders.",
+      "acceptance": "Cross-scope references are not joined without explicit authority and hostile nested input cannot exhaust the core.",
+      "implementation_ids": [
+        "IMP-R01",
+        "IMP-R23"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R025",
+      "title": "Operational accounting",
+      "statement": "The layer shall expose complete outcome, coverage, lag, resource and cost accounting for eligible offered and admitted work.",
+      "acceptance": "Client and server accounting reconcile, outages cannot disappear from denominators, and worker cost is not omitted.",
+      "implementation_ids": [
+        "IMP-R19"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R026",
+      "title": "Versioned policies",
+      "statement": "The layer shall pin admission, retention, binding and processing policy versions needed to reconstruct a declared historical view.",
+      "acceptance": "Replaying the same committed prefix and policy gives the same bookkeeping view or declares a nondeterministic procedure/version.",
+      "implementation_ids": [
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "OBS-R027",
+      "title": "Derived-view compatibility",
+      "statement": "The layer shall version decoder/model/descriptor outputs and preserve their input selectors and compatibility limits.",
+      "acceptance": "A worker version change creates a new view and cannot silently mix incompatible descriptors.",
+      "implementation_ids": [
+        "IMP-R21"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R001",
+      "title": "Host representations and distinguish state",
+      "statement": "The substrate shall host addressable representations of supplied structures and state, preserving modality/order/composition and qualitative or unquantified content without requiring a universal numeric or stock-flow encoding.",
+      "acceptance": "A mixed numeric/qualitative fixture retains distinct source content, represented state and explicit unknowns through creation and retrieval.",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R03"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R002",
+      "title": "Preserve identity, dependencies and revision lineage",
+      "statement": "The substrate shall preserve internal identity, versioned dependencies and corrections without rewriting acquired evidence or equating internal representation identity with physical identity.",
+      "acceptance": "A false association can be retracted or split with prior as-of state and affected dependencies still inspectable.",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R17"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R003",
+      "title": "Distinguish interface and response properties",
+      "statement": "The substrate shall distinguish interaction boundary/participants, permitted exchange direction, hypothesized response polarity, loop behavior and uncertain causal status, including multi-party and mediated relations.",
+      "acceptance": "Directed, symmetric, unknown, multi-step and context-dependent examples remain distinguishable without promoting a directed exchange to causal proof.",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R11"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R004",
+      "title": "Host scoped interaction and transition rules",
+      "statement": "The substrate shall host declared or proposed interaction/update mechanisms with applicability, exchange or transformation semantics, constraints and unknowns; copying information shall not implicitly impose material-conservation rules.",
+      "acceptance": "A pinned mechanism distinguishes state, rate, signal and appropriate constraints, with unknown mechanics and unsupported causal claims retained explicitly.",
+      "implementation_ids": [
+        "IMP-R06",
+        "IMP-R16"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R005",
+      "title": "Preserve timing and history dependencies",
+      "statement": "The substrate shall retain event/receipt/model-time distinctions and history required by supported delayed/asynchronous mechanisms, including perception, response and delivery delays and declared numerical timing where applicable.",
+      "acceptance": "Same-current-observation/different-history fixtures, delayed updates and replay retain their distinctions and use no evidence unavailable at the recorded prediction time.",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R28"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R006",
+      "title": "Compose and inspect at declared scales",
+      "statement": "The substrate shall support reusable nested and overlapping views with cross-level dependencies, retaining access to evidence and declaring losses and validity limits of compression/abstraction.",
+      "acceptance": "A coarse view exposes its supporting detail and any task-consequential loss; structural resemblance alone does not qualify transfer.",
+      "implementation_ids": [
+        "IMP-R05",
+        "IMP-R09"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R007",
+      "title": "Preserve uncertainty and rival mechanisms",
+      "statement": "The substrate shall preserve missing coverage, hidden-state uncertainty, conflicting and observationally indistinguishable explanations, including nonnumeric uncertainty, without treating unobserved as absent or imposing one scalar confidence.",
+      "acceptance": "Under insufficient evidence, alternatives remain distinct and unresolved; unknown values or coverage cannot silently become zero, false or independent confirmation.",
+      "implementation_ids": [
+        "IMP-R08"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R008",
+      "title": "Trace evidence and imported assistance",
+      "statement": "The substrate shall trace received claims, transformations, producer/model versions, imported knowledge, shared evidence and subsequent outcomes so learned experience is distinguishable from externally supplied proposals and repeated derivations.",
+      "acceptance": "An assisted proposal retains lineage and shared-evidence dependence; prospective controls can isolate the declared retained/native contribution.",
+      "implementation_ids": [
+        "IMP-R26"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R009",
+      "title": "Revise context and scope",
+      "statement": "The substrate shall support revisable context, regime and boundary hypotheses, preserving unknown external drivers and distinguishing the actual acquisition/action boundary from modeled world scopes.",
+      "acceptance": "A previously supported relation can be narrowed, widened or invalidated under changed context without erasing earlier evidence or asserting a unique hidden cause.",
+      "implementation_ids": [
+        "IMP-R09"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R010",
+      "title": "Expose inquiry selection and stopping",
+      "statement": "The substrate shall expose evidence, assumptions, selection/exposure history and candidate alternatives needed for bounded inquiry and discriminating tests; scheduling policy and its objectives shall be declared at the relevant component boundary.",
+      "acceptance": "Inspection can identify selection bias and a credible challenge; inquiry can defer, stop or revisit on declared grounds without forcing equal credibility or constant model calls.",
+      "implementation_ids": [
+        "IMP-R09"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R011",
+      "title": "Separate trials, committed changes and authority",
+      "statement": "The substrate shall distinguish candidate/simulation state, committed internal state, observation evidence and measured external outcomes; versioned changes shall have explicit type, authority, concurrency and failure semantics.",
+      "acceptance": "Stale or unauthorized trial updates cannot overwrite evidence or commit effects; state/parameter/structure/policy/goal changes remain attributable and distinct.",
+      "implementation_ids": [
+        "IMP-R17",
+        "IMP-R23"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R012",
+      "title": "Enable accountable reorganization",
+      "statement": "The substrate shall permit supported creation, deletion/retirement, split, merge and rewiring of organization and explicit proposed mechanisms, retaining dependencies, history and declared irreversibility/loss.",
+      "acceptance": "A revised organization can be inspected against its predecessor, affected derivations are handled, and the origin of generative/selection rules remains explicit.",
+      "implementation_ids": [
+        "IMP-R14"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R013",
+      "title": "Keep goals and outcome criteria explicit",
+      "statement": "The substrate shall preserve inferred function, supplied task, inquiry objective, operational constraints and evaluation criteria as distinct versioned concepts; proposed changes shall not silently weaken acceptance or promote activity proxies to success.",
+      "acceptance": "A proposal that lowers a threshold, increases question count or changes a goal cannot be reported as improved prediction/task performance under unchanged criteria.",
+      "implementation_ids": [
+        "IMP-R07",
+        "IMP-R27"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R014",
+      "title": "Bound shared resources and account for complete costs",
+      "statement": "The substrate shall expose and enforce its declared storage/access/update budgets and backpressure with a defined owner, including costs and failures of inquiry/model dependencies under the selected operating profile.",
+      "acceptance": "A pinned workload accounts for offered/admitted/rejected work, failed calls and all relevant costs; saturation has bounded explicit behavior.",
+      "implementation_ids": [
+        "IMP-R19"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R015",
+      "title": "Preserve recoverable organization under declared retention",
+      "statement": "The substrate shall provide declared durability/recovery and loss semantics, with inspectable retention/compression decisions that consider rare but relevant structures and recovery needs rather than frequency alone.",
+      "acceptance": "Fault and context-change fixtures expose what survives, what is lost and why; no universal retention, perfect reversibility or HA guarantee is inferred.",
+      "implementation_ids": [
+        "IMP-R20"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    },
+    {
+      "id": "SUB-R016",
+      "title": "Support reproducible prospective assessment",
+      "statement": "The substrate shall expose configurations, assumptions, initial states, available evidence and candidate outcomes needed to test conditional predictions and revisions prospectively, separating model response, future-driver assumptions, numerical semantics and actual observations.",
+      "acceptance": "Pinned candidate tests and appropriate unchanged/alternative/assistance controls retain full outcomes; simulation agreement or historical fit alone cannot establish causal identification, transfer or intelligence.",
+      "implementation_ids": [
+        "IMP-R10",
+        "IMP-R16"
+      ],
+      "qualification": "retained_requirement_allocated_not_runtime_qualified"
+    }
+  ],
+  "consumer_obligations": [
+    {
+      "id": "DOWN-001",
+      "statement": "Consumers shall distinguish received claims and derived interpretations from independently validated facts.",
+      "implementation_ids": [
+        "IMP-R26"
+      ],
+      "status": "allocated_not_implemented"
+    },
+    {
+      "id": "DOWN-002",
+      "statement": "Consumers shall preserve unknown identity/time/coverage and shall not infer absence from an unobserved interval.",
+      "implementation_ids": [
+        "IMP-R02",
+        "IMP-R04"
+      ],
+      "status": "allocated_not_implemented"
+    },
+    {
+      "id": "DOWN-003",
+      "statement": "Consumers shall respect valid-time, known-at and policy versions and process identity corrections without rewriting raw evidence.",
+      "implementation_ids": [
+        "IMP-R04",
+        "IMP-R17"
+      ],
+      "status": "allocated_not_implemented"
+    },
+    {
+      "id": "DOWN-004",
+      "statement": "Consumers shall retrieve retained evidence through bounded selectors/cursors and handle explicit unavailable or truncated results.",
+      "implementation_ids": [
+        "IMP-R19",
+        "IMP-R20"
+      ],
+      "status": "allocated_not_implemented"
+    },
+    {
+      "id": "DOWN-005",
+      "statement": "Consumers shall declare imported model/feature experience and avoid silently mixing incompatible derived spaces.",
+      "implementation_ids": [
+        "IMP-R21",
+        "IMP-R26"
+      ],
+      "status": "allocated_not_implemented"
+    },
+    {
+      "id": "DOWN-006",
+      "statement": "Consumers requesting selective acquisition shall state target/settings/budget and retain selection lineage; inquiry value is a later-layer responsibility.",
+      "implementation_ids": [
+        "IMP-R09",
+        "IMP-R23"
+      ],
+      "status": "allocated_not_implemented"
+    },
+    {
+      "id": "DOWN-007",
+      "statement": "Consumers shall use the requested durability/commit level and must not treat a staged receipt as recoverable committed knowledge.",
+      "implementation_ids": [
+        "IMP-R20"
+      ],
+      "status": "allocated_not_implemented"
+    },
+    {
+      "id": "DOWN-008",
+      "statement": "Consumers shall account for full-task tokens/cost, including retrieval and failed calls, before claiming an efficiency advantage.",
+      "implementation_ids": [
+        "IMP-R19"
+      ],
+      "status": "allocated_not_implemented"
+    }
+  ],
+  "implementation_requirements": [
+    {
+      "id": "IMP-R01",
+      "title": "Native capture and immutable evidence",
+      "statement": "Receive and retain supported digital inputs without mandatory semantic inference, with honest receipt and availability states.",
+      "parents": [
+        "I7-R11",
+        "I7-R53"
+      ],
+      "system_parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-002",
+        "EDI-SYS-009",
+        "EDI-SYS-015"
+      ],
+      "component_ids": [
+        "C1",
+        "C2"
+      ],
+      "function_ids": [
+        "F10",
+        "F11",
+        "F12",
+        "F13"
+      ],
+      "verification_ids": [
+        "E01",
+        "E02"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R02",
+      "title": "Reversible long-term identity",
+      "statement": "Separate source, occurrence, payload and referent identities; retain reversible evidence-qualified continuity and association history.",
+      "parents": [
+        "I7-R01",
+        "I7-R14",
+        "I7-R44"
+      ],
+      "system_parents": [
+        "EDI-SYS-006",
+        "EDI-SYS-008",
+        "EDI-SYS-009"
+      ],
+      "component_ids": [
+        "C2",
+        "C3"
+      ],
+      "function_ids": [
+        "F21",
+        "F23",
+        "F30",
+        "F31"
+      ],
+      "verification_ids": [
+        "E03",
+        "E04"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R03",
+      "title": "Meaning, role and quantity fidelity",
+      "statement": "Preserve source meaning, units, native structure and independent role/basis axes without silently coercing unknown or ordinal values.",
+      "parents": [
+        "I7-R02",
+        "I7-R44",
+        "I7-R45",
+        "I7-R53"
+      ],
+      "system_parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-003",
+        "EDI-SYS-006"
+      ],
+      "component_ids": [
+        "C2",
+        "C3"
+      ],
+      "function_ids": [
+        "F20",
+        "F21",
+        "F23",
+        "F30"
+      ],
+      "verification_ids": [
+        "E05",
+        "E07"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R04",
+      "title": "Temporal state and knowledge cuts",
+      "statement": "Retain valid/known/commit and actor-availability semantics, history, delays and pending commitments across change.",
+      "parents": [
+        "I7-R03",
+        "I7-R19",
+        "I7-R35",
+        "I7-R51",
+        "I7-R53"
+      ],
+      "system_parents": [
+        "EDI-SYS-006",
+        "EDI-SYS-009",
+        "EDI-SYS-010",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C1",
+        "C3",
+        "C5",
+        "C7"
+      ],
+      "function_ids": [
+        "F11",
+        "F12",
+        "F31",
+        "F32",
+        "F50",
+        "F70"
+      ],
+      "verification_ids": [
+        "E06",
+        "E11"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R05",
+      "title": "Composition and directed interfaces",
+      "statement": "Compose nested/overlapping views using shared referents, role-indexed interfaces and explicit boundary closure.",
+      "parents": [
+        "I7-R01",
+        "I7-R09",
+        "I7-R14",
+        "I7-R17",
+        "I7-R30",
+        "I7-R34"
+      ],
+      "system_parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C3"
+      ],
+      "function_ids": [
+        "F30",
+        "F31",
+        "F32"
+      ],
+      "verification_ids": [
+        "E08",
+        "E16"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R06",
+      "title": "Joint dynamics and resource accounting",
+      "statement": "Represent conditional n-ary mechanisms and nonlinear domains; account transfers and shared constraints exactly once under declared conventions.",
+      "parents": [
+        "I7-R02",
+        "I7-R04",
+        "I7-R16",
+        "I7-R18",
+        "I7-R32",
+        "I7-R33",
+        "I7-R35",
+        "I7-R36"
+      ],
+      "system_parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-010"
+      ],
+      "component_ids": [
+        "C3",
+        "C5"
+      ],
+      "function_ids": [
+        "F30",
+        "F31",
+        "F50",
+        "F51",
+        "F52"
+      ],
+      "verification_ids": [
+        "E09",
+        "E10",
+        "E11",
+        "E12"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R07",
+      "title": "Purposes, criteria and owned assumptions",
+      "statement": "Keep attributed function/purpose/reference/criterion and empirical/normative assumptions distinct across actors and horizons.",
+      "parents": [
+        "I7-R05",
+        "I7-R10",
+        "I7-R26",
+        "I7-R40",
+        "I7-R41",
+        "I7-R45",
+        "I7-R49",
+        "I7-R50",
+        "I7-R52"
+      ],
+      "system_parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-006",
+        "EDI-SYS-012",
+        "EDI-SYS-016"
+      ],
+      "component_ids": [
+        "C0",
+        "C3",
+        "C6",
+        "C7"
+      ],
+      "function_ids": [
+        "F00",
+        "F01",
+        "F30",
+        "F61",
+        "F71",
+        "F73"
+      ],
+      "verification_ids": [
+        "E13",
+        "E26",
+        "E28"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R08",
+      "title": "Rivals, uncertainty and identifiability",
+      "statement": "Retain competing explanations and uncertainty axes; report non-identifiability instead of forcing a causal answer.",
+      "parents": [
+        "I7-R11",
+        "I7-R12",
+        "I7-R13",
+        "I7-R16",
+        "I7-R42",
+        "I7-R48",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-006"
+      ],
+      "component_ids": [
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "function_ids": [
+        "F30",
+        "F31",
+        "F40",
+        "F41",
+        "F62"
+      ],
+      "verification_ids": [
+        "E14",
+        "E22",
+        "E23"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R09",
+      "title": "Budgeted informative inquiry",
+      "statement": "Select feasible discriminating observations/tests and a scoped exploration frontier with explicit utility assumptions, stopping and selection lineage.",
+      "parents": [
+        "I7-R12",
+        "I7-R17",
+        "I7-R19",
+        "I7-R43",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-007",
+        "EDI-SYS-013"
+      ],
+      "component_ids": [
+        "C0",
+        "C4"
+      ],
+      "function_ids": [
+        "F00",
+        "F01",
+        "F02",
+        "F41",
+        "F42",
+        "F43"
+      ],
+      "verification_ids": [
+        "E15",
+        "E16",
+        "E31"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R10",
+      "title": "Prospective independent comparison",
+      "statement": "Seal original conditional predictions before selected outcomes and compare independent evidence without generated-source contamination.",
+      "parents": [
+        "I7-R20",
+        "I7-R48",
+        "I7-R53"
+      ],
+      "system_parents": [
+        "EDI-SYS-010",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C5",
+        "C6"
+      ],
+      "function_ids": [
+        "F53",
+        "F60",
+        "F61"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R11",
+      "title": "Actor information and response",
+      "statement": "Preserve channel, receipt, perception, policy, intended action and realized effect, using only actor-available information.",
+      "parents": [
+        "I7-R15",
+        "I7-R20",
+        "I7-R37",
+        "I7-R41",
+        "I7-R46",
+        "I7-R53"
+      ],
+      "system_parents": [
+        "EDI-SYS-006",
+        "EDI-SYS-010",
+        "EDI-SYS-016"
+      ],
+      "component_ids": [
+        "C3",
+        "C5",
+        "C7"
+      ],
+      "function_ids": [
+        "F30",
+        "F32",
+        "F51",
+        "F70",
+        "F71"
+      ],
+      "verification_ids": [
+        "E06",
+        "E26"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R12",
+      "title": "Policy review and authorized adoption",
+      "statement": "Distinguish fixed response, review, amendment, legitimate decision and actual adoption with resource and state carry-over semantics.",
+      "parents": [
+        "I7-R23",
+        "I7-R27",
+        "I7-R28",
+        "I7-R31",
+        "I7-R38",
+        "I7-R40",
+        "I7-R46",
+        "I7-R47",
+        "I7-R52"
+      ],
+      "system_parents": [
+        "EDI-SYS-008",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "component_ids": [
+        "C3",
+        "C6",
+        "C7"
+      ],
+      "function_ids": [
+        "F31",
+        "F62",
+        "F63",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "verification_ids": [
+        "E28",
+        "E29"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R13",
+      "title": "Conditional resilience and repair",
+      "statement": "Model repair/restoration support and resource competition, conditional success, degradation and recovery horizon without automatic resilience.",
+      "parents": [
+        "I7-R06",
+        "I7-R07",
+        "I7-R25",
+        "I7-R29",
+        "I7-R33",
+        "I7-R36"
+      ],
+      "system_parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-010"
+      ],
+      "component_ids": [
+        "C3",
+        "C5"
+      ],
+      "function_ids": [
+        "F30",
+        "F51",
+        "F52"
+      ],
+      "verification_ids": [
+        "E24"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R14",
+      "title": "Actual organizational transition",
+      "statement": "Represent generation/selection/retention and real membership or interface changes separately from analyst correction, preserving history and pending state.",
+      "parents": [
+        "I7-R08",
+        "I7-R14",
+        "I7-R34",
+        "I7-R39"
+      ],
+      "system_parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-008",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C3",
+        "C5",
+        "C7"
+      ],
+      "function_ids": [
+        "F30",
+        "F31",
+        "F51",
+        "F73"
+      ],
+      "verification_ids": [
+        "E25"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R15",
+      "title": "Trap and intervention diagnosis",
+      "statement": "Treat traps and leverage as conditional mechanism assessments, with rivals, adoption feasibility, transitions and wider consequences.",
+      "parents": [
+        "I7-R21",
+        "I7-R22",
+        "I7-R23",
+        "I7-R24",
+        "I7-R25",
+        "I7-R26",
+        "I7-R27",
+        "I7-R28",
+        "I7-R29",
+        "I7-R30",
+        "I7-R31",
+        "I7-R32",
+        "I7-R33",
+        "I7-R34",
+        "I7-R35",
+        "I7-R36",
+        "I7-R37",
+        "I7-R38",
+        "I7-R39",
+        "I7-R40",
+        "I7-R41",
+        "I7-R42"
+      ],
+      "system_parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-010",
+        "EDI-SYS-012",
+        "EDI-SYS-016"
+      ],
+      "component_ids": [
+        "C4",
+        "C5",
+        "C7"
+      ],
+      "function_ids": [
+        "F40",
+        "F41",
+        "F50",
+        "F51",
+        "F52",
+        "F71",
+        "F73"
+      ],
+      "verification_ids": [
+        "E27"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R16",
+      "title": "Supported numerical semantics",
+      "statement": "Compile only supported mechanisms, with declared solver/history/event/clock conventions, diagnostics and explicit unsupported status.",
+      "parents": [
+        "I7-R02",
+        "I7-R03",
+        "I7-R04",
+        "I7-R16",
+        "I7-R18",
+        "I7-R19",
+        "I7-R35",
+        "I7-R51"
+      ],
+      "system_parents": [
+        "EDI-SYS-010",
+        "EDI-SYS-013",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C5"
+      ],
+      "function_ids": [
+        "F50",
+        "F51",
+        "F52",
+        "F53"
+      ],
+      "verification_ids": [
+        "E17",
+        "E18",
+        "E19"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R17",
+      "title": "Controlled evidence-linked revision",
+      "statement": "Record justified retain/revise/reject/investigate decisions without altering original evidence, forecasts or standards.",
+      "parents": [
+        "I7-R08",
+        "I7-R14",
+        "I7-R42",
+        "I7-R47",
+        "I7-R48",
+        "I7-R52"
+      ],
+      "system_parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-008",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C3",
+        "C6"
+      ],
+      "function_ids": [
+        "F31",
+        "F32",
+        "F62",
+        "F63"
+      ],
+      "verification_ids": [
+        "E23",
+        "E25",
+        "E28"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R18",
+      "title": "Cross-system and proactive findings",
+      "statement": "Expand consequential interfaces and produce qualified strategically relevant findings through a bounded configured channel.",
+      "parents": [
+        "I7-R12",
+        "I7-R17",
+        "I7-R43",
+        "I7-R49",
+        "I7-R50",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-007",
+        "EDI-SYS-012"
+      ],
+      "component_ids": [
+        "C0",
+        "C4",
+        "C6"
+      ],
+      "function_ids": [
+        "F00",
+        "F03",
+        "F42",
+        "F43",
+        "F63"
+      ],
+      "verification_ids": [
+        "E16",
+        "E30",
+        "E31"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R19",
+      "title": "Complete bounded resource accounting",
+      "statement": "Bound work, storage, calls and queues; account offered and failed work and full-task costs, with unknown usage explicit.",
+      "parents": [
+        "I7-R18",
+        "I7-R33",
+        "I7-R39",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "function_ids": [
+        "F02",
+        "F13",
+        "F22",
+        "F33",
+        "F42",
+        "F51",
+        "F61",
+        "F72"
+      ],
+      "verification_ids": [
+        "E34",
+        "E38"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R20",
+      "title": "Durability, retention and recovery",
+      "statement": "Coordinate artifact/metadata commit, replay, fencing, retention tombstones and coherent restoration under a declared profile.",
+      "parents": [
+        "I7-R03",
+        "I7-R14",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C3"
+      ],
+      "function_ids": [
+        "F02",
+        "F11",
+        "F13",
+        "F31",
+        "F33"
+      ],
+      "verification_ids": [
+        "E02",
+        "E33",
+        "E35"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R21",
+      "title": "Versioned compatibility and replaceability",
+      "statement": "Version schemas, meanings, models, embedding spaces and projections; migrate explicitly or reject incompatibility.",
+      "parents": [
+        "I7-R13",
+        "I7-R14",
+        "I7-R44",
+        "I7-R53",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-013",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C2",
+        "C3"
+      ],
+      "function_ids": [
+        "F20",
+        "F21",
+        "F22",
+        "F31",
+        "F33"
+      ],
+      "verification_ids": [
+        "E32",
+        "E40"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R22",
+      "title": "Unfamiliar transfer assessment",
+      "statement": "Assess useful reuse under unfamiliar changed systems with reset, unrelated and strong conventional-memory controls.",
+      "parents": [
+        "I7-R13",
+        "I7-R16",
+        "I7-R29",
+        "I7-R42",
+        "I7-R48",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-011",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "function_ids": [
+        "F40",
+        "F41",
+        "F51",
+        "F52",
+        "F61",
+        "F62"
+      ],
+      "verification_ids": [
+        "E36",
+        "E37"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R23",
+      "title": "Permitted tools and execution integrity",
+      "statement": "Enforce separately owned operational policy, bounded source selection and proposal/authorization/receipt/effect separation.",
+      "parents": [
+        "I7-R28",
+        "I7-R31",
+        "I7-R38",
+        "I7-R47",
+        "I7-R49"
+      ],
+      "system_parents": [
+        "EDI-SYS-007",
+        "EDI-SYS-016"
+      ],
+      "component_ids": [
+        "C0",
+        "C7"
+      ],
+      "function_ids": [
+        "F02",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "verification_ids": [
+        "E29"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R24",
+      "title": "Qualified HA and scale profiles",
+      "statement": "Condition availability, durability and scaling claims on the declared topology, workload and verified fault profile.",
+      "parents": [
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-015"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C3"
+      ],
+      "function_ids": [
+        "F02",
+        "F13",
+        "F31",
+        "F33"
+      ],
+      "verification_ids": [
+        "E39"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R25",
+      "title": "Information intervention integrity",
+      "statement": "Distinguish passive recording from actual changes in actor-visible information and its received meaning and effects.",
+      "parents": [
+        "I7-R20",
+        "I7-R37",
+        "I7-R53"
+      ],
+      "system_parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-006",
+        "EDI-SYS-016"
+      ],
+      "component_ids": [
+        "C1",
+        "C3",
+        "C7"
+      ],
+      "function_ids": [
+        "F10",
+        "F11",
+        "F30",
+        "F32",
+        "F70",
+        "F71"
+      ],
+      "verification_ids": [
+        "E05",
+        "E06",
+        "E26"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R26",
+      "title": "Grounding and imported assistance lineage",
+      "statement": "Trace observations, interpretations, imported model proposals, common-source derivations and independent outcomes across every handoff.",
+      "parents": [
+        "I7-R11",
+        "I7-R44",
+        "I7-R48",
+        "I7-R53"
+      ],
+      "system_parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-006",
+        "EDI-SYS-014"
+      ],
+      "component_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C6"
+      ],
+      "function_ids": [
+        "F11",
+        "F20",
+        "F23",
+        "F31",
+        "F60",
+        "F61"
+      ],
+      "verification_ids": [
+        "E05",
+        "E20",
+        "E21"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R27",
+      "title": "Qualitative and affected-party coverage",
+      "statement": "Retain qualitative and contested concerns, responsibility, incidence and omitted parties without inventing cardinal welfare.",
+      "parents": [
+        "I7-R45",
+        "I7-R49",
+        "I7-R50"
+      ],
+      "system_parents": [
+        "EDI-SYS-006",
+        "EDI-SYS-012"
+      ],
+      "component_ids": [
+        "C0",
+        "C3",
+        "C6"
+      ],
+      "function_ids": [
+        "F00",
+        "F01",
+        "F30",
+        "F61",
+        "F63"
+      ],
+      "verification_ids": [
+        "E13"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R28",
+      "title": "Multiscale and terminal obligations",
+      "statement": "Retain relevant slow/fast state, commitments beyond the reporting horizon and timing/value-weighting distinctions.",
+      "parents": [
+        "I7-R03",
+        "I7-R19",
+        "I7-R35",
+        "I7-R51"
+      ],
+      "system_parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-010"
+      ],
+      "component_ids": [
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "function_ids": [
+        "F30",
+        "F31",
+        "F50",
+        "F51",
+        "F52",
+        "F62"
+      ],
+      "verification_ids": [
+        "E11",
+        "E18",
+        "E23"
+      ],
+      "specification": "docs/implementation/COMPONENTS.md",
+      "acceptance_authority": "docs/implementation/VERIFICATION.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    }
+  ],
+  "cases": [
+    {
+      "id": "E01",
+      "title": "Mixed native capture and duplicate payloads.",
+      "acceptance": "Text, image, waveform, structured numeric and an unknown composite retain byte hashes, order and distinct genuine occurrences; replayed notification does not duplicate an occurrence.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R01"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E02",
+      "title": "Restart between byte staging and metadata commit.",
+      "acceptance": "No false durable receipt, no missing acknowledged artifact, detectable/recoverable orphan or incomplete manifest, and no repeated committed occurrence.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R20"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E03",
+      "title": "Long-gap identity and source epoch reset.",
+      "acceptance": "Stable binding survives a simulated two-year interval; replacement/reset is explicit; ambiguous physical continuity remains unknown rather than silently merged.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R02"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E04",
+      "title": "Cross-modal false association and reversal.",
+      "acceptance": "Similar text/image candidates do not force a merge; split/correction preserves sources and invalidates dependent views.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R02"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E05",
+      "title": "Event versus structure and source dependence.",
+      "acceptance": "Direct structural inspection and reported event are represented on independent role/basis axes; rephrased copies remain one source lineage.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R03",
+        "IMP-R25",
+        "IMP-R26"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E06",
+      "title": "Temporal semantics, late arrival and actor visibility.",
+      "acceptance": "Known-at cuts exclude later reports; gaps and uncertain time persist; actors cannot use analyst-only or future information.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R11",
+        "IMP-R25"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E07",
+      "title": "Units, ordinal values and conversions.",
+      "acceptance": "Incompatible dimensional equations are rejected; allowed conversions retain meaning; ordinal/unknown values are not silently treated as numeric or zero.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R03"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E08",
+      "title": "Composition and overlapping system views.",
+      "acceptance": "Shared referent/resource appears once in accounting; query boundaries and external input closure remain explicit.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R05"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E09",
+      "title": "Multi-input nonlinear law.",
+      "acceptance": "One joint mechanism with domain/rivals is retained; unsupported independent edge coefficients are not substituted.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R06"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E10",
+      "title": "Stock-flow accounting and shared constraints.",
+      "acceptance": "Transfers balance under declared conversions/losses and capacity is consumed once; conflicting simultaneous demand is resolved by the declared rule.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R06"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E11",
+      "title": "Delays, backlog and state carry-over.",
+      "acceptance": "Same visible stock with different pending commitments gives the appropriately different forecast; topology change preserves relevant backlog.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R28"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E12",
+      "title": "Loop closure, sign and changing dominance.",
+      "acceptance": "Open paths are not labeled complete loops; sign is conditional; saturated or dormant mechanisms do not retain an unsupported fixed gain.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R06"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E13",
+      "title": "Scope/interpretation and stakeholder criteria.",
+      "acceptance": "Causal scope, interests, qualitative concerns, local/wider horizons and disagreements remain distinct; no compulsory global utility is invented.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R27"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E14",
+      "title": "Rival mechanism and non-identifiability.",
+      "acceptance": "Several structures fitting present data remain alternatives; the system proposes a distinguishing observation or reports non-identifiability.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R08"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E15",
+      "title": "Curiosity against noisy novelty.",
+      "acceptance": "Test selection favors feasible useful discrimination over uninformative random noise; heuristic utility is not presented as calibrated information gain.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R09"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E16",
+      "title": "System-of-systems boundary expansion.",
+      "acceptance": "Consequential interface frontier is exposed one supported link at a time; omitted drivers and duplicate accounting are detected; resource ceilings cause explicit defer/truncation.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R05",
+        "IMP-R09",
+        "IMP-R18"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E17",
+      "title": "Restricted compilation and unsupported laws.",
+      "acceptance": "Invalid operators/references/units or missing backend capability fail before execution; a qualitative unknown does not generate a precise fabricated trajectory.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R16"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E18",
+      "title": "Numerical refinement and discontinuity.",
+      "acceptance": "Solutions stabilize under declared step/tolerance refinement, balance diagnostics and threshold-event fixtures; unsupported delay/DAE semantics are explicit.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R16",
+        "IMP-R28"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E19",
+      "title": "Hybrid event and shared clock.",
+      "acceptance": "Event ties, continuous advancement, resource contention and pending updates follow one pinned policy without double application.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R16"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E20",
+      "title": "Prospective forecast seal and outcome correspondence.",
+      "acceptance": "Original model/cut/forecast/scoring rule is immutable; new independent outcomes match quantities/units/time; edited forecasts cannot replace old ones.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R26"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E21",
+      "title": "Synthetic evidence echo through a full loop.",
+      "acceptance": "Generated, summarized, exported and reimported simulation artifacts remain generated and cannot become independent corroboration.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R26"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E22",
+      "title": "Calibration, missing outcomes and uncertainty.",
+      "acceptance": "Missing/censored data remain explicit; numeric scores are only computed for declared suitable quantities; coverage claims state dependence/stationarity assumptions.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R08"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E23",
+      "title": "Error diagnosis and controlled revision.",
+      "acceptance": "Numerical, source, semantic, driver, parameter, rule and topology explanations remain distinguishable; revision records rationale and affected dependencies.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R17",
+        "IMP-R28"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E24",
+      "title": "Repair and finite shared support.",
+      "acceptance": "Repair uses the same resource authority as competing work, takes time and can fail; stable output with eroding restorative capacity remains visible.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R13"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E25",
+      "title": "Real reorganization versus model correction.",
+      "acceptance": "Membership/rewiring history, actual-world evidence and model reinterpretation have different operation types and preserve state.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R14",
+        "IMP-R17"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E26",
+      "title": "Bounded actor response and failed execution.",
+      "acceptance": "Intention uses perceived options; realized effects obey actual modeled capacity; no automatic optimal response or goal success is assumed.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R11",
+        "IMP-R25"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E27",
+      "title": "Eight traps, leverage and adverse transitions.",
+      "acceptance": "Trap labels require mechanism evidence/rivals; interventions specify direction, adoption, time/resources, carry-over and wider/adverse consequences.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R15"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E28",
+      "title": "Policy monitoring, authority and standard integrity.",
+      "acceptance": "Fixed response, amendment proposal, adoption and analyst revision stay separate; refusal/defer is possible; old criteria cannot be silently weakened.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R12",
+        "IMP-R17"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E29",
+      "title": "Action dispatch and uncertain completion.",
+      "acceptance": "Unauthorized dispatch is denied; idempotent reconciliation prevents duplicate permitted effects; a receipt remains distinct from observed effect.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E30",
+      "title": "Proactive strategic finding.",
+      "acceptance": "A configured internal finding carries novel decision relevance, mechanism/evidence chain, uncertainty, horizon and test suggestion; duplicates are suppressed without masking a material update.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R18"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E31",
+      "title": "Selective acquisition and bias.",
+      "acceptance": "Selection/exposure/cost lineage is preserved; unvisited or unavailable evidence is not treated as absent or as confirmation.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R18"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E32",
+      "title": "Schema/embedding migration and stale projection.",
+      "acceptance": "Incompatible versions are rejected or explicitly migrated; old/current views do not silently mix; authoritative cutoff queries bypass or expose stale indexes.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R21"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E33",
+      "title": "Retention and restore.",
+      "acceptance": "Tombstones and unavailable refs propagate; acknowledged data and forecasts restore with their histories at a declared coherent point.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R20"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E34",
+      "title": "Queue saturation and model outage.",
+      "acceptance": "Native intake stays within the declared capacity/spool profile; bounded reasoning yields; overload and freshness lag remain visible and counted.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R19"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E35",
+      "title": "Lease fencing, duplicate/reorder and concurrent revision.",
+      "acceptance": "A stale worker or stale base revision cannot overwrite a newer commit; unknown completion is reconciled and outputs remain idempotent.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R20"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E36",
+      "title": "Matched persistent-learning comparison.",
+      "acceptance": "Same base model, observations/tools and accounting; include reset, unrelated and conventional-memory controls; report all pinned outcomes without a predetermined winner.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R22"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E37",
+      "title": "Failure to fit or transfer under regime shift.",
+      "acceptance": "New operating point/parameters/rules/topology/input/measurement are challenged separately; unsupported transfer is withheld and failures remain logged.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R22"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E38",
+      "title": "Whole-path resource accounting.",
+      "acceptance": "Offered/admitted/failing work, all token/media/tool/retry costs and wall time reconcile; unknown usage is not zero; energy claims require instrumentation.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R19"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E39",
+      "title": "HA fault-domain and partition profile.",
+      "acceptance": "Only under an implemented HA1 topology: eligible request, durability, fencing, byte/reference consistency and failover results satisfy the pinned SLO/RPO/RTO and fault conditions.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R24"
+      ],
+      "scope": "later_HA_claim_only",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E40",
+      "title": "Provider/backend replacement.",
+      "acceptance": "Alternate provider or engine respects the same record/status/permission semantics; a version or quality change reopens qualification rather than silently inheriting results.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R21"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    }
+  ],
+  "product_qualification": "not_run",
+  "scope_note": "Allocation completeness does not establish semantic completeness or successful runtime behavior. The detailed conceptual master and source snapshots remain unchanged."
+}

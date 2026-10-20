@@ -16,7 +16,7 @@ The conceptual documents have consistency/traceability reviews. The master archi
 
 ## Current scope
 
-This task stores and organizes the new baseline. It does not implement an intelligence, migrate the earlier runtime, run experiments or establish superiority, throughput, cost, energy, availability or arbitrary scalability.
+The baseline is stored. The current task researches and documents the implementation architecture and technology tradeoffs before any runtime development. It does not migrate the earlier runtime, run inference/benchmarks or establish superiority, throughput, cost, energy, availability or arbitrary scalability.
 
 ## Remote status
 
@@ -24,4 +24,12 @@ The private repository [vighneshcandassamy-hub/edi-systems-foundation](https://g
 
 ## Next development step
 
-Review the retained observation and substrate contracts against the current seven-chapter architecture and semantic reference. Select one capability and an explicit implementation gate with the owner before developing a runtime.
+Review the [implementation specification](docs/implementation/README.md). The next implementation artifact is the concrete typed contracts, admission policy and one source/identity/time fixture for the first selected capability. Bind dependency/provider versions and the chosen profile before runtime work; keep numerical grammar and unsupported backend semantics explicit.
+
+## Implementation research checkpoint
+
+Date: 20 October 2026. Research baseline: `830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a`. Review branch: [architecture/implementation-tradeoffs-20261020](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/tree/architecture/implementation-tradeoffs-20261020/docs/implementation). Main retains the published foundation baseline; the new specification is proposed on the review branch.
+
+The package compares current reasoning/perception models, retrieval/memory, storage, orchestration, causal/system identification, simulation, uncertainty, exploration and planning techniques using 51 primary references. It specifies eight logical modules and 32 functions, covers all 42 overview nodes and 69 supplied connections, and traces 54 I7 requirements, 20 appendix requirements, 43 retained observation/substrate requirements, eight consumer obligations and 16 EDI system requirements through 28 implementation requirements. All 28 component pairs and 56 directed lanes are reviewed, with 40 proposed operation/result contracts and explicit no-link/prohibited directions.
+
+Documentation traceability, interface inventory and review-report checks pass within their stated scope; the source snapshots remain unchanged. The first documentation-output-link failure was repaired and retained separately. Forty additional prospective cases and finite DEV1/later HA profiles are specified. No product case or inference benchmark ran. Architecture self-review is scoped to proposal coherence; concrete contract, runtime, integration and scientific gates remain open as recorded in the specification and evidence files. Historical substrate REVISE status is preserved.
