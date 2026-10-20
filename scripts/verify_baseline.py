@@ -4,14 +4,14 @@ import hashlib,json,re
 
 ROOT=Path(__file__).resolve().parents[1]
 issues=[]
-manifest=json.loads((ROOT/'evidence/import_manifest.json').read_text())
+manifest=json.loads((ROOT/'evidence/import_manifest.json').read_text(encoding='utf-8'))
 for item in manifest['entries']:
  p=ROOT/item['path']
  if not p.is_file():issues.append('Missing imported file: '+item['path']);continue
  if hashlib.sha256(p.read_bytes()).hexdigest()!=item['sha256']:issues.append('Changed imported file: '+item['path'])
 arch=next(ROOT/x['path'] for x in manifest['entries'] if x['origin']['kind']=='current_library_architecture')
 ref=next(ROOT/x['path'] for x in manifest['entries'] if x['origin']['kind']=='current_library_reference')
-s=arch.read_text();a=ref.read_text()
+s=arch.read_text(encoding='utf-8');a=ref.read_text(encoding='utf-8')
 reqs=re.findall(r'^\| (I7-R\d{2}) \|',s,re.M)
 cases=re.findall(r'^\| (I7-T\d{2,3}) \|',s,re.M)
 if reqs!=[f'I7-R{i:02}' for i in range(1,55)]:issues.append('Master requirement definitions')
@@ -48,7 +48,7 @@ if reftests!=[f'AF-T{i:02}' for i in range(1,25)]:issues.append('Reference case 
 if 'PLANNED — NOT RUN' not in s or 'PLANNED — NOT RUN' not in a:issues.append('Missing scenario qualification')
 for rel in ['README.md','architecture/README.md','docs/decisions/ADR-001-foundation-baseline.md']:
  p=ROOT/rel
- for target in re.findall(r'\]\(([^)]+)\)',p.read_text()):
+ for target in re.findall(r'\]\(([^)]+)\)',p.read_text(encoding='utf-8')):
   if target.startswith(('https://','http://','#')):continue
   if not (p.parent/target.split('#')[0]).exists():issues.append('Broken navigation link: '+rel+' -> '+target)
 secret_patterns=[re.compile(r'gh[pousr]_[A-Za-z0-9]{30,}'),re.compile(r'github_pat_[A-Za-z0-9_]{50,}'),re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),re.compile(r'https?://[^/\s:@]+:[^/\s@]+@')]
@@ -56,7 +56,7 @@ files=[]
 for p in ROOT.rglob('*'):
  if not p.is_file() or '.git' in p.relative_to(ROOT).parts or '__pycache__' in p.parts:continue
  files.append(p)
- try:txt=p.read_text()
+ try:txt=p.read_text(encoding='utf-8')
  except UnicodeDecodeError:issues.append('Unexpected binary: '+p.relative_to(ROOT).as_posix());continue
  if any(pattern.search(txt) for pattern in secret_patterns):issues.append('Potential credential: '+p.relative_to(ROOT).as_posix())
  if p.name.startswith('.env') or p.suffix in {'.gguf','.safetensors','.pem','.key'}:issues.append('Disallowed payload: '+p.relative_to(ROOT).as_posix())

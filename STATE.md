@@ -20,7 +20,7 @@ This task stores and organizes the new baseline. It does not implement an intell
 
 ## Remote status
 
-The verified connected GitHub account is `vighneshcandassamy-hub`. Creation and upload of `edi-systems-foundation` are pending sign-in for the repository-creation operation. Local preparation is not proof of remote storage. Update this status only after verifying the actual repository and commit.
+The private repository [vighneshcandassamy-hub/edi-systems-foundation](https://github.com/vighneshcandassamy-hub/edi-systems-foundation) is created and populated on `main`. Baseline commit: `059f302abd277756639d858c44f89db0fd324daa`. All 53 remote file blob hashes were verified against the prepared snapshot; its Git tree is `31b1d285f61d3fc8e6527cee1ee5cdb662dbb905`, identical to local snapshot `1ca0fdc8c286eaf09f5b50b0c1aa0e8bafcdb57a`. Remote history was initialized through the authenticated GitHub connection, so the remote commit ID differs from the portable snapshot while the baseline file tree is identical. The subsequent checkpoint records this verified upload and makes the documentation checker explicitly read UTF-8 on Windows as well as Linux. Documentation/import/graph checks pass; no model scenarios were executed.
 
 ## Next development step
 
