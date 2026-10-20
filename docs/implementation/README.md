@@ -4,11 +4,13 @@ Version 0.3 — 20 October 2026. Status: researched and documented proposal; run
 
 The owner-requested [full integrated reasoning diagram](INTEGRATED_REASONING_DIAGRAM.md) and [reasoning/model decision](REASONING_INTEGRATION.md) are a separate v0.4 structural extension. They retain all detailed seven-chapter nodes, add explicit student/teacher guidance and a dormant future training path, and recommend fixed pretrained weights initially. Historical v0.3 qualification/checker reports do not assess this unqualified extension.
 
+Start with the [consolidated architecture, tools and mathematics reference v1.0](ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md). It distinguishes the agreed structure, initial engineering preferences, conditional methods and open bindings without treating all researched tools as selected dependencies.
+
 ## Recommendation
 
 Use a hybrid architecture: a replaceable LLM proposes interpretations and testable mechanisms; a typed temporal world model retains evidence, alternatives, nonlinear laws and history; appropriate numerical/causal tools execute scoped tests; independent outcomes support explicit revision. Start with a modular Python application, Postgres, source-native artifact storage and one selected reasoning provider. Add specialist frameworks only when a requirement and measured limitation justify them.
 
-Preferred first reasoning path: hosted `gpt-6.1-sol` for quality-oriented development, with Qwen3.5-9B as the first local candidate if offline/local deployment is required. Larger Qwen3.6-35B-A3B, current Claude models, Gemini 3.8 Flash and DeepSeek-V4 are compared rather than assumed inferior or automatically mixed into every task. No provider winner or performance advantage is established by this document.
+Current model roles follow REASONING_INTEGRATION.md: a compatible pretrained instruction/reasoning student served by vLLM, fixed weights initially, and a separate selectively used pretrained teacher. Exact checkpoints/providers remain open. The earlier hosted GPT-6.1 Sol and Qwen/Claude/Gemini/DeepSeek shortlist remains researched alternatives; a hosted closed-weight teacher/development candidate is not automatically the local vLLM student. No provider winner or performance advantage is established.
 
 The speed and cumulative-world extension is specified in [Scaling and world growth](SCALING_AND_WORLD_GROWTH.md), with a [proposed intrinsic inquiry policy](GROWTH_POLICY.json). It adds qualified Jev fast decisions, incremental projections, breadth/depth/refinement/temporal growth and bounded access requests. FAST1 latency targets remain unmeasured. Deep reasoning retains the deliberate path above.
 
@@ -18,6 +20,7 @@ The [tools and proprietary-core assessment](TOOLS_AND_PROPRIETARY_CORE.md) and [
 
 | Asset | Contents |
 | --- | --- |
+| [Consolidated reference v1.0](ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md) | Agreed architecture/model direction, complete starting and conditional tool catalogue, 22 mathematical techniques, original EDI assets, integration rules, source map and open bindings. |
 | [Tradeoffs](TRADEOFFS.md) | Whole-system alternatives; current reasoning/perception models; parsing, identity, retrieval/storage, orchestration, curiosity, causal inference, numerical/latent world models, uncertainty and policy/planning choices. |
 | [Component specifications](COMPONENTS.md) | Eight logical owners, 32 functions, nine representation families, inputs/outputs/state/authority/failures and capability-by-capability integration. |
 | [Contracts](CONTRACTS.md) | Proposed typed records, admission semantics, operation families, identity/time/delivery/recovery/retention/resource rules, shared dependencies and composed feedback paths. |

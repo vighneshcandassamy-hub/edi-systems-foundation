@@ -22,3 +22,7 @@ The [implementation specification](../docs/implementation/README.md) maps the cu
 ## Evolved EDI engineering diagram
 
 The [v0.8 integrated master](world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) retains the seven-chapter foundation and expands its single diagram with explicit EDI reasoning, student/teacher roles, admission and future training. Its [diagram-only view](../docs/implementation/INTEGRATED_REASONING_DIAGRAM.md) and [integration specification](../docs/implementation/REASONING_INTEGRATION.md) distinguish design from implementation/qualification. Original conceptual snapshots remain preserved authorities for their scopes.
+
+## Consolidated implementation reference
+
+[Architecture, tools and mathematics reference v1.0](../docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md) consolidates the agreed direction, initial tool preferences, conditional/deferred options, 22 mathematical techniques, original-code responsibilities, model roles and open bindings. It introduces no architectural change or qualification result.
