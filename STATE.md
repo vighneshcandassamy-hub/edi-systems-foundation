@@ -1,6 +1,6 @@
 # EDI Systems Foundation — checkpoint
 
-Date: 20 October 2026. Code version: 0.2.0; conceptual source baseline retained.
+Date: 20 October 2026. Code version: 0.3.0; conceptual source baseline retained.
 
 ## What is stored
 
@@ -65,3 +65,13 @@ Code version 0.2.0: eight owner modules, shared typed records/ports, partial C0 
 Only Python AST syntax, application imports and CLI parser construction were checked using existing Python 3.14.0, SQLite 3.50.4 and Pydantic 2.12.5. No package installation, Runtime instantiation, recording/replay example, product/qualification test, inference, training, scientific comparison or benchmark ran. The owner's structure-first instruction defers qualification. Contract/runtime/integration gates remain open; the self-review is not independent. Historical reports and original architecture snapshots are unchanged.
 
 Prepared interfaces retain all 28 pairs/56 lane dispositions, with operation-restricted C1 read facades; no direct C4-C5/C7 execution or cross-owner database writes are introduced. Next: minimal C3 hosting/admission/versioned reads, followed by C2 derivation against C1/C3. This checkpoint is published on the existing private architecture branch/draft PR; main remains the earlier foundation. Publication content hashes are checked separately from product qualification.
+
+## C3 world-hosting code checkpoint
+
+20 October 2026. Input remote revision `bd8b05d6c17114fe6747c18801399444838125a3`. Owner authorized C3 implementation. [C3 runtime guide](docs/implementation/C3_WORLD_RUNTIME.md), [ADR-004](docs/decisions/ADR-004-versioned-world-hosting.md), [source](src/edi/world/), [schemas](schemas/) and [source review](docs/implementation/evidence/c3-source-review.json) record the increment.
+
+Code 0.3.0 hosts nine typed representation families with roles/direction, composition, uncertainty, alternatives, valid time and source-linked evidence. Candidate-only component proposals and trusted-local modeling-use decisions append immutable versions. Optimistic base/record versions, request retry/status, bounded scoped historical/current reads, pinned refs, dependency validity/truncation, coarse revision invalidation and transactional selected C3 consumer progress are implemented in source. C3 has a separate lazily opened SQLite store; C1 recording never opens/waits for it. C0 may advance C1's checkpoint only after durable C3 progress. No shared C1/C3 transaction or physical identity/truth recognition is claimed.
+
+All sixteen SUB obligations are allocated with open work; all 28 pairs/56 directed lanes retain their design disposition. Historical internal SUB-C1/C2/C3 labels are distinguished from global owner IDs. Actor-view policy, executable mechanisms, automatic refinement/discovery, complete admission/semantic compatibility, whole-application backup/restore, retention/failover and product qualification remain open. C2 and C4-C7 remain unavailable; partial C0/C1/C3 implementations are not full component acceptance.
+
+Checks: source AST parsing, application imports, CLI parser construction and authored TOML/JSON parsing; schemas generated from code. No Runtime/store instance, example, integrated product case, test suite, benchmark, inference, training or simulation ran. No gate PASS issued; scoped source review remains REVISE with future obligations. Original snapshots and historical evidence remain preserved. Next component: C2 interpretation connecting C1 native evidence to C3 candidate structures. Source is saved on the private architecture branch/draft PR; main remains the earlier foundation. Publication hashes are verified separately from product qualification.

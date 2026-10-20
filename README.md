@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.2.0. **Status:** shared Python foundation and first local Observation C1 implementation; unqualified. C0 is partial, C2-C7 are declared/unavailable. Learning performance and empirical qualification remain open.
+**Code version:** 0.3.0. **Status:** shared Python foundation, first local Observation C1 and versioned world-hosting C3 implementations; unqualified. C0/C1/C3 are partial, C2/C4-C7 are declared/unavailable. Learning performance and empirical qualification remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
@@ -14,7 +14,11 @@ This repository brings together the integrated seven-chapter architecture, the a
 
 Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
 
-## First code increment
+## Current C3 code increment
+
+[C3 runtime specification and usage](docs/implementation/C3_WORLD_RUNTIME.md) cover nine typed representation families, evidence links to C1, candidate/operator admission, append-only versions, bounded views and dependency queries. [ADR-004](docs/decisions/ADR-004-versioned-world-hosting.md), [examples](examples/world/) and [generated contract schemas](schemas/) record the implementation. C3 uses its own lazily opened local store so C1 recording does not depend on C3 storage availability. No product tests, qualification or benchmarks have run for this increment.
+
+## Preserved first C1 code increment
 
 [Runtime specification and local-use guide](docs/implementation/FOUNDATION_C1_RUNTIME.md) describe the [shared code](src/edi/), [local examples](examples/observation/), [backend decision](docs/decisions/ADR-003-local-observation-runtime.md) and [scoped source review](docs/implementation/evidence/foundation-c1-source-review.json).
 

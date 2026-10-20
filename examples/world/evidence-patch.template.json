@@ -1,0 +1,37 @@
+{
+  "workspace_id": "forest-demo",
+  "request_id": "REPLACE_WITH_NEW_RETRY_STABLE_REQUEST_ID",
+  "base_revision": 0,
+  "proposer": "C0",
+  "reason": "Retain a candidate source-linked interpretation with explicit unknowns",
+  "change_kind": "explanation",
+  "operations": [
+    {
+      "operation": "put",
+      "expected_version": 0,
+      "representation": {
+        "record_id": "source-linked-report",
+        "scope_id": "forest",
+        "structure": {"family": "history-conditional-trajectory", "origin": "source-report"},
+        "basis": "source-report",
+        "support": [
+          {
+            "workspace_id": "forest-demo",
+            "record_id": "REPLACE_WITH_C1_RECORD_ID",
+            "sha256": "REPLACE_WITH_EXACT_C1_MANIFEST_SHA256",
+            "selector": "whole-object",
+            "origin_class": "unknown",
+            "lineage": []
+          }
+        ],
+        "properties": {"interpretation_status": "not decoded; original bytes remain with C1"}
+      }
+    }
+  ],
+  "consumed": {
+    "consumer_id": "world-import",
+    "expected_position": 0,
+    "position": 1,
+    "record_ids": ["REPLACE_WITH_C1_RECORD_ID"]
+  }
+}

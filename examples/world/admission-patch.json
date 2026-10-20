@@ -1,0 +1,21 @@
+{
+  "workspace_id": "forest-demo",
+  "request_id": "world-admission-0002",
+  "base_revision": 1,
+  "proposer": "C0",
+  "reason": "Operator permits this assumption-based object for a limited illustrative use",
+  "change_kind": "explanation",
+  "operations": [
+    {
+      "operation": "decide",
+      "record_id": "forest-view",
+      "expected_version": 1,
+      "admission": {
+        "decision": "accepted_for_use",
+        "rationale": "Its provisional boundary and explicit assumptions are adequate for demonstrating storage and querying",
+        "use_scope": "Illustrative representation storage only; no ecological prediction or policy decision",
+        "verification_obligation": "Gather independent observations and resolve omitted mechanisms before analysis"
+      }
+    }
+  ]
+}

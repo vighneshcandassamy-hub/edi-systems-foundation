@@ -1,0 +1,946 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C3-versioned-world-hosting-first-local-increment",
+  "gate": "contract",
+  "requested_scope": "authorized C3 source implementation; product qualification/tests deferred by owner",
+  "input_revision": "bd8b05d6c17114fe6747c18801399444838125a3",
+  "reviewer": {
+    "role": "implementer_and_source_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "architecture/substrate/REQUIREMENTS.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/C3_WORLD_RUNTIME.md"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "All sixteen SUB obligations allocated with source contribution and open work; no blanket fulfillment inferred.",
+      "references": [
+        "docs/implementation/C3_WORLD_RUNTIME.md"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Concrete family/operation/evidence/view ports exist; later actor visibility, semantic selectors and complete admission/consumer behavior remain open.",
+      "references": [
+        "src/edi/world/contracts.py",
+        "src/edi/world/service.py"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "One owner, common typed record pipeline and separate local store; no service per term or mandatory learned dependency.",
+      "references": [
+        "docs/decisions/ADR-004-versioned-world-hosting.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "C1 metadata correspondence, assumption/source/derivation basis, candidate policy, rivals, unknowns and explicit use-validity limits retained; source judgment only.",
+      "references": [
+        "src/edi/world/sqlite.py"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Finite quotas, current-head query index, service admission and SQL/graph budgets coded; RAM/cost/latency/fairness targets unmeasured.",
+      "references": [
+        "src/edi/world/config.py"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "C3 changes/progress atomic, request status/retry and C0 checkpoint ordering coded; crash/restore/retention/failover not qualified.",
+      "references": [
+        "src/edi/world/sqlite.py",
+        "src/edi/inquiry/runtime.py"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Existing architectural families/owner lanes retained, explicit local backend decision, Python sqlite3/Pydantic API references; no current SOTA/performance claim introduced.",
+      "references": [
+        "docs/decisions/ADR-004-versioned-world-hosting.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "revise",
+      "rationale": "AST/import/parser/TOML/JSON source checks and schema generation only. No Runtime/store instantiated or product tests/cases run.",
+      "references": [
+        "docs/implementation/C3_WORLD_RUNTIME.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "C3-SR01",
+      "status": "repaired-in-source",
+      "detail": "C3 initially opened eagerly; lazy composition now keeps C1 recording independent of C3 initialization."
+    },
+    {
+      "id": "C3-SR02",
+      "status": "repaired-in-source",
+      "detail": "Only new puts and accepted-for-use decisions revalidate old source evidence; withdrawal/retirement can proceed when it is unavailable."
+    },
+    {
+      "id": "C3-SR03",
+      "status": "repaired-in-source",
+      "detail": "Depth/node/edge/frontier cutoffs are explicit incomplete dependency results, not exhaustive certificates."
+    },
+    {
+      "id": "C3-SR04",
+      "status": "repaired-in-source",
+      "detail": "Component facades cannot accept themselves; operator decisions and authority-channel retry fingerprints are separate."
+    },
+    {
+      "id": "C3-SR05",
+      "status": "repaired-in-source",
+      "detail": "One canonical copied patch snapshot protects audit/fingerprint agreement against mutable nested input containers."
+    },
+    {
+      "id": "C3-SR06",
+      "status": "open",
+      "detail": "Whole-application restore/backup, retention propagation, executable dynamics, transitive revalidation, native curiosity and refinement qualification remain future work."
+    },
+    {
+      "id": "C3-SR07",
+      "status": "open",
+      "detail": "No source implementation case executed; no qualified runtime/integration/scientific capability claimed."
+    }
+  ],
+  "changes": [
+    "Nine discriminated representation families and typed references",
+    "Explicit candidate/operator modeling-use policy",
+    "Append-only world versions, request log, progress and bounded SQL/dependency views",
+    "C1 metadata validation, lazy C0 integration and CLI/examples/schemas"
+  ],
+  "verification": [
+    {
+      "kind": "source_structure_only",
+      "status": "completed",
+      "detail": "Python AST/application imports/CLI parser construction and authored TOML/JSON parsing; JSON schemas generated; no Runtime/store instantiation"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "gate_note": "Open readiness, self-review only. No gate helper, product test, benchmark, inference or training ran.",
+  "interface_inventory": {
+    "components": 8,
+    "pairs": 28,
+    "directed_lanes": 56,
+    "new_lanes": 0,
+    "lanes": [
+      {
+        "from": "C0",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-01A"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C0",
+        "to": "C2",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-02A"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C0",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-03A"
+        ],
+        "implementation_status": "local-source-subset; unqualified"
+      },
+      {
+        "from": "C0",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-04A"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C0",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-05A"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C0",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-06A"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C0",
+        "to": "C7",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-07A"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C1",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-01B"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C2",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-08A"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-09A"
+        ],
+        "implementation_status": "local-source-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-10A"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-11A"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-12A"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C7",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-13A"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C2",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-02B"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C2",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-08B"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C2",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-14A"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C2",
+        "to": "C4",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C2",
+        "to": "C5",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C2",
+        "to": "C6",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C2",
+        "to": "C7",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C3",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-03B"
+        ],
+        "implementation_status": "local-source-subset; unqualified"
+      },
+      {
+        "from": "C3",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-09B"
+        ],
+        "implementation_status": "local-source-subset; unqualified"
+      },
+      {
+        "from": "C3",
+        "to": "C2",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-14B"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C3",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-15A"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C3",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-16A"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C3",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-17A"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C3",
+        "to": "C7",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-18A"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C4",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-04B"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C4",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-10B"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C4",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C4",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-15B"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C4",
+        "to": "C5",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C4",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-19A"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C4",
+        "to": "C7",
+        "disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C5",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-05B"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C5",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-11B"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C5",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C5",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-16B"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C5",
+        "to": "C4",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C5",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-20A"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C5",
+        "to": "C7",
+        "disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C6",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-06B"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C6",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-12B"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C6",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C6",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-17B"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C6",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-19B"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C6",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-20B"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C6",
+        "to": "C7",
+        "disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C7",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-07B"
+        ],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C7",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-13B"
+        ],
+        "implementation_status": "prior-C1-subset; unqualified"
+      },
+      {
+        "from": "C7",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C7",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-18B"
+        ],
+        "implementation_status": "prepared-C3-facade; peer unavailable"
+      },
+      {
+        "from": "C7",
+        "to": "C4",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C7",
+        "to": "C5",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      },
+      {
+        "from": "C7",
+        "to": "C6",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only"
+      }
+    ]
+  },
+  "requirement_allocation": [
+    {
+      "id": "SUB-R001",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-003",
+        "EDI-SYS-004"
+      ],
+      "functions": [
+        "SUB-F001",
+        "SUB-F004"
+      ],
+      "cases": [
+        "SUB-V001",
+        "SUB-V004",
+        "SUB-V009",
+        "SUB-V014"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R002",
+      "parents": [
+        "EDI-SYS-008",
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "functions": [
+        "SUB-F003",
+        "SUB-F004"
+      ],
+      "cases": [
+        "SUB-V003",
+        "SUB-V008"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R003",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-006"
+      ],
+      "functions": [
+        "SUB-F002"
+      ],
+      "cases": [
+        "SUB-V002",
+        "SUB-V011",
+        "SUB-V015"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R004",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-010",
+        "EDI-SYS-016"
+      ],
+      "functions": [
+        "SUB-F002"
+      ],
+      "cases": [
+        "SUB-V009",
+        "SUB-V011",
+        "SUB-V015",
+        "SUB-V021"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R005",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-006",
+        "EDI-SYS-009",
+        "EDI-SYS-010",
+        "EDI-SYS-014"
+      ],
+      "functions": [
+        "SUB-F002",
+        "SUB-F003",
+        "SUB-F005"
+      ],
+      "cases": [
+        "SUB-V010",
+        "SUB-V016",
+        "SUB-V021"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R006",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-004",
+        "EDI-SYS-011",
+        "EDI-SYS-014"
+      ],
+      "functions": [
+        "SUB-F001",
+        "SUB-F004"
+      ],
+      "cases": [
+        "SUB-V001",
+        "SUB-V013",
+        "SUB-V022"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R007",
+      "parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-006",
+        "EDI-SYS-008"
+      ],
+      "functions": [
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "cases": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V012",
+        "SUB-V014",
+        "SUB-V022"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R008",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-006",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "functions": [
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "cases": [
+        "SUB-V004",
+        "SUB-V007",
+        "SUB-V017",
+        "SUB-V018"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R009",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-006",
+        "EDI-SYS-008"
+      ],
+      "functions": [
+        "SUB-F001",
+        "SUB-F003",
+        "SUB-F004"
+      ],
+      "cases": [
+        "SUB-V012",
+        "SUB-V022"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R010",
+      "parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-007",
+        "EDI-SYS-013",
+        "EDI-SYS-014"
+      ],
+      "functions": [
+        "SUB-F005",
+        "SUB-F006"
+      ],
+      "cases": [
+        "SUB-V005",
+        "SUB-V016",
+        "SUB-V017"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R011",
+      "parents": [
+        "EDI-SYS-008",
+        "EDI-SYS-010",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "functions": [
+        "SUB-F003",
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "cases": [
+        "SUB-V008",
+        "SUB-V014",
+        "SUB-V019",
+        "SUB-V021"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R012",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-008",
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "functions": [
+        "SUB-F003"
+      ],
+      "cases": [
+        "SUB-V003",
+        "SUB-V008",
+        "SUB-V020"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R013",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-012",
+        "EDI-SYS-013",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "functions": [
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "cases": [
+        "SUB-V014",
+        "SUB-V019"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R014",
+      "parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "functions": [
+        "SUB-F005",
+        "SUB-F006"
+      ],
+      "cases": [
+        "SUB-V006",
+        "SUB-V016",
+        "SUB-V020"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R015",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-013",
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "functions": [
+        "SUB-F003",
+        "SUB-F006"
+      ],
+      "cases": [
+        "SUB-V006",
+        "SUB-V013",
+        "SUB-V020"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    },
+    {
+      "id": "SUB-R016",
+      "parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-007",
+        "EDI-SYS-010",
+        "EDI-SYS-011",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "functions": [
+        "SUB-F002",
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "cases": [
+        "SUB-V007",
+        "SUB-V018",
+        "SUB-V019",
+        "SUB-V021",
+        "SUB-V022"
+      ],
+      "implementation_status": "partial-source-contribution; see C3_WORLD_RUNTIME.md",
+      "qualification": "not_run"
+    }
+  ],
+  "next_step": "Implement C2 interpretation over C1 native data and C3 candidate proposals; preserve C1/C3 outstanding obligations."
+}

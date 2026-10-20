@@ -1,0 +1,95 @@
+{
+  "$defs": {
+    "Family": {
+      "enum": [
+        "system-view",
+        "constituent",
+        "stock",
+        "flow-process",
+        "information-influence-link",
+        "response-relationship",
+        "function-purpose-reference-criterion",
+        "feedback-path",
+        "history-conditional-trajectory"
+      ],
+      "title": "Family",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "family": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Family"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "scope_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scope Id"
+    },
+    "state": {
+      "anyOf": [
+        {
+          "enum": [
+            "candidate",
+            "accepted_for_use",
+            "rejected",
+            "withdrawn",
+            "retired"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "State"
+    },
+    "include_inactive": {
+      "default": false,
+      "title": "Include Inactive",
+      "type": "boolean"
+    },
+    "valid_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid At"
+    },
+    "include_unknown_validity": {
+      "default": false,
+      "title": "Include Unknown Validity",
+      "type": "boolean"
+    }
+  },
+  "title": "WorldQuery",
+  "type": "object"
+}

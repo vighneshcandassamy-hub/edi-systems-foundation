@@ -10,13 +10,16 @@ from edi.inquiry.runtime import Runtime
 from edi.observe.contracts import Capture, OriginSpec, ReplayCursor
 from edi.shared.config import LocalProfile
 from edi.shared.errors import EDIError, ErrorCode
+from edi.world.config import WorldProfile
+from edi.world.contracts import WorldCursor, WorldPatch, WorldQuery
 
 
 def _parser():
-    parser = argparse.ArgumentParser(prog="edi", description="EDI local observation runtime (unqualified)")
+    parser = argparse.ArgumentParser(prog="edi", description="EDI local observation/world runtime (unqualified)")
     parser.add_argument("--config", type=Path, help="LocalProfile JSON; must include workspace_id/database")
     parser.add_argument("--database", type=Path, help="override local database path")
     parser.add_argument("--workspace", help="override workspace scope")
+    parser.add_argument("--world-config", type=Path, help="WorldProfile JSON; default is a separate sibling database")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities")
     p = sub.add_parser("register-origin")
@@ -46,6 +49,28 @@ def _parser():
     sub.add_parser("coverage")
     p = sub.add_parser("backup")
     p.add_argument("destination", type=Path)
+    sub.add_parser("world-head")
+    for command in ("world-propose", "world-commit"):
+        p = sub.add_parser(command)
+        p.add_argument("patch", type=Path)
+    p = sub.add_parser("world-get")
+    p.add_argument("record_id")
+    p.add_argument("--revision", type=int)
+    p = sub.add_parser("world-query")
+    p.add_argument("--query", type=Path)
+    p.add_argument("--cursor", type=Path)
+    p.add_argument("--revision", type=int)
+    p.add_argument("--limit", type=int, default=100)
+    p = sub.add_parser("world-dependencies")
+    p.add_argument("record_id")
+    p.add_argument("--revision", type=int)
+    p.add_argument("--direction", choices=("dependencies", "dependents"), default="dependencies")
+    p.add_argument("--depth", type=int, default=1)
+    p = sub.add_parser("world-status")
+    p.add_argument("request_id")
+    for command in ("world-progress", "world-ack"):
+        p = sub.add_parser(command)
+        p.add_argument("consumer")
     return parser
 
 
@@ -66,8 +91,10 @@ def main(argv=None) -> int:
             overrides["database"] = args.database
         if args.workspace is not None:
             overrides["workspace_id"] = args.workspace
-        runtime = Runtime(LocalProfile.model_validate(overrides))
+        world_profile = WorldProfile.model_validate_json(args.world_config.read_bytes()) if args.world_config else None
+        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile)
         obs = runtime.observation
+        world = runtime.world if args.command.startswith("world-") else None
         if args.command == "capabilities":
             _emit(runtime.capabilities())
         elif args.command == "register-origin":
@@ -97,6 +124,27 @@ def main(argv=None) -> int:
         elif args.command == "backup":
             obs.backup(args.destination)
             _emit({"status": "copied", "destination": str(args.destination), "qualification": "not-run"})
+        elif args.command == "world-head":
+            _emit({"revision": world.head(), "workspace_id": runtime.profile.workspace_id})
+        elif args.command in ("world-propose", "world-commit"):
+            patch = WorldPatch.model_validate_json(args.patch.read_bytes())
+            _emit(world.propose_patch(patch) if args.command == "world-propose" else world.commit(patch))
+        elif args.command == "world-get":
+            _emit(world.get(args.record_id, revision=args.revision))
+        elif args.command == "world-query":
+            query = WorldQuery.model_validate_json(args.query.read_bytes()) if args.query else None
+            cursor = WorldCursor.model_validate_json(args.cursor.read_bytes()) if args.cursor else None
+            _emit(world.query(query, revision=args.revision, cursor=cursor, limit=args.limit))
+        elif args.command == "world-dependencies":
+            _emit(world.dependencies(args.record_id, revision=args.revision,
+                                     direction=args.direction, max_depth=args.depth))
+        elif args.command == "world-status":
+            result = world.commit_status(args.request_id)
+            _emit(result if result is not None else {"status": "not-found", "request_id": args.request_id})
+        elif args.command == "world-progress":
+            _emit({"consumer": args.consumer, "position": world.consumer_position(args.consumer)})
+        elif args.command == "world-ack":
+            _emit({"consumer": args.consumer, "position": runtime.acknowledge_world_progress(args.consumer)})
         return 0
     except EDIError as exc:
         print(json.dumps(exc.as_dict()), file=sys.stderr)

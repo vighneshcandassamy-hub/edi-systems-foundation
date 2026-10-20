@@ -1,5 +1,7 @@
 # Shared foundation and Observation C1: first implementation
 
+Historical code 0.2.0 handoff: the subsequent [C3 increment](C3_WORLD_RUNTIME.md), code 0.3.0, implements the first world-hosting path while retaining this C1 scope/evidence record. C2 and C4-C7 remain unavailable. Earlier statements below describe the pinned first increment rather than newly qualifying C1.
+
 20 October 2026. Code version 0.2.0. Source implementation, **unqualified**. Input architecture revision `0fd018e60373ca08551ebd7d57ac859dbc8b64fd`; [ADR-003](../decisions/ADR-003-local-observation-runtime.md) records the local backend binding. Structure-first direction is retained: no product tests, qualification, inference, training or benchmark campaign ran.
 
 ## 1. What is implemented

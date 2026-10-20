@@ -2,6 +2,8 @@
 
 Research specification version 0.3 — 20 October 2026. The research below retains its original proposed status. A subsequent [shared foundation/C1 code increment](FOUNDATION_C1_RUNTIME.md), code version 0.2.0, implements a limited local path without qualification. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 
+The next [C3 world-hosting increment](C3_WORLD_RUNTIME.md), code version 0.3.0, adds concrete nine-family records, versioned candidate/admission history, C1 evidence correspondence and bounded revision/dependency views. It retains deferred qualification and does not implement the full substrate/discovery specification. [ADR-004](../decisions/ADR-004-versioned-world-hosting.md) records this scope.
+
 The owner-requested [full integrated reasoning diagram](INTEGRATED_REASONING_DIAGRAM.md) and [reasoning/model decision](REASONING_INTEGRATION.md) are a separate v0.4 structural extension. They retain all detailed seven-chapter nodes, add explicit student/teacher guidance and a dormant future training path, and recommend fixed pretrained weights initially. Historical v0.3 qualification/checker reports do not assess this unqualified extension.
 
 Start with the [consolidated architecture, tools and mathematics reference v1.0](ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md). It distinguishes the agreed structure, initial engineering preferences, conditional methods and open bindings without treating all researched tools as selected dependencies.
