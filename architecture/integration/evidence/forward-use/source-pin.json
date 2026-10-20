@@ -1,0 +1,9 @@
+{
+  "input": "/workspace/scratch/3e9b405bc235/forward-proposal.md",
+  "sha256": "fccbf8d9530e4555099ffd17d16782003ad970cd45a876e56e92a494495e96f7",
+  "authorized_output": "/workspace/scratch/3e9b405bc235/forward-output",
+  "read_scope": "Only proposal, named skill/checklist/template/checker and ancestor AGENTS paths; no sibling drafts or prior agent artifacts.",
+  "companion_skill": "No edi-component-review/SKILL.md at conventional adjacent path.",
+  "endpoint_specs": "None supplied; all newly specified ports/contracts are proposed.",
+  "source_revision_kind": "Content SHA-256; no git/remote revision asserted."
+}

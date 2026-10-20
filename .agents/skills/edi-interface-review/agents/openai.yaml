@@ -1,0 +1,4 @@
+interface:
+  display_name: "EDI Interface Review"
+  short_description: "Review every component pair and system feedback loop"
+  default_prompt: "Use $edi-interface-review to audit all directed component interfaces and their system integration."

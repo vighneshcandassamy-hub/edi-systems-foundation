@@ -1,0 +1,1470 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Design-only four-application review O/S/R/X plus independently governed shared external model M; 6 application pairs/12 lanes and 4 M boundary pairs/8 lanes; no product implementation.",
+  "input_revision": "sha256:fccbf8d9530e4555099ffd17d16782003ad970cd45a876e56e92a494495e96f7",
+  "source_ref": "forward-proposal.md",
+  "requirements": [
+    {
+      "id": "REQ-OBS",
+      "origin": "source",
+      "obligation": "Observe native payloads through O append/get/subscribe; retain payloads seven days.",
+      "flowdown": "O owns receipt/availability; readers preserve native provenance.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-REP",
+      "origin": "source",
+      "obligation": "S reads O and writes durable representations.",
+      "flowdown": "O returns observations; S durably applies occurrences and checkpoints together.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-REVISE",
+      "origin": "source",
+      "obligation": "Reason and revise physical identity and accepted state.",
+      "flowdown": "R/X propose; S alone admits and commits its identity, representation and accepted-state domains.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-ACQ",
+      "origin": "source",
+      "obligation": "Question and acquire missing observations.",
+      "flowdown": "R can reread existing O payloads; any new external acquisition requires a named authorized provider and action contract, currently absent.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-REPORT",
+      "origin": "source",
+      "obligation": "X reports confidence using S/R and does not need native payload access.",
+      "flowdown": "S/R provide grounded summaries and limitations; X reports their scope and uncertainty.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-PROV",
+      "origin": "derived",
+      "obligation": "Generated answers and correlated evidence cannot become independent external observations.",
+      "flowdown": "O admits native envelopes; R/M outputs remain marked generated in S and reports.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-RECOVERY",
+      "origin": "derived",
+      "obligation": "Recovery claims must fit O capabilities and seven-day retention.",
+      "flowdown": "S owns its durable cursor; O has no acknowledgement, lease, deletion receipt or replay guarantee beyond retention.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-ID",
+      "origin": "derived",
+      "obligation": "Occurrence identity, content equality and physical identity are distinct.",
+      "flowdown": "O occurrence IDs scope receipts; S preserves repeated occurrences and owns physical identity/correction lineage.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-BOUNDS",
+      "origin": "derived",
+      "obligation": "Finite inquiry, inference and storage work must yield to native intake.",
+      "flowdown": "R/X propagate bounded budgets; each owner enforces admission; native intake has separately reserved capacity.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-VERSION",
+      "origin": "derived",
+      "obligation": "Schema, model and embedding versions cannot be silently mixed.",
+      "flowdown": "Producers label versions; S and consumers reject incompatible spaces or select explicit migrations.",
+      "source_ref": "forward-proposal.md"
+    },
+    {
+      "id": "REQ-EXT",
+      "origin": "derived",
+      "obligation": "Outside model/source/action/infrastructure dependencies require explicit authority and failure behavior.",
+      "flowdown": "Callers own disclosure/cost; external results confer no commit or physical action authority.",
+      "source_ref": "forward-proposal.md"
+    }
+  ],
+  "components": [
+    {
+      "id": "O",
+      "name": "Native observation receipt and seven-day payload retention",
+      "kind": "application"
+    },
+    {
+      "id": "S",
+      "name": "Durable representation, identity and accepted-state authority",
+      "kind": "application"
+    },
+    {
+      "id": "R",
+      "name": "Reasoning and bounded inquiry coordinator",
+      "kind": "application"
+    },
+    {
+      "id": "X",
+      "name": "Confidence/reporting and proposal client",
+      "kind": "application"
+    },
+    {
+      "id": "M",
+      "name": "Shared independently governed model service",
+      "kind": "external_dependency"
+    }
+  ],
+  "lanes": [
+    {
+      "to": "S",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-OS-DATA"
+      ],
+      "from": "O"
+    },
+    {
+      "to": "R",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-OR-DATA"
+      ],
+      "from": "O"
+    },
+    {
+      "to": "X",
+      "disposition": "prohibited",
+      "rationale": "X has no native-payload requirement; O-X access, including O payload transit via S, would expand authority without a mission need.",
+      "contract_ids": [],
+      "from": "O"
+    },
+    {
+      "to": "M",
+      "disposition": "prohibited",
+      "rationale": "Native receipt/storage does not invoke models and M may neither inject observations nor access O directly.",
+      "contract_ids": [],
+      "from": "O"
+    },
+    {
+      "to": "O",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-SO-READ"
+      ],
+      "from": "S"
+    },
+    {
+      "to": "R",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-SR-DATA",
+        "C-SR-DECISION"
+      ],
+      "from": "S"
+    },
+    {
+      "to": "X",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-SX-DATA",
+        "C-SX-DECISION"
+      ],
+      "from": "S"
+    },
+    {
+      "to": "M",
+      "disposition": "not_needed",
+      "rationale": "S has no direct model-service responsibility; R/X call M and submit typed proposals to S. M cannot commit or read S directly; reassess only if responsibilities change.",
+      "contract_ids": [],
+      "from": "S"
+    },
+    {
+      "to": "O",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-RO-READ"
+      ],
+      "from": "R"
+    },
+    {
+      "to": "S",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-RS-READ",
+        "C-RS-INFERENCE",
+        "C-RS-IDENTITY"
+      ],
+      "from": "R"
+    },
+    {
+      "to": "X",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-RX-ANSWER",
+        "C-RX-ACQ-STATUS"
+      ],
+      "from": "R"
+    },
+    {
+      "to": "M",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-RM-REQUEST"
+      ],
+      "from": "R"
+    },
+    {
+      "to": "O",
+      "disposition": "prohibited",
+      "rationale": "X has no native-payload requirement; O-X access, including O payload transit via S, would expand authority without a mission need.",
+      "contract_ids": [],
+      "from": "X"
+    },
+    {
+      "to": "S",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-XS-READ",
+        "C-XS-ACCEPTANCE"
+      ],
+      "from": "X"
+    },
+    {
+      "to": "R",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-XR-QUESTION",
+        "C-XR-SUGGESTION"
+      ],
+      "from": "X"
+    },
+    {
+      "to": "M",
+      "disposition": "optional",
+      "rationale": "Optional direct X model assistance adds no native-data or commit authority; X can report from S/R without it and the path stays disabled until model contract agreement.",
+      "contract_ids": [
+        "C-XM-REQUEST"
+      ],
+      "from": "X"
+    },
+    {
+      "to": "O",
+      "disposition": "prohibited",
+      "rationale": "Native receipt/storage does not invoke models and M may neither inject observations nor access O directly.",
+      "contract_ids": [],
+      "from": "M"
+    },
+    {
+      "to": "S",
+      "disposition": "not_needed",
+      "rationale": "S has no direct model-service responsibility; R/X call M and submit typed proposals to S. M cannot commit or read S directly; reassess only if responsibilities change.",
+      "contract_ids": [],
+      "from": "M"
+    },
+    {
+      "to": "R",
+      "disposition": "required",
+      "rationale": "Required proposed operations are separately allowed and correlated; response transport does not grant symmetric mutation/action authority.",
+      "contract_ids": [
+        "C-MR-RESULT"
+      ],
+      "from": "M"
+    },
+    {
+      "to": "X",
+      "disposition": "optional",
+      "rationale": "Optional direct X model assistance adds no native-data or commit authority; X can report from S/R without it and the path stays disabled until model contract agreement.",
+      "contract_ids": [
+        "C-MX-RESULT"
+      ],
+      "from": "M"
+    }
+  ],
+  "contract_profiles": {
+    "bounded-grounded-v1": {
+      "ownership": "Sender owns its request/result record; receiver owns admission and its local durable state. No interface transfers state-domain commit authority. S alone owns representations, physical-identity decisions and accepted state; O owns retained source envelopes.",
+      "authority": "Only the operation allowlist on this contract is permitted. Read transport and receipt are not mutation acceptance or independently observed external effects. Direct foreign-store writes, authority delegation and unspecified actions are denied.",
+      "shape_versions": "Proposed typed envelope: schema_version, operation, request_id, actor, payload, provenance and optional expected_revision. Preserve unknown/native fields or explicitly reject unsupported versions; unknown is not false/zero. Result includes correlation ID and outcome. Endpoint schemas do not yet exist.",
+      "identity_scope": "Request identity is (caller identity, caller epoch, stable request_id); conflicting reuse is rejected. Observation occurrence, payload hash, source identity and physical entity are distinct identifiers. Carry source/epoch/occurrence and derivation/correction references; never infer physical sameness from a hash.",
+      "time_order": "Carry source event/valid time when known, source clock uncertainty, O receipt time, S commit/knowledge revision and model time/version when used. Cursor orders the O receipt stream only; no global source-time order. Late corrections refer to prior revisions.",
+      "delivery_idempotency": "Queries may be retried within the caller budget. Proposals require a stable request ID and payload fingerprint before first send; duplicate returns original disposition, reordered/stale proposals conflict explicitly. Timeout is unknown completion; reread local owner state before retry. Cancellation is best effort and never reverses durable commits.",
+      "commit_recovery": "Transport receipt is not commit. Receiver records applied request/occurrence IDs with the state mutation in one local durable transaction. Requests hold no foreign-store locks; crash before commit permits retry and crash after commit returns prior outcome. Store durability and transaction capability remain unverified.",
+      "retention": "O native payload availability is seven days, subject to unresolved exact expiry semantics. S keeps provenance metadata/references indefinitely as stated; reference lifetime does not extend payload lifetime. Return unavailable/expired with known horizon; retain gap and correction metadata. No unbounded replay or implicit archive.",
+      "resource_limits": "Fail closed until a policy specifies finite payload/result bytes, items/page, queue depth, concurrency, total deadline, attempts, model context/output tokens, monetary cost and storage admission. One work ID carries remaining budget across R/X/M and reads, including failed work; owners enforce rather than reset it. Native intake has positive reserved capacity; inquiry yields at its quota. Numeric settings and measured capacity are open.",
+      "errors": "Typed outcomes: ok, unknown, unavailable/expired, unsupported_version, denied, conflict, timeout, cancelled, partial and budget_exhausted; identify owner and request. Retry only transient outcomes within the remaining budget; never retry denied, expired, unsupported or exhausted indefinitely. Partial output carries coverage/gap fields.",
+      "feedback_grounding": "Carry native/generated classification, source occurrences, model/version/prompt lineage, selection/missingness and parent work IDs. Generated results remain inference, shared model/evidence counts once for independence, proposals remain proposals until S admission, and operational acceptance never proves external truth."
+    }
+  },
+  "contracts": [
+    {
+      "id": "C-SO-READ",
+      "to": "O",
+      "title": "S requests native observations",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "get | subscribe",
+      "producer_port": "S.observation_reader.request",
+      "consumer_port": "O.get | O.subscribe",
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-REP",
+        "REQ-RECOVERY"
+      ],
+      "verification_ids": [
+        "V01",
+        "V02",
+        "V03",
+        "V16"
+      ],
+      "facets": {
+        "authority": "Only get(id) and subscribe(cursor) are allowed on the existing O read surface; subscribe is used by S, R uses get for missing known observations. There is no O acknowledge, lease, acquisition action, subscriber commit or deletion API. R is denied append of generated material.",
+        "commit_recovery": "O read requests do not commit consumer state. S resumes from its own durable cursor after atomic local commit; R records read outcomes within its work record. Neither request nor transport response protects O data from seven-day expiry.",
+        "shape_versions": "Existing endpoint names are known, but native wire schemas are absent. Proposed request includes get id or opaque subscribe cursor, request correlation and bounded page/bytes/deadline selectors; a request ID is reader correlation, not an invented O mutation capability."
+      },
+      "from": "S"
+    },
+    {
+      "id": "C-OS-DATA",
+      "to": "S",
+      "title": "O returns native observations",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "get_result | subscribe_item",
+      "producer_port": "O.get_result | O.subscribe_item",
+      "consumer_port": "S.observation_reader.apply",
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-REP",
+        "REQ-ID",
+        "REQ-RECOVERY"
+      ],
+      "verification_ids": [
+        "V01",
+        "V02",
+        "V03",
+        "V16"
+      ],
+      "facets": {
+        "authority": "O returns only retained source envelopes or explicit unknown/unavailable/gap outcomes to the requesting reader. Delivery conveys neither physical identity truth nor S acceptance and is not an acknowledgement capability.",
+        "shape_versions": "Proposed source envelope preserves opaque native payload plus O occurrence id, source claim/epoch if known, payload hash, source/receipt times, native/generated type and opaque cursor for subscribe. Source claims remain unverified unless separately authenticated. Absent version/epoch/time is explicit unknown; get/subscribe schema and gap semantics await endpoint agreement.",
+        "delivery_idempotency": "O may redeliver an occurrence; S uses occurrence IDs, never content hashes, to suppress duplicate application. Cursor continuity, duplicate/reorder and invalid/expired cursor outcomes must be specified. R correlates get results; query timeout grants no acquisition authority.",
+        "commit_recovery": "O durability of append and snapshot/subscription handoff is not specified. S may claim recovery only after its own atomic representation/applied-occurrence/cursor commit and only within actual O availability. No acknowledgement is assumed."
+      },
+      "from": "O"
+    },
+    {
+      "id": "C-RO-READ",
+      "to": "O",
+      "title": "R rereads a known missing observation",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "get",
+      "producer_port": "R.observation_query.request",
+      "consumer_port": "O.get",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-RECOVERY",
+        "REQ-PROV"
+      ],
+      "verification_ids": [
+        "V05",
+        "V09",
+        "V14"
+      ],
+      "facets": {
+        "authority": "Only get(id) and subscribe(cursor) are allowed on the existing O read surface; subscribe is used by S, R uses get for missing known observations. There is no O acknowledge, lease, acquisition action, subscriber commit or deletion API. R is denied append of generated material.",
+        "commit_recovery": "O read requests do not commit consumer state. S resumes from its own durable cursor after atomic local commit; R records read outcomes within its work record. Neither request nor transport response protects O data from seven-day expiry.",
+        "shape_versions": "Existing endpoint names are known, but native wire schemas are absent. Proposed request includes get id or opaque subscribe cursor, request correlation and bounded page/bytes/deadline selectors; a request ID is reader correlation, not an invented O mutation capability."
+      },
+      "from": "R"
+    },
+    {
+      "id": "C-OR-DATA",
+      "to": "R",
+      "title": "O returns a retained observation to R",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "get_result",
+      "producer_port": "O.get_result",
+      "consumer_port": "R.observation_query.result",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-OBS",
+        "REQ-RECOVERY"
+      ],
+      "verification_ids": [
+        "V03",
+        "V14",
+        "V16"
+      ],
+      "facets": {
+        "authority": "O returns only retained source envelopes or explicit unknown/unavailable/gap outcomes to the requesting reader. Delivery conveys neither physical identity truth nor S acceptance and is not an acknowledgement capability.",
+        "shape_versions": "Proposed source envelope preserves opaque native payload plus O occurrence id, source claim/epoch if known, payload hash, source/receipt times, native/generated type and opaque cursor for subscribe. Source claims remain unverified unless separately authenticated. Absent version/epoch/time is explicit unknown; get/subscribe schema and gap semantics await endpoint agreement.",
+        "delivery_idempotency": "O may redeliver an occurrence; S uses occurrence IDs, never content hashes, to suppress duplicate application. Cursor continuity, duplicate/reorder and invalid/expired cursor outcomes must be specified. R correlates get results; query timeout grants no acquisition authority.",
+        "commit_recovery": "O durability of append and snapshot/subscription handoff is not specified. S may claim recovery only after its own atomic representation/applied-occurrence/cursor commit and only within actual O availability. No acknowledgement is assumed."
+      },
+      "from": "O"
+    },
+    {
+      "id": "C-RS-READ",
+      "to": "S",
+      "title": "R requests S state/status",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "read_snapshot_or_status",
+      "producer_port": "R.state_reader.request",
+      "consumer_port": "S.read",
+      "requirement_ids": [
+        "REQ-REP",
+        "REQ-REVISE",
+        "REQ-VERSION",
+        "REQ-REPORT"
+      ],
+      "verification_ids": [
+        "V04",
+        "V06",
+        "V15",
+        "V18"
+      ],
+      "facets": {
+        "authority": "Requester may read an authorized S snapshot and proposal disposition; it may not mutate S through this read, issue physical actions or request native O payload transit.",
+        "shape_versions": "Proposed selector includes representation/identity/acceptance IDs, revision/as-of knowledge scope, supported schema/embedding spaces and projection. Status lookup uses the same read request with proposal request_id; bounded paging and gap indicators are required.",
+        "commit_recovery": "Snapshot read is nonmutating; consumer persists its own requested revision/work record if needed. A read response may be stale and cannot reserve or lock S state."
+      },
+      "from": "R"
+    },
+    {
+      "id": "C-SR-DATA",
+      "to": "R",
+      "title": "S returns state to R",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "snapshot_result",
+      "producer_port": "S.read.result",
+      "consumer_port": "R.state_reader.result",
+      "requirement_ids": [
+        "REQ-REP",
+        "REQ-REVISE",
+        "REQ-VERSION",
+        "REQ-REPORT"
+      ],
+      "verification_ids": [
+        "V04",
+        "V06",
+        "V15",
+        "V18"
+      ],
+      "facets": {
+        "ownership": "S produces and owns durable representation, identity and accepted-state snapshots; R/X own only their derived working/report state. S response includes its revision and the provenance needed to interpret scope.",
+        "authority": "S releases an authorized projection; no read result grants commit authority or physical/source truth. X receives representation/confidence summaries and availability/lineage metadata, never native O payloads.",
+        "shape_versions": "Proposed snapshot includes schema/revision, state kind, unknowns, source/generation/correction lineage, evidence availability and as-of scope. Embeddings keyed by (model provider, model identifier, revision, preprocessing, dimension, normalization, metric); unsupported spaces are rejected or explicitly selected, never pooled.",
+        "commit_recovery": "S serves one committed revision or clearly marks partial/mixed revision. Consumers report that revision; delayed responses cannot override newer state. Store snapshot capability remains unverified."
+      },
+      "from": "S"
+    },
+    {
+      "id": "C-SR-DECISION",
+      "to": "R",
+      "title": "S returns proposal disposition to R",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "proposal_disposition",
+      "producer_port": "S.admission.result",
+      "consumer_port": "R.proposal.result",
+      "requirement_ids": [
+        "REQ-REVISE",
+        "REQ-ID",
+        "REQ-REPORT"
+      ],
+      "verification_ids": [
+        "V04",
+        "V07",
+        "V10"
+      ],
+      "facets": {
+        "authority": "Only S declares accepted, rejected, conflicted or pending for a proposal. Transport receipt is never acceptance. An accepted representation/identity/accepted-state decision remains operational S state, not confirmation of external truth.",
+        "shape_versions": "Proposed disposition includes original request ID, proposal kind, accepted/rejected/conflict/pending, reason and committed S revision if any. Lost responses are recovered via S read_snapshot_or_status, not a new acknowledgement endpoint.",
+        "commit_recovery": "S stores disposition, applied request ID and committed revision atomically with the admitted mutation. Crash recovery must reproduce disposition; pending is never reported as accepted."
+      },
+      "from": "S"
+    },
+    {
+      "id": "C-XS-READ",
+      "to": "S",
+      "title": "X requests S state/status",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "read_snapshot_or_status",
+      "producer_port": "X.state_reader.request",
+      "consumer_port": "S.read",
+      "requirement_ids": [
+        "REQ-REP",
+        "REQ-REVISE",
+        "REQ-VERSION",
+        "REQ-REPORT"
+      ],
+      "verification_ids": [
+        "V03",
+        "V06",
+        "V10",
+        "V13",
+        "V18"
+      ],
+      "facets": {
+        "authority": "Requester may read an authorized S snapshot and proposal disposition; it may not mutate S through this read, issue physical actions or request native O payload transit.",
+        "shape_versions": "Proposed selector includes representation/identity/acceptance IDs, revision/as-of knowledge scope, supported schema/embedding spaces and projection. Status lookup uses the same read request with proposal request_id; bounded paging and gap indicators are required.",
+        "commit_recovery": "Snapshot read is nonmutating; consumer persists its own requested revision/work record if needed. A read response may be stale and cannot reserve or lock S state."
+      },
+      "from": "X"
+    },
+    {
+      "id": "C-SX-DATA",
+      "to": "X",
+      "title": "S returns state to X",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "snapshot_result",
+      "producer_port": "S.read.result",
+      "consumer_port": "X.state_reader.result",
+      "requirement_ids": [
+        "REQ-REP",
+        "REQ-REVISE",
+        "REQ-VERSION",
+        "REQ-REPORT"
+      ],
+      "verification_ids": [
+        "V03",
+        "V06",
+        "V10",
+        "V13",
+        "V18"
+      ],
+      "facets": {
+        "ownership": "S produces and owns durable representation, identity and accepted-state snapshots; R/X own only their derived working/report state. S response includes its revision and the provenance needed to interpret scope.",
+        "authority": "S releases an authorized projection; no read result grants commit authority or physical/source truth. X receives representation/confidence summaries and availability/lineage metadata, never native O payloads.",
+        "shape_versions": "Proposed snapshot includes schema/revision, state kind, unknowns, source/generation/correction lineage, evidence availability and as-of scope. Embeddings keyed by (model provider, model identifier, revision, preprocessing, dimension, normalization, metric); unsupported spaces are rejected or explicitly selected, never pooled.",
+        "commit_recovery": "S serves one committed revision or clearly marks partial/mixed revision. Consumers report that revision; delayed responses cannot override newer state. Store snapshot capability remains unverified."
+      },
+      "from": "S"
+    },
+    {
+      "id": "C-SX-DECISION",
+      "to": "X",
+      "title": "S returns proposal disposition to X",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "proposal_disposition",
+      "producer_port": "S.admission.result",
+      "consumer_port": "X.proposal.result",
+      "requirement_ids": [
+        "REQ-REVISE",
+        "REQ-ID",
+        "REQ-REPORT"
+      ],
+      "verification_ids": [
+        "V04",
+        "V07",
+        "V10"
+      ],
+      "facets": {
+        "authority": "Only S declares accepted, rejected, conflicted or pending for a proposal. Transport receipt is never acceptance. An accepted representation/identity/accepted-state decision remains operational S state, not confirmation of external truth.",
+        "shape_versions": "Proposed disposition includes original request ID, proposal kind, accepted/rejected/conflict/pending, reason and committed S revision if any. Lost responses are recovered via S read_snapshot_or_status, not a new acknowledgement endpoint.",
+        "commit_recovery": "S stores disposition, applied request ID and committed revision atomically with the admitted mutation. Crash recovery must reproduce disposition; pending is never reported as accepted."
+      },
+      "from": "S"
+    },
+    {
+      "id": "C-RS-INFERENCE",
+      "to": "S",
+      "title": "R proposes retained inference",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "propose_inference",
+      "producer_port": "R.inference.propose",
+      "consumer_port": "S.admission.inference",
+      "requirement_ids": [
+        "REQ-REP",
+        "REQ-REVISE",
+        "REQ-PROV",
+        "REQ-VERSION"
+      ],
+      "verification_ids": [
+        "V05",
+        "V06",
+        "V07",
+        "V13"
+      ],
+      "facets": {
+        "authority": "R submits a proposal only; S validates provenance, supported version, expected revision and admission policy before any commit. Direct writes to S are denied. S rejects inadequate/conflicting evidence or retains an explicitly pending proposal.",
+        "shape_versions": "Proposed payload includes kind, stable request ID, expected S revision, scoped proposed change, supporting occurrence/derivation references, unknowns and reason. Unsupported extensions and incompatible versions produce explicit errors.",
+        "commit_recovery": "S alone atomically records applied proposal ID, resulting state/correction lineage and disposition. R owns durable retry/work identity, not S state. If S admission rules are absent the proposal stays pending or denied; no write-through.",
+        "feedback_grounding": "Generated inference is a distinct S record type with parent observations, M version/prompt/transform lineage, selection scope and availability. It is never reclassified as native external evidence, and cannot increase independent support merely by recurrence."
+      },
+      "from": "R"
+    },
+    {
+      "id": "C-RS-IDENTITY",
+      "to": "S",
+      "title": "R proposes physical-identity revision",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "propose_identity_correction",
+      "producer_port": "R.identity.propose",
+      "consumer_port": "S.admission.identity",
+      "requirement_ids": [
+        "REQ-REVISE",
+        "REQ-ID"
+      ],
+      "verification_ids": [
+        "V01",
+        "V04",
+        "V07",
+        "V15"
+      ],
+      "facets": {
+        "authority": "R submits a proposal only; S validates provenance, supported version, expected revision and admission policy before any commit. Direct writes to S are denied. S rejects inadequate/conflicting evidence or retains an explicitly pending proposal.",
+        "shape_versions": "Proposed payload includes kind, stable request ID, expected S revision, scoped proposed change, supporting occurrence/derivation references, unknowns and reason. Unsupported extensions and incompatible versions produce explicit errors.",
+        "commit_recovery": "S alone atomically records applied proposal ID, resulting state/correction lineage and disposition. R owns durable retry/work identity, not S state. If S admission rules are absent the proposal stays pending or denied; no write-through.",
+        "identity_scope": "Proposed associations/aliases and retractions carry source-scoped occurrence references, physical-identity hypothesis ID, temporal scope and superseded revision. Content hash is not occurrence or entity identity. S alone admits identity state; unresolved real-world sameness stays unknown."
+      },
+      "from": "R"
+    },
+    {
+      "id": "C-XS-ACCEPTANCE",
+      "to": "S",
+      "title": "X proposes simplified accepted state",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "propose_acceptance",
+      "producer_port": "X.acceptance.propose",
+      "consumer_port": "S.admission.acceptance",
+      "requirement_ids": [
+        "REQ-REVISE",
+        "REQ-REPORT",
+        "REQ-PROV"
+      ],
+      "verification_ids": [
+        "V04",
+        "V07",
+        "V10",
+        "V13"
+      ],
+      "facets": {
+        "authority": "X may propose a simplified accepted-state projection at an expected S revision; S alone validates and commits accepted state. X cannot directly replace representations or physical IDs. Acceptance is operational status, never external truth.",
+        "shape_versions": "Proposed projection carries schema version, expected S revision, support refs, simplification mapping, explicit unknowns/discarded detail, confidence scope and correction lineage; S rejects loss of required provenance or stale state.",
+        "commit_recovery": "S alone atomically records applied proposal ID, resulting state/correction lineage and disposition. R owns durable retry/work identity, not S state. If S admission rules are absent the proposal stays pending or denied; no write-through."
+      },
+      "from": "X"
+    },
+    {
+      "id": "C-XR-QUESTION",
+      "to": "R",
+      "title": "X asks a scoped reasoning question",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "reason_request",
+      "producer_port": "X.reasoning.request",
+      "consumer_port": "R.reasoning.admit",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-REPORT",
+        "REQ-BOUNDS"
+      ],
+      "verification_ids": [
+        "V07",
+        "V08",
+        "V13"
+      ],
+      "facets": {
+        "ownership": "X owns reporting question/work identity and bounded request; R owns inquiry execution/status. S remains state authority and O remains source-envelope owner.",
+        "authority": "X asks for reasoning over authorized S projections; R may read S/O and optionally invoke permitted M operations within budget, and may propose to S. No external acquisition or physical action is authorized by a question.",
+        "shape_versions": "Proposed question includes request/work ID, question, S revision/as-of scope, permitted data projections, requested uncertainty/coverage fields and remaining total budget; missing capability or scope returns an explicit error."
+      },
+      "from": "X"
+    },
+    {
+      "id": "C-XR-SUGGESTION",
+      "to": "R",
+      "title": "X suggests acquisition work",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "acquisition_suggestion",
+      "producer_port": "X.acquisition.suggest",
+      "consumer_port": "R.acquisition.admit",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-BOUNDS",
+        "REQ-EXT"
+      ],
+      "verification_ids": [
+        "V08",
+        "V09",
+        "V13",
+        "V14"
+      ],
+      "facets": {
+        "ownership": "X owns reporting question/work identity and bounded request; R owns inquiry execution/status. S remains state authority and O remains source-envelope owner.",
+        "authority": "Suggestion conveys no acquisition permission or obligation to retry. R may reread existing O ids; a new outside observation needs a separately approved provider/action capability. Current absent provider yields acquisition_unavailable.",
+        "shape_versions": "Suggestion includes stable work ID, sought evidence/known O ids, reason/selection policy, temporal scope, remaining budget and optional named capability; a capability name alone conveys no authority."
+      },
+      "from": "X"
+    },
+    {
+      "id": "C-RX-ANSWER",
+      "to": "X",
+      "title": "R returns grounded reasoning result",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "reason_result",
+      "producer_port": "R.reasoning.result",
+      "consumer_port": "X.reasoning.result",
+      "requirement_ids": [
+        "REQ-REPORT",
+        "REQ-PROV",
+        "REQ-VERSION"
+      ],
+      "verification_ids": [
+        "V05",
+        "V06",
+        "V11",
+        "V13"
+      ],
+      "facets": {
+        "ownership": "R owns the generated answer and lineage record; X owns reporting; S owns any later admitted state. Result is not a S acceptance decision.",
+        "authority": "R returns inference, uncertainty and missingness; X can report or propose a projection to S. Neither may present inference or shared-model agreement as independent native evidence.",
+        "shape_versions": "Proposed answer includes question/work ID, S revision/as-of scope, generated flag, claims/support refs, model/version and shared-dependency lineage, availability/selection limits and outcome; confidence is uncalibrated unless separately measured."
+      },
+      "from": "R"
+    },
+    {
+      "id": "C-RX-ACQ-STATUS",
+      "to": "X",
+      "title": "R returns acquisition disposition",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "acquisition_status",
+      "producer_port": "R.acquisition.status",
+      "consumer_port": "X.acquisition.status",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-REPORT",
+        "REQ-BOUNDS",
+        "REQ-EXT"
+      ],
+      "verification_ids": [
+        "V08",
+        "V09",
+        "V14"
+      ],
+      "facets": {
+        "authority": "R reports read outcome, exhausted, unavailable, denied or cancelled; it cannot claim a newly observed effect without an independently grounded receipt from a named authorized source. There is currently no such outside capability.",
+        "shape_versions": "Proposed status includes work/request ID, attempted known O ids, result occurrence refs if available, missing provider/authority, attempts and remaining budget, coverage gaps and final/nonfinal status."
+      },
+      "from": "R"
+    },
+    {
+      "id": "C-RM-REQUEST",
+      "to": "M",
+      "title": "R requests model assistance",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "inference_request",
+      "producer_port": "R.model.request",
+      "consumer_port": "M.inference",
+      "requirement_ids": [
+        "REQ-EXT",
+        "REQ-PROV",
+        "REQ-BOUNDS",
+        "REQ-VERSION"
+      ],
+      "verification_ids": [
+        "V05",
+        "V06",
+        "V08",
+        "V11",
+        "V13"
+      ],
+      "facets": {
+        "ownership": "R or X owns disclosure admission, per-work budget and durable request identity. M independently governs model execution and any provider retention; M is an external dependency, not a fifth application owner.",
+        "authority": "Only stateless inference over explicitly admitted projections is proposed. M receives no O/S store credentials, update authority, acquisition tools or physical actions. Calls stay disabled until data disclosure, tenancy, retention and cost policies are agreed.",
+        "shape_versions": "Proposed model request labels task, request/work ID, allowed context projection, schema/prompt/preprocessing/model provider+identifier+revision, requested output schema and finite token/time/cost limits. Never send native payloads through X.",
+        "identity_scope": "Work/request ID is stable locally; it does not imply M idempotent billing or execution. Model/version and input lineage are explicit; provider run ID is recorded if returned, never assumed.",
+        "delivery_idempotency": "Timeout may mean M executed and charged. No automatic retry without remaining total budget and acknowledged possible duplicate cost; M offers no assumed cancellation or dedup API. A local duplicate request is suppressed before dispatch.",
+        "commit_recovery": "Caller durably records admitted request and budget reservation before dispatch, then result/uncertain completion. A crash cannot grant another fresh budget. M output never commits S/O and provider execution cannot be rolled back by a local cancellation.",
+        "retention": "Proposed transmitted context minimization and provider data retention/deletion/tenant isolation are unconfirmed. Disable disclosure until agreed; S references to model outputs do not imply indefinite provider replay.",
+        "resource_limits": "Complete cost includes context construction, input/output tokens, calls, failed/duplicate work, queues, caller derivation and retained outputs. Enforce shared work deadline/attempt/token/cost caps and global R/X concurrency/rate limits; numeric caps and provider quotas are unresolved; denied policy means no call."
+      },
+      "from": "R"
+    },
+    {
+      "id": "C-MR-RESULT",
+      "to": "R",
+      "title": "M returns generated output to R",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "inference_result",
+      "producer_port": "M.inference.result",
+      "consumer_port": "R.model.result",
+      "requirement_ids": [
+        "REQ-EXT",
+        "REQ-PROV",
+        "REQ-BOUNDS",
+        "REQ-VERSION"
+      ],
+      "verification_ids": [
+        "V05",
+        "V06",
+        "V11",
+        "V13"
+      ],
+      "facets": {
+        "ownership": "M produces generated output; caller owns validation, provenance and local retention. M has no state-domain admission authority.",
+        "authority": "M result is advisory generated material only; caller validates schema and permitted scope. A model confidence token, agreement or tool-looking string grants no observation, action or commit capability.",
+        "shape_versions": "Proposed result includes request correlation, provider run/model/version when known, generated content, outcome, usage/cost when available and truncation/uncertainty markers. Missing version/usage remains unknown and blocks incompatible embedding admission or budget closure.",
+        "identity_scope": "Preserve caller work ID plus provider run ID when available; no physical/source identity is established by model output. S embeds only in an explicitly versioned space.",
+        "commit_recovery": "Caller may retain a validated generated result and update local budget atomically; any S admission is a separate proposal. Late/cancelled results cannot resurrect exhausted work or commit state.",
+        "retention": "Caller retention follows admitted policy; provider replay/deletion is not assumed. Preserve minimal model/version/input-lineage and known support availability when an output is retained.",
+        "feedback_grounding": "Mark every output generated; R/X share M failure/calibration/selection biases. Combined agreement is correlated, not independent support. Generated output may guide inquiry but cannot enter O as ordinary native evidence."
+      },
+      "from": "M"
+    },
+    {
+      "id": "C-XM-REQUEST",
+      "to": "M",
+      "title": "X requests model assistance",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "inference_request",
+      "producer_port": "X.model.request",
+      "consumer_port": "M.inference",
+      "requirement_ids": [
+        "REQ-EXT",
+        "REQ-PROV",
+        "REQ-BOUNDS",
+        "REQ-VERSION"
+      ],
+      "verification_ids": [
+        "V05",
+        "V06",
+        "V08",
+        "V11",
+        "V13"
+      ],
+      "facets": {
+        "ownership": "R or X owns disclosure admission, per-work budget and durable request identity. M independently governs model execution and any provider retention; M is an external dependency, not a fifth application owner.",
+        "authority": "Only stateless inference over explicitly admitted projections is proposed. M receives no O/S store credentials, update authority, acquisition tools or physical actions. Calls stay disabled until data disclosure, tenancy, retention and cost policies are agreed.",
+        "shape_versions": "Proposed model request labels task, request/work ID, allowed context projection, schema/prompt/preprocessing/model provider+identifier+revision, requested output schema and finite token/time/cost limits. Never send native payloads through X.",
+        "identity_scope": "Work/request ID is stable locally; it does not imply M idempotent billing or execution. Model/version and input lineage are explicit; provider run ID is recorded if returned, never assumed.",
+        "delivery_idempotency": "Timeout may mean M executed and charged. No automatic retry without remaining total budget and acknowledged possible duplicate cost; M offers no assumed cancellation or dedup API. A local duplicate request is suppressed before dispatch.",
+        "commit_recovery": "Caller durably records admitted request and budget reservation before dispatch, then result/uncertain completion. A crash cannot grant another fresh budget. M output never commits S/O and provider execution cannot be rolled back by a local cancellation.",
+        "retention": "Proposed transmitted context minimization and provider data retention/deletion/tenant isolation are unconfirmed. Disable disclosure until agreed; S references to model outputs do not imply indefinite provider replay.",
+        "resource_limits": "Complete cost includes context construction, input/output tokens, calls, failed/duplicate work, queues, caller derivation and retained outputs. Enforce shared work deadline/attempt/token/cost caps and global R/X concurrency/rate limits; numeric caps and provider quotas are unresolved; denied policy means no call."
+      },
+      "from": "X"
+    },
+    {
+      "id": "C-MX-RESULT",
+      "to": "X",
+      "title": "M returns generated output to X",
+      "status": "proposed",
+      "profile_ref": "bounded-grounded-v1",
+      "operation": "inference_result",
+      "producer_port": "M.inference.result",
+      "consumer_port": "X.model.result",
+      "requirement_ids": [
+        "REQ-EXT",
+        "REQ-PROV",
+        "REQ-BOUNDS",
+        "REQ-VERSION"
+      ],
+      "verification_ids": [
+        "V05",
+        "V06",
+        "V11",
+        "V13"
+      ],
+      "facets": {
+        "ownership": "M produces generated output; caller owns validation, provenance and local retention. M has no state-domain admission authority.",
+        "authority": "M result is advisory generated material only; caller validates schema and permitted scope. A model confidence token, agreement or tool-looking string grants no observation, action or commit capability.",
+        "shape_versions": "Proposed result includes request correlation, provider run/model/version when known, generated content, outcome, usage/cost when available and truncation/uncertainty markers. Missing version/usage remains unknown and blocks incompatible embedding admission or budget closure.",
+        "identity_scope": "Preserve caller work ID plus provider run ID when available; no physical/source identity is established by model output. S embeds only in an explicitly versioned space.",
+        "commit_recovery": "Caller may retain a validated generated result and update local budget atomically; any S admission is a separate proposal. Late/cancelled results cannot resurrect exhausted work or commit state.",
+        "retention": "Caller retention follows admitted policy; provider replay/deletion is not assumed. Preserve minimal model/version/input-lineage and known support availability when an output is retained.",
+        "feedback_grounding": "Mark every output generated; R/X share M failure/calibration/selection biases. Combined agreement is correlated, not independent support. Generated output may guide inquiry but cannot enter O as ordinary native evidence."
+      },
+      "from": "M"
+    }
+  ],
+  "cases": [
+    {
+      "id": "V01",
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-ID",
+        "REQ-REP"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Repeat identical payload twice at one source and once at another; duplicate delivery of one occurrence.",
+      "expected": "Three distinct occurrences survive; only redelivery of the same occurrence ID is idempotent; hash equality never merges physical identities.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V02",
+      "requirement_ids": [
+        "REQ-RECOVERY",
+        "REQ-REP"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Crash before, during and after S representation/applied-ID/cursor transaction, then reconnect O subscribe(cursor).",
+      "expected": "Before commit replay is harmless; after commit cursor resumes; no O acknowledgement is sent or relied on. Atomic checkpoint failure blocks recovery qualification.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V03",
+      "requirement_ids": [
+        "REQ-RECOVERY",
+        "REQ-OBS",
+        "REQ-REPORT"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Restart S after eight days, request an expired O id, and inspect an indefinitely retained S reference.",
+      "expected": "Gap and unavailable evidence are durable and visible; S does not promise replay or verifiability; reports disclose stale/unavailable support.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V04",
+      "requirement_ids": [
+        "REQ-REVISE",
+        "REQ-ID"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Attempt R physical-ID write and X accepted-state write; submit proposals with stale expected S revision and conflicting aliases.",
+      "expected": "Direct writes are denied; only S commits, conflicts are explicit; insufficient evidence remains a proposal and never becomes external truth.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V05",
+      "requirement_ids": [
+        "REQ-PROV",
+        "REQ-REPORT",
+        "REQ-REP"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Route a generated M answer through R, then try O append and reuse of the answer as independent support.",
+      "expected": "R generated append is denied; S records generated lineage; X excludes it from independent evidence counts and exposes upstream dependencies.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V06",
+      "requirement_ids": [
+        "REQ-VERSION",
+        "REQ-REPORT"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Read embeddings from two model revisions with equal dimension but different spaces; submit old-schema or missing-version material.",
+      "expected": "No cross-space similarity or confidence pooling; explicit unsupported outcome or version-specific path; migrations retain source and transformation lineage.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V07",
+      "requirement_ids": [
+        "REQ-REVISE",
+        "REQ-BOUNDS"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Duplicate, reorder, cancel and retry a proposal/question after an unknown response.",
+      "expected": "Stable caller request IDs and payload fingerprints reproduce prior results or conflict; caller checks status through the same S read operation; cancellation does not undo commits.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V08",
+      "requirement_ids": [
+        "REQ-BOUNDS",
+        "REQ-ACQ"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Force repeated unavailable reads and model timeouts while sustained native append load is present.",
+      "expected": "Inquiry exhausts shared total attempts/deadline/tokens/cost and yields; native intake retains its configured positive reservation; admission denial is explicit; no circular wait holds O/S commit locks.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V09",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-EXT",
+        "REQ-REPORT"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Request a newly observed outside fact when only O cached get/subscribe exists, or name a provider without authorization.",
+      "expected": "Return acquisition_unavailable with missing capability/authority; no invented source action, acknowledgement or effect; external acquisition gate remains blocked.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V10",
+      "requirement_ids": [
+        "REQ-REVISE",
+        "REQ-REPORT"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "X proposes simplified acceptance after a newer S revision/correction arrives.",
+      "expected": "S rejects stale update or requires refreshed proposal; reported acceptance remains distinct from operational acceptance and external truth.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V11",
+      "requirement_ids": [
+        "REQ-EXT",
+        "REQ-BOUNDS",
+        "REQ-PROV"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "M times out, returns partial/unsupported output, or requires disclosure not admitted by policy.",
+      "expected": "No call without disclosure, retention and cost policy; late outputs are noncommitting; budget is charged for failed work; summaries degrade to unavailable/unknown.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V12",
+      "requirement_ids": [
+        "REQ-REPORT",
+        "REQ-EXT"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Try X native O access and model direct writes to O/S; trace any shared-store credential bypass.",
+      "expected": "No O-X payload lane, no O-M/S-M authority; storage isolation preserves logical owners; no hidden channel bypasses contracts.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V13",
+      "requirement_ids": [
+        "REQ-PROV",
+        "REQ-REPORT",
+        "REQ-ACQ"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "R and X use the same M and the same S observations; inquiry selectively samples favorable cases.",
+      "expected": "Confidence reports common model/evidence lineage and selection/missingness; agreement is not independent confirmation; no unsupported calibration claim.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V14",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-RECOVERY"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "R rereads an available id, a never-seen id, and an expired id through O get.",
+      "expected": "Read result correlates to the request; available/unknown/unavailable remain distinct; no external observation is fabricated from absence.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V15",
+      "requirement_ids": [
+        "REQ-ID",
+        "REQ-REVISE",
+        "REQ-VERSION"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Submit unknown fields, temporal correction and alias retraction with original occurrence references.",
+      "expected": "Native unknown is preserved, correction links to prior state, event/valid-time scope survives, and old versions are not silently overwritten.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V16",
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-RECOVERY",
+        "REQ-REPORT"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Source clock regresses and observations arrive late or out of source-time order across a new source epoch.",
+      "expected": "Receipt/commit/cursor order is separate from event time; uncertainty and gaps survive; no global physical-time ordering is claimed.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V17",
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-ID",
+        "REQ-RECOVERY",
+        "REQ-EXT"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "Native source append succeeds durably but its reply is lost; source retries with/without an agreed source-event ID; crash O around receipt persistence.",
+      "expected": "Actual O response only promises pinned durability; reply loss remains unknown completion; agreed idempotency works only if explicitly supported, otherwise duplicate occurrences stay distinct. No consumer acknowledgement or lookup-by-request capability is assumed.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    },
+    {
+      "id": "V18",
+      "requirement_ids": [
+        "REQ-REP",
+        "REQ-REVISE",
+        "REQ-REPORT",
+        "REQ-VERSION"
+      ],
+      "required": true,
+      "status": "specified_not_run",
+      "stimulus": "R and X request snapshots/status at pinned S revision, including missing state, incompatible embedding selectors and an X request for native payload.",
+      "expected": "S supplies authorized, revision-scoped representation/status projection with unknown/missing fields and explicit unsupported outcomes; X never receives native payload, and a read grants no mutation rights.",
+      "verification_kind": "planned implementation case; design counterexample only"
+    }
+  ],
+  "external_dependencies": [
+    {
+      "id": "DEP-M",
+      "registry_component": "M",
+      "governance": "Independent external model service; included in full pair matrix.",
+      "obligations": "R/X separately admit disclosure and cost; pin provider/model/prompt/preprocessing; agree tenant isolation, retention, quota, usage and unknown-completion handling.",
+      "status": "unagreed; proposed calls disabled"
+    },
+    {
+      "id": "DEP-NATIVE",
+      "registry_component": null,
+      "governance": "Unspecified native source(s) entering existing O append; not invented as deployable components.",
+      "operations": [
+        "source -> O append(payload)",
+        "O -> source append result, semantics unspecified"
+      ],
+      "obligations": "Source/action authority, authentication, source epoch, source versus receipt time, allowed payload/privacy, size/rate limits, duplicate append policy and durable receipt must be specified. O cannot assert source identity solely from payload claims.",
+      "status": "outside ingress contract open; no live source activity"
+    },
+    {
+      "id": "DEP-ACQUIRE",
+      "registry_component": null,
+      "governance": "No external acquisition provider or physical actuator is specified; cannot register a fictitious component or action.",
+      "operations": [
+        "none authorized"
+      ],
+      "obligations": "REQ-ACQ needs authorized provider/action request and independently grounded result/effect. Read of existing O data and model generation cannot satisfy a new external observation.",
+      "status": "F08 architecture blocker"
+    },
+    {
+      "id": "DEP-STORES",
+      "registry_component": null,
+      "governance": "Logical O and S owned stores and R/X work/budget records; topology unspecified, no extra application service justified.",
+      "operations": [
+        "owner-local read/commit only"
+      ],
+      "obligations": "S atomic representation/applied-ID/checkpoint/disposition transaction; O append durability and seven-day expiry; separate store credentials; R/X persistent work/budget identity; storage exhaustion, restore and backup horizons must preserve ownership/lineage.",
+      "status": "capabilities unverified; F10/F11"
+    },
+    {
+      "id": "DEP-CLOCK",
+      "registry_component": null,
+      "governance": "Source clocks, receipt/commit clocks and monotonic deadline clock are infrastructure, not independently specified services.",
+      "operations": [
+        "read time metadata and monotonic budget deadlines"
+      ],
+      "obligations": "Preserve event/receipt/commit/knowledge/model time and uncertainty; receipt cursor orders one stream; monotonic local elapsed time for budgets; reboot/restart cannot reset total budget.",
+      "status": "policy proposed; synchronization/error bounds unknown"
+    },
+    {
+      "id": "DEP-RUNTIME",
+      "registry_component": null,
+      "governance": "Shared compute, network, queues, credentials and scheduler unspecified; no new service topology inferred.",
+      "operations": [
+        "bounded execution and authenticated owner-specific access"
+      ],
+      "obligations": "Avoid inference/intake contention, reserve positive native capacity, bound queue/bytes/concurrency/cost, isolate M failures, no cross-component credential bypass, track partial/unknown completion and storage saturation.",
+      "status": "numeric policy and measurements absent; F10/F11"
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "O",
+        "S",
+        "R",
+        "X",
+        "M"
+      ],
+      "analysis": "The full SCC contains O/S receipt-representation replay, S/R identity/inference proposal/admission, S/X acceptance/report simplification, X/R acquisition suggestions, and R/X use of shared M. Grounding is separated by native/generated lineage; generated answers cannot reenter O. Shared M and common S support make confidence correlated. Missingness and selection history travel with results. Stable work IDs and one budget bound repeated inquiry; local owner commits hold no cross-owner locks and do not wait for M/X/R; intake has separately reserved capacity. S local transaction stops lost-cursor cycles; expired O history produces gaps rather than invented recovery. Stale simplification proposals conflict, and model-space transitions do not pool embeddings. All policy/capacity assertions require product evidence; see F08-F11.",
+      "verification_ids": [
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06",
+        "V07",
+        "V08",
+        "V09",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V16"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "description": "O acknowledgement is nonexistent; S checkpoints before representation commit and recovery is unsound.",
+      "requirement_ids": [
+        "REQ-REP",
+        "REQ-RECOVERY"
+      ],
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ],
+      "smallest_correction": "Remove O acknowledgement; S atomically commits representations, applied occurrence IDs and local cursor. Endpoint durability/stream semantics remain F10.",
+      "resolution_scope": "proposed design only"
+    },
+    {
+      "id": "F02",
+      "description": "Content-hash deduplication erases independent repeated occurrences and can corrupt physical-identity association.",
+      "requirement_ids": [
+        "REQ-ID"
+      ],
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ],
+      "smallest_correction": "Deduplicate delivery by scoped occurrence ID; retain payload hash only as content equality; S owns correction lineage.",
+      "resolution_scope": "proposed design only"
+    },
+    {
+      "id": "F03",
+      "description": "R generated answers reenter O as ordinary external evidence, enabling self-confirmation.",
+      "requirement_ids": [
+        "REQ-PROV",
+        "REQ-REPORT"
+      ],
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ],
+      "smallest_correction": "Route generated inference to S as a typed proposal with parent/model lineage; deny R generated append to O.",
+      "resolution_scope": "proposed design only"
+    },
+    {
+      "id": "F04",
+      "description": "R/X direct writes compete for S physical identity and accepted-state authority.",
+      "requirement_ids": [
+        "REQ-REVISE"
+      ],
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ],
+      "smallest_correction": "Preserve four applications; S is sole durable admission/commit authority; R/X propose at expected revisions.",
+      "resolution_scope": "proposed design only"
+    },
+    {
+      "id": "F05",
+      "description": "Unbounded acquisition retries lack stable identities, path budgets and failure isolation from native intake.",
+      "requirement_ids": [
+        "REQ-BOUNDS",
+        "REQ-ACQ"
+      ],
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ],
+      "smallest_correction": "Stable work/request IDs, one bounded end-to-end budget, reserved native intake capacity and explicit exhaustion; no new queue service.",
+      "resolution_scope": "proposed design only"
+    },
+    {
+      "id": "F06",
+      "description": "Indefinite evidence references do not retain seven-day O payloads or guarantee replay after a long outage.",
+      "requirement_ids": [
+        "REQ-RECOVERY",
+        "REQ-REPORT"
+      ],
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ],
+      "smallest_correction": "Keep reference metadata with availability horizon and gaps; disclose expired evidence and limit recovery claims. Do not introduce an unrequired permanent payload archive.",
+      "resolution_scope": "proposed design only"
+    },
+    {
+      "id": "F07",
+      "description": "One embedding field mixes incompatible model spaces and hides shared M dependence.",
+      "requirement_ids": [
+        "REQ-VERSION",
+        "REQ-EXT",
+        "REQ-PROV"
+      ],
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ],
+      "smallest_correction": "Version embedding spaces and expose M shared lineage; no cross-space pooling without explicit migration.",
+      "resolution_scope": "proposed design only"
+    },
+    {
+      "id": "F08",
+      "description": "Acquire-new-observation mission has no specified outside source/action owner or permitted operation.",
+      "requirement_ids": [
+        "REQ-ACQ",
+        "REQ-EXT"
+      ],
+      "status": "open",
+      "blocking_at": [
+        "architecture",
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Name authorized source/provider, requested action, request/result/effect ports, identity, budgets, retention and evidence; until then only reread O and return acquisition_unavailable.",
+      "resolution_scope": "unresolved"
+    },
+    {
+      "id": "F09",
+      "description": "M provider identity/revision, confidentiality, tenancy, retention, quotas, billing and failure behavior are unspecified.",
+      "requirement_ids": [
+        "REQ-EXT",
+        "REQ-BOUNDS",
+        "REQ-VERSION"
+      ],
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Agree pinned M request/result contracts, disclosure policy and shared quota/budget policy before enabling calls. No model call is part of this review.",
+      "resolution_scope": "unresolved"
+    },
+    {
+      "id": "F10",
+      "description": "Endpoint schemas, native append admission/result semantics, O durability/cursor/expiry semantics, S transaction/admission policies and numeric resource limits lack endpoint agreement.",
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-REP",
+        "REQ-RECOVERY",
+        "REQ-REVISE",
+        "REQ-BOUNDS"
+      ],
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Approve concrete endpoint schemas and local owner policies, including exact expiry horizon, atomicity, dedup retention, positive intake reservation and bounded configuration. All current contracts are proposed.",
+      "resolution_scope": "unresolved"
+    },
+    {
+      "id": "F11",
+      "description": "No pinned implementation/configuration or executed required product cases exist.",
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-REP",
+        "REQ-REVISE",
+        "REQ-ACQ",
+        "REQ-REPORT"
+      ],
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Implement only after separate authorization, then run required cases at pinned revisions/configuration; checker success and design walkthroughs are not product qualification.",
+      "resolution_scope": "unresolved"
+    }
+  ],
+  "review": {
+    "gate": "architecture",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Self-review of a proposed design from one pinned file, not independent endpoint/runtime review. Four applications retained; M is external. Open acquisition capability prevents full intended architecture approval. Contracts proposed; no product cases executed.",
+    "gates": {
+      "architecture": "revise",
+      "contract": "revise",
+      "runtime": "blocked",
+      "integration": "blocked"
+    }
+  },
+  "outside_boundary_reviews": [
+    {
+      "id": "EXT-NATIVE-APPEND",
+      "dependency_id": "DEP-NATIVE",
+      "direction": "unnamed native source -> O",
+      "operation": "append(payload)",
+      "status": "proposed",
+      "facets": {
+        "ownership": "Unnamed native source owns its submitted content/source claim. O alone admits, assigns occurrence identity, commits receipt and applies seven-day payload retention. S representations are not committed by append.",
+        "authority": "Existing append(payload) is the only named ingress operation. Proposed admission allows authenticated/explicitly unknown native source envelopes according to policy and denies R/M generated material disguised as native evidence. No acquisition, source verification, physical action or downstream acceptance follows from append.",
+        "shape_versions": "Existing payload shape is unspecified; preserve exact native payload and unknown fields, add versioned envelope with claimed source/epoch, native origin, source time/uncertainty when known, optional source event ID and O receipt metadata. Source identity verification and allowed schema/extensions await agreement.",
+        "identity_scope": "O receipt occurrence ID distinguishes identical payloads and repeated events. Source event ID scoped to source+epoch can support agreed append idempotency but content hash alone cannot. O occurrence identity does not prove physical identity or source authenticity.",
+        "time_order": "Carry source event/valid time when known, source clock uncertainty, O receipt time, S commit/knowledge revision and model time/version when used. Cursor orders the O receipt stream only; no global source-time order. Late corrections refer to prior revisions.",
+        "delivery_idempotency": "Append retry semantics are unspecified by the source. Proposed source event/request IDs and fingerprints must be agreed before claiming idempotent retry; until then uncertain append completion may duplicate occurrences and must not be deduplicated by content. No source/consumer acknowledgement operation is invented.",
+        "commit_recovery": "O append durability, ID assignment and receipt response point are unspecified. Proposed atomic receipt+occurrence+payload persistence precedes durable success; whether this is available is F10. An append success never commits S or extends payload retention.",
+        "retention": "O retains native payloads seven days; exact start/boundary, tombstone metadata, source resend horizon and export/restore behavior require agreement. Expired data is unavailable rather than missing evidence invented by a model.",
+        "resource_limits": "Agree source authentication/admission, finite payload bytes and append rate, O storage high-water policy, native positive capacity reservation and fair source limits. O accepts no promise of unbounded storage or blocking until S/M succeeds. Numeric limits are unselected.",
+        "errors": "Append outcome must distinguish durable success, rejected/denied, unsupported schema, storage/queue capacity, partial/timeout and unknown completion where available. Existing endpoint error shapes are absent; do not advertise idempotency or durable success until pinned.",
+        "feedback_grounding": "Carry native/generated classification, source occurrences, model/version/prompt lineage, selection/missingness and parent work IDs. Generated results remain inference, shared model/evidence counts once for independence, proposals remain proposals until S admission, and operational acceptance never proves external truth."
+      },
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-ID",
+        "REQ-PROV",
+        "REQ-EXT"
+      ],
+      "verification_ids": [
+        "V01",
+        "V05",
+        "V08",
+        "V16",
+        "V17"
+      ]
+    },
+    {
+      "id": "EXT-NATIVE-RESULT",
+      "dependency_id": "DEP-NATIVE",
+      "direction": "O -> unnamed native source",
+      "operation": "append transport result; shape not specified",
+      "status": "proposed",
+      "facets": {
+        "ownership": "O produces append outcome; source owns its retry record. Neither S nor a model owns O acceptance.",
+        "authority": "This is a proposed correlated response on append transport, not a new O acknowledgement API. Report only documented O receipt/durability guarantees; it does not establish S consumption, operational acceptance or external truth.",
+        "shape_versions": "Proposed outcome carries correlation if available, assigned O occurrence id on confirmed receipt, receipt time, availability horizon and typed status. Current source only states append(payload), so response schema/durability semantics remain unknown.",
+        "identity_scope": "O receipt occurrence ID distinguishes identical payloads and repeated events. Source event ID scoped to source+epoch can support agreed append idempotency but content hash alone cannot. O occurrence identity does not prove physical identity or source authenticity.",
+        "time_order": "Carry source event/valid time when known, source clock uncertainty, O receipt time, S commit/knowledge revision and model time/version when used. Cursor orders the O receipt stream only; no global source-time order. Late corrections refer to prior revisions.",
+        "delivery_idempotency": "A lost response leaves unknown completion unless an agreed request/source-event id can be looked up through existing get semantics. Do not invent lookup-by-request, lease or acknowledgement capabilities; get(id) requires an already known O id.",
+        "commit_recovery": "Source retains uncertainty on timeout. O only returns the strongest receipt status its actual durability supports; loss of a reply is independent of durable append. Source retry/reconciliation strategy remains an endpoint agreement blocker.",
+        "retention": "O retains native payloads seven days; exact start/boundary, tombstone metadata, source resend horizon and export/restore behavior require agreement. Expired data is unavailable rather than missing evidence invented by a model.",
+        "resource_limits": "Agree source authentication/admission, finite payload bytes and append rate, O storage high-water policy, native positive capacity reservation and fair source limits. O accepts no promise of unbounded storage or blocking until S/M succeeds. Numeric limits are unselected.",
+        "errors": "Append outcome must distinguish durable success, rejected/denied, unsupported schema, storage/queue capacity, partial/timeout and unknown completion where available. Existing endpoint error shapes are absent; do not advertise idempotency or durable success until pinned.",
+        "feedback_grounding": "Carry native/generated classification, source occurrences, model/version/prompt lineage, selection/missingness and parent work IDs. Generated results remain inference, shared model/evidence counts once for independence, proposals remain proposals until S admission, and operational acceptance never proves external truth."
+      },
+      "requirement_ids": [
+        "REQ-OBS",
+        "REQ-RECOVERY",
+        "REQ-EXT"
+      ],
+      "verification_ids": [
+        "V01",
+        "V02",
+        "V16",
+        "V17"
+      ]
+    }
+  ]
+}

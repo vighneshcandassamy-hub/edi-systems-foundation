@@ -1,0 +1,453 @@
+{
+  "baseline": "0.1.0-architecture",
+  "created_date": "2026-10-20",
+  "owner": "vighneshcandassamy-hub",
+  "intended_repository": "edi-systems-foundation",
+  "visibility_required": "private",
+  "entries": [
+    {
+      "path": "architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md",
+      "sha256": "ce39263a3eda5ef3ac3bd5aef92dfc55cf549dcc0ce0c48a96cce080c8b011ef",
+      "bytes": 516717,
+      "origin": {
+        "kind": "current_library_architecture",
+        "library_file_id": "libfile_7b9b477f82208191ab94058fbf22e04e",
+        "file_id": "file_0000000003ec8211987dd8b867e28011",
+        "saved_version": 5,
+        "internal_version": "0.7"
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md",
+      "sha256": "0f6e880fac6814c137e22f3677542b35c1b092f977462f1a91124c975b7676b6",
+      "bytes": 83324,
+      "origin": {
+        "kind": "current_library_reference",
+        "library_file_id": "libfile_53ee9970b4f8819198798c9306d4ea3b",
+        "file_id": "file_00000000cc1c8211a89972536bac45e1",
+        "internal_version": "1.0"
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/AGENTS.md",
+      "sha256": "1f53a16300bb8f2e8fabebb29883570585cf4418aa0368a892929426fcaa16bf",
+      "bytes": 1795,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/INTERFACES.json",
+      "sha256": "582501194cf5e0c89ff5462c5582d7b05481e89696ee9434128e79989d84a014",
+      "bytes": 19518,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/OBSERVATION_SUBSTRATE.md",
+      "sha256": "ae317449e5a1250a1c38435257f0247b53bad44f711afe307adfe485df718a43",
+      "bytes": 11253,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/SUBSTRATE_INTERNAL_INTERFACES.json",
+      "sha256": "7fa83cc3ac442bdc738a88c0ce48f7e0ec2a74528a4e09f9bc796e819ac8c30f",
+      "bytes": 12521,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/BLUEPRINT_CHECKS.json",
+      "sha256": "49259b5dc4e613a730150fd144d551d3dda4c015a19d581ec44e4dd882534a2f",
+      "bytes": 7452,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/SKILL_FORWARD_USE.json",
+      "sha256": "6bf3dc372b0b08a5b73bb599c506afa5e4b6823fd7212b33b3c081d09f366b3a",
+      "bytes": 3186,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/SKILL_VALIDATION.json",
+      "sha256": "fc0ba0567f0549ee1e0d9e193bc93578552da45b7a1199885fd0408fc5b51045",
+      "bytes": 2175,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/catalogue.json",
+      "sha256": "135aeb68dc129a69a0cd37eb859344e6a2da4461f2caf081c25a965236417619",
+      "bytes": 77373,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/checker-result.json",
+      "sha256": "b6cd908cf18c683ab0aeaa6df9624a80a298b4c19f3b68fd55ff84ccd05144e7",
+      "bytes": 328,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/proposal.md",
+      "sha256": "fccbf8d9530e4555099ffd17d16782003ad970cd45a876e56e92a494495e96f7",
+      "bytes": 1203,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/review.md",
+      "sha256": "0a7d297e86b1d813cb00b95a439e5d4069723977f4962967ea8d98985f2486b8",
+      "bytes": 12494,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/source-pin.json",
+      "sha256": "d578f5dffe35e5ad4ef4cb59e966d57555c30d08e885acea15e1f00483562d04",
+      "bytes": 621,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/integration/tools/validate_blueprint.py",
+      "sha256": "09e738a3e9f0c3aabf2d3d4d669ff0d7ceb62e11bdde98154df5b4f543526c68",
+      "bytes": 6383,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/observation/COMPONENT_SPECS.md",
+      "sha256": "c968e50b8da3b652fe32a35b1c3a03f7d5ac82a28a62a7364b99f12ee924996d",
+      "bytes": 12423,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/observation/OBSERVATION_PLAN.md",
+      "sha256": "e37021ebad35b3941cf382b8def9e9422e18c61e0e979abe93759f3ddf3f296a",
+      "bytes": 20554,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/observation/REQUIREMENTS.json",
+      "sha256": "1e3a1c7800ae402e45568f7c0eddf2883dfe23417141cccc2caba03bc2580f5f",
+      "bytes": 79632,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/BUDWORM_CHALLENGE.md",
+      "sha256": "c675af927594076e39a5e7289ff8a8690ab4315d3a40fe4adfcf1cd66a21ebfa",
+      "bytes": 7581,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/MEADOWS_PAGE_REVIEW.md",
+      "sha256": "01ab3b477cff235c03933f22957d8088ba51c4c33fb74effe1b33b6f23a005dc",
+      "bytes": 27451,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/MEADOWS_REVIEW.md",
+      "sha256": "7f91ee43526ca0426bf1ef9ef258daef33fcf909e7a5d4eb7a40cfb7de9bfa1e",
+      "bytes": 15896,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/REQUIREMENTS.json",
+      "sha256": "767f3011a9124d0e92c090f491ecc7b2270f31fbf1c882b06de11796251beb39",
+      "bytes": 24909,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "sha256": "838af5131c92f558767df19eeb1461874e50a69aa20700dc8aa653e2e011feed",
+      "bytes": 16774,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "sha256": "52df2cd4afe3d44110542bcc465543c87d6fe10c1742c02ae036a0351262040f",
+      "bytes": 24134,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/evidence/FUNCTION_CHECKS.json",
+      "sha256": "e2a2a7a379985a99da92aa5a7a1606aa1a472ceff2113312e5a34ff13512df03",
+      "bytes": 983,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/evidence/FUNCTION_REVIEW.json",
+      "sha256": "91c0d2510b6574e9e397b92f8bed3944874f24974cc1881e32ad13723b12a233",
+      "bytes": 11755,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/evidence/MEADOWS_PAGE_LEDGER.json",
+      "sha256": "4b12251b5dab1ffdd6c85c14ea7412a219b45dda0a8497f69ccf7cc02826f6e8",
+      "bytes": 63145,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": "architecture/substrate/evidence/MEADOWS_REVIEW_CHECKS.json",
+      "sha256": "9265354f4ee7989bc6fff6d70d0cf9036a259b8d6029b01bf5bfe1e97b041dfd",
+      "bytes": 1750,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-component-review/SKILL.md",
+      "sha256": "0f3692970f0155ba78b196f16ef172941aaab9dcb88baeb47dfaa5c63a270f47",
+      "bytes": 7535,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-component-review/assets/component-plan-template.md",
+      "sha256": "4cf062078c655d6f39b0b0a4ce940db2739adda03f58d544e654d620d077c05f",
+      "bytes": 2880,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-component-review/assets/review-report-template.json",
+      "sha256": "d141eaf3849e5d341c0ca702a32e99543a30c4aa87b83280758b58c29f1cff48",
+      "bytes": 1784,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-component-review/references/edi-context.md",
+      "sha256": "b3b1ed5f73da50cdd98007d5ceb36f90069ddd11a2aa1c41d84a615f68fc1eb0",
+      "bytes": 2244,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-component-review/references/operating-envelope.md",
+      "sha256": "bf93c5bdec9895f91cfba40bf5e39b79f7606c9fbc1d30708f8d0b9a7bc0b362",
+      "bytes": 2874,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-component-review/references/review-methods.md",
+      "sha256": "d30e987bd4ead071bff240944e9667adb8e0d621c2476c3a578d72c29e935289",
+      "bytes": 3861,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-component-review/scripts/review_gate.py",
+      "sha256": "3e83cfcccfc1af925c8bd12466949b4b32113c6850ae71512dbc39d1aa6428c0",
+      "bytes": 9788,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/SKILL.md",
+      "sha256": "00f46d6f35e3cad11689b5317af66f70083c7880c8a495f6d68221be05e761d5",
+      "bytes": 4745,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/agents/openai.yaml",
+      "sha256": "9d4e2a7695d2388506f281281a3e05d7ab1c70bbc0c029eb834f3792c3f0969b",
+      "bytes": 245,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/assets/interface-review-template.json",
+      "sha256": "0dc16764e398de4263fc87b213fcdc70674dc70d7b12b30387f39e06b392d9af",
+      "bytes": 893,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/references/interface-checklist.md",
+      "sha256": "6c948d182920eaca0c5ea496d5fe0813339ee0aeccd044f0526b42f2a890f091",
+      "bytes": 3329,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/scripts/interface_matrix.py",
+      "sha256": "35f80df00c9ad20923b7996c4d23b4dbb869ce6c89abd2b81571557359e120e1",
+      "bytes": 14719,
+      "origin": {
+        "kind": "retained_local_design_snapshot",
+        "original_repository": "vighneshcandassamy-hub/edi-lab",
+        "note": "Preserved local source; not asserted to match the present remote main revision. Read STATUS and precedence rules."
+      },
+      "modified": false
+    }
+  ],
+  "note": "Import hashes concern retained source files only. Repository administrative files and checker results are authored for this baseline. No credential/helper transfer files are imported."
+}

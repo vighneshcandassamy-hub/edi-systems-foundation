@@ -1,0 +1,1671 @@
+{
+  "schema": "edi-source-page-review-v1",
+  "component": "EDI substrate",
+  "source": {
+    "title": "Thinking in Systems: A Primer",
+    "author": "Donella H. Meadows",
+    "editor": "Diana Wright",
+    "filename": "Meadows-2008.-Thinking-in-Systems(2).pdf",
+    "file_id": "file_00000000a8348211abb1e4687542efb1",
+    "library_file_id": "libfile_75117c4afee4819199d49aadcfd3acb8",
+    "version": 0,
+    "pdf_pages": 235,
+    "size_bytes": 2700340,
+    "source_pdf_sha256": null
+  },
+  "reviewer": {
+    "role": "architect_and_critic",
+    "independent": false
+  },
+  "scope": "Page-ordered extracted-text review with available figure labels/captions; image-only cover metadata. Not a pixel-level figure audit, numerical reproduction, independent factual verification or review of cited works.",
+  "input_revision": "272d057f6158963cd16f2ef0b642ed747a004360",
+  "pages": [
+    {
+      "pdf_page": 1,
+      "note": "Cover; edition identification only.",
+      "allocation": "source",
+      "access_scope": "image-only cover metadata; no technical text; pixels not independently inspected",
+      "extraction_words": 0,
+      "access": "image_only_metadata"
+    },
+    {
+      "pdf_page": 2,
+      "note": "Title page; no substrate requirement.",
+      "allocation": "source",
+      "extraction_words": 9,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 3,
+      "note": "Author bibliography; contextual references, not additional evidence read.",
+      "allocation": "source",
+      "extraction_words": 110,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 4,
+      "note": "Author/editor/publisher identity.",
+      "allocation": "source",
+      "extraction_words": 26,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 5,
+      "note": "Copyright, edition and adaptation provenance; pin the supplied edition.",
+      "allocation": "source",
+      "extraction_words": 252,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 6,
+      "note": "Dedication; no technical requirement.",
+      "allocation": "source",
+      "extraction_words": 21,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 7,
+      "note": "Blank/typesetting page; no technical content.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 8,
+      "note": "Contents provides chapter and appendix coverage checklist.",
+      "allocation": "source",
+      "extraction_words": 168,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 9,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 10,
+      "note": "Author states scope and limitations of systems-dynamics lens; avoid universal ontology claims.",
+      "allocation": "assumption",
+      "extraction_words": 358,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 11,
+      "note": "Author's intended educational scope; no architecture evidence.",
+      "allocation": "source",
+      "extraction_words": 68,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 12,
+      "note": "Editorial publication context; historical examples are not current empirical validation.",
+      "allocation": "source",
+      "extraction_words": 357,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 13,
+      "note": "Events versus trends versus generating structures; preserve all three distinct levels.",
+      "allocation": "F001,F002",
+      "extraction_words": 446,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 14,
+      "note": "Explanatory viewpoint and purpose; no AI capability proof.",
+      "allocation": "assumption",
+      "extraction_words": 225,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 15,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 16,
+      "note": "Patterns can recur after replacing components; test mechanisms, not superficial replacement.",
+      "allocation": "F003,F005",
+      "extraction_words": 77,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 17,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 18,
+      "note": "Slinky versus box under matched stimulus; distinguish boundary event from state-dependent response.",
+      "allocation": "F002,F005",
+      "extraction_words": 319,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 19,
+      "note": "System-conditioned behavior; do not blame external stimulus alone or treat examples as universal causal laws.",
+      "allocation": "F002,F004",
+      "extraction_words": 365,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 20,
+      "note": "Feedback delays and reinforcing allocation effects; preserve delayed causal candidates.",
+      "allocation": "F002",
+      "extraction_words": 348,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 21,
+      "note": "Diversity and system-level effects of fixes; inspect secondary consequences.",
+      "allocation": "F005",
+      "extraction_words": 388,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 22,
+      "note": "Simultaneous multidirectional interactions; do not force semantic structures into serial prose.",
+      "allocation": "F001,F002",
+      "extraction_words": 449,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 23,
+      "note": "Archetypes are interpretive lenses; preserve multiple views rather than force classification.",
+      "allocation": "F001,F004",
+      "extraction_words": 407,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 24,
+      "note": "Partial observations of one whole; retain partial coverage and competing interpretations.",
+      "allocation": "F004",
+      "extraction_words": 279,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 25,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 26,
+      "note": "Part divider.",
+      "allocation": "source",
+      "extraction_words": 12,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 27,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 28,
+      "note": "Elements, interconnections and function; permit these descriptions without requiring intentional purpose.",
+      "allocation": "F001,F002,F005",
+      "extraction_words": 289,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 29,
+      "note": "Nested systems and emergent organization; connected collection alone is not demonstrated functional organization.",
+      "allocation": "F001,F003",
+      "extraction_words": 372,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 30,
+      "note": "Intangible elements and interactions across levels; prevent endless decomposition without useful distinctions.",
+      "allocation": "F001,F005",
+      "extraction_words": 371,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 31,
+      "note": "Material versus informational exchanges; infer functional role from behavior as a hypothesis.",
+      "allocation": "F002,F004",
+      "extraction_words": 442,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 32,
+      "note": "Local goals can conflict with aggregate outcomes; retain goal ownership and scope.",
+      "allocation": "F005",
+      "extraction_words": 321,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 33,
+      "note": "Identity may persist through component replacement; structural and physical identity differ.",
+      "allocation": "F003,F004",
+      "extraction_words": 464,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 34,
+      "note": "Parts, rules and functions can change independently; support distinct revision targets.",
+      "allocation": "F003",
+      "extraction_words": 379,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 35,
+      "note": "State/accumulation versus flow, plus ignored sources/sinks; preserve scope assumptions.",
+      "allocation": "F001,F002",
+      "extraction_words": 328,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 36,
+      "note": "Multiple flows and linked stocks; do not assume one-input/one-output relationships.",
+      "allocation": "F002",
+      "extraction_words": 204,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 37,
+      "note": "Behavior-over-time and horizon matter; represent trajectories in addition to events.",
+      "allocation": "F001,F005",
+      "extraction_words": 242,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 38,
+      "note": "Dynamic equilibrium has ongoing exchange; constant state does not imply inactive interfaces.",
+      "allocation": "F002",
+      "extraction_words": 139,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 39,
+      "note": "Alternative mechanisms can change the same stock; test both inflow and outflow explanations.",
+      "allocation": "F005",
+      "extraction_words": 440,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 40,
+      "note": "Accumulation creates inertia and buffers; preserve rate and capacity relative to time scale.",
+      "allocation": "F002,F006",
+      "extraction_words": 466,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 41,
+      "note": "Buffers decouple input and output; model temporary imbalance and delayed dependency.",
+      "allocation": "F002",
+      "extraction_words": 451,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 42,
+      "note": "Feedback as behavior-producing mechanism; recurring pattern is a clue, not causal proof.",
+      "allocation": "F002,F004",
+      "extraction_words": 383,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 43,
+      "note": "Separate changing flows from information controlling them.",
+      "allocation": "F002",
+      "extraction_words": 251,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 44,
+      "note": "Open chains and feedback systems both valid; do not force every relationship into a loop.",
+      "allocation": "F002",
+      "extraction_words": 288,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 45,
+      "note": "Link direction, increase/decrease response and loop polarity differ; preserve both context and sign.",
+      "allocation": "F002,F004",
+      "extraction_words": 475,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 46,
+      "note": "Matched initial conditions and physical equilibration; scoped transition laws distinguish value from deviation.",
+      "allocation": "F002",
+      "extraction_words": 203,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 47,
+      "note": "Feedback may fail through delay, weak action, missing information or resource limits; do not equate feedback with success.",
+      "allocation": "F002,F006",
+      "extraction_words": 349,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 48,
+      "note": "Reinforcing dynamics amplify growth or decline; preserve response context without value labels.",
+      "allocation": "F002",
+      "extraction_words": 299,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 49,
+      "note": "Apparent short-horizon linearity can conceal compounding; avoid fixing relationship form prematurely.",
+      "allocation": "F002,F005",
+      "extraction_words": 308,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 50,
+      "note": "Reverse-direction causal questions and compounding examples; doubling rule is optional domain knowledge, not host law.",
+      "allocation": "F005",
+      "extraction_words": 273,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 51,
+      "note": "Multiple interacting loops and joint drivers; representation must allow more than pairwise independent edges.",
+      "allocation": "F002",
+      "extraction_words": 248,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 52,
+      "note": "Zoo models are deliberately simplified and nonexhaustive; no archetype catalogue as required ontology.",
+      "allocation": "assumption",
+      "extraction_words": 255,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 53,
+      "note": "Competing feedback loops and external reference conditions; preserve control and environment roles separately.",
+      "allocation": "F002",
+      "extraction_words": 323,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 54,
+      "note": "Compare isolated mechanisms before combined operation; keep model assumptions explicit.",
+      "allocation": "F005",
+      "extraction_words": 206,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 55,
+      "note": "Leakage, target and controlled outcome differ; a nominal setpoint is not proof of achieved state.",
+      "allocation": "F002,F004",
+      "extraction_words": 361,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 56,
+      "note": "Feedback affects subsequent behavior; prevent retrospective evidence leakage into earlier predictions.",
+      "allocation": "F004,F005",
+      "extraction_words": 459,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 57,
+      "note": "Operational capacity can bound corrective action; retain applicability and breakdown conditions.",
+      "allocation": "F002,F006",
+      "extraction_words": 322,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 58,
+      "note": "Environment can change loop dominance without changing topology.",
+      "allocation": "F002,F003",
+      "extraction_words": 311,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 59,
+      "note": "Multiple opposing mechanisms affect one state; context determines net outcome.",
+      "allocation": "F002",
+      "extraction_words": 279,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 60,
+      "note": "Scenario curves are conditional assumptions, not measured futures.",
+      "allocation": "F004,F005",
+      "extraction_words": 167,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 61,
+      "note": "Time-varying strengths can alter dominant mechanisms; keep relation behavior conditional.",
+      "allocation": "F002,F003",
+      "extraction_words": 261,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 62,
+      "note": "Separate scenario assumptions, response-model adequacy and drivers of drivers.",
+      "allocation": "F004,F005",
+      "extraction_words": 403,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 63,
+      "note": "Alternative future inputs require scenario branches with no automatic factual promotion.",
+      "allocation": "F005",
+      "extraction_words": 111,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 64,
+      "note": "Model-value tests distinguish possible consequences from future-driver claims.",
+      "allocation": "F005",
+      "extraction_words": 251,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 65,
+      "note": "External drivers may be endogenous to wider scope; preserve alternative boundaries.",
+      "allocation": "F003,F005",
+      "extraction_words": 281,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 66,
+      "note": "Structurally similar systems may share conditional dynamics; similarity is a transfer hypothesis, not proof.",
+      "allocation": "F001,F005",
+      "extraction_words": 401,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 67,
+      "note": "Coupled population/capital example; preserve cross-system dependencies and lifespan effects.",
+      "allocation": "F002",
+      "extraction_words": 306,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 68,
+      "note": "Cross-domain structural correspondence requires mechanism and parameter compatibility beyond appearance.",
+      "allocation": "F001,F005",
+      "extraction_words": 274,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 69,
+      "note": "Buffers and intentional smoothing; distinguish observation, perceived state and target.",
+      "allocation": "F001,F004",
+      "extraction_words": 313,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 70,
+      "note": "Perception, decision-response and physical-delivery delays are separate mechanisms.",
+      "allocation": "F002,F004",
+      "extraction_words": 210,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 71,
+      "note": "Delayed corrective action can oscillate despite reasonable local policy.",
+      "allocation": "F002,F005",
+      "extraction_words": 439,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 72,
+      "note": "A learning controller changes its own policy; distinguish host law from adaptive policy.",
+      "allocation": "F003,F005",
+      "extraction_words": 213,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 73,
+      "note": "Faster response can worsen behavior; low latency and useful adaptation are distinct criteria.",
+      "allocation": "F005,F006",
+      "extraction_words": 171,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 74,
+      "note": "Rate of revision may need damping; compare candidate schedules before adoption.",
+      "allocation": "F003,F005",
+      "extraction_words": 329,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 75,
+      "note": "Local dynamics couple through wider supply networks; track context boundaries and feedback effects.",
+      "allocation": "F002,F003",
+      "extraction_words": 401,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 76,
+      "note": "Growth depends on sources and waste sinks; preserve capacity and missing constraints.",
+      "allocation": "F002,F006",
+      "extraction_words": 443,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 77,
+      "note": "Renewability changes constraint dynamics; keep mechanism assumptions scoped.",
+      "allocation": "F002",
+      "extraction_words": 194,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 78,
+      "note": "Extraction efficiency and profitability depend on changing state; preserve nonlinear update rules.",
+      "allocation": "F002",
+      "extraction_words": 459,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 79,
+      "note": "Resource remaining and economically accessible resource differ; support distinct latent/derived quantities.",
+      "allocation": "F001,F004",
+      "extraction_words": 210,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 80,
+      "note": "Objective and horizon change policy assessment; record whose outcome is optimized.",
+      "allocation": "F005",
+      "extraction_words": 336,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 81,
+      "note": "Changing a fixed-price assumption changes outcomes; preserve scenario assumptions and model version.",
+      "allocation": "F004,F005",
+      "extraction_words": 303,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 82,
+      "note": "Local depletion and expanded search require distinguishing local from wider constraints.",
+      "allocation": "F003,F005",
+      "extraction_words": 190,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 83,
+      "note": "Renewal can be exogenous or state-dependent; avoid one universal regeneration mechanism.",
+      "allocation": "F002",
+      "extraction_words": 463,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 84,
+      "note": "Nonlinear capacity and density thresholds; relations require domains of applicability.",
+      "allocation": "F002,F004",
+      "extraction_words": 181,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 85,
+      "note": "Coupled trajectories can settle under selected assumptions; no universal steady-state claim.",
+      "allocation": "F002,F005",
+      "extraction_words": 154,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 86,
+      "note": "Small parameter changes can shift response mode; test local robustness.",
+      "allocation": "F005",
+      "extraction_words": 158,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 87,
+      "note": "Higher extraction efficiency may worsen whole-system stability; measure secondary consequences.",
+      "allocation": "F005",
+      "extraction_words": 158,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 88,
+      "note": "Threshold crossing may destroy recoverability; represent irreversibility and missing resilience.",
+      "allocation": "F002,F003",
+      "extraction_words": 396,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 89,
+      "note": "Conditional mechanisms distinguish settling, oscillation and collapse.",
+      "allocation": "F002,F005",
+      "extraction_words": 240,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 90,
+      "note": "Part divider.",
+      "allocation": "source",
+      "extraction_words": 11,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 91,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 92,
+      "note": "Resilience, self-organization and hierarchy are distinct characteristics to evaluate.",
+      "allocation": "F003,F006",
+      "extraction_words": 262,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 93,
+      "note": "Recovery may involve redundant paths and repair of relationships; define fault scope.",
+      "allocation": "F003,F006",
+      "extraction_words": 359,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 94,
+      "note": "Static stability and resilience differ; preserve valid alternatives before aggressive pruning.",
+      "allocation": "F003,F006",
+      "extraction_words": 376,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 95,
+      "note": "Lost feedback or distorted sensing can hide fragility; inspect recovery margin and observation paths.",
+      "allocation": "F004,F006",
+      "extraction_words": 426,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 96,
+      "note": "Permission for new structure and diversity is necessary but not proof of useful intelligence.",
+      "allocation": "F003",
+      "extraction_words": 383,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 97,
+      "note": "Simple generative rules can produce complexity; disorder alone is not an objective.",
+      "allocation": "F003,F005",
+      "extraction_words": 333,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 98,
+      "note": "Universal simple-rule explanation is explicitly uncertain; record structural assumptions.",
+      "allocation": "assumption",
+      "extraction_words": 316,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 99,
+      "note": "Hierarchies may develop from interaction; do not require a predefined hierarchy.",
+      "allocation": "F001,F003",
+      "extraction_words": 348,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 100,
+      "note": "Stable reusable subassemblies and selective local access can reduce disruption and workload.",
+      "allocation": "F001,F006",
+      "extraction_words": 407,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 101,
+      "note": "Partial decomposability and context dependence; retain cross-level bridges and scoped autonomy.",
+      "allocation": "F001,F002",
+      "extraction_words": 435,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 102,
+      "note": "Local suboptimization and overcentralization both harm outcomes; budget inquiry by scope and shared goals.",
+      "allocation": "F005,F006",
+      "extraction_words": 301,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 103,
+      "note": "All representations are partial models; distinguish world from internal state and inference.",
+      "allocation": "F004",
+      "extraction_words": 290,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 104,
+      "note": "Model adequacy is bounded; keep residual uncertainty even after a successful check.",
+      "allocation": "F004",
+      "extraction_words": 358,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 105,
+      "note": "Events versus behavior trajectories; retain longer history and changing variability.",
+      "allocation": "F001,F005",
+      "extraction_words": 367,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 106,
+      "note": "Move between structural explanation and observed behavior; preserve executable mechanism candidates.",
+      "allocation": "F002,F005",
+      "extraction_words": 384,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 107,
+      "note": "A fitted historical correlation can fail after structural change; applicability is revisable.",
+      "allocation": "F003,F004",
+      "extraction_words": 417,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 108,
+      "note": "Allow nonlinear and nonadditive response without making all relations nonlinear by default.",
+      "allocation": "F002",
+      "extraction_words": 384,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 109,
+      "note": "Thresholds can switch loop dominance; retain operating context and validity ranges.",
+      "allocation": "F002,F003",
+      "extraction_words": 380,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 110,
+      "note": "Local pest-control success can alter broader ecosystem; preserve side-effect and objective context.",
+      "allocation": "F005",
+      "extraction_words": 409,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 111,
+      "note": "Ecologically bounded oscillation and economic preference differ; avoid a universal stability objective.",
+      "allocation": "F004,F005",
+      "extraction_words": 374,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 112,
+      "note": "Ignored sources/sinks can become consequential; mark omitted boundaries explicitly.",
+      "allocation": "F001,F004",
+      "extraction_words": 385,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 113,
+      "note": "Boundary relevance depends on horizon; allow widening when omitted influences matter.",
+      "allocation": "F003,F005",
+      "extraction_words": 398,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 114,
+      "note": "Useful boundaries are necessary simplifications, not proof that outside influences are absent.",
+      "allocation": "F001,F004",
+      "extraction_words": 332,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 115,
+      "note": "Overlarge diagrams also obscure understanding; support bounded question-specific views.",
+      "allocation": "F001,F005,F006",
+      "extraction_words": 420,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 116,
+      "note": "Reconsider boundaries for each question; operational jurisdiction and modeled scope differ.",
+      "allocation": "F003,F005",
+      "extraction_words": 173,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 117,
+      "note": "Many inputs, outputs and constraints; support joint conditions rather than single-cause chains.",
+      "allocation": "F002",
+      "extraction_words": 193,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 118,
+      "note": "Limiting factor is conditional and may be unobserved; do not infer completeness from a known list.",
+      "allocation": "F004,F005",
+      "extraction_words": 388,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 119,
+      "note": "Bottlenecks can shift as the system changes; track constraint dependencies and reassess.",
+      "allocation": "F002,F005,F006",
+      "extraction_words": 420,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 120,
+      "note": "Growth limits and delays matter; empirical delay estimates need evidence, not a copied heuristic.",
+      "allocation": "F002,F006",
+      "extraction_words": 356,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 121,
+      "note": "Delay significance depends on frequency and horizon; preserve scale-specific timing.",
+      "allocation": "F002,F005",
+      "extraction_words": 378,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 122,
+      "note": "Too-fast action may amplify noise; treat universal assertions as source claims, not host axioms.",
+      "allocation": "F002,F005",
+      "extraction_words": 379,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 123,
+      "note": "Decisions use partial local information; record what an actor or model could know at the time.",
+      "allocation": "F004,F005",
+      "extraction_words": 407,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 124,
+      "note": "Recency and confirmation bias can distort evidence selection; preserve rejected and conflicting evidence.",
+      "allocation": "F004,F005",
+      "extraction_words": 415,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 125,
+      "note": "Actor role affects available information and incentives; hypotheses about actors need evidence, not copied anecdotes.",
+      "allocation": "F004",
+      "extraction_words": 404,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 126,
+      "note": "Information visibility changes action; observation and attention are parts of the investigated loop.",
+      "allocation": "F004,F005",
+      "extraction_words": 417,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 127,
+      "note": "Replacing agents need not fix information/incentive structure; inspect systemic cause candidates.",
+      "allocation": "F003,F005",
+      "extraction_words": 156,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 128,
+      "note": "Archetypes describe recurring problems, not exhaustive classifications of reality.",
+      "allocation": "assumption",
+      "extraction_words": 258,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 129,
+      "note": "Persistent non-results can indicate structural resistance; store failed remedies and rationale.",
+      "allocation": "F003,F005",
+      "extraction_words": 358,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 130,
+      "note": "Competing goals produce counteractions; preserve multiple agents, objectives and shared state.",
+      "allocation": "F002,F005",
+      "extraction_words": 453,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 131,
+      "note": "Interventions cause adaptive responses; compare withdrawal/no-change and side effects.",
+      "allocation": "F005",
+      "extraction_words": 448,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 132,
+      "note": "Goal reformulation can change outcomes; distinguish revising a task from learning world structure.",
+      "allocation": "F005",
+      "extraction_words": 438,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 133,
+      "note": "Do not silently alter external goals in pursuit of alignment; represent conflict and authority.",
+      "allocation": "F005",
+      "extraction_words": 291,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 134,
+      "note": "Shared-resource depletion is a collective externality; aggregate individual inquiry costs.",
+      "allocation": "F006",
+      "extraction_words": 434,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 135,
+      "note": "Shared sinks and indirect costs can undermine local objectives; count total effects.",
+      "allocation": "F005,F006",
+      "extraction_words": 436,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 136,
+      "note": "Resource-use feedback and allocation rules are engineered policies; document them explicitly.",
+      "allocation": "F006",
+      "extraction_words": 367,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 137,
+      "note": "Shared resources need enforceable bounded access; avoid relying only on voluntary budgets.",
+      "allocation": "F006",
+      "extraction_words": 379,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 138,
+      "note": "Keep shared-resource limits visible to inquiry scheduling.",
+      "allocation": "F005,F006",
+      "extraction_words": 308,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 139,
+      "note": "Actual state, perceived state and desired state differ; prevent goal drift hiding deteriorating performance.",
+      "allocation": "F004,F005",
+      "extraction_words": 414,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 140,
+      "note": "Preserve acceptance criteria and full result distribution; do not copy optimistic bias as evidence policy.",
+      "allocation": "F004,F005",
+      "extraction_words": 330,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 141,
+      "note": "Relative objectives may trigger escalation; question-generation must not maximize activity for its own sake.",
+      "allocation": "F005,F006",
+      "extraction_words": 418,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 142,
+      "note": "Escalating even desirable metrics can harm whole-system costs; retain multidimensional evaluation.",
+      "allocation": "F005,F006",
+      "extraction_words": 392,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 143,
+      "note": "Bound escalation or permit abstention/de-escalation; preserve failed candidate changes.",
+      "allocation": "F005",
+      "extraction_words": 312,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 144,
+      "note": "Early favored hypotheses can capture inquiry resources and become self-confirming.",
+      "allocation": "F004,F005",
+      "extraction_words": 429,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 145,
+      "note": "Repeated selection creates unequal exposure; distinguish evidence strength from attention history.",
+      "allocation": "F004,F005",
+      "extraction_words": 419,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 146,
+      "note": "Preserve avenues to examine alternatives; do not force equal credibility irrespective of evidence.",
+      "allocation": "F004,F005",
+      "extraction_words": 407,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 147,
+      "note": "Allocation policy can bias later evidence; record inquiry opportunity and selection lineage.",
+      "allocation": "F004,F005,F006",
+      "extraction_words": 304,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 148,
+      "note": "External assistance can become a dependency; record intervention and capability provenance.",
+      "allocation": "F004,F006",
+      "extraction_words": 377,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 149,
+      "note": "Short-term symptom relief differs from correction of underlying mechanism.",
+      "allocation": "F004,F005",
+      "extraction_words": 365,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 150,
+      "note": "Repeated imported assistance can mask absent native ability; use attribution and dependency ablations.",
+      "allocation": "F004,F005",
+      "extraction_words": 418,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 151,
+      "note": "Inspect why corrective mechanisms fail before adding more interventions.",
+      "allocation": "F005",
+      "extraction_words": 415,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 152,
+      "note": "Assistance should build retained capability when that is the objective; dependency removal is a separate test.",
+      "allocation": "F003,F005",
+      "extraction_words": 278,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 153,
+      "note": "Rule-following indicators can be gamed; keep objective and evaluation semantics separate.",
+      "allocation": "F004,F005",
+      "extraction_words": 343,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 154,
+      "note": "Test intended behavior beyond formal compliance; constrain authority to alter evaluation rules.",
+      "allocation": "F005",
+      "extraction_words": 326,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 155,
+      "note": "A proxy objective may produce the wrong result even without rule evasion.",
+      "allocation": "F005",
+      "extraction_words": 378,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 156,
+      "note": "Effort versus outcome: more tokens, relations or questions does not measure understanding.",
+      "allocation": "F005,F006",
+      "extraction_words": 403,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 157,
+      "note": "Use explicit desired outcomes and multiple relevant measures rather than activity counts.",
+      "allocation": "F005",
+      "extraction_words": 373,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 158,
+      "note": "Over-specialization to fixed benchmark rules can destroy usefulness under change.",
+      "allocation": "F003,F005",
+      "extraction_words": 314,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 159,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 160,
+      "note": "Part divider.",
+      "allocation": "source",
+      "extraction_words": 15,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 161,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 162,
+      "note": "Small changes may have large effects; distinguish leverage identification from beneficial direction.",
+      "allocation": "F005",
+      "extraction_words": 305,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 163,
+      "note": "Historical policy examples are not validated EDI prescriptions; no universal intervention formula.",
+      "allocation": "assumption",
+      "extraction_words": 404,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 164,
+      "note": "Author explicitly qualifies leverage list; parameter, topology and rule changes need distinct records.",
+      "allocation": "F003,F005",
+      "extraction_words": 402,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 165,
+      "note": "Parameter tuning differs from structural revision; inspect mechanism when tuning repeatedly fails.",
+      "allocation": "F003,F005",
+      "extraction_words": 429,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 166,
+      "note": "Critical parameter ranges and broad acceptable regions; avoid false precision in inquiry.",
+      "allocation": "F004,F005",
+      "extraction_words": 381,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 167,
+      "note": "Buffer size trades resilience, cost and responsiveness; reject unlimited buffering or universal minimization.",
+      "allocation": "F006",
+      "extraction_words": 413,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 168,
+      "note": "Physical/structural limits and delay can constrain feasible change; preserve action capability limits.",
+      "allocation": "F002,F005",
+      "extraction_words": 379,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 169,
+      "note": "Delay relative to change rate matters; revision cadence requires explicit tests.",
+      "allocation": "F003,F005",
+      "extraction_words": 437,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 170,
+      "note": "Rarely used corrective paths may be important; usage frequency alone is not a pruning criterion.",
+      "allocation": "F003,F006",
+      "extraction_words": 417,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 171,
+      "note": "Reliability of information and corrective strength interact; test degraded sensing and overload.",
+      "allocation": "F004,F006",
+      "extraction_words": 403,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 172,
+      "note": "Loop gain can amplify error; retain source claims separately from established host laws.",
+      "allocation": "F002,F004",
+      "extraction_words": 370,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 173,
+      "note": "Inspect self-reinforcing allocation rather than just adding corrective effort.",
+      "allocation": "F005,F006",
+      "extraction_words": 361,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 174,
+      "note": "Who receives information affects outcomes; preserve delivery, visibility and selection lineage.",
+      "allocation": "F004,F005",
+      "extraction_words": 428,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 175,
+      "note": "Rules and authority over rule changes must be explicit; learning must not silently alter host constraints.",
+      "allocation": "F003,F005",
+      "extraction_words": 418,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 176,
+      "note": "Self-organization requires operations for birth, removal and rewiring; permission alone is not discovery.",
+      "allocation": "F003",
+      "extraction_words": 378,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 177,
+      "note": "Variation, experimentation and selection are distinct; preserve their origin and evaluation conditions.",
+      "allocation": "F003,F004,F005",
+      "extraction_words": 409,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 178,
+      "note": "Objectives shape selection; declare inquiry objectives rather than claim neutrality of optimization.",
+      "allocation": "F005",
+      "extraction_words": 410,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 179,
+      "note": "Global versus local goals and paradigm assumptions; preserve scope and authority.",
+      "allocation": "F004,F005",
+      "extraction_words": 420,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 180,
+      "note": "Unstated assumptions shape organization; audit representation primitives and imported model priors.",
+      "allocation": "F001,F004",
+      "extraction_words": 401,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 181,
+      "note": "Allow competing modeling assumptions; rhetorical conviction cannot replace evidence.",
+      "allocation": "F004,F005",
+      "extraction_words": 423,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 182,
+      "note": "Leverage order is tentative and context-dependent; no fixed universal intervention ranking.",
+      "allocation": "assumption",
+      "extraction_words": 226,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 183,
+      "note": "Systems insight is not a guarantee of prediction or control; keep claims scoped.",
+      "allocation": "F004,F005",
+      "extraction_words": 331,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 184,
+      "note": "Knowing a remedy and executing it are different capabilities; maintain action and outcome receipts.",
+      "allocation": "F005",
+      "extraction_words": 421,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 185,
+      "note": "Bounded knowledge and objectives; abstention is valid without implying all prediction is impossible.",
+      "allocation": "F004,F005",
+      "extraction_words": 342,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 186,
+      "note": "Selection and interpretation themselves require examination; record filtering and perspective.",
+      "allocation": "F004,F005",
+      "extraction_words": 369,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 187,
+      "note": "Observe history before perturbing when appropriate; changes require permitted action channels.",
+      "allocation": "F005",
+      "extraction_words": 397,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 188,
+      "note": "Check measured behavior and multiple variables before accepting narratives or a favorite solution.",
+      "allocation": "F004,F005",
+      "extraction_words": 476,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 189,
+      "note": "Expose assumptions and compare competing models; preserve explicit reasons to reject or revise.",
+      "allocation": "F004,F005",
+      "extraction_words": 403,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 190,
+      "note": "Information quality, delay and visibility influence action; received reports and actual outcomes differ.",
+      "allocation": "F004,F005",
+      "extraction_words": 372,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 191,
+      "note": "Language and encodings filter representation; labels and imported semantics require provenance.",
+      "allocation": "F001,F004",
+      "extraction_words": 357,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 192,
+      "note": "Qualitative importance should not vanish because measurement is hard; support unquantified claims.",
+      "allocation": "F001,F004",
+      "extraction_words": 334,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 193,
+      "note": "Numerical scales for qualitative concepts are assumptions; avoid fabricated precision or compulsory scalar confidence.",
+      "allocation": "F004",
+      "extraction_words": 454,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 194,
+      "note": "Policies can adapt under monitoring; distinguish policy revision from changing fixed host authority.",
+      "allocation": "F003,F005",
+      "extraction_words": 392,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 195,
+      "note": "System-level outcomes and retained local capability matter; avoid unmeasured central takeover.",
+      "allocation": "F003,F005",
+      "extraction_words": 353,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 196,
+      "note": "Route consequence feedback to the mechanism that selected an action; preserve attribution.",
+      "allocation": "F004,F005",
+      "extraction_words": 393,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 197,
+      "note": "Inspect internal organization and external triggers; revise through measured small steps.",
+      "allocation": "F003,F005",
+      "extraction_words": 404,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 198,
+      "note": "Retain failed predictions and uncertainty; transient diversity is not automatically an error.",
+      "allocation": "F004,F005",
+      "extraction_words": 350,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 199,
+      "note": "Allow extended horizons; author's normative preferences are not substrate optimization laws.",
+      "allocation": "F005",
+      "extraction_words": 393,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 200,
+      "note": "Fast/slow couplings and cross-domain views; avoid fixed temporal or disciplinary partitioning.",
+      "allocation": "F001,F002",
+      "extraction_words": 389,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 201,
+      "note": "Systemic consequences cross scope boundaries; normative caring is a goal choice, not neutral host semantics.",
+      "allocation": "F005",
+      "extraction_words": 389,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 202,
+      "note": "Understanding and implementation remain distinct; preserve criteria without treating exhortation as mechanism.",
+      "allocation": "F005",
+      "extraction_words": 205,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 203,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 204,
+      "note": "Glossary confirms direction, polarity, dynamics and causal-loop definitions are different concepts.",
+      "allocation": "F002,F004",
+      "extraction_words": 334,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 205,
+      "note": "Glossary and principle summary confirm earlier state/organization allocations.",
+      "allocation": "F001,F003",
+      "extraction_words": 301,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 206,
+      "note": "Summary reinforces time ordering, delayed feedback and conditional similarity.",
+      "allocation": "F002,F005",
+      "extraction_words": 275,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 207,
+      "note": "Summary covers resource bounds and resilience without implying universal unlimited growth.",
+      "allocation": "F006",
+      "extraction_words": 278,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 208,
+      "note": "Summary reiterates partial models and shared-resource costs; no new independent evidence.",
+      "allocation": "F004,F006",
+      "extraction_words": 314,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 209,
+      "note": "Trap summary reiterates drift, escalation and allocation lock-in.",
+      "allocation": "F004,F005",
+      "extraction_words": 366,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 210,
+      "note": "Trap summary confirms dependency, rule gaming and proxy-objective risks.",
+      "allocation": "F004,F005",
+      "extraction_words": 335,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 211,
+      "note": "Leverage and practice indexes are coverage lists; retain body-text qualifications.",
+      "allocation": "assumption",
+      "extraction_words": 241,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 212,
+      "note": "Executable model needs units, initial conditions, horizon and integration interval.",
+      "allocation": "F002,F005",
+      "extraction_words": 278,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 213,
+      "note": "Comparative initial conditions and parameter runs require separate configuration identities.",
+      "allocation": "F004,F005",
+      "extraction_words": 217,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 214,
+      "note": "Piecewise rules and externally supplied driving curves are explicit model assumptions.",
+      "allocation": "F002,F004",
+      "extraction_words": 226,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 215,
+      "note": "Scenario input curves require recorded values; graph appearance alone does not pin a numerical fixture.",
+      "allocation": "F004,F005",
+      "extraction_words": 125,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 216,
+      "note": "Finite time step, unit consistency, clipping and causal stock updates need executable contracts.",
+      "allocation": "F002,F005",
+      "extraction_words": 208,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 217,
+      "note": "Perception/action/delivery delay definitions and zero-delay behavior need precise semantics.",
+      "allocation": "F002,F005",
+      "extraction_words": 224,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 218,
+      "note": "Resource model uses nonlinear lookup curves; exact reproduction needs pinned curves and model interpretation.",
+      "allocation": "F004,F005",
+      "extraction_words": 244,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 219,
+      "note": "Regeneration and yield are different relationships; preserve parameters, constraints and initial states.",
+      "allocation": "F002",
+      "extraction_words": 177,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 220,
+      "note": "Graph-defined functions need representation and numerical precision contracts; no solver is selected.",
+      "allocation": "F002,F005",
+      "extraction_words": 91,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 221,
+      "note": "Source notes for introduction and first two chapters; cited works themselves are not read here.",
+      "allocation": "source",
+      "extraction_words": 320,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 222,
+      "note": "Notes distinguish research references, paraphrase and orally reported anecdote; retain source strength.",
+      "allocation": "F004",
+      "extraction_words": 487,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 223,
+      "note": "Trap examples trace to historical reports; they are not independent validation of substrate requirements.",
+      "allocation": "source",
+      "extraction_words": 424,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 224,
+      "note": "Additional notes and anecdotal sources; preserve factual versus normative distinctions.",
+      "allocation": "F004",
+      "extraction_words": 295,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 225,
+      "note": "Bibliography provides further reading only; no claim to have reviewed those books.",
+      "allocation": "source",
+      "extraction_words": 202,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 226,
+      "note": "Organizations, software and business resources; no current-tool recommendation inferred.",
+      "allocation": "source",
+      "extraction_words": 268,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 227,
+      "note": "Environment and social-change bibliography; outside present source-review scope.",
+      "allocation": "source",
+      "extraction_words": 58,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 228,
+      "note": "Editorial acknowledgments; no new technical requirement.",
+      "allocation": "source",
+      "extraction_words": 254,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 229,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 230,
+      "note": "Author biography and historical modeling context; no new substrate requirement.",
+      "allocation": "source",
+      "extraction_words": 217,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 231,
+      "note": "Blank/typesetting page.",
+      "allocation": "source",
+      "extraction_words": 6,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 232,
+      "note": "Index cross-check covers archetypes, boundaries, assumptions and model equations.",
+      "allocation": "coverage",
+      "extraction_words": 219,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 233,
+      "note": "Index cross-check covers timing, feedback, goals and hierarchy.",
+      "allocation": "coverage",
+      "extraction_words": 263,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 234,
+      "note": "Index cross-check covers information, constraints, paradigms and resource models.",
+      "allocation": "coverage",
+      "extraction_words": 266,
+      "access": "extracted_text_and_available_labels_captions"
+    },
+    {
+      "pdf_page": 235,
+      "note": "Final index cross-check covers structure, dynamics, resilience and self-organization.",
+      "allocation": "coverage",
+      "extraction_words": 256,
+      "access": "extracted_text_and_available_labels_captions"
+    }
+  ]
+}
+

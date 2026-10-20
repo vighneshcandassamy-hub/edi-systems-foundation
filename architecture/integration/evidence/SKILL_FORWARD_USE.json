@@ -1,0 +1,64 @@
+{
+  "scope": "fresh_context_skill_application_only",
+  "agent": "/root/interface_skill_use_v2",
+  "source_context": "Named skill and synthetic raw proposal only; no diagnosis, intended fixes or sibling design drafts supplied.",
+  "prompt": "Use $edi-interface-review on the four-component proposal; produce smallest corrections, catalogue and review; design only and output directory only.",
+  "skill_sha256": "00f46d6f35e3cad11689b5317af66f70083c7880c8a495f6d68221be05e761d5",
+  "checker_sha256": "35f80df00c9ad20923b7996c4d23b4dbb869ce6c89abd2b81571557359e120e1",
+  "raw_artifacts": {
+    "architecture/integration/evidence/forward-use/checker-result.json": "b6cd908cf18c683ab0aeaa6df9624a80a298b4c19f3b68fd55ff84ccd05144e7",
+    "architecture/integration/evidence/forward-use/catalogue.json": "135aeb68dc129a69a0cd37eb859344e6a2da4461f2caf081c25a965236417619",
+    "architecture/integration/evidence/forward-use/source-pin.json": "d578f5dffe35e5ad4ef4cb59e966d57555c30d08e885acea15e1f00483562d04",
+    "architecture/integration/evidence/forward-use/review.md": "0a7d297e86b1d813cb00b95a439e5d4069723977f4962967ea8d98985f2486b8",
+    "architecture/integration/evidence/forward-use/proposal.md": "fccbf8d9530e4555099ffd17d16782003ad970cd45a876e56e92a494495e96f7"
+  },
+  "agent_gate": {
+    "gate": "architecture",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Self-review of a proposed design from one pinned file, not independent endpoint/runtime review. Four applications retained; M is external. Open acquisition capability prevents full intended architecture approval. Contracts proposed; no product cases executed.",
+    "gates": {
+      "architecture": "revise",
+      "contract": "revise",
+      "runtime": "blocked",
+      "integration": "blocked"
+    }
+  },
+  "root_checker_recheck": {
+    "scope": "interface_inventory_consistency_only",
+    "semantics_independently_verified": false,
+    "component_count": 5,
+    "pair_count": 10,
+    "directed_lane_count": 20,
+    "contract_count": 21,
+    "feedback_groups": [
+      [
+        "M",
+        "O",
+        "R",
+        "S",
+        "X"
+      ]
+    ],
+    "consistent": true,
+    "errors": []
+  },
+  "observed_findings": [
+    "Missing pair and model dependency coverage",
+    "Acknowledgement before durable state and invented O acknowledgement",
+    "Payload equality versus occurrence identity",
+    "Generated output reentry and shared-model corroboration",
+    "Competing mutation authority",
+    "Evidence expiry and unavailable recovery",
+    "Unbounded inquiry and missing external acquisition authority",
+    "Incompatible embedding versions"
+  ],
+  "product_cases_executed": 0,
+  "adoption": "Synthetic design and its thresholds are not adopted as the EDI product architecture.",
+  "limits": [
+    "Fresh-context exercise supports skill usability, not EDI runtime/scientific qualification.",
+    "Catalogue semantic review is an agent design walkthrough, not independent endpoint or empirical validation.",
+    "An earlier environment follow-up was unavailable due usage limits; this receipt uses the successful new run and its raw artifacts."
+  ]
+}

@@ -1,0 +1,826 @@
+{
+  "schema": "edi-substrate-functional-trace-v1",
+  "component": "EDI semantic-neutral representation substrate",
+  "version": "0.3",
+  "date": "2026-10-19",
+  "status": "draft_blueprint_for_owner_review",
+  "product_verification": "not_run",
+  "upstream": {
+    "mission": "EDI-MIS-001",
+    "catalogue": "../observation/REQUIREMENTS.json"
+  },
+  "source_review": "MEADOWS_REVIEW.md",
+  "function_authority": "SUBSTRATE_PLAN.md",
+  "specifications_status": "six_proposed_specs_concrete_contracts_pending",
+  "requirements": [
+    {
+      "id": "SUB-R001",
+      "title": "Host representations and distinguish state",
+      "statement": "The substrate shall host addressable representations of supplied structures and state, preserving modality/order/composition and qualitative or unquantified content without requiring a universal numeric or stock-flow encoding.",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-003",
+        "EDI-SYS-004"
+      ],
+      "function_ids": [
+        "SUB-F001",
+        "SUB-F004"
+      ],
+      "verification_case_ids": [
+        "SUB-V001",
+        "SUB-V004",
+        "SUB-V009",
+        "SUB-V014"
+      ],
+      "source_pdf_pages": [
+        22,
+        24,
+        28,
+        30,
+        35,
+        191,
+        192,
+        193
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A mixed numeric/qualitative fixture retains distinct source content, represented state and explicit unknowns through creation and retrieval.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R002",
+      "title": "Preserve identity, dependencies and revision lineage",
+      "statement": "The substrate shall preserve internal identity, versioned dependencies and corrections without rewriting acquired evidence or equating internal representation identity with physical identity.",
+      "parents": [
+        "EDI-SYS-008",
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "function_ids": [
+        "SUB-F003",
+        "SUB-F004"
+      ],
+      "verification_case_ids": [
+        "SUB-V003",
+        "SUB-V008"
+      ],
+      "source_pdf_pages": [
+        33,
+        101,
+        189
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A false association can be retracted or split with prior as-of state and affected dependencies still inspectable.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R003",
+      "title": "Distinguish interface and response properties",
+      "statement": "The substrate shall distinguish interaction boundary/participants, permitted exchange direction, hypothesized response polarity, loop behavior and uncertain causal status, including multi-party and mediated relations.",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-006"
+      ],
+      "function_ids": [
+        "SUB-F002"
+      ],
+      "verification_case_ids": [
+        "SUB-V002",
+        "SUB-V011",
+        "SUB-V015"
+      ],
+      "source_pdf_pages": [
+        44,
+        45,
+        46,
+        51,
+        61,
+        108,
+        109,
+        204
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "Directed, symmetric, unknown, multi-step and context-dependent examples remain distinguishable without promoting a directed exchange to causal proof.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R004",
+      "title": "Host scoped interaction and transition rules",
+      "statement": "The substrate shall host declared or proposed interaction/update mechanisms with applicability, exchange or transformation semantics, constraints and unknowns; copying information shall not implicitly impose material-conservation rules.",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-010",
+        "EDI-SYS-016"
+      ],
+      "function_ids": [
+        "SUB-F002"
+      ],
+      "verification_case_ids": [
+        "SUB-V009",
+        "SUB-V011",
+        "SUB-V015",
+        "SUB-V021"
+      ],
+      "source_pdf_pages": [
+        35,
+        36,
+        43,
+        55,
+        84,
+        212,
+        213,
+        214,
+        218,
+        219
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A pinned mechanism distinguishes state, rate, signal and appropriate constraints, with unknown mechanics and unsupported causal claims retained explicitly.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R005",
+      "title": "Preserve timing and history dependencies",
+      "statement": "The substrate shall retain event/receipt/model-time distinctions and history required by supported delayed/asynchronous mechanisms, including perception, response and delivery delays and declared numerical timing where applicable.",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-006",
+        "EDI-SYS-009",
+        "EDI-SYS-010",
+        "EDI-SYS-014"
+      ],
+      "function_ids": [
+        "SUB-F002",
+        "SUB-F003",
+        "SUB-F005"
+      ],
+      "verification_case_ids": [
+        "SUB-V010",
+        "SUB-V016",
+        "SUB-V021"
+      ],
+      "source_pdf_pages": [
+        56,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        120,
+        121,
+        122,
+        216,
+        217
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "Same-current-observation/different-history fixtures, delayed updates and replay retain their distinctions and use no evidence unavailable at the recorded prediction time.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R006",
+      "title": "Compose and inspect at declared scales",
+      "statement": "The substrate shall support reusable nested and overlapping views with cross-level dependencies, retaining access to evidence and declaring losses and validity limits of compression/abstraction.",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-004",
+        "EDI-SYS-011",
+        "EDI-SYS-014"
+      ],
+      "function_ids": [
+        "SUB-F001",
+        "SUB-F004"
+      ],
+      "verification_case_ids": [
+        "SUB-V001",
+        "SUB-V013",
+        "SUB-V022"
+      ],
+      "source_pdf_pages": [
+        24,
+        99,
+        100,
+        101,
+        102,
+        200
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A coarse view exposes its supporting detail and any task-consequential loss; structural resemblance alone does not qualify transfer.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R007",
+      "title": "Preserve uncertainty and rival mechanisms",
+      "statement": "The substrate shall preserve missing coverage, hidden-state uncertainty, conflicting and observationally indistinguishable explanations, including nonnumeric uncertainty, without treating unobserved as absent or imposing one scalar confidence.",
+      "parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-006",
+        "EDI-SYS-008"
+      ],
+      "function_ids": [
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "verification_case_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V012",
+        "SUB-V014",
+        "SUB-V022"
+      ],
+      "source_pdf_pages": [
+        103,
+        104,
+        123,
+        124,
+        189,
+        192,
+        193
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "Under insufficient evidence, alternatives remain distinct and unresolved; unknown values or coverage cannot silently become zero, false or independent confirmation.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R008",
+      "title": "Trace evidence and imported assistance",
+      "statement": "The substrate shall trace received claims, transformations, producer/model versions, imported knowledge, shared evidence and subsequent outcomes so learned experience is distinguishable from externally supplied proposals and repeated derivations.",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-006",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "function_ids": [
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "verification_case_ids": [
+        "SUB-V004",
+        "SUB-V007",
+        "SUB-V017",
+        "SUB-V018"
+      ],
+      "source_pdf_pages": [
+        10,
+        148,
+        149,
+        150,
+        151,
+        152,
+        189,
+        190,
+        222,
+        224
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "An assisted proposal retains lineage and shared-evidence dependence; prospective controls can isolate the declared retained/native contribution.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R009",
+      "title": "Revise context and scope",
+      "statement": "The substrate shall support revisable context, regime and boundary hypotheses, preserving unknown external drivers and distinguishing the actual acquisition/action boundary from modeled world scopes.",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-006",
+        "EDI-SYS-008"
+      ],
+      "function_ids": [
+        "SUB-F001",
+        "SUB-F003",
+        "SUB-F004"
+      ],
+      "verification_case_ids": [
+        "SUB-V012",
+        "SUB-V022"
+      ],
+      "source_pdf_pages": [
+        62,
+        65,
+        108,
+        109,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A previously supported relation can be narrowed, widened or invalidated under changed context without erasing earlier evidence or asserting a unique hidden cause.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R010",
+      "title": "Expose inquiry selection and stopping",
+      "statement": "The substrate shall expose evidence, assumptions, selection/exposure history and candidate alternatives needed for bounded inquiry and discriminating tests; scheduling policy and its objectives shall be declared at the relevant component boundary.",
+      "parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-007",
+        "EDI-SYS-013",
+        "EDI-SYS-014"
+      ],
+      "function_ids": [
+        "SUB-F005",
+        "SUB-F006"
+      ],
+      "verification_case_ids": [
+        "SUB-V005",
+        "SUB-V016",
+        "SUB-V017"
+      ],
+      "source_pdf_pages": [
+        123,
+        125,
+        126,
+        130,
+        141,
+        144,
+        145,
+        146,
+        147,
+        173,
+        174,
+        188
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "Inspection can identify selection bias and a credible challenge; inquiry can defer, stop or revisit on declared grounds without forcing equal credibility or constant model calls.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R011",
+      "title": "Separate trials, committed changes and authority",
+      "statement": "The substrate shall distinguish candidate/simulation state, committed internal state, observation evidence and measured external outcomes; versioned changes shall have explicit type, authority, concurrency and failure semantics.",
+      "parents": [
+        "EDI-SYS-008",
+        "EDI-SYS-010",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "function_ids": [
+        "SUB-F003",
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "verification_case_ids": [
+        "SUB-V008",
+        "SUB-V014",
+        "SUB-V019",
+        "SUB-V021"
+      ],
+      "source_pdf_pages": [
+        33,
+        34,
+        62,
+        63,
+        64,
+        175,
+        176,
+        178,
+        179,
+        180,
+        181,
+        194,
+        195
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "Stale or unauthorized trial updates cannot overwrite evidence or commit effects; state/parameter/structure/policy/goal changes remain attributable and distinct.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R012",
+      "title": "Enable accountable reorganization",
+      "statement": "The substrate shall permit supported creation, deletion/retirement, split, merge and rewiring of organization and explicit proposed mechanisms, retaining dependencies, history and declared irreversibility/loss.",
+      "parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-008",
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "function_ids": [
+        "SUB-F003"
+      ],
+      "verification_case_ids": [
+        "SUB-V003",
+        "SUB-V008",
+        "SUB-V020"
+      ],
+      "source_pdf_pages": [
+        29,
+        93,
+        96,
+        97,
+        98,
+        100,
+        176,
+        177
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A revised organization can be inspected against its predecessor, affected derivations are handled, and the origin of generative/selection rules remains explicit.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R013",
+      "title": "Keep goals and outcome criteria explicit",
+      "statement": "The substrate shall preserve inferred function, supplied task, inquiry objective, operational constraints and evaluation criteria as distinct versioned concepts; proposed changes shall not silently weaken acceptance or promote activity proxies to success.",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-012",
+        "EDI-SYS-013",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "function_ids": [
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "verification_case_ids": [
+        "SUB-V014",
+        "SUB-V019"
+      ],
+      "source_pdf_pages": [
+        31,
+        32,
+        139,
+        140,
+        141,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        178,
+        194
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A proposal that lowers a threshold, increases question count or changes a goal cannot be reported as improved prediction/task performance under unchanged criteria.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R014",
+      "title": "Bound shared resources and account for complete costs",
+      "statement": "The substrate shall expose and enforce its declared storage/access/update budgets and backpressure with a defined owner, including costs and failures of inquiry/model dependencies under the selected operating profile.",
+      "parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "function_ids": [
+        "SUB-F005",
+        "SUB-F006"
+      ],
+      "verification_case_ids": [
+        "SUB-V006",
+        "SUB-V016",
+        "SUB-V020"
+      ],
+      "source_pdf_pages": [
+        40,
+        41,
+        76,
+        117,
+        118,
+        119,
+        134,
+        135,
+        136,
+        137,
+        138,
+        166,
+        167
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "A pinned workload accounts for offered/admitted/rejected work, failed calls and all relevant costs; saturation has bounded explicit behavior.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R015",
+      "title": "Preserve recoverable organization under declared retention",
+      "statement": "The substrate shall provide declared durability/recovery and loss semantics, with inspectable retention/compression decisions that consider rare but relevant structures and recovery needs rather than frequency alone.",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-013",
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "function_ids": [
+        "SUB-F003",
+        "SUB-F006"
+      ],
+      "verification_case_ids": [
+        "SUB-V006",
+        "SUB-V013",
+        "SUB-V020"
+      ],
+      "source_pdf_pages": [
+        93,
+        94,
+        95,
+        100,
+        166,
+        167,
+        168,
+        170
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "Fault and context-change fixtures expose what survives, what is lost and why; no universal retention, perfect reversibility or HA guarantee is inferred.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    },
+    {
+      "id": "SUB-R016",
+      "title": "Support reproducible prospective assessment",
+      "statement": "The substrate shall expose configurations, assumptions, initial states, available evidence and candidate outcomes needed to test conditional predictions and revisions prospectively, separating model response, future-driver assumptions, numerical semantics and actual observations.",
+      "parents": [
+        "EDI-SYS-005",
+        "EDI-SYS-007",
+        "EDI-SYS-010",
+        "EDI-SYS-011",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "function_ids": [
+        "SUB-F002",
+        "SUB-F004",
+        "SUB-F005"
+      ],
+      "verification_case_ids": [
+        "SUB-V007",
+        "SUB-V018",
+        "SUB-V019",
+        "SUB-V021",
+        "SUB-V022"
+      ],
+      "source_pdf_pages": [
+        18,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        107,
+        188,
+        189,
+        197,
+        198,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220
+      ],
+      "derivation": "Engineering requirement inferred from owner mission and source review; not prescribed or validated by the book.",
+      "acceptance": "Pinned candidate tests and appropriate unchanged/alternative/assistance controls retain full outcomes; simulation agreement or historical fit alone cannot establish causal identification, transfer or intelligence.",
+      "status": "proposed_not_implemented",
+      "evidence_ref": null
+    }
+  ],
+  "verification_case_ids": [
+    "SUB-V001",
+    "SUB-V002",
+    "SUB-V003",
+    "SUB-V004",
+    "SUB-V005",
+    "SUB-V006",
+    "SUB-V007",
+    "SUB-V008",
+    "SUB-V009",
+    "SUB-V010",
+    "SUB-V011",
+    "SUB-V012",
+    "SUB-V013",
+    "SUB-V014",
+    "SUB-V015",
+    "SUB-V016",
+    "SUB-V017",
+    "SUB-V018",
+    "SUB-V019",
+    "SUB-V020",
+    "SUB-V021",
+    "SUB-V022"
+  ],
+  "verification_authorities": [
+    "SUBSTRATE_PLAN.md",
+    "MEADOWS_REVIEW.md"
+  ],
+  "scope_note": "Six functions, sixteen draft requirements, three logical parts, six proposed specifications and twenty-two prospective substrate cases. Native development rules, concrete contracts and operating profiles remain open. No product qualification is claimed.",
+  "blueprint": "SUBSTRATE_BLUEPRINT.md",
+  "integration_catalogue": "../integration/INTERFACES.json",
+  "internal_interface_catalogue": "../integration/SUBSTRATE_INTERNAL_INTERFACES.json",
+  "components": [
+    {
+      "id": "SUB-C1",
+      "name": "Representation fabric",
+      "function_ids": [
+        "SUB-F001",
+        "SUB-F004",
+        "SUB-F006"
+      ],
+      "requirement_ids": [
+        "SUB-R001",
+        "SUB-R002",
+        "SUB-R003",
+        "SUB-R006",
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R009",
+        "SUB-R014",
+        "SUB-R015"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "SUB-C2",
+      "name": "Interaction and change engine",
+      "function_ids": [
+        "SUB-F002",
+        "SUB-F003"
+      ],
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R003",
+        "SUB-R004",
+        "SUB-R005",
+        "SUB-R009",
+        "SUB-R011",
+        "SUB-R012",
+        "SUB-R015",
+        "SUB-R016"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "SUB-C3",
+      "name": "Inquiry coordinator",
+      "function_ids": [
+        "SUB-F004",
+        "SUB-F005",
+        "SUB-F006"
+      ],
+      "requirement_ids": [
+        "SUB-R005",
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R010",
+        "SUB-R011",
+        "SUB-R013",
+        "SUB-R014",
+        "SUB-R016"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    }
+  ],
+  "specifications": [
+    {
+      "id": "SUB-C1-S01",
+      "component": "SUB-C1",
+      "title": "Native representation and grounding",
+      "requirement_ids": [
+        "SUB-R001",
+        "SUB-R003",
+        "SUB-R007",
+        "SUB-R008"
+      ],
+      "verification_case_ids": [
+        "SUB-V001",
+        "SUB-V004",
+        "SUB-V007",
+        "SUB-V009",
+        "SUB-V014"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "SUB-C1-S02",
+      "component": "SUB-C1",
+      "title": "Durable revisions and bounded views",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R006",
+        "SUB-R009",
+        "SUB-R014",
+        "SUB-R015"
+      ],
+      "verification_case_ids": [
+        "SUB-V003",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V013",
+        "SUB-V020"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "SUB-C2-S01",
+      "component": "SUB-C2",
+      "title": "Admission and commit coordination",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R011",
+        "SUB-R012"
+      ],
+      "verification_case_ids": [
+        "SUB-V003",
+        "SUB-V008",
+        "SUB-V019"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "SUB-C2-S02",
+      "component": "SUB-C2",
+      "title": "Interaction and trial execution",
+      "requirement_ids": [
+        "SUB-R003",
+        "SUB-R004",
+        "SUB-R005",
+        "SUB-R009",
+        "SUB-R011",
+        "SUB-R016"
+      ],
+      "verification_case_ids": [
+        "SUB-V002",
+        "SUB-V010",
+        "SUB-V011",
+        "SUB-V015",
+        "SUB-V016",
+        "SUB-V021"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "SUB-C3-S01",
+      "component": "SUB-C3",
+      "title": "Inquiry and evidence requests",
+      "requirement_ids": [
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R010",
+        "SUB-R014",
+        "SUB-R016"
+      ],
+      "verification_case_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V012",
+        "SUB-V017",
+        "SUB-V018",
+        "SUB-V022"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "SUB-C3-S02",
+      "component": "SUB-C3",
+      "title": "Revision evaluation and assistance",
+      "requirement_ids": [
+        "SUB-R005",
+        "SUB-R011",
+        "SUB-R013",
+        "SUB-R016"
+      ],
+      "verification_case_ids": [
+        "SUB-V005",
+        "SUB-V014",
+        "SUB-V018",
+        "SUB-V019",
+        "SUB-V022"
+      ],
+      "document": "SUBSTRATE_BLUEPRINT.md",
+      "status": "proposed_not_implemented"
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Internal substrate logical parts; not system component registry",
+  "input_revision": "a0c2c838c4ffb9cc0b7706082ad4ca5cf37a8d78",
+  "components": [
+    {
+      "id": "SUB-C1",
+      "name": "Representation fabric"
+    },
+    {
+      "id": "SUB-C2",
+      "name": "Interaction and change engine"
+    },
+    {
+      "id": "SUB-C3",
+      "name": "Inquiry coordinator"
+    }
+  ],
+  "contract_profiles": {
+    "SUB_shared": {
+      "ownership": "SUB-C1 sole durable state/commit storage; C2 change admission; C3 inquiry and selection. Trials use isolated namespaces.",
+      "authority": "C3 reads/proposes; direct C3 durable mutation prohibited. C2 validates authority/version/bounds then requests C1 commit. Rules cannot grant themselves new authority.",
+      "shape_versions": "Native selectors and immutable schema/profile/transform/model/preprocessing versions; explicit unknown/unsupported/partial results. Exact wire schema remains pending.",
+      "identity_scope": "Scoped request/record/occurrence IDs and source epochs; payload dedup is not occurrence dedup; operational identity differs from physical truth.",
+      "time_order": "Preserve event/valid/source/receipt/commit/known/model time and clock uncertainty. Acquisition cursor differs from event order; gaps remain explicit.",
+      "delivery_idempotency": "Stable request and occurrence identities, bounded retry/status/cancel, no duplicate state effect on replay; unknown outcome remains explicit.",
+      "commit_recovery": "C1 commit unit contains admitted changes, dependencies, applied IDs and consumer checkpoint; C2 records no competing state log.",
+      "retention": "Explicit native evidence availability plus substrate retention/recovery policy. Derived state must not imply eternal replay.",
+      "resource_limits": "Bound page/range/query/queue/trial/acquisition/model work by declared profile and shared root budget; count retries, failures and recovery. Numerical profile pending.",
+      "errors": "Unknown, unavailable, unsupported, denied, stale/conflict, timeout, cancelled, partial, integrity and capacity outcomes are attributable; exact binding pending.",
+      "feedback_grounding": "Keep native, derived, internal and imported evidence distinct; preserve selection/dependency lineage. Acceptance and internal echoes are not independent external corroboration."
+    }
+  },
+  "contracts": [
+    {
+      "id": "INT-SUB-001",
+      "from": "SUB-C1",
+      "to": "SUB-C2",
+      "title": "Bounded state, versions and durable commit results",
+      "status": "proposed",
+      "producer_port": "SUB-C1 bounded operation boundary",
+      "consumer_port": "SUB-C2 authorized operation boundary",
+      "profile_ref": "SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R008",
+        "SUB-R011",
+        "SUB-R014",
+        "SUB-R015",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V019",
+        "SUB-V020",
+        "SUB-V022"
+      ],
+      "facets": {
+        "authority": "C3 reads/proposes; direct C3 durable mutation prohibited. C2 validates authority/version/bounds then requests C1 commit. Rules cannot grant themselves new authority. Operation: Bounded state, versions and durable commit results."
+      }
+    },
+    {
+      "id": "INT-SUB-002",
+      "from": "SUB-C1",
+      "to": "SUB-C3",
+      "title": "Bounded read and committed-change views",
+      "status": "proposed",
+      "producer_port": "SUB-C1 bounded operation boundary",
+      "consumer_port": "SUB-C3 authorized operation boundary",
+      "profile_ref": "SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R008",
+        "SUB-R011",
+        "SUB-R014",
+        "SUB-R015",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V019",
+        "SUB-V020",
+        "SUB-V022"
+      ],
+      "facets": {
+        "authority": "C3 reads/proposes; direct C3 durable mutation prohibited. C2 validates authority/version/bounds then requests C1 commit. Rules cannot grant themselves new authority. Operation: Bounded read and committed-change views."
+      }
+    },
+    {
+      "id": "INT-SUB-003",
+      "from": "SUB-C2",
+      "to": "SUB-C1",
+      "title": "Bounded read and admitted durable change request",
+      "status": "proposed",
+      "producer_port": "SUB-C2 bounded operation boundary",
+      "consumer_port": "SUB-C1 authorized operation boundary",
+      "profile_ref": "SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R008",
+        "SUB-R011",
+        "SUB-R014",
+        "SUB-R015",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V019",
+        "SUB-V020",
+        "SUB-V022"
+      ],
+      "facets": {
+        "authority": "C3 reads/proposes; direct C3 durable mutation prohibited. C2 validates authority/version/bounds then requests C1 commit. Rules cannot grant themselves new authority. Operation: Bounded read and admitted durable change request."
+      }
+    },
+    {
+      "id": "INT-SUB-004",
+      "from": "SUB-C2",
+      "to": "SUB-C3",
+      "title": "Trial, validation, conflict and commit outcomes",
+      "status": "proposed",
+      "producer_port": "SUB-C2 bounded operation boundary",
+      "consumer_port": "SUB-C3 authorized operation boundary",
+      "profile_ref": "SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R008",
+        "SUB-R011",
+        "SUB-R014",
+        "SUB-R015",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V019",
+        "SUB-V020",
+        "SUB-V022"
+      ],
+      "facets": {
+        "authority": "C3 reads/proposes; direct C3 durable mutation prohibited. C2 validates authority/version/bounds then requests C1 commit. Rules cannot grant themselves new authority. Operation: Trial, validation, conflict and commit outcomes."
+      }
+    },
+    {
+      "id": "INT-SUB-005",
+      "from": "SUB-C3",
+      "to": "SUB-C1",
+      "title": "Read requests; direct mutation prohibited",
+      "status": "proposed",
+      "producer_port": "SUB-C3 bounded operation boundary",
+      "consumer_port": "SUB-C1 authorized operation boundary",
+      "profile_ref": "SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R008",
+        "SUB-R011",
+        "SUB-R014",
+        "SUB-R015",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V019",
+        "SUB-V020",
+        "SUB-V022"
+      ],
+      "facets": {
+        "authority": "C3 reads/proposes; direct C3 durable mutation prohibited. C2 validates authority/version/bounds then requests C1 commit. Rules cannot grant themselves new authority. Operation: Read requests; direct mutation prohibited."
+      }
+    },
+    {
+      "id": "INT-SUB-006",
+      "from": "SUB-C3",
+      "to": "SUB-C2",
+      "title": "Attributed trial and revision proposal",
+      "status": "proposed",
+      "producer_port": "SUB-C3 bounded operation boundary",
+      "consumer_port": "SUB-C2 authorized operation boundary",
+      "profile_ref": "SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R008",
+        "SUB-R011",
+        "SUB-R014",
+        "SUB-R015",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V019",
+        "SUB-V020",
+        "SUB-V022"
+      ],
+      "facets": {
+        "authority": "C3 reads/proposes; direct C3 durable mutation prohibited. C2 validates authority/version/bounds then requests C1 commit. Rules cannot grant themselves new authority. Operation: Attributed trial and revision proposal."
+      }
+    }
+  ],
+  "lanes": [
+    {
+      "from": "SUB-C1",
+      "to": "SUB-C2",
+      "disposition": "required",
+      "rationale": "Bounded state, versions and durable commit results",
+      "contract_ids": [
+        "INT-SUB-001"
+      ]
+    },
+    {
+      "from": "SUB-C1",
+      "to": "SUB-C3",
+      "disposition": "required",
+      "rationale": "Bounded read and committed-change views",
+      "contract_ids": [
+        "INT-SUB-002"
+      ]
+    },
+    {
+      "from": "SUB-C2",
+      "to": "SUB-C1",
+      "disposition": "required",
+      "rationale": "Bounded read and admitted durable change request",
+      "contract_ids": [
+        "INT-SUB-003"
+      ]
+    },
+    {
+      "from": "SUB-C2",
+      "to": "SUB-C3",
+      "disposition": "required",
+      "rationale": "Trial, validation, conflict and commit outcomes",
+      "contract_ids": [
+        "INT-SUB-004"
+      ]
+    },
+    {
+      "from": "SUB-C3",
+      "to": "SUB-C1",
+      "disposition": "required",
+      "rationale": "Read requests; direct mutation prohibited",
+      "contract_ids": [
+        "INT-SUB-005"
+      ]
+    },
+    {
+      "from": "SUB-C3",
+      "to": "SUB-C2",
+      "disposition": "required",
+      "rationale": "Attributed trial and revision proposal",
+      "contract_ids": [
+        "INT-SUB-006"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "SUB-V001",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V002",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V003",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V004",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V005",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V006",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V007",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V008",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V009",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V010",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V011",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V012",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V013",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V014",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V015",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V016",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V017",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V018",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V019",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V020",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V021",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "SUB-V022",
+      "required": true,
+      "status": "specified_not_run"
+    }
+  ],
+  "findings": [
+    {
+      "id": "SUB-INT-G001",
+      "description": "Concrete operations, conflict rules and inquiry strategy pending.",
+      "status": "open",
+      "blocking_at": [
+        "architecture",
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "SUB-C1",
+        "SUB-C2",
+        "SUB-C3"
+      ],
+      "analysis": "Read \u2192 proposal \u2192 bounded trial \u2192 admitted commit \u2192 inspect. Check delays, propagation budgets, stale views, circular waits, selection and self-confirmation.",
+      "verification_ids": [
+        "SUB-V004",
+        "SUB-V005",
+        "SUB-V006",
+        "SUB-V008",
+        "SUB-V019",
+        "SUB-V020",
+        "SUB-V022"
+      ]
+    }
+  ],
+  "review": {
+    "gate": "architecture",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Logical internal operations only; no product runtime evidence."
+  }
+}

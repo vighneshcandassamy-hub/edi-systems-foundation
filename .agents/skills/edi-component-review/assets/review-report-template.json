@@ -1,0 +1,26 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "REPLACE_COMPONENT",
+  "gate": "architecture",
+  "requested_scope": "design_only",
+  "input_revision": "REPLACE_SOURCE_REVISION",
+  "reviewer": {"role": "architect_and_critic", "independent": false},
+  "traceability": {"source": "REPLACE_REQUIREMENT_AUTHORITY", "checked": false, "evidence_ref": null},
+  "criteria": [
+    {"id": "mission_trace", "status": "revise", "rationale": "Complete the mission-to-evidence allocation.", "references": []},
+    {"id": "boundary_contract", "status": "revise", "rationale": "Define producer and consumer obligations.", "references": []},
+    {"id": "necessity_simplicity", "status": "revise", "rationale": "Justify mandatory mechanisms and the simpler alternative.", "references": []},
+    {"id": "evidence_uncertainty", "status": "revise", "rationale": "Declare evidence, uncertainty and revision semantics.", "references": []},
+    {"id": "resource_envelope", "status": "revise", "rationale": "Define workload and proposed or measured limits.", "references": []},
+    {"id": "failure_recovery", "status": "revise", "rationale": "Specify bounded failure propagation and recovery or justify irrelevance.", "references": []},
+    {"id": "sourced_choices", "status": "revise", "rationale": "Ground decisions and distinguish assumptions from evidence.", "references": []},
+    {"id": "verification_scope", "status": "revise", "rationale": "Allocate prospective verification and state what is not established.", "references": []}
+  ],
+  "findings": [],
+  "changes": [],
+  "verification": [],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "next_step": "Populate the scoped review from current artifacts; do not infer a pass from this template."
+}

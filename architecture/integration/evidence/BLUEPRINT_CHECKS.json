@@ -1,0 +1,210 @@
+{
+  "schema": "edi-blueprint-document-checks-v1",
+  "scope": "documentation_and_skill_checks_only",
+  "input_revision": "a0c2c838c4ffb9cc0b7706082ad4ca5cf37a8d78",
+  "sha256": {
+    "architecture/substrate/SUBSTRATE_BLUEPRINT.md": "838af5131c92f558767df19eeb1461874e50a69aa20700dc8aa653e2e011feed",
+    "architecture/substrate/BUDWORM_CHALLENGE.md": "c675af927594076e39a5e7289ff8a8690ab4315d3a40fe4adfcf1cd66a21ebfa",
+    "architecture/substrate/REQUIREMENTS.json": "767f3011a9124d0e92c090f491ecc7b2270f31fbf1c882b06de11796251beb39",
+    "architecture/integration/OBSERVATION_SUBSTRATE.md": "ae317449e5a1250a1c38435257f0247b53bad44f711afe307adfe485df718a43",
+    "architecture/integration/INTERFACES.json": "582501194cf5e0c89ff5462c5582d7b05481e89696ee9434128e79989d84a014",
+    "architecture/integration/SUBSTRATE_INTERNAL_INTERFACES.json": "7fa83cc3ac442bdc738a88c0ce48f7e0ec2a74528a4e09f9bc796e819ac8c30f",
+    ".agents/skills/edi-interface-review/SKILL.md": "00f46d6f35e3cad11689b5317af66f70083c7880c8a495f6d68221be05e761d5",
+    ".agents/skills/edi-interface-review/scripts/interface_matrix.py": "35f80df00c9ad20923b7996c4d23b4dbb869ce6c89abd2b81571557359e120e1"
+  },
+  "requirements": 16,
+  "logical_parts": 3,
+  "proposed_specifications": 6,
+  "substrate_cases": 22,
+  "integration_cases": 12,
+  "all_parent_requirement_ids_exist": true,
+  "all_requirements_allocated_to_parts_and_specs": true,
+  "all_cases_allocated_to_specs": true,
+  "downstream_obligations_allocated": 8,
+  "checked_relative_links": [
+    {
+      "source": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "target": "SUBSTRATE_PLAN.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "target": "REQUIREMENTS.json"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "target": "MEADOWS_REVIEW.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "target": "../integration/OBSERVATION_SUBSTRATE.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "target": "BUDWORM_CHALLENGE.md"
+    },
+    {
+      "source": "architecture/substrate/BUDWORM_CHALLENGE.md",
+      "target": "SUBSTRATE_BLUEPRINT.md"
+    },
+    {
+      "source": "architecture/integration/OBSERVATION_SUBSTRATE.md",
+      "target": "../substrate/SUBSTRATE_BLUEPRINT.md"
+    },
+    {
+      "source": "architecture/integration/OBSERVATION_SUBSTRATE.md",
+      "target": "../observation/COMPONENT_SPECS.md"
+    },
+    {
+      "source": "architecture/integration/OBSERVATION_SUBSTRATE.md",
+      "target": "SUBSTRATE_INTERNAL_INTERFACES.json"
+    },
+    {
+      "source": "architecture/integration/OBSERVATION_SUBSTRATE.md",
+      "target": "INTERFACES.json"
+    },
+    {
+      "source": ".agents/skills/edi-interface-review/SKILL.md",
+      "target": "references/interface-checklist.md"
+    },
+    {
+      "source": ".agents/skills/edi-interface-review/SKILL.md",
+      "target": "assets/interface-review-template.json"
+    },
+    {
+      "source": ".agents/skills/edi-component-review/SKILL.md",
+      "target": "references/edi-context.md"
+    },
+    {
+      "source": ".agents/skills/edi-component-review/SKILL.md",
+      "target": "assets/component-plan-template.md"
+    },
+    {
+      "source": ".agents/skills/edi-component-review/SKILL.md",
+      "target": "references/review-methods.md"
+    },
+    {
+      "source": ".agents/skills/edi-component-review/SKILL.md",
+      "target": "references/operating-envelope.md"
+    },
+    {
+      "source": ".agents/skills/edi-component-review/SKILL.md",
+      "target": "assets/review-report-template.json"
+    },
+    {
+      "source": ".agents/skills/edi-component-review/SKILL.md",
+      "target": "../edi-interface-review/SKILL.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "MEADOWS_REVIEW.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "MEADOWS_PAGE_REVIEW.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "REQUIREMENTS.json"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "../observation/REQUIREMENTS.json"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "REQUIREMENTS.json"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "MEADOWS_REVIEW.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "MEADOWS_REVIEW.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "MEADOWS_PAGE_REVIEW.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "SUBSTRATE_BLUEPRINT.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "../integration/OBSERVATION_SUBSTRATE.md"
+    },
+    {
+      "source": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "target": "BUDWORM_CHALLENGE.md"
+    }
+  ],
+  "matrix_results": {
+    "architecture/integration/INTERFACES.json": {
+      "scope": "interface_inventory_consistency_only",
+      "semantics_independently_verified": false,
+      "component_count": 2,
+      "pair_count": 1,
+      "directed_lane_count": 2,
+      "contract_count": 11,
+      "feedback_groups": [
+        [
+          "OBS",
+          "SUB"
+        ]
+      ],
+      "consistent": true,
+      "errors": []
+    },
+    "architecture/integration/SUBSTRATE_INTERNAL_INTERFACES.json": {
+      "scope": "interface_inventory_consistency_only",
+      "semantics_independently_verified": false,
+      "component_count": 3,
+      "pair_count": 3,
+      "directed_lane_count": 6,
+      "contract_count": 6,
+      "feedback_groups": [
+        [
+          "SUB-C1",
+          "SUB-C2",
+          "SUB-C3"
+        ]
+      ],
+      "consistent": true,
+      "errors": []
+    }
+  },
+  "helper_self_tests": {
+    "positive_reports": 4,
+    "negative_reports_rejected": [
+      "missing_reverse",
+      "duplicate_lane",
+      "unknown_component",
+      "self_lane",
+      "active_without_contract",
+      "wrong_direction",
+      "inactive_with_contract",
+      "missing_facet",
+      "missing_case",
+      "missing_feedback_review",
+      "runtime_without_evidence",
+      "runtime_contract_without_evidence",
+      "false_product_qualification",
+      "malformed_gate",
+      "malformed_disposition",
+      "malformed_case_status",
+      "unresolved_blocker"
+    ]
+  },
+  "product_tests_run": false,
+  "manual_review": [
+    "DOWN-007 \u2192 SUB-R002/R011/R015 \u2192 C2 admission/C1 durable commit \u2192 INT-OS-001/010 \u2192 INT-V004/V010/V012; no ack before durable state/checkpoint consistency.",
+    "DOWN-001 \u2192 SUB-R007/R008/R011 \u2192 C3 proposed inquiry/C2 admission \u2192 INT-OS-004/005/006/007/009 \u2192 INT-V007; internal and operational acceptance are not external corroboration.",
+    "Budworm challenge \u2192 SUB-R003/R004/R005/R007/R009/R013/R016: supports conditional dynamics, temporal scales, alternatives, boundaries and separate stakeholder goals; discovery not demonstrated."
+  ],
+  "limitations": [
+    "ID/link/pair/helper consistency is not semantic completeness or scientific validation.",
+    "Native proposal/prediction/promotion/scheduling rules and concrete contracts/operating profiles remain open.",
+    "No runtime, HA, full-task efficiency or new learning result is measured."
+  ]
+}

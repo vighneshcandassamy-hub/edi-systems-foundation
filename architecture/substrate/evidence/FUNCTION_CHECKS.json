@@ -1,0 +1,22 @@
+{
+  "scope": "documentation_only",
+  "input_revision": "a0c2c838c4ffb9cc0b7706082ad4ca5cf37a8d78",
+  "plan_sha256": "52df2cd4afe3d44110542bcc465543c87d6fe10c1742c02ae036a0351262040f",
+  "parent_ids_exist": true,
+  "function_rows": 6,
+  "prospective_cases": 22,
+  "draft_component_requirements": 16,
+  "complete_review_findings": 12,
+  "reviewed_pdf_pages": 235,
+  "coverage_evidence": "architecture/substrate/evidence/MEADOWS_REVIEW_CHECKS.json",
+  "relative_links_resolve": true,
+  "product_tests_run": false,
+  "limitations": [
+    "All extracted text and available labels/captions reviewed; no independent figure-geometry audit.",
+    "No numerical reproduction of book models or independent verification of cited works.",
+    "Page/trace checks do not prove functional completeness, scientific correctness or product capability."
+  ],
+  "proposed_components": 3,
+  "proposed_specifications": 6,
+  "blueprint_evidence": "architecture/integration/evidence/BLUEPRINT_CHECKS.json"
+}

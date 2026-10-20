@@ -1,0 +1,349 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "EDI substrate blueprint and observation integration proposal",
+  "gate": "architecture",
+  "requested_scope": "design_consolidation_and_all_pair_interface_review",
+  "input_revision": "a0c2c838c4ffb9cc0b7706082ad4ca5cf37a8d78",
+  "reviewer": {
+    "role": "architect_and_critic",
+    "independent": false
+  },
+  "traceability": {
+    "source": "architecture/substrate/REQUIREMENTS.json",
+    "checked": true,
+    "evidence_ref": "architecture/substrate/evidence/MEADOWS_REVIEW_CHECKS.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "revise",
+      "rationale": "Sixteen requirements allocated to three logical owners/six proposed specs and twenty-two prospective cases. Concrete contracts and fulfillment evidence pending.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Eleven OBS/SUB contract families, six internal lanes and explicit mutation/evidence authority proposed. Concrete binding and native inquiry strategy remain open.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Eight overlapping conversational functions reduced to six; active interaction and inquiry support added without mandating services or all-to-all connections.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Proposal preserves evidence lineage, competing alternatives, unknown direction and the distinction between model output and external evidence.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Bounded inquiry, interaction and retention are requirements; workload, budgets and measurable targets remain to be designed.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "Single durable state authority, state/checkpoint-before-ack and explicit unavailable fallback are proposed. Concrete conflict/recovery profiles and runtime tests pending.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "All 235 source pages are accounted for; extracted text/available captions are reviewed with image-only cover metadata and visual/numerical limits explicit. Engineering inferences are distinguished from book assertions and validation.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Twenty-two prospective cases are not run. Source coverage and trace/link checks are documentation evidence only; architecture remains REVISE.",
+      "references": [
+        "architecture/substrate/SUBSTRATE_PLAN.md",
+        "architecture/substrate/MEADOWS_REVIEW.md",
+        "architecture/substrate/REQUIREMENTS.json",
+        "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+        "architecture/integration/OBSERVATION_SUBSTRATE.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "SUB-REVIEW-001",
+      "description": "Passive relationship hosting omitted executable interaction and direction/causality distinctions; added F002 and F005.",
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "SUB-REVIEW-002",
+      "description": "A mandatory single merged representation or nonstop questioning would impose unsupported organization and unbounded work; corrected functional constraints.",
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "SUB-REVIEW-003",
+      "description": "Blueprint selects three logical owners and proposes a record-and-relation host; concrete operators/conflict rules, native inquiry strategy and operating profiles remain to select before architecture approval.",
+      "status": "open",
+      "blocking_at": [
+        "architecture",
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "SUB-REVIEW-004",
+      "description": "State, dynamics, delay, feedback, context boundaries, scale and function/goal distinctions were under-specified; functional corrections SUB-G001 through SUB-G008 are recorded. Selected implementation mechanisms remain open under SUB-REVIEW-003.",
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "SUB-REVIEW-005",
+      "description": "Complete page review adds twelve consequential findings and sixteen draft component requirements without expanding the six functions. Architectural mechanisms, operating limits and contracts remain open under SUB-REVIEW-003.",
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "SUB-REVIEW-006",
+      "description": "All component pairs/directions and feedback reviewed; missing retention pin handled explicitly; C4/progress bindings and full integrated resource profile pending.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "artifact": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "description": "New six-function proposal, rationale, boundary questions, risks and prospective verification."
+    },
+    {
+      "artifact": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "description": "Strengthened six functions, added source-mapped systems cross-check and six prospective cases without imposing a universal systems ontology."
+    },
+    {
+      "artifact": "architecture/substrate/MEADOWS_REVIEW.md",
+      "description": "Complete page-order source review, scope-qualified 235-page ledger, twelve findings, requirement flowdown and eight additional prospective cases."
+    },
+    {
+      "artifact": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "description": "Three logical owners, six proposed specs, development/recovery/resource rationale and explicit learning-rule limits."
+    },
+    {
+      "artifact": "architecture/integration/OBSERVATION_SUBSTRATE.md",
+      "description": "Directed contracts, downstream allocation, internal/external dependencies, loops and prospective cases."
+    },
+    {
+      "artifact": "architecture/substrate/BUDWORM_CHALLENGE.md",
+      "description": "Owner example distinguishes holistic representation from identifiable mechanisms and independent discovery."
+    }
+  ],
+  "verification": [
+    {
+      "id": "SUB-DOC-002",
+      "kind": "documentation",
+      "status": "passed",
+      "required": true,
+      "evidence_ref": "architecture/substrate/evidence/MEADOWS_REVIEW_CHECKS.json",
+      "revision": "Artifact SHA-256 identities in evidence receipt"
+    },
+    {
+      "id": "SUB-V001",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V002",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V003",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V004",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V005",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V006",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V007",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V008",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V009",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V010",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V011",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V012",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V013",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V014",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V015",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V016",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V017",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V018",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V019",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V020",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V021",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-V022",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "SUB-DOC-003",
+      "kind": "documentation",
+      "status": "passed",
+      "required": true,
+      "evidence_ref": "architecture/integration/evidence/BLUEPRINT_CHECKS.json",
+      "revision": "SHA-256 identities in referenced receipt"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "next_step": "Owner reviews blueprint; then freeze concrete contracts, native inquiry strategy and operating profiles before implementation."
+}

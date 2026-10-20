@@ -1,0 +1,16 @@
+# Architecture authority and navigation
+
+## Current conceptual authorities
+
+1. [Integrated seven-chapter architecture](world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md).
+2. [Appendix semantic reference](reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md).
+
+The first defines the shared model and its relationships. The second anchors terminology and explicitly qualifies engineering extensions and numerical source ambiguities. An unresolved source equation is not silently corrected by either document.
+
+## Retained planning context
+
+`observation/`, `substrate/` and `integration/` preserve earlier local planning snapshots byte for byte. Their local hashes are in `../evidence/import_manifest.json`; they are not claimed to be a current checkout of the earlier GitHub repository. Historical evidence files are retained as evidence of those scoped document checks.
+
+Before implementing or modifying a component, reconcile its functions, requirements, native values, authority, identity, timing, source status, shared dependencies and resource contracts with the two current authorities. Keep semantic-neutral hosting aspirations distinct from the user's initial LLM-assisted implementation direction.
+
+The master diagram is a conceptual relationship map, not a deployment topology. The interface-review skill enumerates actual components separately from this capability and concept catalogue.

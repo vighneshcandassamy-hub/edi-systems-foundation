@@ -1,0 +1,34 @@
+{
+  "schema": "edi-meadows-review-checks-v1",
+  "scope": "documentation_and_review_coverage_only",
+  "input_revision": "272d057f6158963cd16f2ef0b642ed747a004360",
+  "pdf_pages_accounted_for": 235,
+  "extracted_text_pages": 234,
+  "image_only_cover_metadata_pages": 1,
+  "page_order_unique_and_complete": true,
+  "page_markdown_json_agree": true,
+  "consequential_findings": 12,
+  "function_count": 6,
+  "draft_component_requirements": 16,
+  "prospective_cases": 22,
+  "requirement_parents_functions_cases_resolve": true,
+  "all_functions_and_cases_have_requirement_support": true,
+  "function_summary_matches_catalogue": true,
+  "relative_links_resolve": true,
+  "source_pdf_sha256": null,
+  "artifact_sha256": {
+    "architecture/substrate/SUBSTRATE_PLAN.md": "d2ce403dbbff9e6a38ba75be89240b57961c786ff1459b103b5f3da17ecd46bc",
+    "architecture/substrate/REQUIREMENTS.json": "e8d2caa212ee0d028f0739cd5f0b1d89741424ea61f85085854a1e94c5a338fd",
+    "architecture/substrate/MEADOWS_REVIEW.md": "7f91ee43526ca0426bf1ef9ef258daef33fcf909e7a5d4eb7a40cfb7de9bfa1e",
+    "architecture/substrate/MEADOWS_PAGE_REVIEW.md": "01ab3b477cff235c03933f22957d8088ba51c4c33fb74effe1b33b6f23a005dc",
+    "architecture/substrate/evidence/MEADOWS_PAGE_LEDGER.json": "4b12251b5dab1ffdd6c85c14ea7412a219b45dda0a8497f69ccf7cc02826f6e8"
+  },
+  "verification_limits": [
+    "All extracted text and available labels/captions reviewed; no independent figure-geometry audit.",
+    "No numerical reproduction of book models or independent verification of cited works.",
+    "Page/trace checks do not prove functional completeness, scientific correctness or product capability."
+  ],
+  "product_tests_run": false,
+  "runtime_cases_passed": 0,
+  "architecture_verdict": "revise"
+}

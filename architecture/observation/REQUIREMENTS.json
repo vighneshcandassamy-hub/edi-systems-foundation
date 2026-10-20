@@ -1,0 +1,2173 @@
+{
+  "schema": "edi-layer-trace-v1",
+  "layer": "observation",
+  "version": "0.2",
+  "date": "2026-10-19",
+  "status": "proposed_design",
+  "product_verification": "not_run",
+  "scope_note": "Mission requirements describe intended capabilities, not achieved EDI capability. Only Observe is designed in this increment.",
+  "missions": [
+    {
+      "id": "EDI-MIS-001",
+      "statement": "Develop a system that can observe unfamiliar inputs with or without an external goal, develop its own representations and relationships, investigate uncertainty, and retain revisable evidence-based knowledge that improves future prediction, interpretation and decisions.",
+      "rationale": "Consolidates the owner's stated EDI mission; no claim of realization.",
+      "status": "proposed",
+      "parents": []
+    }
+  ],
+  "stakeholder_sources": [
+    {
+      "id": "SRC-001",
+      "kind": "owner_instruction",
+      "quote": "Observation layer should allow continuously any type of information passing through it.",
+      "interpretation": "Continuous heterogeneous acquisition within declared digital interfaces and capacity."
+    },
+    {
+      "id": "SRC-002",
+      "kind": "owner_instruction",
+      "quote": "after two years it gets some information from the same element",
+      "interpretation": "Persistent operational identity and evidence-backed recurrence across sessions and modalities."
+    },
+    {
+      "id": "SRC-003",
+      "kind": "owner_instruction",
+      "quote": "observations fed without human priors into the next layer",
+      "interpretation": "No mandatory human domain ontology or semantic model output as the authoritative evidence; structural acquisition assumptions declared."
+    },
+    {
+      "id": "SRC-004",
+      "kind": "owner_instruction",
+      "quote": "Apply Five Whys analysis, Waterfall analysis, MECE hypothesis",
+      "interpretation": "Use explicit rationale, requirements cascade, scoped coverage partitions and falsifiable alternatives."
+    },
+    {
+      "id": "SRC-005",
+      "kind": "owner_instruction",
+      "quote": "efficient, speed, and will consume less tokens and can operate at high availability and can be scaled for any level of data",
+      "interpretation": "Measurable capacity/latency/token/availability targets, zero required intake inference, scalable profiles rather than infinite capacity."
+    },
+    {
+      "id": "SRC-006",
+      "kind": "owner_instruction",
+      "quote": "mapping out requirements, functions, capabilities, and having a downstream link from top down",
+      "interpretation": "Bidirectional trace with component allocation, acceptance and evidence status; reuse for later layers."
+    },
+    {
+      "id": "SRC-007",
+      "kind": "visible_mission_context",
+      "quote": "persistent revisable knowledge; multi-layer relationships; observation-only and goal-directed use",
+      "interpretation": "Intended EDI system capabilities; future layers remain unimplemented by this work."
+    },
+    {
+      "id": "SRC-008",
+      "kind": "engineering_derivation",
+      "quote": "Design inference, not an additional owner instruction.",
+      "interpretation": "Durability, versioning, safety of parsing, capacity admission and operational observability are derived implementation obligations."
+    }
+  ],
+  "system_requirements": [
+    {
+      "id": "EDI-SYS-001",
+      "title": "Operating modes",
+      "statement": "The system shall support continuing observation both before an external task and while pursuing a supplied goal.",
+      "acceptance": "Observation continues across a goal change without replacing acquired history.",
+      "source_refs": [
+        "SRC-001",
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-002",
+      "title": "Heterogeneous information",
+      "statement": "The system shall accept source-native digitally supplied information through extensible interfaces while distinguishing capture, decoding and understanding.",
+      "acceptance": "A mixed replay preserves supported native structures and explicitly records opaque or unsupported content.",
+      "source_refs": [
+        "SRC-001"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-003",
+      "title": "Semantic neutrality",
+      "statement": "The system shall distinguish host/acquisition assumptions and imported knowledge from representations or relationships learned from its own observations.",
+      "acceptance": "Runtime evidence identifies supplied metadata, transformations and imported models; no required object ontology gates capture.",
+      "source_refs": [
+        "SRC-003",
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-004",
+      "title": "Endogenous representations",
+      "statement": "The system shall develop and revise representations from allowed observations under declared learning assumptions.",
+      "acceptance": "A future representation qualification shows experience-dependent structure with controls for supplied structure.",
+      "source_refs": [
+        "SRC-003",
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:representation"
+    },
+    {
+      "id": "EDI-SYS-005",
+      "title": "Relationship discovery",
+      "statement": "The system shall form competing testable relationships without promoting unsupported patterns to established laws.",
+      "acceptance": "A future discovery evaluation measures prospective discrimination and false discoveries.",
+      "source_refs": [
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:relationship-discovery"
+    },
+    {
+      "id": "EDI-SYS-006",
+      "title": "Uncertainty",
+      "statement": "The system shall preserve unknowns and distinguish acquired evidence, reports, interpretations and uncertainty about each.",
+      "acceptance": "Observation fixtures retain missing/unknown/report/derived distinctions; later inference calibration remains separate.",
+      "source_refs": [
+        "SRC-003",
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-007",
+      "title": "Investigation",
+      "statement": "The system shall be able to investigate uncertainty by requesting informative observations or permitted interventions.",
+      "acceptance": "Observe records supported acquisition request outcomes; the future inquiry policy demonstrates informative selection.",
+      "source_refs": [
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:inquiry-policy"
+    },
+    {
+      "id": "EDI-SYS-008",
+      "title": "Revision",
+      "statement": "The system shall revise unsupported beliefs and operational associations when new evidence contradicts them without rewriting acquired evidence.",
+      "acceptance": "Association correction preserves as-known history; future belief revision is separately evaluated.",
+      "source_refs": [
+        "SRC-002",
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:belief-revision"
+    },
+    {
+      "id": "EDI-SYS-009",
+      "title": "Persistent experience",
+      "statement": "The system shall retain addressable evidence and identity history across sessions and declared retention periods.",
+      "acceptance": "Export/restore and simulated long-gap/replacement fixtures preserve qualified references and known losses.",
+      "source_refs": [
+        "SRC-002",
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-010",
+      "title": "Prediction and what-if",
+      "statement": "The system shall use supported knowledge for prospective prediction and explicitly scoped counterfactual analysis.",
+      "acceptance": "Future prediction evaluation reports held-out error, uncertainty and intervention assumptions.",
+      "source_refs": [
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:prediction-and-simulation"
+    },
+    {
+      "id": "EDI-SYS-011",
+      "title": "Transfer",
+      "statement": "The system shall evaluate whether prior learned structure improves unfamiliar related tasks against strong reset, conventional-memory and unrelated-history controls.",
+      "acceptance": "Prospective matched transfer results establish scope; no advantage inferred from architecture alone.",
+      "source_refs": [
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:transfer"
+    },
+    {
+      "id": "EDI-SYS-012",
+      "title": "Interpretation and proactive findings",
+      "statement": "The system shall communicate interpretations and strategically useful new findings with evidence and uncertainty, including when no explicit question requested a finding.",
+      "acceptance": "Future interpretation evaluation checks factual support, usefulness and appropriate abstention.",
+      "source_refs": [
+        "SRC-007"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:interpretation"
+    },
+    {
+      "id": "EDI-SYS-013",
+      "title": "Resource efficiency",
+      "statement": "The system shall operate within declared compute, memory, storage, latency and inference budgets and account for complete task costs.",
+      "acceptance": "Pinned workloads report total accepted/failed work, latency, bytes, inference and resource bounds.",
+      "source_refs": [
+        "SRC-005"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-014",
+      "title": "Audit and reproducibility",
+      "statement": "The system shall preserve provenance, versions, decisions and evidence sufficient to reconstruct supported claims.",
+      "acceptance": "Independent reconstruction follows recorded versions and receipts without post-hoc replacement of failures.",
+      "source_refs": [
+        "SRC-006",
+        "SRC-008"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-015",
+      "title": "Reliable scalable operation",
+      "statement": "The system shall provide explicit capacity, durability, recovery and availability guarantees for qualified deployment profiles.",
+      "acceptance": "Each profile has workload/fault model, metrics and passing evidence; no unconditional or infinite-scale claim.",
+      "source_refs": [
+        "SRC-005",
+        "SRC-008"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": null
+    },
+    {
+      "id": "EDI-SYS-016",
+      "title": "Permitted actions and introspection",
+      "statement": "The system shall distinguish proposed commands, authorized execution, reported acknowledgement, measured outcome and its own operational telemetry.",
+      "acceptance": "Observation retains these distinctions; future goal/action authority and self-diagnosis remain separate.",
+      "source_refs": [
+        "SRC-007",
+        "SRC-008"
+      ],
+      "parents": [
+        "EDI-MIS-001"
+      ],
+      "rationale": "Required to realize the stated mission under the referenced owner instruction or explicit engineering derivation.",
+      "status": "proposed",
+      "future_allocation": "future:action-policy-and-self-diagnosis"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "EDI-CAP-001",
+      "title": "Observe and attribute",
+      "parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-002",
+        "EDI-SYS-003",
+        "EDI-SYS-009"
+      ],
+      "allocation": "observation",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-002",
+      "title": "Form representations",
+      "parents": [
+        "EDI-SYS-004"
+      ],
+      "allocation": "future:representation",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-003",
+      "title": "Recognize uncertainty and surprise",
+      "parents": [
+        "EDI-SYS-006"
+      ],
+      "allocation": "observation-interface-and-future:uncertainty",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-004",
+      "title": "Form competing explanations",
+      "parents": [
+        "EDI-SYS-005"
+      ],
+      "allocation": "future:relationship-discovery",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-005",
+      "title": "Predict and explore what-if",
+      "parents": [
+        "EDI-SYS-010"
+      ],
+      "allocation": "future:prediction-and-simulation",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-006",
+      "title": "Investigate",
+      "parents": [
+        "EDI-SYS-007"
+      ],
+      "allocation": "observation-acquisition-interface-and-future:inquiry",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-007",
+      "title": "Test and revise",
+      "parents": [
+        "EDI-SYS-008"
+      ],
+      "allocation": "observation-association-interface-and-future:belief-revision",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-008",
+      "title": "Consolidate persistent knowledge",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "allocation": "observation-evidence-interface-and-future:consolidation",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-009",
+      "title": "Transfer understanding",
+      "parents": [
+        "EDI-SYS-011"
+      ],
+      "allocation": "future:transfer",
+      "status": "target_not_achieved"
+    },
+    {
+      "id": "EDI-CAP-010",
+      "title": "Interpret, report and act",
+      "parents": [
+        "EDI-SYS-012",
+        "EDI-SYS-016"
+      ],
+      "allocation": "future:interpretation-and-action",
+      "status": "target_not_achieved"
+    }
+  ],
+  "observation_requirements": [
+    {
+      "id": "OBS-R001",
+      "title": "Continuous extensible intake",
+      "statement": "The observation layer shall receive configured live, historical, file and composite inputs without requiring a question or a known semantic class.",
+      "acceptance": "Mixed replay continues through goal changes and unknown media types; counts reconcile.",
+      "parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-002"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V001"
+      ]
+    },
+    {
+      "id": "OBS-R002",
+      "title": "Native fidelity",
+      "statement": "The layer shall preserve received bytes and exact typed values, including precision, missingness and native structure within declared retention.",
+      "acceptance": "Digest/byte comparison and native-value comparisons match all acquired complete and partial payloads.",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-003",
+        "EDI-SYS-009"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V002"
+      ]
+    },
+    {
+      "id": "OBS-R003",
+      "title": "Source continuity",
+      "statement": "The layer shall maintain scoped persistent deliverer/producer/channel identities, aliases and acquisition epochs without conflating producer with subject.",
+      "acceptance": "Restarts, alias changes, recycled names and moved sensors resolve using dated evidence or explicit unknowns.",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V003"
+      ]
+    },
+    {
+      "id": "OBS-R004",
+      "title": "Subject association",
+      "statement": "The layer shall expose evidence-backed subject associations across time/modalities, allowing multiple subjects and unresolved identity.",
+      "acceptance": "All supported deterministic bindings match fixture truth; intentionally indistinguishable subjects remain unresolved.",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-006"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-003"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V004"
+      ]
+    },
+    {
+      "id": "OBS-R005",
+      "title": "Reversible identity history",
+      "statement": "The layer shall retain valid-time and recorded-time association assertions and reversible correction/retraction history.",
+      "acceptance": "A mistaken association is retracted without changing raw records; historical and current queries return their declared versions.",
+      "parents": [
+        "EDI-SYS-008",
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "capability_ids": [
+        "EDI-CAP-007",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V005"
+      ]
+    },
+    {
+      "id": "OBS-R006",
+      "title": "Time and order",
+      "statement": "The layer shall preserve source times, clocks, epochs and ordering limits separately from receipt and commit times.",
+      "acceptance": "Clock reset, variable sample timing and two-year-late arrivals do not fabricate source order.",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-006",
+        "EDI-SYS-014"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-003"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V006"
+      ]
+    },
+    {
+      "id": "OBS-R007",
+      "title": "Acquired versus derived",
+      "statement": "The layer shall preserve lineage and distinguish native receipt from transformations, reports, simulations, predictions and model outputs where their origin is known.",
+      "acceptance": "Each derived result pins parent/procedure/version; unknown generation method is explicit, not guessed.",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-006",
+        "EDI-SYS-014"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-003",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V007"
+      ]
+    },
+    {
+      "id": "OBS-R008",
+      "title": "Composition and selectors",
+      "statement": "The layer shall preserve supplied nested composition and address supported parts with revision-specific selectors.",
+      "acceptance": "Native container survives; selectors address correct parts/revisions and malformed recursive expansion is bounded.",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-009"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V008"
+      ]
+    },
+    {
+      "id": "OBS-R009",
+      "title": "Unknown and unsupported states",
+      "statement": "The layer shall capture admitted opaque content while exposing missing, partial, reference-only, unsupported and failed-processing states.",
+      "acceptance": "Unknown optional extensions round-trip; unknown required interpretation is unsupported; empty bytes differ from no payload.",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-006"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-003"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V009"
+      ]
+    },
+    {
+      "id": "OBS-R010",
+      "title": "Durable commit acknowledgement",
+      "statement": "The layer shall acknowledge a requested supported durable level only after required payloads and commit metadata meet that level.",
+      "acceptance": "No acknowledged record loses required payload/metadata under the selected declared fault model.",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V010"
+      ]
+    },
+    {
+      "id": "OBS-R011",
+      "title": "Idempotent retry",
+      "statement": "The layer shall resolve retries using scoped occurrence/idempotency identity while preserving distinct byte-identical occurrences.",
+      "acceptance": "Delivery repeats do not create duplicate occurrences; independent identical inputs retain separate origins.",
+      "parents": [
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V010"
+      ]
+    },
+    {
+      "id": "OBS-R012",
+      "title": "Crash recovery",
+      "statement": "The layer shall recover staged work, committed records, outbox effects and consumer cursors without silent loss or repetition of committed effects.",
+      "acceptance": "Kill-point recovery reconstructs accepted records and resumes each cursor; unknown outcomes remain queryable.",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V011"
+      ]
+    },
+    {
+      "id": "OBS-R013",
+      "title": "Bounded processing",
+      "statement": "The layer shall bound queues, recursive parsing, query work and optional worker resources independently of raw intake.",
+      "acceptance": "Worker/parser overload stays within configured bounds and cannot stall admitted intake within its own declared budget.",
+      "parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-005"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V012",
+        "OBS-V021"
+      ]
+    },
+    {
+      "id": "OBS-R014",
+      "title": "Admission and coverage",
+      "statement": "The layer shall apply declared admission/backpressure/sampling policy and expose known or unknown acquisition gaps and losses.",
+      "acceptance": "Offered/admitted/rejected/dropped/unknown counts reconcile and no silent sampling occurs.",
+      "parents": [
+        "EDI-SYS-006",
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-003"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V012"
+      ]
+    },
+    {
+      "id": "OBS-R015",
+      "title": "Latency and throughput",
+      "statement": "The layer shall meet a prospectively pinned capacity and latency profile including queueing, durability and stated concurrent reads/workers.",
+      "acceptance": "Profile P0 or P1 workload meets specified latency/throughput/memory criteria; no target is reported as achieved without evidence.",
+      "parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-005"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V013"
+      ]
+    },
+    {
+      "id": "OBS-R016",
+      "title": "No required model tokens",
+      "statement": "The mandatory intake, commit, registered-identity lookup and replay path shall require zero model inference calls and model tokens.",
+      "acceptance": "Instrumentation and dependency-failure checks observe zero model calls on that path; optional workers counted separately.",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-013"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-005"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V014"
+      ]
+    },
+    {
+      "id": "OBS-R017",
+      "title": "Bounded evidence access",
+      "statement": "The layer shall provide paginated source/time/region/part access with native precision, commit cursors and projection freshness.",
+      "acceptance": "Bounded queries retrieve exact requested retained evidence or explicit unavailable/limit status without full-history serialization.",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-013"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-005"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V015"
+      ]
+    },
+    {
+      "id": "OBS-R018",
+      "title": "Availability and fault profiles",
+      "statement": "The layer shall distinguish local recovery from replicated HA and expose acknowledgement/failover semantics for each supported profile.",
+      "acceptance": "P1 meets specified SLI/failover/RPO under pinned metadata-and-payload topology; minority/no-authority writes cannot diverge.",
+      "parents": [
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-005"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V016"
+      ]
+    },
+    {
+      "id": "OBS-R019",
+      "title": "Capacity expansion",
+      "statement": "The layer shall support qualified expansion without changing evidence/identity semantics or requiring global per-observation identity scans.",
+      "acceptance": "N-to-2N experiment and hot-source/read-mix cases meet the declared expansion criterion or record the bottleneck.",
+      "parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-005"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V017"
+      ]
+    },
+    {
+      "id": "OBS-R020",
+      "title": "Retention and restoration",
+      "statement": "The layer shall retain or explicitly retire payloads and their required schemas, configuration, calibration and identity dependencies under separate policies.",
+      "acceptance": "Restore reconstructs permitted retained evidence/identity; eviction or lost keys/decoders produces explicit unavailable status.",
+      "parents": [
+        "EDI-SYS-009",
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V018"
+      ]
+    },
+    {
+      "id": "OBS-R021",
+      "title": "Schema longevity",
+      "statement": "The layer shall version schemas/profiles/descriptors, preserve unknown optional metadata and prohibit silent reinterpretation of historical fields.",
+      "acceptance": "Old/new readers round-trip supported extensions and reject unsupported critical interpretation while retaining native data.",
+      "parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V019"
+      ]
+    },
+    {
+      "id": "OBS-R022",
+      "title": "Identity uncertainty and conflict",
+      "statement": "The layer shall keep reported, candidate and operationally accepted bindings distinct and prevent disputed equivalence propagation.",
+      "acceptance": "Adversarial fixture has no forced false merge; conflicts invalidate shortcuts; learned natural-data accuracy remains separately unqualified.",
+      "parents": [
+        "EDI-SYS-006",
+        "EDI-SYS-008",
+        "EDI-SYS-014"
+      ],
+      "capability_ids": [
+        "EDI-CAP-003",
+        "EDI-CAP-007",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V004",
+        "OBS-V005"
+      ]
+    },
+    {
+      "id": "OBS-R023",
+      "title": "Acquisition requests",
+      "statement": "The layer shall execute supported acquisition-setting requests within declared capabilities and record requested/actual/denied/failed outcomes.",
+      "acceptance": "Repeated request IDs are accounted and commands, acknowledgements and measured outcomes remain distinct.",
+      "parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-007",
+        "EDI-SYS-016"
+      ],
+      "capability_ids": [
+        "EDI-CAP-006",
+        "EDI-CAP-010"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V020"
+      ]
+    },
+    {
+      "id": "OBS-R024",
+      "title": "Scope and parser isolation",
+      "statement": "The layer shall enforce declared scope access and resource isolation for intake, query and optional decoders.",
+      "acceptance": "Cross-scope references are not joined without explicit authority and hostile nested input cannot exhaust the core.",
+      "parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015",
+        "EDI-SYS-016"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-010"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V021"
+      ]
+    },
+    {
+      "id": "OBS-R025",
+      "title": "Operational accounting",
+      "statement": "The layer shall expose complete outcome, coverage, lag, resource and cost accounting for eligible offered and admitted work.",
+      "acceptance": "Client and server accounting reconcile, outages cannot disappear from denominators, and worker cost is not omitted.",
+      "parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-014",
+        "EDI-SYS-015",
+        "EDI-SYS-016"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008",
+        "EDI-CAP-010"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-005"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V022"
+      ]
+    },
+    {
+      "id": "OBS-R026",
+      "title": "Versioned policies",
+      "statement": "The layer shall pin admission, retention, binding and processing policy versions needed to reconstruct a declared historical view.",
+      "acceptance": "Replaying the same committed prefix and policy gives the same bookkeeping view or declares a nondeterministic procedure/version.",
+      "parents": [
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "capability_ids": [
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V023"
+      ]
+    },
+    {
+      "id": "OBS-R027",
+      "title": "Derived-view compatibility",
+      "statement": "The layer shall version decoder/model/descriptor outputs and preserve their input selectors and compatibility limits.",
+      "acceptance": "A worker version change creates a new view and cannot silently mix incompatible descriptors.",
+      "parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-009",
+        "EDI-SYS-014"
+      ],
+      "capability_ids": [
+        "EDI-CAP-001",
+        "EDI-CAP-008"
+      ],
+      "source_refs": [
+        "SRC-008",
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "rationale": "Derived to fulfill the named upstream requirements; detailed choice challenges and alternatives are in REVIEW.md.",
+      "status": "proposed",
+      "verification_ids": [
+        "OBS-V024"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "id": "OBS-F001",
+      "title": "Receive and control acquisition",
+      "owner_component": "OBS-C1",
+      "requirement_ids": [
+        "OBS-R001",
+        "OBS-R003",
+        "OBS-R006",
+        "OBS-R009",
+        "OBS-R011",
+        "OBS-R012",
+        "OBS-R013",
+        "OBS-R014",
+        "OBS-R015",
+        "OBS-R016",
+        "OBS-R023",
+        "OBS-R024",
+        "OBS-R025"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "OBS-F002",
+      "title": "Commit and retain native evidence",
+      "owner_component": "OBS-C2",
+      "requirement_ids": [
+        "OBS-R002",
+        "OBS-R007",
+        "OBS-R008",
+        "OBS-R010",
+        "OBS-R011",
+        "OBS-R012",
+        "OBS-R014",
+        "OBS-R015",
+        "OBS-R016",
+        "OBS-R018",
+        "OBS-R019",
+        "OBS-R020",
+        "OBS-R025",
+        "OBS-R026"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "OBS-F003",
+      "title": "Maintain operational attribution",
+      "owner_component": "OBS-C3",
+      "requirement_ids": [
+        "OBS-R003",
+        "OBS-R004",
+        "OBS-R005",
+        "OBS-R019",
+        "OBS-R020",
+        "OBS-R021",
+        "OBS-R022",
+        "OBS-R024",
+        "OBS-R026"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "OBS-F004",
+      "title": "Expose bounded evidence and replay",
+      "owner_component": "OBS-C3",
+      "requirement_ids": [
+        "OBS-R006",
+        "OBS-R008",
+        "OBS-R009",
+        "OBS-R016",
+        "OBS-R017",
+        "OBS-R020",
+        "OBS-R025"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "OBS-F005",
+      "title": "Produce declared derived views",
+      "owner_component": "OBS-C4",
+      "requirement_ids": [
+        "OBS-R007",
+        "OBS-R008",
+        "OBS-R009",
+        "OBS-R013",
+        "OBS-R022",
+        "OBS-R024",
+        "OBS-R027"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "OBS-F006",
+      "title": "Reconcile recovery and lifecycle",
+      "owner_component": "OBS-C2",
+      "requirement_ids": [
+        "OBS-R010",
+        "OBS-R011",
+        "OBS-R012",
+        "OBS-R018",
+        "OBS-R020",
+        "OBS-R026"
+      ],
+      "status": "specified"
+    }
+  ],
+  "components": [
+    {
+      "id": "OBS-C1",
+      "title": "Intake and adapters",
+      "function_ids": [
+        "OBS-F001"
+      ],
+      "rationale": "Minimal module ownership; inputs, outputs, state, limits and failure behavior in COMPONENT_SPECS.md.",
+      "status": "specified_not_implemented",
+      "specification_document": "COMPONENT_SPECS.md"
+    },
+    {
+      "id": "OBS-C2",
+      "title": "Evidence commit and retention",
+      "function_ids": [
+        "OBS-F002",
+        "OBS-F006"
+      ],
+      "rationale": "Minimal module ownership; inputs, outputs, state, limits and failure behavior in COMPONENT_SPECS.md.",
+      "status": "specified_not_implemented",
+      "specification_document": "COMPONENT_SPECS.md"
+    },
+    {
+      "id": "OBS-C3",
+      "title": "Identity, catalogue and replay",
+      "function_ids": [
+        "OBS-F003",
+        "OBS-F004"
+      ],
+      "rationale": "Minimal module ownership; inputs, outputs, state, limits and failure behavior in COMPONENT_SPECS.md.",
+      "status": "specified_not_implemented",
+      "specification_document": "COMPONENT_SPECS.md"
+    },
+    {
+      "id": "OBS-C4",
+      "title": "Optional bounded workers",
+      "function_ids": [
+        "OBS-F005"
+      ],
+      "rationale": "Minimal module ownership; inputs, outputs, state, limits and failure behavior in COMPONENT_SPECS.md.",
+      "status": "specified_not_implemented",
+      "specification_document": "COMPONENT_SPECS.md"
+    }
+  ],
+  "specifications": [
+    {
+      "id": "OBS-C1-S01",
+      "component_id": "OBS-C1",
+      "title": "Native input and outer validation",
+      "statement": "Admit bytes/structures independently of semantic recognition; unsupported processing remains explicit.",
+      "requirement_ids": [
+        "OBS-R001",
+        "OBS-R009"
+      ],
+      "verification_ids": [
+        "OBS-V001",
+        "OBS-V009"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C1-S02",
+      "component_id": "OBS-C1",
+      "title": "Spool, sequence and retry",
+      "statement": "Persist retry identity/epochs and release pending spool only at the declared acknowledgement.",
+      "requirement_ids": [
+        "OBS-R006",
+        "OBS-R011",
+        "OBS-R012"
+      ],
+      "verification_ids": [
+        "OBS-V006",
+        "OBS-V010",
+        "OBS-V011"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C1-S03",
+      "component_id": "OBS-C1",
+      "title": "Admission, fairness and budgets",
+      "statement": "Per-source and aggregate budgets bound memory/disk/latency and expose capacity failures.",
+      "requirement_ids": [
+        "OBS-R013",
+        "OBS-R014",
+        "OBS-R015"
+      ],
+      "verification_ids": [
+        "OBS-V012",
+        "OBS-V013",
+        "OBS-V021"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C1-S04",
+      "component_id": "OBS-C1",
+      "title": "Source registration and descriptor cache",
+      "statement": "Use versioned scoped origins and cached registered identity; no model lookup is required.",
+      "requirement_ids": [
+        "OBS-R003",
+        "OBS-R016"
+      ],
+      "verification_ids": [
+        "OBS-V003",
+        "OBS-V014"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C1-S05",
+      "component_id": "OBS-C1",
+      "title": "Supported acquisition controls",
+      "statement": "Record capability, request identity, requested/actual settings and outcomes.",
+      "requirement_ids": [
+        "OBS-R023"
+      ],
+      "verification_ids": [
+        "OBS-V020"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C1-S06",
+      "component_id": "OBS-C1",
+      "title": "Isolation and receipt accounting",
+      "statement": "Preserve scope, source fairness, and complete offered/admitted outcome accounting.",
+      "requirement_ids": [
+        "OBS-R024",
+        "OBS-R025"
+      ],
+      "verification_ids": [
+        "OBS-V021",
+        "OBS-V022"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C2-S01",
+      "component_id": "OBS-C2",
+      "title": "Commit and outbox authority",
+      "statement": "Native payload barrier precedes the atomic manifest/log/outbox commit.",
+      "requirement_ids": [
+        "OBS-R002",
+        "OBS-R007",
+        "OBS-R010"
+      ],
+      "verification_ids": [
+        "OBS-V002",
+        "OBS-V007",
+        "OBS-V010"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C2-S02",
+      "component_id": "OBS-C2",
+      "title": "Occurrence and retry semantics",
+      "statement": "Idempotency is scoped to occurrence/epoch; policy versions and distinct identical occurrences remain recoverable.",
+      "requirement_ids": [
+        "OBS-R011",
+        "OBS-R026"
+      ],
+      "verification_ids": [
+        "OBS-V010",
+        "OBS-V023"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C2-S03",
+      "component_id": "OBS-C2",
+      "title": "Chunks, composition and retention",
+      "statement": "Chunked native objects preserve composition, dependencies, explicit availability and coverage events.",
+      "requirement_ids": [
+        "OBS-R008",
+        "OBS-R014",
+        "OBS-R020"
+      ],
+      "verification_ids": [
+        "OBS-V008",
+        "OBS-V012",
+        "OBS-V018"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C2-S04",
+      "component_id": "OBS-C2",
+      "title": "Recovery and reconciliation",
+      "statement": "Reconcile staged orphans and cursor effects without deleting potentially live blobs.",
+      "requirement_ids": [
+        "OBS-R012",
+        "OBS-R010"
+      ],
+      "verification_ids": [
+        "OBS-V010",
+        "OBS-V011"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C2-S05",
+      "component_id": "OBS-C2",
+      "title": "Replicated durability and fencing",
+      "statement": "Declare and qualify metadata plus payload durability, authority and failover eligibility.",
+      "requirement_ids": [
+        "OBS-R018"
+      ],
+      "verification_ids": [
+        "OBS-V016"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C2-S06",
+      "component_id": "OBS-C2",
+      "title": "Capacity, inference independence and metrics",
+      "statement": "Measure bounded commit performance/expansion and account for work without mandatory model inference.",
+      "requirement_ids": [
+        "OBS-R015",
+        "OBS-R016",
+        "OBS-R019",
+        "OBS-R025"
+      ],
+      "verification_ids": [
+        "OBS-V013",
+        "OBS-V014",
+        "OBS-V017",
+        "OBS-V022"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C3-S01",
+      "component_id": "OBS-C3",
+      "title": "Dated registry and reversible assertions",
+      "statement": "Separate producer/subject/position/artifact roles with valid/recorded times and policy versions.",
+      "requirement_ids": [
+        "OBS-R003",
+        "OBS-R004",
+        "OBS-R005",
+        "OBS-R026"
+      ],
+      "verification_ids": [
+        "OBS-V003",
+        "OBS-V004",
+        "OBS-V005",
+        "OBS-V023"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C3-S02",
+      "component_id": "OBS-C3",
+      "title": "Candidate and conflict handling",
+      "statement": "Do not auto-merge candidates or propagate a disputed bridge.",
+      "requirement_ids": [
+        "OBS-R022"
+      ],
+      "verification_ids": [
+        "OBS-V004",
+        "OBS-V005"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C3-S03",
+      "component_id": "OBS-C3",
+      "title": "Cursor, selector and watermark reads",
+      "statement": "Return bounded exact/history reads and explicit unknown, unavailable or projection-lag states.",
+      "requirement_ids": [
+        "OBS-R006",
+        "OBS-R008",
+        "OBS-R009",
+        "OBS-R017"
+      ],
+      "verification_ids": [
+        "OBS-V006",
+        "OBS-V008",
+        "OBS-V009",
+        "OBS-V015"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C3-S04",
+      "component_id": "OBS-C3",
+      "title": "Schema and dependency retention",
+      "statement": "Archive required descriptors and preserve schema meaning across migrations.",
+      "requirement_ids": [
+        "OBS-R020",
+        "OBS-R021"
+      ],
+      "verification_ids": [
+        "OBS-V018",
+        "OBS-V019"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C3-S05",
+      "component_id": "OBS-C3",
+      "title": "Query and index budgets",
+      "statement": "Bound reads/search/rebuild, avoid full scans on receipt, expose measured lag and no required model calls.",
+      "requirement_ids": [
+        "OBS-R016",
+        "OBS-R019",
+        "OBS-R025"
+      ],
+      "verification_ids": [
+        "OBS-V014",
+        "OBS-V017",
+        "OBS-V022"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C3-S06",
+      "component_id": "OBS-C3",
+      "title": "Scoped registry and query authority",
+      "statement": "Cross-scope associations/reads require explicit permitted authority.",
+      "requirement_ids": [
+        "OBS-R024"
+      ],
+      "verification_ids": [
+        "OBS-V021"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C4-S01",
+      "component_id": "OBS-C4",
+      "title": "Bounded lazy parsing",
+      "statement": "Retain native material and cap nesting, members, expanded bytes, time and memory.",
+      "requirement_ids": [
+        "OBS-R008",
+        "OBS-R009",
+        "OBS-R013"
+      ],
+      "verification_ids": [
+        "OBS-V008",
+        "OBS-V009",
+        "OBS-V012",
+        "OBS-V021"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C4-S02",
+      "component_id": "OBS-C4",
+      "title": "Derived lineage",
+      "statement": "Every result pins acquired inputs/selectors, procedure/version and declared loss.",
+      "requirement_ids": [
+        "OBS-R007"
+      ],
+      "verification_ids": [
+        "OBS-V007"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C4-S03",
+      "component_id": "OBS-C4",
+      "title": "Association proposals",
+      "statement": "Emit evidence-backed candidates/alternatives; no qualified natural-data auto-accept policy is supplied.",
+      "requirement_ids": [
+        "OBS-R022"
+      ],
+      "verification_ids": [
+        "OBS-V004",
+        "OBS-V005"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C4-S04",
+      "component_id": "OBS-C4",
+      "title": "Versioned descriptors",
+      "statement": "New models/decoders create new compatible-or-explicitly-incompatible views.",
+      "requirement_ids": [
+        "OBS-R027"
+      ],
+      "verification_ids": [
+        "OBS-V024"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C4-S05",
+      "component_id": "OBS-C4",
+      "title": "Lag and scope isolation",
+      "statement": "Worker overload remains separate from raw-commit resources and scope access.",
+      "requirement_ids": [
+        "OBS-R013",
+        "OBS-R024"
+      ],
+      "verification_ids": [
+        "OBS-V012",
+        "OBS-V021"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    },
+    {
+      "id": "OBS-C4-S06",
+      "component_id": "OBS-C4",
+      "title": "Worker cost visibility",
+      "statement": "Enabled job resources and inference are budgeted and exposed, never hidden as zero-cost intake.",
+      "requirement_ids": [
+        "OBS-R013"
+      ],
+      "verification_ids": [
+        "OBS-V012",
+        "OBS-V021"
+      ],
+      "rationale": "Implements the allocated requirement acceptance without adding an independent semantic commitment.",
+      "status": "specified_not_implemented"
+    }
+  ],
+  "verification_cases": [
+    {
+      "id": "OBS-V001",
+      "title": "Mixed continuous intake",
+      "requirement_ids": [
+        "OBS-R001"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V002",
+      "title": "Native bytes and exact values",
+      "requirement_ids": [
+        "OBS-R002"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V003",
+      "title": "Origin continuity and lifecycle",
+      "requirement_ids": [
+        "OBS-R003"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V004",
+      "title": "Subject recurrence, ambiguity and replacements",
+      "requirement_ids": [
+        "OBS-R004",
+        "OBS-R022"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V005",
+      "title": "Association correction and historical queries",
+      "requirement_ids": [
+        "OBS-R005",
+        "OBS-R022"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V006",
+      "title": "Clocks, epochs and late arrival",
+      "requirement_ids": [
+        "OBS-R006"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V007",
+      "title": "Declared versus derived provenance",
+      "requirement_ids": [
+        "OBS-R007"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V008",
+      "title": "Composition, selectors and extraction limits",
+      "requirement_ids": [
+        "OBS-R008"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V009",
+      "title": "Unknown profiles and partial/reference states",
+      "requirement_ids": [
+        "OBS-R009"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V010",
+      "title": "Commit, retry and acknowledgement boundaries",
+      "requirement_ids": [
+        "OBS-R010",
+        "OBS-R011"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V011",
+      "title": "Crash recovery and offset reconstruction",
+      "requirement_ids": [
+        "OBS-R012"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V012",
+      "title": "Overload, coverage and worker independence",
+      "requirement_ids": [
+        "OBS-R013",
+        "OBS-R014"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V013",
+      "title": "Capacity and latency profile",
+      "requirement_ids": [
+        "OBS-R015"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V014",
+      "title": "Model-call independence",
+      "requirement_ids": [
+        "OBS-R016"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V015",
+      "title": "Bounded exact/range queries",
+      "requirement_ids": [
+        "OBS-R017"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V016",
+      "title": "Replicated failover, partitions and RPO",
+      "requirement_ids": [
+        "OBS-R018"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V017",
+      "title": "Expansion and hot-source bottlenecks",
+      "requirement_ids": [
+        "OBS-R019"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V018",
+      "title": "Retention, dependencies and restore",
+      "requirement_ids": [
+        "OBS-R020"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V019",
+      "title": "Schema/profile longevity",
+      "requirement_ids": [
+        "OBS-R021"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V020",
+      "title": "Acquisition request outcomes",
+      "requirement_ids": [
+        "OBS-R023"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V021",
+      "title": "Scope and parser resource isolation",
+      "requirement_ids": [
+        "OBS-R013",
+        "OBS-R024"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V022",
+      "title": "Offered-load and cost accounting",
+      "requirement_ids": [
+        "OBS-R025"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V023",
+      "title": "Policy/configuration replay",
+      "requirement_ids": [
+        "OBS-R026"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    },
+    {
+      "id": "OBS-V024",
+      "title": "Derived-view version compatibility",
+      "requirement_ids": [
+        "OBS-R027"
+      ],
+      "method": "test_and_inspection",
+      "procedure": "Use the pinned mixed recording campaign and case-specific fault/load fixture in VERIFICATION.md; do not pass evaluator identity labels to candidate intake.",
+      "acceptance": "Conjunction of linked requirement acceptance criteria under the selected profile, with complete offered/admitted/failure accounting.",
+      "status": "not_run",
+      "evidence_ref": null,
+      "implementation_commit": null
+    }
+  ],
+  "consumer_contracts": [
+    {
+      "id": "DOWN-001",
+      "parents": [
+        "OBS-R007",
+        "OBS-R009"
+      ],
+      "statement": "Consumers shall distinguish received claims and derived interpretations from independently validated facts.",
+      "allocation": "future:representation-and-reasoning",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    },
+    {
+      "id": "DOWN-002",
+      "parents": [
+        "OBS-R004",
+        "OBS-R006",
+        "OBS-R014",
+        "OBS-R022"
+      ],
+      "statement": "Consumers shall preserve unknown identity/time/coverage and shall not infer absence from an unobserved interval.",
+      "allocation": "future:representation-and-uncertainty",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    },
+    {
+      "id": "DOWN-003",
+      "parents": [
+        "OBS-R005",
+        "OBS-R026"
+      ],
+      "statement": "Consumers shall respect valid-time, known-at and policy versions and process identity corrections without rewriting raw evidence.",
+      "allocation": "future:memory-and-revision",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    },
+    {
+      "id": "DOWN-004",
+      "parents": [
+        "OBS-R017",
+        "OBS-R020"
+      ],
+      "statement": "Consumers shall retrieve retained evidence through bounded selectors/cursors and handle explicit unavailable or truncated results.",
+      "allocation": "future:representation-and-reasoning",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    },
+    {
+      "id": "DOWN-005",
+      "parents": [
+        "OBS-R007",
+        "OBS-R027"
+      ],
+      "statement": "Consumers shall declare imported model/feature experience and avoid silently mixing incompatible derived spaces.",
+      "allocation": "future:representation",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    },
+    {
+      "id": "DOWN-006",
+      "parents": [
+        "OBS-R014",
+        "OBS-R023"
+      ],
+      "statement": "Consumers requesting selective acquisition shall state target/settings/budget and retain selection lineage; inquiry value is a later-layer responsibility.",
+      "allocation": "future:inquiry-policy",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    },
+    {
+      "id": "DOWN-007",
+      "parents": [
+        "OBS-R010",
+        "OBS-R018"
+      ],
+      "statement": "Consumers shall use the requested durability/commit level and must not treat a staged receipt as recoverable committed knowledge.",
+      "allocation": "future:memory-and-execution",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    },
+    {
+      "id": "DOWN-008",
+      "parents": [
+        "OBS-R016",
+        "OBS-R025"
+      ],
+      "statement": "Consumers shall account for full-task tokens/cost, including retrieval and failed calls, before claiming an efficiency advantage.",
+      "allocation": "future:reasoning-and-evaluation",
+      "status": "proposed_not_implemented",
+      "acceptance": "Future consumer qualification demonstrates the stated behavior using the observation contract; not fulfilled by this document."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "OBS-ADR-001",
+      "title": "Four modules, not nine deployed services",
+      "requirement_ids": [
+        "OBS-R013",
+        "OBS-R015"
+      ],
+      "rationale": "Choose the simplest complete implementation; isolate workers and split services only after a measured bottleneck.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-002",
+      "title": "Native evidence plus optional views",
+      "requirement_ids": [
+        "OBS-R002",
+        "OBS-R007",
+        "OBS-R008"
+      ],
+      "rationale": "Preserve received distinctions and future reanalysis; reject text-only or embedding-only authority.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-003",
+      "title": "Eight-field core with shared origins",
+      "requirement_ids": [
+        "OBS-R003",
+        "OBS-R015",
+        "OBS-R021"
+      ],
+      "rationale": "Reduce repeated acquisition metadata; retain original meanings in descriptors and sparse profiles; benchmark physical encoding.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-004",
+      "title": "Operational identity with abstention",
+      "requirement_ids": [
+        "OBS-R004",
+        "OBS-R005",
+        "OBS-R022"
+      ],
+      "rationale": "Persist supported continuity and allow reversibility; no missing evidence can be manufactured by a registry.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-005",
+      "title": "No required intake inference",
+      "requirement_ids": [
+        "OBS-R016"
+      ],
+      "rationale": "Avoid unbounded model latency/token cost before evidence is committed; optional recognition is separately budgeted.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-006",
+      "title": "One commit authority",
+      "requirement_ids": [
+        "OBS-R010",
+        "OBS-R011",
+        "OBS-R012"
+      ],
+      "rationale": "Keep spool, payload staging, metadata/outbox and checkpoints unambiguous with explicit backend barriers.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-007",
+      "title": "Separate local and HA profiles",
+      "requirement_ids": [
+        "OBS-R018",
+        "OBS-R020"
+      ],
+      "rationale": "Local recovery is not HA; durability and availability tradeoffs require a qualified replicated topology.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-008",
+      "title": "Capacity vectors and bounded access",
+      "requirement_ids": [
+        "OBS-R013",
+        "OBS-R014",
+        "OBS-R017",
+        "OBS-R019"
+      ],
+      "rationale": "Expansion is measured under declared byte/rate/query/retention limits; no infinite-scale promise.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    },
+    {
+      "id": "OBS-ADR-009",
+      "title": "One trace source and reusable method",
+      "requirement_ids": [
+        "OBS-R021",
+        "OBS-R025",
+        "OBS-R026"
+      ],
+      "rationale": "Avoid duplicated drifting requirements; generated views and structural checks support later layer flowdown.",
+      "status": "proposed",
+      "review_document": "REVIEW.md"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "ASM-001",
+      "statement": "Available sensors/interfaces provide finite, fallible digital observations; storing bytes is not understanding."
+    },
+    {
+      "id": "ASM-002",
+      "statement": "Hardware, backend durability, capacity and retention budgets will be pinned before implementation qualification."
+    },
+    {
+      "id": "ASM-003",
+      "statement": "Quantitative P0/P1 targets are engineering proposals; no throughput, HA or token-advantage result exists yet."
+    },
+    {
+      "id": "ASM-004",
+      "statement": "Cross-modal natural-data identity recognition has no qualified automatic acceptance algorithm in this increment."
+    }
+  ]
+}

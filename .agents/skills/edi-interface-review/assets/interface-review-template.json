@@ -1,0 +1,43 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "REPLACE_system_boundary",
+  "input_revision": "REPLACE_source_revision",
+  "components": [
+    {
+      "id": "A",
+      "name": "REPLACE_producer"
+    },
+    {
+      "id": "B",
+      "name": "REPLACE_consumer"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "A",
+      "to": "B",
+      "disposition": "unresolved",
+      "rationale": "REPLACE_decision",
+      "contract_ids": []
+    },
+    {
+      "from": "B",
+      "to": "A",
+      "disposition": "unresolved",
+      "rationale": "REPLACE_decision",
+      "contract_ids": []
+    }
+  ],
+  "contract_profiles": {},
+  "contracts": [],
+  "cases": [],
+  "feedback_reviews": [],
+  "findings": [],
+  "review": {
+    "gate": "architecture",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Inventory template; no product evidence."
+  }
+}

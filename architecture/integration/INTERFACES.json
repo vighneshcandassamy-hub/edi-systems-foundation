@@ -1,0 +1,616 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "OBS and SUB system component boundary",
+  "input_revision": "a0c2c838c4ffb9cc0b7706082ad4ca5cf37a8d78",
+  "components": [
+    {
+      "id": "OBS",
+      "name": "Observation"
+    },
+    {
+      "id": "SUB",
+      "name": "Representation substrate"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "OBS",
+      "to": "SUB",
+      "disposition": "required",
+      "rationale": "Evidence/results flow and bounded query/proposal/control flow have distinct authority.",
+      "contract_ids": [
+        "INT-OS-001",
+        "INT-OS-003",
+        "INT-OS-005",
+        "INT-OS-007",
+        "INT-OS-009",
+        "INT-OS-011"
+      ]
+    },
+    {
+      "from": "SUB",
+      "to": "OBS",
+      "disposition": "required",
+      "rationale": "Evidence/results flow and bounded query/proposal/control flow have distinct authority.",
+      "contract_ids": [
+        "INT-OS-002",
+        "INT-OS-004",
+        "INT-OS-006",
+        "INT-OS-008",
+        "INT-OS-010"
+      ]
+    }
+  ],
+  "contract_profiles": {
+    "OBS_SUB_shared": {
+      "ownership": "OBS commits acquired evidence/assertion/availability history; SUB-C2 admits interpretation changes and SUB-C1 durably commits substrate state. See OBSERVATION_SUBSTRATE.md.",
+      "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority.",
+      "shape_versions": "Native selectors and immutable schema/profile/transform/model/preprocessing versions; explicit unknown/unsupported/partial results. Exact wire schema remains pending.",
+      "identity_scope": "Scoped request/record/occurrence IDs and source epochs; payload dedup is not occurrence dedup; operational identity differs from physical truth.",
+      "time_order": "Preserve event/valid/source/receipt/commit/known/model time and clock uncertainty. Acquisition cursor differs from event order; gaps remain explicit.",
+      "delivery_idempotency": "Stable request and occurrence identities, bounded retry/status/cancel, no duplicate state effect on replay; unknown outcome remains explicit.",
+      "commit_recovery": "SUB state, applied IDs and consumed checkpoint durably consistent before progress acknowledgement. No assumed global transaction or exactly-once physical effect.",
+      "retention": "OBS availability/tombstones govern raw access; no external pin endpoint assumed. SUB marks unavailable support or retains authorized copies with lineage.",
+      "resource_limits": "Bound page/range/query/queue/trial/acquisition/model work by declared profile and shared root budget; count retries, failures and recovery. Numerical profile pending.",
+      "errors": "Unknown, unavailable, unsupported, denied, stale/conflict, timeout, cancelled, partial, integrity and capacity outcomes are attributable; exact binding pending.",
+      "feedback_grounding": "Keep native, derived, internal and imported evidence distinct; preserve selection/dependency lineage. Acceptance and internal echoes are not independent external corroboration."
+    }
+  },
+  "contracts": [
+    {
+      "id": "INT-OS-001",
+      "from": "OBS",
+      "to": "SUB",
+      "title": "Committed evidence and revision deltas",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R001",
+        "SUB-R002",
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R015"
+      ],
+      "verification_ids": [
+        "INT-V001",
+        "INT-V002",
+        "INT-V004",
+        "INT-V005",
+        "INT-V008",
+        "INT-V010"
+      ],
+      "producer_port": "OBS committed/query/result boundary",
+      "consumer_port": "SUB-C2 admission for state changes; SUB-C3 for request results",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Committed evidence and revision deltas."
+      }
+    },
+    {
+      "id": "INT-OS-002",
+      "from": "SUB",
+      "to": "OBS",
+      "title": "Bounded native, identity-as-of and replay queries",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R001",
+        "SUB-R005",
+        "SUB-R006",
+        "SUB-R009",
+        "SUB-R014",
+        "SUB-R015"
+      ],
+      "verification_ids": [
+        "INT-V003",
+        "INT-V005",
+        "INT-V008",
+        "INT-V009"
+      ],
+      "producer_port": "SUB bounded query/proposal boundary",
+      "consumer_port": "OBS supported API/policy boundary",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Bounded native, identity-as-of and replay queries."
+      }
+    },
+    {
+      "id": "INT-OS-003",
+      "from": "OBS",
+      "to": "SUB",
+      "title": "Correlated native and derived query results",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R001",
+        "SUB-R005",
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R014"
+      ],
+      "verification_ids": [
+        "INT-V001",
+        "INT-V003",
+        "INT-V005",
+        "INT-V011"
+      ],
+      "producer_port": "OBS committed/query/result boundary",
+      "consumer_port": "SUB-C2 admission for state changes; SUB-C3 for request results",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Correlated native and derived query results."
+      }
+    },
+    {
+      "id": "INT-OS-004",
+      "from": "SUB",
+      "to": "OBS",
+      "title": "Supported acquisition request",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R010",
+        "SUB-R011",
+        "SUB-R014"
+      ],
+      "verification_ids": [
+        "INT-V006",
+        "INT-V007",
+        "INT-V009",
+        "INT-V012"
+      ],
+      "producer_port": "SUB bounded query/proposal boundary",
+      "consumer_port": "OBS supported API/policy boundary",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Supported acquisition request."
+      }
+    },
+    {
+      "id": "INT-OS-005",
+      "from": "OBS",
+      "to": "SUB",
+      "title": "Actual acquisition result and status",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R010",
+        "SUB-R014"
+      ],
+      "verification_ids": [
+        "INT-V005",
+        "INT-V006",
+        "INT-V007"
+      ],
+      "producer_port": "OBS committed/query/result boundary",
+      "consumer_port": "SUB-C2 admission for state changes; SUB-C3 for request results",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Actual acquisition result and status."
+      }
+    },
+    {
+      "id": "INT-OS-006",
+      "from": "SUB",
+      "to": "OBS",
+      "title": "Attributed assertion or retraction proposal",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R011",
+        "SUB-R012"
+      ],
+      "verification_ids": [
+        "INT-V002",
+        "INT-V007",
+        "INT-V012"
+      ],
+      "producer_port": "SUB bounded query/proposal boundary",
+      "consumer_port": "OBS supported API/policy boundary",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Attributed assertion or retraction proposal."
+      }
+    },
+    {
+      "id": "INT-OS-007",
+      "from": "OBS",
+      "to": "SUB",
+      "title": "Policy-scoped assertion decision and history",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R005",
+        "SUB-R007",
+        "SUB-R009"
+      ],
+      "verification_ids": [
+        "INT-V002",
+        "INT-V005",
+        "INT-V007",
+        "INT-V012"
+      ],
+      "producer_port": "OBS committed/query/result boundary",
+      "consumer_port": "SUB-C2 admission for state changes; SUB-C3 for request results",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Policy-scoped assertion decision and history."
+      }
+    },
+    {
+      "id": "INT-OS-008",
+      "from": "SUB",
+      "to": "OBS",
+      "title": "Optional bounded versioned derivation request",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R008",
+        "SUB-R014",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "INT-V007",
+        "INT-V009",
+        "INT-V011"
+      ],
+      "producer_port": "SUB bounded query/proposal boundary",
+      "consumer_port": "OBS supported API/policy boundary",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Optional bounded versioned derivation request.",
+        "shape_versions": "C4 worker inputs exist in the proposed OBS specification; exact consumer job request binding is pending, not claimed as an existing endpoint."
+      }
+    },
+    {
+      "id": "INT-OS-009",
+      "from": "OBS",
+      "to": "SUB",
+      "title": "Optional derived result and cost",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R014",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "INT-V007",
+        "INT-V009",
+        "INT-V011"
+      ],
+      "producer_port": "OBS committed/query/result boundary",
+      "consumer_port": "SUB-C2 admission for state changes; SUB-C3 for request results",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Optional derived result and cost."
+      }
+    },
+    {
+      "id": "INT-OS-010",
+      "from": "SUB",
+      "to": "OBS",
+      "title": "Consumer progress, demand and cancel",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R011",
+        "SUB-R014",
+        "SUB-R015"
+      ],
+      "verification_ids": [
+        "INT-V004",
+        "INT-V009",
+        "INT-V010"
+      ],
+      "producer_port": "SUB bounded query/proposal boundary",
+      "consumer_port": "OBS supported API/policy boundary",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Consumer progress, demand and cancel.",
+        "commit_recovery": "SUB state, applied IDs and consumed checkpoint durably consistent before progress acknowledgement. No assumed global transaction or exactly-once physical effect. Exact acknowledgement/session wire binding remains pending."
+      }
+    },
+    {
+      "id": "INT-OS-011",
+      "from": "OBS",
+      "to": "SUB",
+      "title": "Flow, capability, lag and lifecycle status",
+      "status": "proposed",
+      "profile_ref": "OBS_SUB_shared",
+      "requirement_ids": [
+        "SUB-R005",
+        "SUB-R010",
+        "SUB-R014",
+        "SUB-R015"
+      ],
+      "verification_ids": [
+        "INT-V005",
+        "INT-V006",
+        "INT-V009",
+        "INT-V010"
+      ],
+      "producer_port": "OBS committed/query/result boundary",
+      "consumer_port": "SUB-C2 admission for state changes; SUB-C3 for request results",
+      "facets": {
+        "authority": "Bounded reads, attributed proposals and supported acquisition only. No raw evidence overwrite, direct physical-identity truth promotion or new external action authority. Operation: Flow, capability, lag and lifecycle status."
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "INT-V001",
+      "title": "Native evidence to attributable representation",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V002",
+      "title": "Correction and dependencies",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V003",
+      "title": "Bounded historical query",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V004",
+      "title": "Duplicates, reordering and unknown outcomes",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V005",
+      "title": "Epochs, clocks and coverage",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V006",
+      "title": "Requested versus actual or denied acquisition",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V007",
+      "title": "No self-generated corroboration",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V008",
+      "title": "Retention eviction",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V009",
+      "title": "Overload, complete costs and intake isolation",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V010",
+      "title": "Crash, restart and checkpoints",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V011",
+      "title": "Schema and model feature compatibility",
+      "required": true,
+      "status": "specified_not_run"
+    },
+    {
+      "id": "INT-V012",
+      "title": "Stale, conflicting or unsupported requests",
+      "required": true,
+      "status": "specified_not_run"
+    }
+  ],
+  "findings": [
+    {
+      "id": "INT-G001",
+      "description": "Concrete schemas/version/error contracts and fixtures pending.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "INT-G002",
+      "description": "No external pin endpoint assumed; explicit unavailable fallback specified; runtime eviction not qualified.",
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "INT-G003",
+      "description": "Exact progress acknowledgement/session and C4 job request binding pending.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "INT-G004",
+      "description": "Policy identity acceptance differs from physical truth; natural cross-modal identity remains unqualified.",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "INT-G005",
+      "description": "Integrated resource/fault profile and recovery qualification pending.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "OBS",
+        "SUB"
+      ],
+      "analysis": "Evidence \u2192 representation \u2192 question \u2192 selected acquisition \u2192 evidence. Preserve selection/internal-output lineage, budgets, denied outcomes, checkpoint ordering and overload isolation; no self-confirmation.",
+      "verification_ids": [
+        "INT-V004",
+        "INT-V006",
+        "INT-V007",
+        "INT-V009",
+        "INT-V010"
+      ]
+    }
+  ],
+  "review": {
+    "gate": "architecture",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Logical integration proposal; contracts, operating profiles and product evidence pending."
+  },
+  "outside_dependencies": [
+    {
+      "id": "M",
+      "owner": "SUB-C3 optional adapter",
+      "request": "Bounded selected context/configuration/deadline/budget; no write/action authority.",
+      "result": "Attributed proposals/usage/errors; no independent evidence.",
+      "status": "proposed",
+      "policies_pending": [
+        "retention",
+        "availability",
+        "model_version",
+        "cost"
+      ]
+    },
+    {
+      "id": "WORLD",
+      "owner": "OBS adapters and separate action authority",
+      "status": "outside_scope",
+      "obligation": "Actual acquisition and source/action limits; no internal ack proves external effect."
+    }
+  ],
+  "downstream_allocations": [
+    {
+      "id": "DOWN-001",
+      "requirement_ids": [
+        "SUB-R007",
+        "SUB-R008",
+        "SUB-R011"
+      ],
+      "verification_ids": [
+        "INT-V001",
+        "INT-V007"
+      ],
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "DOWN-002",
+      "requirement_ids": [
+        "SUB-R001",
+        "SUB-R005",
+        "SUB-R007",
+        "SUB-R009"
+      ],
+      "verification_ids": [
+        "INT-V002",
+        "INT-V005"
+      ],
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "DOWN-003",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R005",
+        "SUB-R009",
+        "SUB-R011"
+      ],
+      "verification_ids": [
+        "INT-V002",
+        "INT-V005",
+        "INT-V012"
+      ],
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "DOWN-004",
+      "requirement_ids": [
+        "SUB-R006",
+        "SUB-R014",
+        "SUB-R015"
+      ],
+      "verification_ids": [
+        "INT-V003",
+        "INT-V008",
+        "INT-V009"
+      ],
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "DOWN-005",
+      "requirement_ids": [
+        "SUB-R008",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "INT-V007",
+        "INT-V011"
+      ],
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "DOWN-006",
+      "requirement_ids": [
+        "SUB-R010",
+        "SUB-R014"
+      ],
+      "verification_ids": [
+        "INT-V006",
+        "INT-V007",
+        "INT-V009"
+      ],
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "DOWN-007",
+      "requirement_ids": [
+        "SUB-R002",
+        "SUB-R011",
+        "SUB-R015"
+      ],
+      "verification_ids": [
+        "INT-V004",
+        "INT-V010",
+        "INT-V012"
+      ],
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "DOWN-008",
+      "requirement_ids": [
+        "SUB-R013",
+        "SUB-R014",
+        "SUB-R016"
+      ],
+      "verification_ids": [
+        "INT-V006",
+        "INT-V009",
+        "INT-V011"
+      ],
+      "status": "proposed_not_implemented"
+    }
+  ]
+}

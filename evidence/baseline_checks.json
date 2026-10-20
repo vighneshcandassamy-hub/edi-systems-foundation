@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "documentation/import/graph checks only",
+  "imported_files": 40,
+  "payload_files_checked": 53,
+  "master_foundations": 346,
+  "master_requirements": 54,
+  "master_prospective_cases": 192,
+  "master_nodes": 82,
+  "master_edges": 241,
+  "reference_source_entries": 102,
+  "reference_requirements": 20,
+  "reference_prospective_cases": 24,
+  "model_cases_run": false,
+  "remote_status_checked_by_this_script": false,
+  "issues": []
+}

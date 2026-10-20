@@ -1,0 +1,69 @@
+{
+  "scope": "skill_format_and_helper_only",
+  "format_validation": "passed",
+  "catalogue_results": {
+    "architecture/integration/INTERFACES.json": {
+      "scope": "interface_inventory_consistency_only",
+      "semantics_independently_verified": false,
+      "component_count": 2,
+      "pair_count": 1,
+      "directed_lane_count": 2,
+      "contract_count": 11,
+      "feedback_groups": [
+        [
+          "OBS",
+          "SUB"
+        ]
+      ],
+      "consistent": true,
+      "errors": []
+    },
+    "architecture/integration/SUBSTRATE_INTERNAL_INTERFACES.json": {
+      "scope": "interface_inventory_consistency_only",
+      "semantics_independently_verified": false,
+      "component_count": 3,
+      "pair_count": 3,
+      "directed_lane_count": 6,
+      "contract_count": 6,
+      "feedback_groups": [
+        [
+          "SUB-C1",
+          "SUB-C2",
+          "SUB-C3"
+        ]
+      ],
+      "consistent": true,
+      "errors": []
+    }
+  },
+  "helper_self_tests": {
+    "positive_reports": 4,
+    "negative_reports_rejected": [
+      "missing_reverse",
+      "duplicate_lane",
+      "unknown_component",
+      "self_lane",
+      "active_without_contract",
+      "wrong_direction",
+      "inactive_with_contract",
+      "missing_facet",
+      "missing_case",
+      "missing_feedback_review",
+      "runtime_without_evidence",
+      "runtime_contract_without_evidence",
+      "false_product_qualification",
+      "malformed_gate",
+      "malformed_disposition",
+      "malformed_case_status",
+      "unresolved_blocker"
+    ]
+  },
+  "component_review_consistency": "passed",
+  "product_qualification": "not_run",
+  "validation_command": "python /root/.codex/skills/oai/skill-creator/scripts/quick_validate.py .agents/skills/edi-interface-review",
+  "sha256": {
+    ".agents/skills/edi-interface-review/SKILL.md": "00f46d6f35e3cad11689b5317af66f70083c7880c8a495f6d68221be05e761d5",
+    ".agents/skills/edi-interface-review/agents/openai.yaml": "9d4e2a7695d2388506f281281a3e05d7ab1c70bbc0c029eb834f3792c3f0969b",
+    ".agents/skills/edi-interface-review/scripts/interface_matrix.py": "35f80df00c9ad20923b7996c4d23b4dbb869ce6c89abd2b81571557359e120e1"
+  }
+}
