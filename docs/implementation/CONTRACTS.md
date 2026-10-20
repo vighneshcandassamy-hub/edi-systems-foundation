@@ -2,6 +2,8 @@
 
 Version 0.1, 20 October 2026. Gate: proposed architecture contracts. This is a specification for implementation; no endpoint or serialized schema is claimed implemented. Full pair dispositions and operation facets are in [INTERFACES.json](INTERFACES.json). All model scenarios remain planned.
 
+Version 0.2 extension: [SCALING_AND_WORLD_GROWTH.md](SCALING_AND_WORLD_GROWTH.md) adds proposed ModelDelta, projection/cache validity, RefinementBridge, ExplorationFrontier and KnowledgeRequest records and their guarded state transitions. The updated matrix allocates their operations over existing lanes; no new state owner is introduced. New data changes invalidate dependent current views; original forecast seals and source records remain immutable.
+
 ## 1. Contract boundaries and authority
 
 The eight logical modules in [COMPONENTS.md](COMPONENTS.md) have separate state owners. The JSON matrix reviews every unordered pair and both directed lanes. Required lanes are logical operations/results, not a requirement for network services. In-process calls still obey the same authority and version rules. An optional deployment split cannot grant new mutation rights.

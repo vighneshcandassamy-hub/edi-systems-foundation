@@ -26,6 +26,9 @@ def id_map(rows, label):
 data = read_json(D / 'TRACEABILITY.json')
 interfaces = read_json(D / 'INTERFACES.json')
 sources = read_json(D / 'SOURCES.json')
+manifests = {'0.1': (28, 40, 51), '0.2': (34, 48, 60)}
+require(str(data['version']) in manifests, 'Unknown audited specification version')
+requirement_count, case_count, source_count = manifests.get(str(data['version']), (0, 0, 0))
 comps = id_map(data['components'], 'components')
 funcs = id_map(data['functions'], 'functions')
 reqs = id_map(data['implementation_requirements'], 'implementation requirements')
@@ -35,8 +38,8 @@ sys = id_map(data['system_requirements'], 'system requirements')
 require(set(comps) == {f'C{i}' for i in range(8)}, 'Eight component owners')
 require(len(funcs) == 32, 'Function inventory')
 require(set(up) == {f'I7-R{i:02}' for i in range(1,55)}, 'I7 requirement inventory')
-require(set(cases) == {f'E{i:02}' for i in range(1,41)}, 'Forty prospective cases')
-require(len(reqs) == 28, 'Implementation requirement inventory')
+require(set(cases) == {f'E{i:02}' for i in range(1,case_count+1)}, 'Prospective case inventory')
+require(set(reqs) == {f'IMP-R{i:02}' for i in range(1,requirement_count+1)}, 'Implementation requirement inventory')
 for key, expected in [('appendix_requirements',20), ('retained_requirements',43), ('consumer_obligations',8), ('system_requirements',16)]:
     rows = data[key]
     id_map(rows, key)
@@ -89,7 +92,22 @@ for c in interfaces['contracts']:
     require(c['status'] == 'proposed', 'Unexpected contract qualification '+c['id'])
 for c in interfaces['cases']:
     require(c == cases[c['id']], 'Divergent interface/case copy '+c['id'])
-require(len(sources['sources']) == 51 and len({s['id'] for s in sources['sources']}) == 51, 'Source register inventory')
+require({s['id'] for s in sources['sources']} == {f'S{i:02}' for i in range(1,source_count+1)} and len(sources['sources']) == source_count, 'Source register inventory')
+if str(data['version']) == '0.2':
+    policy = read_json(D/'GROWTH_POLICY.json')
+    require(policy['status'] == 'proposed_not_implemented' and policy['evidence_state'] == 'all_runtime_cases_not_run', 'False growth policy qualification')
+    require([policy[k] for k in ['owner','planner','assessor','authorization_owner']] == ['C0','C4','C6','C7'], 'Growth policy owner allocation')
+    require(set(policy['directions']) == {'expand_adjacent','refine_internal','resolve_identity','refresh_temporal','test_mechanism','check_boundary','review_abstraction'}, 'Growth direction inventory')
+    require(all(policy['access'].get(k) is True for k in ['reuse_existing_scoped_grants','request_missing_scope_only','grant_is_not_acquisition','denial_recorded','retry_denial_only_for_material_change']), 'Growth access boundaries')
+    require(policy['notifications']['max_new_discretionary_requests_per_project_day'] == 2 and policy['notifications']['unchanged_request_cooldown_days'] == 7, 'Proposed notification default drift')
+    require((ROOT/policy['specification']).is_file(), 'Missing growth specification')
+    growth = (D/'SCALING_AND_WORLD_GROWTH.md').read_text(encoding='utf-8')
+    for cid in [f'E{i}' for i in range(41,49)]:
+        require(cid in growth and cases[cid]['acceptance'] in growth, 'Growth case specification mismatch '+cid)
+    stakeholders = id_map(data['stakeholder_requirements'], 'stakeholder requirements')
+    require(set(stakeholders) == {f'USR-GROW-{i:02}' for i in range(1,4)}, 'Growth stakeholder requirement inventory')
+    for r in stakeholders.values():
+        require(bool(r['implementation_ids']) and set(r['implementation_ids']) <= set(reqs), 'Unallocated stakeholder requirement '+r['id'])
 for s in sources['sources']:
     require(s['url'].startswith('https://') and s['kind'] == 'primary' and s['retrieved'] == '2026-10-20', 'Source metadata '+s['id'])
     require(s['url'] in (D/'SOURCES.md').read_text(encoding='utf-8'), 'Source register mismatch '+s['id'])

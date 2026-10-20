@@ -3,7 +3,7 @@
   "reviewed_component": "EDI implementation architecture: eight logical owners",
   "gate": "architecture",
   "requested_scope": "research_and_design_only",
-  "input_revision": "830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a + implementation proposal 0.1",
+  "input_revision": "2af45f59169ec3855f10a8861d6e6acc4c8cfb07 + implementation extension 0.2",
   "reviewer": {
     "role": "Codex architecture self-review",
     "independent": false
@@ -20,7 +20,8 @@
       "rationale": "Explicit mission/system/I7/appendix/retained/consumer requirements flow to implementation requirements, functions, owner contracts and prospective cases. Structural trace validation is separate from semantic or runtime proof.",
       "references": [
         "docs/implementation/TRACEABILITY.json",
-        "docs/implementation/evidence/document-checks.json"
+        "docs/implementation/evidence/document-checks.json",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     },
     {
@@ -30,7 +31,8 @@
       "references": [
         "docs/implementation/COMPONENTS.md",
         "docs/implementation/CONTRACTS.md",
-        "docs/implementation/INTERFACES.json"
+        "docs/implementation/INTERFACES.json",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     },
     {
@@ -39,7 +41,8 @@
       "rationale": "Eight logical modules in one application; no service per concept, no compulsory framework cluster or newly trained world model. Conditional adoption triggers compare simpler options.",
       "references": [
         "docs/implementation/TRADEOFFS.md",
-        "docs/implementation/VERIFICATION.md"
+        "docs/implementation/VERIFICATION.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     },
     {
@@ -48,15 +51,17 @@
       "rationale": "Independent role/basis/time/use axes, source and imported-model lineage, rival mechanisms, unknowns and original forecast integrity are explicit.",
       "references": [
         "docs/implementation/CONTRACTS.md",
-        "docs/implementation/COMPONENTS.md"
+        "docs/implementation/COMPONENTS.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     },
     {
       "id": "resource_envelope",
       "status": "pass",
-      "rationale": "Finite proposed DEV1 admission/work budgets and a separately qualified future HA profile; complete costs, unknown usage, failures and offered-work denominators are retained. No measured performance asserted.",
+      "rationale": "DEV1/HA1 and new FAST1 distinguish fixed active work from global coupling, useful response from acknowledgement, cache freshness, escalation coverage and complete costs. All performance remains unmeasured.",
       "references": [
-        "docs/implementation/VERIFICATION.md"
+        "docs/implementation/VERIFICATION.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     },
     {
@@ -65,7 +70,8 @@
       "rationale": "Staged artifact/metadata durability, local transactions/outbox, lease fencing, retention invalidation and composed feedback/failure analysis specify bounded recovery responsibilities.",
       "references": [
         "docs/implementation/CONTRACTS.md",
-        "docs/implementation/VERIFICATION.md"
+        "docs/implementation/VERIFICATION.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     },
     {
@@ -74,16 +80,18 @@
       "rationale": "Current provider catalogs, original model cards, official libraries/standards and original research support narrow capability claims. Preferences and representative older research are labeled; no exhaustive global SOTA ranking asserted.",
       "references": [
         "docs/implementation/SOURCES.md",
-        "docs/implementation/TRADEOFFS.md"
+        "docs/implementation/TRADEOFFS.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     },
     {
       "id": "verification_scope",
       "status": "pass",
-      "rationale": "Forty proposed cases, one initial integrated campaign and matched comparison controls are designed. Document checks and review-tool consistency never qualify runtime behavior or intelligence.",
+      "rationale": "Forty original and eight extension cases remain prospective. Useful latency, freshness, growing-store correctness, request lifecycle and full cost have explicit proposed profiles; document checks do not qualify runtime behavior.",
       "references": [
         "docs/implementation/VERIFICATION.md",
-        "docs/implementation/evidence/document-checks.json"
+        "docs/implementation/evidence/document-checks.json",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
       ]
     }
   ],
@@ -134,12 +142,26 @@
       "blocking_at": [
         "architecture"
       ]
+    },
+    {
+      "id": "OPEN-05",
+      "description": "Jev/local fast decisions need pinned model/domain/calibration and caller-region latency qualification; delta, validity, bridge and request schema fixtures must precede their contract pass.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
     }
   ],
   "changes": [
     {
       "description": "New prospective implementation allocation and alternatives preserve the source snapshots and historical review statuses.",
       "reference": "docs/decisions/ADR-002-implementation-architecture.md"
+    },
+    {
+      "description": "Added intrinsic inquiry/access lifecycle, incremental multiresolution growth and fast/deep operating requirements; corrected the Jev/JEPA interpretation and the previously omitted Jev candidate.",
+      "reference": "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
     }
   ],
   "verification": [
@@ -149,7 +171,7 @@
       "status": "passed",
       "required": true,
       "evidence_ref": "docs/implementation/evidence/document-checks.json",
-      "revision": "implementation proposal 0.1"
+      "revision": "implementation extension 0.2"
     },
     {
       "id": "PRODUCT-CAMPAIGN",
@@ -166,5 +188,6 @@
   ],
   "product_qualification": "not_run",
   "verdict": "pass",
-  "next_step": "Review the proposal, then bind concrete typed contracts and one focused source/identity/time fixture for the first chosen capability; no runtime build started."
+  "next_step": "Bind concrete source/identity/time plus delta/validity/request contracts for one fixture before runtime work; no speed or discovery result is measured.",
+  "previous_review_revision": "2af45f59169ec3855f10a8861d6e6acc4c8cfb07"
 }

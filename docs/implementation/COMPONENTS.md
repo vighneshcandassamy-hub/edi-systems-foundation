@@ -2,6 +2,8 @@
 
 Version 0.1, 20 October 2026. Status: implementation-architecture proposal. All endpoints, packages and records below are proposed; there is no EDI runtime behind them yet. [TRADEOFFS.md](TRADEOFFS.md) gives alternatives and reasons. [CONTRACTS.md](CONTRACTS.md) defines shared contracts; [TRACEABILITY.json](TRACEABILITY.json) gives stable allocations and cases.
 
+The [version 0.2 scalability/world-growth extension](SCALING_AND_WORLD_GROWTH.md) specifies incremental deltas/dependencies, validity-aware fast decisions, breadth/depth/refinement bridges and intrinsic access requests within these same owners/functions. It supplements the finite DEV1 profile with proposed FAST1 targets; no speed, growth or inquiry result is measured.
+
 ## 1. Source precedence and scope
 
 Pin input repository revision `830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a`. Preserve the integrated seven-chapter architecture and appendix reference byte for byte. This package operationalizes them under the owner's current instruction to use existing LLMs. The supplied overview is preserved in [OVERVIEW.mmd](OVERVIEW.mmd); it complements the detailed 82-node conceptual master rather than replacing it.

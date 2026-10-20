@@ -460,7 +460,87 @@
       "retrieved": "2026-10-20",
       "kind": "primary",
       "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S52",
+      "title": "TypeSafe Jev release and benchmark qualifications",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "support": "Vendor-reported focused-decision latency and evaluation qualifications, including geography and request/workflow construction; not EDI measurements.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S53",
+      "title": "TypeSafe decision primitives",
+      "url": "https://docs.typesafe.ai/primitives",
+      "support": "Focused typed judgments, known choices, independent questions and dependent follow-ups; bounded output type does not establish causal truth.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S54",
+      "title": "TypeSafe state",
+      "url": "https://docs.typesafe.ai/concepts/state",
+      "support": "Shared structured state for independent judgments; choose only relevant grounded context.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S55",
+      "title": "TypeSafe confidence",
+      "url": "https://docs.typesafe.ai/confidence",
+      "support": "Confidence is computed from the output distribution; application thresholds and model behavior require task-specific validation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S56",
+      "title": "TypeSafe speculative fan-out",
+      "url": "https://docs.typesafe.ai/patterns/fan-out",
+      "support": "Batching independent potential questions; dependency chains and total request budget remain relevant.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S57",
+      "title": "Materialize fundamentals",
+      "url": "https://materialize.com/docs/fundamentals/",
+      "support": "Incrementally maintained streaming results, built on Timely/Differential Dataflow; optional infrastructure, not EDI model semantics.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S58",
+      "title": "PostgreSQL table partitioning",
+      "url": "https://www.postgresql.org/docs/current/ddl-partitioning.html",
+      "support": "Physical table partitioning/pruning under compatible workloads; no automatic graph-sharding or universal latency guarantee.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S59",
+      "title": "PostgreSQL materialized views",
+      "url": "https://www.postgresql.org/docs/current/rules-materializedviews.html",
+      "support": "Persisted query results and explicit refresh; not automatic incremental maintenance of an evolving world model.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S60",
+      "title": "TypeSafe models and version aliases",
+      "url": "https://docs.typesafe.ai/models",
+      "support": "Versioned releases versus moving aliases, request shape and limits; bind and qualify the actual provider model/version before execution.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
     }
   ]
 }
-

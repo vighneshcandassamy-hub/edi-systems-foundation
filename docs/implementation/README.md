@@ -1,12 +1,14 @@
 # EDI implementation architecture and technique assessment
 
-Version 0.1 — 20 October 2026. Status: researched and documented proposal; runtime not implemented. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
+Version 0.2 — 20 October 2026. Status: researched and documented proposal; runtime not implemented. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 
 ## Recommendation
 
 Use a hybrid architecture: a replaceable LLM proposes interpretations and testable mechanisms; a typed temporal world model retains evidence, alternatives, nonlinear laws and history; appropriate numerical/causal tools execute scoped tests; independent outcomes support explicit revision. Start with a modular Python application, Postgres, source-native artifact storage and one selected reasoning provider. Add specialist frameworks only when a requirement and measured limitation justify them.
 
 Preferred first reasoning path: hosted `gpt-6.1-sol` for quality-oriented development, with Qwen3.5-9B as the first local candidate if offline/local deployment is required. Larger Qwen3.6-35B-A3B, current Claude models, Gemini 3.8 Flash and DeepSeek-V4 are compared rather than assumed inferior or automatically mixed into every task. No provider winner or performance advantage is established by this document.
+
+The speed and cumulative-world extension is specified in [Scaling and world growth](SCALING_AND_WORLD_GROWTH.md), with a [proposed intrinsic inquiry policy](GROWTH_POLICY.json). It adds qualified Jev fast decisions, incremental projections, breadth/depth/refinement/temporal growth and bounded access requests. FAST1 latency targets remain unmeasured. Deep reasoning retains the deliberate path above.
 
 ## Complete specification package
 
@@ -16,9 +18,9 @@ Preferred first reasoning path: hosted `gpt-6.1-sol` for quality-oriented develo
 | [Component specifications](COMPONENTS.md) | Eight logical owners, 32 functions, nine representation families, inputs/outputs/state/authority/failures and capability-by-capability integration. |
 | [Contracts](CONTRACTS.md) | Proposed typed records, admission semantics, operation families, identity/time/delivery/recovery/retention/resource rules, shared dependencies and composed feedback paths. |
 | [Directed interface catalogue](INTERFACES.json) | All 28 unordered component pairs / 56 directed lanes; 40 required operation/result contracts and explicit justified no-links/prohibited bypasses; eleven contract facets and a whole-system feedback review. |
-| [Traceability catalogue](TRACEABILITY.json) | All 42 nodes / 69 connections in the supplied overview; 54 I7 requirements, 20 appendix requirements, 43 retained observation/substrate requirements, eight downstream obligations and 16 EDI system requirements, allocated through 28 implementation requirements and 32 functions to prospective cases. |
-| [Verification and critical review](VERIFICATION.md) | Forty proposed cases; finite DEV1 profile and later HA profile; matched controls, failure analysis, KISS/Five Whys/MECE review, adoption conditions and development sequence. |
-| [Primary-source register](SOURCES.md) / [machine register](SOURCES.json) | 51 primary references checked during the research, with the narrow support and limitations used for decisions. |
+| [Traceability catalogue](TRACEABILITY.json) | All 42 nodes / 69 connections in the supplied overview; 54 I7 requirements, 20 appendix requirements, 43 retained observation/substrate requirements, eight downstream obligations and 16 EDI system requirements, allocated through 34 implementation requirements and 32 functions to prospective cases. |
+| [Verification and critical review](VERIFICATION.md) | 48 proposed cases; finite DEV1 profile and later HA profile; matched controls, failure analysis, KISS/Five Whys/MECE review, adoption conditions and development sequence. |
+| [Primary-source register](SOURCES.md) / [machine register](SOURCES.json) | 60 primary references checked during the research, with the narrow support and limitations used for decisions. |
 | [Scope](RESEARCH_SCOPE.md) / [preserved supplied overview](OVERVIEW.mmd) | Research boundary and the exact node/edge content of the owner's overview. |
 | [Component self-review](evidence/component-review.json) / [document checks](evidence/document-checks.json) / [interface checks](evidence/interface-checks.json) | Scoped review and checker results. These are documentation evidence, never successful runtime or intelligence tests. |
 
@@ -39,4 +41,4 @@ python .agents/skills/edi-component-review/scripts/review_gate.py docs/implement
 python scripts/verify_baseline.py
 ```
 
-The next implementation artifact is the concrete typed contracts and one source/identity/time fixture for the first chosen capability. No runtime build or inference benchmark was started in this assessment.
+Extension input revision: `2af45f59169ec3855f10a8861d6e6acc4c8cfb07`. The next implementation artifact is the concrete typed contracts, including ModelDelta, projection validity, RefinementBridge and KnowledgeRequest, and one source/identity/time fixture for the first chosen capability. No runtime build or inference benchmark was started in this assessment.

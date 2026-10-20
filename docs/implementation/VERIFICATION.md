@@ -2,6 +2,8 @@
 
 Version 0.1, 20 October 2026. Status: prospective implementation plan. No product case, inference experiment, capacity run or comparative benchmark was executed in this documentation task. Existing I7-T01–I7-T192 and AF-T01–AF-T24 remain PLANNED — NOT RUN. The new E01–E40 cases are engineering/integration case designs, not additional successful experiments.
 
+The [version 0.2 extension](SCALING_AND_WORLD_GROWTH.md) adds IMP-R29–IMP-R34, E41–E48, FAST1 useful-response/local-update targets, increasing-store tests and intrinsic inquiry/access-request assessment. It also distinguishes Jev from JEPA and adds the omitted fast decision candidate. E01–E40 and all prior targets retain their original meanings. FAST1 is an additional proposed profile, not a relaxation of DEV1 or a measured result.
+
 ## 1. Gate decision and limits
 
 Architecture proposal: suitable for review and concrete contract development, with the ownership, alternatives, flowdown and bounded implementation path documented. This is a scoped self-review, not an independent scientific review. The machine review report may pass architecture consistency while contract, runtime and integration readiness remain pending.

@@ -28,6 +28,8 @@ The nine Meadows representation families remain the conceptual core. The propose
 
 Current catalogs were checked on 20 October 2026. Availability, revisions and pricing must be rechecked when binding a provider. These preferences are based on advertised capabilities and integration fit, not a completed EDI model tournament.
 
+The [scalability and world-growth extension](SCALING_AND_WORLD_GROWTH.md) adds Jev as the preferred hosted candidate for qualified fast, focused typed decisions. The original assessment omitted this relevant candidate. It also separates reusable/deterministic, fast probabilistic and deliberate inquiry paths; the reasoning-provider preference below applies to deliberate interpretation/hypothesis work, not every observation or action.
+
 | Candidate | Role and capabilities relevant here | Tradeoff | Preference / adoption condition |
 | --- | --- | --- | --- |
 | OpenAI `gpt-6.1-sol` | Hosted text/image reasoning and tool-oriented work; provider positions it between its flagship and low-cost tier. | External service, changing alias, billable reasoning/output, account limits and proprietary weights. | Preferred first quality-oriented reasoning provider; use the same pinned model in EDI and LLM-only comparisons. [S01] |
@@ -37,6 +39,7 @@ Current catalogs were checked on 20 October 2026. Availability, revisions and pr
 | Qwen3.5-9B | Open-weight multimodal candidate for controllable local/offline experimentation. | Small-model reasoning and extraction errors can dominate. Precision, context and serving engine change results. | Preferred first local candidate if local deployment is required. It does not automatically match hosted reasoning quality. [S04] |
 | Qwen3.6-35B-A3B | Open-weight vision-language MoE with 35B total and 3B activated parameters. | Resident weights, caches and vision processing exceed what “3B active” suggests. Commodity GPU fit is not established. | Preferred larger open-weight challenger when hardware is measured sufficient; not a mandatory laptop dependency. [S05] |
 | DeepSeek-V4 Flash / Pro | Current reasoning alternatives with long-context positioning. | Verify exact modality and structured-output behavior; do not infer them from a reasoning claim or API compatibility. Large local deployment is a separate undertaking. | Secondary text-reasoning candidate if price/quality or hosting constraints justify it. [S06] |
+| TypeSafe Jev | Focused probabilistic choice/score/yes-no decisions over supplied state; independent questions can share a request. | Supplied options/context can be incomplete; type validity and concentrated confidence do not establish factual/causal correctness. Version, language, caller-region latency and EDI calibration need qualification. | Preferred fast hosted decision candidate; retains deterministic admission/authorization and an abstention/escalation route. Deep hypothesis formation stays with the deliberate reasoning path. [S52–S56, S60] |
 
 Initial routing is deliberately simple: deterministic extraction for native structured data; a single selected model for semantic proposals; escalation only on explicit failure, ambiguity or a consequential unresolved decision. Model output contains evidence selectors, alternative claims, assumptions, applicability and proposed tests. It never writes directly to accepted model state.
 

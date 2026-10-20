@@ -2,7 +2,7 @@
   "status": "PASS",
   "scope": "documentation/import/graph checks only",
   "imported_files": 40,
-  "payload_files_checked": 72,
+  "payload_files_checked": 74,
   "master_foundations": 346,
   "master_requirements": 54,
   "master_prospective_cases": 192,

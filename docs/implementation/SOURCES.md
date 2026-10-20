@@ -58,3 +58,17 @@ Recommendations and limitations in this design are engineering judgments unless 
 | S50 | [Alembic](https://alembic.sqlalchemy.org/en/latest/) | Versioned SQL schema migrations; EDI model-semantic migration is a separate operation. |
 | S51 | [FastAPI](https://fastapi.tiangolo.com/) | Optional HTTP boundary; an in-process port remains the first implementation form. |
 
+
+## Version 0.2 growth and decision-speed references
+
+| ID | Primary reference | What it supports and its limit |
+| --- | --- | --- |
+| S52 | [TypeSafe Jev release and benchmark qualifications](https://typesafe.ai/blog/introducing-system-one-models-and-jev) | Vendor-reported focused-decision latency and evaluation qualifications, including geography and request/workflow construction; not EDI measurements. |
+| S53 | [TypeSafe decision primitives](https://docs.typesafe.ai/primitives) | Focused typed judgments, known choices, independent questions and dependent follow-ups; bounded output type does not establish causal truth. |
+| S54 | [TypeSafe state](https://docs.typesafe.ai/concepts/state) | Shared structured state for independent judgments; choose only relevant grounded context. |
+| S55 | [TypeSafe confidence](https://docs.typesafe.ai/confidence) | Confidence is computed from the output distribution; application thresholds and model behavior require task-specific validation. |
+| S56 | [TypeSafe speculative fan-out](https://docs.typesafe.ai/patterns/fan-out) | Batching independent potential questions; dependency chains and total request budget remain relevant. |
+| S57 | [Materialize fundamentals](https://materialize.com/docs/fundamentals/) | Incrementally maintained streaming results, built on Timely/Differential Dataflow; optional infrastructure, not EDI model semantics. |
+| S58 | [PostgreSQL table partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html) | Physical table partitioning/pruning under compatible workloads; no automatic graph-sharding or universal latency guarantee. |
+| S59 | [PostgreSQL materialized views](https://www.postgresql.org/docs/current/rules-materializedviews.html) | Persisted query results and explicit refresh; not automatic incremental maintenance of an evolving world model. |
+| S60 | [TypeSafe models and version aliases](https://docs.typesafe.ai/models) | Versioned releases versus moving aliases, request shape and limits; bind and qualify the actual provider model/version before execution. |

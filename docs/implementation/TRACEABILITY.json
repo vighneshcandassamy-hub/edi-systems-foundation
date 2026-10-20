@@ -1,6 +1,6 @@
 {
   "schema": "edi-implementation-plan-v1",
-  "version": "0.1",
+  "version": "0.2",
   "date": "2026-10-20",
   "status": "design_only",
   "mission": {
@@ -193,7 +193,8 @@
         "IMP-R07",
         "IMP-R09",
         "IMP-R18",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R32"
       ]
     },
     {
@@ -203,7 +204,9 @@
       "requirement_ids": [
         "IMP-R07",
         "IMP-R09",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R30",
+        "IMP-R31"
       ]
     },
     {
@@ -215,7 +218,11 @@
         "IMP-R19",
         "IMP-R20",
         "IMP-R23",
-        "IMP-R24"
+        "IMP-R24",
+        "IMP-R29",
+        "IMP-R32",
+        "IMP-R33",
+        "IMP-R34"
       ]
     },
     {
@@ -223,7 +230,8 @@
       "title": "Deliver supported findings",
       "component_id": "C0",
       "requirement_ids": [
-        "IMP-R18"
+        "IMP-R18",
+        "IMP-R32"
       ]
     },
     {
@@ -244,7 +252,8 @@
         "IMP-R04",
         "IMP-R20",
         "IMP-R25",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R30"
       ]
     },
     {
@@ -253,7 +262,8 @@
       "component_id": "C1",
       "requirement_ids": [
         "IMP-R01",
-        "IMP-R04"
+        "IMP-R04",
+        "IMP-R32"
       ]
     },
     {
@@ -264,7 +274,9 @@
         "IMP-R01",
         "IMP-R19",
         "IMP-R20",
-        "IMP-R24"
+        "IMP-R24",
+        "IMP-R32",
+        "IMP-R34"
       ]
     },
     {
@@ -284,7 +296,8 @@
       "requirement_ids": [
         "IMP-R02",
         "IMP-R03",
-        "IMP-R21"
+        "IMP-R21",
+        "IMP-R33"
       ]
     },
     {
@@ -303,7 +316,8 @@
       "requirement_ids": [
         "IMP-R02",
         "IMP-R03",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R33"
       ]
     },
     {
@@ -322,7 +336,9 @@
         "IMP-R14",
         "IMP-R25",
         "IMP-R27",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R30",
+        "IMP-R31"
       ]
     },
     {
@@ -342,7 +358,10 @@
         "IMP-R21",
         "IMP-R24",
         "IMP-R26",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R31"
       ]
     },
     {
@@ -354,7 +373,11 @@
         "IMP-R05",
         "IMP-R11",
         "IMP-R17",
-        "IMP-R25"
+        "IMP-R25",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R33"
       ]
     },
     {
@@ -365,7 +388,10 @@
         "IMP-R19",
         "IMP-R20",
         "IMP-R21",
-        "IMP-R24"
+        "IMP-R24",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
       ]
     },
     {
@@ -375,7 +401,8 @@
       "requirement_ids": [
         "IMP-R08",
         "IMP-R15",
-        "IMP-R22"
+        "IMP-R22",
+        "IMP-R32"
       ]
     },
     {
@@ -386,7 +413,10 @@
         "IMP-R08",
         "IMP-R09",
         "IMP-R15",
-        "IMP-R22"
+        "IMP-R22",
+        "IMP-R31",
+        "IMP-R32",
+        "IMP-R33"
       ]
     },
     {
@@ -396,7 +426,9 @@
       "requirement_ids": [
         "IMP-R09",
         "IMP-R18",
-        "IMP-R19"
+        "IMP-R19",
+        "IMP-R32",
+        "IMP-R33"
       ]
     },
     {
@@ -405,7 +437,10 @@
       "component_id": "C4",
       "requirement_ids": [
         "IMP-R09",
-        "IMP-R18"
+        "IMP-R18",
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R32"
       ]
     },
     {
@@ -417,7 +452,9 @@
         "IMP-R06",
         "IMP-R15",
         "IMP-R16",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R29",
+        "IMP-R31"
       ]
     },
     {
@@ -433,7 +470,10 @@
         "IMP-R16",
         "IMP-R19",
         "IMP-R22",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R29",
+        "IMP-R31",
+        "IMP-R34"
       ]
     },
     {
@@ -446,7 +486,9 @@
         "IMP-R15",
         "IMP-R16",
         "IMP-R22",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R31",
+        "IMP-R34"
       ]
     },
     {
@@ -455,7 +497,8 @@
       "component_id": "C5",
       "requirement_ids": [
         "IMP-R10",
-        "IMP-R16"
+        "IMP-R16",
+        "IMP-R31"
       ]
     },
     {
@@ -477,7 +520,9 @@
         "IMP-R19",
         "IMP-R22",
         "IMP-R26",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R33",
+        "IMP-R34"
       ]
     },
     {
@@ -489,7 +534,10 @@
         "IMP-R12",
         "IMP-R17",
         "IMP-R22",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R32",
+        "IMP-R33",
+        "IMP-R34"
       ]
     },
     {
@@ -500,7 +548,8 @@
         "IMP-R12",
         "IMP-R17",
         "IMP-R18",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R32"
       ]
     },
     {
@@ -510,7 +559,8 @@
       "requirement_ids": [
         "IMP-R04",
         "IMP-R11",
-        "IMP-R25"
+        "IMP-R25",
+        "IMP-R32"
       ]
     },
     {
@@ -523,7 +573,8 @@
         "IMP-R12",
         "IMP-R15",
         "IMP-R23",
-        "IMP-R25"
+        "IMP-R25",
+        "IMP-R33"
       ]
     },
     {
@@ -533,7 +584,10 @@
       "requirement_ids": [
         "IMP-R12",
         "IMP-R19",
-        "IMP-R23"
+        "IMP-R23",
+        "IMP-R29",
+        "IMP-R32",
+        "IMP-R33"
       ]
     },
     {
@@ -1546,7 +1600,8 @@
         "IMP-R01",
         "IMP-R07",
         "IMP-R09",
-        "IMP-R18"
+        "IMP-R18",
+        "IMP-R32"
       ]
     },
     {
@@ -1556,7 +1611,8 @@
       "implementation_ids": [
         "IMP-R01",
         "IMP-R03",
-        "IMP-R25"
+        "IMP-R25",
+        "IMP-R30"
       ]
     },
     {
@@ -1566,7 +1622,8 @@
       "implementation_ids": [
         "IMP-R03",
         "IMP-R21",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R33"
       ]
     },
     {
@@ -1577,7 +1634,9 @@
         "IMP-R05",
         "IMP-R08",
         "IMP-R14",
-        "IMP-R17"
+        "IMP-R17",
+        "IMP-R30",
+        "IMP-R31"
       ]
     },
     {
@@ -1589,7 +1648,9 @@
         "IMP-R06",
         "IMP-R08",
         "IMP-R13",
-        "IMP-R15"
+        "IMP-R15",
+        "IMP-R31",
+        "IMP-R33"
       ]
     },
     {
@@ -1605,7 +1666,9 @@
         "IMP-R11",
         "IMP-R25",
         "IMP-R26",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R32",
+        "IMP-R33"
       ]
     },
     {
@@ -1615,7 +1678,8 @@
       "implementation_ids": [
         "IMP-R09",
         "IMP-R18",
-        "IMP-R23"
+        "IMP-R23",
+        "IMP-R32"
       ]
     },
     {
@@ -1626,7 +1690,8 @@
         "IMP-R02",
         "IMP-R12",
         "IMP-R14",
-        "IMP-R17"
+        "IMP-R17",
+        "IMP-R30"
       ]
     },
     {
@@ -1638,7 +1703,8 @@
         "IMP-R02",
         "IMP-R04",
         "IMP-R20",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R30"
       ]
     },
     {
@@ -1653,7 +1719,8 @@
         "IMP-R13",
         "IMP-R15",
         "IMP-R16",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R31"
       ]
     },
     {
@@ -1661,7 +1728,8 @@
       "title": "Transfer",
       "statement": "The system shall evaluate whether prior learned structure improves unfamiliar related tasks against strong reset, conventional-memory and unrelated-history controls.",
       "implementation_ids": [
-        "IMP-R22"
+        "IMP-R22",
+        "IMP-R34"
       ]
     },
     {
@@ -1672,7 +1740,8 @@
         "IMP-R07",
         "IMP-R15",
         "IMP-R18",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R32"
       ]
     },
     {
@@ -1683,7 +1752,12 @@
         "IMP-R09",
         "IMP-R16",
         "IMP-R19",
-        "IMP-R21"
+        "IMP-R21",
+        "IMP-R29",
+        "IMP-R31",
+        "IMP-R32",
+        "IMP-R33",
+        "IMP-R34"
       ]
     },
     {
@@ -1701,7 +1775,10 @@
         "IMP-R20",
         "IMP-R21",
         "IMP-R22",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R30",
+        "IMP-R33",
+        "IMP-R34"
       ]
     },
     {
@@ -1712,7 +1789,10 @@
         "IMP-R01",
         "IMP-R19",
         "IMP-R20",
-        "IMP-R24"
+        "IMP-R24",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
       ]
     },
     {
@@ -1725,7 +1805,9 @@
         "IMP-R12",
         "IMP-R15",
         "IMP-R23",
-        "IMP-R25"
+        "IMP-R25",
+        "IMP-R32",
+        "IMP-R33"
       ]
     }
   ],
@@ -1736,7 +1818,8 @@
       "original_row": "| I7-R01 | Preserve identity, organization and overlapping views. | C1-R01/R02/R05; C2-R01/R05/R06 | C3-R07/R08/R10 | Retained prior obligation | I7-T01 |",
       "implementation_ids": [
         "IMP-R02",
-        "IMP-R05"
+        "IMP-R05",
+        "IMP-R30"
       ]
     },
     {
@@ -1766,7 +1849,9 @@
       "original_row": "| I7-R04 | Preserve conditional joint mechanisms, limits and shared resources. | C1-R07/R11/R13; C2-R02/R03/R05/R06/R09/R10 | C3-R02/R08 | C4-R06 | I7-T04/I7-T16 |",
       "implementation_ids": [
         "IMP-R06",
-        "IMP-R16"
+        "IMP-R16",
+        "IMP-R29",
+        "IMP-R31"
       ]
     },
     {
@@ -1782,7 +1867,8 @@
       "title": "Qualify resilience by functioning, regime, disturbance and horizon.",
       "original_row": "| I7-R06 | Qualify resilience by functioning, regime, disturbance and horizon. | C1-R08/R13; C2-R01/R03/R11 | C3-R01/R04 | C4-R05 | I7-T06 |",
       "implementation_ids": [
-        "IMP-R13"
+        "IMP-R13",
+        "IMP-R34"
       ]
     },
     {
@@ -1807,7 +1893,10 @@
       "title": "Preserve directed interfaces and conditional decomposability.",
       "original_row": "| I7-R09 | Preserve directed interfaces and conditional decomposability. | C1-R10/R11/R13; C2-R05/R06 | C3-R08/R09 | C4-R06 | I7-T09 |",
       "implementation_ids": [
-        "IMP-R05"
+        "IMP-R05",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R31"
       ]
     },
     {
@@ -1825,7 +1914,9 @@
       "implementation_ids": [
         "IMP-R01",
         "IMP-R08",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R32",
+        "IMP-R33"
       ]
     },
     {
@@ -1835,7 +1926,8 @@
       "implementation_ids": [
         "IMP-R08",
         "IMP-R09",
-        "IMP-R18"
+        "IMP-R18",
+        "IMP-R32"
       ]
     },
     {
@@ -1845,7 +1937,10 @@
       "implementation_ids": [
         "IMP-R08",
         "IMP-R21",
-        "IMP-R22"
+        "IMP-R22",
+        "IMP-R31",
+        "IMP-R33",
+        "IMP-R34"
       ]
     },
     {
@@ -1858,7 +1953,9 @@
         "IMP-R14",
         "IMP-R17",
         "IMP-R20",
-        "IMP-R21"
+        "IMP-R21",
+        "IMP-R30",
+        "IMP-R31"
       ]
     },
     {
@@ -1866,7 +1963,8 @@
       "title": "Represent actor-specific information, interpretation and perceived options separately from intended action and realized effects.",
       "original_row": "| I7-R15 | Represent actor-specific information, interpretation and perceived options separately from intended action and realized effects. | C1-R04/R14; C2-R04/R07 | C3-R09/R11/R12 | C4-R12, C4-R13, C4-R14 | I7-T17/I7-T18/I7-T19 |",
       "implementation_ids": [
-        "IMP-R11"
+        "IMP-R11",
+        "IMP-R33"
       ]
     },
     {
@@ -1877,7 +1975,8 @@
         "IMP-R06",
         "IMP-R08",
         "IMP-R16",
-        "IMP-R22"
+        "IMP-R22",
+        "IMP-R34"
       ]
     },
     {
@@ -1887,7 +1986,10 @@
       "implementation_ids": [
         "IMP-R05",
         "IMP-R09",
-        "IMP-R18"
+        "IMP-R18",
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R32"
       ]
     },
     {
@@ -1897,7 +1999,9 @@
       "implementation_ids": [
         "IMP-R06",
         "IMP-R16",
-        "IMP-R19"
+        "IMP-R19",
+        "IMP-R29",
+        "IMP-R34"
       ]
     },
     {
@@ -1908,7 +2012,9 @@
         "IMP-R04",
         "IMP-R09",
         "IMP-R16",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R31",
+        "IMP-R32"
       ]
     },
     {
@@ -1998,7 +2104,8 @@
       "implementation_ids": [
         "IMP-R13",
         "IMP-R15",
-        "IMP-R22"
+        "IMP-R22",
+        "IMP-R34"
       ]
     },
     {
@@ -2007,7 +2114,8 @@
       "original_row": "| I7-R30 | Composed traps and shared referents | Preserve one accounting and identity per shared process or resource across patterns, with delayed interfaces and boundary closure. | C5-R14 | I7-T60, I7-T62, I7-T63, I7-T64 |",
       "implementation_ids": [
         "IMP-R05",
-        "IMP-R15"
+        "IMP-R15",
+        "IMP-R30"
       ]
     },
     {
@@ -2047,7 +2155,8 @@
       "implementation_ids": [
         "IMP-R05",
         "IMP-R14",
-        "IMP-R15"
+        "IMP-R15",
+        "IMP-R31"
       ]
     },
     {
@@ -2119,7 +2228,8 @@
       "implementation_ids": [
         "IMP-R07",
         "IMP-R11",
-        "IMP-R15"
+        "IMP-R15",
+        "IMP-R33"
       ]
     },
     {
@@ -2139,7 +2249,8 @@
       "original_row": "| I7-R43 | Behavior-grounded inquiry | Preserve level, rate, variability, extremes, aggregation, timing and remedy-independent problem framing. | I7-T125, I7-T126, I7-T127 |",
       "implementation_ids": [
         "IMP-R09",
-        "IMP-R18"
+        "IMP-R18",
+        "IMP-R32"
       ]
     },
     {
@@ -2150,7 +2261,10 @@
         "IMP-R02",
         "IMP-R03",
         "IMP-R21",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R33"
       ]
     },
     {
@@ -2169,7 +2283,8 @@
       "original_row": "| I7-R46 | Owned versioned policy response | Identify policy owner, available input, rule/version, reference, timing and actual execution constraints. Changing action alone is not policy learning. | I7-T140, I7-T141, I7-T172, I7-T185 |",
       "implementation_ids": [
         "IMP-R11",
-        "IMP-R12"
+        "IMP-R12",
+        "IMP-R33"
       ]
     },
     {
@@ -2191,7 +2306,9 @@
         "IMP-R10",
         "IMP-R17",
         "IMP-R22",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R32",
+        "IMP-R33"
       ]
     },
     {
@@ -2202,7 +2319,8 @@
         "IMP-R07",
         "IMP-R18",
         "IMP-R23",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R32"
       ]
     },
     {
@@ -2212,7 +2330,8 @@
       "implementation_ids": [
         "IMP-R07",
         "IMP-R18",
-        "IMP-R27"
+        "IMP-R27",
+        "IMP-R32"
       ]
     },
     {
@@ -2222,7 +2341,10 @@
       "implementation_ids": [
         "IMP-R04",
         "IMP-R16",
-        "IMP-R28"
+        "IMP-R28",
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R34"
       ]
     },
     {
@@ -2247,7 +2369,8 @@
         "IMP-R11",
         "IMP-R21",
         "IMP-R25",
-        "IMP-R26"
+        "IMP-R26",
+        "IMP-R33"
       ]
     },
     {
@@ -2262,7 +2385,11 @@
         "IMP-R20",
         "IMP-R21",
         "IMP-R22",
-        "IMP-R24"
+        "IMP-R24",
+        "IMP-R29",
+        "IMP-R32",
+        "IMP-R33",
+        "IMP-R34"
       ]
     }
   ],
@@ -4017,6 +4144,315 @@
       "acceptance_authority": "docs/implementation/VERIFICATION.md",
       "status": "proposed_not_implemented",
       "rationale": "Engineering flowdown of the listed preserved obligations; fulfilled only by their linked scoped evidence."
+    },
+    {
+      "id": "IMP-R29",
+      "title": "Bounded useful fast operation",
+      "statement": "Routine queries/decisions and local updates shall use qualified bounded active work, explicit freshness and dependency validity; novel/global work shall have separate honest completion semantics.",
+      "parents": [
+        "I7-R04",
+        "I7-R09",
+        "I7-R18",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-013",
+        "EDI-SYS-015"
+      ],
+      "stakeholder_parents": [
+        "USR-GROW-01"
+      ],
+      "component_ids": [
+        "C0",
+        "C3",
+        "C5",
+        "C7"
+      ],
+      "function_ids": [
+        "F02",
+        "F31",
+        "F32",
+        "F33",
+        "F50",
+        "F51",
+        "F72"
+      ],
+      "verification_ids": [
+        "E41",
+        "E42",
+        "E43",
+        "E48"
+      ],
+      "specification": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "acceptance_authority": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Explicit owner growth/speed/inquiry needs, operationalized under bounded profiles without weakening earlier evidence or performance gates."
+    },
+    {
+      "id": "IMP-R30",
+      "title": "Incremental cumulative world growth",
+      "statement": "Admit subsequent evidence and model deltas into shared versioned referents; maintain reverse dependencies and retraction-aware projections with explicit invalidation and repair watermarks.",
+      "parents": [
+        "I7-R01",
+        "I7-R09",
+        "I7-R14",
+        "I7-R17",
+        "I7-R30",
+        "I7-R44",
+        "I7-R51"
+      ],
+      "system_parents": [
+        "EDI-SYS-002",
+        "EDI-SYS-004",
+        "EDI-SYS-008",
+        "EDI-SYS-009",
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "stakeholder_parents": [
+        "USR-GROW-02"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "function_ids": [
+        "F01",
+        "F11",
+        "F30",
+        "F31",
+        "F32",
+        "F33",
+        "F43"
+      ],
+      "verification_ids": [
+        "E41",
+        "E43",
+        "E46",
+        "E47"
+      ],
+      "specification": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "acceptance_authority": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Explicit owner growth/speed/inquiry needs, operationalized under bounded profiles without weakening earlier evidence or performance gates."
+    },
+    {
+      "id": "IMP-R31",
+      "title": "Multiresolution refinement bridges",
+      "statement": "Represent breadth, internal decomposition, heterogeneity and time with coarse/fine bridge contracts that preserve identity, units, timing, quantities and qualified applicability without duplicated resources.",
+      "parents": [
+        "I7-R04",
+        "I7-R09",
+        "I7-R13",
+        "I7-R14",
+        "I7-R17",
+        "I7-R19",
+        "I7-R34",
+        "I7-R44",
+        "I7-R51"
+      ],
+      "system_parents": [
+        "EDI-SYS-004",
+        "EDI-SYS-005",
+        "EDI-SYS-010",
+        "EDI-SYS-013"
+      ],
+      "stakeholder_parents": [
+        "USR-GROW-02"
+      ],
+      "component_ids": [
+        "C0",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "function_ids": [
+        "F01",
+        "F30",
+        "F31",
+        "F32",
+        "F41",
+        "F43",
+        "F50",
+        "F51",
+        "F52",
+        "F53"
+      ],
+      "verification_ids": [
+        "E44",
+        "E46",
+        "E47"
+      ],
+      "specification": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "acceptance_authority": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Explicit owner growth/speed/inquiry needs, operationalized under bounded profiles without weakening earlier evidence or performance gates."
+    },
+    {
+      "id": "IMP-R32",
+      "title": "Intrinsic inquiry and access lifecycle",
+      "statement": "Maintain triggered exploration frontiers and evidence-specific requests; reuse standing grants, coalesce requests, honor denial/expiry and measure information/decision value rather than question count.",
+      "parents": [
+        "I7-R11",
+        "I7-R12",
+        "I7-R17",
+        "I7-R19",
+        "I7-R43",
+        "I7-R48",
+        "I7-R49",
+        "I7-R50",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-001",
+        "EDI-SYS-006",
+        "EDI-SYS-007",
+        "EDI-SYS-012",
+        "EDI-SYS-013",
+        "EDI-SYS-016"
+      ],
+      "stakeholder_parents": [
+        "USR-GROW-03"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C4",
+        "C6",
+        "C7"
+      ],
+      "function_ids": [
+        "F00",
+        "F02",
+        "F03",
+        "F12",
+        "F13",
+        "F40",
+        "F41",
+        "F42",
+        "F43",
+        "F62",
+        "F63",
+        "F70",
+        "F72"
+      ],
+      "verification_ids": [
+        "E45",
+        "E46",
+        "E48"
+      ],
+      "specification": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "acceptance_authority": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Explicit owner growth/speed/inquiry needs, operationalized under bounded profiles without weakening earlier evidence or performance gates."
+    },
+    {
+      "id": "IMP-R33",
+      "title": "Qualified fast probabilistic decisions",
+      "statement": "Use replaceable focused decision models only within versioned context/options/domain and calibrated policies; batch independent judgments, preserve missing-option uncertainty and enforce deterministic constraints/authority.",
+      "parents": [
+        "I7-R11",
+        "I7-R13",
+        "I7-R15",
+        "I7-R41",
+        "I7-R44",
+        "I7-R46",
+        "I7-R48",
+        "I7-R53",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-003",
+        "EDI-SYS-005",
+        "EDI-SYS-006",
+        "EDI-SYS-013",
+        "EDI-SYS-014",
+        "EDI-SYS-016"
+      ],
+      "stakeholder_parents": [
+        "USR-GROW-01"
+      ],
+      "component_ids": [
+        "C0",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7"
+      ],
+      "function_ids": [
+        "F02",
+        "F21",
+        "F23",
+        "F32",
+        "F41",
+        "F42",
+        "F61",
+        "F62",
+        "F71",
+        "F72"
+      ],
+      "verification_ids": [
+        "E42",
+        "E45",
+        "E48"
+      ],
+      "specification": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "acceptance_authority": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Explicit owner growth/speed/inquiry needs, operationalized under bounded profiles without weakening earlier evidence or performance gates."
+    },
+    {
+      "id": "IMP-R34",
+      "title": "Longitudinal growth and complete efficiency assessment",
+      "statement": "Qualify useful speed and active-work scaling against growing stores, cold/warm and globally coupled cases, including maintenance/storage/recovery, decision quality, escalation coverage and full costs.",
+      "parents": [
+        "I7-R06",
+        "I7-R13",
+        "I7-R16",
+        "I7-R18",
+        "I7-R29",
+        "I7-R51",
+        "I7-R54"
+      ],
+      "system_parents": [
+        "EDI-SYS-011",
+        "EDI-SYS-013",
+        "EDI-SYS-014",
+        "EDI-SYS-015"
+      ],
+      "stakeholder_parents": [
+        "USR-GROW-01"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "function_ids": [
+        "F02",
+        "F13",
+        "F33",
+        "F51",
+        "F52",
+        "F61",
+        "F62"
+      ],
+      "verification_ids": [
+        "E41",
+        "E43",
+        "E44",
+        "E47",
+        "E48"
+      ],
+      "specification": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "acceptance_authority": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "status": "proposed_not_implemented",
+      "rationale": "Explicit owner growth/speed/inquiry needs, operationalized under bounded profiles without weakening earlier evidence or performance gates."
     }
   ],
   "cases": [
@@ -4561,8 +4997,156 @@
       "scope": "prospective_capability_or_engineering_case",
       "evidence_ref": null,
       "implementation_revision": null
+    },
+    {
+      "id": "E41",
+      "title": "Incremental correctness and locality under store growth.",
+      "acceptance": "At the FAST1 sizes, delta/retraction and incremental views match a separately recomputed authoritative reference for the same cutoff; record actual touched work and warm/cold latency. Q1/Q2 and growth targets apply only to their declared operation shapes.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E42",
+      "title": "Fast decision quality, batching and escalation.",
+      "acceptance": "Compare Jev, deterministic and appropriate small/generative alternatives on matched bounded contexts; pin selective error/calibration and coverage before exposure. Include missing correct option, dependence between questions, OOD inputs and timeouts. No model output bypasses deterministic constraints.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R33"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E43",
+      "title": "Global fan-out and stale-cache containment.",
+      "acceptance": "A high-degree/shared driver invalidates all declared dependents; bounded processing exposes remaining backlog. A warm stale cached result cannot be silently returned as fresh or used beyond its permitted policy.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E44",
+      "title": "Coarse/fine abstraction and nonlinear aggregation.",
+      "acceptance": "Refinement bridges preserve units, time, identity, resource/count semantics and commitments. Demonstrate valid coarse reuse and a counterexample where heterogeneity/thresholds require refinement; compare supported output ranges.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E45",
+      "title": "Missing access, standing grants and request fatigue.",
+      "acceptance": "Reuse an existing scoped grant; create an evidence-specific missing-access request; coalesce duplicates; honor denial/expiry; enforce notification policy and record useful/inconclusive acquisition outcomes.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E46",
+      "title": "Breadth and depth expansion in one evolving world.",
+      "acceptance": "Start with forest observations, add an adjacent logging/market view and internal insect-life-stage evidence without resetting history or duplicating shared referents/resources. Retain unsupported biological mechanisms and update only justified bridges.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R32"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E47",
+      "title": "Long-running growth, corrections and maintenance.",
+      "acceptance": "Reconnect sources, revise identity/rules, compact/reindex, retain/evict evidence and recover a pinned model cut while the store grows. Bound active memory/queues and count full maintenance/storage costs and unavailable evidence.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E48",
+      "title": "End-to-end useful speed and inquiry yield.",
+      "acceptance": "Measure capture/model freshness, eligible useful response latency, validated-answer time, escalation coverage, exploration benefit and complete cost under FAST1/DEV1. Include correct abstention and failed inquiries; an acknowledgement-only or omission-driven speedup does not pass.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R32",
+        "IMP-R33",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
     }
   ],
   "product_qualification": "not_run",
-  "scope_note": "Allocation completeness does not establish semantic completeness or successful runtime behavior. The detailed conceptual master and source snapshots remain unchanged."
+  "scope_note": "Allocation completeness does not establish semantic completeness or successful runtime behavior. The detailed conceptual master and source snapshots remain unchanged. Version 0.2 adds explicit incremental maintenance, fast/deep operation, refinement bridges, intrinsic requests and growth qualification; all cases remain planned.",
+  "extension_input_revision": "2af45f59169ec3855f10a8861d6e6acc4c8cfb07",
+  "stakeholder_requirements": [
+    {
+      "id": "USR-GROW-01",
+      "statement": "The architecture shall support long-term scalable operation with efficient computation and near-instant useful routine responses under qualified profiles.",
+      "basis": "Owner instruction 20 October 2026; numeric FAST1 targets are engineering proposals.",
+      "implementation_ids": [
+        "IMP-R29",
+        "IMP-R33",
+        "IMP-R34"
+      ]
+    },
+    {
+      "id": "USR-GROW-02",
+      "statement": "Subsequent observations and knowledge shall expand one persistent world model into adjacent systems and into deeper structures without resetting experience.",
+      "basis": "Owner instruction 20 October 2026.",
+      "implementation_ids": [
+        "IMP-R30",
+        "IMP-R31"
+      ]
+    },
+    {
+      "id": "USR-GROW-03",
+      "statement": "The software shall intrinsically investigate gaps and request useful missing information/access, including adjacent systems and internal biology.",
+      "basis": "Owner instruction 20 October 2026; a runtime policy rather than a ChatGPT skill file.",
+      "implementation_ids": [
+        "IMP-R32"
+      ]
+    }
+  ]
 }
