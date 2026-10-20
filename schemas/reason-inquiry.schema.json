@@ -1,0 +1,287 @@
+{
+  "$defs": {
+    "AssessmentNote": {
+      "additionalProperties": false,
+      "description": "C0 imports an attributed C6 record; C4 does not manufacture C6's verdict.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "assessment_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Assessment Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "status": {
+          "const": "imported-unverified",
+          "default": "imported-unverified",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assessment_id",
+        "source_revision",
+        "summary"
+      ],
+      "title": "AssessmentNote",
+      "type": "object"
+    },
+    "Budget": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "rounds": {
+          "default": 2,
+          "maximum": 2,
+          "minimum": 1,
+          "title": "Rounds",
+          "type": "integer"
+        },
+        "rivals_per_round": {
+          "default": 3,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Rivals Per Round",
+          "type": "integer"
+        },
+        "jobs": {
+          "default": 4,
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Jobs",
+          "type": "integer"
+        },
+        "reserved_tokens": {
+          "default": 32768,
+          "maximum": 131072,
+          "minimum": 1,
+          "title": "Reserved Tokens",
+          "type": "integer"
+        },
+        "input_token_cap": {
+          "default": 4096,
+          "maximum": 16384,
+          "minimum": 1,
+          "title": "Input Token Cap",
+          "type": "integer"
+        },
+        "output_token_cap": {
+          "default": 4096,
+          "maximum": 16384,
+          "minimum": 1,
+          "title": "Output Token Cap",
+          "type": "integer"
+        }
+      },
+      "title": "Budget",
+      "type": "object"
+    },
+    "EvidenceSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "length": {
+          "default": 4096,
+          "maximum": 65536,
+          "minimum": 0,
+          "title": "Length",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "EvidenceSelection",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "inquiry_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Inquiry Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "question": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Question",
+      "type": "string"
+    },
+    "purpose": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Purpose",
+      "type": "string"
+    },
+    "scope": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Scope",
+      "type": "string"
+    },
+    "horizon": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Horizon",
+      "type": "string"
+    },
+    "model_revision": {
+      "minimum": 0,
+      "title": "Model Revision",
+      "type": "integer"
+    },
+    "world_ids": {
+      "default": [],
+      "items": {
+        "maxLength": 256,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 16,
+      "title": "World Ids",
+      "type": "array"
+    },
+    "evidence": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/EvidenceSelection"
+      },
+      "maxItems": 16,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "axes": {
+      "default": [
+        "evidence",
+        "boundary",
+        "rivals",
+        "learning"
+      ],
+      "items": {
+        "enum": [
+          "evidence",
+          "boundary",
+          "organization",
+          "accumulation",
+          "feedback-delay",
+          "nonlinearity",
+          "agency",
+          "resilience-evolution",
+          "rivals",
+          "intervention",
+          "learning"
+        ],
+        "type": "string"
+      },
+      "maxItems": 11,
+      "minItems": 1,
+      "title": "Axes",
+      "type": "array"
+    },
+    "omitted_frontier": {
+      "default": [],
+      "items": {
+        "maxLength": 8192,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "title": "Omitted Frontier",
+      "type": "array"
+    },
+    "unknowns": {
+      "default": [],
+      "items": {
+        "maxLength": 8192,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "title": "Unknowns",
+      "type": "array"
+    },
+    "assessments": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/AssessmentNote"
+      },
+      "maxItems": 8,
+      "title": "Assessments",
+      "type": "array"
+    },
+    "budget": {
+      "$ref": "#/$defs/Budget"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "inquiry_id",
+    "request_id",
+    "question",
+    "purpose",
+    "scope",
+    "horizon",
+    "model_revision"
+  ],
+  "title": "InquiryRequest",
+  "type": "object"
+}

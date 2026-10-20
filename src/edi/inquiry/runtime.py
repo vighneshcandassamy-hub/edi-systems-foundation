@@ -12,6 +12,8 @@ from edi.observe.contracts import Capture, OriginSpec
 from edi.observe.service import ObservationService
 from edi.observe.sqlite import SQLiteObservationStore
 from edi.reason import Reasoning
+from edi.reason.config import ReasoningProfile
+from edi.reason.sqlite import SQLiteReasoningStore
 from edi.shared.config import LocalProfile
 from edi.shared.contracts import Capability, Owner
 from edi.shared.errors import EDIError, ErrorCode
@@ -23,7 +25,8 @@ from edi.world.sqlite import SQLiteWorldStore
 class Runtime:
     """Local trusted SDK; not an authentication boundary or workflow engine."""
     def __init__(self, profile: LocalProfile, world_profile: WorldProfile | None = None,
-                 interpretation_profile: InterpretationProfile | None = None):
+                 interpretation_profile: InterpretationProfile | None = None,
+                 reasoning_profile: ReasoningProfile | None = None):
         self.profile = profile
         world_profile = world_profile or WorldProfile(
             workspace_id=profile.workspace_id,
@@ -42,6 +45,14 @@ class Runtime:
         paths = {profile.database.resolve(), world_profile.database.resolve(), interpretation_profile.database.resolve()}
         if len(paths) != 3:
             raise EDIError(ErrorCode.INVALID, "C1/C2/C3 require separate owner databases")
+        reasoning_profile = reasoning_profile or ReasoningProfile(
+            workspace_id=profile.workspace_id,
+            database=profile.database.with_name(profile.database.stem + ".reason.sqlite3"),
+        )
+        if reasoning_profile.workspace_id != profile.workspace_id:
+            raise EDIError(ErrorCode.DENIED, "C1/C2/C3/C4 workspace scopes must match")
+        if reasoning_profile.database.resolve() in paths:
+            raise EDIError(ErrorCode.INVALID, "C1/C2/C3/C4 require separate owner databases")
         self.observation = ObservationService(SQLiteObservationStore(profile), profile)
         self._world_profile = world_profile
         self._world = None
@@ -49,8 +60,10 @@ class Runtime:
         self._interpretation_profile = interpretation_profile
         self._interpretation = None
         self._interpretation_lock = Lock()
+        self._reasoning_profile = reasoning_profile
+        self._reasoning = None
+        self._reasoning_lock = Lock()
         self._components = {
-            "C4": Reasoning(),
             "C5": Analysis(), "C6": Assessment(), "C7": Agency(),
         }
 
@@ -58,10 +71,11 @@ class Runtime:
         return (
             Capability(owner="C0", functions=("F00", "F01", "F02", "F03"),
                        state="implemented-unqualified",
-                       details="Partial C0: composition, scope/configuration, finite C1/C2/C3 operations and explicit progress handoff"),
+                       details="Partial C0: composition, scope/configuration, finite C1/C2/C3/C4 operations and explicit progress handoff; no autonomous scheduling"),
             self.observation.capability,
             Interpretation.capability,
             World.capability,
+            Reasoning.capability,
             *(component.capability for component in self._components.values()),
         )
 
@@ -100,6 +114,17 @@ class Runtime:
         # Deliberately read-only; C2/C3 use independently allocated operations.
         return self.observation.reader(lanes[owner])
 
+    @property
+    def reasoning(self) -> Reasoning:
+        # C1 intake opens neither C4 nor C3; C4 opens C3 only when its port is used.
+        with self._reasoning_lock:
+            if self._reasoning is None:
+                self._reasoning = Reasoning(
+                    self._reasoning_profile, self.reader_for("C4"),
+                    SQLiteReasoningStore(self._reasoning_profile), lambda: self.world_for("C4"),
+                )
+            return self._reasoning
+
     def register_origin(self, spec: OriginSpec):
         return self.observation.register_origin(spec)
 
@@ -117,7 +142,7 @@ class Runtime:
     def component(self, owner: Owner):
         component = self._components.get(owner)
         if component is None:
-            raise EDIError(ErrorCode.INVALID, "use the C0/C1/C2/C3 typed SDK for this owner")
+            raise EDIError(ErrorCode.INVALID, "use the C0/C1/C2/C3/C4 typed SDK for this owner")
         return component
 
     def world_for(self, owner: Owner):

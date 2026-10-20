@@ -1,0 +1,3669 @@
+{
+  "$defs": {
+    "Admission": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "decision": {
+          "default": "candidate",
+          "enum": [
+            "candidate",
+            "accepted_for_use",
+            "rejected",
+            "withdrawn"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "use_scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Use Scope"
+        },
+        "verification_obligation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verification Obligation"
+        },
+        "policy_id": {
+          "const": "local-modeling-use/1.0",
+          "default": "local-modeling-use/1.0",
+          "title": "Policy Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rationale"
+      ],
+      "title": "Admission",
+      "type": "object"
+    },
+    "AssessmentNote": {
+      "additionalProperties": false,
+      "description": "C0 imports an attributed C6 record; C4 does not manufacture C6's verdict.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "assessment_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Assessment Id",
+          "type": "string"
+        },
+        "source_revision": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "status": {
+          "const": "imported-unverified",
+          "default": "imported-unverified",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assessment_id",
+        "source_revision",
+        "summary"
+      ],
+      "title": "AssessmentNote",
+      "type": "object"
+    },
+    "Budget": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "rounds": {
+          "default": 2,
+          "maximum": 2,
+          "minimum": 1,
+          "title": "Rounds",
+          "type": "integer"
+        },
+        "rivals_per_round": {
+          "default": 3,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Rivals Per Round",
+          "type": "integer"
+        },
+        "jobs": {
+          "default": 4,
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Jobs",
+          "type": "integer"
+        },
+        "reserved_tokens": {
+          "default": 32768,
+          "maximum": 131072,
+          "minimum": 1,
+          "title": "Reserved Tokens",
+          "type": "integer"
+        },
+        "input_token_cap": {
+          "default": 4096,
+          "maximum": 16384,
+          "minimum": 1,
+          "title": "Input Token Cap",
+          "type": "integer"
+        },
+        "output_token_cap": {
+          "default": 4096,
+          "maximum": 16384,
+          "minimum": 1,
+          "title": "Output Token Cap",
+          "type": "integer"
+        }
+      },
+      "title": "Budget",
+      "type": "object"
+    },
+    "CandidateChange": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "hypothesis_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Hypothesis Id",
+          "type": "string"
+        },
+        "put": {
+          "$ref": "#/$defs/Put"
+        }
+      },
+      "required": [
+        "hypothesis_id",
+        "put"
+      ],
+      "title": "CandidateChange",
+      "type": "object"
+    },
+    "Constituent": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "constituent",
+          "default": "constituent",
+          "title": "Family",
+          "type": "string"
+        },
+        "parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "roles": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Roles",
+          "type": "array"
+        },
+        "condition": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Condition",
+          "type": "object"
+        },
+        "lifecycle": {
+          "default": "unknown",
+          "title": "Lifecycle",
+          "type": "string"
+        }
+      },
+      "title": "Constituent",
+      "type": "object"
+    },
+    "ConsumedEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "consumer_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Consumer Id",
+          "type": "string"
+        },
+        "expected_position": {
+          "minimum": 0,
+          "title": "Expected Position",
+          "type": "integer"
+        },
+        "position": {
+          "minimum": 0,
+          "title": "Position",
+          "type": "integer"
+        },
+        "record_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Record Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "consumer_id",
+        "expected_position",
+        "position",
+        "record_ids"
+      ],
+      "title": "ConsumedEvidence",
+      "type": "object"
+    },
+    "Context": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "model_revision": {
+          "title": "Model Revision",
+          "type": "integer"
+        },
+        "world": {
+          "items": {
+            "$ref": "#/$defs/StoredRepresentation"
+          },
+          "title": "World",
+          "type": "array"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/DependencyView"
+          },
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceSlice"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model_revision",
+        "world",
+        "dependencies",
+        "evidence",
+        "limitations",
+        "sha256"
+      ],
+      "title": "Context",
+      "type": "object"
+    },
+    "Decide": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "const": "decide",
+          "default": "decide",
+          "title": "Operation",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "minimum": 1,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "admission": {
+          "$ref": "#/$defs/Admission"
+        }
+      },
+      "required": [
+        "record_id",
+        "expected_version",
+        "admission"
+      ],
+      "title": "Decide",
+      "type": "object"
+    },
+    "DependencyItem": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "owner_id": {
+          "title": "Owner Id",
+          "type": "string"
+        },
+        "owner_version": {
+          "title": "Owner Version",
+          "type": "integer"
+        },
+        "target_id": {
+          "title": "Target Id",
+          "type": "string"
+        },
+        "pinned_version": {
+          "title": "Pinned Version",
+          "type": "integer"
+        },
+        "visible_version": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Visible Version"
+        },
+        "visible_state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Visible State"
+        },
+        "validity": {
+          "enum": [
+            "current",
+            "changed",
+            "inactive",
+            "missing"
+          ],
+          "title": "Validity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "owner_id",
+        "owner_version",
+        "target_id",
+        "pinned_version",
+        "visible_version",
+        "visible_state",
+        "validity"
+      ],
+      "title": "DependencyItem",
+      "type": "object"
+    },
+    "DependencyView": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "integer"
+        },
+        "root_id": {
+          "title": "Root Id",
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "dependencies",
+            "dependents"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "max_depth": {
+          "title": "Max Depth",
+          "type": "integer"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/DependencyItem"
+          },
+          "title": "Items",
+          "type": "array"
+        },
+        "visited_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Visited Ids",
+          "type": "array"
+        },
+        "complete": {
+          "title": "Complete",
+          "type": "boolean"
+        },
+        "truncation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Truncation"
+        },
+        "depth_boundary_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Depth Boundary Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "revision",
+        "root_id",
+        "direction",
+        "max_depth",
+        "items",
+        "visited_ids",
+        "complete",
+        "truncation"
+      ],
+      "title": "DependencyView",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "selector": {
+          "default": "whole-object",
+          "title": "Selector",
+          "type": "string"
+        },
+        "origin_class": {
+          "default": "unknown",
+          "enum": [
+            "external",
+            "generated",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin Class",
+          "type": "string"
+        },
+        "lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "record_id",
+        "sha256"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "EvidenceSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "length": {
+          "default": 4096,
+          "maximum": 65536,
+          "minimum": 0,
+          "title": "Length",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "EvidenceSelection",
+      "type": "object"
+    },
+    "EvidenceSlice": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "reference": {
+          "$ref": "#/$defs/EvidenceRef"
+        },
+        "origin": {
+          "$ref": "#/$defs/Origin"
+        },
+        "receipt_time": {
+          "format": "date-time",
+          "title": "Receipt Time",
+          "type": "string"
+        },
+        "committed_at": {
+          "format": "date-time",
+          "title": "Committed At",
+          "type": "string"
+        },
+        "time": {
+          "$ref": "#/$defs/TemporalScope"
+        },
+        "completeness": {
+          "enum": [
+            "complete",
+            "partial",
+            "unknown"
+          ],
+          "title": "Completeness",
+          "type": "string"
+        },
+        "critical_profiles": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Critical Profiles",
+          "type": "array"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "selected_bytes": {
+          "minimum": 0,
+          "title": "Selected Bytes",
+          "type": "integer"
+        },
+        "excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt"
+        },
+        "interpretation": {
+          "enum": [
+            "utf8-untrusted-source-content",
+            "metadata-only"
+          ],
+          "title": "Interpretation",
+          "type": "string"
+        },
+        "limitation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Limitation"
+        }
+      },
+      "required": [
+        "reference",
+        "origin",
+        "receipt_time",
+        "committed_at",
+        "time",
+        "completeness",
+        "media_type",
+        "selected_bytes",
+        "interpretation"
+      ],
+      "title": "EvidenceSlice",
+      "type": "object"
+    },
+    "FeedbackPath": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "feedback-path",
+          "default": "feedback-path",
+          "title": "Family",
+          "type": "string"
+        },
+        "mechanisms": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Mechanisms",
+          "type": "array"
+        },
+        "closure": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "hypothesized",
+            "reported"
+          ],
+          "title": "Closure",
+          "type": "string"
+        },
+        "polarity": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "balancing",
+            "reinforcing",
+            "context-dependent"
+          ],
+          "title": "Polarity",
+          "type": "string"
+        },
+        "delays": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Delays",
+          "type": "object"
+        },
+        "applicability": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Applicability",
+          "type": "object"
+        }
+      },
+      "title": "FeedbackPath",
+      "type": "object"
+    },
+    "FlowProcess": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "flow-process",
+          "default": "flow-process",
+          "title": "Family",
+          "type": "string"
+        },
+        "participants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Participant"
+          },
+          "title": "Participants",
+          "type": "array"
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quantity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "response": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "prerequisites": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "pending_commitments": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Pending Commitments",
+          "type": "array"
+        },
+        "transformation": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Transformation",
+          "type": "object"
+        },
+        "time_basis": {
+          "default": "unknown",
+          "title": "Time Basis",
+          "type": "string"
+        },
+        "resource_use": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Resource Use",
+          "type": "object"
+        }
+      },
+      "title": "FlowProcess",
+      "type": "object"
+    },
+    "FrontierItem": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "frontier_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Frontier Id",
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "expand_adjacent",
+            "refine_internal",
+            "resolve_identity",
+            "refresh_temporal",
+            "test_mechanism",
+            "check_boundary",
+            "review_abstraction"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "trigger": {
+          "enum": [
+            "unexplained_prediction_error",
+            "contradictory_source",
+            "uncertain_high_impact_interface",
+            "near_threshold",
+            "aging_assumption",
+            "insufficient_resolution",
+            "decision_sensitive_unknown",
+            "bounded_periodic_review"
+          ],
+          "title": "Trigger",
+          "type": "string"
+        },
+        "target": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "unknown": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Unknown",
+          "type": "string"
+        },
+        "hypothesis_family": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Hypothesis Family",
+          "type": "string"
+        },
+        "capability_scope": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Capability Scope",
+          "type": "array"
+        },
+        "relevance": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Relevance",
+          "type": "number"
+        },
+        "discrimination": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Discrimination",
+          "type": "number"
+        },
+        "impact": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Impact",
+          "type": "number"
+        },
+        "feasibility": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Feasibility",
+          "type": "number"
+        },
+        "relative_cost": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Relative Cost",
+          "type": "number"
+        },
+        "rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "state": {
+          "default": "open",
+          "enum": [
+            "open",
+            "deferred",
+            "denied",
+            "resolved"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "disposition_reason": {
+          "default": "awaiting C0 scheduling/access review",
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Disposition Reason",
+          "type": "string"
+        },
+        "material_change": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Change"
+        }
+      },
+      "required": [
+        "frontier_id",
+        "direction",
+        "trigger",
+        "target",
+        "unknown",
+        "hypothesis_family",
+        "relevance",
+        "discrimination",
+        "impact",
+        "feasibility",
+        "relative_cost",
+        "rationale"
+      ],
+      "title": "FrontierItem",
+      "type": "object"
+    },
+    "HistoryTrajectory": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "history-conditional-trajectory",
+          "default": "history-conditional-trajectory",
+          "title": "Family",
+          "type": "string"
+        },
+        "referents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Referents",
+          "type": "array"
+        },
+        "origin": {
+          "default": "unknown",
+          "enum": [
+            "observation",
+            "source-report",
+            "forecast",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "initial_history": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Initial History",
+          "type": "array"
+        },
+        "points": {
+          "default": [],
+          "items": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "type": "object"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "time_units_aggregation": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Time Units Aggregation",
+          "type": "object"
+        },
+        "driver_assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Driver Assumptions",
+          "type": "array"
+        },
+        "model_policy_versions": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Model Policy Versions",
+          "type": "object"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Run Id"
+        },
+        "horizon": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Horizon",
+          "type": "object"
+        }
+      },
+      "title": "HistoryTrajectory",
+      "type": "object"
+    },
+    "Hypothesis": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "hypothesis_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Hypothesis Id",
+          "type": "string"
+        },
+        "claim": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Claim",
+          "type": "string"
+        },
+        "mechanism": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Mechanism",
+          "type": "string"
+        },
+        "scope": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        },
+        "support": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxItems": 32,
+          "title": "Support",
+          "type": "array"
+        },
+        "counterevidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxItems": 32,
+          "title": "Counterevidence",
+          "type": "array"
+        },
+        "dependence_groups": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Dependence Groups",
+          "type": "array"
+        },
+        "assumptions": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "confounders": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Confounders",
+          "type": "array"
+        },
+        "applicability": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Applicability",
+          "type": "string"
+        },
+        "unknowns": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "predictions": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Prediction"
+          },
+          "maxItems": 8,
+          "title": "Predictions",
+          "type": "array"
+        },
+        "rivals": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Rivals",
+          "type": "array"
+        },
+        "status": {
+          "const": "candidate",
+          "default": "candidate",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hypothesis_id",
+        "claim",
+        "mechanism",
+        "scope",
+        "applicability",
+        "unknowns"
+      ],
+      "title": "Hypothesis",
+      "type": "object"
+    },
+    "InformationLink": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "information-influence-link",
+          "default": "information-influence-link",
+          "title": "Family",
+          "type": "string"
+        },
+        "participants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Participant"
+          },
+          "title": "Participants",
+          "type": "array"
+        },
+        "channel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel"
+        },
+        "meaning": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Meaning",
+          "type": "object"
+        },
+        "availability_receipt_attention": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Availability Receipt Attention",
+          "type": "object"
+        },
+        "distortion": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Distortion",
+          "type": "object"
+        },
+        "causal_status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "hypothesized",
+            "reported"
+          ],
+          "title": "Causal Status",
+          "type": "string"
+        }
+      },
+      "title": "InformationLink",
+      "type": "object"
+    },
+    "InquiryRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "inquiry_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Inquiry Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "question": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        },
+        "purpose": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Purpose",
+          "type": "string"
+        },
+        "scope": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        },
+        "horizon": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Horizon",
+          "type": "string"
+        },
+        "model_revision": {
+          "minimum": 0,
+          "title": "Model Revision",
+          "type": "integer"
+        },
+        "world_ids": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "World Ids",
+          "type": "array"
+        },
+        "evidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceSelection"
+          },
+          "maxItems": 16,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "axes": {
+          "default": [
+            "evidence",
+            "boundary",
+            "rivals",
+            "learning"
+          ],
+          "items": {
+            "enum": [
+              "evidence",
+              "boundary",
+              "organization",
+              "accumulation",
+              "feedback-delay",
+              "nonlinearity",
+              "agency",
+              "resilience-evolution",
+              "rivals",
+              "intervention",
+              "learning"
+            ],
+            "type": "string"
+          },
+          "maxItems": 11,
+          "minItems": 1,
+          "title": "Axes",
+          "type": "array"
+        },
+        "omitted_frontier": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Omitted Frontier",
+          "type": "array"
+        },
+        "unknowns": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "assessments": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/AssessmentNote"
+          },
+          "maxItems": 8,
+          "title": "Assessments",
+          "type": "array"
+        },
+        "budget": {
+          "$ref": "#/$defs/Budget"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "inquiry_id",
+        "request_id",
+        "question",
+        "purpose",
+        "scope",
+        "horizon",
+        "model_revision"
+      ],
+      "title": "InquiryRequest",
+      "type": "object"
+    },
+    "InquiryTest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "test_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Test Id",
+          "type": "string"
+        },
+        "discriminates": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 6,
+          "minItems": 1,
+          "title": "Discriminates",
+          "type": "array"
+        },
+        "intervention_or_observation": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Intervention Or Observation",
+          "type": "string"
+        },
+        "expected_differences": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Expected Differences",
+          "type": "string"
+        },
+        "channels": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Channels",
+          "type": "array"
+        },
+        "feasibility": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Feasibility",
+          "type": "string"
+        },
+        "confounding_controls": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Confounding Controls",
+          "type": "string"
+        },
+        "cost_and_risk": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Cost And Risk",
+          "type": "string"
+        },
+        "identifiability_limit": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Identifiability Limit",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "observation",
+            "qualitative-analysis",
+            "numerical-analysis"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "status": {
+          "const": "proposed-unrun",
+          "default": "proposed-unrun",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "test_id",
+        "discriminates",
+        "intervention_or_observation",
+        "expected_differences",
+        "channels",
+        "feasibility",
+        "confounding_controls",
+        "cost_and_risk",
+        "identifiability_limit",
+        "kind"
+      ],
+      "title": "InquiryTest",
+      "type": "object"
+    },
+    "Job": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "job_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Job Id",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "student",
+            "teacher"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "round": {
+          "maximum": 2,
+          "minimum": 1,
+          "title": "Round",
+          "type": "integer"
+        },
+        "binding": {
+          "$ref": "#/$defs/ModelBinding"
+        },
+        "context_sha256": {
+          "title": "Context Sha256",
+          "type": "string"
+        },
+        "protocol_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Protocol Id",
+          "type": "string"
+        },
+        "questions": {
+          "items": {
+            "$ref": "#/$defs/ProtocolQuestion"
+          },
+          "title": "Questions",
+          "type": "array"
+        },
+        "input_token_cap": {
+          "title": "Input Token Cap",
+          "type": "integer"
+        },
+        "output_token_cap": {
+          "title": "Output Token Cap",
+          "type": "integer"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "teacher_trigger": {
+          "anyOf": [
+            {
+              "enum": [
+                "novel",
+                "unresolved",
+                "consequential",
+                "student-escalation"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Teacher Trigger"
+        },
+        "status": {
+          "default": "awaiting-import",
+          "enum": [
+            "awaiting-import",
+            "completed",
+            "cancelled-usage-unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "response_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Response Id"
+        },
+        "dispatch": {
+          "const": "export-only; no model call performed",
+          "default": "export-only; no model call performed",
+          "title": "Dispatch",
+          "type": "string"
+        }
+      },
+      "required": [
+        "job_id",
+        "role",
+        "round",
+        "binding",
+        "context_sha256",
+        "protocol_id",
+        "questions",
+        "input_token_cap",
+        "output_token_cap",
+        "created_at",
+        "reason"
+      ],
+      "title": "Job",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "ModelBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "model_id": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Model Id",
+          "type": "string"
+        },
+        "revision": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Revision",
+          "type": "string"
+        },
+        "provider": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Provider",
+          "type": "string"
+        },
+        "engine": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Engine",
+          "type": "string"
+        },
+        "tokenizer_revision": {
+          "default": "unknown",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tokenizer Revision",
+          "type": "string"
+        },
+        "weights": {
+          "const": "fixed",
+          "default": "fixed",
+          "title": "Weights",
+          "type": "string"
+        }
+      },
+      "title": "ModelBinding",
+      "type": "object"
+    },
+    "Origin": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "registered_at": {
+          "format": "date-time",
+          "title": "Registered At",
+          "type": "string"
+        },
+        "spec": {
+          "$ref": "#/$defs/OriginSpec"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "source_id",
+        "origin_ref",
+        "registered_at",
+        "spec"
+      ],
+      "title": "Origin",
+      "type": "object"
+    },
+    "OriginSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "namespace": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Namespace",
+          "type": "string"
+        },
+        "native_source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Native Source Id",
+          "type": "string"
+        },
+        "epoch": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Epoch",
+          "type": "string"
+        },
+        "deliverer": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Deliverer",
+          "type": "string"
+        },
+        "channel": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Channel",
+          "type": "string"
+        },
+        "adapter": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Adapter",
+          "type": "string"
+        },
+        "producer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Producer"
+        },
+        "binding_basis": {
+          "default": "reported",
+          "enum": [
+            "reported",
+            "configured",
+            "authenticated"
+          ],
+          "title": "Binding Basis",
+          "type": "string"
+        },
+        "binding_evidence_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Binding Evidence Ref"
+        },
+        "descriptor": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Descriptor",
+          "type": "object"
+        }
+      },
+      "required": [
+        "namespace",
+        "native_source_id",
+        "epoch",
+        "deliverer",
+        "channel",
+        "adapter"
+      ],
+      "title": "OriginSpec",
+      "type": "object"
+    },
+    "OutboxItem": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "message_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Message Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "candidate_patch",
+            "test_spec",
+            "exploration_frontier",
+            "knowledge_request_proposal",
+            "deferred_frontier"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "artifact_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "artifact_sequence": {
+          "minimum": 1,
+          "title": "Artifact Sequence",
+          "type": "integer"
+        },
+        "recipient": {
+          "const": "C0",
+          "default": "C0",
+          "title": "Recipient",
+          "type": "string"
+        },
+        "status": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "acknowledged"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "acknowledgement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Acknowledgement"
+        }
+      },
+      "required": [
+        "message_id",
+        "kind",
+        "artifact_id",
+        "artifact_sequence"
+      ],
+      "title": "OutboxItem",
+      "type": "object"
+    },
+    "Participant": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "role": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "direction": {
+          "default": "unknown",
+          "enum": [
+            "in",
+            "out",
+            "in-out",
+            "symmetric",
+            "unknown"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "port": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Port"
+        }
+      },
+      "required": [
+        "ref",
+        "role"
+      ],
+      "title": "Participant",
+      "type": "object"
+    },
+    "Prediction": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "conditions": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Conditions",
+          "type": "string"
+        },
+        "expected_observation": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Expected Observation",
+          "type": "string"
+        },
+        "rival_difference": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rival Difference",
+          "type": "string"
+        },
+        "channel": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Channel",
+          "type": "string"
+        },
+        "horizon": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Horizon",
+          "type": "string"
+        }
+      },
+      "required": [
+        "conditions",
+        "expected_observation",
+        "rival_difference",
+        "channel",
+        "horizon"
+      ],
+      "title": "Prediction",
+      "type": "object"
+    },
+    "ProtocolQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "evidence",
+            "boundary",
+            "organization",
+            "accumulation",
+            "feedback-delay",
+            "nonlinearity",
+            "agency",
+            "resilience-evolution",
+            "rivals",
+            "intervention",
+            "learning"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "question": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        }
+      },
+      "required": [
+        "axis",
+        "question"
+      ],
+      "title": "ProtocolQuestion",
+      "type": "object"
+    },
+    "PurposeCriterion": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "function-purpose-reference-criterion",
+          "default": "function-purpose-reference-criterion",
+          "title": "Family",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "function",
+            "purpose",
+            "goal",
+            "reference",
+            "criterion",
+            "constraint",
+            "inquiry-objective"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "owner": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "attributed_basis": {
+          "default": "unknown",
+          "enum": [
+            "stated",
+            "inferred",
+            "assumed",
+            "unknown"
+          ],
+          "title": "Attributed Basis",
+          "type": "string"
+        },
+        "definition": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Definition",
+          "type": "object"
+        },
+        "horizon": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Horizon",
+          "type": "object"
+        },
+        "conflicts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "feasibility": {
+          "default": "unknown",
+          "title": "Feasibility",
+          "type": "string"
+        },
+        "normative_scope": {
+          "default": "unknown",
+          "title": "Normative Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role"
+      ],
+      "title": "PurposeCriterion",
+      "type": "object"
+    },
+    "Put": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "const": "put",
+          "default": "put",
+          "title": "Operation",
+          "type": "string"
+        },
+        "representation": {
+          "$ref": "#/$defs/Representation"
+        },
+        "expected_version": {
+          "minimum": 0,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "admission": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Admission"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "representation",
+        "expected_version"
+      ],
+      "title": "Put",
+      "type": "object"
+    },
+    "Quantity": {
+      "additionalProperties": false,
+      "description": "Exact numeric strings are retained; conversion is an explicit later derivation.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "known",
+            "unknown",
+            "missing",
+            "not-applicable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "scale": {
+          "default": "unknown",
+          "enum": [
+            "cardinal",
+            "ordinal",
+            "categorical",
+            "unknown"
+          ],
+          "title": "Scale",
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "unknown_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unknown Reason"
+        },
+        "context": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Context",
+          "type": "object"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "Quantity",
+      "type": "object"
+    },
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "Representation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "scope_id": {
+          "default": "world",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "structure": {
+          "discriminator": {
+            "mapping": {
+              "constituent": "#/$defs/Constituent",
+              "feedback-path": "#/$defs/FeedbackPath",
+              "flow-process": "#/$defs/FlowProcess",
+              "function-purpose-reference-criterion": "#/$defs/PurposeCriterion",
+              "history-conditional-trajectory": "#/$defs/HistoryTrajectory",
+              "information-influence-link": "#/$defs/InformationLink",
+              "response-relationship": "#/$defs/ResponseRelationship",
+              "stock": "#/$defs/Stock",
+              "system-view": "#/$defs/SystemView"
+            },
+            "propertyName": "family"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/SystemView"
+            },
+            {
+              "$ref": "#/$defs/Constituent"
+            },
+            {
+              "$ref": "#/$defs/Stock"
+            },
+            {
+              "$ref": "#/$defs/FlowProcess"
+            },
+            {
+              "$ref": "#/$defs/InformationLink"
+            },
+            {
+              "$ref": "#/$defs/ResponseRelationship"
+            },
+            {
+              "$ref": "#/$defs/PurposeCriterion"
+            },
+            {
+              "$ref": "#/$defs/FeedbackPath"
+            },
+            {
+              "$ref": "#/$defs/HistoryTrajectory"
+            }
+          ],
+          "title": "Structure"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "dependencies": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "alternatives": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "alternative_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alternative Group"
+        },
+        "basis": {
+          "default": "unknown",
+          "enum": [
+            "source-report",
+            "derivation",
+            "assumption",
+            "hypothesis",
+            "imported",
+            "unknown"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "support": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Support",
+          "type": "array"
+        },
+        "counterevidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Counterevidence",
+          "type": "array"
+        },
+        "assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "uncertainty": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Uncertainty",
+          "type": "object"
+        },
+        "validity": {
+          "$ref": "#/$defs/Validity"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Properties"
+        },
+        "method_lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Method Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "record_id",
+        "structure"
+      ],
+      "title": "Representation",
+      "type": "object"
+    },
+    "Response": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "inquiry_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Inquiry Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "response_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Response Id",
+          "type": "string"
+        },
+        "job_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Job Id",
+          "type": "string"
+        },
+        "context_sha256": {
+          "title": "Context Sha256",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "human-authored",
+            "external-model-output"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "attribution": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Attribution",
+          "type": "string"
+        },
+        "binding": {
+          "$ref": "#/$defs/ModelBinding"
+        },
+        "rationale_summary": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale Summary",
+          "type": "string"
+        },
+        "hypotheses": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Hypothesis"
+          },
+          "maxItems": 3,
+          "title": "Hypotheses",
+          "type": "array"
+        },
+        "tests": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/InquiryTest"
+          },
+          "maxItems": 8,
+          "title": "Tests",
+          "type": "array"
+        },
+        "frontier": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/FrontierItem"
+          },
+          "maxItems": 16,
+          "title": "Frontier",
+          "type": "array"
+        },
+        "candidates": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CandidateChange"
+          },
+          "maxItems": 16,
+          "title": "Candidates",
+          "type": "array"
+        },
+        "feedback_disposition": {
+          "default": "not-applicable",
+          "enum": [
+            "not-applicable",
+            "retained-for-review",
+            "challenged",
+            "deferred"
+          ],
+          "title": "Feedback Disposition",
+          "type": "string"
+        },
+        "input_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input Tokens"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Tokens"
+        },
+        "limitation": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Limitation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "inquiry_id",
+        "request_id",
+        "response_id",
+        "job_id",
+        "context_sha256",
+        "origin",
+        "attribution",
+        "binding",
+        "rationale_summary",
+        "limitation"
+      ],
+      "title": "Response",
+      "type": "object"
+    },
+    "ResponseRelationship": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "response-relationship",
+          "default": "response-relationship",
+          "title": "Family",
+          "type": "string"
+        },
+        "participants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Participant"
+          },
+          "title": "Participants",
+          "type": "array"
+        },
+        "mechanism": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Mechanism",
+          "type": "object"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "domains": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Domains",
+          "type": "object"
+        },
+        "delays": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Delays",
+          "type": "object"
+        },
+        "capacities": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Capacities",
+          "type": "object"
+        },
+        "execution_status": {
+          "default": "unsupported",
+          "enum": [
+            "descriptive",
+            "qualitative",
+            "unsupported"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        }
+      },
+      "title": "ResponseRelationship",
+      "type": "object"
+    },
+    "Retire": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "const": "retire",
+          "default": "retire",
+          "title": "Operation",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "expected_version": {
+          "minimum": 1,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "reason": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "record_id",
+        "expected_version",
+        "reason"
+      ],
+      "title": "Retire",
+      "type": "object"
+    },
+    "Stock": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "stock",
+          "default": "stock",
+          "title": "Family",
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "#/$defs/Quantity"
+        },
+        "inflows": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Inflows",
+          "type": "array"
+        },
+        "outflows": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Outflows",
+          "type": "array"
+        },
+        "initial_basis": {
+          "default": "unknown",
+          "title": "Initial Basis",
+          "type": "string"
+        },
+        "bounds": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Bounds",
+          "type": "object"
+        },
+        "reserve_and_access": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Reserve And Access",
+          "type": "object"
+        }
+      },
+      "required": [
+        "quantity"
+      ],
+      "title": "Stock",
+      "type": "object"
+    },
+    "StoredRepresentation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "known_at": {
+          "format": "date-time",
+          "title": "Known At",
+          "type": "string"
+        },
+        "proposer": {
+          "enum": [
+            "C0",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7"
+          ],
+          "title": "Proposer",
+          "type": "string"
+        },
+        "change_kind": {
+          "title": "Change Kind",
+          "type": "string"
+        },
+        "representation": {
+          "$ref": "#/$defs/Representation"
+        },
+        "state": {
+          "enum": [
+            "candidate",
+            "accepted_for_use",
+            "rejected",
+            "withdrawn",
+            "retired"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "admission": {
+          "$ref": "#/$defs/Admission"
+        },
+        "decision_authority": {
+          "enum": [
+            "C3-candidate-policy",
+            "C3-local-operator"
+          ],
+          "title": "Decision Authority",
+          "type": "string"
+        },
+        "use_validity": {
+          "const": "not-certified; inspect-dependencies-and-evidence",
+          "default": "not-certified; inspect-dependencies-and-evidence",
+          "title": "Use Validity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "version",
+        "known_at",
+        "proposer",
+        "change_kind",
+        "representation",
+        "state",
+        "admission",
+        "decision_authority"
+      ],
+      "title": "StoredRepresentation",
+      "type": "object"
+    },
+    "Submission": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/$defs/SubmissionRequest"
+        },
+        "patch": {
+          "$ref": "#/$defs/WorldPatch"
+        },
+        "receipt": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/WorldCommit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "request",
+        "patch"
+      ],
+      "title": "Submission",
+      "type": "object"
+    },
+    "SubmissionRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "inquiry_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Inquiry Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "response_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Response Id",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "inquiry_id",
+        "request_id",
+        "response_id",
+        "reason"
+      ],
+      "title": "SubmissionRequest",
+      "type": "object"
+    },
+    "SystemView": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "system-view",
+          "default": "system-view",
+          "title": "Family",
+          "type": "string"
+        },
+        "members": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Members",
+          "type": "array"
+        },
+        "excluded": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Excluded",
+          "type": "array"
+        },
+        "external_drivers": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "External Drivers",
+          "type": "array"
+        },
+        "external_sinks": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "External Sinks",
+          "type": "array"
+        },
+        "boundary": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Boundary",
+          "type": "object"
+        },
+        "purpose": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Purpose"
+        },
+        "level": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Level"
+        },
+        "resolution": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Resolution",
+          "type": "object"
+        },
+        "horizon": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Horizon",
+          "type": "object"
+        },
+        "closure_assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Closure Assumptions",
+          "type": "array"
+        }
+      },
+      "title": "SystemView",
+      "type": "object"
+    },
+    "TemporalScope": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "event_time": {
+          "$ref": "#/$defs/TimeValue"
+        },
+        "reported_time": {
+          "$ref": "#/$defs/TimeValue"
+        },
+        "clock_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clock Id"
+        },
+        "sequence": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sequence"
+        }
+      },
+      "title": "TemporalScope",
+      "type": "object"
+    },
+    "TimeValue": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "known",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "not supplied",
+          "title": "Reason"
+        }
+      },
+      "title": "TimeValue",
+      "type": "object"
+    },
+    "Validity": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "interval",
+            "unbounded"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "start": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End"
+        },
+        "clock_id": {
+          "default": "UTC",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Clock Id",
+          "type": "string"
+        }
+      },
+      "title": "Validity",
+      "type": "object"
+    },
+    "WorldCommit": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "revision": {
+          "minimum": 1,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "previous_revision": {
+          "minimum": 0,
+          "title": "Previous Revision",
+          "type": "integer"
+        },
+        "committed_at": {
+          "format": "date-time",
+          "title": "Committed At",
+          "type": "string"
+        },
+        "decision_authority": {
+          "enum": [
+            "C3-candidate-policy",
+            "C3-local-operator"
+          ],
+          "title": "Decision Authority",
+          "type": "string"
+        },
+        "changed_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Changed Ids",
+          "type": "array"
+        },
+        "invalidated_projection_ids": {
+          "default": [
+            "world.current"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Invalidated Projection Ids",
+          "type": "array"
+        },
+        "dependency_impact": {
+          "const": "bounded-query-required",
+          "default": "bounded-query-required",
+          "title": "Dependency Impact",
+          "type": "string"
+        },
+        "consumed": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ConsumedEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "duplicate": {
+          "default": false,
+          "title": "Duplicate",
+          "type": "boolean"
+        },
+        "durability": {
+          "const": "local-sqlite-full-unqualified",
+          "default": "local-sqlite-full-unqualified",
+          "title": "Durability",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "revision",
+        "previous_revision",
+        "committed_at",
+        "decision_authority",
+        "changed_ids"
+      ],
+      "title": "WorldCommit",
+      "type": "object"
+    },
+    "WorldPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "base_revision": {
+          "minimum": 0,
+          "title": "Base Revision",
+          "type": "integer"
+        },
+        "proposer": {
+          "enum": [
+            "C0",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7"
+          ],
+          "title": "Proposer",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "change_kind": {
+          "enum": [
+            "state",
+            "parameter",
+            "organization",
+            "policy",
+            "goal",
+            "explanation",
+            "context"
+          ],
+          "title": "Change Kind",
+          "type": "string"
+        },
+        "operations": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "decide": "#/$defs/Decide",
+                "put": "#/$defs/Put",
+                "retire": "#/$defs/Retire"
+              },
+              "propertyName": "operation"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/Put"
+              },
+              {
+                "$ref": "#/$defs/Decide"
+              },
+              {
+                "$ref": "#/$defs/Retire"
+              }
+            ]
+          },
+          "minItems": 1,
+          "title": "Operations",
+          "type": "array"
+        },
+        "consumed": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ConsumedEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "base_revision",
+        "proposer",
+        "reason",
+        "change_kind",
+        "operations"
+      ],
+      "title": "WorldPatch",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/InquiryRequest"
+    },
+    "sequence": {
+      "minimum": 1,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "implementation": {
+      "const": "edi-c4/0.5.0",
+      "default": "edi-c4/0.5.0",
+      "title": "Implementation",
+      "type": "string"
+    },
+    "profile_snapshot": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Profile Snapshot",
+      "type": "object"
+    },
+    "operating_profile": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Operating Profile",
+      "type": "object"
+    },
+    "context": {
+      "$ref": "#/$defs/Context"
+    },
+    "jobs": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Job"
+      },
+      "title": "Jobs",
+      "type": "array"
+    },
+    "responses": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Response"
+      },
+      "title": "Responses",
+      "type": "array"
+    },
+    "frontier": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/FrontierItem"
+      },
+      "title": "Frontier",
+      "type": "array"
+    },
+    "outbox": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/OutboxItem"
+      },
+      "title": "Outbox",
+      "type": "array"
+    },
+    "submissions": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Submission"
+      },
+      "title": "Submissions",
+      "type": "array"
+    },
+    "tokens_reserved": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Tokens Reserved",
+      "type": "integer"
+    },
+    "state": {
+      "default": "ready",
+      "enum": [
+        "ready",
+        "awaiting-response",
+        "round-complete",
+        "yielded"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "stop_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Stop Reason"
+    },
+    "qualification": {
+      "const": "source-only; runtime unqualified",
+      "default": "source-only; runtime unqualified",
+      "title": "Qualification",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request",
+    "sequence",
+    "created_at",
+    "updated_at",
+    "profile_snapshot",
+    "operating_profile",
+    "context"
+  ],
+  "title": "Episode",
+  "type": "object"
+}

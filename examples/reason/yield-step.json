@@ -1,0 +1,7 @@
+{
+  "workspace_id": "demo",
+  "inquiry_id": "demo-inquiry",
+  "request_id": "demo-yield-1",
+  "action": "yield",
+  "reason": "Further investigation awaits scoped evidence and model binding"
+}

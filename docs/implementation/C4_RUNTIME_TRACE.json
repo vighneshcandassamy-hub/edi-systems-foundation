@@ -1,0 +1,558 @@
+{
+  "schema": "edi-c4-runtime-trace-v1",
+  "version": "0.1",
+  "code_version": "0.5.0",
+  "date_utc": "2026-10-20",
+  "input_revision": "11e3517544b78a79e6fc73b81c2345723f67b14c",
+  "mission": "EDI-MIS-001",
+  "source_authorities": [
+    "docs/implementation/COMPONENTS.md",
+    "docs/implementation/REASONING_INTEGRATION.md",
+    "docs/implementation/INTERFACES.json",
+    "docs/implementation/GROWTH_POLICY.json",
+    "docs/implementation/TRACEABILITY.json",
+    "architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md"
+  ],
+  "requirements": [
+    {
+      "id": "C4-R001",
+      "title": "Pinned scoped evidence/context",
+      "owner": "C4",
+      "functions": [
+        "F40",
+        "F41"
+      ],
+      "parents": [
+        "IMP-R01",
+        "IMP-R02",
+        "IMP-R04",
+        "IMP-R26"
+      ],
+      "source": [
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "C0 selects immutable C1 occurrences/ranges and C3 revision/records; retain source/epoch, event/report/receipt/commit times, origin class, lineage and dependency limitations.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V001",
+        "C4-V002",
+        "C4-V006"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R002",
+      "title": "Selectable systems questioning",
+      "owner": "C4",
+      "functions": [
+        "F41"
+      ],
+      "parents": [
+        "IMP-R05",
+        "IMP-R06",
+        "IMP-R07",
+        "IMP-R11",
+        "IMP-R13",
+        "IMP-R14",
+        "IMP-R15",
+        "IMP-R27"
+      ],
+      "source": [
+        "src/edi/reason/protocol.py"
+      ],
+      "statement": "Version the Meadows question lenses; distinguish events/patterns/structure, loops/delays/nonlinearity/agency and resilience/traps/leverage without claiming the prompt validates mechanisms.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V003",
+        "C4-V008"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R003",
+      "title": "Attributed rivals and uncertainty",
+      "owner": "C4",
+      "functions": [
+        "F40"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R17",
+        "IMP-R26"
+      ],
+      "source": [
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Retain immutable rival claims, applicability, assumptions, counterevidence, confounders, dependence and unknowns; enforce selected evidence refs and candidate status.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V006",
+        "C4-V007"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R004",
+      "title": "Feasible discriminating test proposals",
+      "owner": "C4",
+      "functions": [
+        "F42"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R16",
+        "IMP-R27"
+      ],
+      "source": [
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Propose conditional predictions/channels/rival differences, controls, costs and identifiability limits; C0 schedules, C5 executes, C6 assesses.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V008",
+        "C4-V017"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R005",
+      "title": "Bounded resumable job control",
+      "owner": "C4",
+      "functions": [
+        "F40",
+        "F41",
+        "F42"
+      ],
+      "parents": [
+        "IMP-R09",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R23"
+      ],
+      "source": [
+        "src/edi/reason/config.py",
+        "src/edi/reason/service.py",
+        "src/edi/reason/sqlite.py"
+      ],
+      "statement": "Bound rivals/rounds/jobs, retain full token reservations including unknown usage and persist one unresolved export job per workspace; no automatic dispatch/retry.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V004",
+        "C4-V011",
+        "C4-V013",
+        "C4-V015"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R006",
+      "title": "Selective fallible teacher",
+      "owner": "C4",
+      "functions": [
+        "F40",
+        "F41"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R19",
+        "IMP-R26"
+      ],
+      "source": [
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/ports.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Teacher requires a trigger and completed student, uses the same cut, fixed binding and budget, supplies critique only and cannot introduce evidence or directly revise the world.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V005",
+        "C4-V015"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R007",
+      "title": "Persistent cumulative exploration frontier",
+      "owner": "C4",
+      "functions": [
+        "F43"
+      ],
+      "parents": [
+        "IMP-R18",
+        "IMP-R28",
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R32"
+      ],
+      "source": [
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/protocol.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Preserve seven exploration directions/eight triggers, unknown/omitted frontier, disposition and ranking rationale; breadth/internal/time growth is proposed explicitly.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V009",
+        "C4-V010",
+        "C4-V014"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R008",
+      "title": "Honest ranking and access lifecycle",
+      "owner": "C4",
+      "functions": [
+        "F43"
+      ],
+      "parents": [
+        "IMP-R09",
+        "IMP-R23",
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "source": [
+        "src/edi/reason/protocol.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Rank by declared heuristic, not measured EIG; deduplicate targets, retain denial and require material-change rationale before reopening; C0/C7 own scheduling/grants/notifications.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V009",
+        "C4-V010"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R009",
+      "title": "Candidate-only staged C3 changes",
+      "owner": "C4",
+      "functions": [
+        "F40",
+        "F41"
+      ],
+      "parents": [
+        "IMP-R05",
+        "IMP-R17",
+        "IMP-R20",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "source": [
+        "src/edi/reason/service.py",
+        "src/edi/reason/sqlite.py"
+      ],
+      "statement": "Validate selected pinned dependencies/current hypothesis, preserve attributed rationale/uncertainty/evidence, stage exact patches, forbid admission and reconcile original C3 receipts.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V007",
+        "C4-V012",
+        "C4-V018"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R010",
+      "title": "Immutable operation outcomes and outbox",
+      "owner": "C4",
+      "functions": [
+        "F40",
+        "F42",
+        "F43"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R21"
+      ],
+      "source": [
+        "src/edi/reason/sqlite.py",
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Journal bounded immutable sequence snapshots with optimistic updates, namespaced retry/status, versioned C0 outbox references and acknowledgement dispositions.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V011",
+        "C4-V012",
+        "C4-V013",
+        "C4-V014"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R011",
+      "title": "Owner-restricted integration",
+      "owner": "C4",
+      "functions": [
+        "F40",
+        "F41",
+        "F42",
+        "F43"
+      ],
+      "parents": [
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R23",
+        "IMP-R26"
+      ],
+      "source": [
+        "src/edi/reason/ports.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Reuse read-only C1 and candidate-only C3 facades; lazy C4 composition; preserve no-links to C2/C5/C7; C6 queries explicitly unavailable with attributed C0 imports only.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V005",
+        "C4-V012",
+        "C4-V015",
+        "C4-V017"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C4-R012",
+      "title": "Explicit readiness and complete-cost obligations",
+      "owner": "C4",
+      "functions": [
+        "F40",
+        "F41",
+        "F42",
+        "F43"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R21",
+        "IMP-R22",
+        "IMP-R24",
+        "IMP-R29",
+        "IMP-R34"
+      ],
+      "source": [
+        "src/edi/reason/config.py",
+        "src/edi/reason/ports.py",
+        "src/edi/reason/service.py"
+      ],
+      "statement": "Expose unbound checkpoints/gateway and finite local capacity honestly; defer full tokenizer/cost admission, HA, calibration, learning and scientific qualification rather than issue a PASS.",
+      "acceptance": "Required source contract plus the linked future cases; allocation is not verified fulfillment.",
+      "cases": [
+        "C4-V013",
+        "C4-V015",
+        "C4-V016",
+        "C4-V017",
+        "C4-V018"
+      ],
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    }
+  ],
+  "cases": [
+    {
+      "id": "C4-V001",
+      "title": "C1 identity/epoch/range/digest/critical-profile mismatch and origin lineage",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R001"
+      ]
+    },
+    {
+      "id": "C4-V002",
+      "title": "Pinned C3 revision, stale/incomplete dependencies and explicit omitted scope",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R001"
+      ]
+    },
+    {
+      "id": "C4-V003",
+      "title": "Protocol selection, source-instruction injection and unsupported-system abstention",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R002"
+      ]
+    },
+    {
+      "id": "C4-V004",
+      "title": "Three-rival/two-round/shared-token limits and cross-process unresolved-job reservation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R005"
+      ]
+    },
+    {
+      "id": "C4-V005",
+      "title": "Teacher trigger, exact evidence cut, critique-only output and fallibility",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R006",
+        "C4-R011"
+      ]
+    },
+    {
+      "id": "C4-V006",
+      "title": "Authored/imported/generated/simulated provenance without observational self-confirmation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R001",
+        "C4-R003"
+      ]
+    },
+    {
+      "id": "C4-V007",
+      "title": "Unknown hypothesis/test/reference IDs, unselected dependencies and candidate-admission denial",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R003",
+        "C4-R009"
+      ]
+    },
+    {
+      "id": "C4-V008",
+      "title": "Qualitative/numerical test proposals with confounding and identifiability limitations",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R002",
+        "C4-R004"
+      ]
+    },
+    {
+      "id": "C4-V009",
+      "title": "Stable declared heuristic ranking, ties, retained frontier and no EIG/posterior claim",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R007",
+        "C4-R008"
+      ]
+    },
+    {
+      "id": "C4-V010",
+      "title": "Dedup, denied/deferred/resolved transitions and material-change reopening",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R007",
+        "C4-R008"
+      ]
+    },
+    {
+      "id": "C4-V011",
+      "title": "Identical/changed command retries, immutable old outcomes and concurrent sequence conflicts",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R005",
+        "C4-R010"
+      ]
+    },
+    {
+      "id": "C4-V012",
+      "title": "Crash before/after C3 commit, lost C4 receipt and exact staged-patch reconciliation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R009",
+        "C4-R010",
+        "C4-R011"
+      ]
+    },
+    {
+      "id": "C4-V013",
+      "title": "Byte/item/journal/disk quotas, deadline/resource failures and preserved alternatives",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R005",
+        "C4-R010",
+        "C4-R012"
+      ]
+    },
+    {
+      "id": "C4-V014",
+      "title": "Outbox artifact sequence, immutable reads, receipt acknowledgement and no external effect",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R007",
+        "C4-R010"
+      ]
+    },
+    {
+      "id": "C4-V015",
+      "title": "Unbound adapter, no incidental model execution, export admission and unknown usage cancellation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R005",
+        "C4-R006",
+        "C4-R011",
+        "C4-R012"
+      ]
+    },
+    {
+      "id": "C4-V016",
+      "title": "Future complete-path latency/token/cost/HA/scientific/transfer qualification",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R012"
+      ]
+    },
+    {
+      "id": "C4-V017",
+      "title": "C6 explicit unavailability, imported unverified notes and future inquiry-yield/calibration feedback",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R004",
+        "C4-R011",
+        "C4-R012"
+      ]
+    },
+    {
+      "id": "C4-V018",
+      "title": "Stale world patch, no silent rebase, model/profile change and explicit new inquiry",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C4-R009",
+        "C4-R012"
+      ]
+    }
+  ],
+  "product_qualification": "not_run; owner requested structure before qualification",
+  "consumer_obligations": "DOWN-001 through DOWN-008 retained; scoped contribution only",
+  "open_obligations": [
+    "Native fixed-pretrained student/vLLM and selective teacher binding/gateway/tokenizer admission",
+    "C0 durable scheduling, scoped grants, delivery, periodic review and notification cooldown/rate policy",
+    "C6 inquiry-yield/calibration feedback and independent evaluation",
+    "C5 execution, controlled causal/numerical/scientific tests and out-of-sample transfer",
+    "Incremental ModelDelta/refinement/freshness/actor-specific context and longitudinal world growth",
+    "Native model-output C1 capture, provider authenticity, unknown-cost reconciliation and complete path accounting",
+    "Process isolation, migrations, retention/export/restore, HA/failover and measured performance",
+    "Complete original C1/C2/C3 obligations and all deferred qualification"
+  ]
+}

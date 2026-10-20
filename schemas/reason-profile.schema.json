@@ -1,0 +1,171 @@
+{
+  "$defs": {
+    "ModelBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "model_id": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Model Id",
+          "type": "string"
+        },
+        "revision": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Revision",
+          "type": "string"
+        },
+        "provider": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Provider",
+          "type": "string"
+        },
+        "engine": {
+          "default": "unbound",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Engine",
+          "type": "string"
+        },
+        "tokenizer_revision": {
+          "default": "unknown",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tokenizer Revision",
+          "type": "string"
+        },
+        "weights": {
+          "const": "fixed",
+          "default": "fixed",
+          "title": "Weights",
+          "type": "string"
+        }
+      },
+      "title": "ModelBinding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "profile_id": {
+      "default": "local-reason-sqlite-v1",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Profile Id",
+      "type": "string"
+    },
+    "workspace_id": {
+      "default": "default",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "database": {
+      "format": "path",
+      "title": "Database",
+      "type": "string"
+    },
+    "student": {
+      "$ref": "#/$defs/ModelBinding"
+    },
+    "teacher": {
+      "$ref": "#/$defs/ModelBinding"
+    },
+    "max_request_bytes": {
+      "default": 262144,
+      "minimum": 1024,
+      "title": "Max Request Bytes",
+      "type": "integer"
+    },
+    "max_context_bytes": {
+      "default": 131072,
+      "minimum": 1024,
+      "title": "Max Context Bytes",
+      "type": "integer"
+    },
+    "max_episode_bytes": {
+      "default": 1048576,
+      "minimum": 1024,
+      "title": "Max Episode Bytes",
+      "type": "integer"
+    },
+    "max_commands": {
+      "default": 50000,
+      "minimum": 1,
+      "title": "Max Commands",
+      "type": "integer"
+    },
+    "max_episodes": {
+      "default": 10000,
+      "minimum": 1,
+      "title": "Max Episodes",
+      "type": "integer"
+    },
+    "max_stored_bytes": {
+      "default": 536870912,
+      "minimum": 1024,
+      "title": "Max Stored Bytes",
+      "type": "integer"
+    },
+    "max_frontier": {
+      "default": 128,
+      "maximum": 256,
+      "minimum": 1,
+      "title": "Max Frontier",
+      "type": "integer"
+    },
+    "max_outbox": {
+      "default": 256,
+      "maximum": 1024,
+      "minimum": 1,
+      "title": "Max Outbox",
+      "type": "integer"
+    },
+    "max_submissions": {
+      "default": 16,
+      "maximum": 64,
+      "minimum": 1,
+      "title": "Max Submissions",
+      "type": "integer"
+    },
+    "max_operation_seconds": {
+      "default": 10.0,
+      "exclusiveMinimum": 0,
+      "maximum": 120,
+      "title": "Max Operation Seconds",
+      "type": "number"
+    },
+    "writer_timeout_seconds": {
+      "default": 5.0,
+      "exclusiveMinimum": 0,
+      "maximum": 60,
+      "title": "Writer Timeout Seconds",
+      "type": "number"
+    },
+    "min_free_disk_bytes": {
+      "default": 268435456,
+      "minimum": 0,
+      "title": "Min Free Disk Bytes",
+      "type": "integer"
+    }
+  },
+  "title": "ReasoningProfile",
+  "type": "object"
+}

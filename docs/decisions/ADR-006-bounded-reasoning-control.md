@@ -1,0 +1,13 @@
+# ADR-006: Durable bounded C4 inquiry before model binding
+
+Status: adopted for first source increment; runtime/product qualification open. Code 0.5.0.
+
+The reasoning integration plan requires fixed pretrained student/teacher roles, systems-oriented questioning, preserved alternatives, bounded investigation and candidate-only C3 admission. The owner requested integrated structure before qualification. Exact checkpoint/provider/hardware choices remain open. Installing an arbitrary model or treating a generic chat loop as verified intelligence would not satisfy those requirements.
+
+Use a small typed controller with pinned C1/C3 context, a versioned selectable Meadows protocol, durable export/import jobs, attributed hypotheses/tests, a persistent exploration frontier and C0 outbox. Keep C4 in its own lazy SQLite store. One unresolved job per workspace and bounded rounds/rivals/token reservations prevent the structural controller from scheduling unbounded work. Unknown external usage is never refunded automatically. Candidate patches are staged before C3 submission and cannot request admission.
+
+Compared with a stateless prompt wrapper, this preserves cuts, original expectations and recovery identity. Compared with a multi-agent platform, it avoids new scheduler dependencies and duplicated authority before there is a measured need. Whole bounded episode snapshots simplify retry/audit at the cost of storage; quotas account conservatively for the journal and projection. Postgres/delta journals/distributed workers remain later adapters. SQLite is a finite local backend, not the long-term high-availability result.
+
+Student and teacher inference ports are explicitly unavailable. A configured model label alone never executes inference. Human-authored proposals and attributed imported output support future structural integration without pretending model discovery occurred. Native tokenizer admission, provider dispatch/reconciliation, model-output capture, empirical calibration, C6 feedback, C0 notification/access policies, actor isolation and full backup/restore remain open. Numerical and causal methods remain in C5/C6 rather than being simulated by language output.
+
+References: [reasoning plan](../implementation/REASONING_INTEGRATION.md), [growth policy](../implementation/GROWTH_POLICY.json), [C4 specification](../implementation/C4_REASONING_RUNTIME.md), [tools/math decisions](../implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md). This decision uses the existing standard-library SQLite/Pydantic foundation and introduces no new third-party API or revised state-of-the-art claim.

@@ -10,6 +10,9 @@ from edi.inquiry.runtime import Runtime
 from edi.interpret.config import InterpretationProfile
 from edi.interpret.contracts import InterpretRequest, SubmissionRequest
 from edi.observe.contracts import Capture, OriginSpec, ReplayCursor
+from edi.reason.config import ReasoningProfile
+from edi.reason.contracts import FrontierUpdate, InquiryRequest, OutboxAck, Response, StepRequest
+from edi.reason.contracts import SubmissionRequest as ReasonSubmissionRequest
 from edi.shared.config import LocalProfile
 from edi.shared.errors import EDIError, ErrorCode
 from edi.world.config import WorldProfile
@@ -17,12 +20,13 @@ from edi.world.contracts import WorldCursor, WorldPatch, WorldQuery
 
 
 def _parser():
-    parser = argparse.ArgumentParser(prog="edi", description="EDI local observation/interpretation/world runtime (unqualified)")
+    parser = argparse.ArgumentParser(prog="edi", description="EDI local C1-C4 runtime (unqualified)")
     parser.add_argument("--config", type=Path, help="LocalProfile JSON; must include workspace_id/database")
     parser.add_argument("--database", type=Path, help="override local database path")
     parser.add_argument("--workspace", help="override workspace scope")
     parser.add_argument("--world-config", type=Path, help="WorldProfile JSON; default is a separate sibling database")
     parser.add_argument("--interpret-config", type=Path, help="InterpretationProfile JSON; default is a separate sibling database")
+    parser.add_argument("--reason-config", type=Path, help="ReasoningProfile JSON; default is a separate sibling database")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities")
     p = sub.add_parser("register-origin")
@@ -81,6 +85,21 @@ def _parser():
     for command in ("interpret-build-patch", "interpret-submit"):
         p = sub.add_parser(command)
         p.add_argument("request", type=Path)
+    for command in ("reason-investigate", "reason-step", "reason-import-response", "reason-frontier-update",
+                    "reason-build-patch", "reason-submit", "reason-outbox-ack"):
+        p = sub.add_parser(command)
+        p.add_argument("request", type=Path)
+    for command in ("reason-get", "reason-rank-frontier"):
+        p = sub.add_parser(command)
+        p.add_argument("inquiry_id")
+        if command == "reason-get":
+            p.add_argument("--sequence", type=int, help="immutable episode version; omit for current")
+    p = sub.add_parser("reason-status")
+    p.add_argument("operation", choices=("investigate", "step", "response", "frontier", "outbox-ack", "submission-stage", "submission-receipt"))
+    p.add_argument("request_id")
+    p = sub.add_parser("reason-export-job")
+    p.add_argument("inquiry_id")
+    p.add_argument("job_id")
     return parser
 
 
@@ -103,7 +122,8 @@ def main(argv=None) -> int:
             overrides["workspace_id"] = args.workspace
         world_profile = WorldProfile.model_validate_json(args.world_config.read_bytes()) if args.world_config else None
         interpretation_profile = InterpretationProfile.model_validate_json(args.interpret_config.read_bytes()) if args.interpret_config else None
-        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile)
+        reasoning_profile = ReasoningProfile.model_validate_json(args.reason_config.read_bytes()) if args.reason_config else None
+        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile)
         obs = runtime.observation
         world = runtime.world if args.command.startswith("world-") else None
         if args.command == "capabilities":
@@ -165,6 +185,29 @@ def main(argv=None) -> int:
             result = (runtime.interpretation.build_patch(request) if args.command == "interpret-build-patch"
                       else runtime.interpretation.submit(request))
             _emit(result)
+        elif args.command.startswith("reason-"):
+            reason = runtime.reasoning
+            if args.command == "reason-get":
+                _emit(reason.get(args.inquiry_id, sequence=args.sequence))
+            elif args.command == "reason-rank-frontier":
+                _emit(reason.rank_frontier(args.inquiry_id))
+            elif args.command == "reason-status":
+                result = reason.request_status(args.operation, args.request_id)
+                _emit(result if result is not None else {"status": "not-found", "request_id": args.request_id})
+            elif args.command == "reason-export-job":
+                _emit(reason.export_job(args.inquiry_id, args.job_id))
+            else:
+                commands = {
+                    "reason-investigate": (InquiryRequest, reason.investigate),
+                    "reason-step": (StepRequest, reason.step),
+                    "reason-import-response": (Response, reason.import_response),
+                    "reason-frontier-update": (FrontierUpdate, reason.update_frontier),
+                    "reason-outbox-ack": (OutboxAck, reason.acknowledge_outbox),
+                    "reason-build-patch": (ReasonSubmissionRequest, reason.build_patch),
+                    "reason-submit": (ReasonSubmissionRequest, reason.submit),
+                }
+                contract, method = commands[args.command]
+                _emit(method(contract.model_validate_json(args.request.read_bytes())))
         return 0
     except EDIError as exc:
         print(json.dumps(exc.as_dict()), file=sys.stderr)

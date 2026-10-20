@@ -1,6 +1,6 @@
 # EDI implementation architecture and technique assessment
 
-Latest source checkpoint: code **0.4.0**, [C2 attributed interpretation](C2_INTERPRETATION_RUNTIME.md), integrating partial C1/C3 implementations. [C2 trace](C2_RUNTIME_TRACE.json) allocates twelve scoped requirements and thirteen unrun cases; [ADR-005](../decisions/ADR-005-attributed-interpretation.md) records the decision. Full C3 or C2 acceptance is not established. The research and historical status entries below retain their original scopes.
+Latest source checkpoint: code **0.5.0**, [C4 bounded reasoning control](C4_REASONING_RUNTIME.md), integrating partial C1/C3 with C0-mediated outputs. [C4 trace](C4_RUNTIME_TRACE.json) allocates twelve scoped requirements and eighteen unrun cases; [ADR-006](../decisions/ADR-006-bounded-reasoning-control.md) records the decision. Native inference and C5-C7 remain unavailable; full C1-C4 acceptance is not established. The earlier [C2 increment](C2_INTERPRETATION_RUNTIME.md) and research/historical entries below retain their scopes.
 
 Research specification version 0.3 — 20 October 2026. The research below retains its original proposed status. A subsequent [shared foundation/C1 code increment](FOUNDATION_C1_RUNTIME.md), code version 0.2.0, implements a limited local path without qualification. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 

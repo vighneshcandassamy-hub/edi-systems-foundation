@@ -6,6 +6,7 @@ import sqlite3
 from threading import BoundedSemaphore
 from time import monotonic
 import pydantic
+from edi import __version__
 
 from edi.interpret.config import InterpretationProfile
 from edi.interpret.contracts import (
@@ -54,7 +55,7 @@ class Interpretation:
         request = InterpretRequest.model_validate_json(encoded)
         if request.workspace_id != self.profile.workspace_id:
             raise EDIError(ErrorCode.DENIED, "C2 request workspace mismatch")
-        versions = {"code": "0.4.0", "python": platform.python_version(),
+        versions = {"code": __version__, "python": platform.python_version(),
                     "pydantic": pydantic.__version__, "sqlite": sqlite3.sqlite_version,
                     "csv_field_limit": csv.field_size_limit()}
         fingerprint = sha256((encoded + canonical(self.profile) + IMPLEMENTATION +

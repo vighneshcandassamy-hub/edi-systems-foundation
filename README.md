@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.4.0. **Status:** shared Python foundation, first local C1 observation, C2 attributed interpretation and C3 versioned world-hosting implementations; unqualified. C0-C3 are partial, C4-C7 are declared/unavailable. Learning performance and empirical qualification remain open.
+**Code version:** 0.5.0. **Status:** shared Python foundation, first local C1 observation, C2 attributed interpretation, C3 versioned world hosting and C4 bounded inquiry control; unqualified. C0-C4 are partial; C5-C7 and native inference are unavailable. Learning performance and empirical qualification remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
@@ -14,7 +14,11 @@ This repository brings together the integrated seven-chapter architecture, the a
 
 Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
 
-## Current C2 code increment
+## Current C4 code increment
+
+[C4 specification and usage](docs/implementation/C4_REASONING_RUNTIME.md), [requirements trace](docs/implementation/C4_RUNTIME_TRACE.json), [ADR-006](docs/decisions/ADR-006-bounded-reasoning-control.md), [source](src/edi/reason/) and [examples](examples/reason/) describe pinned C1/C3 context, a selectable Meadows protocol, bounded student/teacher export/import jobs, attributed rival hypotheses and test designs, a persistent exploration frontier/C0 outbox and candidate-only C3 submission. Exact pretrained model/provider/hardware bindings and native inference remain open. No model call, runtime/product test, simulation or qualification ran.
+
+## Prior C2 code increment
 
 [C2 specification and usage](docs/implementation/C2_INTERPRETATION_RUNTIME.md), [requirements trace](docs/implementation/C2_RUNTIME_TRACE.json), [ADR-005](docs/decisions/ADR-005-attributed-interpretation.md), [source](src/edi/interpret/), [examples](examples/interpret/) and [schemas](schemas/) describe native decoding, versioned attribution/features and candidate-only C3 proposals. C2 never rewrites original C1 evidence or accepts its own claims. Unsupported formats remain explicit. No runtime/product/qualification cases ran. C3 supports this bounded source integration, but complete C3 requirement acceptance remains open.
 
