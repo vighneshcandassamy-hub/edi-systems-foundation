@@ -1,7 +1,4 @@
-"""C2 owns derivations and correspondence proposals; never C1 evidence writes."""
-from edi.shared.component import DeclaredComponent
+"""C2 owns attributed derivations; canonical admission remains C3's responsibility."""
+from edi.interpret.service import Interpretation
 
-
-class Interpretation(DeclaredComponent):
-    def __init__(self):
-        super().__init__("C2", ("F20", "F21", "F22", "F23"))
+__all__ = ["Interpretation"]

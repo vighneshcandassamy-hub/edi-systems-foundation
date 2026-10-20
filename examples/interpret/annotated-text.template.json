@@ -1,0 +1,18 @@
+{
+  "workspace_id": "forest-demo",
+  "request_id": "interpret-text-annotation-0001",
+  "inputs": [{"record_id": "REPLACE_WITH_C1_TEXT_RECORD_ID", "decoder": "text-utf8"}],
+  "scope_id": "forest",
+  "annotations": [
+    {
+      "input_index": 0,
+      "statement": "The supplied report states that a population changed; its mechanism remains unknown",
+      "roles": ["event", "state_sample"],
+      "role_rationale": "Operator tags a reported occurrence and a reported state; these are compatible roles",
+      "basis": "reported",
+      "basis_rationale": "This is an operator-supplied interpretation of a report, not independent verification",
+      "meaning": {"subject_identity": "unresolved", "causal_explanation": "unknown"},
+      "method": "operator-supplied"
+    }
+  ]
+}

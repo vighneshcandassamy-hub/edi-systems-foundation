@@ -7,6 +7,8 @@ import sys
 from pydantic import ValidationError
 
 from edi.inquiry.runtime import Runtime
+from edi.interpret.config import InterpretationProfile
+from edi.interpret.contracts import InterpretRequest, SubmissionRequest
 from edi.observe.contracts import Capture, OriginSpec, ReplayCursor
 from edi.shared.config import LocalProfile
 from edi.shared.errors import EDIError, ErrorCode
@@ -15,11 +17,12 @@ from edi.world.contracts import WorldCursor, WorldPatch, WorldQuery
 
 
 def _parser():
-    parser = argparse.ArgumentParser(prog="edi", description="EDI local observation/world runtime (unqualified)")
+    parser = argparse.ArgumentParser(prog="edi", description="EDI local observation/interpretation/world runtime (unqualified)")
     parser.add_argument("--config", type=Path, help="LocalProfile JSON; must include workspace_id/database")
     parser.add_argument("--database", type=Path, help="override local database path")
     parser.add_argument("--workspace", help="override workspace scope")
     parser.add_argument("--world-config", type=Path, help="WorldProfile JSON; default is a separate sibling database")
+    parser.add_argument("--interpret-config", type=Path, help="InterpretationProfile JSON; default is a separate sibling database")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities")
     p = sub.add_parser("register-origin")
@@ -71,6 +74,13 @@ def _parser():
     for command in ("world-progress", "world-ack"):
         p = sub.add_parser(command)
         p.add_argument("consumer")
+    p = sub.add_parser("interpret")
+    p.add_argument("request", type=Path)
+    p = sub.add_parser("derivation")
+    p.add_argument("derivation_id")
+    for command in ("interpret-build-patch", "interpret-submit"):
+        p = sub.add_parser(command)
+        p.add_argument("request", type=Path)
     return parser
 
 
@@ -92,7 +102,8 @@ def main(argv=None) -> int:
         if args.workspace is not None:
             overrides["workspace_id"] = args.workspace
         world_profile = WorldProfile.model_validate_json(args.world_config.read_bytes()) if args.world_config else None
-        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile)
+        interpretation_profile = InterpretationProfile.model_validate_json(args.interpret_config.read_bytes()) if args.interpret_config else None
+        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile)
         obs = runtime.observation
         world = runtime.world if args.command.startswith("world-") else None
         if args.command == "capabilities":
@@ -145,6 +156,15 @@ def main(argv=None) -> int:
             _emit({"consumer": args.consumer, "position": world.consumer_position(args.consumer)})
         elif args.command == "world-ack":
             _emit({"consumer": args.consumer, "position": runtime.acknowledge_world_progress(args.consumer)})
+        elif args.command == "interpret":
+            _emit(runtime.interpretation.interpret(InterpretRequest.model_validate_json(args.request.read_bytes())))
+        elif args.command == "derivation":
+            _emit(runtime.interpretation.get_derivation(args.derivation_id))
+        elif args.command in ("interpret-build-patch", "interpret-submit"):
+            request = SubmissionRequest.model_validate_json(args.request.read_bytes())
+            result = (runtime.interpretation.build_patch(request) if args.command == "interpret-build-patch"
+                      else runtime.interpretation.submit(request))
+            _emit(result)
         return 0
     except EDIError as exc:
         print(json.dumps(exc.as_dict()), file=sys.stderr)

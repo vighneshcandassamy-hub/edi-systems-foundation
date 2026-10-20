@@ -1,5 +1,7 @@
 # C3 shared world-model substrate: first local implementation
 
+Historical code 0.3.0 handoff: [C2 increment](C2_INTERPRETATION_RUNTIME.md), code 0.4.0, now consumes the prepared evidence/candidate subset and adds explicit returned C1 identity/workspace checks. This does not qualify C3 or close the remaining obligations below.
+
 20 October 2026. Code version **0.3.0**. Input: `bd8b05d6c17114fe6747c18801399444838125a3`. Status: source implementation, **unqualified**. No product/qualification tests, inference, simulation or benchmark campaign ran. [ADR-004](../decisions/ADR-004-versioned-world-hosting.md) records the design decisions; [source review](evidence/c3-source-review.json) preserves open obligations.
 
 ## 1. Delivered boundary

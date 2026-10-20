@@ -16,3 +16,5 @@ Shared owner modules/contracts and the first local C1 source implementation are 
 Continue with minimal C3 hosting/admission/versioned reads, then C2 derivation connected to C1/C3, then C4 reasoning, C5 analysis, C6 assessment and C7 agency. Grow C0 scheduling and resource control as each real consumer needs them. Runtime/integration/scientific gates remain separate and open until their cases run.
 
 C3 source checkpoint: code 0.3.0 now supplies the first hosting/admission/versioned-read increment; [scope and open obligations](implementation/C3_WORLD_RUNTIME.md). Next is C2 interpretation. No product test, qualification, benchmark or discovery contribution was run/established by this source implementation.
+
+C2 source checkpoint: code 0.4.0 supplies the first [attributed-interpretation path](implementation/C2_INTERPRETATION_RUNTIME.md) against C1/C3. Next owner is C4 reasoning; model/provider/hardware remain unbound. All broader C1-C3 obligations and product qualification remain open. No product case, inference or benchmark ran.

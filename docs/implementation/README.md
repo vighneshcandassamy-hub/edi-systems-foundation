@@ -1,5 +1,7 @@
 # EDI implementation architecture and technique assessment
 
+Latest source checkpoint: code **0.4.0**, [C2 attributed interpretation](C2_INTERPRETATION_RUNTIME.md), integrating partial C1/C3 implementations. [C2 trace](C2_RUNTIME_TRACE.json) allocates twelve scoped requirements and thirteen unrun cases; [ADR-005](../decisions/ADR-005-attributed-interpretation.md) records the decision. Full C3 or C2 acceptance is not established. The research and historical status entries below retain their original scopes.
+
 Research specification version 0.3 — 20 October 2026. The research below retains its original proposed status. A subsequent [shared foundation/C1 code increment](FOUNDATION_C1_RUNTIME.md), code version 0.2.0, implements a limited local path without qualification. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 
 The next [C3 world-hosting increment](C3_WORLD_RUNTIME.md), code version 0.3.0, adds concrete nine-family records, versioned candidate/admission history, C1 evidence correspondence and bounded revision/dependency views. It retains deferred qualification and does not implement the full substrate/discovery specification. [ADR-004](../decisions/ADR-004-versioned-world-hosting.md) records this scope.

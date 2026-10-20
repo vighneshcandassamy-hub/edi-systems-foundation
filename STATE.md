@@ -1,6 +1,6 @@
 # EDI Systems Foundation — checkpoint
 
-Date: 20 October 2026. Code version: 0.3.0; conceptual source baseline retained.
+Date: 20 October 2026. Code version: 0.4.0; conceptual source baseline retained.
 
 ## What is stored
 
@@ -75,3 +75,11 @@ Code 0.3.0 hosts nine typed representation families with roles/direction, compos
 All sixteen SUB obligations are allocated with open work; all 28 pairs/56 directed lanes retain their design disposition. Historical internal SUB-C1/C2/C3 labels are distinguished from global owner IDs. Actor-view policy, executable mechanisms, automatic refinement/discovery, complete admission/semantic compatibility, whole-application backup/restore, retention/failover and product qualification remain open. C2 and C4-C7 remain unavailable; partial C0/C1/C3 implementations are not full component acceptance.
 
 Checks: source AST parsing, application imports, CLI parser construction and authored TOML/JSON parsing; schemas generated from code. No Runtime/store instance, example, integrated product case, test suite, benchmark, inference, training or simulation ran. No gate PASS issued; scoped source review remains REVISE with future obligations. Original snapshots and historical evidence remain preserved. Next component: C2 interpretation connecting C1 native evidence to C3 candidate structures. Source is saved on the private architecture branch/draft PR; main remains the earlier foundation. Publication hashes are verified separately from product qualification.
+
+## C2 attributed-interpretation checkpoint
+
+20 October 2026 UTC. Input source revision `c43b8d5942b154e7849226208dd82f9d7736ca91`. Owner requested C2 if C3 aligns with prior specifications. [C2 guide](docs/implementation/C2_INTERPRETATION_RUNTIME.md), [trace](docs/implementation/C2_RUNTIME_TRACE.json), [ADR-005](docs/decisions/ADR-005-attributed-interpretation.md), [source review](docs/implementation/evidence/c2-source-review.json), examples and generated schemas document the scoped implementation. Full C3 requirement satisfaction/qualification is NOT established; C3's existing candidate/evidence/version interface subset supports this bounded source integration. Explicit returned C1 workspace/occurrence guards were added to C2/C3.
+
+Code 0.4.0: partial C2 native UTF-8/JSON/CSV decoding, PNG/WAV metadata, opaque/unsupported states, exact source hashes/ranges/times, orthogonal authored role/basis annotations/quotes, limited declared SI dimensions, source/payload association candidates, explicit referent hypotheses and native versioned features. Immutable C2 derivations and submission receipts live in their own lazy SQLite store. Candidate-only C3 patches/retries preserve origin/assistance lineage and optional selected consumer progress; C2 never admits itself or writes C1 evidence. C0/C1/C2/C3 remain partial; C4-C7 are unavailable.
+
+Twelve scoped derived requirements and thirteen future C2 cases are allocated without changing original inventories/evidence. Full perception/semantic matching, arbitrary units, embeddings, isolation, retention/restore, complete usage, larger storage and C1-C3 qualification remain open. Checks: AST/import/parser construction and authored TOML/JSON/new-doc links; schemas generated. No Runtime/store, decoder/example, product/qualification test, benchmark, inference, training, simulation or deployment ran. No gate PASS or measured advantage is claimed. Next owner: C4 reasoning, with explicit model/provider/hardware binding still open. Source is saved on the private architecture branch/draft PR; publication hashes are checked separately from product qualification.

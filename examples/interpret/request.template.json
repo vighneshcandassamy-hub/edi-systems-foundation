@@ -1,0 +1,10 @@
+{
+  "workspace_id": "forest-demo",
+  "request_id": "interpret-native-csv-0001",
+  "inputs": [
+    {"record_id": "REPLACE_WITH_C1_RECORD_ID", "decoder": "csv", "delimiter": ","}
+  ],
+  "derive_native_features": true,
+  "compare_source_and_payload": true,
+  "scope_id": "forest"
+}

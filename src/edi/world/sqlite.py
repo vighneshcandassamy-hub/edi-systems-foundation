@@ -208,6 +208,10 @@ class SQLiteWorldStore:
             source = records.get(ref.record_id)
             if source is None:
                 source = self.evidence.get_record(ref.record_id)
+                if source.scope_id != self.profile.workspace_id:
+                    raise EDIError(ErrorCode.DENIED, "C1 evidence response workspace mismatch")
+                if source.record_id != ref.record_id:
+                    raise EDIError(ErrorCode.INTEGRITY, "C1 evidence response occurrence mismatch")
                 records[ref.record_id] = source
             if source.manifest.sha256 != ref.sha256:
                 raise EDIError(ErrorCode.INTEGRITY, "evidence hash differs from C1 manifest")

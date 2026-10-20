@@ -1,0 +1,383 @@
+{
+  "schema": "edi-c2-runtime-trace-v1",
+  "version": "0.1",
+  "code_version": "0.4.0",
+  "date_utc": "2026-10-20",
+  "input_revision": "c43b8d5942b154e7849226208dd82f9d7736ca91",
+  "mission": "EDI-MIS-001",
+  "source_authorities": [
+    "docs/implementation/COMPONENTS.md",
+    "docs/implementation/CONTRACTS.md",
+    "docs/implementation/INTERFACES.json",
+    "docs/implementation/TRACEABILITY.json"
+  ],
+  "upstream_implementation_requirements": [
+    "IMP-R01",
+    "IMP-R02",
+    "IMP-R03",
+    "IMP-R17",
+    "IMP-R19",
+    "IMP-R21",
+    "IMP-R26",
+    "IMP-R29",
+    "IMP-R30"
+  ],
+  "upstream_case_context": [
+    "E01",
+    "E03",
+    "E04",
+    "E05",
+    "E07",
+    "E23",
+    "E32",
+    "E38",
+    "E41",
+    "E43",
+    "E47"
+  ],
+  "consumer_obligations": "DOWN-001 through DOWN-008 retained; local contribution only, not full fulfillment",
+  "requirements": [
+    {
+      "id": "C2-R001",
+      "title": "Validate exact source correspondence",
+      "functions": [
+        "F20"
+      ],
+      "parents": [
+        "IMP-R01",
+        "IMP-R02",
+        "IMP-R26"
+      ],
+      "cases": [
+        "C2-V005",
+        "C2-V012"
+      ],
+      "source": [
+        "src/edi/interpret/service.py"
+      ],
+      "statement": "Read bounded C1 ranges with matching workspace/occurrence/provenance and explicit hash verification scope.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R002",
+      "title": "Decode without losing native distinctions",
+      "functions": [
+        "F20"
+      ],
+      "parents": [
+        "IMP-R02",
+        "IMP-R03"
+      ],
+      "cases": [
+        "C2-V001",
+        "C2-V003",
+        "C2-V004"
+      ],
+      "source": [
+        "src/edi/interpret/decoders.py"
+      ],
+      "statement": "Preserve JSON type/lexeme/order/duplicate keys, CSV strings/missingness and explicit metadata-only/opaque states.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R003",
+      "title": "Retain derivation and assistance lineage",
+      "functions": [
+        "F20",
+        "F23"
+      ],
+      "parents": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R26"
+      ],
+      "cases": [
+        "C2-V006",
+        "C2-V007"
+      ],
+      "source": [
+        "src/edi/interpret/contracts.py",
+        "src/edi/interpret/service.py"
+      ],
+      "statement": "Persist input references and decoder/feature/assistance versions; never count a transformation as independent evidence.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R004",
+      "title": "Separate descriptive role from evidential basis",
+      "functions": [
+        "F21"
+      ],
+      "parents": [
+        "IMP-R03",
+        "IMP-R26"
+      ],
+      "cases": [
+        "C2-V002",
+        "C2-V007"
+      ],
+      "source": [
+        "src/edi/interpret/contracts.py",
+        "src/edi/interpret/service.py"
+      ],
+      "statement": "Keep roles/basis/rationale distinct, allow unclassified/multiple roles and verify only exact supplied nonempty quote bytes.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R005",
+      "title": "Preserve quantities and dimensional limits",
+      "functions": [
+        "F21"
+      ],
+      "parents": [
+        "IMP-R03"
+      ],
+      "cases": [
+        "C2-V003",
+        "C2-V008"
+      ],
+      "source": [
+        "src/edi/interpret/units.py"
+      ],
+      "statement": "Retain original quantities/scales/units, expose unknown/unsupported units, reject incompatible/invalid cardinal submission and avoid ordinal arithmetic/zero filling.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R006",
+      "title": "Keep identity relation types distinct",
+      "functions": [
+        "F21"
+      ],
+      "parents": [
+        "IMP-R03",
+        "IMP-R21"
+      ],
+      "cases": [
+        "C2-V009",
+        "C2-V013"
+      ],
+      "source": [
+        "src/edi/interpret/service.py",
+        "src/edi/interpret/contracts.py"
+      ],
+      "statement": "Separate registered source/content matches from explicit referent/part/replacement hypotheses; no uncertain equivalence closure or physical merge.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R007",
+      "title": "Version native retrieval features",
+      "functions": [
+        "F22"
+      ],
+      "parents": [
+        "IMP-R02",
+        "IMP-R26"
+      ],
+      "cases": [
+        "C2-V001",
+        "C2-V004",
+        "C2-V011"
+      ],
+      "source": [
+        "src/edi/interpret/decoders.py",
+        "src/edi/interpret/service.py"
+      ],
+      "statement": "Store namespace/version/input/artifact identity with native statistics; do not present them as semantic embeddings or identity confidence.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R008",
+      "title": "Persist immutable retry-stable derivations",
+      "functions": [
+        "F20",
+        "F23"
+      ],
+      "parents": [
+        "IMP-R17",
+        "IMP-R19"
+      ],
+      "cases": [
+        "C2-V010",
+        "C2-V011"
+      ],
+      "source": [
+        "src/edi/interpret/sqlite.py"
+      ],
+      "statement": "Commit one original result per exact request/config/version fingerprint, returning conflicts for changed requests and preserving failed/partial outcomes.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R009",
+      "title": "Submit attributed candidates to C3 only",
+      "functions": [
+        "F23"
+      ],
+      "parents": [
+        "IMP-R02",
+        "IMP-R21",
+        "IMP-R26",
+        "IMP-R30"
+      ],
+      "cases": [
+        "C2-V010",
+        "C2-V012"
+      ],
+      "source": [
+        "src/edi/interpret/service.py",
+        "src/edi/world/service.py"
+      ],
+      "statement": "Build reviewable candidate puts; preserve base revision, evidence, stable identities and optional C3 progress; expose no self-admission or automatic rebase.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R010",
+      "title": "Bound resources and normalize unsupported/failure states",
+      "functions": [
+        "F20",
+        "F22",
+        "F23"
+      ],
+      "parents": [
+        "IMP-R19"
+      ],
+      "cases": [
+        "C2-V004",
+        "C2-V006",
+        "C2-V011"
+      ],
+      "source": [
+        "src/edi/interpret/config.py",
+        "src/edi/interpret/service.py"
+      ],
+      "statement": "Enforce finite source/output/parse/association/storage/concurrency budgets, cooperative deadline and explicit errors without silently truncating complete data.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R011",
+      "title": "Preserve temporal scope and supplied context",
+      "functions": [
+        "F21",
+        "F23"
+      ],
+      "parents": [
+        "IMP-R03",
+        "IMP-R26",
+        "IMP-R29"
+      ],
+      "cases": [
+        "C2-V012",
+        "C2-V013"
+      ],
+      "source": [
+        "src/edi/interpret/contracts.py",
+        "src/edi/interpret/service.py"
+      ],
+      "statement": "Keep source/receipt/commit/derivation times and caller-supplied model references separate; C2 does not invent world query/clock/action authority.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C2-R012",
+      "title": "Isolate intake from interpretation dependencies",
+      "functions": [
+        "F20",
+        "F23"
+      ],
+      "parents": [
+        "IMP-R01",
+        "IMP-R19",
+        "IMP-R26"
+      ],
+      "cases": [
+        "C2-V006",
+        "C2-V010",
+        "C2-V012"
+      ],
+      "source": [
+        "src/edi/inquiry/runtime.py",
+        "src/edi/interpret/service.py"
+      ],
+      "statement": "Open C2/C3 lazily, use separate stores/read/proposal ports, reconcile cross-store submission outcome and preserve unavailable adapters.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    }
+  ],
+  "cases": [
+    {
+      "id": "C2-V001",
+      "scenario": "JSON lexical/order/type/duplicate-key fidelity and feature-version distinction",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V002",
+      "scenario": "UTF-8 multibyte/nonempty absolute quote spans, invalid quote and invalid Unicode",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V003",
+      "scenario": "CSV order/numeric strings/empty cells/no implicit header and no ordinal/zero conversion",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V004",
+      "scenario": "PNG IHDR/WAV metadata-only limits, malformed formats and opaque unknown profiles",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V005",
+      "scenario": "Whole versus selected-range hashes and returned workspace/occurrence identity faults",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V006",
+      "scenario": "Decoder/storage/source failures leave native C1 available and partial/failed outcomes explicit",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V007",
+      "scenario": "Role/basis independence and full declared imported-assistance lineage",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V008",
+      "scenario": "Finite cardinal scalar, SI dimensions, incompatibility, unsupported/affine units and no conversion",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V009",
+      "scenario": "Same source/payload versus physical referent/part/replacement hypotheses without transitive merge",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V010",
+      "scenario": "Idempotent request/config conflicts, concurrency, stale C3 base and C3-committed/C2-receipt-lost retry",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V011",
+      "scenario": "Input/output/depth/node/cell/association/storage/concurrency/deadline limits with no silent truncation",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V012",
+      "scenario": "All owner port restrictions, candidate-only admission, optional progress and lazy separate store failures",
+      "status": "not_run"
+    },
+    {
+      "id": "C2-V013",
+      "scenario": "Source epochs, late timestamps and unresolved two-year continuity without claimed long-duration validation",
+      "status": "not_run"
+    }
+  ],
+  "scope_note": "New scoped implementation allocation. Does not change baseline requirement/case counts or qualify C3/C2."
+}

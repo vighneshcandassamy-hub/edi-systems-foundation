@@ -1,0 +1,90 @@
+{
+  "$defs": {
+    "ConsumedEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "consumer_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Consumer Id",
+          "type": "string"
+        },
+        "expected_position": {
+          "minimum": 0,
+          "title": "Expected Position",
+          "type": "integer"
+        },
+        "position": {
+          "minimum": 0,
+          "title": "Position",
+          "type": "integer"
+        },
+        "record_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Record Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "consumer_id",
+        "expected_position",
+        "position",
+        "record_ids"
+      ],
+      "title": "ConsumedEvidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "derivation_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Derivation Id",
+      "type": "string"
+    },
+    "world_request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "World Request Id",
+      "type": "string"
+    },
+    "base_revision": {
+      "minimum": 0,
+      "title": "Base Revision",
+      "type": "integer"
+    },
+    "consumed": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ConsumedEvidence"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "derivation_id",
+    "world_request_id",
+    "base_revision"
+  ],
+  "title": "SubmissionRequest",
+  "type": "object"
+}

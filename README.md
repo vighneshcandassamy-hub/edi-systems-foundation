@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.3.0. **Status:** shared Python foundation, first local Observation C1 and versioned world-hosting C3 implementations; unqualified. C0/C1/C3 are partial, C2/C4-C7 are declared/unavailable. Learning performance and empirical qualification remain open.
+**Code version:** 0.4.0. **Status:** shared Python foundation, first local C1 observation, C2 attributed interpretation and C3 versioned world-hosting implementations; unqualified. C0-C3 are partial, C4-C7 are declared/unavailable. Learning performance and empirical qualification remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
@@ -14,7 +14,11 @@ This repository brings together the integrated seven-chapter architecture, the a
 
 Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
 
-## Current C3 code increment
+## Current C2 code increment
+
+[C2 specification and usage](docs/implementation/C2_INTERPRETATION_RUNTIME.md), [requirements trace](docs/implementation/C2_RUNTIME_TRACE.json), [ADR-005](docs/decisions/ADR-005-attributed-interpretation.md), [source](src/edi/interpret/), [examples](examples/interpret/) and [schemas](schemas/) describe native decoding, versioned attribution/features and candidate-only C3 proposals. C2 never rewrites original C1 evidence or accepts its own claims. Unsupported formats remain explicit. No runtime/product/qualification cases ran. C3 supports this bounded source integration, but complete C3 requirement acceptance remains open.
+
+## Preserved C3 code increment
 
 [C3 runtime specification and usage](docs/implementation/C3_WORLD_RUNTIME.md) cover nine typed representation families, evidence links to C1, candidate/operator admission, append-only versions, bounded views and dependency queries. [ADR-004](docs/decisions/ADR-004-versioned-world-hosting.md), [examples](examples/world/) and [generated contract schemas](schemas/) record the implementation. C3 uses its own lazily opened local store so C1 recording does not depend on C3 storage availability. No product tests, qualification or benchmarks have run for this increment.
 

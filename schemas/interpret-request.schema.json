@@ -1,0 +1,578 @@
+{
+  "$defs": {
+    "AssistanceProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "producer": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Producer",
+          "type": "string"
+        },
+        "model_or_checkpoint": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Model Or Checkpoint",
+          "type": "string"
+        },
+        "prompt_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "tool_schema_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tool Schema Version",
+          "type": "string"
+        },
+        "configuration": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Configuration",
+          "type": "object"
+        }
+      },
+      "required": [
+        "producer",
+        "model_or_checkpoint",
+        "prompt_version",
+        "tool_schema_version"
+      ],
+      "title": "AssistanceProvenance",
+      "type": "object"
+    },
+    "AssociationAnnotation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "mentions_same_entity",
+            "possible_same_physical_referent",
+            "part_of",
+            "replacement_of"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "participants": {
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "maxItems": 8,
+          "minItems": 2,
+          "title": "Participants",
+          "type": "array"
+        },
+        "input_indices": {
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Input Indices",
+          "type": "array"
+        },
+        "rationale": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "alternatives_and_contradictions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternatives And Contradictions",
+          "type": "array"
+        },
+        "method": {
+          "default": "operator-supplied",
+          "enum": [
+            "operator-supplied",
+            "imported-assistance"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "assistance_lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Assistance Lineage",
+          "type": "array"
+        },
+        "assistance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AssistanceProvenance"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "relation",
+        "participants",
+        "input_indices",
+        "rationale"
+      ],
+      "title": "AssociationAnnotation",
+      "type": "object"
+    },
+    "ClaimAnnotation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "input_index": {
+          "minimum": 0,
+          "title": "Input Index",
+          "type": "integer"
+        },
+        "statement": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "roles": {
+          "default": [
+            "unclassified"
+          ],
+          "items": {
+            "enum": [
+              "event",
+              "state_sample",
+              "rate_sample",
+              "pattern",
+              "structure",
+              "mechanism",
+              "purpose",
+              "unclassified"
+            ],
+            "type": "string"
+          },
+          "title": "Roles",
+          "type": "array"
+        },
+        "role_rationale": {
+          "default": "unclassified; no semantic classifier executed",
+          "title": "Role Rationale",
+          "type": "string"
+        },
+        "basis": {
+          "default": "unknown",
+          "enum": [
+            "measured_or_inspected",
+            "reported",
+            "inferred",
+            "assumed",
+            "unknown"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "basis_rationale": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Basis Rationale",
+          "type": "string"
+        },
+        "referents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Referents",
+          "type": "array"
+        },
+        "quote_start": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote Start"
+        },
+        "quote_end": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote End"
+        },
+        "quote_utf8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote Utf8"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quantity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "expected_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Unit"
+        },
+        "meaning": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Meaning",
+          "type": "object"
+        },
+        "method": {
+          "default": "operator-supplied",
+          "enum": [
+            "operator-supplied",
+            "imported-assistance"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "assistance_lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Assistance Lineage",
+          "type": "array"
+        },
+        "assistance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AssistanceProvenance"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "input_index",
+        "statement",
+        "basis_rationale"
+      ],
+      "title": "ClaimAnnotation",
+      "type": "object"
+    },
+    "InputSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "decoder": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "text-utf8",
+            "json",
+            "csv",
+            "png-metadata",
+            "wav-metadata",
+            "opaque"
+          ],
+          "title": "Decoder",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "length": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Length"
+        },
+        "delimiter": {
+          "default": ",",
+          "maxLength": 1,
+          "minLength": 1,
+          "title": "Delimiter",
+          "type": "string"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "InputSpec",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "Quantity": {
+      "additionalProperties": false,
+      "description": "Exact numeric strings are retained; conversion is an explicit later derivation.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "known",
+            "unknown",
+            "missing",
+            "not-applicable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "scale": {
+          "default": "unknown",
+          "enum": [
+            "cardinal",
+            "ordinal",
+            "categorical",
+            "unknown"
+          ],
+          "title": "Scale",
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "unknown_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unknown Reason"
+        },
+        "context": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Context",
+          "type": "object"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "Quantity",
+      "type": "object"
+    },
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "inputs": {
+      "items": {
+        "$ref": "#/$defs/InputSpec"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "title": "Inputs",
+      "type": "array"
+    },
+    "annotations": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ClaimAnnotation"
+      },
+      "maxItems": 16,
+      "title": "Annotations",
+      "type": "array"
+    },
+    "associations": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/AssociationAnnotation"
+      },
+      "maxItems": 16,
+      "title": "Associations",
+      "type": "array"
+    },
+    "derive_native_features": {
+      "default": true,
+      "title": "Derive Native Features",
+      "type": "boolean"
+    },
+    "compare_source_and_payload": {
+      "default": true,
+      "title": "Compare Source And Payload",
+      "type": "boolean"
+    },
+    "scope_id": {
+      "default": "world",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Scope Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "inputs"
+  ],
+  "title": "InterpretRequest",
+  "type": "object"
+}
