@@ -1,0 +1,642 @@
+{
+  "schema": "edi-c5-runtime-trace-v1",
+  "version": "0.1",
+  "code_version": "0.6.0",
+  "date_utc": "2026-10-20",
+  "input_revision": "9d43b356335006b68ee9a5ce99a48ab3668b194d",
+  "mission": "EDI-MIS-001",
+  "requirements": [
+    {
+      "id": "C5-R001",
+      "title": "Pinned executable model cut",
+      "owner": "C5",
+      "functions": [
+        "F50"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R05",
+        "IMP-R16",
+        "IMP-R17"
+      ],
+      "statement": "Use exact C3 versions, explicit analysis-use policy and complete/current bounded dependency views; preserve native records and unsupported diagnostics.",
+      "source": [
+        "src/edi/analyze/service.py",
+        "src/edi/analyze/compiler.py"
+      ],
+      "cases": [
+        "C5-V001",
+        "C5-V002"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R002",
+      "title": "Restricted grammar and unit compiler",
+      "owner": "C5",
+      "functions": [
+        "F50"
+      ],
+      "parents": [
+        "IMP-R03",
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R21"
+      ],
+      "statement": "Pin flat arithmetic/read/lookup DAG grammar, coherent unit/domain rules, exact arity and unsupported-cycle/operator semantics; never eval/exec model code.",
+      "source": [
+        "src/edi/analyze/contracts.py",
+        "src/edi/analyze/compiler.py"
+      ],
+      "cases": [
+        "C5-V003",
+        "C5-V004",
+        "C5-V005"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R003",
+      "title": "Native joint flow/accounting mapping",
+      "owner": "C5",
+      "functions": [
+        "F50",
+        "F51"
+      ],
+      "parents": [
+        "IMP-R05",
+        "IMP-R06",
+        "IMP-R16"
+      ],
+      "statement": "Check native participants, flow incidence/units/response and stock inventories; integrate one rate per transfer and retain accounting residuals.",
+      "source": [
+        "src/edi/analyze/compiler.py",
+        "src/edi/analyze/backend.py"
+      ],
+      "cases": [
+        "C5-V002",
+        "C5-V006",
+        "C5-V007"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R004",
+      "title": "Explicit numerical scenario conditions",
+      "owner": "C5",
+      "functions": [
+        "F51"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R19"
+      ],
+      "statement": "Pin initial state, solver versions/method/tolerances/max step, driver schedule/time origin and assumptions; never infer missing executable history.",
+      "source": [
+        "src/edi/analyze/contracts.py",
+        "src/edi/analyze/backend.py"
+      ],
+      "cases": [
+        "C5-V008",
+        "C5-V009",
+        "C5-V010"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R005",
+      "title": "Declared unsupported dynamics",
+      "owner": "C5",
+      "functions": [
+        "F50",
+        "F51"
+      ],
+      "parents": [
+        "IMP-R11",
+        "IMP-R13",
+        "IMP-R14",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R28",
+        "IMP-R31"
+      ],
+      "statement": "Reject unmapped delays/backlog/resources/actor policies/DAEs/hybrid/topology/refinement rather than silently fabricate compatible dynamics.",
+      "source": [
+        "src/edi/analyze/compiler.py",
+        "src/edi/analyze/service.py"
+      ],
+      "cases": [
+        "C5-V005",
+        "C5-V007",
+        "C5-V010",
+        "C5-V020"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R006",
+      "title": "Conditional parameter comparisons",
+      "owner": "C5",
+      "functions": [
+        "F52"
+      ],
+      "parents": [
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R13",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R22"
+      ],
+      "statement": "Run bounded explicitly specified variants; finite ranges/secants are conditional scenario comparisons, not posterior/confidence or identified causal derivatives.",
+      "source": [
+        "src/edi/analyze/backend.py",
+        "src/edi/analyze/service.py"
+      ],
+      "cases": [
+        "C5-V011",
+        "C5-V012"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R007",
+      "title": "Immutable conditional trajectories",
+      "owner": "C5",
+      "functions": [
+        "F53"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R10",
+        "IMP-R16",
+        "IMP-R26"
+      ],
+      "statement": "Retain full request/compiled cut, times/units/transfer integrals/correspondence, diagnoses and assumptions; mark origin simulation and forecast unsealed.",
+      "source": [
+        "src/edi/analyze/contracts.py",
+        "src/edi/analyze/service.py",
+        "src/edi/analyze/sqlite.py"
+      ],
+      "cases": [
+        "C5-V012",
+        "C5-V013",
+        "C5-V014"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R008",
+      "title": "Independent source/forecast semantics",
+      "owner": "C5",
+      "functions": [
+        "F53"
+      ],
+      "parents": [
+        "IMP-R01",
+        "IMP-R04",
+        "IMP-R10",
+        "IMP-R25",
+        "IMP-R26"
+      ],
+      "statement": "Validate exact C1 source occurrence/digest/range/origin metadata while labeling initial/scenario numbers caller-declared; defer independent prospective C6 sealing.",
+      "source": [
+        "src/edi/analyze/service.py",
+        "src/edi/analyze/contracts.py"
+      ],
+      "cases": [
+        "C5-V013",
+        "C5-V014"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R009",
+      "title": "Bounded complete admitted work",
+      "owner": "C5",
+      "functions": [
+        "F50",
+        "F51",
+        "F52"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R24",
+        "IMP-R29",
+        "IMP-R34"
+      ],
+      "statement": "Bound context/grammar/output cells/bytes/RHS/time/worker/storage, share baseline/variant work, reserve result/control space and disclose unmeasured full-path costs.",
+      "source": [
+        "src/edi/analyze/config.py",
+        "src/edi/analyze/backend.py",
+        "src/edi/analyze/service.py",
+        "src/edi/analyze/sqlite.py"
+      ],
+      "cases": [
+        "C5-V015",
+        "C5-V016"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R010",
+      "title": "Retry/status/crash/cancellation lifecycle",
+      "owner": "C5",
+      "functions": [
+        "F51",
+        "F53"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R23"
+      ],
+      "statement": "Commit intent before work; preserve unknown completion, original final outcomes and idempotent controls; fence exact interrupted attempts with unknown usage and no automatic rerun.",
+      "source": [
+        "src/edi/analyze/sqlite.py",
+        "src/edi/analyze/service.py"
+      ],
+      "cases": [
+        "C5-V016",
+        "C5-V017",
+        "C5-V018"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R011",
+      "title": "Owner-restricted integrated ports",
+      "owner": "C5",
+      "functions": [
+        "F50",
+        "F51",
+        "F53"
+      ],
+      "parents": [
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R23",
+        "IMP-R26"
+      ],
+      "statement": "C0 alone schedules C5; C1/C3 ports remain read-only; C6 gets restricted immutable reads; no C4/C2/C7 bypass or source/world/adoption writes.",
+      "source": [
+        "src/edi/analyze/service.py"
+      ],
+      "cases": [
+        "C5-V014",
+        "C5-V018",
+        "C5-V019"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R012",
+      "title": "Preserved source formalization and rationale",
+      "owner": "C5",
+      "functions": [
+        "F50"
+      ],
+      "parents": [
+        "IMP-R06",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R21"
+      ],
+      "statement": "Store source statement, transcription/correction status, rationale and assumptions under a versioned C3 mechanism; do not claim silent corrections reproduce Meadows exactly.",
+      "source": [
+        "src/edi/analyze/contracts.py",
+        "src/edi/analyze/compiler.py"
+      ],
+      "cases": [
+        "C5-V002",
+        "C5-V003",
+        "C5-V020"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R013",
+      "title": "Explicit qualitative and partial outcomes",
+      "owner": "C5",
+      "functions": [
+        "F50",
+        "F51",
+        "F53"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R16",
+        "IMP-R27"
+      ],
+      "statement": "Qualitative output is structural diagnostics only; solver/domain/feasibility failure yields supported partial/failed/unsupported status without precise invented trajectories.",
+      "source": [
+        "src/edi/analyze/service.py",
+        "src/edi/analyze/backend.py"
+      ],
+      "cases": [
+        "C5-V007",
+        "C5-V009",
+        "C5-V010",
+        "C5-V012",
+        "C5-V020"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C5-R014",
+      "title": "Qualification and extension obligations",
+      "owner": "C5",
+      "functions": [
+        "F50",
+        "F51",
+        "F52",
+        "F53"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R22",
+        "IMP-R24",
+        "IMP-R28",
+        "IMP-R29",
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "statement": "Keep numerical refinement, model adequacy, C6 assessment, multiscale/advanced backends, retention/isolation/HA and complete performance gates open until actual evidence.",
+      "source": [
+        "src/edi/analyze/config.py",
+        "src/edi/analyze/contracts.py"
+      ],
+      "cases": [
+        "C5-V009",
+        "C5-V015",
+        "C5-V017",
+        "C5-V019",
+        "C5-V020"
+      ],
+      "acceptance": "Source contract plus linked future verification cases; allocation is not demonstrated fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    }
+  ],
+  "cases": [
+    {
+      "id": "C5-V001",
+      "title": "Pinned C3 workspace/version/admission and complete/current dependency cut",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R001"
+      ]
+    },
+    {
+      "id": "C5-V002",
+      "title": "Native participant/stock/flow/response mapping, hidden inputs and source formalization preservation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R001",
+        "C5-R003",
+        "C5-R012"
+      ]
+    },
+    {
+      "id": "C5-V003",
+      "title": "Restricted grammar arity/unknown fields/operator references and no arbitrary code execution",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R002",
+        "C5-R012"
+      ]
+    },
+    {
+      "id": "C5-V004",
+      "title": "Coherent SI/domain units, incompatible arithmetic/lookup/rate units and no silent conversion",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R002"
+      ]
+    },
+    {
+      "id": "C5-V005",
+      "title": "Algebraic cycles/DAEs, explicit required capabilities and unsupported backend semantics",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R002",
+        "C5-R005"
+      ]
+    },
+    {
+      "id": "C5-V006",
+      "title": "Identity transfer incidence, duplicated native stock/flow rejection and cumulative accounting residual",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R003"
+      ]
+    },
+    {
+      "id": "C5-V007",
+      "title": "Unmapped native delay/backlog/constraint/resource/transform semantics preserved as unsupported",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R003",
+        "C5-R005",
+        "C5-R013"
+      ]
+    },
+    {
+      "id": "C5-V008",
+      "title": "Explicit initial state, parameter domains, ordered driver schedules and segmented boundary clock",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R004"
+      ]
+    },
+    {
+      "id": "C5-V009",
+      "title": "ODE refinement/tolerance/method/max-step and stock-bound events/sampled violation/lookup-stage failure",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R004",
+        "C5-R013",
+        "C5-R014"
+      ]
+    },
+    {
+      "id": "C5-V010",
+      "title": "Missing history/unknown law/actor mask and qualitative mode produce honest unsupported/structural output",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R004",
+        "C5-R005",
+        "C5-R013"
+      ]
+    },
+    {
+      "id": "C5-V011",
+      "title": "Shared-budget baseline/finite parameter variants and one-at-a-time secants with overflow handling",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R006"
+      ]
+    },
+    {
+      "id": "C5-V012",
+      "title": "Failed/partial variants retained and excluded from finite ranges; no posterior/confidence/causal-identification claim",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R006",
+        "C5-R007",
+        "C5-R013"
+      ]
+    },
+    {
+      "id": "C5-V013",
+      "title": "C1 exact occurrence/hash/selector/origin/time metadata and caller-declared condition distinction",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R007",
+        "C5-R008"
+      ]
+    },
+    {
+      "id": "C5-V014",
+      "title": "Generated simulation lineage, immutable original forecast/artifacts and explicit missing C6 seal",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R007",
+        "C5-R008",
+        "C5-R011"
+      ]
+    },
+    {
+      "id": "C5-V015",
+      "title": "Context/output/cell/RHS/time quotas and complete failed-work/compute-cost accounting limits",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R009",
+        "C5-R014"
+      ]
+    },
+    {
+      "id": "C5-V016",
+      "title": "Reserved result/control capacity, full disk/commit uncertainty and cancellation racing final commit",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R009",
+        "C5-R010"
+      ]
+    },
+    {
+      "id": "C5-V017",
+      "title": "Crash after run intent, status/retry returns unknown completion and explicit no-auto-rerun recovery",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R010",
+        "C5-R014"
+      ]
+    },
+    {
+      "id": "C5-V018",
+      "title": "Idempotent cancel/interrupt controls, exact-attempt fencing and stale worker finalization rejection",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R010",
+        "C5-R011"
+      ]
+    },
+    {
+      "id": "C5-V019",
+      "title": "All directed owner lanes, lazy store/numerical loading and restricted C6 artifact access",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R011",
+        "C5-R014"
+      ]
+    },
+    {
+      "id": "C5-V020",
+      "title": "Native advanced/multiscale/actor/HA semantics and full qualification remain open without weakening original E cases",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C5-R005",
+        "C5-R012",
+        "C5-R013",
+        "C5-R014"
+      ]
+    }
+  ],
+  "source_authorities": [
+    "docs/implementation/COMPONENTS.md",
+    "docs/implementation/CONTRACTS.md",
+    "docs/implementation/INTERFACES.json",
+    "docs/implementation/TRACEABILITY.json",
+    "docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md",
+    "architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md"
+  ],
+  "primary_api_reference": "https://docs.scipy.org/doc/scipy-1.17.0/reference/generated/scipy.integrate.solve_ivp.html",
+  "c4_prerequisite": {
+    "source_subset": "bounded C0-mediated inquiry/proposals support this independent C5 increment",
+    "full_acceptance": "not_established",
+    "native_inference": "unavailable",
+    "qualification": "not_run"
+  },
+  "consumer_obligations": "DOWN-001 through DOWN-008 preserved; local contribution only",
+  "product_qualification": "not_run; owner structure-first direction retained",
+  "open_obligations": [
+    "Numerical/refinement/discontinuity/conservation/runtime recovery cases and matched scientific validation",
+    "C6 prospective seals/independent outcomes/calibration and C0 durable scheduling/full-path accounting",
+    "C4 native model/tokenizer/provider binding and autonomous inquiry execution",
+    "Delay/history/discrete/hybrid/DAE/actor/resource/topology and multiscale/refinement adapters",
+    "Per-component tolerance policy, model adequacy, unknown structures and complete uncertainty inference",
+    "Process supervision/hard deadlines, package compatibility qualification, migration/retention/restore/HA",
+    "Complete original C1-C5 obligations and performance/energy/latency/transfer qualification"
+  ]
+}

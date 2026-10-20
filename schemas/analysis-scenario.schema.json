@@ -1,0 +1,373 @@
+{
+  "$defs": {
+    "Correspondence": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "stock_symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Stock Symbol",
+          "type": "string"
+        },
+        "observation_channel": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Observation Channel",
+          "type": "string"
+        },
+        "aggregation": {
+          "const": "instantaneous-state",
+          "default": "instantaneous-state",
+          "title": "Aggregation",
+          "type": "string"
+        },
+        "limitation": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Limitation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stock_symbol",
+        "observation_channel",
+        "limitation"
+      ],
+      "title": "Correspondence",
+      "type": "object"
+    },
+    "DriverSchedule": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "symbol",
+        "points"
+      ],
+      "title": "DriverSchedule",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "selector": {
+          "default": "whole-object",
+          "title": "Selector",
+          "type": "string"
+        },
+        "origin_class": {
+          "default": "unknown",
+          "enum": [
+            "external",
+            "generated",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin Class",
+          "type": "string"
+        },
+        "lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "record_id",
+        "sha256"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "TimeValue": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "known",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "not supplied",
+          "title": "Reason"
+        }
+      },
+      "title": "TimeValue",
+      "type": "object"
+    },
+    "Variation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "parameter_values": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Parameter Values",
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "parameter_values"
+      ],
+      "title": "Variation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scenario_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "start": {
+      "title": "Start",
+      "type": "number"
+    },
+    "end": {
+      "title": "End",
+      "type": "number"
+    },
+    "output_times": {
+      "items": {
+        "type": "number"
+      },
+      "maxItems": 2000,
+      "minItems": 2,
+      "title": "Output Times",
+      "type": "array"
+    },
+    "time_origin": {
+      "$ref": "#/$defs/TimeValue"
+    },
+    "initial_state": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "propertyNames": {
+        "maxLength": 256,
+        "minLength": 1
+      },
+      "title": "Initial State",
+      "type": "object"
+    },
+    "parameters": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "propertyNames": {
+        "maxLength": 256,
+        "minLength": 1
+      },
+      "title": "Parameters",
+      "type": "object"
+    },
+    "drivers": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/DriverSchedule"
+      },
+      "maxItems": 32,
+      "title": "Drivers",
+      "type": "array"
+    },
+    "variations": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Variation"
+      },
+      "maxItems": 8,
+      "title": "Variations",
+      "type": "array"
+    },
+    "correspondence": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Correspondence"
+      },
+      "maxItems": 32,
+      "title": "Correspondence",
+      "type": "array"
+    },
+    "evidence": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/EvidenceRef"
+      },
+      "maxItems": 16,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "actor_information_masks": {
+      "default": [],
+      "items": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "type": "object"
+      },
+      "maxItems": 16,
+      "title": "Actor Information Masks",
+      "type": "array"
+    },
+    "terminal_obligations": {
+      "default": [],
+      "items": {
+        "maxLength": 8192,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "title": "Terminal Obligations",
+      "type": "array"
+    },
+    "assumptions": {
+      "items": {
+        "maxLength": 8192,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "start",
+    "end",
+    "output_times",
+    "initial_state",
+    "assumptions",
+    "rationale"
+  ],
+  "title": "ScenarioSpec",
+  "type": "object"
+}

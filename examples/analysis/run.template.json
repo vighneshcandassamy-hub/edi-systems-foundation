@@ -1,0 +1,58 @@
+{
+  "workspace_id": "analysis-demo",
+  "request_id": "example-run-request-1",
+  "run_id": "example-run-1",
+  "compiled_id": "REPLACE_WITH_RETURNED_COMPILED_ID",
+  "mode": "numerical",
+  "scenario": {
+    "scenario_id": "transfer-parameter-scenarios",
+    "start": 0.0,
+    "end": 10.0,
+    "output_times": [
+      0.0,
+      1.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "initial_state": {
+      "left": 100.0,
+      "right": 0.0
+    },
+    "variations": [
+      {
+        "name": "slower",
+        "parameter_values": {
+          "k": 0.05
+        }
+      },
+      {
+        "name": "faster",
+        "parameter_values": {
+          "k": 0.2
+        }
+      }
+    ],
+    "correspondence": [
+      {
+        "stock_symbol": "left",
+        "observation_channel": "unspecified future mass measurement",
+        "limitation": "Hypothetical example; no acquired measurements"
+      }
+    ],
+    "terminal_obligations": [
+      "Continuing transfer beyond the reporting horizon remains outside this example"
+    ],
+    "assumptions": [
+      "Declared initial values and rates are illustrative conditions, not measured observations"
+    ],
+    "rationale": "Bounded conditional parameter comparison, with no statistical coverage claim"
+  },
+  "solver": {
+    "backend": "scipy.solve_ivp",
+    "scipy_version": "1.17.0",
+    "numpy_version": "2.5.3",
+    "method": "RK45",
+    "max_step": 0.1
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "profile_id": {
+      "default": "local-analysis-sqlite-v1",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Profile Id",
+      "type": "string"
+    },
+    "workspace_id": {
+      "default": "default",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "database": {
+      "format": "path",
+      "title": "Database",
+      "type": "string"
+    },
+    "max_request_bytes": {
+      "default": 262144,
+      "minimum": 1024,
+      "title": "Max Request Bytes",
+      "type": "integer"
+    },
+    "max_context_bytes": {
+      "default": 1048576,
+      "minimum": 1024,
+      "title": "Max Context Bytes",
+      "type": "integer"
+    },
+    "max_result_bytes": {
+      "default": 4194304,
+      "minimum": 1024,
+      "title": "Max Result Bytes",
+      "type": "integer"
+    },
+    "max_records": {
+      "default": 10000,
+      "minimum": 1,
+      "title": "Max Records",
+      "type": "integer"
+    },
+    "max_stored_bytes": {
+      "default": 1073741824,
+      "minimum": 1024,
+      "title": "Max Stored Bytes",
+      "type": "integer"
+    },
+    "max_world_records": {
+      "default": 128,
+      "maximum": 256,
+      "minimum": 1,
+      "title": "Max World Records",
+      "type": "integer"
+    },
+    "dependency_depth": {
+      "default": 4,
+      "maximum": 16,
+      "minimum": 1,
+      "title": "Dependency Depth",
+      "type": "integer"
+    },
+    "max_output_cells": {
+      "default": 100000,
+      "minimum": 1,
+      "title": "Max Output Cells",
+      "type": "integer"
+    },
+    "max_rhs_evaluations": {
+      "default": 50000,
+      "minimum": 1,
+      "title": "Max Rhs Evaluations",
+      "type": "integer"
+    },
+    "max_operation_seconds": {
+      "default": 30.0,
+      "exclusiveMinimum": 0,
+      "maximum": 600,
+      "title": "Max Operation Seconds",
+      "type": "number"
+    },
+    "writer_timeout_seconds": {
+      "default": 5.0,
+      "exclusiveMinimum": 0,
+      "maximum": 60,
+      "title": "Writer Timeout Seconds",
+      "type": "number"
+    },
+    "min_free_disk_bytes": {
+      "default": 268435456,
+      "minimum": 0,
+      "title": "Min Free Disk Bytes",
+      "type": "integer"
+    }
+  },
+  "title": "AnalysisProfile",
+  "type": "object"
+}

@@ -1,0 +1,71 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "backend": {
+      "const": "scipy.solve_ivp",
+      "default": "scipy.solve_ivp",
+      "title": "Backend",
+      "type": "string"
+    },
+    "scipy_version": {
+      "const": "1.17.0",
+      "default": "1.17.0",
+      "title": "Scipy Version",
+      "type": "string"
+    },
+    "numpy_version": {
+      "const": "2.5.3",
+      "default": "2.5.3",
+      "title": "Numpy Version",
+      "type": "string"
+    },
+    "method": {
+      "default": "RK45",
+      "enum": [
+        "RK45",
+        "DOP853",
+        "Radau",
+        "BDF"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "rtol": {
+      "default": 1e-06,
+      "maximum": 0.01,
+      "minimum": 1e-12,
+      "title": "Rtol",
+      "type": "number"
+    },
+    "atol": {
+      "default": 1e-09,
+      "maximum": 0.01,
+      "minimum": 1e-15,
+      "title": "Atol",
+      "type": "number"
+    },
+    "max_step": {
+      "exclusiveMinimum": 0,
+      "title": "Max Step",
+      "type": "number"
+    },
+    "bound_tolerance": {
+      "default": 1e-08,
+      "maximum": 0.01,
+      "minimum": 0,
+      "title": "Bound Tolerance",
+      "type": "number"
+    }
+  },
+  "required": [
+    "max_step"
+  ],
+  "title": "SolverSpec",
+  "type": "object"
+}

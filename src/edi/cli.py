@@ -7,6 +7,8 @@ import sys
 from pydantic import ValidationError
 
 from edi.inquiry.runtime import Runtime
+from edi.analyze.config import AnalysisProfile
+from edi.analyze.contracts import CompileRequest, RunControl, RunRequest
 from edi.interpret.config import InterpretationProfile
 from edi.interpret.contracts import InterpretRequest, SubmissionRequest
 from edi.observe.contracts import Capture, OriginSpec, ReplayCursor
@@ -20,13 +22,14 @@ from edi.world.contracts import WorldCursor, WorldPatch, WorldQuery
 
 
 def _parser():
-    parser = argparse.ArgumentParser(prog="edi", description="EDI local C1-C4 runtime (unqualified)")
+    parser = argparse.ArgumentParser(prog="edi", description="EDI local C1-C5 runtime (unqualified)")
     parser.add_argument("--config", type=Path, help="LocalProfile JSON; must include workspace_id/database")
     parser.add_argument("--database", type=Path, help="override local database path")
     parser.add_argument("--workspace", help="override workspace scope")
     parser.add_argument("--world-config", type=Path, help="WorldProfile JSON; default is a separate sibling database")
     parser.add_argument("--interpret-config", type=Path, help="InterpretationProfile JSON; default is a separate sibling database")
     parser.add_argument("--reason-config", type=Path, help="ReasoningProfile JSON; default is a separate sibling database")
+    parser.add_argument("--analysis-config", type=Path, help="AnalysisProfile JSON; default is a separate sibling database")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities")
     p = sub.add_parser("register-origin")
@@ -100,6 +103,12 @@ def _parser():
     p = sub.add_parser("reason-export-job")
     p.add_argument("inquiry_id")
     p.add_argument("job_id")
+    for command in ("analysis-compile", "analysis-run", "analysis-control"):
+        p = sub.add_parser(command)
+        p.add_argument("request", type=Path)
+    for command, key in (("analysis-get-compiled", "compiled_id"), ("analysis-get-run", "run_id"), ("analysis-status", "request_id")):
+        p = sub.add_parser(command)
+        p.add_argument(key)
     return parser
 
 
@@ -123,7 +132,8 @@ def main(argv=None) -> int:
         world_profile = WorldProfile.model_validate_json(args.world_config.read_bytes()) if args.world_config else None
         interpretation_profile = InterpretationProfile.model_validate_json(args.interpret_config.read_bytes()) if args.interpret_config else None
         reasoning_profile = ReasoningProfile.model_validate_json(args.reason_config.read_bytes()) if args.reason_config else None
-        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile)
+        analysis_profile = AnalysisProfile.model_validate_json(args.analysis_config.read_bytes()) if args.analysis_config else None
+        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile, analysis_profile)
         obs = runtime.observation
         world = runtime.world if args.command.startswith("world-") else None
         if args.command == "capabilities":
@@ -206,6 +216,21 @@ def main(argv=None) -> int:
                     "reason-build-patch": (ReasonSubmissionRequest, reason.build_patch),
                     "reason-submit": (ReasonSubmissionRequest, reason.submit),
                 }
+                contract, method = commands[args.command]
+                _emit(method(contract.model_validate_json(args.request.read_bytes())))
+        elif args.command.startswith("analysis-"):
+            analysis = runtime.analysis
+            if args.command == "analysis-get-compiled":
+                _emit(analysis.get_compiled(args.compiled_id))
+            elif args.command == "analysis-get-run":
+                _emit(analysis.get_run(args.run_id))
+            elif args.command == "analysis-status":
+                result = analysis.status(args.request_id)
+                _emit(result if result is not None else {"status": "not-found", "request_id": args.request_id})
+            else:
+                commands = {"analysis-compile": (CompileRequest, analysis.compile),
+                            "analysis-run": (RunRequest, analysis.run_scenario),
+                            "analysis-control": (RunControl, analysis.control_run)}
                 contract, method = commands[args.command]
                 _emit(method(contract.model_validate_json(args.request.read_bytes())))
         return 0

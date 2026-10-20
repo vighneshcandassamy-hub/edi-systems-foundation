@@ -1,0 +1,229 @@
+{
+  "workspace_id": "analysis-demo",
+  "request_id": "example-world-1",
+  "base_revision": 0,
+  "proposer": "C0",
+  "reason": "Authored candidate-only transfer model; not evidence of real dynamics",
+  "change_kind": "explanation",
+  "operations": [
+    {
+      "operation": "put",
+      "representation": {
+        "record_id": "left-stock",
+        "structure": {
+          "family": "stock",
+          "quantity": {
+            "status": "known",
+            "value": 100.0,
+            "scale": "cardinal",
+            "unit": "kg"
+          },
+          "outflows": [
+            {
+              "record_id": "transfer-flow",
+              "version": null
+            }
+          ],
+          "bounds": {
+            "lower": 0.0
+          }
+        },
+        "basis": "assumption",
+        "assumptions": [
+          "Authored hypothetical example, not observed measurements"
+        ]
+      },
+      "expected_version": 0
+    },
+    {
+      "operation": "put",
+      "representation": {
+        "record_id": "right-stock",
+        "structure": {
+          "family": "stock",
+          "quantity": {
+            "status": "known",
+            "value": 0.0,
+            "scale": "cardinal",
+            "unit": "kg"
+          },
+          "inflows": [
+            {
+              "record_id": "transfer-flow",
+              "version": null
+            }
+          ],
+          "bounds": {
+            "lower": 0.0
+          }
+        },
+        "basis": "assumption",
+        "assumptions": [
+          "Authored hypothetical example, not observed measurements"
+        ]
+      },
+      "expected_version": 0
+    },
+    {
+      "operation": "put",
+      "representation": {
+        "record_id": "transfer-flow",
+        "structure": {
+          "family": "flow-process",
+          "participants": [
+            {
+              "ref": {
+                "record_id": "left-stock",
+                "version": null
+              },
+              "role": "source",
+              "direction": "out"
+            },
+            {
+              "ref": {
+                "record_id": "right-stock",
+                "version": null
+              },
+              "role": "sink",
+              "direction": "in"
+            }
+          ],
+          "response": {
+            "record_id": "transfer-law",
+            "version": null
+          }
+        },
+        "basis": "assumption",
+        "assumptions": [
+          "Authored hypothetical example, not observed measurements"
+        ]
+      },
+      "expected_version": 0
+    },
+    {
+      "operation": "put",
+      "representation": {
+        "record_id": "transfer-law",
+        "structure": {
+          "family": "response-relationship",
+          "participants": [
+            {
+              "ref": {
+                "record_id": "left-stock",
+                "version": null
+              },
+              "role": "model-member"
+            },
+            {
+              "ref": {
+                "record_id": "right-stock",
+                "version": null
+              },
+              "role": "model-member"
+            },
+            {
+              "ref": {
+                "record_id": "transfer-flow",
+                "version": null
+              },
+              "role": "model-member"
+            }
+          ],
+          "mechanism": {
+            "edi_ir_v1": {
+              "stocks": [
+                {
+                  "symbol": "left",
+                  "world_ref": {
+                    "record_id": "left-stock",
+                    "version": 1
+                  },
+                  "unit": {
+                    "symbol": "kg",
+                    "dimensions": {
+                      "kg": 1
+                    }
+                  },
+                  "lower": 0.0
+                },
+                {
+                  "symbol": "right",
+                  "world_ref": {
+                    "record_id": "right-stock",
+                    "version": 1
+                  },
+                  "unit": {
+                    "symbol": "kg",
+                    "dimensions": {
+                      "kg": 1
+                    }
+                  },
+                  "lower": 0.0
+                }
+              ],
+              "parameters": [
+                {
+                  "symbol": "k",
+                  "value": 0.1,
+                  "unit": {
+                    "symbol": "1/s",
+                    "dimensions": {
+                      "s": -1
+                    }
+                  },
+                  "lower": 0.0,
+                  "upper": 1.0
+                }
+              ],
+              "nodes": [
+                {
+                  "node_id": "left-value",
+                  "operator": "read",
+                  "symbol": "left"
+                },
+                {
+                  "node_id": "k-value",
+                  "operator": "read",
+                  "symbol": "k"
+                },
+                {
+                  "node_id": "rate",
+                  "operator": "multiply",
+                  "inputs": [
+                    "left-value",
+                    "k-value"
+                  ]
+                }
+              ],
+              "flows": [
+                {
+                  "symbol": "transfer",
+                  "world_ref": {
+                    "record_id": "transfer-flow",
+                    "version": 1
+                  },
+                  "rate_node": "rate",
+                  "source": "left",
+                  "sink": "right"
+                }
+              ],
+              "assumptions": [
+                "Hypothetical coherent identity transfer; no delay, capacity contention, loss or actor policy",
+                "The two stocks contain all required state for this authored example"
+              ],
+              "formalization_rationale": "Small explicit stock-flow mapping for later integration/numerical qualification; not a real-world finding",
+              "source_equation_status": "authored-formalization",
+              "source_statement": "Assume transfer rate equals k times left stock; left loses and right receives that same rate."
+            }
+          },
+          "execution_status": "descriptive"
+        },
+        "basis": "assumption",
+        "assumptions": [
+          "Authored hypothetical example, not observed measurements"
+        ]
+      },
+      "expected_version": 0
+    }
+  ]
+}

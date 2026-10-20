@@ -1,0 +1,66 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "run_request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Run Request Id",
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "cancel",
+        "interrupt"
+      ],
+      "title": "Action",
+      "type": "string"
+    },
+    "reason": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "expected_attempt": {
+      "anyOf": [
+        {
+          "maxLength": 256,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Expected Attempt"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "run_request_id",
+    "action",
+    "reason"
+  ],
+  "title": "RunControl",
+  "type": "object"
+}

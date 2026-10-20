@@ -1,0 +1,544 @@
+{
+  "$defs": {
+    "Driver": {
+      "additionalProperties": false,
+      "description": "External piecewise-constant boundary input, not an inferred causal driver.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "title": "Lower",
+          "type": "number"
+        },
+        "upper": {
+          "title": "Upper",
+          "type": "number"
+        }
+      },
+      "required": [
+        "symbol",
+        "value",
+        "unit",
+        "lower",
+        "upper"
+      ],
+      "title": "Driver",
+      "type": "object"
+    },
+    "FlowSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "world_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "rate_node": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Rate Node",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "sink": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sink"
+        }
+      },
+      "required": [
+        "symbol",
+        "world_ref",
+        "rate_node"
+      ],
+      "title": "FlowSpec",
+      "type": "object"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "node_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "operator": {
+          "enum": [
+            "constant",
+            "read",
+            "add",
+            "subtract",
+            "multiply",
+            "divide",
+            "negate",
+            "min",
+            "max",
+            "lookup"
+          ],
+          "title": "Operator",
+          "type": "string"
+        },
+        "inputs": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Inputs",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symbol"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "x_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "y_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "points": {
+          "default": [],
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 128,
+          "title": "Points",
+          "type": "array"
+        },
+        "extrapolation": {
+          "default": "error",
+          "enum": [
+            "error",
+            "clamp"
+          ],
+          "title": "Extrapolation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "operator"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "Parameter": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "title": "Lower",
+          "type": "number"
+        },
+        "upper": {
+          "title": "Upper",
+          "type": "number"
+        }
+      },
+      "required": [
+        "symbol",
+        "value",
+        "unit",
+        "lower",
+        "upper"
+      ],
+      "title": "Parameter",
+      "type": "object"
+    },
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "StockSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "world_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower"
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upper"
+        }
+      },
+      "required": [
+        "symbol",
+        "world_ref",
+        "unit"
+      ],
+      "title": "StockSpec",
+      "type": "object"
+    },
+    "Unit": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "dimensions": {
+          "additionalProperties": {
+            "maximum": 8,
+            "minimum": -8,
+            "type": "integer"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Dimensions",
+          "type": "object"
+        },
+        "basis": {
+          "default": "SI",
+          "enum": [
+            "SI",
+            "declared-domain"
+          ],
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "Unit",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "ir_version": {
+      "const": "edi.stock-flow-ir/1.0",
+      "default": "edi.stock-flow-ir/1.0",
+      "title": "Ir Version",
+      "type": "string"
+    },
+    "stocks": {
+      "items": {
+        "$ref": "#/$defs/StockSpec"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Stocks",
+      "type": "array"
+    },
+    "parameters": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Parameter"
+      },
+      "maxItems": 64,
+      "title": "Parameters",
+      "type": "array"
+    },
+    "drivers": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Driver"
+      },
+      "maxItems": 32,
+      "title": "Drivers",
+      "type": "array"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/Node"
+      },
+      "maxItems": 256,
+      "minItems": 1,
+      "title": "Nodes",
+      "type": "array"
+    },
+    "flows": {
+      "items": {
+        "$ref": "#/$defs/FlowSpec"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "title": "Flows",
+      "type": "array"
+    },
+    "required_capabilities": {
+      "default": [],
+      "items": {
+        "maxLength": 256,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 16,
+      "title": "Required Capabilities",
+      "type": "array"
+    },
+    "time_unit": {
+      "const": "s",
+      "default": "s",
+      "title": "Time Unit",
+      "type": "string"
+    },
+    "history_semantics": {
+      "const": "stock-state-only",
+      "default": "stock-state-only",
+      "title": "History Semantics",
+      "type": "string"
+    },
+    "assumptions": {
+      "items": {
+        "maxLength": 8192,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "formalization_rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Formalization Rationale",
+      "type": "string"
+    },
+    "source_equation_status": {
+      "enum": [
+        "authored-formalization",
+        "source-transcription",
+        "proposed-correction"
+      ],
+      "title": "Source Equation Status",
+      "type": "string"
+    },
+    "source_statement": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Source Statement",
+      "type": "string"
+    }
+  },
+  "required": [
+    "stocks",
+    "nodes",
+    "flows",
+    "assumptions",
+    "formalization_rationale",
+    "source_equation_status",
+    "source_statement"
+  ],
+  "title": "Program",
+  "type": "object"
+}
