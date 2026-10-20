@@ -6,9 +6,17 @@ The Meadows-based system-of-systems architecture baseline for the next EDI itera
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
-## Start here
+## Current architecture and saved references
 
-1. [Current architecture](architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md) — nine representation families; one master diagram; 54 cumulative requirements; 192 prospective scenarios.
+- [Saved asset index](docs/ASSET_INDEX.md) — current architecture, references, requirements, interfaces and skills; pinned GitHub storage audit.
+- [Full integrated architecture v0.8](architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) and [integrated diagram](docs/implementation/INTEGRATED_REASONING_DIAGRAM.md).
+- [Consolidated architecture, tools and mathematics reference v1.0](docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md).
+
+Latest design/reference additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. This is structure/specification work; runtime, training and qualification remain open.
+
+## Foundation and supporting documents
+
+1. [Preserved conceptual foundation v0.7](architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md) — nine representation families; one master diagram; 54 cumulative requirements; 192 prospective scenarios.
 2. [Semantic foundation](architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md) — appendix pages 187–203; 18 glossary terms, 40 principles, eight traps, twelve intervention positions, fifteen guidelines and nine model families.
 3. [Architecture precedence](architecture/README.md) — how current foundations relate to retained component plans.
 4. [Project state](STATE.md), [development roadmap](docs/ROADMAP.md) and [baseline decision](docs/decisions/ADR-001-foundation-baseline.md).

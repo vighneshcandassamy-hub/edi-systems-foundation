@@ -51,3 +51,7 @@ The open integrated master was updated under its existing document identity to v
 ## Consolidated architecture/tools/mathematics reference
 
 [Reference v1.0](docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md) consolidates input `fb3dc745ba27c4664e01ab4b18d20cbf593d9b46`: all eight owners/32 functions, 24 tool-decision families, 22 mathematical techniques, six original EDI assets, fixed-pretrained student/teacher roles and the separate future training path. Selected initial preferences are distinguished from conditional/deferred methods and open checkpoints/versions. The implementation index now removes ambiguity between the earlier hosted reasoning candidate and the local vLLM student. This documentation-only consolidation changes no owners, lanes, requirements, scientific acceptance targets or qualification results. No tests, training or runtime work were performed.
+
+## Complete GitHub storage audit
+
+On 20 October 2026, all 82 tracked files at remote architecture-branch revision `1dd1dbbedd48a8f3676f014fa2011737b854c84b` were fetched and matched against local committed content hashes; zero missing/mismatched files. [Asset index](docs/ASSET_INDEX.md) and [storage audit](evidence/github_asset_verification.json) record the scope and paths. New index/audit/navigation files are published after that input inventory. Latest design assets remain in draft PR #1; main still holds the earlier foundation. This verifies file persistence only; no architecture qualification or product tests ran.

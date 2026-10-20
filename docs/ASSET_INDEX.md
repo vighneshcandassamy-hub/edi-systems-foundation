@@ -1,0 +1,32 @@
+# EDI saved architecture and reference assets
+
+20 October 2026. Storage audit input: `1dd1dbbedd48a8f3676f014fa2011737b854c84b` on `architecture/implementation-tradeoffs-20261020`, private repository `vighneshcandassamy-hub/edi-systems-foundation`.
+
+All **82 tracked files** in that snapshot were fetched from GitHub and their Git content-blob hashes matched the local committed snapshot. Missing or mismatched tracked files: **zero**. The [machine-readable storage audit](../evidence/github_asset_verification.json) records that exact revision and file list. This is repository-persistence verification, not architecture qualification or a product test. This index/audit and updated navigation are published subsequently and are not included in their own 82-file input inventory.
+
+The current assets are stored on the architecture branch through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). At this audit, `main` remains the earlier foundation revision `830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a`; the newer assets must be opened on the architecture branch. No merge is implied by storing or verifying these files.
+
+| Asset group | Current entry point | Contents / status |
+| --- | --- | --- |
+| Full integrated architecture | [Master v0.8](../architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) | Seven-chapter foundation plus explicit reasoning, teacher/student and separate future training structure. |
+| Integrated diagram | [Rendered Markdown](implementation/INTEGRATED_REASONING_DIAGRAM.md) / [Mermaid source](implementation/INTEGRATED_REASONING.mmd) | 98 nodes/286 named connections; all original 82 nodes/241 connections retained. |
+| Consolidated tools and mathematics | [Reference v1.0](implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md) | Eight owners/32 functions, 24 tool families, 22 mathematical techniques, model roles, initial/conditional choices and open bindings. |
+| Student/teacher integration | [Design](implementation/REASONING_INTEGRATION.md) / [allocation](implementation/REASONING_INTEGRATION.json) | Fixed pretrained weights initially; world/protocol/weight-update distinctions and owner/interface mappings. |
+| Component specifications | [COMPONENTS.md](implementation/COMPONENTS.md) | Functions, inputs/outputs, state ownership, authority, failure and resource responsibilities. |
+| Contracts and directed interfaces | [Contracts](implementation/CONTRACTS.md) / [catalogue](implementation/INTERFACES.json) | Proposed contracts, existing 28 pairs/56 directed lanes and justified no-links. |
+| Requirements and traceability | [TRACEABILITY.json](implementation/TRACEABILITY.json) | Existing system/layer/implementation/function/case allocations. |
+| Growth, exploration and speed | [Scaling/world growth](implementation/SCALING_AND_WORLD_GROWTH.md) / [growth policy](implementation/GROWTH_POLICY.json) | Incremental updates, refinement bridges, breadth/depth/time expansion, requests and unmeasured profiles. |
+| Research and original-code decisions | [Assessment](implementation/TOOLS_AND_PROPRIETARY_CORE.md) / [decisions](implementation/TOOLS.json) / [tradeoffs](implementation/TRADEOFFS.md) | Alternatives, priorities, mathematical methods, original EDI assets and prospective adoption experiments. |
+| Primary-source register | [Readable](implementation/SOURCES.md) / [structured](implementation/SOURCES.json) | 84 registered research entries; teacher/distillation supplements are linked from the reasoning design. |
+| Semantic foundation | [Appendix reference v1.0](../architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md) | Definitions, principles and explicitly qualified modeling semantics. |
+| Preserved conceptual baseline | [Seven-chapter master v0.7](../architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md) | Original imported conceptual snapshot and historical review scope remain preserved. |
+| Observation plans and requirements | [Plan](../architecture/observation/OBSERVATION_PLAN.md) / [specifications](../architecture/observation/COMPONENT_SPECS.md) / [requirements](../architecture/observation/REQUIREMENTS.json) | Retained observation architecture and obligations. |
+| Substrate plans and requirements | [Plan](../architecture/substrate/SUBSTRATE_PLAN.md) / [blueprint](../architecture/substrate/SUBSTRATE_BLUEPRINT.md) / [requirements](../architecture/substrate/REQUIREMENTS.json) | Retained substrate architecture, obligations and original review limitations. |
+| Observation/substrate integration | [Integration plan](../architecture/integration/OBSERVATION_SUBSTRATE.md) / [interfaces](../architecture/integration/INTERFACES.json) | Retained cross-component and internal integration planning. |
+| Reusable design skills | [Component review](../.agents/skills/edi-component-review/SKILL.md) / [interface review](../.agents/skills/edi-interface-review/SKILL.md) | Skills, templates, references and helpers are versioned in the repository. |
+| Decisions, state and roadmap | [State](../STATE.md) / [roadmap](ROADMAP.md) / [foundation decision](decisions/ADR-001-foundation-baseline.md) / [implementation decision](decisions/ADR-002-implementation-architecture.md) | Project checkpoints, architectural rationale and development context. |
+| Historical evidence and future verification | [Verification plan](implementation/VERIFICATION.md) / [historical reports](implementation/evidence/document-checks.json) | Preserve original failures and report scope; later structure-first additions are not newly qualified. |
+
+## Next development step
+
+Create the integrated code structure aligned with the full diagram: eight owner modules and shared typed contracts; persistence/source/identity/time/delta/refinement records; owner ports and orchestration; replaceable student/teacher and mathematical adapters. Distinguish implemented functions from declared or unsupported adapters. Keep fixed weights initially and future training separate. This storage task does not start that implementation or run qualification/tests.

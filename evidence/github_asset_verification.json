@@ -1,0 +1,426 @@
+{
+  "schema": "edi-github-storage-audit-v1",
+  "date": "2026-10-20",
+  "repository": "vighneshcandassamy-hub/edi-systems-foundation",
+  "visibility": "private",
+  "branch": "architecture/implementation-tradeoffs-20261020",
+  "verified_revision": "1dd1dbbedd48a8f3676f014fa2011737b854c84b",
+  "local_tree": "57e5e7ffda0c6625108356789ca61bee1635d333",
+  "comparison": "GitHub file content blob SHA-1 against local committed file SHA-1",
+  "tracked_files_verified": 82,
+  "missing_or_mismatched": [],
+  "qualification_or_product_tests_run": false,
+  "scope": "Storage integrity of this pinned tracked snapshot only; this audit/index and subsequent navigation edits are published after the input revision.",
+  "files": [
+    {
+      "path": ".agents/skills/edi-component-review/SKILL.md",
+      "blob_sha": "3d784faa907f1b6a675fa21a3d13086ad97cb60e",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-component-review/assets/component-plan-template.md",
+      "blob_sha": "8cc882ef2b0425252bcdc41f405f9539a51537ef",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-component-review/assets/review-report-template.json",
+      "blob_sha": "d22049d160c47833ba25f839f04f7fddc0e41fcc",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-component-review/references/edi-context.md",
+      "blob_sha": "ab28443f2f02c051e9f7eb642def12ce870ddea3",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-component-review/references/operating-envelope.md",
+      "blob_sha": "937881e49402ae39ddaf1e470fd112654820f817",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-component-review/references/review-methods.md",
+      "blob_sha": "c93e36c1053efc7b19a2abdc855531a74d06d663",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-component-review/scripts/review_gate.py",
+      "blob_sha": "ed22f00506b35e4a1aebf6c7641dd643aa99af03",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/SKILL.md",
+      "blob_sha": "6cfb9ee185d2281573ed585c1ca6a2cb74388713",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/agents/openai.yaml",
+      "blob_sha": "9f52c5fad8126273f104e7dcde0c87523777fbd7",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/assets/interface-review-template.json",
+      "blob_sha": "7aad9c9a91ec92e50659c1e3d963740980c09e2e",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/references/interface-checklist.md",
+      "blob_sha": "90d1a199eef02f453259363d0d2fadfacbfc7349",
+      "remote_content_match": true
+    },
+    {
+      "path": ".agents/skills/edi-interface-review/scripts/interface_matrix.py",
+      "blob_sha": "0877e78c90ef63efe7ecc2e8e80f893dc5db01ae",
+      "remote_content_match": true
+    },
+    {
+      "path": ".gitattributes",
+      "blob_sha": "fa1385d99a319b43c06f5309d1aae9fdd3adea46",
+      "remote_content_match": true
+    },
+    {
+      "path": ".gitignore",
+      "blob_sha": "48ccca220c34076265bfbab974c39d74ce2735b5",
+      "remote_content_match": true
+    },
+    {
+      "path": "AGENTS.md",
+      "blob_sha": "e61c32ced9b48915035eb889d3b91671c4e0bded",
+      "remote_content_match": true
+    },
+    {
+      "path": "README.md",
+      "blob_sha": "61a1314e43c9a94c605337ef157e609597305e13",
+      "remote_content_match": true
+    },
+    {
+      "path": "STATE.md",
+      "blob_sha": "c3a695b490ed39f6054347006664260ca0214bf0",
+      "remote_content_match": true
+    },
+    {
+      "path": "VERSION",
+      "blob_sha": "812bbe812d975b42cd80568ef8bf79cee190de8e",
+      "remote_content_match": true
+    },
+    {
+      "path": "WORKFLOW.md",
+      "blob_sha": "7e959749159ab206c554e89e0ab0ffe3858e431e",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/AGENTS.md",
+      "blob_sha": "ed53898f87b7022da3013f2732be0abbd7a06c5c",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/README.md",
+      "blob_sha": "711a4ab089ecbec052fccfefec5e25b4f4f353d7",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/INTERFACES.json",
+      "blob_sha": "f8c92155a8b3012200b1010c477b1dce3d3542ce",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/OBSERVATION_SUBSTRATE.md",
+      "blob_sha": "cf85645acad393d95d408febbc595f9bc376adcf",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/SUBSTRATE_INTERNAL_INTERFACES.json",
+      "blob_sha": "93c4e86303577d1e579f91f141c75b736bebd417",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/BLUEPRINT_CHECKS.json",
+      "blob_sha": "aa523a150ff22a8a53437ac6e61c70006473fec0",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/SKILL_FORWARD_USE.json",
+      "blob_sha": "caf9b661ccf9e14e58b165282ecb3d8e9c8daa60",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/SKILL_VALIDATION.json",
+      "blob_sha": "6c4fa003b40dc685e4db871c39d7fc7c23c1411c",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/catalogue.json",
+      "blob_sha": "bf6c87b5fddd645ae035aa24339cc799e7bdc1b0",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/checker-result.json",
+      "blob_sha": "f74e747c23299557c83de814406c58fb0eab52e1",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/proposal.md",
+      "blob_sha": "68e08e363386e8ddad78efa2280fa8843ab432a5",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/review.md",
+      "blob_sha": "7aebcdadeb3ad0583a589217ae9dba1130dfc323",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/evidence/forward-use/source-pin.json",
+      "blob_sha": "866c8a0a254c7d29acc48dc474e1132bfec2bb04",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/integration/tools/validate_blueprint.py",
+      "blob_sha": "a40ddcefecc3d1b3a528c9b9708445e58b86bad8",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/observation/COMPONENT_SPECS.md",
+      "blob_sha": "71a0646408b2cb94077f9e5c995d451e6877c612",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/observation/OBSERVATION_PLAN.md",
+      "blob_sha": "f4769af0f2eb941f0417c971190416be86bc1421",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/observation/REQUIREMENTS.json",
+      "blob_sha": "e5daa04b2d24922178de1c8c8bb41cc5d0e62689",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md",
+      "blob_sha": "4c68b4f296e653cd71d8960c8187a5dde4b08f47",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/BUDWORM_CHALLENGE.md",
+      "blob_sha": "1574ee19811c9618a25da561c9c693f3f592f0c1",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/MEADOWS_PAGE_REVIEW.md",
+      "blob_sha": "2ed2cdc3cae0eacb690dcc68831aabd49acff1f2",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/MEADOWS_REVIEW.md",
+      "blob_sha": "f30e53c04ea5d9338e8eed05ba1f0ff663b357fe",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/REQUIREMENTS.json",
+      "blob_sha": "304997be447b8f1fa00b2f4ba16ee967337bc3d4",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/SUBSTRATE_BLUEPRINT.md",
+      "blob_sha": "cf6c771ad0e2fc62094e8e64398b5d084b64ed01",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/SUBSTRATE_PLAN.md",
+      "blob_sha": "45c94cf675d4a9c5ab4b55dc6a69e5bb3bbc71cf",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/evidence/FUNCTION_CHECKS.json",
+      "blob_sha": "8039ef3606f6e59c555e85c1ec10799c8dfb4010",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/evidence/FUNCTION_REVIEW.json",
+      "blob_sha": "6ee43a5a18944eb78aa61248d66330f9780f2cd9",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/evidence/MEADOWS_PAGE_LEDGER.json",
+      "blob_sha": "d6c24f7c22295013412f35e55403089196a59ea3",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/substrate/evidence/MEADOWS_REVIEW_CHECKS.json",
+      "blob_sha": "3166548034e6326b79439371e49ddfa4dcf5feb1",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md",
+      "blob_sha": "9dbb96e132b9aace9b849b2ce9caacf6c144be29",
+      "remote_content_match": true
+    },
+    {
+      "path": "architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md",
+      "blob_sha": "d7c69357d6bb29c3367b33bfcc6f7b4e792150a6",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "blob_sha": "4bb49d4e4c73b31a9980401380ca9992b17ea3d8",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/decisions/ADR-001-foundation-baseline.md",
+      "blob_sha": "7b876f42bc7cf6eaabf045ba0081987770b1ed29",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/decisions/ADR-002-implementation-architecture.md",
+      "blob_sha": "d0061306550c75ba60a3e5d6e95a37e19e6eb581",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md",
+      "blob_sha": "5f1a4008eade7fc80faab5b802523c3e6acbbd12",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/COMPONENTS.md",
+      "blob_sha": "36f0fc9e2394850bc2f1692f3ed464309a931123",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/CONTRACTS.md",
+      "blob_sha": "d421d809097cddda6bb8b7e8d7ce7091aa2b4beb",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/GROWTH_POLICY.json",
+      "blob_sha": "3d2525c72d9f040807f59b06b7d116fdb6b9a0a9",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/INTEGRATED_REASONING.mmd",
+      "blob_sha": "bc710311480dc5f79385f2d027e4d70f210c3be6",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/INTEGRATED_REASONING_DIAGRAM.md",
+      "blob_sha": "47acbb9d951dfe5675d675b8407a78f7360609dc",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/INTERFACES.json",
+      "blob_sha": "471dd685006b3c9ec299d235fddba69b13037e09",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/OVERVIEW.mmd",
+      "blob_sha": "cd382ac4da17ec3fad6558088e99af7988c35fa6",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/README.md",
+      "blob_sha": "ca5cc79b442b939d7725659cabe1f17878323e25",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/REASONING_INTEGRATION.json",
+      "blob_sha": "07752af8ce07a56f9818570d522b2b3a9e458244",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/REASONING_INTEGRATION.md",
+      "blob_sha": "680d20e40ecd7936b17781fd3ad1df4113d690b4",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/RESEARCH_SCOPE.md",
+      "blob_sha": "8c4d41ecba0a9b968c0669395f7f67daedde30c5",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+      "blob_sha": "b84a4b08f9b19bde1e2984bd38b833e216342e92",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/SOURCES.json",
+      "blob_sha": "2a76e0c689b8a7d7b8be4143821868f311829d7b",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/SOURCES.md",
+      "blob_sha": "66fff26f64034c94c18eea220de897aa5b20dcf3",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/TOOLS.json",
+      "blob_sha": "0e47d9b595640c17104c7886c193ebd6502b9f4f",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "blob_sha": "e13fa5e1d02fe77ba7bf116f3299a6e87856978b",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/TRACEABILITY.json",
+      "blob_sha": "0b2b8f5a819b17763f53c6c601de6abbd6173585",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/TRADEOFFS.md",
+      "blob_sha": "10a5cb40ff8d2aec96f1c07e6b2161b850dcf3ef",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/VERIFICATION.md",
+      "blob_sha": "71fd0db2e1a3b5418532afed19c3e57aad92325f",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/evidence/baseline-checks.json",
+      "blob_sha": "5911b0c4afd271d7e81c288bf15631bd741d8f6d",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/evidence/component-review-checks.json",
+      "blob_sha": "db759a6b367b9c59b2624db72468daa6a616bbc8",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/evidence/component-review.json",
+      "blob_sha": "0018b552b7f2a4cf228138073be5fba73a0fdee2",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/evidence/document-checks-initial.json",
+      "blob_sha": "012322eb0771b1ba98d63747495e13ac6b32cac3",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/evidence/document-checks.json",
+      "blob_sha": "981d9af0dee15e82e6d07ae730e6b0434c906da1",
+      "remote_content_match": true
+    },
+    {
+      "path": "docs/implementation/evidence/interface-checks.json",
+      "blob_sha": "ec2901ce2cfe7833a2eb96b168ce6e3abefc66a5",
+      "remote_content_match": true
+    },
+    {
+      "path": "evidence/baseline_checks.json",
+      "blob_sha": "7155d20cc2afb5673d5e8aaba136a150d0d1b5bc",
+      "remote_content_match": true
+    },
+    {
+      "path": "evidence/import_manifest.json",
+      "blob_sha": "3da97653a5af0e8d0e2cb2afeb9aa969b9e91f6d",
+      "remote_content_match": true
+    },
+    {
+      "path": "scripts/check_implementation_docs.py",
+      "blob_sha": "c58a76540f7751b1b68b15e72b3f19a86866dd09",
+      "remote_content_match": true
+    },
+    {
+      "path": "scripts/verify_baseline.py",
+      "blob_sha": "204fcacd579065b70a90dfe876bb2edccdefa49c",
+      "remote_content_match": true
+    }
+  ]
+}
