@@ -1,6 +1,6 @@
 {
   "schema": "edi-implementation-plan-v1",
-  "version": "0.2",
+  "version": "0.3",
   "date": "2026-10-20",
   "status": "design_only",
   "mission": {
@@ -5148,5 +5148,7 @@
         "IMP-R32"
       ]
     }
-  ]
+  ],
+  "technique_research_input_revision": "7b9c9f3bbf19bef6947fac4db271de8e805d207e",
+  "technique_decisions": "docs/implementation/TOOLS.json"
 }

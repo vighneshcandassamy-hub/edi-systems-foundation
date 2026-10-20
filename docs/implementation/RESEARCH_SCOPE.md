@@ -14,3 +14,7 @@ Evidence outcomes: source-supported capabilities; engineering recommendations; u
 ## Cumulative growth and latency extension
 
 v0.2 adds the owner's long-term efficiency, near-instant routine decisions, adjacent-system expansion and inward mechanism exploration requirements. The additional primary sources cover TypeSafe Jev, incremental view maintenance and Postgres partition/materialized-view semantics. Report vendor latency separately from EDI targets. Retain evidence/model history, one-world identity, bounded working sets, access scope and all prior cases. No new runtime, model call, standing task or external acquisition is created by this specification.
+
+## Tools and proprietary-core extension
+
+v0.3 evaluates the existing eight owners from first principles, distinguishes reused infrastructure from original EDI mechanisms, and traces 24 tool decisions plus eight unrun adoption experiments to existing requirements/functions/cases. Twenty-four new primary sources extend the register to 84. No new runtime contract operation, component, requirement, scientific case or deployment is introduced. Exact versions/compatibility and matched task measurements remain binding conditions.

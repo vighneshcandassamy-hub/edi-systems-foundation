@@ -16,10 +16,13 @@
   "pairs_reviewed": 28,
   "directed_lanes": 56,
   "proposed_contracts": 40,
-  "primary_sources": 60,
+  "primary_sources": 84,
   "source_snapshots_unchanged": true,
   "model_cases_run": false,
   "runtime_verified": false,
   "independent_review": false,
-  "issues": []
+  "issues": [],
+  "tool_decisions": 24,
+  "prospective_adoption_experiments": 8,
+  "tool_candidates_installed_or_benchmarked": false
 }

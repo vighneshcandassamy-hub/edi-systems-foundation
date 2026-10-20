@@ -72,3 +72,34 @@ Recommendations and limitations in this design are engineering judgments unless 
 | S58 | [PostgreSQL table partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html) | Physical table partitioning/pruning under compatible workloads; no automatic graph-sharding or universal latency guarantee. |
 | S59 | [PostgreSQL materialized views](https://www.postgresql.org/docs/current/rules-materializedviews.html) | Persisted query results and explicit refresh; not automatic incremental maintenance of an evolving world model. |
 | S60 | [TypeSafe models and version aliases](https://docs.typesafe.ai/models) | Versioned releases versus moving aliases, request shape and limits; bind and qualify the actual provider model/version before execution. |
+
+## Tools and original-core research extension
+
+Primary sources S61-S84 add mathematical/development candidates. Failed or redirecting documentation routes are noted in TOOLS_AND_PROPRIETARY_CORE.md; working primary repositories/standards were used. No candidate was installed or benchmarked.
+
+| ID | Primary reference | Narrow support and limitation |
+| --- | --- | --- |
+| S61 | [uv workspace documentation](https://docs.astral.sh/uv/concepts/projects/workspaces/) | Shared lockfile/workspace behavior and limits when package environments conflict. |
+| S62 | [Ruff documentation](https://docs.astral.sh/ruff/) | Python linting/formatting; development tool performance is not EDI runtime performance. |
+| S63 | [Hypothesis stateful tests](https://hypothesis.readthedocs.io/en/latest/stateful.html) | Generated state-machine operation sequences for invariant/recovery tests; no scientific correctness guarantee. |
+| S64 | [Diffrax getting started](https://docs.kidger.site/diffrax/usage/getting-started/) | JAX differential-equation tools including ODE/SDE/CDE; exact operators and numerical semantics need binding. |
+| S65 | [NumPyro getting started](https://num.pyro.ai/en/stable/getting_started.html) | JAX-based probabilistic inference including MCMC and variational methods; model/likelihood assumptions remain explicit. |
+| S66 | [sbi documentation](https://sbi.readthedocs.io/en/latest/) | Simulation-based parameter inference; posterior quality depends on simulator, prior and training/validation. |
+| S67 | [SALib documentation](https://salib.readthedocs.io/en/latest/) | Morris, Sobol and other sensitivity methods; their input-dependence assumptions need qualification. |
+| S68 | [PySR project](https://github.com/astroautomata/PySR) | Symbolic expression search with a Julia backend; an equation fit does not identify causal structure. |
+| S69 | [SUNDIALS IDA documentation](https://sundials.readthedocs.io/en/latest/ida/) | DAE solver family; backend bindings, initialization, operator capabilities and platform support are not established by reading documentation. |
+| S70 | [SymPy project](https://www.sympy.org/en/index.html) | Symbolic mathematics as a reusable backend, not an EDI model authority or empirical validator. |
+| S71 | [Z3 guide](https://microsoft.github.io/z3guide/docs/logic/intro/) | Logical formula satisfiability under supported theories; formal consistency is distinct from external truth. |
+| S72 | [Polars documentation](https://docs.pola.rs/) | Columnar data manipulation and lazy/streaming execution; measure actual query, memory and copy costs. |
+| S73 | [DuckDB project](https://github.com/duckdb/duckdb) | Embedded analytical SQL and file analysis; proposed read/analysis role, not a duplicate authoritative world store. |
+| S74 | [Modelica language specification 3.6](https://specification.modelica.org/maint/3.6/) | Equation-based composition interoperability reference; this cited version is not claimed to be the newest release. |
+| S75 | [libRoadRunner documentation](https://libroadrunner.readthedocs.io/en/latest/) | SBML simulation candidate; inspected landing docs are older and explicitly exclude algebraic rules and delay equations, so installed capabilities must be qualified. |
+| S76 | [JAX thinking in JAX](https://docs.jax.dev/en/latest/notebooks/thinking_in_jax.html) | Array JIT and shape restrictions; warm-up/shape change costs matter for an evolving world. |
+| S77 | [PyO3 user guide](https://pyo3.rs/) | Rust/Python extension interface for profiled kernels; no automatic whole-system speedup. |
+| S78 | [pytest documentation](https://docs.pytest.org/en/stable/) | Fixtures and functional test execution; infrastructure checks do not establish intelligence. |
+| S79 | [Pyright project](https://github.com/microsoft/pyright) | Python static typing; type checking is separate from semantic/evidence validation. |
+| S80 | [SBML specifications](https://sbml.org/documents/specifications/) | Systems-biology model exchange standards; each imported model and operator subset needs provenance and qualification. |
+| S81 | [CasADi documentation](https://web.casadi.org/docs/) | Differentiation, numerical optimization and ODE/DAE/control building blocks; existing models may require a different encoding. |
+| S82 | [SciPy bounded nonlinear least squares](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html) | Bounded local residual optimization; a local optimum does not establish identification or a correct mechanism. |
+| S83 | [NetworkX documentation](https://networkx.org/documentation/stable/) | Reference graph analysis algorithms; not selected as the durable full-world memory representation. |
+| S84 | [DSPy project](https://github.com/stanfordnlp/dspy) | A language-model programming framework candidate; task metrics, optimization splits and original outcome evidence remain EDI responsibilities. |

@@ -2,6 +2,8 @@
 
 Version 0.1, 20 October 2026. Status: researched implementation-architecture recommendation, not a runtime qualification. Source IDs resolve in [SOURCES.md](SOURCES.md). The codebase has not been built by this task.
 
+See [tools, priorities and the proprietary core](TOOLS_AND_PROPRIETARY_CORE.md) for the deeper first-principles extension, including mathematical discovery/inference alternatives and adoption experiments.
+
 ## 1. Recommendation and selection method
 
 Build a small Python application with eight logical modules, one transactional authority per state domain, source-native artifact storage, a versioned temporal system model, one replaceable reasoning-model interface, and explicit analysis backends. Use deterministic code for accounting, permissions, time, validation, persistence and numerical execution. Use pretrained models for interpretation, hypothesis proposals and explanations. Let evidence-backed updates evolve the world model; do not equate that with retraining the LLM.

@@ -26,7 +26,7 @@ def id_map(rows, label):
 data = read_json(D / 'TRACEABILITY.json')
 interfaces = read_json(D / 'INTERFACES.json')
 sources = read_json(D / 'SOURCES.json')
-manifests = {'0.1': (28, 40, 51), '0.2': (34, 48, 60)}
+manifests = {'0.1': (28, 40, 51), '0.2': (34, 48, 60), '0.3': (34, 48, 84)}
 require(str(data['version']) in manifests, 'Unknown audited specification version')
 requirement_count, case_count, source_count = manifests.get(str(data['version']), (0, 0, 0))
 comps = id_map(data['components'], 'components')
@@ -93,7 +93,7 @@ for c in interfaces['contracts']:
 for c in interfaces['cases']:
     require(c == cases[c['id']], 'Divergent interface/case copy '+c['id'])
 require({s['id'] for s in sources['sources']} == {f'S{i:02}' for i in range(1,source_count+1)} and len(sources['sources']) == source_count, 'Source register inventory')
-if str(data['version']) == '0.2':
+if str(data['version']) in {'0.2', '0.3'}:
     policy = read_json(D/'GROWTH_POLICY.json')
     require(policy['status'] == 'proposed_not_implemented' and policy['evidence_state'] == 'all_runtime_cases_not_run', 'False growth policy qualification')
     require([policy[k] for k in ['owner','planner','assessor','authorization_owner']] == ['C0','C4','C6','C7'], 'Growth policy owner allocation')
@@ -108,6 +108,32 @@ if str(data['version']) == '0.2':
     require(set(stakeholders) == {f'USR-GROW-{i:02}' for i in range(1,4)}, 'Growth stakeholder requirement inventory')
     for r in stakeholders.values():
         require(bool(r['implementation_ids']) and set(r['implementation_ids']) <= set(reqs), 'Unallocated stakeholder requirement '+r['id'])
+if str(data['version']) == '0.3':
+    choices = read_json(D/'TOOLS.json')
+    tools = id_map(choices['decisions'], 'tool decisions')
+    experiments = id_map(choices['adoption_experiments'], 'adoption experiments')
+    require(set(tools) == {f'T{i:02}' for i in range(1,25)}, 'Audited tool decision inventory')
+    require(set(experiments) == {f'A{i:02}' for i in range(1,9)}, 'Audited adoption experiment inventory')
+    require(choices['interface_effect'] == 'no_new_owner_operation_or_lane' and choices['all_runtime_cases'] == 'not_run', 'False tool integration status')
+    require(set(choices['priorities']) == {'P0','P1','P2','P3'}, 'Tool priority inventory')
+    tool_doc = (D/'TOOLS_AND_PROPRIETARY_CORE.md').read_text(encoding='utf-8')
+    source_ids = {s['id'] for s in sources['sources']}
+    for t in tools.values():
+        require(t['priority'] in choices['priorities'], 'Invalid tool priority '+t['id'])
+        require(bool(t['component_ids']) and set(t['component_ids']) <= set(comps), 'Invalid tool owners '+t['id'])
+        require(bool(t['function_ids']) and set(t['function_ids']) <= set(funcs), 'Invalid tool functions '+t['id'])
+        require(bool(t['requirement_ids']) and set(t['requirement_ids']) <= set(reqs), 'Invalid tool requirements '+t['id'])
+        require(bool(t['verification_ids']) and set(t['verification_ids']) <= set(cases), 'Invalid tool verification allocation '+t['id'])
+        require(bool(t['source_ids']) and set(t['source_ids']) <= source_ids, 'Invalid tool source allocation '+t['id'])
+        require(t['status'] == 'proposed_not_bound' and t['implementation_revision'] is None and t['evidence_ref'] is None, 'False tool qualification '+t['id'])
+        require((ROOT/t['specification']).is_file() and t['preference'] in tool_doc and t['alternatives'] in tool_doc and t['original_code_or_adoption_trigger'] in tool_doc, 'Tool document mismatch '+t['id'])
+        for fid in t['function_ids']:
+            require(funcs[fid]['component_id'] in t['component_ids'], 'Tool function owner mismatch '+t['id'])
+    require({f for t in tools.values() for f in t['function_ids']} == set(funcs), 'Uncovered function in tool catalogue')
+    for a in experiments.values():
+        require(bool(a['verification_ids']) and set(a['verification_ids']) <= set(cases), 'Invalid adoption case links '+a['id'])
+        require(a['status'] == 'specified_not_run' and a['implementation_revision'] is None and a['evidence_ref'] is None, 'False adoption evidence '+a['id'])
+        require(a['acceptance'] in tool_doc, 'Adoption document mismatch '+a['id'])
 for s in sources['sources']:
     require(s['url'].startswith('https://') and s['kind'] == 'primary' and s['retrieved'] == '2026-10-20', 'Source metadata '+s['id'])
     require(s['url'] in (D/'SOURCES.md').read_text(encoding='utf-8'), 'Source register mismatch '+s['id'])
@@ -126,6 +152,8 @@ result = {'status':'PASS' if not issues else 'FAIL','scope':'documentation_trace
           'directed_lanes':len(lanes),'proposed_contracts':len(interfaces['contracts']),'primary_sources':len(sources['sources']),
           'source_snapshots_unchanged':not any('Changed source snapshot' in i for i in issues),
           'model_cases_run':False,'runtime_verified':False,'independent_review':False,'issues':issues}
+if str(data['version']) == '0.3':
+    result.update(tool_decisions=len(tools), prospective_adoption_experiments=len(experiments), tool_candidates_installed_or_benchmarked=False)
 output_path.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(result,indent=2))
 raise SystemExit(1 if issues else 0)

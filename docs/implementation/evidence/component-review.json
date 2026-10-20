@@ -3,7 +3,7 @@
   "reviewed_component": "EDI implementation architecture: eight logical owners",
   "gate": "architecture",
   "requested_scope": "research_and_design_only",
-  "input_revision": "2af45f59169ec3855f10a8861d6e6acc4c8cfb07 + implementation extension 0.2",
+  "input_revision": "7b9c9f3bbf19bef6947fac4db271de8e805d207e + implementation extension 0.3",
   "reviewer": {
     "role": "Codex architecture self-review",
     "independent": false
@@ -21,7 +21,8 @@
       "references": [
         "docs/implementation/TRACEABILITY.json",
         "docs/implementation/evidence/document-checks.json",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     },
     {
@@ -32,7 +33,8 @@
         "docs/implementation/COMPONENTS.md",
         "docs/implementation/CONTRACTS.md",
         "docs/implementation/INTERFACES.json",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     },
     {
@@ -42,7 +44,8 @@
       "references": [
         "docs/implementation/TRADEOFFS.md",
         "docs/implementation/VERIFICATION.md",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     },
     {
@@ -52,7 +55,8 @@
       "references": [
         "docs/implementation/CONTRACTS.md",
         "docs/implementation/COMPONENTS.md",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     },
     {
@@ -61,7 +65,8 @@
       "rationale": "DEV1/HA1 and new FAST1 distinguish fixed active work from global coupling, useful response from acknowledgement, cache freshness, escalation coverage and complete costs. All performance remains unmeasured.",
       "references": [
         "docs/implementation/VERIFICATION.md",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     },
     {
@@ -71,7 +76,8 @@
       "references": [
         "docs/implementation/CONTRACTS.md",
         "docs/implementation/VERIFICATION.md",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     },
     {
@@ -81,7 +87,8 @@
       "references": [
         "docs/implementation/SOURCES.md",
         "docs/implementation/TRADEOFFS.md",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     },
     {
@@ -91,7 +98,8 @@
       "references": [
         "docs/implementation/VERIFICATION.md",
         "docs/implementation/evidence/document-checks.json",
-        "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
       ]
     }
   ],
@@ -152,6 +160,16 @@
         "runtime",
         "integration"
       ]
+    },
+    {
+      "id": "OPEN-06",
+      "description": "Tool/model packages remain unbound; original IR/refinement/search implementations, matched method selection and all adoption experiments are prospective. Proprietary engineering ownership does not establish novel algorithms or IP clearance.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
     }
   ],
   "changes": [
@@ -162,6 +180,10 @@
     {
       "description": "Added intrinsic inquiry/access lifecycle, incremental multiresolution growth and fast/deep operating requirements; corrected the Jev/JEPA interpretation and the previously omitted Jev candidate.",
       "reference": "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+    },
+    {
+      "description": "Added first-principles build/reuse priorities, 24 traced tool decisions, eight unrun adoption experiments and mathematical/proprietary-core boundaries; no owner or operation changed.",
+      "reference": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
     }
   ],
   "verification": [
@@ -171,7 +193,7 @@
       "status": "passed",
       "required": true,
       "evidence_ref": "docs/implementation/evidence/document-checks.json",
-      "revision": "implementation extension 0.2"
+      "revision": "implementation extension 0.3"
     },
     {
       "id": "PRODUCT-CAMPAIGN",
@@ -188,6 +210,6 @@
   ],
   "product_qualification": "not_run",
   "verdict": "pass",
-  "next_step": "Bind concrete source/identity/time plus delta/validity/request contracts for one fixture before runtime work; no speed or discovery result is measured.",
-  "previous_review_revision": "2af45f59169ec3855f10a8861d6e6acc4c8cfb07"
+  "next_step": "Bind D0 contracts and compatible dependency versions for one D1 fixture; include tool capability/assumption records before integrating numerical or learned adapters.",
+  "previous_review_revision": "7b9c9f3bbf19bef6947fac4db271de8e805d207e"
 }

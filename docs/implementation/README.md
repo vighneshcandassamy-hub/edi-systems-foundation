@@ -1,6 +1,6 @@
 # EDI implementation architecture and technique assessment
 
-Version 0.2 — 20 October 2026. Status: researched and documented proposal; runtime not implemented. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
+Version 0.3 — 20 October 2026. Status: researched and documented proposal; runtime not implemented. Start with [the model/technique tradeoffs](TRADEOFFS.md), then [component specifications](COMPONENTS.md) and [contracts](CONTRACTS.md).
 
 ## Recommendation
 
@@ -9,6 +9,8 @@ Use a hybrid architecture: a replaceable LLM proposes interpretations and testab
 Preferred first reasoning path: hosted `gpt-6.1-sol` for quality-oriented development, with Qwen3.5-9B as the first local candidate if offline/local deployment is required. Larger Qwen3.6-35B-A3B, current Claude models, Gemini 3.8 Flash and DeepSeek-V4 are compared rather than assumed inferior or automatically mixed into every task. No provider winner or performance advantage is established by this document.
 
 The speed and cumulative-world extension is specified in [Scaling and world growth](SCALING_AND_WORLD_GROWTH.md), with a [proposed intrinsic inquiry policy](GROWTH_POLICY.json). It adds qualified Jev fast decisions, incremental projections, breadth/depth/refinement/temporal growth and bounded access requests. FAST1 latency targets remain unmeasured. Deep reasoning retains the deliberate path above.
+
+The [tools and proprietary-core assessment](TOOLS_AND_PROPRIETARY_CORE.md) and [machine decision catalogue](TOOLS.json) compare 24 choices, eight prospective adoption experiments and the mathematical mechanisms we should own. P0/P1/P2/P3 separate the initial stack, capability extensions, measured infrastructure growth and research.
 
 ## Complete specification package
 
@@ -20,7 +22,7 @@ The speed and cumulative-world extension is specified in [Scaling and world grow
 | [Directed interface catalogue](INTERFACES.json) | All 28 unordered component pairs / 56 directed lanes; 40 required operation/result contracts and explicit justified no-links/prohibited bypasses; eleven contract facets and a whole-system feedback review. |
 | [Traceability catalogue](TRACEABILITY.json) | All 42 nodes / 69 connections in the supplied overview; 54 I7 requirements, 20 appendix requirements, 43 retained observation/substrate requirements, eight downstream obligations and 16 EDI system requirements, allocated through 34 implementation requirements and 32 functions to prospective cases. |
 | [Verification and critical review](VERIFICATION.md) | 48 proposed cases; finite DEV1 profile and later HA profile; matched controls, failure analysis, KISS/Five Whys/MECE review, adoption conditions and development sequence. |
-| [Primary-source register](SOURCES.md) / [machine register](SOURCES.json) | 60 primary references checked during the research, with the narrow support and limitations used for decisions. |
+| [Primary-source register](SOURCES.md) / [machine register](SOURCES.json) | 84 primary references checked during the research, with the narrow support and limitations used for decisions. |
 | [Scope](RESEARCH_SCOPE.md) / [preserved supplied overview](OVERVIEW.mmd) | Research boundary and the exact node/edge content of the owner's overview. |
 | [Component self-review](evidence/component-review.json) / [document checks](evidence/document-checks.json) / [interface checks](evidence/interface-checks.json) | Scoped review and checker results. These are documentation evidence, never successful runtime or intelligence tests. |
 

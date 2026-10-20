@@ -541,6 +541,222 @@
       "retrieved": "2026-10-20",
       "kind": "primary",
       "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S61",
+      "title": "uv workspace documentation",
+      "url": "https://docs.astral.sh/uv/concepts/projects/workspaces/",
+      "support": "Shared lockfile/workspace behavior and limits when package environments conflict.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S62",
+      "title": "Ruff documentation",
+      "url": "https://docs.astral.sh/ruff/",
+      "support": "Python linting/formatting; development tool performance is not EDI runtime performance.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S63",
+      "title": "Hypothesis stateful tests",
+      "url": "https://hypothesis.readthedocs.io/en/latest/stateful.html",
+      "support": "Generated state-machine operation sequences for invariant/recovery tests; no scientific correctness guarantee.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S64",
+      "title": "Diffrax getting started",
+      "url": "https://docs.kidger.site/diffrax/usage/getting-started/",
+      "support": "JAX differential-equation tools including ODE/SDE/CDE; exact operators and numerical semantics need binding.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S65",
+      "title": "NumPyro getting started",
+      "url": "https://num.pyro.ai/en/stable/getting_started.html",
+      "support": "JAX-based probabilistic inference including MCMC and variational methods; model/likelihood assumptions remain explicit.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S66",
+      "title": "sbi documentation",
+      "url": "https://sbi.readthedocs.io/en/latest/",
+      "support": "Simulation-based parameter inference; posterior quality depends on simulator, prior and training/validation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S67",
+      "title": "SALib documentation",
+      "url": "https://salib.readthedocs.io/en/latest/",
+      "support": "Morris, Sobol and other sensitivity methods; their input-dependence assumptions need qualification.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S68",
+      "title": "PySR project",
+      "url": "https://github.com/astroautomata/PySR",
+      "support": "Symbolic expression search with a Julia backend; an equation fit does not identify causal structure.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S69",
+      "title": "SUNDIALS IDA documentation",
+      "url": "https://sundials.readthedocs.io/en/latest/ida/",
+      "support": "DAE solver family; backend bindings, initialization, operator capabilities and platform support are not established by reading documentation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S70",
+      "title": "SymPy project",
+      "url": "https://www.sympy.org/en/index.html",
+      "support": "Symbolic mathematics as a reusable backend, not an EDI model authority or empirical validator.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S71",
+      "title": "Z3 guide",
+      "url": "https://microsoft.github.io/z3guide/docs/logic/intro/",
+      "support": "Logical formula satisfiability under supported theories; formal consistency is distinct from external truth.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S72",
+      "title": "Polars documentation",
+      "url": "https://docs.pola.rs/",
+      "support": "Columnar data manipulation and lazy/streaming execution; measure actual query, memory and copy costs.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S73",
+      "title": "DuckDB project",
+      "url": "https://github.com/duckdb/duckdb",
+      "support": "Embedded analytical SQL and file analysis; proposed read/analysis role, not a duplicate authoritative world store.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S74",
+      "title": "Modelica language specification 3.6",
+      "url": "https://specification.modelica.org/maint/3.6/",
+      "support": "Equation-based composition interoperability reference; this cited version is not claimed to be the newest release.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S75",
+      "title": "libRoadRunner documentation",
+      "url": "https://libroadrunner.readthedocs.io/en/latest/",
+      "support": "SBML simulation candidate; inspected landing docs are older and explicitly exclude algebraic rules and delay equations, so installed capabilities must be qualified.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S76",
+      "title": "JAX thinking in JAX",
+      "url": "https://docs.jax.dev/en/latest/notebooks/thinking_in_jax.html",
+      "support": "Array JIT and shape restrictions; warm-up/shape change costs matter for an evolving world.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S77",
+      "title": "PyO3 user guide",
+      "url": "https://pyo3.rs/",
+      "support": "Rust/Python extension interface for profiled kernels; no automatic whole-system speedup.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S78",
+      "title": "pytest documentation",
+      "url": "https://docs.pytest.org/en/stable/",
+      "support": "Fixtures and functional test execution; infrastructure checks do not establish intelligence.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S79",
+      "title": "Pyright project",
+      "url": "https://github.com/microsoft/pyright",
+      "support": "Python static typing; type checking is separate from semantic/evidence validation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S80",
+      "title": "SBML specifications",
+      "url": "https://sbml.org/documents/specifications/",
+      "support": "Systems-biology model exchange standards; each imported model and operator subset needs provenance and qualification.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S81",
+      "title": "CasADi documentation",
+      "url": "https://web.casadi.org/docs/",
+      "support": "Differentiation, numerical optimization and ODE/DAE/control building blocks; existing models may require a different encoding.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S82",
+      "title": "SciPy bounded nonlinear least squares",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html",
+      "support": "Bounded local residual optimization; a local optimum does not establish identification or a correct mechanism.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S83",
+      "title": "NetworkX documentation",
+      "url": "https://networkx.org/documentation/stable/",
+      "support": "Reference graph analysis algorithms; not selected as the durable full-world memory representation.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
+    },
+    {
+      "id": "S84",
+      "title": "DSPy project",
+      "url": "https://github.com/stanfordnlp/dspy",
+      "support": "A language-model programming framework candidate; task metrics, optimization splits and original outcome evidence remain EDI responsibilities.",
+      "retrieved": "2026-10-20",
+      "kind": "primary",
+      "evidence_status": "documentation_or_author_report_not_EDI_benchmark"
     }
   ]
 }
