@@ -112,6 +112,8 @@ The dictionary Theta, measured coordinates, derivative estimates, weighting W an
 
 EDI can contribute a unit-aware, interface-aware candidate grammar, local search around discrepant mechanisms, and transfer tests across regimes. Prefer existing optimizers initially. A new search algorithm is justified only after a reproducible failure of the best relevant comparator; publish its assumptions and complete compute cost.
 
+The causal adapter must also qualify graph semantics. DoWhy's documented GCM machinery uses a directed acyclic graph with specified mechanisms. EDI's feedback-rich world cannot be sent to it as an arbitrary cyclic graph: select a justified acyclic subproblem, or a supported time-indexed formulation that preserves the original timing and identification assumptions, or return unsupported. Time indexing is not an automatic cure for hidden confounding, instantaneous cycles or non-identifiability. [S30; official GCM documentation](https://www.pywhy.org/dowhy/main/user_guide/modeling_gcm/index.html). C3 keeps the original feedback structure even when one analysis backend accepts a narrower projection.
+
 ### 4.5 Nonlinearity, delays and regime changes
 
 Nonlinearity is a property of a response law/domain, not merely a label on an edge. Test saturation, thresholds, hysteresis, interactions, shared capacities, stochastic drivers and delays with controlled scenarios. Local Jacobian eigenvalues near a supported equilibrium characterize local linearized behavior under its assumptions; they do not prove global stability for hybrid, delayed or changing systems.
