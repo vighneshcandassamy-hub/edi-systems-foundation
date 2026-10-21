@@ -1,0 +1,156 @@
+{
+  "scope": "operator-only interlude coverage; not participant hints or grading by narrative agreement",
+  "baseline_revision": "6650dc94c4ea640e43fc52ccd42cfd93cad49c98",
+  "book_reference": {
+    "title": "Thinking in Systems",
+    "author": "Donella H. Meadows",
+    "printed_pages": [
+      92,
+      93,
+      94
+    ],
+    "physical_pdf_pages": [
+      109,
+      110,
+      111
+    ]
+  },
+  "coverage": [
+    {
+      "id": "I01",
+      "dimension": "Long pre-management recurrence",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E2499d7a86e6191ebc3",
+        "E490b264fc4bacd470e",
+        "E50e9a6fc013938e1af"
+      ],
+      "matching_item_count": 12,
+      "limit": "The archive is a replaced demonstration stand, not a target-plot historical baseline; native tree rings absent."
+    },
+    {
+      "id": "I02",
+      "dimension": "Changing industrial purposes",
+      "status": "missing_or_inaccessible",
+      "example_requestable_item_ids": [],
+      "matching_item_count": 0,
+      "limit": "No historical mill demand, species-use decision sequence or decision-maker record in public stores."
+    },
+    {
+      "id": "I03",
+      "dimension": "Recurrent damage and intervention",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E382632200c094b86d7",
+        "E4467052e3fc00669a1",
+        "E490b264fc4bacd470e"
+      ],
+      "matching_item_count": 24,
+      "limit": "Long histories accessible; treatment assignment is density-dependent and no new intervention is available."
+    },
+    {
+      "id": "I04",
+      "dimension": "Natural controls",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E03c52248e6d6d61222",
+        "E1ddef2d6dc2c35d9a0",
+        "E223fa773fa5fcdb280"
+      ],
+      "matching_item_count": 6,
+      "limit": "Aggregate constructed index only; species and disease observations absent."
+    },
+    {
+      "id": "I05",
+      "dimension": "Host preference and composition",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E37532b870daa5088c2",
+        "E9941e0d2afff3f3e1c",
+        "E9b0cc347ea004092b5"
+      ],
+      "matching_item_count": 6,
+      "limit": "One host fraction; no target comparative host-feeding record or separate fir/spruce/birch cohorts."
+    },
+    {
+      "id": "I06",
+      "dimension": "Slow forest change and recovery",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E37532b870daa5088c2",
+        "E382632200c094b86d7",
+        "E4467052e3fc00669a1"
+      ],
+      "matching_item_count": 18,
+      "limit": "Aggregate proxies; explicit tree age, mortality and non-host replacement histories absent."
+    },
+    {
+      "id": "I07",
+      "dimension": "Seasonal weather trigger",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E087d85b7592410f583",
+        "E1a1442689aeeeedabc",
+        "E8302dd15c68eddec8e"
+      ],
+      "matching_item_count": 6,
+      "limit": "Single constructed anomaly; warm/dry components and matched historical local measurements absent."
+    },
+    {
+      "id": "I08",
+      "dimension": "Bounded natural control",
+      "status": "available_constructed",
+      "example_requestable_item_ids": [
+        "E03c52248e6d6d61222",
+        "E1ddef2d6dc2c35d9a0",
+        "E223fa773fa5fcdb280"
+      ],
+      "matching_item_count": 8,
+      "limit": "Target and wrong-species assay scopes require discrimination; not historical calibration."
+    },
+    {
+      "id": "I09",
+      "dimension": "Food depletion and outbreak termination",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E382632200c094b86d7",
+        "E4467052e3fc00669a1",
+        "E490b264fc4bacd470e"
+      ],
+      "matching_item_count": 18,
+      "limit": "Foliage-dependent carrying capacity; no complete tree-death and multi-species recovery process."
+    },
+    {
+      "id": "I10",
+      "dimension": "Direct treatment effect on natural enemies",
+      "status": "structurally_absent",
+      "example_requestable_item_ids": [],
+      "matching_item_count": 0,
+      "limit": "No direct spray term in enemy transition; no matching treatment-effect evidence."
+    },
+    {
+      "id": "I11",
+      "dimension": "Management dependence and long-term tradeoffs",
+      "status": "partial",
+      "example_requestable_item_ids": [
+        "E0f8e07d1df183dc9ba",
+        "E416b6b47649c2fb896",
+        "E48609293747f0214d2"
+      ],
+      "matching_item_count": 12,
+      "limit": "Provincial spending is not local incentive history; no live consequences, mill constraints or long-term interactive evaluation."
+    },
+    {
+      "id": "I12",
+      "dimension": "Stakeholder objectives and disagreement",
+      "status": "missing",
+      "example_requestable_item_ids": [],
+      "matching_item_count": 0,
+      "limit": "No stakeholder records or question/clarification operation; fixed formula and five policies remain."
+    }
+  ],
+  "access_status": "All existing public items retrieved; full corpus and additional operations not exposed",
+  "edi_run": false,
+  "readiness": "not_ready_for_full_interlude_discovery",
+  "uncertainty_policy": "Accept justified uncertainty, but do not reinterpret missing core mechanisms as solved evidence sufficiency."
+}
