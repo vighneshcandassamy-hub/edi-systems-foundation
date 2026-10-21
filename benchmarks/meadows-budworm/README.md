@@ -1,4 +1,36 @@
-# Meadows budworm evidence database
+# EDI Meadows Controlled-World Benchmark
+
+**Development package v0.2.1 — consolidated 21 October 2026.** Package ID: `EDI-MEADOWS-CW-DEV-0.2.1`. Active world: Cedar District v0.2.
+
+This is the single benchmark root: evidence, constructed world, resources, operations, participant presentation, operator evaluation and verification. Status: **consolidated for test planning; EDI testing has not started**. The fourteen existing environment checks are scoped engineering evidence. Adapter integration, participant isolation, reasoning tests and ecological/comparative validation remain pending.
+
+## Benchmark entry points
+
+| Item | Location |
+| --- | --- |
+| Definition and participant presentation | [BENCHMARK_SPEC.md](BENCHMARK_SPEC.md) |
+| Readiness and limitations | [READINESS.md](READINESS.md), [machine status](READINESS.json) |
+| Actual resources | [RESOURCE_CATALOGUE.json](environment/v0_2/RESOURCE_CATALOGUE.json) |
+| Actual operations | [PUBLIC_OPERATIONS.json](environment/v0_2/PUBLIC_OPERATIONS.json) |
+| Four participant starting files | [participant/](participant/) |
+| Active world, broker and evaluator | [environment/v0_2/](environment/v0_2/) |
+| Actual source database | [database/evidence.sqlite.gz](database/evidence.sqlite.gz) |
+| Versioned inventory and access classes | [PACKAGE_MANIFEST.json](PACKAGE_MANIFEST.json) |
+| Operator navigation | [operator/](operator/) |
+| Next test-planning handoff | [TESTING_HANDOFF.md](TESTING_HANDOFF.md) |
+| Participant benchmark results | [results/](results/) — none recorded |
+
+The starting material is an objective and generic operations. EDI chooses its own investigation; no hypothesis, causal graph, prescribed questions or finite policy menu is supplied. The complete owner folder contains private world/audit material and must not be mounted into a participant runtime. Only the four allowlisted files in `participant/` are intended as starting files; records and observations are subsequently obtained through the broker.
+
+Verify consolidation from this folder with Python 3.11 or newer, without running a model, broker or world:
+
+```bash
+python scripts/verify_benchmark_package.py --report metadata/PACKAGE_CHECKS.json
+```
+
+The package check verifies stored bytes, compressed evidence, implementation pins, catalogues and the participant allowlist. It does not repeat the existing runtime campaign or qualify EDI intelligence. Test setup and execution will be planned separately using TESTING_HANDOFF.md.
+
+## Original evidence corpus v0.1
 
 Version **0.1.0**, built 21 October 2026. Status: **database built; model benchmark not run**.
 
@@ -26,7 +58,7 @@ Records are not automatically independent observations. The research workbook in
 | `docs/` | Coverage, source limitations and corpus read/write contract |
 | `scripts/` | Build, restore, integrity verification and read-only evidence requests |
 
-Future benchmark task definitions, protocol and results can be added under this same folder. No evaluator or EDI runtime is added by this release.
+The source-database v0.1 release itself added no evaluator or EDI runtime. The later active environment and consolidated benchmark materials are indexed above. Earlier environment/v0_1 files remain historical baselines; their five-policy interface does not define the current participant contract.
 
 ## Open and verify
 

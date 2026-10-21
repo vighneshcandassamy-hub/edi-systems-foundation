@@ -1,0 +1,27 @@
+{
+  "package_id": "EDI-MEADOWS-CW-DEV-0.2.1",
+  "passed": true,
+  "scope": "static_consolidation_integrity_only",
+  "files_verified": 114,
+  "source_storage_objects_verified": 29,
+  "implementation_files_pinned": 17,
+  "participant_files_verified": 4,
+  "corpus_records": 32895,
+  "corpus_text_blocks": 150,
+  "corpus_assets": 28,
+  "documents": 165,
+  "sources": 10,
+  "roles": 5,
+  "operations": 13,
+  "retained_environment_engineering_checks": 14,
+  "environment_runtime_campaign_rerun": false,
+  "edi_run_started": false,
+  "human_run_started": false,
+  "scientific_or_comparative_qualification": false,
+  "cold_stored_files_only_check": {
+    "passed": true,
+    "files_verified": 114,
+    "restored_sqlite_files_present": false,
+    "runtime_or_model_started": false
+  }
+}
