@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "scope": "Two-store environment and actual HTTP inquiry/submit/score path using a scripted fixture only.",
+  "checks": {
+    "three_databases_and_gzip_snapshots_verified": true,
+    "participant_database_has_no_evaluator_tables": true,
+    "no_future_rows_in_request_store": true,
+    "explicit_relevance_labels_absent_from_public_items": true,
+    "duplicate_bulletins_share_original_source_groups": true,
+    "independent_distractor_has_zero_effect_on_transition": true,
+    "frozen_counterfactuals_match_generator": true,
+    "auth_and_private_endpoint_denial": true,
+    "public_catalogue_and_unavailable_search": true,
+    "request_pagination_asset_range_rationale_and_idempotency": true,
+    "future_unknown_item_and_arbitrary_file_requests_denied": true,
+    "row_asset_and_offset_bounds_enforced": true,
+    "pre_acquisition_rationale_expectations_and_alternatives_retained": true,
+    "restart_recovers_exact_admission_response": true,
+    "one_final_submission_no_reward_feedback_and_session_close": true,
+    "operator_scoring_and_failed_retry_cost_accounting": true
+  },
+  "initial_items": 30,
+  "requestable_items": 129,
+  "label_counts_operator_only": {
+    "aggregate_mismatch": 7,
+    "denominator_mismatch": 7,
+    "discriminating_measurement": 2,
+    "duplicate": 7,
+    "external_context": 9,
+    "independent_distractor": 35,
+    "interpretation_context": 14,
+    "scope_mismatch": 21,
+    "stage_scope_mismatch": 8,
+    "target_measurement": 42,
+    "time_scope_mismatch": 7
+  },
+  "edi_model_run": false,
+  "human_benchmark_run": false,
+  "comparative_advantage": "NOT TESTED",
+  "ecological_fidelity": "UNVALIDATED CONSTRUCTED WORLD"
+}

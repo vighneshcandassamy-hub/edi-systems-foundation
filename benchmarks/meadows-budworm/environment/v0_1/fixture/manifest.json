@@ -1,0 +1,47 @@
+{
+  "databases": [
+    {
+      "role": "initial",
+      "path": "initial/initial.sqlite",
+      "sha256": "145c89c2f7dee3229e0084b7cf2c910aac08f96c7ce0b54a82bc85f833366a0f",
+      "compressed_sha256": "43c9083654fb5881374238333fabbb78c87fa0643fbd6bec8a21d85b7631e25a",
+      "bytes": 143360
+    },
+    {
+      "role": "investigation",
+      "path": "investigation/investigation.sqlite",
+      "sha256": "a119ed7fa13fe3510de1bb9853482f3e34e42495164d570df8c91c06d2c4244b",
+      "compressed_sha256": "6e0332228172e24ee939d042367ab1b8583b1f5a43e12823557da78da904614a",
+      "bytes": 921600
+    },
+    {
+      "role": "evaluator",
+      "path": "evaluator/evaluator.sqlite",
+      "sha256": "918dec09a55c3bbb3b7184d518e22b017db936377858c15a7d2683e6aa68531e",
+      "compressed_sha256": "98a3966b24fc3be24db861f221849bf01e1f10a93829ae61728c80731fa0afaf",
+      "bytes": 221184
+    }
+  ],
+  "build": {
+    "status": "DEVELOPMENT_ENVIRONMENT_BUILT",
+    "world_version": "bug-tree-development-world-0.1",
+    "source_corpus_sha256": "49856811262c175efe99c31635e098e56312bdbca98a4ec1f58fab12794e5bd5",
+    "items": {
+      "initial": 30,
+      "investigation": 129
+    },
+    "formats": [
+      "csv",
+      "json",
+      "svg",
+      "txt",
+      "xml"
+    ],
+    "source_groups": 129,
+    "initial_excerpt_and_duplicate_groups": true,
+    "future_exposed_to_participant": false,
+    "edi_run": false,
+    "human_run": false,
+    "scientific_scope": "One constructed development world, not ecological calibration or qualification; generated relevance depends on the declared mission."
+  }
+}

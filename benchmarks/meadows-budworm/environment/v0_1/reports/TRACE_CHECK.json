@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "requirement_count": 10,
+  "all_verification_links_resolve": true,
+  "original_corpus_unchanged": true,
+  "scope": "Trace and actual engineering checks only; no intelligence benchmark."
+}

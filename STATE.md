@@ -41,3 +41,15 @@ Actual storage checks passed: content hashes, SQLite integrity/foreign keys, FTS
 Archive: `EDI_Meadows_Benchmark_Database_v0_1_0.zip`; SHA-256 `f34ec3ee283729e8089ddfb75c3b04c146d85f5a12724f47b38ce4d0857c4f8a`. SQLite SHA-256: `49856811262c175efe99c31635e098e56312bdbca98a4ec1f58fab12794e5bd5`.
 
 Next requested scope: add other benchmark materials in this stable folder. Missing matched ecological/management histories and native modality gaps remain explicit. This seed corpus is not a qualified standard benchmark or complete causal account.
+
+## Two-store investigation environment — 21 October 2026
+
+Added `benchmarks/meadows-budworm/environment/v0_1/` as an additive development environment. The original 32,895-record corpus and its database hash remain unchanged. A participant receives 30 mixed initial items and can request 129 additional evidence items through an authenticated local broker. Requestable information and the operator-only evaluator live in physically separate databases. The participant export contains only its initial snapshot, mission, public client, instructions and file manifest.
+
+The constructed world has eight plots, 60 observed simulation years, fast insect dynamics, slow host/foliage change, bounded natural control, weather pulses, treatment and five finite future policy options. Real source excerpts remain explicitly external context. Coefficients are engineering assumptions, not a fitted ecological reconstruction. Private conditional relevance notes diagnose acquisition; actual policy outcomes and forecasts are scored separately, without participant reward feedback.
+
+Distractors include same-species/same-plot biochemical and needle assays, an accidental recent biochemical correlation, wrong-district/species/denominator/period records, aggregate spending and duplicate bulletins. A requestable controlled biochemical contrast supports investigating the apparent association. No universally fixed useful/noise label is imposed on participant reasoning.
+
+The actual scripted HTTP inquiry -> immutable response -> final submission -> offline score campaign passed 16 scoped engineering checks, including pre-acquisition rationale retention, public/private table separation, future/path denial, bounded pagination/assets, conflict-safe retries, committed restart replay, citation admission, closure and transport-failure/retry accounting. Compressed snapshot restore and source-corpus immutability also passed. Ten requirements are traced. Component review is a scoped self-reviewed environment runtime pass; interface review covers four components, six pairs, twelve directed lanes and seven implemented contracts. These are engineering outcomes, not model intelligence results.
+
+No human/EDI/LLM benchmark ran; no comparative advantage, ecological fidelity, unseen-world difficulty or hostile deployment isolation is established. Independent participant filesystem isolation, broader worlds, stakeholder dynamics and a frozen matched comparison remain future qualification obligations. The next consumer step is a development participant through the public interface.

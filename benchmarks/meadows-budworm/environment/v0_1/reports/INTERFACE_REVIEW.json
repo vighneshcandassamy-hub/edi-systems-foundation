@@ -1,0 +1,380 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Two-store development environment interfaces; no EDI runtime integration",
+  "input_revision": "sha256:a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff",
+  "components": [
+    {
+      "id": "BANK",
+      "name": "Frozen public evidence package"
+    },
+    {
+      "id": "BROKER",
+      "name": "Session inquiry broker and audit"
+    },
+    {
+      "id": "PARTICIPANT",
+      "name": "Isolated human/machine client contract"
+    },
+    {
+      "id": "EVALUATOR",
+      "name": "Operator-only private case and offline scorer"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "BANK",
+      "to": "BROKER",
+      "disposition": "required",
+      "rationale": "Only initial/investigation stores are opened; no private evaluator store.",
+      "contract_ids": [
+        "BANK_BROKER"
+      ]
+    },
+    {
+      "from": "BANK",
+      "to": "PARTICIPANT",
+      "disposition": "required",
+      "rationale": "Only initial snapshot, mission and client are distributed, never request store/private case.",
+      "contract_ids": [
+        "BANK_PARTICIPANT"
+      ]
+    },
+    {
+      "from": "BANK",
+      "to": "EVALUATOR",
+      "disposition": "not_needed",
+      "rationale": "The offline evaluator already owns its frozen private case and reads the final broker journal; it does not exchange data with the public evidence package.",
+      "contract_ids": []
+    },
+    {
+      "from": "BROKER",
+      "to": "BANK",
+      "disposition": "required",
+      "rationale": "No SQL/file-path override or evidence mutation.",
+      "contract_ids": [
+        "BROKER_BANK"
+      ]
+    },
+    {
+      "from": "BROKER",
+      "to": "PARTICIPANT",
+      "disposition": "required",
+      "rationale": "No labels, future outcomes or scoring feedback; bounded pages and explicit missingness.",
+      "contract_ids": [
+        "BROKER_PARTICIPANT"
+      ]
+    },
+    {
+      "from": "BROKER",
+      "to": "EVALUATOR",
+      "disposition": "required",
+      "rationale": "Only completed journals and public evidence references are read; no outcome response to participant.",
+      "contract_ids": [
+        "BROKER_EVALUATOR"
+      ]
+    },
+    {
+      "from": "PARTICIPANT",
+      "to": "BANK",
+      "disposition": "prohibited",
+      "rationale": "Participant must not directly read the requestable/private stores or call the evaluator; no reward/future response is supplied to participants.",
+      "contract_ids": []
+    },
+    {
+      "from": "PARTICIPANT",
+      "to": "BROKER",
+      "disposition": "required",
+      "rationale": "No private endpoints; inquiry requires rationale/expectation and final answer is single-assignment.",
+      "contract_ids": [
+        "PARTICIPANT_BROKER"
+      ]
+    },
+    {
+      "from": "PARTICIPANT",
+      "to": "EVALUATOR",
+      "disposition": "prohibited",
+      "rationale": "Participant must not directly read the requestable/private stores or call the evaluator; no reward/future response is supplied to participants.",
+      "contract_ids": []
+    },
+    {
+      "from": "EVALUATOR",
+      "to": "BANK",
+      "disposition": "not_needed",
+      "rationale": "The offline evaluator already owns its frozen private case and reads the final broker journal; it does not exchange data with the public evidence package.",
+      "contract_ids": []
+    },
+    {
+      "from": "EVALUATOR",
+      "to": "BROKER",
+      "disposition": "required",
+      "rationale": "Offline operator may read only; no HTTP reward feedback or audit mutation.",
+      "contract_ids": [
+        "EVALUATOR_BROKER"
+      ]
+    },
+    {
+      "from": "EVALUATOR",
+      "to": "PARTICIPANT",
+      "disposition": "prohibited",
+      "rationale": "Participant must not directly read the requestable/private stores or call the evaluator; no reward/future response is supplied to participants.",
+      "contract_ids": []
+    }
+  ],
+  "contracts": [
+    {
+      "id": "BANK_BROKER",
+      "from": "BANK",
+      "to": "BROKER",
+      "title": "Read frozen public evidence",
+      "producer_port": "SQLite read-only queries",
+      "consumer_port": "Typed catalogue/row/asset results",
+      "status": "implemented",
+      "profile_ref": "env_v1",
+      "facets": {
+        "authority": "Only initial/investigation stores are opened; no private evaluator store."
+      },
+      "requirement_ids": [
+        "ENV02",
+        "ENV03",
+        "ENV04",
+        "ENV05",
+        "ENV06",
+        "ENV07",
+        "ENV10"
+      ],
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    },
+    {
+      "id": "BANK_PARTICIPANT",
+      "from": "BANK",
+      "to": "PARTICIPANT",
+      "title": "Export initial evidence snapshot",
+      "producer_port": "fixture/participant initial snapshot",
+      "consumer_port": "Participant initial evidence",
+      "status": "implemented",
+      "profile_ref": "env_v1",
+      "facets": {
+        "authority": "Only initial snapshot, mission and client are distributed, never request store/private case."
+      },
+      "requirement_ids": [
+        "ENV02",
+        "ENV03",
+        "ENV04",
+        "ENV05",
+        "ENV06",
+        "ENV07",
+        "ENV10"
+      ],
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    },
+    {
+      "id": "BROKER_BANK",
+      "from": "BROKER",
+      "to": "BANK",
+      "title": "Request frozen public evidence",
+      "producer_port": "Validated parameter-bound request",
+      "consumer_port": "Public item selector/read-only SQLite",
+      "status": "implemented",
+      "profile_ref": "env_v1",
+      "facets": {
+        "authority": "No SQL/file-path override or evidence mutation."
+      },
+      "requirement_ids": [
+        "ENV02",
+        "ENV03",
+        "ENV04",
+        "ENV05",
+        "ENV06",
+        "ENV07",
+        "ENV10"
+      ],
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    },
+    {
+      "id": "BROKER_PARTICIPANT",
+      "from": "BROKER",
+      "to": "PARTICIPANT",
+      "title": "Return bounded observations/acknowledgement",
+      "producer_port": "Public HTTP JSON",
+      "consumer_port": "Human/machine public client",
+      "status": "implemented",
+      "profile_ref": "env_v1",
+      "facets": {
+        "authority": "No labels, future outcomes or scoring feedback; bounded pages and explicit missingness."
+      },
+      "requirement_ids": [
+        "ENV02",
+        "ENV03",
+        "ENV04",
+        "ENV05",
+        "ENV06",
+        "ENV07",
+        "ENV10"
+      ],
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    },
+    {
+      "id": "BROKER_EVALUATOR",
+      "from": "BROKER",
+      "to": "EVALUATOR",
+      "title": "Expose completed audit to operator",
+      "producer_port": "Persisted run audit",
+      "consumer_port": "Operator-only final log read",
+      "status": "implemented",
+      "profile_ref": "env_v1",
+      "facets": {
+        "authority": "Only completed journals and public evidence references are read; no outcome response to participant."
+      },
+      "requirement_ids": [
+        "ENV02",
+        "ENV03",
+        "ENV04",
+        "ENV05",
+        "ENV06",
+        "ENV07",
+        "ENV10"
+      ],
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    },
+    {
+      "id": "PARTICIPANT_BROKER",
+      "from": "PARTICIPANT",
+      "to": "BROKER",
+      "title": "Submit inquiry or final answer",
+      "producer_port": "Authenticated public HTTP operations",
+      "consumer_port": "Broker operation allowlist",
+      "status": "implemented",
+      "profile_ref": "env_v1",
+      "facets": {
+        "authority": "No private endpoints; inquiry requires rationale/expectation and final answer is single-assignment."
+      },
+      "requirement_ids": [
+        "ENV02",
+        "ENV03",
+        "ENV04",
+        "ENV05",
+        "ENV06",
+        "ENV07",
+        "ENV10"
+      ],
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    },
+    {
+      "id": "EVALUATOR_BROKER",
+      "from": "EVALUATOR",
+      "to": "BROKER",
+      "title": "Read completed journal",
+      "producer_port": "Operator SQLite read-only select",
+      "consumer_port": "Persisted audit journal",
+      "status": "implemented",
+      "profile_ref": "env_v1",
+      "facets": {
+        "authority": "Offline operator may read only; no HTTP reward feedback or audit mutation."
+      },
+      "requirement_ids": [
+        "ENV02",
+        "ENV03",
+        "ENV04",
+        "ENV05",
+        "ENV06",
+        "ENV07",
+        "ENV10"
+      ],
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    }
+  ],
+  "contract_profiles": {
+    "env_v1": {
+      "ownership": "Evidence package owns frozen items; broker owns admissions and audit; participant owns hypotheses/answer; operator evaluator owns private outcomes. See PLAN.md.",
+      "authority": "Each lane is operation-scoped below. No participant mutation of evidence, no public SQL or arbitrary paths, no evaluator feedback endpoint, no model/source refresh.",
+      "shape_versions": "two-store-environment-0.1 item schema; explicit JSON operation fields; opaque item IDs, source group, scope, units/clock, original-asset hash and rows. Private labels are never a public field.",
+      "identity_scope": "Source-group identity links duplicate presentations. Item IDs identify records, not independent physical entities. External corpus IDs remain external; simulation plots/years are separate.",
+      "time_order": "All scenario evidence predates/equal year 60. Requests record rationale/expectation before their response. Event timing/HTTP service time are separate from simulation time and unmeasured participant reasoning time.",
+      "delivery_idempotency": "Request IDs bind canonical operation/body. Same request replays its committed response; conflicting content fails 409. HTTP attempts count retries separately from logical acquisitions.",
+      "commit_recovery": "Broker serializes admission/final-answer writes with SQLite transactions; committed replay after restart is checked. Restore checks compressed and raw hashes and refuses conflicting destination bytes.",
+      "retention": "Versioned immutable evidence and private case snapshot in operator repository. Per-run audit outside Git retains full pre-acquisition request and response. No automatic eviction/refresh.",
+      "resource_limits": "One loopback broker per run; body at most 131072 bytes, catalogue page at most 50, record page at most 200, asset slice at most 65536 bytes. No lifetime inquiry action cap; workload/load/energy qualification is not claimed.",
+      "errors": "Invalid type/range/unknown fields 400, unauthorized token 401, future selectors 403, unavailable resource/route 404, conflicting replay/closed session 409, oversized body 413; no fabricated fallback.",
+      "feedback_grounding": "Frozen evidence exists before inquiry. Hypotheses never generate observations. Independent synthetic channels have no world input; real context and derived views are attributed. Private labels diagnose, not reward."
+    }
+  },
+  "cases": [
+    {
+      "id": "V_HTTP",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "revision": "sha256:a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff",
+      "conditions": "Scripted fixture over actual authenticated HTTP, inquiry, replay/conflicts, request-content retention, bounds, denial, restart, final submission and offline scoring."
+    },
+    {
+      "id": "V_SNAPSHOT",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "revision": "sha256:a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff",
+      "conditions": "Actual raw/compressed hashes, original corpus pin, public tables, source groups, bounded time and deterministic policy replay."
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "BANK",
+        "BROKER",
+        "PARTICIPANT",
+        "EVALUATOR"
+      ],
+      "analysis": "Request/response and offline journal-read paths form a dependency group. The evaluator has no participant feedback lane; the broker never opens private outcomes. Frozen records cannot be changed by hypotheses or retries. Source-group IDs prevent duplicate confirmations. Final submission closes new acquisition; no oracle reward loop exists. Shared filesystem access would bypass this boundary and requires a separately isolated participant deployment.",
+      "verification_ids": [
+        "V_HTTP",
+        "V_SNAPSHOT"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "IF01",
+      "description": "Owner filesystem access bypasses participant-only export; hostile deployment isolation is not qualified.",
+      "status": "deferred",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "IF02",
+      "description": "No EDI consumer, human run, varied unseen worlds or comparative evaluation.",
+      "status": "deferred",
+      "blocking_at": [
+        "integration"
+      ]
+    }
+  ],
+  "review": {
+    "gate": "contract",
+    "verdict": "pass",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Self-review of declared environment interfaces and actual scripted engineering checks only; no EDI capability or security deployment qualification."
+  }
+}

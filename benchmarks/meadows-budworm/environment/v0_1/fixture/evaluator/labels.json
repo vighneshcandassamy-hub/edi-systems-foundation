@@ -1,0 +1,1115 @@
+[
+  {
+    "item_id": "E77ac9253ccd4935070",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local insect state enters the target transition.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E5ef6eefa512f398751",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local insect state enters the target transition.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E51c0c0fd0c8bac4dff",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local insect state enters the target transition.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E490b264fc4bacd470e",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local insect state enters the target transition.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "Effe83a224121ead6e0",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local insect state enters the target transition.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E8970bdfc84dcc53d42",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local insect state enters the target transition.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E086efe18cc28c902c4",
+    "store": "initial",
+    "class": "target_measurement",
+    "reason": "Local insect state enters the target transition.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "Eeefce4172574c31c84",
+    "store": "initial",
+    "class": "duplicate",
+    "reason": "Repeats an existing source group; never independent confirmation.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E92a93fed56034ff5f0",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local foliage affects carrying capacity and the objective.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E382632200c094b86d7",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local foliage affects carrying capacity and the objective.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E62989af0f15903c4ff",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local foliage affects carrying capacity and the objective.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "Eb015b3aaf26524068a",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local foliage affects carrying capacity and the objective.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E4467052e3fc00669a1",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local foliage affects carrying capacity and the objective.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "Ef80b702ca3fd4dc8ca",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local foliage affects carrying capacity and the objective.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E069ecc615b0e75e014",
+    "store": "initial",
+    "class": "target_measurement",
+    "reason": "Local foliage affects carrying capacity and the objective.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E9fe3da4b6976b3519a",
+    "store": "initial",
+    "class": "duplicate",
+    "reason": "Repeats an existing source group; never independent confirmation.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E37532b870daa5088c2",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local host composition changes slowly and affects capacity.",
+    "channel": "host_structure"
+  },
+  {
+    "item_id": "Eafe71e079030ff503f",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local host composition changes slowly and affects capacity.",
+    "channel": "host_structure"
+  },
+  {
+    "item_id": "E9941e0d2afff3f3e1c",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local host composition changes slowly and affects capacity.",
+    "channel": "host_structure"
+  },
+  {
+    "item_id": "Ea1a890b4741afc592c",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local host composition changes slowly and affects capacity.",
+    "channel": "host_structure"
+  },
+  {
+    "item_id": "Edbc32dc3cc0b7edc2b",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local host composition changes slowly and affects capacity.",
+    "channel": "host_structure"
+  },
+  {
+    "item_id": "E9b0cc347ea004092b5",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local host composition changes slowly and affects capacity.",
+    "channel": "host_structure"
+  },
+  {
+    "item_id": "E3f8a85a3e3cf20124a",
+    "store": "initial",
+    "class": "target_measurement",
+    "reason": "Local host composition changes slowly and affects capacity.",
+    "channel": "host_structure"
+  },
+  {
+    "item_id": "E03c52248e6d6d61222",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local natural control enters the transition with a delayed response.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E71307562473e6914f7",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local natural control enters the transition with a delayed response.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E1ddef2d6dc2c35d9a0",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local natural control enters the transition with a delayed response.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "Ebdec3debf5a177ac3a",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local natural control enters the transition with a delayed response.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E223fa773fa5fcdb280",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local natural control enters the transition with a delayed response.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E75c62695ce23fd3fb4",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local natural control enters the transition with a delayed response.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E7f3445d5acfd1d65f9",
+    "store": "initial",
+    "class": "target_measurement",
+    "reason": "Local natural control enters the transition with a delayed response.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E1a1442689aeeeedabc",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local weather changes growth; it is not sufficient alone.",
+    "channel": "spring_conditions"
+  },
+  {
+    "item_id": "E087d85b7592410f583",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local weather changes growth; it is not sufficient alone.",
+    "channel": "spring_conditions"
+  },
+  {
+    "item_id": "E865682895a5383c6e8",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local weather changes growth; it is not sufficient alone.",
+    "channel": "spring_conditions"
+  },
+  {
+    "item_id": "E8302dd15c68eddec8e",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local weather changes growth; it is not sufficient alone.",
+    "channel": "spring_conditions"
+  },
+  {
+    "item_id": "Ee14acbf01f118adc25",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local weather changes growth; it is not sufficient alone.",
+    "channel": "spring_conditions"
+  },
+  {
+    "item_id": "E9b6071625643d83b80",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local weather changes growth; it is not sufficient alone.",
+    "channel": "spring_conditions"
+  },
+  {
+    "item_id": "E4f6a533649c1854ebf",
+    "store": "initial",
+    "class": "target_measurement",
+    "reason": "Local weather changes growth; it is not sufficient alone.",
+    "channel": "spring_conditions"
+  },
+  {
+    "item_id": "Ecafcfcca3f534e57dd",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local historical actions and selection must be distinguished from effects.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "Ef01ffa1b874b571489",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local historical actions and selection must be distinguished from effects.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "Ec67f409f85000a35f9",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local historical actions and selection must be distinguished from effects.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "E7d37aaee229b39dffd",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local historical actions and selection must be distinguished from effects.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "E97fcb1cf9a76978df2",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local historical actions and selection must be distinguished from effects.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "E4d5b9be0d88ea4603a",
+    "store": "investigation",
+    "class": "target_measurement",
+    "reason": "Local historical actions and selection must be distinguished from effects.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "E694c2b184c931e4a10",
+    "store": "initial",
+    "class": "target_measurement",
+    "reason": "Local historical actions and selection must be distinguished from effects.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "Eace3bf00da123b2990",
+    "store": "initial",
+    "class": "duplicate",
+    "reason": "Repeats an existing source group; never independent confirmation.",
+    "channel": "treatment_blocks"
+  },
+  {
+    "item_id": "E0cf961b54c5d1c020d",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Independent district is not the target state; may aid a scope check but is not a local causal measurement.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E599ed5a280afc4cd2c",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Independent district is not the target state; may aid a scope check but is not a local causal measurement.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E43f90c9e3f674f5f55",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Independent district is not the target state; may aid a scope check but is not a local causal measurement.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E781c8ef050291c6dc2",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Independent district is not the target state; may aid a scope check but is not a local causal measurement.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E82e9163b944db92220",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Independent district is not the target state; may aid a scope check but is not a local causal measurement.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "Ec9a686be4b363c401d",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Independent district is not the target state; may aid a scope check but is not a local causal measurement.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "Ede7a96a75206607316",
+    "store": "initial",
+    "class": "scope_mismatch",
+    "reason": "Independent district is not the target state; may aid a scope check but is not a local causal measurement.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "E86c8d4329a7e34416e",
+    "store": "initial",
+    "class": "duplicate",
+    "reason": "Repeats an existing source group; never independent confirmation.",
+    "channel": "branch_density"
+  },
+  {
+    "item_id": "Eb02ea3b74227e08c55",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Nearby-looking forest observations belong to a separate district.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E272ea298d2d495a578",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Nearby-looking forest observations belong to a separate district.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E2dd7b3835fa655b02b",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Nearby-looking forest observations belong to a separate district.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E2d1226293dbdee8d32",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Nearby-looking forest observations belong to a separate district.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "Ec868cb4dd057f36035",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Nearby-looking forest observations belong to a separate district.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E09d9400ff797d94539",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Nearby-looking forest observations belong to a separate district.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "Eec3b2cd1261dfabbcc",
+    "store": "initial",
+    "class": "scope_mismatch",
+    "reason": "Nearby-looking forest observations belong to a separate district.",
+    "channel": "foliage_stock"
+  },
+  {
+    "item_id": "E36993f483caf0b6f2c",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Predator observations are from a different district, not the target plots.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E48a77c38cd1d598697",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Predator observations are from a different district, not the target plots.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E2070e6b16798a73c0d",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Predator observations are from a different district, not the target plots.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "Ec725806dfee342bae9",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Predator observations are from a different district, not the target plots.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "Ef9363075754a7f03f2",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Predator observations are from a different district, not the target plots.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "Edaae5eca8e95d8b11d",
+    "store": "investigation",
+    "class": "scope_mismatch",
+    "reason": "Predator observations are from a different district, not the target plots.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E5c3186fbf0c08ae99e",
+    "store": "initial",
+    "class": "scope_mismatch",
+    "reason": "Predator observations are from a different district, not the target plots.",
+    "channel": "natural_enemies"
+  },
+  {
+    "item_id": "E0b50ce765f442a279b",
+    "store": "investigation",
+    "class": "stage_scope_mismatch",
+    "reason": "Same forest/insect terminology, but a different species and life stage.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "Eaf905ee1ccd0f4306b",
+    "store": "investigation",
+    "class": "stage_scope_mismatch",
+    "reason": "Same forest/insect terminology, but a different species and life stage.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "Eaf066775f2ec029491",
+    "store": "investigation",
+    "class": "stage_scope_mismatch",
+    "reason": "Same forest/insect terminology, but a different species and life stage.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "Ef3c54afb0020549940",
+    "store": "investigation",
+    "class": "stage_scope_mismatch",
+    "reason": "Same forest/insect terminology, but a different species and life stage.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "E35a9cbca71e6b852ca",
+    "store": "investigation",
+    "class": "stage_scope_mismatch",
+    "reason": "Same forest/insect terminology, but a different species and life stage.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "Ef6c495fa09dfa485a7",
+    "store": "investigation",
+    "class": "stage_scope_mismatch",
+    "reason": "Same forest/insect terminology, but a different species and life stage.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "E031c27f5d92b295085",
+    "store": "initial",
+    "class": "stage_scope_mismatch",
+    "reason": "Same forest/insect terminology, but a different species and life stage.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "E9147c656195659fb52",
+    "store": "initial",
+    "class": "duplicate",
+    "reason": "Repeats an existing source group; never independent confirmation.",
+    "channel": "moth_activity"
+  },
+  {
+    "item_id": "E7d8acada1b75937d0a",
+    "store": "investigation",
+    "class": "denominator_mismatch",
+    "reason": "All-species cover is not susceptible-host foliage; context must not be substituted for local food stock.",
+    "channel": "canopy_coverage"
+  },
+  {
+    "item_id": "Ee3f7a0422f0f2cd456",
+    "store": "investigation",
+    "class": "denominator_mismatch",
+    "reason": "All-species cover is not susceptible-host foliage; context must not be substituted for local food stock.",
+    "channel": "canopy_coverage"
+  },
+  {
+    "item_id": "E6cb079e6cc4d50ea01",
+    "store": "investigation",
+    "class": "denominator_mismatch",
+    "reason": "All-species cover is not susceptible-host foliage; context must not be substituted for local food stock.",
+    "channel": "canopy_coverage"
+  },
+  {
+    "item_id": "E8f3b9123407399f5e6",
+    "store": "investigation",
+    "class": "denominator_mismatch",
+    "reason": "All-species cover is not susceptible-host foliage; context must not be substituted for local food stock.",
+    "channel": "canopy_coverage"
+  },
+  {
+    "item_id": "Efa584025f4985ab4c6",
+    "store": "investigation",
+    "class": "denominator_mismatch",
+    "reason": "All-species cover is not susceptible-host foliage; context must not be substituted for local food stock.",
+    "channel": "canopy_coverage"
+  },
+  {
+    "item_id": "E5b3e5ee9262fc294e6",
+    "store": "investigation",
+    "class": "denominator_mismatch",
+    "reason": "All-species cover is not susceptible-host foliage; context must not be substituted for local food stock.",
+    "channel": "canopy_coverage"
+  },
+  {
+    "item_id": "Edff24900aedbeed232",
+    "store": "initial",
+    "class": "denominator_mismatch",
+    "reason": "All-species cover is not susceptible-host foliage; context must not be substituted for local food stock.",
+    "channel": "canopy_coverage"
+  },
+  {
+    "item_id": "Ecb4a13661876223573",
+    "store": "investigation",
+    "class": "aggregate_mismatch",
+    "reason": "Provincial expenditure is not the treated area/intensity in the target district.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "E799cb6f9255747e3e8",
+    "store": "investigation",
+    "class": "aggregate_mismatch",
+    "reason": "Provincial expenditure is not the treated area/intensity in the target district.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "E416b6b47649c2fb896",
+    "store": "investigation",
+    "class": "aggregate_mismatch",
+    "reason": "Provincial expenditure is not the treated area/intensity in the target district.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "E97c1a924669b3815b0",
+    "store": "investigation",
+    "class": "aggregate_mismatch",
+    "reason": "Provincial expenditure is not the treated area/intensity in the target district.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "E48609293747f0214d2",
+    "store": "investigation",
+    "class": "aggregate_mismatch",
+    "reason": "Provincial expenditure is not the treated area/intensity in the target district.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "E0f8e07d1df183dc9ba",
+    "store": "investigation",
+    "class": "aggregate_mismatch",
+    "reason": "Provincial expenditure is not the treated area/intensity in the target district.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "Eb8cc34e4e1adc9c773",
+    "store": "initial",
+    "class": "aggregate_mismatch",
+    "reason": "Provincial expenditure is not the treated area/intensity in the target district.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "E7eedf792c30e8d86c9",
+    "store": "initial",
+    "class": "duplicate",
+    "reason": "Repeats an existing source group; never independent confirmation.",
+    "channel": "protection_spending"
+  },
+  {
+    "item_id": "Eccc37d4300b0826acb",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Administrative random series has no input to the simulated target dynamics or objective. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "Eb175a08d13112cadc9",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Administrative random series has no input to the simulated target dynamics or objective. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "Ebaa1330504249a9ee3",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Administrative random series has no input to the simulated target dynamics or objective. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "Eeba73f4966b37c45f9",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Administrative random series has no input to the simulated target dynamics or objective. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "Eaf85aa5610d2c04c7e",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Administrative random series has no input to the simulated target dynamics or objective. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "Efecea872c34491f020",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Administrative random series has no input to the simulated target dynamics or objective. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "Ef3171ef499ec74b531",
+    "store": "initial",
+    "class": "independent_distractor",
+    "reason": "Administrative random series has no input to the simulated target dynamics or objective. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "E36f11605d0c297073a",
+    "store": "initial",
+    "class": "duplicate",
+    "reason": "Repeats an existing source group; never independent confirmation.",
+    "channel": "timber_certification"
+  },
+  {
+    "item_id": "E315ad47592c54fbbcb",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Measurements concern unused reserve batches, not products applied to target plots.",
+    "channel": "spray_batch_quality"
+  },
+  {
+    "item_id": "E72c20fc2be20588ced",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Measurements concern unused reserve batches, not products applied to target plots.",
+    "channel": "spray_batch_quality"
+  },
+  {
+    "item_id": "E94619db1dcae2e8217",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Measurements concern unused reserve batches, not products applied to target plots.",
+    "channel": "spray_batch_quality"
+  },
+  {
+    "item_id": "Ea721a1751b82d07f2a",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Measurements concern unused reserve batches, not products applied to target plots.",
+    "channel": "spray_batch_quality"
+  },
+  {
+    "item_id": "Ebfcbe848098d3a39d5",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Measurements concern unused reserve batches, not products applied to target plots.",
+    "channel": "spray_batch_quality"
+  },
+  {
+    "item_id": "Ed72c827c09fbb22578",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Measurements concern unused reserve batches, not products applied to target plots.",
+    "channel": "spray_batch_quality"
+  },
+  {
+    "item_id": "E1f5ae37714923e046d",
+    "store": "initial",
+    "class": "independent_distractor",
+    "reason": "Measurements concern unused reserve batches, not products applied to target plots.",
+    "channel": "spray_batch_quality"
+  },
+  {
+    "item_id": "Ecfe7f003feb0b8204d",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same seasonal/tree vocabulary; no role in target-plot state transitions.",
+    "channel": "budburst_reviews"
+  },
+  {
+    "item_id": "E1b9cb564512cd99a54",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same seasonal/tree vocabulary; no role in target-plot state transitions.",
+    "channel": "budburst_reviews"
+  },
+  {
+    "item_id": "E5eb2ae045a0fdb3a28",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same seasonal/tree vocabulary; no role in target-plot state transitions.",
+    "channel": "budburst_reviews"
+  },
+  {
+    "item_id": "E7c8149abf600a78bb1",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same seasonal/tree vocabulary; no role in target-plot state transitions.",
+    "channel": "budburst_reviews"
+  },
+  {
+    "item_id": "Eee5ba4ad2881dfc53a",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same seasonal/tree vocabulary; no role in target-plot state transitions.",
+    "channel": "budburst_reviews"
+  },
+  {
+    "item_id": "E7598283652159fae35",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same seasonal/tree vocabulary; no role in target-plot state transitions.",
+    "channel": "budburst_reviews"
+  },
+  {
+    "item_id": "E4a8834967b38268841",
+    "store": "initial",
+    "class": "independent_distractor",
+    "reason": "Same seasonal/tree vocabulary; no role in target-plot state transitions.",
+    "channel": "budburst_reviews"
+  },
+  {
+    "item_id": "E1bd4cec9948d7302a4",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same insect, plots and years, but this constructed biochemical channel has no input to the world transition or objective; a real biological claim is not implied. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "budworm_enzyme"
+  },
+  {
+    "item_id": "Ef3346c6ac0a350fb1b",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same insect, plots and years, but this constructed biochemical channel has no input to the world transition or objective; a real biological claim is not implied. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "budworm_enzyme"
+  },
+  {
+    "item_id": "Eaf5d7909b22c79fff0",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same insect, plots and years, but this constructed biochemical channel has no input to the world transition or objective; a real biological claim is not implied. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "budworm_enzyme"
+  },
+  {
+    "item_id": "E88a53a26d6576c7fac",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same insect, plots and years, but this constructed biochemical channel has no input to the world transition or objective; a real biological claim is not implied. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "budworm_enzyme"
+  },
+  {
+    "item_id": "E92c3b0e8cbac4f8326",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same insect, plots and years, but this constructed biochemical channel has no input to the world transition or objective; a real biological claim is not implied. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "budworm_enzyme"
+  },
+  {
+    "item_id": "E5c52a58c8af28b40e7",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same insect, plots and years, but this constructed biochemical channel has no input to the world transition or objective; a real biological claim is not implied. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "budworm_enzyme"
+  },
+  {
+    "item_id": "E99773f1277fba20e0e",
+    "store": "initial",
+    "class": "independent_distractor",
+    "reason": "Same insect, plots and years, but this constructed biochemical channel has no input to the world transition or objective; a real biological claim is not implied. Its last ten values were selected from independent candidates for accidental historical correlation; this does not establish causal influence or future predictive value.",
+    "channel": "budworm_enzyme"
+  },
+  {
+    "item_id": "Efa65c9a81bc4ff35c8",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same host trees, plots and years. This constructed assay is causally inactive in this development world, not a statement about real tree chemistry.",
+    "channel": "needle_chemistry"
+  },
+  {
+    "item_id": "E7645158b064cec3468",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same host trees, plots and years. This constructed assay is causally inactive in this development world, not a statement about real tree chemistry.",
+    "channel": "needle_chemistry"
+  },
+  {
+    "item_id": "E1f99346c6bcf9e111a",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same host trees, plots and years. This constructed assay is causally inactive in this development world, not a statement about real tree chemistry.",
+    "channel": "needle_chemistry"
+  },
+  {
+    "item_id": "E2ee0d98754f937d622",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same host trees, plots and years. This constructed assay is causally inactive in this development world, not a statement about real tree chemistry.",
+    "channel": "needle_chemistry"
+  },
+  {
+    "item_id": "E824913e88991f634b7",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same host trees, plots and years. This constructed assay is causally inactive in this development world, not a statement about real tree chemistry.",
+    "channel": "needle_chemistry"
+  },
+  {
+    "item_id": "E09de6f8026ff5330a9",
+    "store": "investigation",
+    "class": "independent_distractor",
+    "reason": "Same host trees, plots and years. This constructed assay is causally inactive in this development world, not a statement about real tree chemistry.",
+    "channel": "needle_chemistry"
+  },
+  {
+    "item_id": "Eec4f51675effba63bc",
+    "store": "initial",
+    "class": "independent_distractor",
+    "reason": "Same host trees, plots and years. This constructed assay is causally inactive in this development world, not a statement about real tree chemistry.",
+    "channel": "needle_chemistry"
+  },
+  {
+    "item_id": "Ee8acce14beb1c6110a",
+    "store": "investigation",
+    "class": "time_scope_mismatch",
+    "reason": "District name is shared, but the historical stand was replaced; no continuity to target plots.",
+    "channel": "branch_density_archive"
+  },
+  {
+    "item_id": "Ef224f5331143a93bd3",
+    "store": "investigation",
+    "class": "time_scope_mismatch",
+    "reason": "District name is shared, but the historical stand was replaced; no continuity to target plots.",
+    "channel": "branch_density_archive"
+  },
+  {
+    "item_id": "E91c311eec58aeb080a",
+    "store": "investigation",
+    "class": "time_scope_mismatch",
+    "reason": "District name is shared, but the historical stand was replaced; no continuity to target plots.",
+    "channel": "branch_density_archive"
+  },
+  {
+    "item_id": "E50e9a6fc013938e1af",
+    "store": "investigation",
+    "class": "time_scope_mismatch",
+    "reason": "District name is shared, but the historical stand was replaced; no continuity to target plots.",
+    "channel": "branch_density_archive"
+  },
+  {
+    "item_id": "E68077a06e6e83fdbc9",
+    "store": "investigation",
+    "class": "time_scope_mismatch",
+    "reason": "District name is shared, but the historical stand was replaced; no continuity to target plots.",
+    "channel": "branch_density_archive"
+  },
+  {
+    "item_id": "E2499d7a86e6191ebc3",
+    "store": "investigation",
+    "class": "time_scope_mismatch",
+    "reason": "District name is shared, but the historical stand was replaced; no continuity to target plots.",
+    "channel": "branch_density_archive"
+  },
+  {
+    "item_id": "E127bb3ef665d14816e",
+    "store": "initial",
+    "class": "time_scope_mismatch",
+    "reason": "District name is shared, but the historical stand was replaced; no continuity to target plots.",
+    "channel": "branch_density_archive"
+  },
+  {
+    "item_id": "Ef8d50202b9298189fd",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Helps interpret observations but is not a biological forcing.",
+    "channel": "sample_effort"
+  },
+  {
+    "item_id": "Ef2e3ded44f8c0df6b7",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Helps interpret observations but is not a biological forcing.",
+    "channel": "sample_effort"
+  },
+  {
+    "item_id": "E496171c12f2124c900",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Helps interpret observations but is not a biological forcing.",
+    "channel": "sample_effort"
+  },
+  {
+    "item_id": "E3ee56c5eeb6957f0cb",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Helps interpret observations but is not a biological forcing.",
+    "channel": "sample_effort"
+  },
+  {
+    "item_id": "Edae9a0b8484dd331dd",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Helps interpret observations but is not a biological forcing.",
+    "channel": "sample_effort"
+  },
+  {
+    "item_id": "Eeeecacc92023588b85",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Helps interpret observations but is not a biological forcing.",
+    "channel": "sample_effort"
+  },
+  {
+    "item_id": "Edfa229ea79554daa4e",
+    "store": "initial",
+    "class": "interpretation_context",
+    "reason": "Helps interpret observations but is not a biological forcing.",
+    "channel": "sample_effort"
+  },
+  {
+    "item_id": "Eb15854bc37a55b59d6",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Method context prevents incorrect unit comparisons; not a biological cause.",
+    "channel": "method_calibration"
+  },
+  {
+    "item_id": "E37172adeda58942a93",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Method context prevents incorrect unit comparisons; not a biological cause.",
+    "channel": "method_calibration"
+  },
+  {
+    "item_id": "E4e9b7ebc7ffa265ff5",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Method context prevents incorrect unit comparisons; not a biological cause.",
+    "channel": "method_calibration"
+  },
+  {
+    "item_id": "E14f3a26c7617adcc0f",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Method context prevents incorrect unit comparisons; not a biological cause.",
+    "channel": "method_calibration"
+  },
+  {
+    "item_id": "E2f76c10e2956e83b83",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Method context prevents incorrect unit comparisons; not a biological cause.",
+    "channel": "method_calibration"
+  },
+  {
+    "item_id": "E7f59a9355e82a3b1b4",
+    "store": "investigation",
+    "class": "interpretation_context",
+    "reason": "Method context prevents incorrect unit comparisons; not a biological cause.",
+    "channel": "method_calibration"
+  },
+  {
+    "item_id": "Ec568bbf361e516796d",
+    "store": "initial",
+    "class": "interpretation_context",
+    "reason": "Method context prevents incorrect unit comparisons; not a biological cause.",
+    "channel": "method_calibration"
+  },
+  {
+    "item_id": "Ee0f88085352e256fca",
+    "store": "investigation",
+    "class": "discriminating_measurement",
+    "reason": "Assay relevance depends on species identity and whether it measures the proposed response.",
+    "channel": "feeding_assay"
+  },
+  {
+    "item_id": "E6fa191a342f967ff52",
+    "store": "investigation",
+    "class": "stage_scope_mismatch",
+    "reason": "Assay relevance depends on species identity and whether it measures the proposed response.",
+    "channel": "feeding_assay"
+  },
+  {
+    "item_id": "Eff1fb8c490f9b297a0",
+    "store": "investigation",
+    "class": "discriminating_measurement",
+    "reason": "Shows no response to this constructed biochemical manipulation under the recorded controlled conditions; it does not prove universal biological irrelevance.",
+    "channel": "biochemical_contrast"
+  },
+  {
+    "item_id": "Ecdeb37539e78cea98a",
+    "store": "investigation",
+    "class": "external_context",
+    "reason": "May inform domain/method understanding; not measurements of this constructed district.",
+    "channel": "nb_l2"
+  },
+  {
+    "item_id": "E42b4d740d6641c00b9",
+    "store": "initial",
+    "class": "external_context",
+    "reason": "Domain context only; not target-plot observations.",
+    "channel": "nb_l2"
+  },
+  {
+    "item_id": "Ec8ff6fec6e192b6203",
+    "store": "investigation",
+    "class": "external_context",
+    "reason": "May inform domain/method understanding; not measurements of this constructed district.",
+    "channel": "nb_moths"
+  },
+  {
+    "item_id": "E95fbced3c3df326702",
+    "store": "initial",
+    "class": "external_context",
+    "reason": "Domain context only; not target-plot observations.",
+    "channel": "nb_moths"
+  },
+  {
+    "item_id": "Ebff50e2f8e466b2c43",
+    "store": "investigation",
+    "class": "external_context",
+    "reason": "May inform domain/method understanding; not measurements of this constructed district.",
+    "channel": "nrcan_L2"
+  },
+  {
+    "item_id": "Eae2adc12aa020ecf2f",
+    "store": "investigation",
+    "class": "external_context",
+    "reason": "May inform domain/method understanding; not measurements of this constructed district.",
+    "channel": "nrcan_L4"
+  },
+  {
+    "item_id": "E8fe583d74b49eccdc9",
+    "store": "investigation",
+    "class": "external_context",
+    "reason": "May inform domain/method understanding; not measurements of this constructed district.",
+    "channel": "nrcan_Defoliation"
+  },
+  {
+    "item_id": "Ed727d04f7a58c042ff",
+    "store": "investigation",
+    "class": "external_context",
+    "reason": "May inform domain/method understanding; not measurements of this constructed district.",
+    "channel": "eccc_daily"
+  },
+  {
+    "item_id": "E282eb96fdf84ed52df",
+    "store": "initial",
+    "class": "external_context",
+    "reason": "Domain context only; not target-plot observations.",
+    "channel": "eccc_daily"
+  }
+]

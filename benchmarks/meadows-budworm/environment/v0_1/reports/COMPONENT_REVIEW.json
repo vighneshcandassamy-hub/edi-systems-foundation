@@ -1,0 +1,149 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "Two-store bug/tree investigation environment 0.1",
+  "gate": "runtime",
+  "requested_scope": "Build and verify one scoped development environment, not an intelligence benchmark",
+  "input_revision": "sha256:a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff",
+  "reviewer": {
+    "role": "implementer_and_self_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "REQUIREMENTS.json",
+    "checked": true,
+    "evidence_ref": "reports/TRACE_CHECK.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Owner two-store/selective inquiry requirement traced through ten ENV requirements to actual checks.",
+      "references": [
+        "REQUIREMENTS.json",
+        "reports/TRACE_CHECK.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Participant snapshot, broker read allowlist and private scorer physically separated; deployment caveat explicit.",
+      "references": [
+        "PLAN.md",
+        "broker.py",
+        "reports/INTERFACE_REVIEW.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "One standard-library broker, immutable stores and offline scorer; no LLM, model service or per-concept deployment.",
+      "references": [
+        "PLAN.md",
+        "README.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Constructed origins, external corpus scope, duplicate lineage and conditional diagnostic classes explicit; no real biological claim.",
+      "references": [
+        "README.md",
+        "fixture/reports/NOISE_AUDIT.json",
+        "build.py"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Finite frozen evidence, typed/page/body limits and HTTP retry/failure accounting checked; full model/energy accounting deferred.",
+      "references": [
+        "broker.py",
+        "evaluate.py",
+        "fixture/reports/VALIDATION.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Unknowns/future/path attempts fail, conflicting retries rejected, committed response recovery and final closure exercised.",
+      "references": [
+        "fixture/reports/VALIDATION.json",
+        "broker.py"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Baseline corpus hash preserved; world coefficients explicitly engineering assumptions; owner request drives noise construction.",
+      "references": [
+        "PLAN.md",
+        "fixture/manifest.json",
+        "world.py"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Actual HTTP scripted fixture and snapshot checks recorded; no human/EDI superiority or ecological fidelity claim.",
+      "references": [
+        "fixture/reports/VALIDATION.json",
+        "README.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "C01",
+      "description": "Ecological calibration, unseen-world difficulty, human/EDI use and comparative advantage are untested.",
+      "status": "deferred",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "C02",
+      "description": "Independent participant filesystem/container isolation and hostile multi-tenant deployment are not demonstrated.",
+      "status": "deferred",
+      "blocking_at": [
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    "Added two public evidence stores and private evaluator snapshot.",
+    "Added rationale-preserving inquiry, idempotency, closure and offline outcome scoring.",
+    "Added same-target biochemical/needle distractions and explicit diagnostic-only labels.",
+    "Preserved original real corpus and attributed external excerpts."
+  ],
+  "verification": [
+    {
+      "id": "V_ENV",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "revision": "sha256:a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff"
+    }
+  ],
+  "measurements": [
+    {
+      "name": "initial evidence items",
+      "state": "measured",
+      "value": 30,
+      "evidence_ref": "fixture/manifest.json",
+      "revision": "sha256:a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff",
+      "conditions": "Actual frozen fixture inventory."
+    },
+    {
+      "name": "requestable evidence items",
+      "state": "measured",
+      "value": 129,
+      "evidence_ref": "fixture/manifest.json",
+      "revision": "sha256:a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff",
+      "conditions": "Actual frozen fixture inventory."
+    }
+  ],
+  "product_qualification": "passed_scoped",
+  "verdict": "pass",
+  "next_step": "Use the public client for an isolated development participant; define varied independent qualification worlds and matched baselines before competitive claims."
+}
