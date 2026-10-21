@@ -1,0 +1,12 @@
+{
+  "namespace": "edi.agency.reports",
+  "native_source_id": "REPLACE-local-report-source",
+  "epoch": "REPLACE-epoch",
+  "deliverer": "C0-local-operator",
+  "channel": "local-operator-report",
+  "adapter": "edi-c7-report/1.0",
+  "binding_basis": "configured",
+  "descriptor": {
+    "meaning": "Generated local report, not independent effect evidence"
+  }
+}

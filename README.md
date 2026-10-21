@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.7.0. **Status:** shared foundation and first local C1 observation, C2 interpretation, C3 world hosting, C4 inquiry, C5 analysis and C6 prospective-assessment source implementations; unqualified. C0-C6 are partial; C7 and native reasoning-model inference remain unavailable. Runtime, numerical/scientific validity and learned advantage remain open.
+**Code version:** 0.8.0. **Status:** shared foundation and first local C1 observation, C2 interpretation, C3 world hosting, C4 inquiry, C5 analysis, C6 prospective assessment and C7 research-agency source implementations; unqualified. C0-C7 are partial; native reasoning-model inference and external actuation remain unavailable. Runtime, numerical/scientific validity and learned advantage remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
@@ -14,7 +14,11 @@ This repository brings together the integrated seven-chapter architecture, the a
 
 Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
 
-## Current C6 code increment
+## Current C7 code increment
+
+[C7 specification](docs/implementation/C7_AGENCY_RUNTIME.md), [requirements trace](docs/implementation/C7_RUNTIME_TRACE.json), [ADR-009](docs/decisions/ADR-009-research-agency-and-policy-adoption.md), [source](src/edi/agency/) and [templates](examples/agency/) document attributed actor-information masks, explicit owned policy amendments/adoption, scoped internal-read grants, durable command/receipt reconciliation, access review and candidate-only C3 policy descriptions. C1 archives bounded generated reports through a restricted facade. No policy, actor view, command, report, Runtime/store or product/qualification case ran. All eight owners now have a first source subset; integrated C0 orchestration, native inference and qualification remain open.
+
+## Prior C6 code increment
 
 [C6 specification](docs/implementation/C6_ASSESSMENT_RUNTIME.md), [trace](docs/implementation/C6_RUNTIME_TRACE.json), [ADR-008](docs/decisions/ADR-008-prospective-assessment-and-advice.md), [source](src/edi/assess/) and [examples](examples/assessment/) document immutable forecast/confirmation records, fixed-cut first-occurrence measurement selection, scalar/Brier scores, descriptive calibration, missing/censored-data handling, attributed revision/finding/inquiry reviews and staged candidate-only C3 proposals. Native C4/C5 facades connect the assessment path while C3 retains admission. No registration, scan, score, Runtime/store or qualification case ran.
 

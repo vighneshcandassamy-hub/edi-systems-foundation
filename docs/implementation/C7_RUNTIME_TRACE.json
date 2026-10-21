@@ -1,0 +1,736 @@
+{
+  "schema": "edi-c7-runtime-trace-v1",
+  "version": "0.1",
+  "code_version": "0.8.0",
+  "date_utc": "2026-10-21",
+  "input_revision": "686da92ec4a9c0892998aee1b85280b723d8f199",
+  "mission": "EDI-MIS-001",
+  "requirements": [
+    {
+      "id": "C7-R001",
+      "title": "Boundary and owned authority",
+      "owner": "C7",
+      "functions": [
+        "F70",
+        "F71",
+        "F73"
+      ],
+      "parents": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "statement": "Keep represented actor state, EDI policy, intended action, command completion and independently measured effect separate.",
+      "rationale": "A modeled goal or model-admission decision cannot authorize the software.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V001",
+        "C7-V018",
+        "C7-V023"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R002",
+      "title": "Explicit actor information mask",
+      "owner": "C7",
+      "functions": [
+        "F70"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R11",
+        "IMP-R25"
+      ],
+      "statement": "Retain only explicit attributed data with pinned actor/model/evidence refs, availability/receipt/perception cuts and clock assumptions.",
+      "rationale": "Actors must not automatically inherit the analyst's entire model or future evidence.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V002",
+        "C7-V004"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R003",
+      "title": "Owned purpose and original standards",
+      "owner": "C7",
+      "functions": [
+        "F71",
+        "F73"
+      ],
+      "parents": [
+        "IMP-R07",
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "statement": "Retain immutable purpose/standards history and distinguish fixed action, parameter change, policy amendment and explicit goal version change.",
+      "rationale": "Changing a goal is different from meeting its original standard.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V005",
+        "C7-V006"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R004",
+      "title": "Proposal and explicit adoption",
+      "owner": "C7",
+      "functions": [
+        "F73"
+      ],
+      "parents": [
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R23"
+      ],
+      "statement": "Bootstrap and later policy changes require separate adopt/reject/defer decisions and optimistic base revision; terminal decisions are immutable.",
+      "rationale": "Fallible advice must not install itself or silently rebase.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V003",
+        "C7-V005",
+        "C7-V007"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R005",
+      "title": "Finite named grants",
+      "owner": "C7",
+      "functions": [
+        "F71",
+        "F72"
+      ],
+      "parents": [
+        "IMP-R11",
+        "IMP-R23",
+        "IMP-R32"
+      ],
+      "statement": "Check exact operation/origin/record/item/time scope against a named current grant and preserve refusal.",
+      "rationale": "A broad mission or an access request does not supply source/action authority.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V008",
+        "C7-V009",
+        "C7-V016"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R006",
+      "title": "Research grammar and operator boundary",
+      "owner": "C7",
+      "functions": [
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "parents": [
+        "IMP-R12",
+        "IMP-R23",
+        "IMP-R33"
+      ],
+      "statement": "Allow only installed internal read adapters; keep external actuation/acquisition and direct C5 dispatch unavailable; expose operator decisions only to trusted local SDK/CLI.",
+      "rationale": "Explicitly bounded permissions must be enforceable without interpreting model prose.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V001",
+        "C7-V003",
+        "C7-V023"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R007",
+      "title": "Dispatch-time authorization integrity",
+      "owner": "C7",
+      "functions": [
+        "F71",
+        "F72"
+      ],
+      "parents": [
+        "IMP-R12",
+        "IMP-R23",
+        "IMP-R29"
+      ],
+      "statement": "Recheck policy adoption hash/revision, grant and expiry at dispatch and after writer-lock acquisition, with cooperative execution fences.",
+      "rationale": "An earlier authorization may have expired or been superseded before work starts.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V008",
+        "C7-V009",
+        "C7-V013"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R008",
+      "title": "Durable single-use command",
+      "owner": "C7",
+      "functions": [
+        "F72"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "statement": "Commit exact command intent and reserved completion capacity before invoking a read; consume each decision once and allow one unresolved workspace command.",
+      "rationale": "Restart/duplicate delivery must not turn into an untracked repeated invocation.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V010",
+        "C7-V011",
+        "C7-V019"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R009",
+      "title": "Receipt and reconciliation integrity",
+      "owner": "C7",
+      "functions": [
+        "F72"
+      ],
+      "parents": [
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "statement": "Return original retry status, preserve unresolved completion, reconcile explicitly from an archived report, and reject late terminal overwrite.",
+      "rationale": "Missing acknowledgement is not proof of failure or permission for automatic retry.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V011",
+        "C7-V012",
+        "C7-V013"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R010",
+      "title": "Original report and generated lineage",
+      "owner": "C7",
+      "functions": [
+        "F72"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R23",
+        "IMP-R25"
+      ],
+      "statement": "Stage exact original UTF-8 report capture and retain its C1 receipt; mark local reports generated and distinct from measured effects.",
+      "rationale": "Capturing an account preserves its provenance without making it independent corroboration.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V014",
+        "C7-V015"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R011",
+      "title": "Standing access and denial lifecycle",
+      "owner": "C7",
+      "functions": [
+        "F70",
+        "F72"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "statement": "Reuse current covering grants; coalesce exact needs; retain denial/defer/expiry; leave notification/acquisition to C0/C1.",
+      "rationale": "Exploration should reuse permission and avoid repeated unchanged access prompts.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V016",
+        "C7-V017"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R012",
+      "title": "Candidate-only modeled policy proposals",
+      "owner": "C7",
+      "functions": [
+        "F73"
+      ],
+      "parents": [
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R23"
+      ],
+      "statement": "Stage exact attributed candidate C3 puts and original commit receipts without admission, hidden rebase, operational adoption or claimed domain effects.",
+      "rationale": "Model revision and actual system/policy transition have different owners and evidence.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V018",
+        "C7-V021",
+        "C7-V023"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R013",
+      "title": "Finite operating envelope",
+      "owner": "C7",
+      "functions": [
+        "F70",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R29"
+      ],
+      "statement": "Bound requests, state, selections, result bytes, cooperative work, writer waits and disk reserve; retain original prepaid completion allowances.",
+      "rationale": "Finite resources must fail explicitly without consuming completion capacity needed by admitted work.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V019",
+        "C7-V020",
+        "C7-V022"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R014",
+      "title": "Scoped native interfaces and isolation",
+      "owner": "C7",
+      "functions": [
+        "F70",
+        "F72",
+        "F73"
+      ],
+      "parents": [
+        "IMP-R11",
+        "IMP-R23",
+        "IMP-R29",
+        "IMP-R32"
+      ],
+      "statement": "Use restricted C0/C1/C3 ports and seven distinct owner database scopes; preserve all 56 lane dispositions and no direct C4/C5/C6 action bypass.",
+      "rationale": "Adding a capability must not bypass admission or stall source recording behind a new owner.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V021",
+        "C7-V022",
+        "C7-V023"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R015",
+      "title": "Versioned immutable audit selections",
+      "owner": "C7",
+      "functions": [
+        "F72",
+        "F73"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "statement": "Retain request fingerprints, content hashes, original outcomes, fixed-position selections and unsupported-version errors.",
+      "rationale": "Long-lived review requires stable identity/time and explicit unavailable history.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V007",
+        "C7-V010",
+        "C7-V020",
+        "C7-V022"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    },
+    {
+      "id": "C7-R016",
+      "title": "Trace and honest qualification",
+      "owner": "C7",
+      "functions": [
+        "F70",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "parents": [
+        "IMP-R07",
+        "IMP-R15",
+        "IMP-R19",
+        "IMP-R23",
+        "IMP-R33"
+      ],
+      "statement": "Document assumptions, decisions, alternatives, interfaces, source checks and unrun cases without promoting C6/C7 or original wider requirements to accepted.",
+      "rationale": "Source structure and plausible reasoning do not establish scientific intelligence, usefulness, speed or HA.",
+      "acceptance": "At a future pinned configuration, the linked cases must demonstrate this scoped behavior and its refusal/recovery counterexamples; source checks alone do not satisfy it.",
+      "source": [
+        "src/edi/agency/contracts.py",
+        "src/edi/agency/service.py",
+        "src/edi/agency/sqlite.py",
+        "docs/implementation/C7_AGENCY_RUNTIME.md"
+      ],
+      "verification_ids": [
+        "C7-V001",
+        "C7-V015",
+        "C7-V024"
+      ],
+      "status": "partial-source-implemented-unqualified"
+    }
+  ],
+  "verification_cases": [
+    {
+      "id": "C7-V001",
+      "title": "Domain/EDI boundary, no default authority and unsupported external/acquisition/simulation requests",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R001",
+        "C7-R006",
+        "C7-R016"
+      ]
+    },
+    {
+      "id": "C7-V002",
+      "title": "Pinned actor mask, exact C1/C3 references, explicit content and no appended global state",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R002"
+      ]
+    },
+    {
+      "id": "C7-V003",
+      "title": "Advice/proposal cannot adopt a policy; operator facade limits and configured-ID trust caveat",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R004",
+        "C7-R006"
+      ]
+    },
+    {
+      "id": "C7-V004",
+      "title": "Future knowledge, availability/receipt/perception order, source lineage and clock-mapping limits",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R002"
+      ]
+    },
+    {
+      "id": "C7-V005",
+      "title": "Bootstrap, parameter/policy/goal distinctions and immutable original standards",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R003",
+        "C7-R004"
+      ]
+    },
+    {
+      "id": "C7-V006",
+      "title": "Purpose/standard change requires explicit goal amendment and new purpose version",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R003"
+      ]
+    },
+    {
+      "id": "C7-V007",
+      "title": "Stale adoption, concurrent terminal decisions, reject/defer retention and no rebase",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R004",
+        "C7-R015"
+      ]
+    },
+    {
+      "id": "C7-V008",
+      "title": "Exact named grant, policy/purpose cut and policy change before dispatch",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R005",
+        "C7-R007"
+      ]
+    },
+    {
+      "id": "C7-V009",
+      "title": "Grant/decision expiry before/after writer lock, clock regression and cooperative deadline",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R005",
+        "C7-R007"
+      ]
+    },
+    {
+      "id": "C7-V010",
+      "title": "Single-use decision, duplicate/conflicting requests and two-process command admission",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R008",
+        "C7-R015"
+      ]
+    },
+    {
+      "id": "C7-V011",
+      "title": "Crash after intent or read, unresolved status and retry without adapter invocation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R008",
+        "C7-R009"
+      ]
+    },
+    {
+      "id": "C7-V012",
+      "title": "Explicit archived-report reconciliation versus actual completion/effect",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R009"
+      ]
+    },
+    {
+      "id": "C7-V013",
+      "title": "Late worker and reconciliation race; active-command/policy fences and terminal immutability",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R007",
+        "C7-R009"
+      ]
+    },
+    {
+      "id": "C7-V014",
+      "title": "C1 original report bytes, lost acknowledgement, staged capture/idempotency and receipt recovery",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R010"
+      ]
+    },
+    {
+      "id": "C7-V015",
+      "title": "Generated report echo, source truth, operator account and measured-effect separation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R010",
+        "C7-R016"
+      ]
+    },
+    {
+      "id": "C7-V016",
+      "title": "Standing grant reuse, expiry, old review semantics and exact-need coalescing",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R005",
+        "C7-R011"
+      ]
+    },
+    {
+      "id": "C7-V017",
+      "title": "Denial/defer/cooldown, materially changed need, grant revocation and C0-only notification",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R011"
+      ]
+    },
+    {
+      "id": "C7-V018",
+      "title": "Candidate C3 policy/organization patch, metadata, unsupported admission and domain-effect distinction",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R001",
+        "C7-R012"
+      ]
+    },
+    {
+      "id": "C7-V019",
+      "title": "Prepaid completion quota, one unresolved command, adoption blocking and overload",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R008",
+        "C7-R013"
+      ]
+    },
+    {
+      "id": "C7-V020",
+      "title": "Changed profile after staging, disk/unknown commit, content integrity and original-result recovery",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R013",
+        "C7-R015"
+      ]
+    },
+    {
+      "id": "C7-V021",
+      "title": "Exact C3 stage/commit/lost-receipt retry and unchanged base/version semantics",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R012",
+        "C7-R014"
+      ]
+    },
+    {
+      "id": "C7-V022",
+      "title": "Stable bounded artifact cursors, seven lazy distinct stores, workspace and result limits",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R013",
+        "C7-R014",
+        "C7-R015"
+      ]
+    },
+    {
+      "id": "C7-V023",
+      "title": "All 28 pairs/56 directions, C0 mediation and forbidden direct reasoning/analysis/assessment action paths",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R001",
+        "C7-R006",
+        "C7-R012",
+        "C7-R014"
+      ]
+    },
+    {
+      "id": "C7-V024",
+      "title": "Complete original requirements, native model/actor binding, useful decisions, security, cost and HA remain open",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C7-R016"
+      ]
+    }
+  ],
+  "source_authorities": [
+    "docs/implementation/COMPONENTS.md",
+    "docs/implementation/CONTRACTS.md",
+    "docs/implementation/INTERFACES.json",
+    "docs/implementation/TRACEABILITY.json",
+    "docs/implementation/REASONING_INTEGRATION.md",
+    "docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md",
+    "architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md"
+  ],
+  "c6_prerequisite": {
+    "full_acceptance": "not_established",
+    "source_review": "revise",
+    "runtime_scientific_qualification": "not_run",
+    "handoff": "C0-carried attributed advice IDs only; no direct C6-C7 interface or authority"
+  },
+  "consumer_obligations": "DOWN-001 through DOWN-008 preserved; partial source contribution only",
+  "product_qualification": "not_run; owner structure-first direction retained",
+  "open_obligations": [
+    "All original C0-C7 requirements beyond this scoped source subset and all runtime/integration/scientific qualification",
+    "Authenticated authority and hostile-tenant isolation, external actuators/acquisition/connector receipts and independent effects",
+    "C3-native actor visibility, C5 actor-response dynamics, arbitrary clocks and verified content/perception semantics",
+    "Native C4 model/provider binding, autonomous C0 scheduling, access delivery/notification budgets and end-to-end workflow",
+    "Hard process time/RAM bounds, full resource/cost accounting, retention/export/restore/migration/HA and distributed scale",
+    "Matched useful prediction/transfer/inquiry/action comparisons and independent scientific/security review"
+  ]
+}

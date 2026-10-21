@@ -1,6 +1,6 @@
 # EDI Systems Foundation — checkpoint
 
-Date: 21 October 2026. Code version: 0.7.0; conceptual source baseline retained.
+Date: 21 October 2026. Code version: 0.8.0; conceptual source baseline retained.
 
 ## What is stored
 
@@ -16,7 +16,7 @@ The conceptual documents have consistency/traceability reviews. The master archi
 
 ## Current scope
 
-The baseline and research are stored. The authorized shared-foundation/C1 source increment is implemented below, with product qualification deferred. No earlier runtime was migrated; no inference/benchmark, superiority, throughput, cost, energy, availability or arbitrary scalability result is established.
+The baseline, research and bounded first source implementations across C0-C7 are stored on the architecture branch, with product qualification deferred. C0 workflow integration and native reasoning inference remain open. No earlier runtime was migrated; no inference/benchmark, superiority, throughput, cost, energy, availability or arbitrary scalability result is established.
 
 ## Remote status
 
@@ -24,7 +24,7 @@ The private repository [vighneshcandassamy-hub/edi-systems-foundation](https://g
 
 ## Next development step
 
-Review the [implementation specification](docs/implementation/README.md). The next implementation artifact is the concrete typed contracts, admission policy and one source/identity/time fixture for the first selected capability. Bind dependency/provider versions and the chosen profile before runtime work; keep numerical grammar and unsupported backend semantics explicit.
+Review the [implementation specification](docs/implementation/README.md) and latest [C7 guide](docs/implementation/C7_AGENCY_RUNTIME.md). Next is a bounded integrated C0 workflow across existing partial owners, preserving operator admission/adoption boundaries. Bind the selected model/provider/hardware before native reasoning execution; runtime/integration/scientific qualification remains separate and deferred under the owner's structure-first direction.
 
 ## Implementation research checkpoint
 
@@ -119,3 +119,17 @@ C6 owns a separate lazy SQLite ledger, immutable request outcomes and bounded ar
 Fourteen scoped requirements/twenty future cases are allocated without changing original architecture/catalogues/evidence. Source-clock/provenance trust, hidden dependencies/knowledge, broader measurement/statistical/causal/refinement methods, real calibration/skill/yield/strategic usefulness, complete costs, C0 scheduling, retention/restore/migration/isolation/HA and all C1-C6 qualification remain open. Next source owner is C7 agency/authorized adoption.
 
 Checks were AST/import/parser construction, authored JSON/TOML/new-document links, trace/lane references and schema generation only. No Runtime/store, registration, outcome scan, scoring/calibration, C3 proposal, example/product case, gate validator, simulation, model call, training, benchmark or deployment ran. Overall contract source self-review remains REVISE; no component acceptance, learned advantage or independent scientific result is claimed. Assets are saved on the private architecture branch/draft PR; committed-tree and pinned-file hashes verify publication separately.
+
+## C7 research-agency source checkpoint
+
+21 October 2026 UTC. Input remote revision `686da92ec4a9c0892998aee1b85280b723d8f199`. Owner authorized C7 against specifications, constraints, rationale, interfaces, schemas, assumptions and decisions after C6 review. C6's first source subset supports C0-carried attributed advice; full C6 requirements/runtime/scientific acceptance remains unestablished. No direct C6-C7 lane is introduced. [C7 guide](docs/implementation/C7_AGENCY_RUNTIME.md), [trace](docs/implementation/C7_RUNTIME_TRACE.json), [ADR-009](docs/decisions/ADR-009-research-agency-and-policy-adoption.md), [source review](docs/implementation/evidence/c7-source-review.json), twenty-one generated schemas and authored templates record this increment.
+
+Code 0.8.0 separates represented actor information from actual EDI operating authority. C7 qualifies explicit attributed actor masks with pinned evidence/model/time correspondence without appending global state. Immutable research policies retain purpose/standards, exact finite grants and separate amendment/adopt/reject/defer decisions. Purpose/standard changes require a new explicit goal version. Configured local operator IDs are not authenticated identities; the SDK/CLI remains trusted-local only. Native C3 actor perception and C5 actor-response dynamics remain open.
+
+Internal native observation-metadata and pinned model reads have scoped authorization, expiry/policy rechecks, post-writer-lock time checks, single-use decisions, durable pre-invocation intents, one unresolved workspace command, prepaid completion allowance and cooperative active-command/policy fences. Interrupted commands remain unresolved and original retry does not redispatch. Dedicated generated reports preserve exact original bytes in C1 before explicit local reconciliation; reported completion remains distinct from measured effect. C7 has no external actuation, acquisition or direct C5 dispatch adapter.
+
+Access reviews reuse standing grants and retain exact-need coalescing, denial/defer/expiry; C0 owns notification/scheduling and C1 future acquisition. Represented policy/organization updates stage exact attributed candidate-only C3 puts and original receipts; C3 retains admission and no actual domain adoption is inferred. Native C0/C1/C3 facades preserve all 28 pairs/56 directed dispositions. All seven owner stores have separate checked paths/workspaces and lazy composition; C1 recording does not initialize C7, model or solver stores.
+
+Sixteen scoped requirements and twenty-four future cases are allocated; overall contract self-review remains REVISE. Full original C0-C7 obligations, authenticated authority, independent perception/causal effects, complete end-to-end costs, hard isolation, retention/export/restore/migration/HA, independent review and all product/scientific qualification remain open. Next development scope is a bounded C0 integrated workflow and separately pinned native reasoning binding; no C8, paid inference, benchmark, deployment or external action is implied.
+
+Checks are source AST/import/CLI-parser construction, schema generation, authored JSON/TOML/new-document links and trace/lane inventory references only. No Runtime/store, policy proposal/adoption, actor qualification, action check/dispatch, report capture/reconciliation, access review, C3 proposal, example/product case, gate validator, compiler/solver, model call, simulation, training, benchmark or deployment ran. Source and reference assets are saved on the private architecture branch/draft PR; committed tree and pinned-file hashes verify publication separately from qualification.

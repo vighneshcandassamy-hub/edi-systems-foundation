@@ -1,5 +1,7 @@
 # C6 prospective assessment and revision advice — first source increment
 
+Later C7 handoff: [code 0.8.0](C7_AGENCY_RUNTIME.md) adds a separate research-policy/adoption owner. C0 can carry attributed C6 advice IDs into its amendment proposal; there is no direct C6-C7 port or automatic adoption. Earlier references below to future/unavailable C7 describe this C6 increment's historical scope; C6 scientific/runtime qualification remains open.
+
 Code **0.7.0**; input remote revision `7ea2b3ada81db6a42ce6a8a3ebfd315f465ae3a2`. Status: **partial source implementation; no runtime/scientific qualification**. C6 now has concrete registration/comparison/advice code and interfaces. No registration, outcome scan, score, store, simulation, example or product case was executed in this increment.
 
 ## Authorities and C5 prerequisite

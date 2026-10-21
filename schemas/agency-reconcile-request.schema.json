@@ -1,0 +1,67 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "execution_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Execution Id",
+      "type": "string"
+    },
+    "archive_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Archive Id",
+      "type": "string"
+    },
+    "operator_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Operator Id",
+      "type": "string"
+    },
+    "outcome": {
+      "enum": [
+        "reported-completion",
+        "reported-failure",
+        "abandoned"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "execution_id",
+    "archive_id",
+    "operator_id",
+    "outcome",
+    "rationale"
+  ],
+  "title": "ReconcileRequest",
+  "type": "object"
+}

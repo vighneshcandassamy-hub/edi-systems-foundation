@@ -1,0 +1,225 @@
+{
+  "$defs": {
+    "AccessRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "access_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Access Id",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/AccessScope"
+        },
+        "target": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "unknown": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Unknown",
+          "type": "string"
+        },
+        "hypothesis_family": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Hypothesis Family",
+          "type": "string"
+        },
+        "minimum_useful_evidence": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Minimum Useful Evidence",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "attribution": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Attribution",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "access_id",
+        "scope",
+        "target",
+        "unknown",
+        "hypothesis_family",
+        "minimum_useful_evidence",
+        "rationale",
+        "attribution"
+      ],
+      "title": "AccessRequest",
+      "type": "object"
+    },
+    "AccessScope": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "select-observations",
+            "select-world"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "origin_refs": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Origin Refs",
+          "type": "array"
+        },
+        "world_ids": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "World Ids",
+          "type": "array"
+        },
+        "max_items": {
+          "default": 25,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Max Items",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "operation"
+      ],
+      "title": "AccessScope",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/AccessRequest"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "policy_revision": {
+      "minimum": 0,
+      "title": "Policy Revision",
+      "type": "integer"
+    },
+    "scope_key": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Scope Key",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "existing-grant",
+        "needs-access",
+        "coalesced",
+        "denied-cooldown",
+        "deferred"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "grant_ids": {
+      "default": [],
+      "items": {
+        "maxLength": 256,
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Grant Ids",
+      "type": "array"
+    },
+    "related_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Related Id"
+    },
+    "review_after": {
+      "format": "date-time",
+      "title": "Review After",
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "title": "Artifact Sha256",
+      "type": "string"
+    },
+    "notification": {
+      "const": "C0-owned-not-sent",
+      "default": "C0-owned-not-sent",
+      "title": "Notification",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request",
+    "created_at",
+    "policy_revision",
+    "scope_key",
+    "status",
+    "review_after",
+    "artifact_sha256"
+  ],
+  "title": "AccessReview",
+  "type": "object"
+}

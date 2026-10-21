@@ -7,6 +7,12 @@ import sys
 from pydantic import ValidationError
 
 from edi.inquiry.runtime import Runtime
+from edi.agency.config import AgencyProfile
+from edi.agency.contracts import (
+    AccessDispositionRequest, AccessRequest, ActionRequest, ActorViewRequest, AdoptionRequest,
+    AmendmentRequest, DispatchRequest, ModelUpdateRequest, ReconcileRequest, ReportRequest,
+)
+from edi.agency.contracts import ArtifactCursor as AgencyArtifactCursor
 from edi.analyze.config import AnalysisProfile
 from edi.analyze.contracts import CompileRequest, RunControl, RunRequest
 from edi.assess.config import AssessmentProfile
@@ -25,7 +31,7 @@ from edi.world.contracts import WorldCursor, WorldPatch, WorldQuery
 
 
 def _parser():
-    parser = argparse.ArgumentParser(prog="edi", description="EDI local C1-C6 runtime (unqualified)")
+    parser = argparse.ArgumentParser(prog="edi", description="EDI local C1-C7 runtime (unqualified)")
     parser.add_argument("--config", type=Path, help="LocalProfile JSON; must include workspace_id/database")
     parser.add_argument("--database", type=Path, help="override local database path")
     parser.add_argument("--workspace", help="override workspace scope")
@@ -34,6 +40,7 @@ def _parser():
     parser.add_argument("--reason-config", type=Path, help="ReasoningProfile JSON; default is a separate sibling database")
     parser.add_argument("--analysis-config", type=Path, help="AnalysisProfile JSON; default is a separate sibling database")
     parser.add_argument("--assessment-config", type=Path, help="AssessmentProfile JSON; default is a separate sibling database")
+    parser.add_argument("--agency-config", type=Path, help="AgencyProfile JSON; trusted local operator surface, separate sibling database")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities")
     p = sub.add_parser("register-origin")
@@ -123,6 +130,20 @@ def _parser():
     p.add_argument("kind", choices=("comparison", "review", "finding", "yield"))
     p.add_argument("--cursor", type=Path)
     p.add_argument("--limit", type=int, default=25)
+    for command in ("agency-propose-policy", "agency-decide-policy", "agency-check", "agency-dispatch",
+                    "agency-actor-view", "agency-access", "agency-access-disposition", "agency-archive-report",
+                    "agency-reconcile", "agency-build-patch", "agency-submit"):
+        p = sub.add_parser(command)
+        p.add_argument("request", type=Path)
+    p = sub.add_parser("agency-policy")
+    p.add_argument("--revision", type=int)
+    for command in ("agency-receipt", "agency-get-amendment", "agency-get-decision", "agency-get-view", "agency-get-access"):
+        p = sub.add_parser(command)
+        p.add_argument("artifact_id")
+    p = sub.add_parser("agency-query")
+    p.add_argument("kind", choices=("amendment", "adoption", "decision", "execution-intent", "execution-receipt", "actor-view", "access", "access-disposition", "report-archive", "model-receipt"))
+    p.add_argument("--cursor", type=Path)
+    p.add_argument("--limit", type=int, default=25)
     return parser
 
 
@@ -148,7 +169,8 @@ def main(argv=None) -> int:
         reasoning_profile = ReasoningProfile.model_validate_json(args.reason_config.read_bytes()) if args.reason_config else None
         analysis_profile = AnalysisProfile.model_validate_json(args.analysis_config.read_bytes()) if args.analysis_config else None
         assessment_profile = AssessmentProfile.model_validate_json(args.assessment_config.read_bytes()) if args.assessment_config else None
-        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile, analysis_profile, assessment_profile)
+        agency_profile = AgencyProfile.model_validate_json(args.agency_config.read_bytes()) if args.agency_config else None
+        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile, analysis_profile, assessment_profile, agency_profile)
         obs = runtime.observation
         world = runtime.world if args.command.startswith("world-") else None
         if args.command == "capabilities":
@@ -265,6 +287,32 @@ def main(argv=None) -> int:
                     "assess-yield": (YieldRequest, assessment.review_inquiry_yield),
                     "assess-build-patch": (AssessmentSubmissionRequest, assessment.build_patch),
                     "assess-submit": (AssessmentSubmissionRequest, assessment.submit_revision)}
+                contract, method = commands[args.command]
+                _emit(method(contract.model_validate_json(args.request.read_bytes())))
+        elif args.command.startswith("agency-"):
+            agency = runtime.agency
+            if args.command == "agency-policy":
+                _emit(agency.read_policy(args.revision))
+            elif args.command == "agency-query":
+                cursor = AgencyArtifactCursor.model_validate_json(args.cursor.read_bytes()) if args.cursor else None
+                _emit(agency.query(args.kind, cursor=cursor, limit=args.limit))
+            elif args.command in ("agency-receipt", "agency-get-amendment", "agency-get-decision", "agency-get-view", "agency-get-access"):
+                methods = {"agency-receipt": agency.get_receipt, "agency-get-amendment": agency.get_amendment,
+                    "agency-get-decision": agency.get_decision, "agency-get-view": agency.get_actor_view,
+                    "agency-get-access": agency.get_access}
+                _emit(methods[args.command](args.artifact_id))
+            else:
+                commands = {"agency-propose-policy": (AmendmentRequest, agency.request_adoption),
+                    "agency-decide-policy": (AdoptionRequest, agency.decide_adoption),
+                    "agency-check": (ActionRequest, agency.check_action),
+                    "agency-dispatch": (DispatchRequest, agency.dispatch_authorized),
+                    "agency-actor-view": (ActorViewRequest, agency.qualify_actor_view),
+                    "agency-access": (AccessRequest, agency.review_access_scope),
+                    "agency-access-disposition": (AccessDispositionRequest, agency.record_access_disposition),
+                    "agency-archive-report": (ReportRequest, agency.archive_report),
+                    "agency-reconcile": (ReconcileRequest, agency.reconcile_execution),
+                    "agency-build-patch": (ModelUpdateRequest, agency.build_model_patch),
+                    "agency-submit": (ModelUpdateRequest, agency.submit_model_update)}
                 contract, method = commands[args.command]
                 _emit(method(contract.model_validate_json(args.request.read_bytes())))
         return 0

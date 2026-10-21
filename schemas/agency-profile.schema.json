@@ -1,0 +1,108 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "profile_id": {
+      "default": "local-agency-research-v1",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Profile Id",
+      "type": "string"
+    },
+    "workspace_id": {
+      "default": "default",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "database": {
+      "format": "path",
+      "title": "Database",
+      "type": "string"
+    },
+    "operator_ids": {
+      "default": [
+        "local-operator"
+      ],
+      "items": {
+        "maxLength": 256,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 16,
+      "minItems": 1,
+      "title": "Operator Ids",
+      "type": "array"
+    },
+    "mode": {
+      "default": "research-readonly",
+      "pattern": "^research-readonly$",
+      "title": "Mode",
+      "type": "string"
+    },
+    "max_request_bytes": {
+      "default": 131072,
+      "minimum": 1024,
+      "title": "Max Request Bytes",
+      "type": "integer"
+    },
+    "max_document_bytes": {
+      "default": 2097152,
+      "minimum": 65536,
+      "title": "Max Document Bytes",
+      "type": "integer"
+    },
+    "max_result_bytes": {
+      "default": 1048576,
+      "minimum": 4096,
+      "title": "Max Result Bytes",
+      "type": "integer"
+    },
+    "max_page_bytes": {
+      "default": 4194304,
+      "minimum": 65536,
+      "title": "Max Page Bytes",
+      "type": "integer"
+    },
+    "max_records": {
+      "default": 50000,
+      "minimum": 4,
+      "title": "Max Records",
+      "type": "integer"
+    },
+    "max_stored_bytes": {
+      "default": 1073741824,
+      "minimum": 65536,
+      "title": "Max Stored Bytes",
+      "type": "integer"
+    },
+    "max_operation_seconds": {
+      "default": 15.0,
+      "exclusiveMinimum": 0,
+      "maximum": 300,
+      "title": "Max Operation Seconds",
+      "type": "number"
+    },
+    "writer_timeout_seconds": {
+      "default": 5.0,
+      "exclusiveMinimum": 0,
+      "maximum": 60,
+      "title": "Writer Timeout Seconds",
+      "type": "number"
+    },
+    "min_free_disk_bytes": {
+      "default": 268435456,
+      "minimum": 0,
+      "title": "Min Free Disk Bytes",
+      "type": "integer"
+    }
+  },
+  "title": "AgencyProfile",
+  "type": "object"
+}

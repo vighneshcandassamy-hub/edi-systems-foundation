@@ -3,6 +3,8 @@ from typing import BinaryIO
 from threading import Lock
 
 from edi.agency import Agency
+from edi.agency.config import AgencyProfile
+from edi.agency.sqlite import SQLiteAgencyStore
 from edi.analyze import Analysis
 from edi.analyze.config import AnalysisProfile
 from edi.analyze.sqlite import SQLiteAnalysisStore
@@ -32,7 +34,8 @@ class Runtime:
                  interpretation_profile: InterpretationProfile | None = None,
                  reasoning_profile: ReasoningProfile | None = None,
                  analysis_profile: AnalysisProfile | None = None,
-                 assessment_profile: AssessmentProfile | None = None):
+                 assessment_profile: AssessmentProfile | None = None,
+                 agency_profile: AgencyProfile | None = None):
         self.profile = profile
         world_profile = world_profile or WorldProfile(
             workspace_id=profile.workspace_id,
@@ -75,6 +78,14 @@ class Runtime:
             raise EDIError(ErrorCode.DENIED, "C1-C6 workspace scopes must match")
         if assessment_profile.database.resolve() in paths | {reasoning_profile.database.resolve(), analysis_profile.database.resolve()}:
             raise EDIError(ErrorCode.INVALID, "C1-C6 require separate owner databases")
+        agency_profile = agency_profile or AgencyProfile(
+            workspace_id=profile.workspace_id,
+            database=profile.database.with_name(profile.database.stem + ".agency.sqlite3"),
+        )
+        if agency_profile.workspace_id != profile.workspace_id:
+            raise EDIError(ErrorCode.DENIED, "C1-C7 workspace scopes must match")
+        if agency_profile.database.resolve() in paths | {reasoning_profile.database.resolve(), analysis_profile.database.resolve(), assessment_profile.database.resolve()}:
+            raise EDIError(ErrorCode.INVALID, "C1-C7 require separate owner databases")
         self.observation = ObservationService(SQLiteObservationStore(profile), profile)
         self._world_profile = world_profile
         self._world = None
@@ -91,22 +102,22 @@ class Runtime:
         self._assessment_profile = assessment_profile
         self._assessment = None
         self._assessment_lock = Lock()
-        self._components = {
-            "C7": Agency(),
-        }
+        self._agency_profile = agency_profile
+        self._agency = None
+        self._agency_lock = Lock()
 
     def capabilities(self) -> tuple[Capability, ...]:
         return (
             Capability(owner="C0", functions=("F00", "F01", "F02", "F03"),
                        state="implemented-unqualified",
-                       details="Partial C0: composition, scope/configuration, finite C1-C6 operations and explicit progress handoff; no autonomous scheduling"),
+                       details="Partial C0: composition, scope/configuration, finite C1-C7 operations and explicit progress handoff; no autonomous scheduling"),
             self.observation.capability,
             Interpretation.capability,
             World.capability,
             Reasoning.capability,
             Analysis.capability,
             Assessment.capability,
-            *(component.capability for component in self._components.values()),
+            Agency.capability,
         )
 
     @property
@@ -191,6 +202,20 @@ class Runtime:
             raise EDIError(ErrorCode.DENIED, "no C6 component port allocated for this owner")
         return self.assessment.access_for(owner)
 
+    @property
+    def agency(self) -> Agency:
+        # C1 intake never opens the C7 ledger, C3, C5, or a model engine.
+        with self._agency_lock:
+            if self._agency is None:
+                self._agency = Agency(self._agency_profile, self.observation.agency_access(),
+                    SQLiteAgencyStore(self._agency_profile), lambda: self.world_for("C7"))
+            return self._agency
+
+    def agency_for(self, owner: Owner):
+        if owner != "C0":
+            raise EDIError(ErrorCode.DENIED, "no direct C2/C4/C5/C6 action/adoption lane")
+        return self.agency.access_for(owner)
+
     def observe(self, capture: Capture, stream: BinaryIO):
         return self.observation.ingest(capture, stream)
 
@@ -203,10 +228,8 @@ class Runtime:
             raise EDIError(ErrorCode.INCOMPLETE, "local input file unavailable") from exc
 
     def component(self, owner: Owner):
-        component = self._components.get(owner)
-        if component is None:
-            raise EDIError(ErrorCode.INVALID, "use the C0-C6 typed SDK for this owner")
-        return component
+        if owner == "C7": return self.agency_for("C0")
+        raise EDIError(ErrorCode.INVALID, "use the C0-C7 typed SDK for this owner")
 
     def world_for(self, owner: Owner):
         return self.world.access_for(owner)

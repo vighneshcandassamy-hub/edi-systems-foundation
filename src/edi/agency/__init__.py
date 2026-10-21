@@ -1,7 +1,4 @@
-"""C7 future authorization/adoption owner. No actuator is installed."""
-from edi.shared.component import DeclaredComponent
+"""C7 research-mode authority, actor-information qualification and adoption."""
+from edi.agency.service import Agency
 
-
-class Agency(DeclaredComponent):
-    def __init__(self):
-        super().__init__("C7", ("F70", "F71", "F72", "F73"))
+__all__ = ["Agency"]

@@ -45,6 +45,26 @@ class EvidenceAccess:
         return self._service.coverage()
 
 
+class AgencyObservationAccess(EvidenceAccess):
+    """IF-13B: exact C7-generated reports only; no general intake/registry handle."""
+    def __init__(self, service):
+        super().__init__(service, frozenset(("select_records",)))
+
+    def ingest_report(self, capture: Capture, payload: BinaryIO):
+        if (capture.kind != "execution-report" or capture.origin_class != "generated"
+                or not capture.lineage or capture.lineage[0] != "edi-c7/0.8.0"
+                or capture.media_type != "text/plain; charset=utf-8"
+                or capture.expected_bytes is None or capture.expected_bytes > 65536
+                or capture.expected_sha256 is None):
+            raise EDIError(ErrorCode.DENIED, "C7 report facade accepts only bounded attributed generated reports")
+        origin = self._service.get_origin(capture.origin_ref)
+        spec = origin.spec
+        if (spec.namespace != "edi.agency.reports" or spec.adapter != "edi-c7-report/1.0"
+                or spec.deliverer != "C0-local-operator" or spec.binding_basis != "configured"):
+            raise EDIError(ErrorCode.DENIED, "C7 cannot report through an unrelated origin")
+        return self._service.ingest(capture, payload)
+
+
 class ObservationService:
     capability = Capability(
         owner="C1", functions=("F10", "F11", "F12", "F13"),
@@ -67,6 +87,9 @@ class ObservationService:
 
     def reader(self, operations: frozenset[str]) -> EvidenceAccess:
         return EvidenceAccess(self, operations)
+
+    def agency_access(self):
+        return AgencyObservationAccess(self)
 
     def register_origin(self, spec: OriginSpec):
         with self._admit():

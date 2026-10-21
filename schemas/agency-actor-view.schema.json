@@ -1,0 +1,348 @@
+{
+  "$defs": {
+    "ActorViewRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "view_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "View Id",
+          "type": "string"
+        },
+        "actor": {
+          "$ref": "#/$defs/Ref"
+        },
+        "model_revision": {
+          "minimum": 1,
+          "title": "Model Revision",
+          "type": "integer"
+        },
+        "as_of": {
+          "format": "date-time",
+          "title": "As Of",
+          "type": "string"
+        },
+        "clock_mapping_assumption": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Clock Mapping Assumption",
+          "type": "string"
+        },
+        "data": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/VisibleDatum"
+          },
+          "maxItems": 32,
+          "title": "Data",
+          "type": "array"
+        },
+        "owned_goals": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Owned Goals",
+          "type": "array"
+        },
+        "frames_and_memory": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Frames And Memory",
+          "type": "array"
+        },
+        "attributed_policy": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Attributed Policy",
+          "type": "string"
+        },
+        "attribution": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Attribution",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "view_id",
+        "actor",
+        "model_revision",
+        "as_of",
+        "clock_mapping_assumption",
+        "attributed_policy",
+        "attribution"
+      ],
+      "title": "ActorViewRequest",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "selector": {
+          "default": "whole-object",
+          "title": "Selector",
+          "type": "string"
+        },
+        "origin_class": {
+          "default": "unknown",
+          "enum": [
+            "external",
+            "generated",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin Class",
+          "type": "string"
+        },
+        "lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "record_id",
+        "sha256"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "VisibleDatum": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "datum_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Datum Id",
+          "type": "string"
+        },
+        "evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "model_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "available_at": {
+          "format": "date-time",
+          "title": "Available At",
+          "type": "string"
+        },
+        "received_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Received At"
+        },
+        "perceived_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Perceived At"
+        },
+        "channel": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Channel",
+          "type": "string"
+        },
+        "content": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "content_basis": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Content Basis",
+          "type": "string"
+        },
+        "uncertainty": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Uncertainty",
+          "type": "string"
+        }
+      },
+      "required": [
+        "datum_id",
+        "available_at",
+        "channel",
+        "content",
+        "content_basis",
+        "uncertainty"
+      ],
+      "title": "VisibleDatum",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/ActorViewRequest"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "basis": {
+      "const": "attributed-explicit-information-mask",
+      "default": "attributed-explicit-information-mask",
+      "title": "Basis",
+      "type": "string"
+    },
+    "limitations": {
+      "items": {
+        "maxLength": 8192,
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "artifact_sha256": {
+      "title": "Artifact Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request",
+    "created_at",
+    "limitations",
+    "artifact_sha256"
+  ],
+  "title": "ActorView",
+  "type": "object"
+}

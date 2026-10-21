@@ -1,0 +1,272 @@
+{
+  "$defs": {
+    "Grant": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "grant_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Grant Id",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "select-observations",
+            "select-world"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "origin_refs": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Origin Refs",
+          "type": "array"
+        },
+        "world_ids": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "World Ids",
+          "type": "array"
+        },
+        "not_before": {
+          "format": "date-time",
+          "title": "Not Before",
+          "type": "string"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "max_items": {
+          "default": 25,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Max Items",
+          "type": "integer"
+        },
+        "basis": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "grant_id",
+        "operation",
+        "not_before",
+        "expires_at",
+        "basis"
+      ],
+      "title": "Grant",
+      "type": "object"
+    },
+    "Policy": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "policy_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Policy Id",
+          "type": "string"
+        },
+        "mode": {
+          "const": "research-readonly",
+          "default": "research-readonly",
+          "title": "Mode",
+          "type": "string"
+        },
+        "purpose_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Purpose Version",
+          "type": "string"
+        },
+        "purpose": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Purpose",
+          "type": "string"
+        },
+        "evaluation_standards": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Evaluation Standards",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "grants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Grant"
+          },
+          "maxItems": 32,
+          "title": "Grants",
+          "type": "array"
+        },
+        "decision_ttl_seconds": {
+          "default": 60,
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Decision Ttl Seconds",
+          "type": "integer"
+        },
+        "access_cooldown_seconds": {
+          "default": 604800,
+          "maximum": 2592000,
+          "minimum": 1,
+          "title": "Access Cooldown Seconds",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "policy_id",
+        "purpose_version",
+        "purpose",
+        "evaluation_standards",
+        "assumptions"
+      ],
+      "title": "Policy",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "amendment_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Amendment Id",
+      "type": "string"
+    },
+    "expected_revision": {
+      "minimum": 0,
+      "title": "Expected Revision",
+      "type": "integer"
+    },
+    "proposed": {
+      "$ref": "#/$defs/Policy"
+    },
+    "change_kind": {
+      "enum": [
+        "bootstrap",
+        "parameter",
+        "policy",
+        "goal"
+      ],
+      "title": "Change Kind",
+      "type": "string"
+    },
+    "trigger": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Trigger",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "attribution": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Attribution",
+      "type": "string"
+    },
+    "imported_advice": {
+      "default": [],
+      "items": {
+        "maxLength": 256,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 16,
+      "title": "Imported Advice",
+      "type": "array"
+    },
+    "resource_and_implementation_basis": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Resource And Implementation Basis",
+      "type": "string"
+    },
+    "carry_over": {
+      "const": "retain-ledgers-recheck-unstarted-block-unresolved",
+      "default": "retain-ledgers-recheck-unstarted-block-unresolved",
+      "title": "Carry Over",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "amendment_id",
+    "expected_revision",
+    "proposed",
+    "change_kind",
+    "trigger",
+    "rationale",
+    "attribution",
+    "resource_and_implementation_basis"
+  ],
+  "title": "AmendmentRequest",
+  "type": "object"
+}
