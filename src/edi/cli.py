@@ -7,6 +7,7 @@ import sys
 from pydantic import ValidationError
 
 from edi.inquiry.runtime import Runtime
+from edi.inquiry.contracts import WorkflowInput, WorkflowOperatorInput, WorkflowProfile, WorkflowSpec
 from edi.agency.config import AgencyProfile
 from edi.agency.contracts import (
     AccessDispositionRequest, AccessRequest, ActionRequest, ActorViewRequest, AdoptionRequest,
@@ -41,6 +42,7 @@ def _parser():
     parser.add_argument("--analysis-config", type=Path, help="AnalysisProfile JSON; default is a separate sibling database")
     parser.add_argument("--assessment-config", type=Path, help="AssessmentProfile JSON; default is a separate sibling database")
     parser.add_argument("--agency-config", type=Path, help="AgencyProfile JSON; trusted local operator surface, separate sibling database")
+    parser.add_argument("--workflow-config", type=Path, help="C0 WorkflowProfile JSON; operator steps disabled by default")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities")
     p = sub.add_parser("register-origin")
@@ -144,6 +146,19 @@ def _parser():
     p.add_argument("kind", choices=("amendment", "adoption", "decision", "execution-intent", "execution-receipt", "actor-view", "access", "access-disposition", "report-archive", "model-receipt"))
     p.add_argument("--cursor", type=Path)
     p.add_argument("--limit", type=int, default=25)
+    for command in ("workflow-create", "workflow-supply", "workflow-supply-operator"):
+        p = sub.add_parser(command)
+        p.add_argument("request", type=Path)
+    for command in ("workflow-resume", "workflow-status", "workflow-output", "workflow-cancel"):
+        p = sub.add_parser(command)
+        p.add_argument("workflow_id")
+        if command == "workflow-output": p.add_argument("step_id")
+        if command == "workflow-resume": p.add_argument("--retry-uncertain", action="store_true", help="explicit trusted-local recovery after the prior runner is known stopped")
+    p = sub.add_parser("workflow-attempts")
+    p.add_argument("workflow_id")
+    p.add_argument("step_id")
+    p.add_argument("--after", type=int, default=0)
+    p.add_argument("--limit", type=int, default=25)
     return parser
 
 
@@ -170,7 +185,8 @@ def main(argv=None) -> int:
         analysis_profile = AnalysisProfile.model_validate_json(args.analysis_config.read_bytes()) if args.analysis_config else None
         assessment_profile = AssessmentProfile.model_validate_json(args.assessment_config.read_bytes()) if args.assessment_config else None
         agency_profile = AgencyProfile.model_validate_json(args.agency_config.read_bytes()) if args.agency_config else None
-        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile, analysis_profile, assessment_profile, agency_profile)
+        workflow_profile = WorkflowProfile.model_validate_json(args.workflow_config.read_bytes()) if args.workflow_config else None
+        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile, analysis_profile, assessment_profile, agency_profile, workflow_profile)
         obs = runtime.observation
         world = runtime.world if args.command.startswith("world-") else None
         if args.command == "capabilities":
@@ -315,6 +331,16 @@ def main(argv=None) -> int:
                     "agency-submit": (ModelUpdateRequest, agency.submit_model_update)}
                 contract, method = commands[args.command]
                 _emit(method(contract.model_validate_json(args.request.read_bytes())))
+        elif args.command.startswith("workflow-"):
+            workflow = runtime.workflow
+            if args.command == "workflow-create": _emit(workflow.create(WorkflowSpec.model_validate_json(args.request.read_bytes())))
+            elif args.command == "workflow-supply": _emit(workflow.supply(WorkflowInput.model_validate_json(args.request.read_bytes())))
+            elif args.command == "workflow-supply-operator": _emit(workflow.supply_operator(WorkflowOperatorInput.model_validate_json(args.request.read_bytes())))
+            elif args.command == "workflow-resume": _emit(workflow.resume(args.workflow_id, retry_uncertain=args.retry_uncertain))
+            elif args.command == "workflow-output": _emit(workflow.output(args.workflow_id, args.step_id))
+            elif args.command == "workflow-attempts": _emit(workflow.attempts(args.workflow_id, args.step_id, after=args.after, limit=args.limit))
+            elif args.command == "workflow-cancel": _emit(workflow.cancel(args.workflow_id))
+            else: _emit(workflow.status(args.workflow_id))
         return 0
     except EDIError as exc:
         print(json.dumps(exc.as_dict()), file=sys.stderr)

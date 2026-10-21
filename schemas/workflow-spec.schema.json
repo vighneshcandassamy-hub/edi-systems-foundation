@@ -1,0 +1,204 @@
+{
+  "$defs": {
+    "JsonValue": {},
+    "OutcomeCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "path": {
+          "maxLength": 2048,
+          "title": "Path",
+          "type": "string"
+        },
+        "equals": {
+          "$ref": "#/$defs/JsonValue"
+        }
+      },
+      "required": [
+        "path",
+        "equals"
+      ],
+      "title": "OutcomeCondition",
+      "type": "object"
+    },
+    "WorkflowStep": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "step_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Step Id",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "register-origin",
+            "observe-json",
+            "observe-bytes",
+            "coverage",
+            "interpret",
+            "interpret-submit",
+            "interpret-get",
+            "world-propose",
+            "world-commit",
+            "world-get",
+            "world-head",
+            "world-ack",
+            "world-query",
+            "world-dependencies",
+            "world-status",
+            "reason-investigate",
+            "reason-step",
+            "reason-export",
+            "reason-import",
+            "reason-submit",
+            "reason-frontier",
+            "reason-ack",
+            "reason-assessments",
+            "reason-get",
+            "reason-rank",
+            "analysis-compile",
+            "analysis-run",
+            "analysis-control",
+            "analysis-status",
+            "analysis-get",
+            "assess-seal",
+            "assess-compare",
+            "assess-review",
+            "assess-finding",
+            "assess-yield",
+            "assess-submit",
+            "assess-query",
+            "assess-get",
+            "agency-propose",
+            "agency-adopt",
+            "agency-policy",
+            "agency-check",
+            "agency-dispatch",
+            "agency-receipt",
+            "agency-access",
+            "agency-access-disposition",
+            "agency-actor-view",
+            "agency-archive",
+            "agency-reconcile",
+            "agency-submit",
+            "deliver-finding"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "arguments": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Arguments",
+          "type": "object"
+        },
+        "require": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/OutcomeCondition"
+          },
+          "maxItems": 8,
+          "title": "Require",
+          "type": "array"
+        }
+      },
+      "required": [
+        "step_id",
+        "operation"
+      ],
+      "title": "WorkflowStep",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "workflow_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workflow Id",
+      "type": "string"
+    },
+    "purpose": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Purpose",
+      "type": "string"
+    },
+    "scope_and_horizon": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Scope And Horizon",
+      "type": "string"
+    },
+    "evaluation_standards": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 16,
+      "minItems": 1,
+      "title": "Evaluation Standards",
+      "type": "array"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "attribution": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Attribution",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/WorkflowStep"
+      },
+      "maxItems": 96,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "workflow_id",
+    "purpose",
+    "scope_and_horizon",
+    "evaluation_standards",
+    "assumptions",
+    "attribution",
+    "steps"
+  ],
+  "title": "WorkflowSpec",
+  "type": "object"
+}

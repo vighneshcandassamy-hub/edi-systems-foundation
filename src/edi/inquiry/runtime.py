@@ -23,19 +23,23 @@ from edi.reason.sqlite import SQLiteReasoningStore
 from edi.shared.config import LocalProfile
 from edi.shared.contracts import Capability, Owner
 from edi.shared.errors import EDIError, ErrorCode
+from edi.inquiry.contracts import WorkflowProfile
+from edi.inquiry.sqlite import SQLiteWorkflowStore
+from edi.inquiry.workflow import Workflow
 from edi.world import World
 from edi.world.config import WorldProfile
 from edi.world.sqlite import SQLiteWorldStore
 
 
 class Runtime:
-    """Local trusted SDK; not an authentication boundary or workflow engine."""
+    """Local trusted SDK with optional C0 workflows; not an authentication boundary."""
     def __init__(self, profile: LocalProfile, world_profile: WorldProfile | None = None,
                  interpretation_profile: InterpretationProfile | None = None,
                  reasoning_profile: ReasoningProfile | None = None,
                  analysis_profile: AnalysisProfile | None = None,
                  assessment_profile: AssessmentProfile | None = None,
-                 agency_profile: AgencyProfile | None = None):
+                 agency_profile: AgencyProfile | None = None,
+                 workflow_profile: WorkflowProfile | None = None):
         self.profile = profile
         world_profile = world_profile or WorldProfile(
             workspace_id=profile.workspace_id,
@@ -86,6 +90,14 @@ class Runtime:
             raise EDIError(ErrorCode.DENIED, "C1-C7 workspace scopes must match")
         if agency_profile.database.resolve() in paths | {reasoning_profile.database.resolve(), analysis_profile.database.resolve(), assessment_profile.database.resolve()}:
             raise EDIError(ErrorCode.INVALID, "C1-C7 require separate owner databases")
+        workflow_profile = workflow_profile or WorkflowProfile(
+            workspace_id=profile.workspace_id,
+            database=profile.database.with_name(profile.database.stem + ".workflows.sqlite3"),
+        )
+        if workflow_profile.workspace_id != profile.workspace_id:
+            raise EDIError(ErrorCode.DENIED, "C0-C7 workspace scopes must match")
+        if workflow_profile.database.resolve() in paths | {reasoning_profile.database.resolve(), analysis_profile.database.resolve(), assessment_profile.database.resolve(), agency_profile.database.resolve()}:
+            raise EDIError(ErrorCode.INVALID, "C0-C7 require separate owner databases")
         self.observation = ObservationService(SQLiteObservationStore(profile), profile)
         self._world_profile = world_profile
         self._world = None
@@ -105,12 +117,15 @@ class Runtime:
         self._agency_profile = agency_profile
         self._agency = None
         self._agency_lock = Lock()
+        self._workflow_profile = workflow_profile
+        self._workflow = None
+        self._workflow_lock = Lock()
 
     def capabilities(self) -> tuple[Capability, ...]:
         return (
             Capability(owner="C0", functions=("F00", "F01", "F02", "F03"),
                        state="implemented-unqualified",
-                       details="Partial C0: composition, scope/configuration, finite C1-C7 operations and explicit progress handoff; no autonomous scheduling"),
+                       details="Partial C0: lazy owner composition, bounded durable workflow/inputs/native steps/internal findings and explicit progress handoff; no autonomous scheduler or inference gateway"),
             self.observation.capability,
             Interpretation.capability,
             World.capability,
@@ -215,6 +230,13 @@ class Runtime:
         if owner != "C0":
             raise EDIError(ErrorCode.DENIED, "no direct C2/C4/C5/C6 action/adoption lane")
         return self.agency.access_for(owner)
+
+    @property
+    def workflow(self) -> Workflow:
+        with self._workflow_lock:
+            if self._workflow is None:
+                self._workflow = Workflow(self, self._workflow_profile, SQLiteWorkflowStore(self._workflow_profile))
+            return self._workflow
 
     def observe(self, capture: Capture, stream: BinaryIO):
         return self.observation.ingest(capture, stream)

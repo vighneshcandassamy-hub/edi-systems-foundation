@@ -1,0 +1,689 @@
+{
+  "schema": "edi-c0-workflow-trace-v1",
+  "version": "0.1",
+  "code_version": "0.9.0",
+  "date_utc": "2026-10-21",
+  "mission": "EDI-MIS-001",
+  "input_revision": "945460a2458cf343633ccf2e49e5355e43d66cea",
+  "requirements": [
+    {
+      "id": "C0-W01",
+      "title": "Immutable workspace plan and input identities",
+      "owner": "C0",
+      "parents": [
+        "IMP-R04",
+        "IMP-R19"
+      ],
+      "functions": [
+        "F00",
+        "F02"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT01",
+        "IT02",
+        "IT04"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W02",
+      "title": "Finite typed operation registry",
+      "owner": "C0",
+      "parents": [
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "functions": [
+        "F00",
+        "F02"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT01",
+        "IT05",
+        "IT06",
+        "IT07"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W03",
+      "title": "Bounded committed-output and external-input references",
+      "owner": "C0",
+      "parents": [
+        "IMP-R04",
+        "IMP-R19"
+      ],
+      "functions": [
+        "F00",
+        "F02"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT03",
+        "IT04",
+        "IT05"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W04",
+      "title": "Durable exact native step intent and uncertain completion",
+      "owner": "C0",
+      "parents": [
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "functions": [
+        "F00",
+        "F02"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT02",
+        "IT17",
+        "IT18"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W05",
+      "title": "Separate explicit operator decisions",
+      "owner": "C0",
+      "parents": [
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "functions": [
+        "F00",
+        "F02"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT06",
+        "IT07",
+        "IT15",
+        "IT16"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W06",
+      "title": "Bounded state/attempts/fencing/cancellation",
+      "owner": "C0",
+      "parents": [
+        "IMP-R19",
+        "IMP-R29"
+      ],
+      "functions": [
+        "F00",
+        "F02"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT05",
+        "IT17",
+        "IT18",
+        "IT19",
+        "IT20"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W07",
+      "title": "Native all-owner integration with unchanged authority lanes",
+      "owner": "C0",
+      "parents": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "functions": [
+        "F00",
+        "F01",
+        "F02",
+        "F03"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT01",
+        "IT08",
+        "IT09",
+        "IT10",
+        "IT11",
+        "IT12",
+        "IT13",
+        "IT15",
+        "IT16"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W08",
+      "title": "Internal supported finding delivery",
+      "owner": "C0",
+      "parents": [
+        "IMP-R07",
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "functions": [
+        "F03"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT14"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W09",
+      "title": "Controlled-world provenance and semantic boundaries",
+      "owner": "C0",
+      "parents": [
+        "IMP-R04",
+        "IMP-R11",
+        "IMP-R25"
+      ],
+      "functions": [
+        "F00",
+        "F01",
+        "F02",
+        "F03"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT08",
+        "IT09",
+        "IT11",
+        "IT12",
+        "IT13",
+        "IT21",
+        "IT22"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W10",
+      "title": "Prospective failure/authority/recovery coverage",
+      "owner": "C0",
+      "parents": [
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "functions": [
+        "F00",
+        "F02"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT02",
+        "IT05",
+        "IT06",
+        "IT07",
+        "IT10",
+        "IT12",
+        "IT16",
+        "IT17",
+        "IT18",
+        "IT19",
+        "IT20"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    },
+    {
+      "id": "C0-W11",
+      "title": "Honest verification, scientific claims and cost accounting",
+      "owner": "C0",
+      "parents": [
+        "IMP-R07",
+        "IMP-R15",
+        "IMP-R33"
+      ],
+      "functions": [
+        "F00",
+        "F01",
+        "F02",
+        "F03"
+      ],
+      "rationale": "Coordinate existing owner obligations without moving evidence, model, analysis, assessment or policy authority into C0; see C0 specification for per-requirement acceptance.",
+      "source": [
+        "src/edi/inquiry/contracts.py",
+        "src/edi/inquiry/sqlite.py",
+        "src/edi/inquiry/workflow.py",
+        "src/edi/inquiry/runtime.py",
+        "docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+      ],
+      "verification_ids": [
+        "IT09",
+        "IT11",
+        "IT12",
+        "IT13",
+        "IT14",
+        "IT21",
+        "IT22",
+        "IT23",
+        "IT24"
+      ],
+      "status": "source-implemented; runtime explicitly deferred"
+    }
+  ],
+  "verification_cases": [
+    {
+      "id": "IT01",
+      "title": "All-owner source registry and isolated lazy store composition",
+      "requirement_ids": [
+        "C0-W01",
+        "C0-W02",
+        "C0-W07"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT02",
+      "title": "Identical plan/input retry and changed identity conflicts",
+      "requirement_ids": [
+        "C0-W01",
+        "C0-W04",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT03",
+      "title": "Earlier committed references, JSON selectors, null results and literal untrusted source values",
+      "requirement_ids": [
+        "C0-W03"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT04",
+      "title": "Missing external input pauses before invocation and survives reopen",
+      "requirement_ids": [
+        "C0-W01",
+        "C0-W03"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT05",
+      "title": "Oversized/deep/forward/malformed references reject without owner calls",
+      "requirement_ids": [
+        "C0-W02",
+        "C0-W03",
+        "C0-W06",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT06",
+      "title": "Default-disabled operator steps and ordinary-input privilege denial",
+      "requirement_ids": [
+        "C0-W02",
+        "C0-W05",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT07",
+      "title": "Explicit operator input identity/native decision matching; no model-to-adoption shortcut",
+      "requirement_ids": [
+        "C0-W02",
+        "C0-W05",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT08",
+      "title": "C2/C3 provenance and candidate/operator-modeling-use distinctions",
+      "requirement_ids": [
+        "C0-W07",
+        "C0-W09"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT09",
+      "title": "C4 context binding, response attribution and native-inference versus authored handoff",
+      "requirement_ids": [
+        "C0-W07",
+        "C0-W09",
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT10",
+      "title": "C5 supported/unsupported compilation and failed native result acceptance conditions",
+      "requirement_ids": [
+        "C0-W07",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT11",
+      "title": "Future forecast confirmation and actual later source acquisition at fixed cut",
+      "requirement_ids": [
+        "C0-W07",
+        "C0-W09",
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT12",
+      "title": "Missing/censored/generated/duplicate outcome and source-dependence controls",
+      "requirement_ids": [
+        "C0-W07",
+        "C0-W09",
+        "C0-W10",
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT13",
+      "title": "Discrepancy rivals, candidate revision, original standards and no automatic cause identification",
+      "requirement_ids": [
+        "C0-W07",
+        "C0-W09",
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT14",
+      "title": "Internal finding evidence/uncertainty/expiry and no external message",
+      "requirement_ids": [
+        "C0-W08",
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT15",
+      "title": "Standing access reuse, coalescing, denial/expiry and separate C7 policy decision",
+      "requirement_ids": [
+        "C0-W05",
+        "C0-W07"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT16",
+      "title": "Allowed internal read, denied external action, stale/expired grant and command receipt",
+      "requirement_ids": [
+        "C0-W05",
+        "C0-W07",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT17",
+      "title": "C0 crash before/after native invocation, original argument retry and unknown owner outcome",
+      "requirement_ids": [
+        "C0-W04",
+        "C0-W06",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT18",
+      "title": "Concurrent workers, retry attempt fence and stale-result rejection",
+      "requirement_ids": [
+        "C0-W04",
+        "C0-W06",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT19",
+      "title": "C0 quota/disk/unknown commit and original prepaid completion after config changes",
+      "requirement_ids": [
+        "C0-W06",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT20",
+      "title": "Cancellation with unresolved work; original attempt history and unknown costs retained",
+      "requirement_ids": [
+        "C0-W06",
+        "C0-W10"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "engineering/native slice"
+    },
+    {
+      "id": "IT21",
+      "title": "Input-source/time/actor-mask checks and unobserved human mechanisms remain uncertain",
+      "requirement_ids": [
+        "C0-W09",
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "broader capability/scientific protocol; blockers retained"
+    },
+    {
+      "id": "IT22",
+      "title": "Nonlinear ecology/delay/regime models: supported capability versus explicit blockers",
+      "requirement_ids": [
+        "C0-W09",
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "broader capability/scientific protocol; blockers retained"
+    },
+    {
+      "id": "IT23",
+      "title": "Adjacent/internal/temporal growth, negative transfer and strong matched memory/LLM controls",
+      "requirement_ids": [
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "broader capability/scientific protocol; blockers retained"
+    },
+    {
+      "id": "IT24",
+      "title": "Frozen protocol, full offered-work/resource accounting and no unrun/scientific PASS claims",
+      "requirement_ids": [
+        "C0-W11"
+      ],
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "phase": "broader capability/scientific protocol; blockers retained"
+    }
+  ],
+  "operation_registry": [
+    "register-origin",
+    "observe-json",
+    "observe-bytes",
+    "coverage",
+    "interpret",
+    "interpret-submit",
+    "interpret-get",
+    "world-propose",
+    "world-commit",
+    "world-get",
+    "world-head",
+    "world-ack",
+    "world-query",
+    "world-dependencies",
+    "world-status",
+    "reason-investigate",
+    "reason-step",
+    "reason-export",
+    "reason-import",
+    "reason-submit",
+    "reason-frontier",
+    "reason-ack",
+    "reason-assessments",
+    "reason-get",
+    "reason-rank",
+    "analysis-compile",
+    "analysis-run",
+    "analysis-control",
+    "analysis-status",
+    "analysis-get",
+    "assess-seal",
+    "assess-compare",
+    "assess-review",
+    "assess-finding",
+    "assess-yield",
+    "assess-submit",
+    "assess-query",
+    "assess-get",
+    "agency-propose",
+    "agency-adopt",
+    "agency-policy",
+    "agency-check",
+    "agency-dispatch",
+    "agency-receipt",
+    "agency-access",
+    "agency-access-disposition",
+    "agency-actor-view",
+    "agency-archive",
+    "agency-reconcile",
+    "agency-submit",
+    "deliver-finding"
+  ],
+  "product_qualification": "not_run",
+  "owner_direction": "Latest user instruction explicitly defers testing; finalize integration and holistic test design first.",
+  "c7_prerequisite": {
+    "source_subset": "C0/C1/C3 research-policy/command boundary supports integration",
+    "full_acceptance": "not_established",
+    "runtime_security_scientific_qualification": "not_run"
+  },
+  "protocol": "docs/implementation/INTEGRATED_TEST_DESIGN.md",
+  "binding_status": "docs/implementation/INTEGRATION_READINESS.md",
+  "open_obligations": [
+    "Native student/vLLM/teacher binding and exact provider/tokenizer/hardware",
+    "All original C0-C7 broader requirements and runtime/integration/scientific qualification",
+    "Full actor dynamics, unsupported numerical/refinement/uncertainty methods",
+    "Autonomous scheduling, notification/acquisition, authenticated authority",
+    "Hard process isolation, complete costs, retention/export/restore/migration and HA",
+    "Concrete frozen fixtures, baselines, statistical thresholds and later owner execution direction"
+  ]
+}

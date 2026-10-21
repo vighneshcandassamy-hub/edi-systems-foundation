@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.8.0. **Status:** shared foundation and first local C1 observation, C2 interpretation, C3 world hosting, C4 inquiry, C5 analysis, C6 prospective assessment and C7 research-agency source implementations; unqualified. C0-C7 are partial; native reasoning-model inference and external actuation remain unavailable. Runtime, numerical/scientific validity and learned advantage remain open.
+**Code version:** 0.9.0. **Status:** first C0-C7 source subsets and a bounded durable C0 integration workflow; unqualified and not executed. Latest owner direction explicitly defers testing while integration and the holistic test design are finalized. Native reasoning-model inference and external actuation remain unavailable. Runtime, numerical/scientific validity and learned advantage remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
@@ -14,7 +14,13 @@ This repository brings together the integrated seven-chapter architecture, the a
 
 Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
 
-## Current C7 code increment
+## Current integrated-workflow source increment
+
+[C0 workflow specification](docs/implementation/C0_INTEGRATED_WORKFLOW.md), [requirements/case trace](docs/implementation/INTEGRATION_TRACE.json), [readiness and model-tool status](docs/implementation/INTEGRATION_READINESS.md), [source](src/edi/inquiry/) and [28-step skeleton](examples/workflow/) document 51 native operation mappings, immutable plans/inputs, bounded earlier-output references, explicit operator-decision handoffs, durable step intents, acceptance conditions, attempt/recovery records and internal findings delivery. Five schemas and a scoped source/interface review are saved. No workflow or test was run.
+
+The separate [holistic test design](docs/implementation/INTEGRATED_TEST_DESIGN.md) covers engineering integration, nonlinear ecology, human information/latent causes, cumulative world growth/transfer, failure/capacity and strong matched LLM/memory comparisons. Fixtures, native models and scientific acceptance details remain explicit pre-execution decisions; the plan is not an executed benchmark or full qualification.
+
+## Prior C7 code increment
 
 [C7 specification](docs/implementation/C7_AGENCY_RUNTIME.md), [requirements trace](docs/implementation/C7_RUNTIME_TRACE.json), [ADR-009](docs/decisions/ADR-009-research-agency-and-policy-adoption.md), [source](src/edi/agency/) and [templates](examples/agency/) document attributed actor-information masks, explicit owned policy amendments/adoption, scoped internal-read grants, durable command/receipt reconciliation, access review and candidate-only C3 policy descriptions. C1 archives bounded generated reports through a restricted facade. No policy, actor view, command, report, Runtime/store or product/qualification case ran. All eight owners now have a first source subset; integrated C0 orchestration, native inference and qualification remain open.
 

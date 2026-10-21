@@ -1,6 +1,6 @@
 # EDI Systems Foundation — checkpoint
 
-Date: 21 October 2026. Code version: 0.8.0; conceptual source baseline retained.
+Date: 21 October 2026. Code version: 0.9.0; conceptual source baseline retained.
 
 ## What is stored
 
@@ -16,7 +16,7 @@ The conceptual documents have consistency/traceability reviews. The master archi
 
 ## Current scope
 
-The baseline, research and bounded first source implementations across C0-C7 are stored on the architecture branch, with product qualification deferred. C0 workflow integration and native reasoning inference remain open. No earlier runtime was migrated; no inference/benchmark, superiority, throughput, cost, energy, availability or arbitrary scalability result is established.
+The baseline, research, bounded first source implementations across C0-C7 and C0 integration-workflow source are stored on the architecture branch. The latest owner instruction explicitly defers testing while integration and a holistic test design are finalized. Native reasoning inference, runtime integration, product qualification and broader original obligations remain open. No earlier runtime was migrated; no inference/benchmark, superiority, throughput, cost, energy, availability or arbitrary scalability result is established.
 
 ## Remote status
 
@@ -24,7 +24,7 @@ The private repository [vighneshcandassamy-hub/edi-systems-foundation](https://g
 
 ## Next development step
 
-Review the [implementation specification](docs/implementation/README.md) and latest [C7 guide](docs/implementation/C7_AGENCY_RUNTIME.md). Next is a bounded integrated C0 workflow across existing partial owners, preserving operator admission/adoption boundaries. Bind the selected model/provider/hardware before native reasoning execution; runtime/integration/scientific qualification remains separate and deferred under the owner's structure-first direction.
+Review the [C0 workflow](docs/implementation/C0_INTEGRATED_WORKFLOW.md), [readiness/model-tool status](docs/implementation/INTEGRATION_READINESS.md) and [holistic test design](docs/implementation/INTEGRATED_TEST_DESIGN.md). Source integration is present; freeze concrete fixture/clock/acceptance/baseline/model profiles before any later authorized execution. All runtime/testing is currently deferred by explicit owner direction, and full original C0-C7 acceptance remains unestablished.
 
 ## Implementation research checkpoint
 
@@ -133,3 +133,15 @@ Access reviews reuse standing grants and retain exact-need coalescing, denial/de
 Sixteen scoped requirements and twenty-four future cases are allocated; overall contract self-review remains REVISE. Full original C0-C7 obligations, authenticated authority, independent perception/causal effects, complete end-to-end costs, hard isolation, retention/export/restore/migration/HA, independent review and all product/scientific qualification remain open. Next development scope is a bounded C0 integrated workflow and separately pinned native reasoning binding; no C8, paid inference, benchmark, deployment or external action is implied.
 
 Checks are source AST/import/CLI-parser construction, schema generation, authored JSON/TOML/new-document links and trace/lane inventory references only. No Runtime/store, policy proposal/adoption, actor qualification, action check/dispatch, report capture/reconciliation, access review, C3 proposal, example/product case, gate validator, compiler/solver, model call, simulation, training, benchmark or deployment ran. Source and reference assets are saved on the private architecture branch/draft PR; committed tree and pinned-file hashes verify publication separately from qualification.
+
+## C0 integrated-workflow source and holistic test-design checkpoint
+
+21 October 2026 UTC. Input remote revision `945460a2458cf343633ccf2e49e5355e43d66cea`. The owner requested full integration/capability demonstration, then explicitly directed **do not test yet; design the test holistically and finalize integration first**. That latest direction supersedes execution authorization for the current work. No Runtime, workflow, store, native command, solver, model, fixture, example, product test, gate validator, simulation, training, benchmark or deployment was run.
+
+Code 0.9.0 adds [C0 source](src/edi/inquiry/), [workflow specification](docs/implementation/C0_INTEGRATED_WORKFLOW.md), [trace](docs/implementation/INTEGRATION_TRACE.json), [readiness/model-tool status](docs/implementation/INTEGRATION_READINESS.md), [ADR-010](docs/decisions/ADR-010-bounded-integrated-workflow.md), [source/interface review](docs/implementation/evidence/integration-source-review.json), five schemas and an authored [28-step skeleton](examples/workflow/). Fifty-one finite native operations connect C0 to existing C1-C7 ports. Plans/inputs, bounded prior-output selectors, original native request keys, durable step intents, result conditions, prepaid terminal capacity, attempt history/fences, explicit missing-input/uncertain states and internal finding delivery are present in source. All eight owner paths/workspaces are separate and the C0 ledger is lazy.
+
+Operator admission/adoption/reconciliation/control inputs are separated from ordinary data/model input, disabled by default and retained through a distinct trusted-local API. Computed model output cannot become an operator decision. Local operator IDs remain configuration assumptions rather than authentication. C7's first subset supports the source handoff, while its full requirements/runtime/security acceptance and all wider C0-C7 obligations remain unestablished. All 28 pairs/56 directed dispositions remain unchanged.
+
+The [holistic test design](docs/implementation/INTEGRATED_TEST_DESIGN.md), proposed v0.1, separates engineering integration, nonlinear ecology, human information/latent causes, cumulative adjacent/internal/temporal world growth, failure/capacity and matched LLM/retrieval/structured-memory comparisons. It requires original prospective forecasts, oracle separation, appropriate abstention/nonidentifiability, realistic source/timing/provenance, denial/refusal controls, complete costs and preserved failures. The controlled accumulator is a future engineering fixture, not autonomous discovery. Exact fixture clocks/cuts, model/checkpoints/provider/hardware, scientific sample/statistical protocol and comparison thresholds remain explicit pre-execution decisions.
+
+Eleven scoped coordination requirements and twenty-four planned unrun cases are allocated. Source/artifact checks are AST/import/CLI-parser construction, schema generation, JSON/TOML, new-document links and trace/lane/registry inventories only. Overall contract self-review remains REVISE; source checks do not establish integrated runtime capability or superiority. Native vLLM/student/teacher execution remains unconnected. Next is review/freeze of the holistic protocol and remaining binding/fixture choices, followed only by later owner-directed execution. Assets are saved on the private architecture branch/draft PR and publication hashes verified separately.

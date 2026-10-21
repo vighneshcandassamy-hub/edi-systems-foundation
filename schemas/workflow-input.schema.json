@@ -1,0 +1,73 @@
+{
+  "$defs": {
+    "JsonValue": {}
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "workflow_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workflow Id",
+      "type": "string"
+    },
+    "input_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Input Id",
+      "type": "string"
+    },
+    "value": {
+      "$ref": "#/$defs/JsonValue"
+    },
+    "attribution": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Attribution",
+      "type": "string"
+    },
+    "authority": {
+      "default": "data",
+      "enum": [
+        "data",
+        "operator-decision"
+      ],
+      "title": "Authority",
+      "type": "string"
+    },
+    "operator_id": {
+      "anyOf": [
+        {
+          "maxLength": 256,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Operator Id"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "workflow_id",
+    "input_id",
+    "value",
+    "attribution"
+  ],
+  "title": "WorkflowInput",
+  "type": "object"
+}

@@ -1,5 +1,7 @@
 # C7 agency, information qualification and owned policy
 
+Later integration handoff: [C0 code 0.9.0](C0_INTEGRATED_WORKFLOW.md) coordinates existing C7 operations with separate operator-decision inputs. It does not close C7 qualification or connect external actuators. The owner's latest direction defers testing until the [holistic design](INTEGRATED_TEST_DESIGN.md) is reviewed; no runtime was executed.
+
 21 October 2026. First source increment, code 0.8.0. Input: private architecture-branch revision `686da92ec4a9c0892998aee1b85280b723d8f199`. Status: **partial source implementation, unqualified**. Overall contract self-review remains **REVISE**. This document specifies the concrete subset; it does not replace the original architecture or declare every C7 obligation fulfilled.
 
 The owner authorized C7 development against the agreed requirements, interfaces, rationale, schemas, assumptions and decisions. The continuing structure-first direction defers product execution and qualification. No policy was adopted, source accessed, command dispatched, report archived, modeled system changed or external action performed while authoring this increment.

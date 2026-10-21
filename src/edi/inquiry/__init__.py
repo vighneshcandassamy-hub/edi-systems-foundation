@@ -1,1 +1,1 @@
-"""C0 composition and bounded synchronous intake; durable scheduling comes later."""
+"""C0 owner composition and bounded durable workflows; autonomous scheduling remains open."""

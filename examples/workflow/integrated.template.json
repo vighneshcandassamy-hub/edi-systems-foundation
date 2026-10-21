@@ -1,0 +1,351 @@
+{
+  "workspace_id": "REPLACE-isolated-workspace",
+  "workflow_id": "REPLACE-protocol-workflow-id",
+  "purpose": "Prospective integrated engineering protocol skeleton; not executed",
+  "scope_and_horizon": "Controlled local accumulator; freeze concrete manifest and clock policy before any later execution",
+  "evaluation_standards": [
+    "Preserve provenance/uncertainty/authority; no automatic scientific acceptance"
+  ],
+  "assumptions": [
+    "All named inputs are explicit frozen protocol data or separate local operator decisions",
+    "No native inference or test has run; exact fixtures/models remain unresolved"
+  ],
+  "attribution": "Authored integration skeleton; not autonomous EDI reasoning or a completed capability test",
+  "steps": [
+    {
+      "step_id": "input-origin",
+      "operation": "register-origin",
+      "arguments": {
+        "$input": "input-origin-spec",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "outcome-origin",
+      "operation": "register-origin",
+      "arguments": {
+        "$input": "outcome-origin-spec",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "initial-record",
+      "operation": "observe-json",
+      "arguments": {
+        "capture": {
+          "origin_ref": {
+            "$step": "input-origin",
+            "path": "/origin_ref"
+          },
+          "origin_class": "generated",
+          "lineage": [
+            "authored-setup"
+          ],
+          "completeness": "complete"
+        },
+        "payload": {
+          "$input": "initial-account",
+          "path": ""
+        }
+      }
+    },
+    {
+      "step_id": "decode",
+      "operation": "interpret",
+      "arguments": {
+        "inputs": [
+          {
+            "record_id": {
+              "$step": "initial-record",
+              "path": "/observation/record_id"
+            },
+            "decoder": "json"
+          }
+        ]
+      },
+      "require": [
+        {
+          "path": "/derivation/status",
+          "equals": "complete"
+        }
+      ]
+    },
+    {
+      "step_id": "host-decoding",
+      "operation": "interpret-submit",
+      "arguments": {
+        "derivation_id": {
+          "$step": "decode",
+          "path": "/derivation/derivation_id"
+        },
+        "base_revision": 0
+      }
+    },
+    {
+      "step_id": "model-admission",
+      "operation": "world-commit",
+      "arguments": {
+        "$input": "operator-model-decision",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "inquiry",
+      "operation": "reason-investigate",
+      "arguments": {
+        "$input": "inquiry-request",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "student",
+      "operation": "reason-step",
+      "arguments": {
+        "inquiry_id": {
+          "$step": "inquiry",
+          "path": "/request/inquiry_id"
+        },
+        "action": "student",
+        "reason": "Bounded Meadows inquiry; model backend and response origin must be declared"
+      }
+    },
+    {
+      "step_id": "export",
+      "operation": "reason-export",
+      "arguments": {
+        "inquiry_id": {
+          "$step": "inquiry",
+          "path": "/request/inquiry_id"
+        },
+        "job_id": {
+          "$step": "student",
+          "path": "/jobs/0/job_id"
+        }
+      }
+    },
+    {
+      "step_id": "response",
+      "operation": "reason-import",
+      "arguments": {
+        "$input": "student-response",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "host-rivals",
+      "operation": "reason-submit",
+      "arguments": {
+        "inquiry_id": {
+          "$step": "inquiry",
+          "path": "/request/inquiry_id"
+        },
+        "response_id": {
+          "$step": "response",
+          "path": "/responses/0/response_id"
+        },
+        "reason": "Attributed candidates only; no self-admission"
+      }
+    },
+    {
+      "step_id": "model-cut",
+      "operation": "world-head",
+      "arguments": {}
+    },
+    {
+      "step_id": "compile",
+      "operation": "analysis-compile",
+      "arguments": {
+        "$input": "compile-request",
+        "path": ""
+      },
+      "require": [
+        {
+          "path": "/status",
+          "equals": "supported"
+        }
+      ]
+    },
+    {
+      "step_id": "run",
+      "operation": "analysis-run",
+      "arguments": {
+        "run_id": "PROTOCOL-RUN-ID",
+        "compiled_id": {
+          "$step": "compile",
+          "path": "/compiled_id"
+        },
+        "mode": "numerical",
+        "scenario": {
+          "$input": "scenario",
+          "path": ""
+        },
+        "solver": {
+          "$input": "solver",
+          "path": ""
+        }
+      },
+      "require": [
+        {
+          "path": "/status",
+          "equals": "completed"
+        }
+      ]
+    },
+    {
+      "step_id": "seal",
+      "operation": "assess-seal",
+      "arguments": {
+        "forecast_id": "PROTOCOL-FORECAST-ID",
+        "run_id": {
+          "$step": "run",
+          "path": "/request/run_id"
+        },
+        "cases": {
+          "$input": "forecast-cases",
+          "path": ""
+        },
+        "rule": {
+          "$input": "evaluation-rule",
+          "path": ""
+        },
+        "assumptions": [
+          "Frozen protocol and clocks required; not an independent scientific result"
+        ],
+        "rationale": "Original prospective forecast before outcome"
+      },
+      "require": [
+        {
+          "path": "/confirmation/status",
+          "equals": "local-prospective"
+        }
+      ]
+    },
+    {
+      "step_id": "outcome-record",
+      "operation": "observe-json",
+      "arguments": {
+        "capture": {
+          "$input": "measured-outcome-capture",
+          "path": ""
+        },
+        "payload": {
+          "$input": "measured-outcome",
+          "path": ""
+        }
+      }
+    },
+    {
+      "step_id": "outcome-cut",
+      "operation": "coverage",
+      "arguments": {}
+    },
+    {
+      "step_id": "compare",
+      "operation": "assess-compare",
+      "arguments": {
+        "$input": "comparison-request",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "review",
+      "operation": "assess-review",
+      "arguments": {
+        "$input": "review-request",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "candidate-revision",
+      "operation": "assess-submit",
+      "arguments": {
+        "$input": "revision-submission",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "finding",
+      "operation": "assess-finding",
+      "arguments": {
+        "$input": "finding-request",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "access",
+      "operation": "agency-access",
+      "arguments": {
+        "$input": "access-request",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "policy-proposal",
+      "operation": "agency-propose",
+      "arguments": {
+        "$input": "policy-amendment",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "policy-adoption",
+      "operation": "agency-adopt",
+      "arguments": {
+        "$input": "operator-policy-decision",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "action-check",
+      "operation": "agency-check",
+      "arguments": {
+        "$input": "internal-action-request",
+        "path": ""
+      },
+      "require": [
+        {
+          "path": "/status",
+          "equals": "allowed"
+        }
+      ]
+    },
+    {
+      "step_id": "authorized-read",
+      "operation": "agency-dispatch",
+      "arguments": {
+        "$input": "dispatch-request",
+        "path": ""
+      },
+      "require": [
+        {
+          "path": "/receipt/status",
+          "equals": "completed"
+        }
+      ]
+    },
+    {
+      "step_id": "actor-mask",
+      "operation": "agency-actor-view",
+      "arguments": {
+        "$input": "actor-view-request",
+        "path": ""
+      }
+    },
+    {
+      "step_id": "delivery",
+      "operation": "deliver-finding",
+      "arguments": {
+        "finding_id": {
+          "$step": "finding",
+          "path": "/request/finding_id"
+        }
+      },
+      "require": [
+        {
+          "path": "/external_message_sent",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}
