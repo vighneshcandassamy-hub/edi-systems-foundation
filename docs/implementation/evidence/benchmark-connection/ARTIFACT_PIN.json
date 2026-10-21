@@ -75,15 +75,22 @@
     "docs/implementation/evidence/benchmark-connection/INTERFACE_REVIEW.json": "a95eafc50da1c4c7c002de99f652e3a51dedc7c267a8aa9dfd616b2bc8529082",
     "docs/implementation/evidence/benchmark-connection/OWNER_INTERFACE_REVIEW.json": "8427a3f1ed75d93ef94f9d3f754a1ee229d3616f356d816378d93afc09a53155",
     "docs/implementation/evidence/benchmark-connection/READINESS.json": "61df14793f465573d4c66cfeb0e21d7461d6fa0e8ff00e502772dc8d5d9f0fe8",
-    "docs/implementation/evidence/benchmark-connection/STATIC_CHECKS.json": "95888e5c98e9b861599d8ff2b0a03abe8fdeabb9a552ed9b143cb12f965e4c5b",
+    "docs/implementation/evidence/benchmark-connection/STATIC_CHECKS.json": "c70f2d82bc0bf144011c9ffecfcccb1eae077a30db1f4685bcafac9fd97e9aff",
     "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json": "e158025e2d2d311f6a52b95b7f0cfdd584a1fa1e262741c766555bbb9b2908ca",
+    "docs/implementation/evidence/benchmark-connection/baseline-negative-control.json": "159af0badb4d3eb6249cb2236f6ea7701ef7ff74bdbb7e911c1f64c41d852fb4",
+    "docs/implementation/evidence/benchmark-connection/baseline-positive.json": "5479ed2e7a5d31c6418a93fa5737a9389360adf4644e0f2ecb09093c534e653d",
     "docs/implementation/evidence/benchmark-connection/cloud-preflight.json": "d43295f61d79fc150099d4b346ffa2adda7f235d21a57a50d30e0f20702e1566",
     "docs/implementation/evidence/benchmark-connection/cpu-tests.json": "c3ff5ed3fd8c6dce8e758652acc788450dcb2b1f693e437d3186a2fd1be55591",
     "docs/implementation/evidence/benchmark-connection/cpu-tests.log": "a986d964f363ef4324f9dbf6443b85568a485d7a5dfa1551f86f512a89ec8605",
     "docs/implementation/evidence/benchmark-connection/desktop-cpu-tests.json": "022086c87bf0e9fbba476743eb11380ba635481caf26d2c471778aff3c7800d3",
     "docs/implementation/evidence/benchmark-connection/desktop-cpu-tests.log": "61152d477c0f895cd207720d30f3e947f8136de45a9fdcb1ca9f1edf2c708980",
     "docs/implementation/evidence/benchmark-connection/desktop-preflight.json": "5c1496969e810a9148bc74b93a130c839013f1ebdeb91dcc6179edc43b4d22a4",
-    "docs/implementation/evidence/benchmark-connection/initial-failures.json": "4e63534ddd0f1834a9ae09f174ad82a195e5de18e64ae25cd1da6cf26c11bfa5"
+    "docs/implementation/evidence/benchmark-connection/initial-failures.json": "c7af11ba24672bf36345b6a89803b78cf6a209c52120482a6d092e6d133fcd94"
   },
-  "excluded_self": "ARTIFACT_PIN.json"
+  "excluded_self": "ARTIFACT_PIN.json",
+  "auxiliary_source_sha256": {
+    "scripts/verify_baseline.py": "efbaec75bec88eaedfffbc3037b0d4b031c641240921af9bee3975d58432d5e5",
+    "scripts/run_benchmark_connection_tests.py": "80b5a6e0ac5d28b1ac662d3f0fdeeb1ade0a6bfffecd58287d507e303cf680da",
+    "docs/implementation/BENCHMARK_CONNECTION.md": "be7535c578de8b74cf80b1186c3363b24cf1dee9833ea984c13d0572af169131"
+  }
 }

@@ -69,5 +69,14 @@
     "human_run_started": false,
     "scientific_or_comparative_qualification": false
   },
-  "live_model_or_container_qualification": false
+  "live_model_or_container_qualification": false,
+  "combined_baseline": {
+    "positive_evidence": "baseline-positive.json",
+    "negative_evidence": "baseline-negative-control.json",
+    "positive_status": "PASS",
+    "unpinned_binary_rejected": true,
+    "imported_architecture_files_verified": 40,
+    "frozen_verifier_modified": false,
+    "scope": "documentation/import/graph and package byte integrity only"
+  }
 }

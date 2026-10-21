@@ -23,6 +23,8 @@ The initial run had three consequential failures: extension tables initialized b
 
 The first Windows campaign also recorded twelve cleanup errors: the preserved broker relies on SQLite handle finalization and Windows refuses deleting open run files. The engineering test teardown now joins non-daemon HTTP workers and explicitly collects unreachable handles before deleting its disposable directory. It does not suppress cleanup errors or modify the frozen broker. This is a test-lifecycle repair, not a production handle-management qualification. A further regression check verifies that a bounded native image larger than the text-cut allowance remains whole rather than silently losing its image view.
 
+The original text-only foundation validator also rejected the combined tree's legitimate binary benchmark assets and local virtual environment. `scripts/verify_baseline.py` now excludes only explicit local-environment/work directories and approves benchmark binary bytes only after checking the exact frozen package manifest/verifier hashes and running all package checks. Restored aliases must match their original source hashes. Text credential scanning and disallowed weight/key payload checks remain. A negative control confirms an unlisted binary is still rejected. The frozen v0.2.1 verifier itself uses OS-dependent `str(relative_path)` inventory identifiers; on Windows the combined validator supplies a Path view with POSIX presentation, leaving the verifier and dataset bytes unchanged. Use the combined validator there. Both the initial failure and passing/negative-control evidence are retained.
+
 Run in a fresh disposable environment:
 
 ```sh

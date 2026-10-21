@@ -1,6 +1,6 @@
 """Verify this documentation baseline. Does not execute modeled dynamics."""
 from pathlib import Path
-import hashlib,json,re
+import hashlib,json,re,runpy
 
 ROOT=Path(__file__).resolve().parents[1]
 issues=[]
@@ -52,14 +52,48 @@ for rel in ['README.md','architecture/README.md','docs/decisions/ADR-001-foundat
   if target.startswith(('https://','http://','#')):continue
   if not (p.parent/target.split('#')[0]).exists():issues.append('Broken navigation link: '+rel+' -> '+target)
 secret_patterns=[re.compile(r'gh[pousr]_[A-Za-z0-9]{30,}'),re.compile(r'github_pat_[A-Za-z0-9_]{50,}'),re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),re.compile(r'https?://[^/\s:@]+:[^/\s@]+@')]
+# The original foundation was text-only. The combined execution tree includes
+# a frozen heterogeneous benchmark. Approve only its independently pinned bytes;
+# do not exempt arbitrary files under the benchmark directory.
+approved_binary=set()
+package=ROOT/'benchmarks/meadows-budworm'
+if package.is_dir():
+ try:
+  package_manifest=package/'PACKAGE_MANIFEST.json'
+  verifier=package/'scripts/verify_benchmark_package.py'
+  if hashlib.sha256(package_manifest.read_bytes()).hexdigest()!='7272310747e7bc6bf75a03d99f3aca11f923755aa85a4f04cb0277e6132206e1':raise ValueError('frozen package manifest changed')
+  if hashlib.sha256(verifier.read_bytes()).hexdigest()!='7a31867f43e336e072ac57e3a6c91349dcb1d0699347f174c2268111a40b4074':raise ValueError('frozen package verifier changed')
+  class PortableInventoryRoot(type(package)):
+   # v0.2.1 compares str(relative_path) to POSIX manifest identifiers.
+   # Windows accepts either separator for I/O; only path presentation changes.
+   def __str__(self):return super().__str__().replace('\\','/')
+  runpy.run_path(str(verifier))['verify'](PortableInventoryRoot(package))
+  inventory=json.loads(package_manifest.read_text(encoding='utf-8'))
+  approved_binary.update((package/x['path']).resolve() for x in inventory['files'])
+  # Restored originals are reproducible aliases, not additional stored sources.
+  for item in json.loads((package/'metadata/STORAGE.json').read_text(encoding='utf-8')):
+   alias=(package/item['path']).resolve();alias.relative_to(package.resolve())
+   if alias.is_file():
+    if hashlib.sha256(alias.read_bytes()).hexdigest()!=item['sha256']:raise ValueError('restored source differs: '+item['path'])
+    approved_binary.add(alias)
+  alias=package/'environment/v0_2/fixture/archive.sqlite'
+  if alias.is_file():
+   expected=json.loads((alias.parent/'manifest.json').read_text(encoding='utf-8'))['archive_sha256']
+   if hashlib.sha256(alias.read_bytes()).hexdigest()!=expected:raise ValueError('restored world archive differs')
+   approved_binary.add(alias.resolve())
+ except Exception as exc:
+  issues.append('Benchmark package integrity: '+str(exc))
 files=[]
 for p in ROOT.rglob('*'):
  if not p.is_file() or '.git' in p.relative_to(ROOT).parts or '__pycache__' in p.parts:continue
+ if p.relative_to(ROOT).parts[0] in {'.venv','.venv-benchmark','.local','work','tmp'}:continue
  files.append(p)
- try:txt=p.read_text(encoding='utf-8')
- except UnicodeDecodeError:issues.append('Unexpected binary: '+p.relative_to(ROOT).as_posix());continue
- if any(pattern.search(txt) for pattern in secret_patterns):issues.append('Potential credential: '+p.relative_to(ROOT).as_posix())
  if p.name.startswith('.env') or p.suffix in {'.gguf','.safetensors','.pem','.key'}:issues.append('Disallowed payload: '+p.relative_to(ROOT).as_posix())
+ try:txt=p.read_text(encoding='utf-8')
+ except UnicodeDecodeError:
+  if p.resolve() not in approved_binary:issues.append('Unexpected binary: '+p.relative_to(ROOT).as_posix())
+  continue
+ if any(pattern.search(txt) for pattern in secret_patterns):issues.append('Potential credential: '+p.relative_to(ROOT).as_posix())
 result={'status':'PASS' if not issues else 'FAIL','scope':'documentation/import/graph checks only','imported_files':len(manifest['entries']),'payload_files_checked':len(files),'master_foundations':len(foundations),'master_requirements':len(reqs),'master_prospective_cases':len(cases),'master_nodes':len(nodes),'master_edges':len(edges),'reference_source_entries':len(refids),'reference_requirements':len(refreqs),'reference_prospective_cases':len(reftests),'model_cases_run':False,'remote_status_checked_by_this_script':False,'issues':issues}
 print(json.dumps(result,indent=2))
 raise SystemExit(1 if issues else 0)

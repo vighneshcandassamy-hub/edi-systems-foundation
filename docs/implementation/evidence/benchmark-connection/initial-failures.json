@@ -31,5 +31,11 @@
     "cause": "Preserved broker's sqlite3 transaction contexts leave handle finalization to garbage collection; daemon HTTP workers were not joined",
     "fix": "Engineering teardown uses joined non-daemon request threads and collects unreachable handles before deletion; no suppressed cleanup exception and no frozen broker edit",
     "scope_limit": "Not a production handle-lifecycle fix or Windows deployment qualification"
+  },
+  "combined_baseline_initial_failure": {
+    "status": "FAIL",
+    "cause": "Text-only validator classified pinned benchmark assets and local dependency binaries as unexpected; Windows v0.2.1 inventory used backslash path presentation",
+    "correction": "Exact frozen manifest/verifier hashes plus full package verification, known local-work exclusions, verified restored aliases and portable manifest identifiers; no frozen asset/verifier edits",
+    "verification": "40 imported files checked; positive baseline PASS; unlisted-binary negative control FAIL as expected"
   }
 }
