@@ -1,0 +1,27 @@
+{
+  "workspace_id": "assessment-demo",
+  "request_id": "example-seal-request-1",
+  "forecast_id": "example-forecast-1",
+  "run_id": "REPLACE_WITH_COMPLETED_C5_RUN_ID",
+  "variant": "baseline",
+  "cases": [
+    {
+      "case_id": "left-mass-at-one-second",
+      "stock_symbol": "left",
+      "relative_time": 1.0,
+      "origin_ref": "REPLACE_WITH_REGISTERED_ORIGIN_REF",
+      "variable": "left-mass",
+      "declared_dependence_group": "declared-independent-measurement-source",
+      "interpretation": "point",
+      "score_limit": 1.0,
+      "interpretation_basis": "Hypothetical direct instantaneous mass correspondence; replace with actual source basis"
+    }
+  ],
+  "rule": {
+    "source_independence_assumption": "Source disjointness is declared/configured; hidden common causes and source trust remain unverified"
+  },
+  "assumptions": [
+    "The actual C5 run has a future absolute time origin and the chosen source supplies genuine future outcomes"
+  ],
+  "rationale": "Authored registration shape only; not a stored or qualified forecast"
+}

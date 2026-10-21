@@ -1,0 +1,1697 @@
+{
+  "$defs": {
+    "Correspondence": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "stock_symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Stock Symbol",
+          "type": "string"
+        },
+        "observation_channel": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Observation Channel",
+          "type": "string"
+        },
+        "aggregation": {
+          "const": "instantaneous-state",
+          "default": "instantaneous-state",
+          "title": "Aggregation",
+          "type": "string"
+        },
+        "limitation": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Limitation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stock_symbol",
+        "observation_channel",
+        "limitation"
+      ],
+      "title": "Correspondence",
+      "type": "object"
+    },
+    "Driver": {
+      "additionalProperties": false,
+      "description": "External piecewise-constant boundary input, not an inferred causal driver.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "title": "Lower",
+          "type": "number"
+        },
+        "upper": {
+          "title": "Upper",
+          "type": "number"
+        }
+      },
+      "required": [
+        "symbol",
+        "value",
+        "unit",
+        "lower",
+        "upper"
+      ],
+      "title": "Driver",
+      "type": "object"
+    },
+    "DriverSchedule": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "symbol",
+        "points"
+      ],
+      "title": "DriverSchedule",
+      "type": "object"
+    },
+    "EvaluationRule": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "selection_policy": {
+          "const": "first-matching-measurement-by-commit",
+          "default": "first-matching-measurement-by-commit",
+          "title": "Selection Policy",
+          "type": "string"
+        },
+        "aggregation": {
+          "const": "instantaneous-state",
+          "default": "instantaneous-state",
+          "title": "Aggregation",
+          "type": "string"
+        },
+        "require_disjoint_sources": {
+          "default": true,
+          "title": "Require Disjoint Sources",
+          "type": "boolean"
+        },
+        "source_independence_assumption": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Source Independence Assumption",
+          "type": "string"
+        },
+        "calibration_edges": {
+          "default": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "items": {
+            "type": "number"
+          },
+          "title": "Calibration Edges",
+          "type": "array"
+        },
+        "missing_policy": {
+          "const": "retain-denominator; no-imputation",
+          "default": "retain-denominator; no-imputation",
+          "title": "Missing Policy",
+          "type": "string"
+        },
+        "censored_policy": {
+          "const": "report-unscored",
+          "default": "report-unscored",
+          "title": "Censored Policy",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_independence_assumption"
+      ],
+      "title": "EvaluationRule",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "selector": {
+          "default": "whole-object",
+          "title": "Selector",
+          "type": "string"
+        },
+        "origin_class": {
+          "default": "unknown",
+          "enum": [
+            "external",
+            "generated",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin Class",
+          "type": "string"
+        },
+        "lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "record_id",
+        "sha256"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "FlowSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "world_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "rate_node": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Rate Node",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "sink": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sink"
+        }
+      },
+      "required": [
+        "symbol",
+        "world_ref",
+        "rate_node"
+      ],
+      "title": "FlowSpec",
+      "type": "object"
+    },
+    "ForecastCase": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "case_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Case Id",
+          "type": "string"
+        },
+        "stock_symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Stock Symbol",
+          "type": "string"
+        },
+        "relative_time": {
+          "title": "Relative Time",
+          "type": "number"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "variable": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Variable",
+          "type": "string"
+        },
+        "declared_dependence_group": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Declared Dependence Group",
+          "type": "string"
+        },
+        "interpretation": {
+          "enum": [
+            "point",
+            "bernoulli-probability"
+          ],
+          "title": "Interpretation",
+          "type": "string"
+        },
+        "score_limit": {
+          "minimum": 0,
+          "title": "Score Limit",
+          "type": "number"
+        },
+        "interpretation_basis": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Interpretation Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_id",
+        "stock_symbol",
+        "relative_time",
+        "origin_ref",
+        "variable",
+        "declared_dependence_group",
+        "interpretation",
+        "score_limit",
+        "interpretation_basis"
+      ],
+      "title": "ForecastCase",
+      "type": "object"
+    },
+    "ForecastSeal": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/$defs/SealRequest"
+        },
+        "prepared_at": {
+          "format": "date-time",
+          "title": "Prepared At",
+          "type": "string"
+        },
+        "c1_watermark": {
+          "minimum": 0,
+          "title": "C1 Watermark",
+          "type": "integer"
+        },
+        "run_sha256": {
+          "title": "Run Sha256",
+          "type": "string"
+        },
+        "compiled_sha256": {
+          "title": "Compiled Sha256",
+          "type": "string"
+        },
+        "model_revision": {
+          "title": "Model Revision",
+          "type": "integer"
+        },
+        "run_request": {
+          "$ref": "#/$defs/RunRequest"
+        },
+        "program_snapshot": {
+          "$ref": "#/$defs/Program"
+        },
+        "active_parameters": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Active Parameters",
+          "type": "object"
+        },
+        "model_refs": {
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Model Refs",
+          "type": "array"
+        },
+        "model_assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Model Assumptions",
+          "type": "array"
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "input_source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Input Source Ids",
+          "type": "array"
+        },
+        "outcome_origins": {
+          "items": {
+            "$ref": "#/$defs/Origin"
+          },
+          "title": "Outcome Origins",
+          "type": "array"
+        },
+        "points": {
+          "items": {
+            "$ref": "#/$defs/SealedPoint"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "artifact_sha256": {
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "profile_snapshot": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Profile Snapshot",
+          "type": "object"
+        },
+        "status": {
+          "const": "payload-durable; confirmation-required",
+          "default": "payload-durable; confirmation-required",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request",
+        "prepared_at",
+        "c1_watermark",
+        "run_sha256",
+        "compiled_sha256",
+        "model_revision",
+        "run_request",
+        "program_snapshot",
+        "active_parameters",
+        "model_refs",
+        "model_assumptions",
+        "inputs",
+        "input_source_ids",
+        "outcome_origins",
+        "points",
+        "artifact_sha256",
+        "profile_snapshot"
+      ],
+      "title": "ForecastSeal",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "node_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "operator": {
+          "enum": [
+            "constant",
+            "read",
+            "add",
+            "subtract",
+            "multiply",
+            "divide",
+            "negate",
+            "min",
+            "max",
+            "lookup"
+          ],
+          "title": "Operator",
+          "type": "string"
+        },
+        "inputs": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Inputs",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symbol"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "x_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "y_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "points": {
+          "default": [],
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 128,
+          "title": "Points",
+          "type": "array"
+        },
+        "extrapolation": {
+          "default": "error",
+          "enum": [
+            "error",
+            "clamp"
+          ],
+          "title": "Extrapolation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "operator"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "Origin": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "registered_at": {
+          "format": "date-time",
+          "title": "Registered At",
+          "type": "string"
+        },
+        "spec": {
+          "$ref": "#/$defs/OriginSpec"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "source_id",
+        "origin_ref",
+        "registered_at",
+        "spec"
+      ],
+      "title": "Origin",
+      "type": "object"
+    },
+    "OriginSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "namespace": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Namespace",
+          "type": "string"
+        },
+        "native_source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Native Source Id",
+          "type": "string"
+        },
+        "epoch": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Epoch",
+          "type": "string"
+        },
+        "deliverer": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Deliverer",
+          "type": "string"
+        },
+        "channel": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Channel",
+          "type": "string"
+        },
+        "adapter": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Adapter",
+          "type": "string"
+        },
+        "producer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Producer"
+        },
+        "binding_basis": {
+          "default": "reported",
+          "enum": [
+            "reported",
+            "configured",
+            "authenticated"
+          ],
+          "title": "Binding Basis",
+          "type": "string"
+        },
+        "binding_evidence_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Binding Evidence Ref"
+        },
+        "descriptor": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Descriptor",
+          "type": "object"
+        }
+      },
+      "required": [
+        "namespace",
+        "native_source_id",
+        "epoch",
+        "deliverer",
+        "channel",
+        "adapter"
+      ],
+      "title": "OriginSpec",
+      "type": "object"
+    },
+    "Parameter": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "title": "Lower",
+          "type": "number"
+        },
+        "upper": {
+          "title": "Upper",
+          "type": "number"
+        }
+      },
+      "required": [
+        "symbol",
+        "value",
+        "unit",
+        "lower",
+        "upper"
+      ],
+      "title": "Parameter",
+      "type": "object"
+    },
+    "Program": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "ir_version": {
+          "const": "edi.stock-flow-ir/1.0",
+          "default": "edi.stock-flow-ir/1.0",
+          "title": "Ir Version",
+          "type": "string"
+        },
+        "stocks": {
+          "items": {
+            "$ref": "#/$defs/StockSpec"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Stocks",
+          "type": "array"
+        },
+        "parameters": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Parameter"
+          },
+          "maxItems": 64,
+          "title": "Parameters",
+          "type": "array"
+        },
+        "drivers": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Driver"
+          },
+          "maxItems": 32,
+          "title": "Drivers",
+          "type": "array"
+        },
+        "nodes": {
+          "items": {
+            "$ref": "#/$defs/Node"
+          },
+          "maxItems": 256,
+          "minItems": 1,
+          "title": "Nodes",
+          "type": "array"
+        },
+        "flows": {
+          "items": {
+            "$ref": "#/$defs/FlowSpec"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "title": "Flows",
+          "type": "array"
+        },
+        "required_capabilities": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Required Capabilities",
+          "type": "array"
+        },
+        "time_unit": {
+          "const": "s",
+          "default": "s",
+          "title": "Time Unit",
+          "type": "string"
+        },
+        "history_semantics": {
+          "const": "stock-state-only",
+          "default": "stock-state-only",
+          "title": "History Semantics",
+          "type": "string"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "formalization_rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Formalization Rationale",
+          "type": "string"
+        },
+        "source_equation_status": {
+          "enum": [
+            "authored-formalization",
+            "source-transcription",
+            "proposed-correction"
+          ],
+          "title": "Source Equation Status",
+          "type": "string"
+        },
+        "source_statement": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Source Statement",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stocks",
+        "nodes",
+        "flows",
+        "assumptions",
+        "formalization_rationale",
+        "source_equation_status",
+        "source_statement"
+      ],
+      "title": "Program",
+      "type": "object"
+    },
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "RunRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "run_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "compiled_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Compiled Id",
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "numerical",
+            "qualitative"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "scenario": {
+          "$ref": "#/$defs/ScenarioSpec"
+        },
+        "solver": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SolverSpec"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "inquiry_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Inquiry Id"
+        },
+        "test_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Test Id"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "run_id",
+        "compiled_id",
+        "mode",
+        "scenario"
+      ],
+      "title": "RunRequest",
+      "type": "object"
+    },
+    "ScenarioSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "scenario_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "output_times": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 2000,
+          "minItems": 2,
+          "title": "Output Times",
+          "type": "array"
+        },
+        "time_origin": {
+          "$ref": "#/$defs/TimeValue"
+        },
+        "initial_state": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Initial State",
+          "type": "object"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "drivers": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/DriverSchedule"
+          },
+          "maxItems": 32,
+          "title": "Drivers",
+          "type": "array"
+        },
+        "variations": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Variation"
+          },
+          "maxItems": 8,
+          "title": "Variations",
+          "type": "array"
+        },
+        "correspondence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Correspondence"
+          },
+          "maxItems": 32,
+          "title": "Correspondence",
+          "type": "array"
+        },
+        "evidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxItems": 16,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "actor_information_masks": {
+          "default": [],
+          "items": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "type": "object"
+          },
+          "maxItems": 16,
+          "title": "Actor Information Masks",
+          "type": "array"
+        },
+        "terminal_obligations": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Terminal Obligations",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "start",
+        "end",
+        "output_times",
+        "initial_state",
+        "assumptions",
+        "rationale"
+      ],
+      "title": "ScenarioSpec",
+      "type": "object"
+    },
+    "SealConfirmation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "forecast_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Forecast Id",
+          "type": "string"
+        },
+        "seal_sha256": {
+          "title": "Seal Sha256",
+          "type": "string"
+        },
+        "acknowledgement_observed_at": {
+          "format": "date-time",
+          "title": "Acknowledgement Observed At",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "local-prospective",
+            "late-confirmation"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "clock_assumption": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Clock Assumption",
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "title": "Artifact Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "forecast_id",
+        "seal_sha256",
+        "acknowledgement_observed_at",
+        "status",
+        "clock_assumption",
+        "artifact_sha256"
+      ],
+      "title": "SealConfirmation",
+      "type": "object"
+    },
+    "SealRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "forecast_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Forecast Id",
+          "type": "string"
+        },
+        "run_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "variant": {
+          "default": "baseline",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Variant",
+          "type": "string"
+        },
+        "cases": {
+          "items": {
+            "$ref": "#/$defs/ForecastCase"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Cases",
+          "type": "array"
+        },
+        "rule": {
+          "$ref": "#/$defs/EvaluationRule"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "forecast_id",
+        "run_id",
+        "cases",
+        "rule",
+        "assumptions",
+        "rationale"
+      ],
+      "title": "SealRequest",
+      "type": "object"
+    },
+    "SealedPoint": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "case": {
+          "$ref": "#/$defs/ForecastCase"
+        },
+        "target_time": {
+          "format": "date-time",
+          "title": "Target Time",
+          "type": "string"
+        },
+        "predicted": {
+          "title": "Predicted",
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "world_ref": {
+          "$ref": "#/$defs/Ref"
+        }
+      },
+      "required": [
+        "case",
+        "target_time",
+        "predicted",
+        "unit",
+        "world_ref"
+      ],
+      "title": "SealedPoint",
+      "type": "object"
+    },
+    "SolverSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "backend": {
+          "const": "scipy.solve_ivp",
+          "default": "scipy.solve_ivp",
+          "title": "Backend",
+          "type": "string"
+        },
+        "scipy_version": {
+          "const": "1.17.0",
+          "default": "1.17.0",
+          "title": "Scipy Version",
+          "type": "string"
+        },
+        "numpy_version": {
+          "const": "2.5.3",
+          "default": "2.5.3",
+          "title": "Numpy Version",
+          "type": "string"
+        },
+        "method": {
+          "default": "RK45",
+          "enum": [
+            "RK45",
+            "DOP853",
+            "Radau",
+            "BDF"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "rtol": {
+          "default": 1e-06,
+          "maximum": 0.01,
+          "minimum": 1e-12,
+          "title": "Rtol",
+          "type": "number"
+        },
+        "atol": {
+          "default": 1e-09,
+          "maximum": 0.01,
+          "minimum": 1e-15,
+          "title": "Atol",
+          "type": "number"
+        },
+        "max_step": {
+          "exclusiveMinimum": 0,
+          "title": "Max Step",
+          "type": "number"
+        },
+        "bound_tolerance": {
+          "default": 1e-08,
+          "maximum": 0.01,
+          "minimum": 0,
+          "title": "Bound Tolerance",
+          "type": "number"
+        }
+      },
+      "required": [
+        "max_step"
+      ],
+      "title": "SolverSpec",
+      "type": "object"
+    },
+    "StockSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "world_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower"
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upper"
+        }
+      },
+      "required": [
+        "symbol",
+        "world_ref",
+        "unit"
+      ],
+      "title": "StockSpec",
+      "type": "object"
+    },
+    "TimeValue": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "known",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "not supplied",
+          "title": "Reason"
+        }
+      },
+      "title": "TimeValue",
+      "type": "object"
+    },
+    "Unit": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "dimensions": {
+          "additionalProperties": {
+            "maximum": 8,
+            "minimum": -8,
+            "type": "integer"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Dimensions",
+          "type": "object"
+        },
+        "basis": {
+          "default": "SI",
+          "enum": [
+            "SI",
+            "declared-domain"
+          ],
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "Unit",
+      "type": "object"
+    },
+    "Variation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "parameter_values": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Parameter Values",
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "parameter_values"
+      ],
+      "title": "Variation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "seal": {
+      "$ref": "#/$defs/ForecastSeal"
+    },
+    "confirmation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SealConfirmation"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "seal",
+    "confirmation"
+  ],
+  "title": "ForecastReceipt",
+  "type": "object"
+}

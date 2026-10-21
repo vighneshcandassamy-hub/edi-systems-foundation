@@ -9,6 +9,9 @@ from pydantic import ValidationError
 from edi.inquiry.runtime import Runtime
 from edi.analyze.config import AnalysisProfile
 from edi.analyze.contracts import CompileRequest, RunControl, RunRequest
+from edi.assess.config import AssessmentProfile
+from edi.assess.contracts import ArtifactCursor, CompareRequest, FindingRequest, ReviewRequest, SealRequest, YieldRequest
+from edi.assess.contracts import SubmissionRequest as AssessmentSubmissionRequest
 from edi.interpret.config import InterpretationProfile
 from edi.interpret.contracts import InterpretRequest, SubmissionRequest
 from edi.observe.contracts import Capture, OriginSpec, ReplayCursor
@@ -22,7 +25,7 @@ from edi.world.contracts import WorldCursor, WorldPatch, WorldQuery
 
 
 def _parser():
-    parser = argparse.ArgumentParser(prog="edi", description="EDI local C1-C5 runtime (unqualified)")
+    parser = argparse.ArgumentParser(prog="edi", description="EDI local C1-C6 runtime (unqualified)")
     parser.add_argument("--config", type=Path, help="LocalProfile JSON; must include workspace_id/database")
     parser.add_argument("--database", type=Path, help="override local database path")
     parser.add_argument("--workspace", help="override workspace scope")
@@ -30,6 +33,7 @@ def _parser():
     parser.add_argument("--interpret-config", type=Path, help="InterpretationProfile JSON; default is a separate sibling database")
     parser.add_argument("--reason-config", type=Path, help="ReasoningProfile JSON; default is a separate sibling database")
     parser.add_argument("--analysis-config", type=Path, help="AnalysisProfile JSON; default is a separate sibling database")
+    parser.add_argument("--assessment-config", type=Path, help="AssessmentProfile JSON; default is a separate sibling database")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities")
     p = sub.add_parser("register-origin")
@@ -109,6 +113,16 @@ def _parser():
     for command, key in (("analysis-get-compiled", "compiled_id"), ("analysis-get-run", "run_id"), ("analysis-status", "request_id")):
         p = sub.add_parser(command)
         p.add_argument(key)
+    for command in ("assess-seal", "assess-compare", "assess-review", "assess-finding", "assess-yield", "assess-build-patch", "assess-submit"):
+        p = sub.add_parser(command)
+        p.add_argument("request", type=Path)
+    for command in ("assess-get-forecast", "assess-get-comparison", "assess-get-review", "assess-get-finding"):
+        p = sub.add_parser(command)
+        p.add_argument("artifact_id")
+    p = sub.add_parser("assess-query")
+    p.add_argument("kind", choices=("comparison", "review", "finding", "yield"))
+    p.add_argument("--cursor", type=Path)
+    p.add_argument("--limit", type=int, default=25)
     return parser
 
 
@@ -133,7 +147,8 @@ def main(argv=None) -> int:
         interpretation_profile = InterpretationProfile.model_validate_json(args.interpret_config.read_bytes()) if args.interpret_config else None
         reasoning_profile = ReasoningProfile.model_validate_json(args.reason_config.read_bytes()) if args.reason_config else None
         analysis_profile = AnalysisProfile.model_validate_json(args.analysis_config.read_bytes()) if args.analysis_config else None
-        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile, analysis_profile)
+        assessment_profile = AssessmentProfile.model_validate_json(args.assessment_config.read_bytes()) if args.assessment_config else None
+        runtime = Runtime(LocalProfile.model_validate(overrides), world_profile, interpretation_profile, reasoning_profile, analysis_profile, assessment_profile)
         obs = runtime.observation
         world = runtime.world if args.command.startswith("world-") else None
         if args.command == "capabilities":
@@ -231,6 +246,25 @@ def main(argv=None) -> int:
                 commands = {"analysis-compile": (CompileRequest, analysis.compile),
                             "analysis-run": (RunRequest, analysis.run_scenario),
                             "analysis-control": (RunControl, analysis.control_run)}
+                contract, method = commands[args.command]
+                _emit(method(contract.model_validate_json(args.request.read_bytes())))
+        elif args.command.startswith("assess-"):
+            assessment = runtime.assessment
+            if args.command == "assess-query":
+                cursor = ArtifactCursor.model_validate_json(args.cursor.read_bytes()) if args.cursor else None
+                _emit(assessment.query(args.kind, cursor=cursor, limit=args.limit))
+            elif args.command.startswith("assess-get-"):
+                methods = {"assess-get-forecast": assessment.get_forecast, "assess-get-comparison": assessment.get_comparison,
+                           "assess-get-review": assessment.get_review, "assess-get-finding": assessment.get_finding}
+                _emit(methods[args.command](args.artifact_id))
+            else:
+                commands = {"assess-seal": (SealRequest, assessment.seal_forecast),
+                    "assess-compare": (CompareRequest, assessment.compare_outcome),
+                    "assess-review": (ReviewRequest, assessment.review_revision),
+                    "assess-finding": (FindingRequest, assessment.draft_finding),
+                    "assess-yield": (YieldRequest, assessment.review_inquiry_yield),
+                    "assess-build-patch": (AssessmentSubmissionRequest, assessment.build_patch),
+                    "assess-submit": (AssessmentSubmissionRequest, assessment.submit_revision)}
                 contract, method = commands[args.command]
                 _emit(method(contract.model_validate_json(args.request.read_bytes())))
         return 0

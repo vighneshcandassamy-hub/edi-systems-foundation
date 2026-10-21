@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.6.0. **Status:** shared foundation with first local C1 observation, C2 interpretation, C3 world hosting, C4 inquiry control and C5 conditional-analysis source implementations; unqualified. C0-C5 are partial; C6-C7 and native reasoning-model inference are unavailable. Runtime/numerical accuracy, learning performance and empirical qualification remain open.
+**Code version:** 0.7.0. **Status:** shared foundation and first local C1 observation, C2 interpretation, C3 world hosting, C4 inquiry, C5 analysis and C6 prospective-assessment source implementations; unqualified. C0-C6 are partial; C7 and native reasoning-model inference remain unavailable. Runtime, numerical/scientific validity and learned advantage remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
@@ -14,7 +14,11 @@ This repository brings together the integrated seven-chapter architecture, the a
 
 Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
 
-## Current C5 code increment
+## Current C6 code increment
+
+[C6 specification](docs/implementation/C6_ASSESSMENT_RUNTIME.md), [trace](docs/implementation/C6_RUNTIME_TRACE.json), [ADR-008](docs/decisions/ADR-008-prospective-assessment-and-advice.md), [source](src/edi/assess/) and [examples](examples/assessment/) document immutable forecast/confirmation records, fixed-cut first-occurrence measurement selection, scalar/Brier scores, descriptive calibration, missing/censored-data handling, attributed revision/finding/inquiry reviews and staged candidate-only C3 proposals. Native C4/C5 facades connect the assessment path while C3 retains admission. No registration, scan, score, Runtime/store or qualification case ran.
+
+## Prior C5 code increment
 
 [C5 specification](docs/implementation/C5_ANALYSIS_RUNTIME.md), [requirements trace](docs/implementation/C5_RUNTIME_TRACE.json), [ADR-007](docs/decisions/ADR-007-restricted-conditional-analysis.md), [source](src/edi/analyze/) and [examples](examples/analysis/) define the restricted dimensional stock/flow compiler, optional pinned SciPy ODE adapter, isolated parameter scenarios, conditional trajectories/accounting diagnostics, finite ranges/secants and durable run/cancellation/fencing lifecycle. C0 routes analysis; C5 reads C1/C3 and exposes immutable results to future C6. Simulation-origin outputs remain unsealed for prospective assessment. No compiler, solver, Runtime/store, scenario or product/qualification case ran.
 

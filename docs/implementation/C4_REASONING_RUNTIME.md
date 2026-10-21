@@ -1,5 +1,7 @@
 # C4 bounded reasoning and exploration — first source increment
 
+Later source handoff: app code 0.7.0 wires the native [C6 assessment](C6_ASSESSMENT_RUNTIME.md) selection/inquiry-review facade. This supersedes the earlier unavailable-query subset below only for that endpoint; native student/teacher inference and all qualification remain open. Original C4 episode/protocol semantics remain preserved.
+
 Code **0.5.0**, input `11e3517544b78a79e6fc73b81c2345723f67b14c`. Status: **partial source implementation; runtime and scientific qualification deferred**. This increment supplies the inquiry structure and integration. It does not run a reasoning model or establish discovery, causal accuracy, scalability or speed.
 
 ## Authorities and requirement cascade

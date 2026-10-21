@@ -1,5 +1,7 @@
 # C5 conditional analysis and dynamics — first source increment
 
+Later source handoff: app code 0.7.0 wires explicit [C6 registration and receipt](C6_ASSESSMENT_RUNTIME.md) forwarding. C6 stores a separate seal/confirmation; the original C5 run remains unchanged. This supersedes the earlier unavailable C6 registration endpoint below; numerical/runtime/scientific qualification remains open.
+
 Code **0.6.0**. Input remote revision `9d43b356335006b68ee9a5ce99a48ab3668b194d`. Status: **partial source implementation; no runtime, numerical or scientific qualification**. The implemented stock/flow subset has a real compiler and SciPy execution adapter in source; no compiler, solver, scenario or Runtime/store was executed during this increment.
 
 ## Authorities, prerequisite and requirement cascade

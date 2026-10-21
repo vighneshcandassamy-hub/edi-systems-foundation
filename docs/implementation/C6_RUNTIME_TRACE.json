@@ -1,0 +1,629 @@
+{
+  "schema": "edi-c6-runtime-trace-v1",
+  "version": "0.1",
+  "code_version": "0.7.0",
+  "date_utc": "2026-10-21",
+  "input_revision": "7ea2b3ada81db6a42ce6a8a3ebfd315f465ae3a2",
+  "mission": "EDI-MIS-001",
+  "requirements": [
+    {
+      "id": "C6-R001",
+      "title": "Immutable original expectations",
+      "owner": "C6",
+      "functions": [
+        "F60"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R10",
+        "IMP-R16",
+        "IMP-R26"
+      ],
+      "statement": "Select exact completed C5 samples and seal model/IR/scenario/solver/driver/input/correspondence/rule snapshots without changing the original C5 artifact.",
+      "source": [
+        "src/edi/assess/contracts.py",
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V001",
+        "C6-V002",
+        "C6-V003"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R002",
+      "title": "Durable prospective confirmation",
+      "owner": "C6",
+      "functions": [
+        "F60"
+      ],
+      "parents": [
+        "IMP-R10",
+        "IMP-R19",
+        "IMP-R20"
+      ],
+      "statement": "Observe acknowledgement only after forecast payload commit; reserve confirmation space, preserve actual retry time and mark late confirmation ineligible.",
+      "source": [
+        "src/edi/assess/service.py",
+        "src/edi/assess/sqlite.py"
+      ],
+      "cases": [
+        "C6-V002",
+        "C6-V003",
+        "C6-V016"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R003",
+      "title": "Fixed outcome cut and first occurrence",
+      "owner": "C6",
+      "functions": [
+        "F61"
+      ],
+      "parents": [
+        "IMP-R04",
+        "IMP-R10",
+        "IMP-R26"
+      ],
+      "statement": "Compare a caller-pinned C1 watermark and first event/variable match in ordered origin history, retaining pre-existing or unclassifiable earlier records rather than choosing a favorable correction.",
+      "source": [
+        "src/edi/assess/selection.py",
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V004",
+        "C6-V005",
+        "C6-V006"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R004",
+      "title": "Exact raw measurement correspondence",
+      "owner": "C6",
+      "functions": [
+        "F61"
+      ],
+      "parents": [
+        "IMP-R01",
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R04",
+        "IMP-R26"
+      ],
+      "statement": "Check raw JSON schema, source/epoch/workspace/digest, unit/variable/event/report/receipt/commit semantics and declared clock assumptions; no implicit conversion.",
+      "source": [
+        "src/edi/assess/contracts.py",
+        "src/edi/assess/selection.py",
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V005",
+        "C6-V007",
+        "C6-V008"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R005",
+      "title": "Generated echo and dependence controls",
+      "owner": "C6",
+      "functions": [
+        "F61"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R10",
+        "IMP-R25",
+        "IMP-R26"
+      ],
+      "statement": "Reject generated/unknown/derived outcomes in the initial raw-external profile; apply sealed source-overlap policy and retain source/group counts without iid claims.",
+      "source": [
+        "src/edi/assess/service.py",
+        "src/edi/assess/scoring.py"
+      ],
+      "cases": [
+        "C6-V008",
+        "C6-V009"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R006",
+      "title": "Suitable finite scalar/probability scores",
+      "owner": "C6",
+      "functions": [
+        "F61"
+      ],
+      "parents": [
+        "IMP-R07",
+        "IMP-R10",
+        "IMP-R16",
+        "IMP-R27",
+        "IMP-R33"
+      ],
+      "statement": "Compute signed/absolute/squared errors or explicitly interpreted binary Brier loss under fixed limits; stratify units and reject unsuitable/nonfinite outcomes.",
+      "source": [
+        "src/edi/assess/scoring.py",
+        "src/edi/assess/contracts.py"
+      ],
+      "cases": [
+        "C6-V010",
+        "C6-V011"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R007",
+      "title": "Missing/censored exposure integrity",
+      "owner": "C6",
+      "functions": [
+        "F61"
+      ],
+      "parents": [
+        "IMP-R10",
+        "IMP-R19",
+        "IMP-R22",
+        "IMP-R27"
+      ],
+      "statement": "Keep missing/censored/ineligible/invalid/incomplete cases in planned denominators; never impute a scalar or hide failure to improve coverage.",
+      "source": [
+        "src/edi/assess/contracts.py",
+        "src/edi/assess/service.py",
+        "src/edi/assess/scoring.py"
+      ],
+      "cases": [
+        "C6-V006",
+        "C6-V011",
+        "C6-V012"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R008",
+      "title": "Descriptive calibration and uncertainty",
+      "owner": "C6",
+      "functions": [
+        "F61",
+        "F62"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R10",
+        "IMP-R22",
+        "IMP-R33"
+      ],
+      "statement": "Use prespecified bins/counts/means with dependence caveats; distinguish descriptive summaries from calibrated posteriors, causal identification and independent scientific validity.",
+      "source": [
+        "src/edi/assess/scoring.py",
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V009",
+        "C6-V010",
+        "C6-V012"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R009",
+      "title": "Rival discrepancy diagnosis",
+      "owner": "C6",
+      "functions": [
+        "F62"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R12",
+        "IMP-R17",
+        "IMP-R28"
+      ],
+      "statement": "Preserve eight unestablished error-cause categories and attributed competing explanations, support/counterevidence, discriminating tests and uncertainty.",
+      "source": [
+        "src/edi/assess/contracts.py",
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V013",
+        "C6-V014"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R010",
+      "title": "Bounded revision/impact advice",
+      "owner": "C6",
+      "functions": [
+        "F63"
+      ],
+      "parents": [
+        "IMP-R12",
+        "IMP-R17",
+        "IMP-R18",
+        "IMP-R30"
+      ],
+      "statement": "Pin affected C3 versions/dependent views, retained rivals and verification burden; stage exact candidate-only puts with no admission/retirement or implicit resurrection/rebase.",
+      "source": [
+        "src/edi/assess/service.py",
+        "src/edi/assess/contracts.py"
+      ],
+      "cases": [
+        "C6-V014",
+        "C6-V015",
+        "C6-V018"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R011",
+      "title": "Qualified strategic finding drafts",
+      "owner": "C6",
+      "functions": [
+        "F63"
+      ],
+      "parents": [
+        "IMP-R12",
+        "IMP-R18",
+        "IMP-R27",
+        "IMP-R32"
+      ],
+      "statement": "Record newness/priority, stakeholders/goal/horizon, chain/status/evidence/rivals/uncertainty/action class and expiry/review trigger; C0 delivers and C7 adopts.",
+      "source": [
+        "src/edi/assess/contracts.py",
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V015",
+        "C6-V019"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R012",
+      "title": "Native inquiry feedback without inflated yield",
+      "owner": "C6",
+      "functions": [
+        "F62",
+        "F63"
+      ],
+      "parents": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R17",
+        "IMP-R18",
+        "IMP-R32",
+        "IMP-R34"
+      ],
+      "statement": "Expose bounded C4 assessment selection and deduplicated inquiry-linked snapshots/resources/exposure; useful discrimination, matched advantage and full efficiency remain unestablished.",
+      "source": [
+        "src/edi/assess/service.py",
+        "src/edi/assess/contracts.py"
+      ],
+      "cases": [
+        "C6-V019",
+        "C6-V020"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R013",
+      "title": "Durability/resource/recovery envelope",
+      "owner": "C6",
+      "functions": [
+        "F60",
+        "F61",
+        "F62",
+        "F63"
+      ],
+      "parents": [
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R24",
+        "IMP-R29",
+        "IMP-R34"
+      ],
+      "statement": "Bound requests/context/artifacts/replay/bytes/time/selection; preserve original retries, stable cursors and prepaid confirmation/C3 receipt space with explicit unknown-commit and physical-disk limits.",
+      "source": [
+        "src/edi/assess/config.py",
+        "src/edi/assess/sqlite.py",
+        "src/edi/assess/selection.py",
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V006",
+        "C6-V016",
+        "C6-V017",
+        "C6-V018"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    },
+    {
+      "id": "C6-R014",
+      "title": "Owner-restricted integration/readiness",
+      "owner": "C6",
+      "functions": [
+        "F60",
+        "F61",
+        "F62",
+        "F63"
+      ],
+      "parents": [
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R23",
+        "IMP-R26",
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "statement": "Reuse C1/C3/C5 ports and distinct C4/C5 facades, six lazy owner stores and unchanged 56 lane dispositions; preserve C5 prerequisite gaps and all independent/runtime/scaling qualifications.",
+      "source": [
+        "src/edi/assess/service.py"
+      ],
+      "cases": [
+        "C6-V001",
+        "C6-V017",
+        "C6-V018",
+        "C6-V020"
+      ],
+      "acceptance": "Source contract and linked future cases; allocation is not qualified fulfillment.",
+      "status": "partial-source-implemented-unqualified",
+      "verification": "not_run"
+    }
+  ],
+  "cases": [
+    {
+      "id": "C6-V001",
+      "title": "C5 completed numerical artifact/hash/variant/correspondence and exact future sample extraction",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R001",
+        "C6-R014"
+      ]
+    },
+    {
+      "id": "C6-V002",
+      "title": "Forecast payload durability, separate acknowledgement confirmation, fixed thresholds and no silent correction",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R001",
+        "C6-R002"
+      ]
+    },
+    {
+      "id": "C6-V003",
+      "title": "Crash/slow write/late retry and future-target lead/host-clock assumptions",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R001",
+        "C6-R002"
+      ]
+    },
+    {
+      "id": "C6-V004",
+      "title": "Pinned outcome watermark, stable original retry and deliberate later snapshot identity",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R003"
+      ]
+    },
+    {
+      "id": "C6-V005",
+      "title": "Ordered first matching outcome including pre-existing/bad/duplicate/correction records",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R003",
+        "C6-R004"
+      ]
+    },
+    {
+      "id": "C6-V006",
+      "title": "Bounded scan/read/deadline/retrieval failure with prefix evidence and explicit incompleteness",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R003",
+        "C6-R007",
+        "C6-R013"
+      ]
+    },
+    {
+      "id": "C6-V007",
+      "title": "Strict measurement schema, UTF8/duplicate JSON keys/ranges/units/clock correspondence",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R004"
+      ]
+    },
+    {
+      "id": "C6-V008",
+      "title": "Generated/unknown/derived echo, receipt/commit availability and hash/source/epoch integrity",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R004",
+        "C6-R005"
+      ]
+    },
+    {
+      "id": "C6-V009",
+      "title": "Sealed input-source overlap policy, dependence groups and no pseudo-independent corroborators",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R005",
+        "C6-R008"
+      ]
+    },
+    {
+      "id": "C6-V010",
+      "title": "Scalar/Bernoulli Brier eligibility, signed error convention, fixed limits/bins and unit-stratified descriptive metrics",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R006",
+        "C6-R008"
+      ]
+    },
+    {
+      "id": "C6-V011",
+      "title": "Finite score/aggregate overflow, incompatible bool/continuous/outcome values and no clipping",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R006",
+        "C6-R007"
+      ]
+    },
+    {
+      "id": "C6-V012",
+      "title": "Missing/left/right/interval-censored data retained in denominators without fabricated scalar score",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R007",
+        "C6-R008"
+      ]
+    },
+    {
+      "id": "C6-V013",
+      "title": "Eight rival cause categories remain unestablished; error does not identify parameter/topology/policy cause",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R009"
+      ]
+    },
+    {
+      "id": "C6-V014",
+      "title": "Attributed competing revision hypotheses, evidence cuts, pinned targets/descendants and explicit truncation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R009",
+        "C6-R010"
+      ]
+    },
+    {
+      "id": "C6-V015",
+      "title": "Candidate-only advice, preserved rivals/verification burden and no world acceptance/policy adoption",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R010",
+        "C6-R011"
+      ]
+    },
+    {
+      "id": "C6-V016",
+      "title": "Reserved confirmation/staged receipt quota, store/disk exhaustion and unknown commit reconciliation",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R002",
+        "C6-R013"
+      ]
+    },
+    {
+      "id": "C6-V017",
+      "title": "Immutable artifact/request conflicts, stable bounded cursors, lazy composition and actor/tenant authority limits",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R013",
+        "C6-R014"
+      ]
+    },
+    {
+      "id": "C6-V018",
+      "title": "C3 stage/proposal/lost-receipt recovery, exact retry and no rebase or retired-target resurrection",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R010",
+        "C6-R013",
+        "C6-R014"
+      ]
+    },
+    {
+      "id": "C6-V019",
+      "title": "Strategic finding expiry/chain/uncertainty and inquiry snapshot dedup/exposure/cost caveats",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R011",
+        "C6-R012"
+      ]
+    },
+    {
+      "id": "C6-V020",
+      "title": "All owner lanes, native C4/C5 integration, missing C7 policy path and scientific/HA/multiscale qualification limits",
+      "status": "specified_not_run",
+      "evidence_ref": null,
+      "requirement_ids": [
+        "C6-R012",
+        "C6-R014"
+      ]
+    }
+  ],
+  "source_authorities": [
+    "docs/implementation/COMPONENTS.md",
+    "docs/implementation/CONTRACTS.md",
+    "docs/implementation/INTERFACES.json",
+    "docs/implementation/TRACEABILITY.json",
+    "docs/implementation/REASONING_INTEGRATION.md",
+    "docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md",
+    "architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md"
+  ],
+  "scoring_reference": "https://sites.stat.washington.edu/raftery/Research/PDF/Gneiting2007jasa.pdf",
+  "c5_prerequisite": {
+    "source_subset": "immutable conditional run/compiled/trajectory output supports explicit C6 registration",
+    "full_acceptance": "not_established",
+    "numerical_runtime_qualification": "not_run"
+  },
+  "consumer_obligations": "DOWN-001 through DOWN-008 preserved; scoped contribution only",
+  "product_qualification": "not_run; owner structure-first direction retained",
+  "open_obligations": [
+    "Numerical/clock/source/censoring/scoring/recovery/integration/scientific cases at pinned configurations",
+    "External timestamp/provenance authenticity, source independence and hidden upstream knowledge",
+    "C0 autonomous scheduling/delivery, native C4 reasoning binding and C7 authorization/adoption",
+    "Additional modalities/units/aggregation/distributions/censored likelihoods/causal and drift diagnosis",
+    "Matched forecast/calibration/transfer/inquiry-yield/strategic-value and complete cost evaluation",
+    "High-volume indexed selection, multiscale/refinement, process isolation, retention/export/restore/migration/HA",
+    "Complete original C1-C6 obligations and independent qualification"
+  ]
+}

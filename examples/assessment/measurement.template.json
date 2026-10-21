@@ -1,0 +1,9 @@
+{
+  "measurement_schema": "edi.measurement/1.0",
+  "variable": "left-mass",
+  "observed_at": "REPLACE_WITH_ACTUAL_AWARE_EVENT_TIMESTAMP",
+  "unit": "kg",
+  "status": "observed",
+  "value": 0.0,
+  "reason": "Shape placeholder only; replace zero with the real source value, never present it as an acquired observation"
+}

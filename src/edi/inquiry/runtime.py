@@ -7,6 +7,8 @@ from edi.analyze import Analysis
 from edi.analyze.config import AnalysisProfile
 from edi.analyze.sqlite import SQLiteAnalysisStore
 from edi.assess import Assessment
+from edi.assess.config import AssessmentProfile
+from edi.assess.sqlite import SQLiteAssessmentStore
 from edi.interpret import Interpretation
 from edi.interpret.config import InterpretationProfile
 from edi.interpret.sqlite import SQLiteDerivationStore
@@ -29,7 +31,8 @@ class Runtime:
     def __init__(self, profile: LocalProfile, world_profile: WorldProfile | None = None,
                  interpretation_profile: InterpretationProfile | None = None,
                  reasoning_profile: ReasoningProfile | None = None,
-                 analysis_profile: AnalysisProfile | None = None):
+                 analysis_profile: AnalysisProfile | None = None,
+                 assessment_profile: AssessmentProfile | None = None):
         self.profile = profile
         world_profile = world_profile or WorldProfile(
             workspace_id=profile.workspace_id,
@@ -64,6 +67,14 @@ class Runtime:
             raise EDIError(ErrorCode.DENIED, "C1-C5 workspace scopes must match")
         if analysis_profile.database.resolve() in paths | {reasoning_profile.database.resolve()}:
             raise EDIError(ErrorCode.INVALID, "C1-C5 require separate owner databases")
+        assessment_profile = assessment_profile or AssessmentProfile(
+            workspace_id=profile.workspace_id,
+            database=profile.database.with_name(profile.database.stem + ".assess.sqlite3"),
+        )
+        if assessment_profile.workspace_id != profile.workspace_id:
+            raise EDIError(ErrorCode.DENIED, "C1-C6 workspace scopes must match")
+        if assessment_profile.database.resolve() in paths | {reasoning_profile.database.resolve(), analysis_profile.database.resolve()}:
+            raise EDIError(ErrorCode.INVALID, "C1-C6 require separate owner databases")
         self.observation = ObservationService(SQLiteObservationStore(profile), profile)
         self._world_profile = world_profile
         self._world = None
@@ -77,20 +88,24 @@ class Runtime:
         self._analysis_profile = analysis_profile
         self._analysis = None
         self._analysis_lock = Lock()
+        self._assessment_profile = assessment_profile
+        self._assessment = None
+        self._assessment_lock = Lock()
         self._components = {
-            "C6": Assessment(), "C7": Agency(),
+            "C7": Agency(),
         }
 
     def capabilities(self) -> tuple[Capability, ...]:
         return (
             Capability(owner="C0", functions=("F00", "F01", "F02", "F03"),
                        state="implemented-unqualified",
-                       details="Partial C0: composition, scope/configuration, finite C1-C5 operations and explicit progress handoff; no autonomous scheduling"),
+                       details="Partial C0: composition, scope/configuration, finite C1-C6 operations and explicit progress handoff; no autonomous scheduling"),
             self.observation.capability,
             Interpretation.capability,
             World.capability,
             Reasoning.capability,
             Analysis.capability,
+            Assessment.capability,
             *(component.capability for component in self._components.values()),
         )
 
@@ -137,6 +152,7 @@ class Runtime:
                 self._reasoning = Reasoning(
                     self._reasoning_profile, self.reader_for("C4"),
                     SQLiteReasoningStore(self._reasoning_profile), lambda: self.world_for("C4"),
+                    lambda: self.assessment_for("C4"),
                 )
             return self._reasoning
 
@@ -150,6 +166,7 @@ class Runtime:
                 self._analysis = Analysis(
                     self._analysis_profile, self.reader_for("C5"),
                     SQLiteAnalysisStore(self._analysis_profile), lambda: self.world_for("C5"),
+                    lambda: self.assessment_for("C5"),
                 )
             return self._analysis
 
@@ -157,6 +174,22 @@ class Runtime:
         if owner != "C6":
             raise EDIError(ErrorCode.DENIED, "no C5 component port is allocated to this owner")
         return self.analysis.access_for(owner)
+
+    @property
+    def assessment(self) -> Assessment:
+        with self._assessment_lock:
+            if self._assessment is None:
+                self._assessment = Assessment(
+                    self._assessment_profile, self.reader_for("C6"),
+                    SQLiteAssessmentStore(self._assessment_profile), lambda: self.world_for("C6"),
+                    lambda: self.analysis_for("C6"),
+                )
+            return self._assessment
+
+    def assessment_for(self, owner: Owner):
+        if owner not in ("C4", "C5"):
+            raise EDIError(ErrorCode.DENIED, "no C6 component port allocated for this owner")
+        return self.assessment.access_for(owner)
 
     def observe(self, capture: Capture, stream: BinaryIO):
         return self.observation.ingest(capture, stream)
@@ -172,7 +205,7 @@ class Runtime:
     def component(self, owner: Owner):
         component = self._components.get(owner)
         if component is None:
-            raise EDIError(ErrorCode.INVALID, "use the C0-C5 typed SDK for this owner")
+            raise EDIError(ErrorCode.INVALID, "use the C0-C6 typed SDK for this owner")
         return component
 
     def world_for(self, owner: Owner):

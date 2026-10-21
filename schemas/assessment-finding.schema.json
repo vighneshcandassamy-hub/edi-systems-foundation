@@ -1,0 +1,268 @@
+{
+  "$defs": {
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "selector": {
+          "default": "whole-object",
+          "title": "Selector",
+          "type": "string"
+        },
+        "origin_class": {
+          "default": "unknown",
+          "enum": [
+            "external",
+            "generated",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin Class",
+          "type": "string"
+        },
+        "lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "record_id",
+        "sha256"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "FindingRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "finding_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "review_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Review Id",
+          "type": "string"
+        },
+        "newness_priority_basis": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Newness Priority Basis",
+          "type": "string"
+        },
+        "affected_parties": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Affected Parties",
+          "type": "array"
+        },
+        "goal": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Goal",
+          "type": "string"
+        },
+        "horizon": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Horizon",
+          "type": "string"
+        },
+        "chain": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Chain",
+          "type": "array"
+        },
+        "chain_status": {
+          "enum": [
+            "hypothesized",
+            "associative",
+            "mixed-unverified"
+          ],
+          "title": "Chain Status",
+          "type": "string"
+        },
+        "support": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxItems": 32,
+          "title": "Support",
+          "type": "array"
+        },
+        "counterevidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxItems": 32,
+          "title": "Counterevidence",
+          "type": "array"
+        },
+        "alternatives": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "uncertainty": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Uncertainty",
+          "type": "string"
+        },
+        "suggested_action_class": {
+          "enum": [
+            "observe",
+            "investigate",
+            "simulate",
+            "review-policy"
+          ],
+          "title": "Suggested Action Class",
+          "type": "string"
+        },
+        "expiry": {
+          "format": "date-time",
+          "title": "Expiry",
+          "type": "string"
+        },
+        "review_trigger": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Review Trigger",
+          "type": "string"
+        },
+        "attribution": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Attribution",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "finding_id",
+        "review_id",
+        "newness_priority_basis",
+        "affected_parties",
+        "goal",
+        "horizon",
+        "chain",
+        "chain_status",
+        "alternatives",
+        "uncertainty",
+        "suggested_action_class",
+        "expiry",
+        "review_trigger",
+        "attribution"
+      ],
+      "title": "FindingRequest",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/FindingRequest"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "review_sha256": {
+      "title": "Review Sha256",
+      "type": "string"
+    },
+    "status": {
+      "const": "draft; C0 controls delivery and C7 controls adoption",
+      "default": "draft; C0 controls delivery and C7 controls adoption",
+      "title": "Status",
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "title": "Artifact Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request",
+    "created_at",
+    "review_sha256",
+    "artifact_sha256"
+  ],
+  "title": "Finding",
+  "type": "object"
+}

@@ -33,7 +33,9 @@ class AnalysisAccess:
     def get_run(self, run_id): return self._service.get_run(run_id)
     def get_compiled(self, compiled_id): return self._service.get_compiled(compiled_id)
     def seal_forecast(self, *args, **kwargs):
-        raise EDIError(ErrorCode.UNAVAILABLE, "native C6 forecast registration is not installed")
+        raise EDIError(ErrorCode.DENIED, "C6 owns registration; C5 immutable reads cannot register on its behalf")
+    def forecast_seal(self, forecast_id):
+        return self._service.forecast_receipt(forecast_id)
 
 
 class Analysis:
@@ -41,9 +43,22 @@ class Analysis:
         state="implemented-unqualified",
         details="Partial C5: restricted dimensional stock-flow IR, pinned C3 compilation, isolated optional SciPy scenarios, finite parameter comparisons, immutable conditional trajectories and fenced run lifecycle; qualification open")
 
-    def __init__(self, profile, evidence, store, world_factory):
+    def __init__(self, profile, evidence, store, world_factory, assessment_factory=None):
         self.profile, self._evidence, self._store = profile, evidence, store
         self._world_factory, self._slot = world_factory, BoundedSemaphore(1)
+        self._assessment_factory = assessment_factory
+
+    def seal_forecast(self, request):
+        if self._assessment_factory is None:
+            raise EDIError(ErrorCode.UNAVAILABLE, "C6 registration is not bound")
+        if request.run_id != self.get_run(request.run_id).request.run_id:
+            raise EDIError(ErrorCode.INTEGRITY, "forecast registration run identity differs")
+        return self._assessment_factory().seal_forecast(request)
+
+    def forecast_receipt(self, forecast_id):
+        if self._assessment_factory is None:
+            raise EDIError(ErrorCode.UNAVAILABLE, "C6 forecast receipt is not bound")
+        return self._assessment_factory().get_forecast(forecast_id)
 
     @contextmanager
     def _admit(self):

@@ -23,9 +23,10 @@ class Reasoning:
         details="Partial C4: pinned context/protocol, bounded export/import inquiry controller, attributed rivals/test proposals, durable frontier/C0 outbox and candidate-only C3 submissions; inference unavailable",
     )
 
-    def __init__(self, profile: ReasoningProfile, evidence, store, world_factory):
+    def __init__(self, profile: ReasoningProfile, evidence, store, world_factory, assessment_factory=None):
         self.profile, self._evidence, self._store = profile, evidence, store
         self._world_factory = world_factory
+        self._assessment_factory = assessment_factory
         self.student, self.teacher = UnavailableInference("student/vLLM"), UnavailableInference("teacher")
         self._slot = BoundedSemaphore(1)
 
@@ -163,8 +164,15 @@ class Reasoning:
     def request_status(self, operation, request_id):
         return self._store.status(operation + ":" + request_id)
 
-    def query_assessments(self):
-        raise EDIError(ErrorCode.UNAVAILABLE, "C6 native assessment service is unavailable; C0 may supply attributed imported notes")
+    def query_assessments(self, kind="comparison", *, cursor=None, limit=25):
+        if self._assessment_factory is None:
+            raise EDIError(ErrorCode.UNAVAILABLE, "C6 assessment selection is not bound")
+        return self._assessment_factory().query_assessments(kind, cursor=cursor, limit=limit)
+
+    def review_inquiry_yield(self, request):
+        if self._assessment_factory is None:
+            raise EDIError(ErrorCode.UNAVAILABLE, "C6 inquiry review is not bound")
+        return self._assessment_factory().review_inquiry_yield(request)
 
     def step(self, request: StepRequest) -> Episode:
         with self._admit():

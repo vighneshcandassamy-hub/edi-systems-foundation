@@ -1,0 +1,227 @@
+{
+  "$defs": {
+    "EvaluationRule": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "selection_policy": {
+          "const": "first-matching-measurement-by-commit",
+          "default": "first-matching-measurement-by-commit",
+          "title": "Selection Policy",
+          "type": "string"
+        },
+        "aggregation": {
+          "const": "instantaneous-state",
+          "default": "instantaneous-state",
+          "title": "Aggregation",
+          "type": "string"
+        },
+        "require_disjoint_sources": {
+          "default": true,
+          "title": "Require Disjoint Sources",
+          "type": "boolean"
+        },
+        "source_independence_assumption": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Source Independence Assumption",
+          "type": "string"
+        },
+        "calibration_edges": {
+          "default": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "items": {
+            "type": "number"
+          },
+          "title": "Calibration Edges",
+          "type": "array"
+        },
+        "missing_policy": {
+          "const": "retain-denominator; no-imputation",
+          "default": "retain-denominator; no-imputation",
+          "title": "Missing Policy",
+          "type": "string"
+        },
+        "censored_policy": {
+          "const": "report-unscored",
+          "default": "report-unscored",
+          "title": "Censored Policy",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_independence_assumption"
+      ],
+      "title": "EvaluationRule",
+      "type": "object"
+    },
+    "ForecastCase": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "case_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Case Id",
+          "type": "string"
+        },
+        "stock_symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Stock Symbol",
+          "type": "string"
+        },
+        "relative_time": {
+          "title": "Relative Time",
+          "type": "number"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "variable": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Variable",
+          "type": "string"
+        },
+        "declared_dependence_group": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Declared Dependence Group",
+          "type": "string"
+        },
+        "interpretation": {
+          "enum": [
+            "point",
+            "bernoulli-probability"
+          ],
+          "title": "Interpretation",
+          "type": "string"
+        },
+        "score_limit": {
+          "minimum": 0,
+          "title": "Score Limit",
+          "type": "number"
+        },
+        "interpretation_basis": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Interpretation Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_id",
+        "stock_symbol",
+        "relative_time",
+        "origin_ref",
+        "variable",
+        "declared_dependence_group",
+        "interpretation",
+        "score_limit",
+        "interpretation_basis"
+      ],
+      "title": "ForecastCase",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "forecast_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Forecast Id",
+      "type": "string"
+    },
+    "run_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Run Id",
+      "type": "string"
+    },
+    "variant": {
+      "default": "baseline",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Variant",
+      "type": "string"
+    },
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/ForecastCase"
+      },
+      "maxItems": 128,
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    },
+    "rule": {
+      "$ref": "#/$defs/EvaluationRule"
+    },
+    "assumptions": {
+      "items": {
+        "maxLength": 8192,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "forecast_id",
+    "run_id",
+    "cases",
+    "rule",
+    "assumptions",
+    "rationale"
+  ],
+  "title": "SealRequest",
+  "type": "object"
+}

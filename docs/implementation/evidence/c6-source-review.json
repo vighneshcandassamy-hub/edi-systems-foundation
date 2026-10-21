@@ -1,0 +1,726 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C6-prospective-assessment-first-source-increment",
+  "gate": "contract",
+  "input_revision": "7ea2b3ada81db6a42ce6a8a3ebfd315f465ae3a2",
+  "requested_scope": "Owner-authorized C6 source after honest scoped C5 review; runtime/scientific qualification remains deferred",
+  "reviewer": {
+    "role": "implementer_and_source_reviewer",
+    "independent": false
+  },
+  "verdict": "revise",
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Fourteen scoped requirements allocate original IMP parents/F60-F63 to twenty specified unrun cases; source allocation only.",
+      "references": [
+        "docs/implementation/C6_RUNTIME_TRACE.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Concrete local registration/measurement/assessment/advice shapes and five active owner pairs; source trust, full clock/compatibility/statistical/backend semantics remain open.",
+      "references": [
+        "docs/implementation/C6_ASSESSMENT_RUNTIME.md"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "One immutable ledger and narrow JSON/scalar/probability adapter reuse existing ports; no mandatory new evaluator/model package.",
+      "references": [
+        "docs/decisions/ADR-008-prospective-assessment-and-advice.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Original forecasts, separate confirmations, fixed source cut/selection, raw provenance, missing denominators and fallible diagnoses remain explicit in source.",
+      "references": [
+        "src/edi/assess/contracts.py"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Finite context/replay/payload/artifact/time/quota and prepaid terminal records coded; hard isolation/indexed scale/HA/full costs unmeasured.",
+      "references": [
+        "src/edi/assess/config.py"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "Idempotent immutable artifacts, late confirmation and staged exact C3 receipt recovery coded; no crash/clock/disk/concurrency/restore case executed.",
+      "references": [
+        "src/edi/assess/sqlite.py"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Existing prospective comparison plan reused; proper quadratic scoring primary paper linked with narrow assumptions and no new statistical-performance claim.",
+      "references": [
+        "docs/decisions/ADR-008-prospective-assessment-and-advice.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "revise",
+      "rationale": "Only AST/import/parser/JSON/TOML/link/trace/inventory/schema source checks; no store, registration, scan, score or product execution.",
+      "references": [
+        "docs/implementation/C6_ASSESSMENT_RUNTIME.md"
+      ]
+    }
+  ],
+  "traceability": {
+    "source": "docs/implementation/C6_RUNTIME_TRACE.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/C6_ASSESSMENT_RUNTIME.md"
+  },
+  "c5_prerequisite": {
+    "full_requirements_satisfied": "not_established",
+    "numerical_runtime_qualification": "not_run",
+    "supported_subset": "immutable output and C6 read facade; C6 does not reclassify C5 accuracy"
+  },
+  "skills": [
+    {
+      "name": "edi-component-review",
+      "source": ".agents/skills/edi-component-review/SKILL.md",
+      "scope": "KISS/Five Whys/waterfall/MECE/failure/operating envelope and trace; product/checker execution deferred by owner"
+    },
+    {
+      "name": "edi-interface-review",
+      "source": ".agents/skills/edi-interface-review/SKILL.md",
+      "scope": "all 56 directions, eleven facets and shared timing/grounding/recovery paths"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C6-SR01",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Separate immutable forecast payload from post-commit acknowledgement confirmation; late retry cannot be backdated."
+    },
+    {
+      "id": "C6-SR02",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Pin explicit outcome watermark; inspect first matching source occurrence including pre-registration and bad/censored/generated data."
+    },
+    {
+      "id": "C6-SR03",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Block earlier unclassifiable records rather than select a favorable later match; preserve the problematic C1 reference."
+    },
+    {
+      "id": "C6-SR04",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Raw source/workspace/epoch/hash/time/unit/lineage checks and sealed input-source overlap policy remain explicit."
+    },
+    {
+      "id": "C6-SR05",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Missing/censored/unscored denominators retained; suitable finite scalar/Brier loss and prespecified descriptive bins only."
+    },
+    {
+      "id": "C6-SR06",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Error categories and revision causes remain unestablished/attributed, with retained rivals and new verification burden."
+    },
+    {
+      "id": "C6-SR07",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Revision targets pinned and dependent impact truncation preserved; no admission/retirement/resurrection or hidden rebase."
+    },
+    {
+      "id": "C6-SR08",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Prepay confirmation and C3 receipt records; exact staged patch reconciles a lost local receipt."
+    },
+    {
+      "id": "C6-SR09",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Distinct C4/C5 facades and lazy six-owner composition expose native endpoints without new C2/C7 bypass."
+    },
+    {
+      "id": "C6-SR10",
+      "status": "repaired-in-source; not runtime verified",
+      "detail": "Finding drafts and inquiry coverage/resource accounts do not become automatic action, independent usefulness or advantage."
+    }
+  ],
+  "whole_system_review": {
+    "ownership": "C1 evidence, C3 admitted model, C5 trial state, C6 sealed expectations/assessment, C0 workflow and C7 adoption stay separate.",
+    "timing": "Post-commit confirmation and fixed outcome cut close local timestamp/retry gaps conditionally on clock trust; no external time/global-knowledge proof.",
+    "feedback": "Generated output cannot become raw independent outcome; shared source/group dependence, selection, missingness and unknown causes remain visible.",
+    "saturation": "Finite bounded prefix/context/page/state and cooperative time admission; native source intake does not initialize assessment/model/solver stores.",
+    "recovery": "Original artifact outcomes, prepaid confirmations/receipts and exact C3 staging retained; full restore/migration/HA and physical disk repair remain open."
+  },
+  "interface_inventory": {
+    "pair_count": 28,
+    "directed_lane_count": 56,
+    "lanes": [
+      {
+        "from": "C0",
+        "to": "C1",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-01A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C0",
+        "to": "C2",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-02A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C0",
+        "to": "C3",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-03A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C0",
+        "to": "C4",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-04A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C0",
+        "to": "C5",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-05A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C0",
+        "to": "C6",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-06A"
+        ],
+        "implementation_status": "partial-source: trusted seal/compare/review/finding/yield/read/submit; no autonomous delivery/adoption"
+      },
+      {
+        "from": "C0",
+        "to": "C7",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-07A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C1",
+        "to": "C0",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-01B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C1",
+        "to": "C2",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-08A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C1",
+        "to": "C3",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-09A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C1",
+        "to": "C4",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-10A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C1",
+        "to": "C5",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-11A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C1",
+        "to": "C6",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-12A"
+        ],
+        "implementation_status": "partial-source: restricted exact source/cut/replay/payload/availability/lineage checks; source trust/indexed selection remain open"
+      },
+      {
+        "from": "C1",
+        "to": "C7",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-13A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C2",
+        "to": "C0",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-02B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C2",
+        "to": "C1",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-08B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C2",
+        "to": "C3",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-14A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C2",
+        "to": "C4",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C2",
+        "to": "C5",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C2",
+        "to": "C6",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "original no-link/prohibited disposition preserved; no direct C2/C7 bypass"
+      },
+      {
+        "from": "C2",
+        "to": "C7",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C3",
+        "to": "C0",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-03B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C3",
+        "to": "C1",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-09B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C3",
+        "to": "C2",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-14B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C3",
+        "to": "C4",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-15A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C3",
+        "to": "C5",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-16A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C3",
+        "to": "C6",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-17A"
+        ],
+        "implementation_status": "partial-source: pinned target/dependent reads and candidate-only staged proposals; incremental delta/refinement pending"
+      },
+      {
+        "from": "C3",
+        "to": "C7",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-18A"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C4",
+        "to": "C0",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-04B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C4",
+        "to": "C1",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-10B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C4",
+        "to": "C2",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C4",
+        "to": "C3",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-15B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C4",
+        "to": "C5",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C4",
+        "to": "C6",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-19A"
+        ],
+        "implementation_status": "partial-source: native lazy assessment selection and descriptive inquiry review; calibrated/strategic advantage unestablished"
+      },
+      {
+        "from": "C4",
+        "to": "C7",
+        "disposition": "prohibited",
+        "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C5",
+        "to": "C0",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-05B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C5",
+        "to": "C1",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-11B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C5",
+        "to": "C2",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C5",
+        "to": "C3",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-16B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C5",
+        "to": "C4",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C5",
+        "to": "C6",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-20A"
+        ],
+        "implementation_status": "partial-source: immutable C5 run reads, explicit C5 registration forwarder and C6 receipt; original C5 artifact unchanged"
+      },
+      {
+        "from": "C5",
+        "to": "C7",
+        "disposition": "prohibited",
+        "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C6",
+        "to": "C0",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-06B"
+        ],
+        "implementation_status": "partial-source: trusted seal/compare/review/finding/yield/read/submit; no autonomous delivery/adoption"
+      },
+      {
+        "from": "C6",
+        "to": "C1",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-12B"
+        ],
+        "implementation_status": "partial-source: restricted exact source/cut/replay/payload/availability/lineage checks; source trust/indexed selection remain open"
+      },
+      {
+        "from": "C6",
+        "to": "C2",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "original no-link/prohibited disposition preserved; no direct C2/C7 bypass"
+      },
+      {
+        "from": "C6",
+        "to": "C3",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-17B"
+        ],
+        "implementation_status": "partial-source: pinned target/dependent reads and candidate-only staged proposals; incremental delta/refinement pending"
+      },
+      {
+        "from": "C6",
+        "to": "C4",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-19B"
+        ],
+        "implementation_status": "partial-source: native lazy assessment selection and descriptive inquiry review; calibrated/strategic advantage unestablished"
+      },
+      {
+        "from": "C6",
+        "to": "C5",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-20B"
+        ],
+        "implementation_status": "partial-source: immutable C5 run reads, explicit C5 registration forwarder and C6 receipt; original C5 artifact unchanged"
+      },
+      {
+        "from": "C6",
+        "to": "C7",
+        "disposition": "prohibited",
+        "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+        "contract_ids": [],
+        "implementation_status": "original no-link/prohibited disposition preserved; no direct C2/C7 bypass"
+      },
+      {
+        "from": "C7",
+        "to": "C0",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-07B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C7",
+        "to": "C1",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-13B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C7",
+        "to": "C2",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C7",
+        "to": "C3",
+        "disposition": "required",
+        "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+        "contract_ids": [
+          "IF-18B"
+        ],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C7",
+        "to": "C4",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C7",
+        "to": "C5",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "prior partial source or design-only; original disposition preserved"
+      },
+      {
+        "from": "C7",
+        "to": "C6",
+        "disposition": "not_needed",
+        "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+        "contract_ids": [],
+        "implementation_status": "original no-link/prohibited disposition preserved; no direct C2/C7 bypass"
+      }
+    ],
+    "facets_reference": "docs/implementation/C6_ASSESSMENT_RUNTIME.md#integration-and-eleven-contract-facets",
+    "result": "source-reviewed dispositions unchanged; runtime compatibility unqualified"
+  },
+  "verification": {
+    "checks": [
+      "AST",
+      "imports",
+      "CLI parser construction",
+      "JSON/TOML",
+      "new Markdown links",
+      "trace/lane references",
+      "schema generation"
+    ],
+    "Runtime_store_registration_scan_score": "not_run",
+    "examples": "not_run",
+    "product_qualification": "not_run",
+    "gate_validators": "not_run",
+    "simulation": "not_run",
+    "inference": "not_run",
+    "training": "not_run",
+    "benchmarks": "not_run",
+    "deployment": "not_run"
+  },
+  "measurements": {
+    "latency": "unmeasured",
+    "accuracy": "unqualified",
+    "calibration": "not established",
+    "inquiry_yield": "not established",
+    "energy": "unmeasured",
+    "availability": "unmeasured",
+    "intelligence": "not established"
+  },
+  "product_qualification": "not_run",
+  "next_step": "C7 agency/adoption source; preserve C0 scheduling, native C4 inference, C1-C6 full obligations and deferred independent qualification."
+}

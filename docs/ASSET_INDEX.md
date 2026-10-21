@@ -8,6 +8,7 @@ The current assets are stored on the architecture branch through [draft PR #1](h
 
 | Asset group | Current entry point | Contents / status |
 | --- | --- | --- |
+| C6 prospective assessment | [Guide](implementation/C6_ASSESSMENT_RUNTIME.md) / [trace](implementation/C6_RUNTIME_TRACE.json) / [source](../src/edi/assess/) / [examples](../examples/assessment/) | Immutable expectations/confirmations, deterministic outcomes, scores/missingness/dependence, revision/finding/inquiry advice and candidate C3 submission; code 0.7.0 partial/unqualified, no registration/scoring executed. |
 | C5 conditional analysis | [Guide](implementation/C5_ANALYSIS_RUNTIME.md) / [trace](implementation/C5_RUNTIME_TRACE.json) / [source](../src/edi/analyze/) / [examples](../examples/analysis/) | Restricted dimensional stock/flow IR, optional SciPy scenarios, finite comparisons and immutable run/recovery records; code 0.6.0 partial/unqualified, no solver/scenario executed. |
 | C4 reasoning control | [Guide](implementation/C4_REASONING_RUNTIME.md) / [trace](implementation/C4_RUNTIME_TRACE.json) / [source](../src/edi/reason/) / [examples](../examples/reason/) | Pinned contexts, Meadows protocol, export/import jobs, hypotheses/test proposals, exploration frontier and candidate-only C3 bridge; code 0.5.0 partial/unqualified, native inference unavailable. |
 | C2 interpretation | [Guide](implementation/C2_INTERPRETATION_RUNTIME.md) / [trace](implementation/C2_RUNTIME_TRACE.json) / [source](../src/edi/interpret/) / [examples](../examples/interpret/) | Native decoders, immutable attributed derivations/features and candidate-only C3 integration; code 0.4.0 partial/unqualified. |
@@ -34,4 +35,4 @@ The current assets are stored on the architecture branch through [draft PR #1](h
 
 ## Next development step
 
-Shared structure and first local C1-C5 source implementations are present; see their runtime guides for limits and unrun cases. Next source owner is C6 assessment; exact C4 model/provider/tokenizer binding and native inference gateway remain open before autonomous reasoning. Fixed weights/future training remain separate. Broader C1-C5 requirements and qualification gates remain open; source storage does not establish a scientific comparison or full component acceptance.
+Shared structure and first local C1-C6 source implementations are present; see their runtime guides for limits and unrun cases. Next source owner is C7 agency/authorized adoption; exact C4 model/provider/tokenizer binding and native inference gateway remain open before autonomous reasoning. Fixed weights/future training remain separate. Broader C1-C6 requirements and qualification gates remain open; source storage does not establish a scientific comparison or full component acceptance.

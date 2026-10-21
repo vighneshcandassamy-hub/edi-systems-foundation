@@ -1,6 +1,6 @@
 # EDI Systems Foundation — checkpoint
 
-Date: 20 October 2026. Code version: 0.4.0; conceptual source baseline retained.
+Date: 21 October 2026. Code version: 0.7.0; conceptual source baseline retained.
 
 ## What is stored
 
@@ -105,3 +105,17 @@ C5's separate lazy owner store retains immutable compiled/run artifacts, pre-exe
 Fourteen derived requirements and twenty future cases are allocated; original architecture/catalogues/historical evidence remain unchanged. C0-C5 remain partial, C6-C7 and native reasoning inference unavailable. Advanced dynamics, numerical/model/scientific validity, native C6 comparison, complete uncertainty/cost, process supervision, per-variable tolerances, retention/restore/migration/HA and all broader C1-C5 obligations remain open. Next source owner: C6 assessment and learning.
 
 Only AST/import/parser construction, authored JSON/TOML/new-document links, trace/inventory references, installed version metadata and schema generation were checked. No package installation, Runtime/store, compiler, numerical solver/scenario/example, simulation, product/qualification case, gate validator, inference, training, benchmark or deployment ran. Source contract self-review remains REVISE; no component acceptance, numerical accuracy or intelligence/efficiency result is claimed. Assets are saved on the private architecture branch/draft PR and publication hashes verified separately.
+
+## C6 prospective-assessment source checkpoint
+
+21 October 2026 UTC. Input remote revision `7ea2b3ada81db6a42ce6a8a3ebfd315f465ae3a2`. Owner authorized C6 against specifications, constraints, rationale, schemas and assumptions after C5 review. C5's immutable conditional-output subset supports this integration; full C5 numerical/runtime/specification acceptance remains unestablished. [C6 guide](docs/implementation/C6_ASSESSMENT_RUNTIME.md), [trace](docs/implementation/C6_RUNTIME_TRACE.json), [ADR-008](docs/decisions/ADR-008-prospective-assessment-and-advice.md), [source review](docs/implementation/evidence/c6-source-review.json), fourteen schemas and authored templates record the increment.
+
+Code 0.7.0 supplies immutable exact-sample C5 forecast registration with post-payload-commit confirmation, explicit future targets and frozen model/IR/scenario/solver/driver/correspondence/criteria/source cuts. Bounded C1 origin replay chooses the first matching occurrence at an explicitly pinned outcome watermark, retaining pre-existing/bad/generated/missing/censored evidence and scan incompleteness. Point errors, declared Bernoulli Brier loss, stratified coverage and prespecified descriptive calibration retain source/dependence/clock/unit/availability caveats. No score implies causal identity or universal truth.
+
+Eight rival diagnostic categories remain unestablished; attributed revision causes/tests, affected C3 targets/dependents, retained rivals, uncertainty and verification burden are preserved. Finding drafts retain affected parties/goal/horizon, chain status, evidence/alternatives, expiry and review trigger; C0 delivery and C7 adoption remain separate. Inquiry reviews deduplicate linked forecast snapshots and retain declared exposure/resources without claiming useful information gain or calibrated advantage. Exact candidate-only C3 submissions stage their patch and reserve receipt capacity; C3 retains admission authority.
+
+C6 owns a separate lazy SQLite ledger, immutable request outcomes and bounded artifact selections. Confirmation/C3 receipt quota is prepaid. Distinct native C4 selection/inquiry-review and C5 registration/receipt facades are wired without direct C2/C7 bypasses; all 28 pairs/56 lanes preserve original dispositions. All six owner store paths/workspaces are checked; native recording does not initialize the assessment/model/solver stores. C0-C6 remain partial; C7 and native C4 inference are unavailable.
+
+Fourteen scoped requirements/twenty future cases are allocated without changing original architecture/catalogues/evidence. Source-clock/provenance trust, hidden dependencies/knowledge, broader measurement/statistical/causal/refinement methods, real calibration/skill/yield/strategic usefulness, complete costs, C0 scheduling, retention/restore/migration/isolation/HA and all C1-C6 qualification remain open. Next source owner is C7 agency/authorized adoption.
+
+Checks were AST/import/parser construction, authored JSON/TOML/new-document links, trace/lane references and schema generation only. No Runtime/store, registration, outcome scan, scoring/calibration, C3 proposal, example/product case, gate validator, simulation, model call, training, benchmark or deployment ran. Overall contract source self-review remains REVISE; no component acceptance, learned advantage or independent scientific result is claimed. Assets are saved on the private architecture branch/draft PR; committed-tree and pinned-file hashes verify publication separately.
