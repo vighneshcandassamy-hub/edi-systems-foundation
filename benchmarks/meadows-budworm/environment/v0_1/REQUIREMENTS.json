@@ -1,0 +1,120 @@
+{
+  "schema": "edi-environment-requirements-0.1",
+  "mission": "Test selective understanding and purposeful inquiry over initially mixed and subsequently requested evidence.",
+  "source": "Owner instructions in current conversation, 21 October 2026; existing corpus and architecture remain unchanged.",
+  "requirements": [
+    {
+      "id": "ENV01",
+      "requirement": "Mixed initial evidence with superficially related distractions",
+      "allocated_to": "builder",
+      "verification": [
+        "participant_database_has_no_evaluator_tables",
+        "explicit_relevance_labels_absent_from_public_items"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV02",
+      "requirement": "Separate requestable evidence with unknown evidence remaining unavailable",
+      "allocated_to": "broker",
+      "verification": [
+        "public_catalogue_and_unavailable_search",
+        "future_unknown_item_and_arbitrary_file_requests_denied"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV03",
+      "requirement": "Participant interfaces exclude evaluator labels and future outcomes",
+      "allocated_to": "broker",
+      "verification": [
+        "auth_and_private_endpoint_denial",
+        "no_future_rows_in_request_store"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV04",
+      "requirement": "Retain pre-acquisition rationale, expected observations and alternatives",
+      "allocated_to": "broker",
+      "verification": [
+        "pre_acquisition_rationale_expectations_and_alternatives_retained"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV05",
+      "requirement": "Retain duplicate lineage without claiming independent evidence",
+      "allocated_to": "evidence_package",
+      "verification": [
+        "duplicate_bulletins_share_original_source_groups"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV06",
+      "requirement": "Bounded reads, conflict-safe replay and recovery of committed responses",
+      "allocated_to": "broker",
+      "verification": [
+        "request_pagination_asset_range_rationale_and_idempotency",
+        "restart_recovers_exact_admission_response"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV07",
+      "requirement": "Score outcomes and forecasts; relevance labels remain diagnostic",
+      "allocated_to": "evaluator",
+      "verification": [
+        "operator_scoring_and_failed_retry_cost_accounting"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV08",
+      "requirement": "Preserve original real corpus and pin every environment database",
+      "allocated_to": "builder",
+      "verification": [
+        "three_databases_and_gzip_snapshots_verified"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV09",
+      "requirement": "Freeze a declared constructed world with nuisance channels outside its transitions",
+      "allocated_to": "builder",
+      "verification": [
+        "independent_distractor_has_zero_effect_on_transition",
+        "frozen_counterfactuals_match_generator"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    },
+    {
+      "id": "ENV10",
+      "requirement": "One final answer, no reward feedback, explicit session closure",
+      "allocated_to": "broker",
+      "verification": [
+        "one_final_submission_no_reward_feedback_and_session_close"
+      ],
+      "evidence_ref": "fixture/reports/VALIDATION.json",
+      "status": "passed_scoped_engineering"
+    }
+  ],
+  "not_qualified": [
+    "EDI integration",
+    "human task performance",
+    "model superiority",
+    "ecological calibration",
+    "hostile multi-tenant isolation",
+    "unseen-world generalization"
+  ]
+}

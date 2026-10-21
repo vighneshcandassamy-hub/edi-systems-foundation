@@ -1,0 +1,573 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Single-host constructed-world public operations, source reads, world loop and offline accounting; external EDI consumer unqualified",
+  "input_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+  "components": [
+    {
+      "id": "P",
+      "name": "Participant external consumer"
+    },
+    {
+      "id": "C",
+      "name": "Controller and durable run journal"
+    },
+    {
+      "id": "A",
+      "name": "Immutable archive and original source files"
+    },
+    {
+      "id": "W",
+      "name": "Constructed world state transitions"
+    },
+    {
+      "id": "E",
+      "name": "Offline operator evaluator"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "P",
+      "to": "C",
+      "disposition": "required",
+      "rationale": "Public operation requests",
+      "contract_ids": [
+        "P_C"
+      ]
+    },
+    {
+      "from": "P",
+      "to": "A",
+      "disposition": "prohibited",
+      "rationale": "Participant must use the controller; no direct private/owner store or evaluator route.",
+      "contract_ids": []
+    },
+    {
+      "from": "P",
+      "to": "W",
+      "disposition": "prohibited",
+      "rationale": "Participant must use the controller; no direct private/owner store or evaluator route.",
+      "contract_ids": []
+    },
+    {
+      "from": "P",
+      "to": "E",
+      "disposition": "prohibited",
+      "rationale": "Participant must use the controller; no direct private/owner store or evaluator route.",
+      "contract_ids": []
+    },
+    {
+      "from": "C",
+      "to": "P",
+      "disposition": "required",
+      "rationale": "Public records, assets and status",
+      "contract_ids": [
+        "C_P"
+      ]
+    },
+    {
+      "from": "C",
+      "to": "A",
+      "disposition": "required",
+      "rationale": "Read pinned source holdings",
+      "contract_ids": [
+        "C_A"
+      ]
+    },
+    {
+      "from": "C",
+      "to": "W",
+      "disposition": "required",
+      "rationale": "Execute admitted work and advance",
+      "contract_ids": [
+        "C_W"
+      ]
+    },
+    {
+      "from": "C",
+      "to": "E",
+      "disposition": "required",
+      "rationale": "Return outcome vector and journal",
+      "contract_ids": [
+        "C_E"
+      ]
+    },
+    {
+      "from": "A",
+      "to": "P",
+      "disposition": "prohibited",
+      "rationale": "Participant must use the controller; no direct private/owner store or evaluator route.",
+      "contract_ids": []
+    },
+    {
+      "from": "A",
+      "to": "C",
+      "disposition": "required",
+      "rationale": "Return immutable source content",
+      "contract_ids": [
+        "A_C"
+      ]
+    },
+    {
+      "from": "A",
+      "to": "W",
+      "disposition": "not_needed",
+      "rationale": "No direct runtime call. Archive construction invokes world offline as a build dependency; evaluation reads the controller snapshot, not this endpoint.",
+      "contract_ids": []
+    },
+    {
+      "from": "A",
+      "to": "E",
+      "disposition": "not_needed",
+      "rationale": "No direct runtime call. Archive construction invokes world offline as a build dependency; evaluation reads the controller snapshot, not this endpoint.",
+      "contract_ids": []
+    },
+    {
+      "from": "W",
+      "to": "P",
+      "disposition": "prohibited",
+      "rationale": "Participant must use the controller; no direct private/owner store or evaluator route.",
+      "contract_ids": []
+    },
+    {
+      "from": "W",
+      "to": "C",
+      "disposition": "required",
+      "rationale": "Return next state and measurements",
+      "contract_ids": [
+        "W_C"
+      ]
+    },
+    {
+      "from": "W",
+      "to": "A",
+      "disposition": "not_needed",
+      "rationale": "No direct runtime call. Archive construction invokes world offline as a build dependency; evaluation reads the controller snapshot, not this endpoint.",
+      "contract_ids": []
+    },
+    {
+      "from": "W",
+      "to": "E",
+      "disposition": "not_needed",
+      "rationale": "No direct runtime call. Archive construction invokes world offline as a build dependency; evaluation reads the controller snapshot, not this endpoint.",
+      "contract_ids": []
+    },
+    {
+      "from": "E",
+      "to": "P",
+      "disposition": "prohibited",
+      "rationale": "Participant must use the controller; no direct private/owner store or evaluator route.",
+      "contract_ids": []
+    },
+    {
+      "from": "E",
+      "to": "C",
+      "disposition": "required",
+      "rationale": "Read offline run snapshot",
+      "contract_ids": [
+        "E_C"
+      ]
+    },
+    {
+      "from": "E",
+      "to": "A",
+      "disposition": "not_needed",
+      "rationale": "No direct runtime call. Archive construction invokes world offline as a build dependency; evaluation reads the controller snapshot, not this endpoint.",
+      "contract_ids": []
+    },
+    {
+      "from": "E",
+      "to": "W",
+      "disposition": "not_needed",
+      "rationale": "No direct runtime call. Archive construction invokes world offline as a build dependency; evaluation reads the controller snapshot, not this endpoint.",
+      "contract_ids": []
+    }
+  ],
+  "contract_profiles": {
+    "v02": {
+      "ownership": "Archive owns immutable evidence; world owns ecological state; controller owns admission, journal and publication. World state, jobs and response are serialized in one run.sqlite transaction. Evaluator only reads.",
+      "authority": "Per-operation allowlist and contract-specific override; bearer auth for public requests; loopback only. Physical participant isolation is a deployment obligation.",
+      "shape_versions": "v0.2 JSON operation fields in PUBLIC_OPERATIONS.json. Native assets with format/hash/origin and metadata; null external calendar scope is not simulation year zero. No EDI representation schema is imposed.",
+      "identity_scope": "Request ID bound to canonical operation/body; document ID bound to source/title/year/asset digest; source identity is not inferred physical identity. Job and generated observation IDs are run-scoped; derived_from records retain evidence lineage.",
+      "time_order": "Historical end-of-year state -79..0; current year starts at 0. Future work due next year through five years ahead. Actions execute before due measurements; publication in the same advance transaction. External dates retained natively.",
+      "delivery_idempotency": "Committed response replay for identical request; different reuse conflicts. Non-committed failures may retry. New measurement IDs are distinct observations, not delivery retries.",
+      "commit_recovery": "BEGIN IMMEDIATE under one process lock; state, job completion, publication and response commit together. Injected pre-commit failure rolls back; restart replays committed responses. No replicated/hostile/power-loss availability claim.",
+      "retention": "Immutable full archive retained. Run journal and current state retained for the session and operator export; no eviction or promised unlimited retention. Session closes on final report, exact retries still valid.",
+      "resource_limits": "128 KiB input; 100 search items; 200 structured rows; 64 KiB asset chunks; body preview 60,000 characters; 100 pending jobs; 240 annual work units; horizon year 50; 1..5-year advance. Journal storage depends on actual requests, no production capacity SLO.",
+      "errors": "Explicit unknown/unsupported/unavailable/conflict/authorization/budget/range/integrity responses. Source corruption or absence returns 503; no synthetic replacement. Invalid requests do not commit work; failed HTTP attempts count separately.",
+      "feedback_grounding": "No model inference or evidence synthesis on request. Measurements come from seeded world state with error bounds. Role statements are frozen bounded disclosures. Shared underlying observations retain lineage. Operator notes/labels/future are not public."
+    }
+  },
+  "contracts": [
+    {
+      "id": "P_C",
+      "from": "P",
+      "to": "C",
+      "title": "Public operation requests",
+      "producer_port": "client.py operation JSON",
+      "consumer_port": "broker.dispatch allowlisted inputs",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Participant may request public operations; no arbitrary SQL/path, future truth or evaluator access."
+      },
+      "requirement_ids": [
+        "OW01",
+        "OW05",
+        "OW06",
+        "OW07"
+      ],
+      "verification_ids": [
+        "V03",
+        "V07",
+        "V08",
+        "V11"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "C_P",
+      "from": "C",
+      "to": "P",
+      "title": "Public records, assets and status",
+      "producer_port": "broker response JSON",
+      "consumer_port": "client.py and consumer observation tools",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Return native documents, bounded bytes, role statements and admitted observations; no hidden state/labels."
+      },
+      "requirement_ids": [
+        "OW02",
+        "OW03",
+        "OW05"
+      ],
+      "verification_ids": [
+        "V04",
+        "V05",
+        "V06",
+        "V09"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "C_A",
+      "from": "C",
+      "to": "A",
+      "title": "Read pinned source holdings",
+      "producer_port": "Broker.connection and asset_bytes / records selectors",
+      "consumer_port": "archive.sqlite and original corpus read-only paths",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Only IDs resolved through immutable archive metadata; physical source paths never supplied by participant."
+      },
+      "requirement_ids": [
+        "OW02",
+        "OW03",
+        "OW11"
+      ],
+      "verification_ids": [
+        "V01",
+        "V04",
+        "V05"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "C_W",
+      "from": "C",
+      "to": "W",
+      "title": "Execute admitted work and advance",
+      "producer_port": "Broker.perform advance transaction",
+      "consumer_port": "world.step/climate/observe",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Only admitted future jobs; no duplicate treatment/stand/year; budget reserved; world state private."
+      },
+      "requirement_ids": [
+        "OW04",
+        "OW06",
+        "OW09"
+      ],
+      "verification_ids": [
+        "V02",
+        "V08",
+        "V09",
+        "V10"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "C_E",
+      "from": "C",
+      "to": "E",
+      "title": "Return outcome vector and journal",
+      "producer_port": "run.sqlite committed state/events/attempts",
+      "consumer_port": "evaluate.evaluate",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Offline export only; no rubric/feedback enters participant session. Report may inspect incomplete runs but is not participant feedback."
+      },
+      "requirement_ids": [
+        "OW10"
+      ],
+      "verification_ids": [
+        "V13"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "A_C",
+      "from": "A",
+      "to": "C",
+      "title": "Return immutable source content",
+      "producer_port": "read-only SQLite and hash-checked source asset bytes",
+      "consumer_port": "Broker search/read/records",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Read-only return with original identifiers, origin and lineage; external sources remain outside constructed geography."
+      },
+      "requirement_ids": [
+        "OW02",
+        "OW03"
+      ],
+      "verification_ids": [
+        "V01",
+        "V04",
+        "V05"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "W_C",
+      "from": "W",
+      "to": "C",
+      "title": "Return next state and measurements",
+      "producer_port": "world.step/observe pure results",
+      "consumer_port": "controller atomic state/job/publication commit",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Private next-state retained separately from published sampled/routine results; all updates one transaction."
+      },
+      "requirement_ids": [
+        "OW04",
+        "OW05",
+        "OW09"
+      ],
+      "verification_ids": [
+        "V02",
+        "V09",
+        "V10",
+        "V12"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "E_C",
+      "from": "E",
+      "to": "C",
+      "title": "Read offline run snapshot",
+      "producer_port": "evaluate.py read-only SQLite selectors",
+      "consumer_port": "run.sqlite state/events/attempts",
+      "profile_ref": "v02",
+      "facets": {
+        "authority": "Operator-only local read; no participant endpoint and no mutation of a live mission."
+      },
+      "requirement_ids": [
+        "OW10"
+      ],
+      "verification_ids": [
+        "V13"
+      ],
+      "status": "runtime_verified",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    }
+  ],
+  "cases": [
+    {
+      "id": "V01",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Archive/gzip/assets, clean compressed restore, configuration guard and preserved original corpus hashes"
+    },
+    {
+      "id": "V02",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Bounded histories and direct, method-dependent non-target pathway; not ecological calibration"
+    },
+    {
+      "id": "V03",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Authentication, private route/path and resource bounds denied"
+    },
+    {
+      "id": "V04",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Every archive item discoverable; every original asset retrieved and hash verified without hypothesis templates"
+    },
+    {
+      "id": "V05",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "All 32,895 original structured rows retrievable through public document selectors"
+    },
+    {
+      "id": "V06",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Source-linked role disclosure and honest unavailable measurement/role"
+    },
+    {
+      "id": "V07",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Idempotent scheduled measurement, conflict detection and delayed release"
+    },
+    {
+      "id": "V08",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Free parameterized interventions, overlapping-work and invalid/past action rejection"
+    },
+    {
+      "id": "V09",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Advance executes work and publishes grounded observations with costs exactly once"
+    },
+    {
+      "id": "V10",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Pre-commit interruption rolls back world, jobs, evidence and request together"
+    },
+    {
+      "id": "V11",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Objective proposal retained without silent adoption; unacquired citations denied"
+    },
+    {
+      "id": "V12",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Durable process restart replays committed response without repeated effects"
+    },
+    {
+      "id": "V13",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Open final report, session closure, idempotent final replay and offline outcome accounting"
+    },
+    {
+      "id": "V14",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Linux-6.18.55-x86_64-with-glibc2.39; Python 3.12.14; loopback HTTP scripted client; fixture manifest pinned",
+      "description": "Participant export allowlist excludes world, archive, state and operator reports; deployment isolation still unqualified"
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "A",
+        "C",
+        "E",
+        "P",
+        "W"
+      ],
+      "analysis": "P inquiry/action -> C admission -> W transition -> C sampled publication -> P revision. A supplies immutable observations; no inquiry-dependent generated explanation. E bidirectional read transport is offline and has no live control return. Source files/run DB/model/clock are shared dependencies; participant mounts must exclude operator state. Sampling selection and horizons constrain interpretation. Single atomic commit prevents retry feedback amplification; no circular blocking external service. Admission quotas bound pending work; journal capacity remains operator managed.",
+      "verification_ids": [
+        "V03",
+        "V07",
+        "V09",
+        "V10",
+        "V12",
+        "V14"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "I-DEPLOY",
+      "description": "Actual EDI filesystem/network separation and adapter integration not deployed. Archive allowlist only.",
+      "status": "open",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "I-SCIENCE",
+      "description": "Historical equivalence, calibrated ecology and real participant reasoning untested.",
+      "status": "open",
+      "blocking_at": [
+        "integration"
+      ]
+    }
+  ],
+  "review": {
+    "gate": "runtime",
+    "verdict": "pass",
+    "independent": false,
+    "product_qualification": "passed_scoped",
+    "implementation_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+    "configuration_ref": "benchmarks/meadows-budworm/environment/v0_2/fixture/manifest.json",
+    "scope_limit": "Scripted localhost environment HTTP and offline accounting only. Not EDI integration, ecological validity, blind deployment or intelligence."
+  }
+}

@@ -1,0 +1,2589 @@
+{
+  "scope": "Operator HTTP reachability and structural diagnostic, not EDI inquiry/reasoning.",
+  "baseline_revision": "6650dc94c4ea640e43fc52ccd42cfd93cad49c98",
+  "input_sha256": {
+    "broker.py": "89beb5b640ecf03d854a0b6c3bc378d6960678681a70619914ba1bb0a6739a24",
+    "world.py": "fc65a85f5e85d7527a9fb7d1a31b0b075c3a370ff12ddd649b2f9cf50ceefb8a",
+    "build.py": "0de4689f81a6b5e5cd3476cfe4b8ec29a85835e9150cc9a398313108f362a546",
+    "fixture/participant/mission.json": "6be455e2dd0d1bc7fd4ed1f2c163bbb5d7dce1c9700ad0a25b9c7f615f01d7bb",
+    "fixture/initial/initial.sqlite.gz": "43c9083654fb5881374238333fabbb78c87fa0643fbd6bec8a21d85b7631e25a",
+    "fixture/investigation/investigation.sqlite.gz": "6e0332228172e24ee939d042367ab1b8583b1f5a43e12823557da78da904614a"
+  },
+  "initial_items_read": 30,
+  "requestable_items_discovered": 129,
+  "requestable_items_fetched_and_assets_verified": 129,
+  "retrieved": [
+    {
+      "item_id": "E03c52248e6d6d61222",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2911
+    },
+    {
+      "item_id": "E087d85b7592410f583",
+      "title": "Spring development conditions",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "spring weather",
+        "unit": "standardized anomaly",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1417
+    },
+    {
+      "item_id": "E09d9400ff797d94539",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3397
+    },
+    {
+      "item_id": "E09de6f8026ff5330a9",
+      "title": "Host-tree needle chemistry",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "balsam-fir needle trace-element assay",
+        "unit": "relative trace-element assay index",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3386
+    },
+    {
+      "item_id": "E0b50ce765f442a279b",
+      "title": "Forest moth activity",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "non-target needle-miner moth",
+        "unit": "adult trap captures",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "csv",
+      "records": 10,
+      "verified_asset_bytes": 244
+    },
+    {
+      "item_id": "E0cf961b54c5d1c020d",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1321
+    },
+    {
+      "item_id": "E0f8e07d1df183dc9ba",
+      "title": "Forest protection expenditure",
+      "scope": {
+        "district": "Provincial programme",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all districts and insect programmes",
+        "unit": "nominal programme spending index",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1475
+    },
+    {
+      "item_id": "E14f3a26c7617adcc0f",
+      "title": "Forest insect measurement calibration",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "branch-length reporting protocol",
+        "unit": "centimetres per sampled branch",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 508
+    },
+    {
+      "item_id": "E1a1442689aeeeedabc",
+      "title": "Spring development conditions",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "spring weather",
+        "unit": "standardized anomaly",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3389
+    },
+    {
+      "item_id": "E1b9cb564512cd99a54",
+      "title": "Forest budburst observation programme",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "ornamental non-host trees at office grounds",
+        "unit": "review index",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 505
+    },
+    {
+      "item_id": "E1bd4cec9948d7302a4",
+      "title": "Budworm stress-response assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm enzyme activity",
+        "unit": "relative biochemical activity",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2902
+    },
+    {
+      "item_id": "E1ddef2d6dc2c35d9a0",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1366
+    },
+    {
+      "item_id": "E1f99346c6bcf9e111a",
+      "title": "Host-tree needle chemistry",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "balsam-fir needle trace-element assay",
+        "unit": "relative trace-element assay index",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3402
+    },
+    {
+      "item_id": "E2070e6b16798a73c0d",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3407
+    },
+    {
+      "item_id": "E223fa773fa5fcdb280",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2979
+    },
+    {
+      "item_id": "E2499d7a86e6191ebc3",
+      "title": "Branch larval monitoring archive",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "archived demonstration stand, replaced before target monitoring",
+        "unit": "larvae per branch",
+        "years": [
+          -29,
+          -20
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1467
+    },
+    {
+      "item_id": "E272ea298d2d495a578",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9849
+    },
+    {
+      "item_id": "E2d1226293dbdee8d32",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1265
+    },
+    {
+      "item_id": "E2dd7b3835fa655b02b",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2973
+    },
+    {
+      "item_id": "E2ee0d98754f937d622",
+      "title": "Host-tree needle chemistry",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "balsam-fir needle trace-element assay",
+        "unit": "relative trace-element assay index",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2970
+    },
+    {
+      "item_id": "E2f76c10e2956e83b83",
+      "title": "Forest insect measurement calibration",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "branch-length reporting protocol",
+        "unit": "centimetres per sampled branch",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1404
+    },
+    {
+      "item_id": "E315ad47592c54fbbcb",
+      "title": "Forest insect treatment batch quality",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "unused reserve treatment batches",
+        "unit": "assay quality index",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 506
+    },
+    {
+      "item_id": "E35a9cbca71e6b852ca",
+      "title": "Forest moth activity",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "non-target needle-miner moth",
+        "unit": "adult trap captures",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1383
+    },
+    {
+      "item_id": "E36993f483caf0b6f2c",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9792
+    },
+    {
+      "item_id": "E37172adeda58942a93",
+      "title": "Forest insect measurement calibration",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "branch-length reporting protocol",
+        "unit": "centimetres per sampled branch",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 551
+    },
+    {
+      "item_id": "E37532b870daa5088c2",
+      "title": "Forest composition monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "mature susceptible host trees",
+        "unit": "fraction of stand",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2914
+    },
+    {
+      "item_id": "E382632200c094b86d7",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3399
+    },
+    {
+      "item_id": "E3ee56c5eeb6957f0cb",
+      "title": "Forest insect monitoring effort",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "survey sampling effort",
+        "unit": "branches per reporting unit",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 502
+    },
+    {
+      "item_id": "E416b6b47649c2fb896",
+      "title": "Forest protection expenditure",
+      "scope": {
+        "district": "Provincial programme",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all districts and insect programmes",
+        "unit": "nominal programme spending index",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 549
+    },
+    {
+      "item_id": "E43f90c9e3f674f5f55",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1321
+    },
+    {
+      "item_id": "E4467052e3fc00669a1",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1368
+    },
+    {
+      "item_id": "E48609293747f0214d2",
+      "title": "Forest protection expenditure",
+      "scope": {
+        "district": "Provincial programme",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all districts and insect programmes",
+        "unit": "nominal programme spending index",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 549
+    },
+    {
+      "item_id": "E48a77c38cd1d598697",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9856
+    },
+    {
+      "item_id": "E490b264fc4bacd470e",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1321
+    },
+    {
+      "item_id": "E496171c12f2124c900",
+      "title": "Forest insect monitoring effort",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "survey sampling effort",
+        "unit": "branches per reporting unit",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1398
+    },
+    {
+      "item_id": "E4d5b9be0d88ea4603a",
+      "title": "Forest protection operations",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect treatment",
+        "unit": "fractional treatment intensity",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3044
+    },
+    {
+      "item_id": "E4e9b7ebc7ffa265ff5",
+      "title": "Forest insect measurement calibration",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "branch-length reporting protocol",
+        "unit": "centimetres per sampled branch",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "csv",
+      "records": 10,
+      "verified_asset_bytes": 257
+    },
+    {
+      "item_id": "E50e9a6fc013938e1af",
+      "title": "Branch larval monitoring archive",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "archived demonstration stand, replaced before target monitoring",
+        "unit": "larvae per branch",
+        "years": [
+          -49,
+          -40
+        ]
+      },
+      "format": "csv",
+      "records": 10,
+      "verified_asset_bytes": 326
+    },
+    {
+      "item_id": "E51c0c0fd0c8bac4dff",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9849
+    },
+    {
+      "item_id": "E599ed5a280afc4cd2c",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3397
+    },
+    {
+      "item_id": "E5b3e5ee9262fc294e6",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all tree species including non-host trees",
+        "unit": "fractional canopy cover, all species",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1449
+    },
+    {
+      "item_id": "E5c52a58c8af28b40e7",
+      "title": "Budworm stress-response assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm enzyme activity",
+        "unit": "relative biochemical activity",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3414
+    },
+    {
+      "item_id": "E5eb2ae045a0fdb3a28",
+      "title": "Forest budburst observation programme",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "ornamental non-host trees at office grounds",
+        "unit": "review index",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 535
+    },
+    {
+      "item_id": "E5ef6eefa512f398751",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1321
+    },
+    {
+      "item_id": "E62989af0f15903c4ff",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9854
+    },
+    {
+      "item_id": "E68077a06e6e83fdbc9",
+      "title": "Branch larval monitoring archive",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "archived demonstration stand, replaced before target monitoring",
+        "unit": "larvae per branch",
+        "years": [
+          -39,
+          -30
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1469
+    },
+    {
+      "item_id": "E6cb079e6cc4d50ea01",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all tree species including non-host trees",
+        "unit": "fractional canopy cover, all species",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 597
+    },
+    {
+      "item_id": "E6fa191a342f967ff52",
+      "title": "Forest insect feeding assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "sampling": "replicated laboratory feeding assay; controlled prey density",
+        "subject": "non-target needle-miner moth",
+        "unit": "consumed prey per standardized trial",
+        "years": [
+          58,
+          58
+        ]
+      },
+      "format": "csv",
+      "records": 32,
+      "verified_asset_bytes": 698
+    },
+    {
+      "item_id": "E71307562473e6914f7",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2983
+    },
+    {
+      "item_id": "E72c20fc2be20588ced",
+      "title": "Forest insect treatment batch quality",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "unused reserve treatment batches",
+        "unit": "assay quality index",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 537
+    },
+    {
+      "item_id": "E7598283652159fae35",
+      "title": "Forest budburst observation programme",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "ornamental non-host trees at office grounds",
+        "unit": "review index",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 537
+    },
+    {
+      "item_id": "E75c62695ce23fd3fb4",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1320
+    },
+    {
+      "item_id": "E7645158b064cec3468",
+      "title": "Host-tree needle chemistry",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "balsam-fir needle trace-element assay",
+        "unit": "relative trace-element assay index",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9855
+    },
+    {
+      "item_id": "E77ac9253ccd4935070",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1294
+    },
+    {
+      "item_id": "E781c8ef050291c6dc2",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3397
+    },
+    {
+      "item_id": "E799cb6f9255747e3e8",
+      "title": "Forest protection expenditure",
+      "scope": {
+        "district": "Provincial programme",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all districts and insect programmes",
+        "unit": "nominal programme spending index",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 620
+    },
+    {
+      "item_id": "E7c8149abf600a78bb1",
+      "title": "Forest budburst observation programme",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "ornamental non-host trees at office grounds",
+        "unit": "review index",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 505
+    },
+    {
+      "item_id": "E7d37aaee229b39dffd",
+      "title": "Forest protection operations",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect treatment",
+        "unit": "fractional treatment intensity",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9489
+    },
+    {
+      "item_id": "E7d8acada1b75937d0a",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all tree species including non-host trees",
+        "unit": "fractional canopy cover, all species",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 587
+    },
+    {
+      "item_id": "E7f59a9355e82a3b1b4",
+      "title": "Forest insect measurement calibration",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "branch-length reporting protocol",
+        "unit": "centimetres per sampled branch",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1404
+    },
+    {
+      "item_id": "E824913e88991f634b7",
+      "title": "Host-tree needle chemistry",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "balsam-fir needle trace-element assay",
+        "unit": "relative trace-element assay index",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1377
+    },
+    {
+      "item_id": "E82e9163b944db92220",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2983
+    },
+    {
+      "item_id": "E8302dd15c68eddec8e",
+      "title": "Spring development conditions",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "spring weather",
+        "unit": "standardized anomaly",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 3005
+    },
+    {
+      "item_id": "E865682895a5383c6e8",
+      "title": "Spring development conditions",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "spring weather",
+        "unit": "standardized anomaly",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 3013
+    },
+    {
+      "item_id": "E88a53a26d6576c7fac",
+      "title": "Budworm stress-response assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm enzyme activity",
+        "unit": "relative biochemical activity",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1369
+    },
+    {
+      "item_id": "E8970bdfc84dcc53d42",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3399
+    },
+    {
+      "item_id": "E8f3b9123407399f5e6",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all tree species including non-host trees",
+        "unit": "fractional canopy cover, all species",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 597
+    },
+    {
+      "item_id": "E8fe583d74b49eccdc9",
+      "title": "Forest and insect field-record examples",
+      "scope": {
+        "district": "Real-world source geography; not Alder Reach",
+        "origin": "real_corpus_excerpt",
+        "subject": "Published insect/forest/weather records",
+        "unit": "native source units",
+        "years": "native source dates; not simulation years"
+      },
+      "format": "json",
+      "records": 12,
+      "verified_asset_bytes": 2487
+    },
+    {
+      "item_id": "E91c311eec58aeb080a",
+      "title": "Branch larval monitoring archive",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "archived demonstration stand, replaced before target monitoring",
+        "unit": "larvae per branch",
+        "years": [
+          -59,
+          -50
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1466
+    },
+    {
+      "item_id": "E92a93fed56034ff5f0",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2910
+    },
+    {
+      "item_id": "E92c3b0e8cbac4f8326",
+      "title": "Budworm stress-response assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm enzyme activity",
+        "unit": "relative biochemical activity",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1311
+    },
+    {
+      "item_id": "E94619db1dcae2e8217",
+      "title": "Forest insect treatment batch quality",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "unused reserve treatment batches",
+        "unit": "assay quality index",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 609
+    },
+    {
+      "item_id": "E97c1a924669b3815b0",
+      "title": "Forest protection expenditure",
+      "scope": {
+        "district": "Provincial programme",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all districts and insect programmes",
+        "unit": "nominal programme spending index",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 545
+    },
+    {
+      "item_id": "E97fcb1cf9a76978df2",
+      "title": "Forest protection operations",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect treatment",
+        "unit": "fractional treatment intensity",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9465
+    },
+    {
+      "item_id": "E9941e0d2afff3f3e1c",
+      "title": "Forest composition monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "mature susceptible host trees",
+        "unit": "fraction of stand",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9856
+    },
+    {
+      "item_id": "E9b0cc347ea004092b5",
+      "title": "Forest composition monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "mature susceptible host trees",
+        "unit": "fraction of stand",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1321
+    },
+    {
+      "item_id": "E9b6071625643d83b80",
+      "title": "Spring development conditions",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "spring weather",
+        "unit": "standardized anomaly",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 3013
+    },
+    {
+      "item_id": "Ea1a890b4741afc592c",
+      "title": "Forest composition monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "mature susceptible host trees",
+        "unit": "fraction of stand",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9857
+    },
+    {
+      "item_id": "Ea721a1751b82d07f2a",
+      "title": "Forest insect treatment batch quality",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "unused reserve treatment batches",
+        "unit": "assay quality index",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 611
+    },
+    {
+      "item_id": "Eae2adc12aa020ecf2f",
+      "title": "Forest and insect field-record examples",
+      "scope": {
+        "district": "Real-world source geography; not Alder Reach",
+        "origin": "real_corpus_excerpt",
+        "subject": "Published insect/forest/weather records",
+        "unit": "native source units",
+        "years": "native source dates; not simulation years"
+      },
+      "format": "json",
+      "records": 12,
+      "verified_asset_bytes": 2218
+    },
+    {
+      "item_id": "Eaf066775f2ec029491",
+      "title": "Forest moth activity",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "non-target needle-miner moth",
+        "unit": "adult trap captures",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 488
+    },
+    {
+      "item_id": "Eaf5d7909b22c79fff0",
+      "title": "Budworm stress-response assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm enzyme activity",
+        "unit": "relative biochemical activity",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9867
+    },
+    {
+      "item_id": "Eaf85aa5610d2c04c7e",
+      "title": "Forest health and timber certification",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "wood-product quality grading",
+        "unit": "certification index",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1361
+    },
+    {
+      "item_id": "Eaf905ee1ccd0f4306b",
+      "title": "Forest moth activity",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "non-target needle-miner moth",
+        "unit": "adult trap captures",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1386
+    },
+    {
+      "item_id": "Eafe71e079030ff503f",
+      "title": "Forest composition monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "mature susceptible host trees",
+        "unit": "fraction of stand",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2979
+    },
+    {
+      "item_id": "Eb015b3aaf26524068a",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3394
+    },
+    {
+      "item_id": "Eb02ea3b74227e08c55",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9777
+    },
+    {
+      "item_id": "Eb15854bc37a55b59d6",
+      "title": "Forest insect measurement calibration",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "branch-length reporting protocol",
+        "unit": "centimetres per sampled branch",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "csv",
+      "records": 10,
+      "verified_asset_bytes": 248
+    },
+    {
+      "item_id": "Eb175a08d13112cadc9",
+      "title": "Forest health and timber certification",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "wood-product quality grading",
+        "unit": "certification index",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1361
+    },
+    {
+      "item_id": "Ebaa1330504249a9ee3",
+      "title": "Forest health and timber certification",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "wood-product quality grading",
+        "unit": "certification index",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3422
+    },
+    {
+      "item_id": "Ebdec3debf5a177ac3a",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2984
+    },
+    {
+      "item_id": "Ebfcbe848098d3a39d5",
+      "title": "Forest insect treatment batch quality",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "unused reserve treatment batches",
+        "unit": "assay quality index",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1464
+    },
+    {
+      "item_id": "Ebff50e2f8e466b2c43",
+      "title": "Forest and insect field-record examples",
+      "scope": {
+        "district": "Real-world source geography; not Alder Reach",
+        "origin": "real_corpus_excerpt",
+        "subject": "Published insect/forest/weather records",
+        "unit": "native source units",
+        "years": "native source dates; not simulation years"
+      },
+      "format": "json",
+      "records": 12,
+      "verified_asset_bytes": 2248
+    },
+    {
+      "item_id": "Ec67f409f85000a35f9",
+      "title": "Forest protection operations",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect treatment",
+        "unit": "fractional treatment intensity",
+        "years": [
+          21,
+          30
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9485
+    },
+    {
+      "item_id": "Ec725806dfee342bae9",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9854
+    },
+    {
+      "item_id": "Ec868cb4dd057f36035",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2973
+    },
+    {
+      "item_id": "Ec8ff6fec6e192b6203",
+      "title": "Forest and insect field-record examples",
+      "scope": {
+        "district": "Real-world source geography; not Alder Reach",
+        "origin": "real_corpus_excerpt",
+        "subject": "Published insect/forest/weather records",
+        "unit": "native source units",
+        "years": "native source dates; not simulation years"
+      },
+      "format": "json",
+      "records": 12,
+      "verified_asset_bytes": 4113
+    },
+    {
+      "item_id": "Ec9a686be4b363c401d",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1365
+    },
+    {
+      "item_id": "Ecafcfcca3f534e57dd",
+      "title": "Forest protection operations",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect treatment",
+        "unit": "fractional treatment intensity",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1333
+    },
+    {
+      "item_id": "Ecb4a13661876223573",
+      "title": "Forest protection expenditure",
+      "scope": {
+        "district": "Provincial programme",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all districts and insect programmes",
+        "unit": "nominal programme spending index",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "xml",
+      "records": 10,
+      "verified_asset_bytes": 1467
+    },
+    {
+      "item_id": "Eccc37d4300b0826acb",
+      "title": "Forest health and timber certification",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "wood-product quality grading",
+        "unit": "certification index",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1327
+    },
+    {
+      "item_id": "Ecdeb37539e78cea98a",
+      "title": "Forest and insect field-record examples",
+      "scope": {
+        "district": "Real-world source geography; not Alder Reach",
+        "origin": "real_corpus_excerpt",
+        "subject": "Published insect/forest/weather records",
+        "unit": "native source units",
+        "years": "native source dates; not simulation years"
+      },
+      "format": "json",
+      "records": 12,
+      "verified_asset_bytes": 7704
+    },
+    {
+      "item_id": "Ecfe7f003feb0b8204d",
+      "title": "Forest budburst observation programme",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "ornamental non-host trees at office grounds",
+        "unit": "review index",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 527
+    },
+    {
+      "item_id": "Ed727d04f7a58c042ff",
+      "title": "Forest and insect field-record examples",
+      "scope": {
+        "district": "Real-world source geography; not Alder Reach",
+        "origin": "real_corpus_excerpt",
+        "subject": "Published insect/forest/weather records",
+        "unit": "native source units",
+        "years": "native source dates; not simulation years"
+      },
+      "format": "json",
+      "records": 12,
+      "verified_asset_bytes": 11637
+    },
+    {
+      "item_id": "Ed72c827c09fbb22578",
+      "title": "Forest insect treatment batch quality",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "unused reserve treatment batches",
+        "unit": "assay quality index",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 505
+    },
+    {
+      "item_id": "Edaae5eca8e95d8b11d",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9847
+    },
+    {
+      "item_id": "Edae9a0b8484dd331dd",
+      "title": "Forest insect monitoring effort",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "survey sampling effort",
+        "unit": "branches per reporting unit",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "csv",
+      "records": 10,
+      "verified_asset_bytes": 257
+    },
+    {
+      "item_id": "Edbc32dc3cc0b7edc2b",
+      "title": "Forest composition monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "mature susceptible host trees",
+        "unit": "fraction of stand",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1325
+    },
+    {
+      "item_id": "Ee0f88085352e256fca",
+      "title": "Forest insect feeding assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "sampling": "replicated laboratory feeding assay; controlled prey density",
+        "subject": "target spruce budworm",
+        "unit": "consumed prey per standardized trial",
+        "years": [
+          58,
+          58
+        ]
+      },
+      "format": "csv",
+      "records": 32,
+      "verified_asset_bytes": 789
+    },
+    {
+      "item_id": "Ee14acbf01f118adc25",
+      "title": "Spring development conditions",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "spring weather",
+        "unit": "standardized anomaly",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "json",
+      "records": 80,
+      "verified_asset_bytes": 3429
+    },
+    {
+      "item_id": "Ee3f7a0422f0f2cd456",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all tree species including non-host trees",
+        "unit": "fractional canopy cover, all species",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "csv",
+      "records": 10,
+      "verified_asset_bytes": 317
+    },
+    {
+      "item_id": "Ee8acce14beb1c6110a",
+      "title": "Branch larval monitoring archive",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "archived demonstration stand, replaced before target monitoring",
+        "unit": "larvae per branch",
+        "years": [
+          -79,
+          -70
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 500
+    },
+    {
+      "item_id": "Eeba73f4966b37c45f9",
+      "title": "Forest health and timber certification",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "wood-product quality grading",
+        "unit": "certification index",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1361
+    },
+    {
+      "item_id": "Eee5ba4ad2881dfc53a",
+      "title": "Forest budburst observation programme",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "ornamental non-host trees at office grounds",
+        "unit": "review index",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 610
+    },
+    {
+      "item_id": "Eeeecacc92023588b85",
+      "title": "Forest insect monitoring effort",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "survey sampling effort",
+        "unit": "branches per reporting unit",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "csv",
+      "records": 10,
+      "verified_asset_bytes": 257
+    },
+    {
+      "item_id": "Ef01ffa1b874b571489",
+      "title": "Forest protection operations",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect treatment",
+        "unit": "fractional treatment intensity",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9473
+    },
+    {
+      "item_id": "Ef224f5331143a93bd3",
+      "title": "Branch larval monitoring archive",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "archived demonstration stand, replaced before target monitoring",
+        "unit": "larvae per branch",
+        "years": [
+          -69,
+          -60
+        ]
+      },
+      "format": "svg",
+      "records": 10,
+      "verified_asset_bytes": 499
+    },
+    {
+      "item_id": "Ef2e3ded44f8c0df6b7",
+      "title": "Forest insect monitoring effort",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "survey sampling effort",
+        "unit": "branches per reporting unit",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 545
+    },
+    {
+      "item_id": "Ef3346c6ac0a350fb1b",
+      "title": "Budworm stress-response assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm enzyme activity",
+        "unit": "relative biochemical activity",
+        "years": [
+          11,
+          20
+        ]
+      },
+      "format": "xml",
+      "records": 80,
+      "verified_asset_bytes": 9859
+    },
+    {
+      "item_id": "Ef3c54afb0020549940",
+      "title": "Forest moth activity",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "non-target needle-miner moth",
+        "unit": "adult trap captures",
+        "years": [
+          31,
+          40
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 527
+    },
+    {
+      "item_id": "Ef6c495fa09dfa485a7",
+      "title": "Forest moth activity",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "non-target needle-miner moth",
+        "unit": "adult trap captures",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 455
+    },
+    {
+      "item_id": "Ef80b702ca3fd4dc8ca",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "host-tree foliage",
+        "unit": "fraction of baseline foliage",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "svg",
+      "records": 80,
+      "verified_asset_bytes": 1285
+    },
+    {
+      "item_id": "Ef8d50202b9298189fd",
+      "title": "Forest insect monitoring effort",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "survey sampling effort",
+        "unit": "branches per reporting unit",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "json",
+      "records": 10,
+      "verified_asset_bytes": 536
+    },
+    {
+      "item_id": "Ef9363075754a7f03f2",
+      "title": "Insect natural-enemy monitoring",
+      "scope": {
+        "district": "Birch Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target insect natural enemies",
+        "unit": "standardized activity index",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2977
+    },
+    {
+      "item_id": "Efa584025f4985ab4c6",
+      "title": "Forest canopy monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "all tree species including non-host trees",
+        "unit": "fractional canopy cover, all species",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "txt",
+      "records": 10,
+      "verified_asset_bytes": 524
+    },
+    {
+      "item_id": "Efa65c9a81bc4ff35c8",
+      "title": "Host-tree needle chemistry",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "balsam-fir needle trace-element assay",
+        "unit": "relative trace-element assay index",
+        "years": [
+          1,
+          10
+        ]
+      },
+      "format": "csv",
+      "records": 80,
+      "verified_asset_bytes": 1289
+    },
+    {
+      "item_id": "Efecea872c34491f020",
+      "title": "Forest health and timber certification",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "wood-product quality grading",
+        "unit": "certification index",
+        "years": [
+          51,
+          60
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2990
+    },
+    {
+      "item_id": "Eff1fb8c490f9b297a0",
+      "title": "Budworm physiology and development assays",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "sampling": "controlled biochemical contrasts; foliage, weather, enemies and initial larvae held fixed",
+        "subject": "target spruce budworm enzyme activity",
+        "unit": "next-step larval density at fixed initial state",
+        "years": [
+          59,
+          59
+        ]
+      },
+      "format": "csv",
+      "records": 16,
+      "verified_asset_bytes": 342
+    },
+    {
+      "item_id": "Effe83a224121ead6e0",
+      "title": "Branch larval monitoring",
+      "scope": {
+        "district": "Alder Reach",
+        "origin": "constructed_scenario",
+        "representation_note": "The numeric rows are the underlying data for any chart/XML/text view.",
+        "sampling": "constructed recorded measurements; reported precision retained",
+        "subject": "target spruce budworm",
+        "unit": "larvae per standardized branch",
+        "value_basis": "Reported values are normalized to a 75 cm branch equivalent, independent of raw collection length.",
+        "years": [
+          41,
+          50
+        ]
+      },
+      "format": "txt",
+      "records": 80,
+      "verified_asset_bytes": 2979
+    }
+  ],
+  "search_probes": [
+    {
+      "query": "natural enemies",
+      "matched": 12,
+      "titles": [
+        "Insect natural-enemy monitoring"
+      ]
+    },
+    {
+      "query": "birds",
+      "matched": 0,
+      "titles": []
+    },
+    {
+      "query": "parasites",
+      "matched": 0,
+      "titles": []
+    },
+    {
+      "query": "feeding",
+      "matched": 2,
+      "titles": [
+        "Forest insect feeding assays"
+      ]
+    },
+    {
+      "query": "forest composition",
+      "matched": 80,
+      "titles": [
+        "Forest and insect field-record examples",
+        "Forest budburst observation programme",
+        "Forest canopy monitoring",
+        "Forest composition monitoring",
+        "Forest health and timber certification",
+        "Forest insect feeding assays",
+        "Forest insect measurement calibration",
+        "Forest insect monitoring effort",
+        "Forest insect treatment batch quality",
+        "Forest moth activity",
+        "Forest protection expenditure",
+        "Forest protection operations"
+      ]
+    },
+    {
+      "query": "historical tree rings",
+      "matched": 36,
+      "titles": [
+        "Forest budburst observation programme",
+        "Forest canopy monitoring",
+        "Forest composition monitoring",
+        "Host-tree needle chemistry"
+      ]
+    },
+    {
+      "query": "mill demand",
+      "matched": 0,
+      "titles": []
+    },
+    {
+      "query": "employment",
+      "matched": 0,
+      "titles": []
+    },
+    {
+      "query": "manager correspondence",
+      "matched": 0,
+      "titles": []
+    },
+    {
+      "query": "spraying",
+      "matched": 0,
+      "titles": []
+    },
+    {
+      "query": "treatment",
+      "matched": 12,
+      "titles": [
+        "Forest insect treatment batch quality",
+        "Forest protection operations"
+      ]
+    },
+    {
+      "query": "weather",
+      "matched": 6,
+      "titles": [
+        "Spring development conditions"
+      ]
+    }
+  ],
+  "operation_probes": {
+    "request_without_reasoning_template": {
+      "http_status": 400,
+      "code": "inquiry_required",
+      "message": "Provide rationale before acquiring evidence."
+    },
+    "unknown_record": {
+      "http_status": 404,
+      "code": "unavailable",
+      "message": "No requestable evidence with this item_id. Nothing was generated to fill the gap."
+    },
+    "future_record": {
+      "http_status": 403,
+      "code": "future_unavailable",
+      "message": "Future outcomes are not requestable."
+    },
+    "ask_person": {
+      "http_status": 404,
+      "code": "not_found",
+      "message": "Unknown public operation."
+    },
+    "new_measurement": {
+      "http_status": 404,
+      "code": "not_found",
+      "message": "Unknown public operation."
+    },
+    "intervention": {
+      "http_status": 404,
+      "code": "not_found",
+      "message": "Unknown public operation."
+    },
+    "objective_clarification": {
+      "http_status": 404,
+      "code": "not_found",
+      "message": "Unknown public operation."
+    }
+  },
+  "model_diagnostic": {
+    "fixed_state": {
+      "insects": 1.0,
+      "foliage": 0.8,
+      "mature_host": 0.6,
+      "enemies": 0.5
+    },
+    "untreated_next_enemies": 0.51,
+    "treated_next_enemies": 0.51,
+    "direct_treatment_effect_on_enemies": 0.0,
+    "interpretation": "Current enemy transition has no spray input. It cannot test the interlude's direct non-target treatment pathway. Indirect later effects through prey are distinct."
+  },
+  "baseline_unchanged": true,
+  "edi_run": false,
+  "historical_sufficiency_established": false,
+  "interlude_discovery_ready": false
+}

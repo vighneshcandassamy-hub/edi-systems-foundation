@@ -1,0 +1,20 @@
+{
+  "schema": "edi-benchmark-engineering-results-v1",
+  "host": "cloud-scratch-linux",
+  "python": "3.12.14",
+  "pydantic": "2.12.5",
+  "source_baseline": "879452b8332a318ca76af4f84589b676b031f253",
+  "benchmark_base": "27c437bbc54310dff0603d46f5dd3516d5e00730",
+  "tests_run": 17,
+  "tests_passed": 17,
+  "real_broker": true,
+  "native_owner_stores": true,
+  "model_transport": "authored wire fixtures only",
+  "live_student_inference": false,
+  "live_teacher_inference": false,
+  "model_vision_understanding_tested": false,
+  "full_P1_eight_owner_test_run": false,
+  "unguided_pilot_run": false,
+  "scientific_qualification": false,
+  "test_log_sha256": "7a8e7a7f27fa85b041428a1f61a2c7cdc5ec398f4bb998365cdf62594199d15c"
+}

@@ -1,0 +1,1564 @@
+{
+  "origin": "Constructed Cedar District resources plus attributed external holdings",
+  "sources": [
+    {
+      "id": "administration",
+      "title": "General administration",
+      "description": "Road access, staff rosters, stores and routine logs"
+    },
+    {
+      "id": "correspondence",
+      "title": "Correspondence registry",
+      "description": "Minutes, complaints and institutional statements"
+    },
+    {
+      "id": "external",
+      "title": "External reference collection",
+      "description": "Attributed real-domain records outside this constructed district"
+    },
+    {
+      "id": "field",
+      "title": "District survey office",
+      "description": "Branch counts, trap logs and sampling notebooks"
+    },
+    {
+      "id": "finance",
+      "title": "District accounts",
+      "description": "Invoices, budgets, payroll and supply commitments"
+    },
+    {
+      "id": "forest",
+      "title": "Forest inventory service",
+      "description": "Stand inventories, age estimates and canopy surveys"
+    },
+    {
+      "id": "laboratory",
+      "title": "Laboratory archive",
+      "description": "Feeding, treatment and chemistry trial sheets"
+    },
+    {
+      "id": "maps",
+      "title": "Cartographic office",
+      "description": "Stand maps and survey heat maps"
+    },
+    {
+      "id": "operations",
+      "title": "Operations archive",
+      "description": "Treatment orders, harvest logs and work records"
+    },
+    {
+      "id": "weather",
+      "title": "Weather station",
+      "description": "Seasonal instrument readings"
+    }
+  ],
+  "documents": [
+    {
+      "id": "D0058db97ae19b6f08b3880",
+      "source": "administration",
+      "title": "stores batch register -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "de0388fd75f6814c18d5ca4d6ea04d093f15916ef5afd919f22ac9fab77de4c9"
+    },
+    {
+      "id": "D1b47e17db89a2262d1778e",
+      "source": "administration",
+      "title": "road inspection register -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "2c81de697f05f0724b6e8ec2676566a1edc4b733f980d6df626020feaf9dfbfd"
+    },
+    {
+      "id": "D2339a66c08b662c260dedd",
+      "source": "administration",
+      "title": "road inspection register -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "ff2fbad6eb7b9b4cfdb5898a7f2a8cbbfffdd752a306594da18d412b3118f530"
+    },
+    {
+      "id": "D26be63b83c0b3e1187165b",
+      "source": "administration",
+      "title": "road inspection register -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "fceb8f83d5d4b28a161cdc799dabd90517b1662eaa280472d5eae921fd073c48"
+    },
+    {
+      "id": "D4078f68d92e40fc2ff8d6e",
+      "source": "administration",
+      "title": "staff roster register -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "24aadcac95c7b69a8fd94fd7a8d93a3777eb4f4e7777f9dd07e865deb1e6fc00"
+    },
+    {
+      "id": "D4353bdf1700abd9d422994",
+      "source": "administration",
+      "title": "road inspection register -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "c47915fa779a4f0371c59bba2b1a0a31589d433faaa440fa4b59f909faa50271"
+    },
+    {
+      "id": "D46769aa2b4c9f4ebdf9cb3",
+      "source": "administration",
+      "title": "needle chemistry register -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "4a386ba8daf85f1947ec6b958485186df9bad3190f2dcbf2f4d4e9ba0b08ddee"
+    },
+    {
+      "id": "D5430032d1e7be9dd58f2e8",
+      "source": "administration",
+      "title": "needle chemistry register -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "882465bcbdbfa9043e737a9913199a5cbb7d0a9ed4a6c8b10e2d639d9c87835d"
+    },
+    {
+      "id": "D629c41feb5972ed96786ee",
+      "source": "administration",
+      "title": "road inspection register -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "4f63b48f90184070c004a7a8421949e330413e982ac85af30448dd4e26273bde"
+    },
+    {
+      "id": "D63b11dc1d6838e7fb411db",
+      "source": "administration",
+      "title": "staff roster register -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "e472abe87513bd25daf05b0fb56b71fbb8f8abbfd1cbde1658da73f29d58c029"
+    },
+    {
+      "id": "D6409cfd49accd684a88cef",
+      "source": "administration",
+      "title": "road inspection register -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "bd83516e10bdb130e8cbbfbddc650c8f99041ca34b9a1b59c74a93074d0418da"
+    },
+    {
+      "id": "D8e66ad93737b26f660699b",
+      "source": "administration",
+      "title": "needle chemistry register -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "60a10f6aa43c584641ad64913d4d90fe45d4c014f4db8f4e07e25fa4c75e9e88"
+    },
+    {
+      "id": "D8ec352da2db9b9372bc023",
+      "source": "administration",
+      "title": "stores batch register -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "2a8dafd5b0829101674217c8844530f4c945dff1662622772f1e9d006ad992c2"
+    },
+    {
+      "id": "D968768d940ee59cfa90542",
+      "source": "administration",
+      "title": "needle chemistry register -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "d9551b43fd4581a297543e79973e8f506a5b45eda1b8922593a635ddc4ced3da"
+    },
+    {
+      "id": "D999306e9d1c542817e7e31",
+      "source": "administration",
+      "title": "needle chemistry register -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "cd876cecba5ce06e4237d17eaa6e298eabad79025c740b09540bc463924193e2"
+    },
+    {
+      "id": "D9b8e0f500667fb1897886f",
+      "source": "administration",
+      "title": "road inspection register -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "4462d0bafb7cc630f89332b7d40f9da67e0f9bd91db9f2212a3a341d1a0dd2f4"
+    },
+    {
+      "id": "D9c077fd786f83b45094d0e",
+      "source": "administration",
+      "title": "stores batch register -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "1156497cdca4e2bfbc60e3db1e0860fb8e6f9d3429f9d1e03d17cad18ab874e4"
+    },
+    {
+      "id": "D9e8b4d8f0a89ed48aac157",
+      "source": "administration",
+      "title": "staff roster register -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "1a80686c14c1d90db835a447b10a1ba320c062e0c18291ed0a4b13644bbb313d"
+    },
+    {
+      "id": "Da2ebfb182882cf0a89657f",
+      "source": "administration",
+      "title": "staff roster register -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "3e95bd39f4bd858cdb6169b39abbaf1e6c40e697acbf9b3d5358d2934eb2e374"
+    },
+    {
+      "id": "Da82295515c2dcf25dc7107",
+      "source": "administration",
+      "title": "stores batch register -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "fced166ca76e503bf5008128e052cb0896dc37000cfba587cb76ac17aa474a4a"
+    },
+    {
+      "id": "Db316e4e518ad7738550eda",
+      "source": "administration",
+      "title": "staff roster register -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "79c21d454ddd5bb2a9aa27a5290af4d48f5035c37559ffea6783c0e3f34bed4e"
+    },
+    {
+      "id": "Db3717268e4afa4c5200a2c",
+      "source": "administration",
+      "title": "staff roster register -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "dcdb13a0b77c47638fa2889c568d013e816a74759ab3e587b51fd3300c18a23b"
+    },
+    {
+      "id": "Db717018e5ee73beb2afb74",
+      "source": "administration",
+      "title": "stores batch register -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "74308fdeb809a8bad0796340814f6294ca845957075afa73d5e204c4de853bbe"
+    },
+    {
+      "id": "Db7eb6614fd4b0603ea150e",
+      "source": "administration",
+      "title": "needle chemistry register -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "9e1056405be6061f0b90dce5261b3470e7a096a2c63406c66b2490086b96e222"
+    },
+    {
+      "id": "Dbbc14ca5227b6239007174",
+      "source": "administration",
+      "title": "staff roster register -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "e4f9b36f890e719d27c5890acfd8051852d2c6a81bdc49a9066b77c72c189a02"
+    },
+    {
+      "id": "Dcb3c4a5e584dcd781766c6",
+      "source": "administration",
+      "title": "stores batch register -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "604d2ef26dc1138bc4eb33e297aa10dae87fe604349b482ac613713ac5da12f9"
+    },
+    {
+      "id": "Dccf716dd5134729c36c552",
+      "source": "administration",
+      "title": "stores batch register -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "49d85cdfd969b2ec11aa23e6567a4886550c7c502f7c49790f2bbe3aea02263c"
+    },
+    {
+      "id": "Dd7ae2761b6667f6308a2a2",
+      "source": "administration",
+      "title": "stores batch register -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "82f1605f7baf0159b94f5b72f66ba3fa168bf15f4a25ebcb795a33361856b86c"
+    },
+    {
+      "id": "Dd934de90692d60aca1b7ab",
+      "source": "administration",
+      "title": "needle chemistry register -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "fb8dbf4357965e0190d18def9915acc25c25fc48ab54c8e7d8e156870eed375a"
+    },
+    {
+      "id": "Ddbff5b61e4ad9bdb9222e5",
+      "source": "administration",
+      "title": "road inspection register -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "10ce69c058e788bc220e2ae6bc9de1743181604d7945f0cd28e95d5ed650b715"
+    },
+    {
+      "id": "De72447d87d0adf244ca3c5",
+      "source": "administration",
+      "title": "staff roster register -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "3040bcb585d8fe76f87ef5f0b335e348df04a4fbac35951e52d2352177dac091"
+    },
+    {
+      "id": "Debdffc5e11876da6816786",
+      "source": "administration",
+      "title": "needle chemistry register -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "49fd47b31f75e191907bcd01ce26e756ccd8b96517e74315d74149e44346aa65"
+    },
+    {
+      "id": "D016563dec30011dc8d0c40",
+      "source": "correspondence",
+      "title": "Accounts clerk registry statement",
+      "year": 0,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "8283bc7aa82d6a0633db59345d7efae6d4ce7b591b013e4721562c8a9383f61a"
+    },
+    {
+      "id": "D099e051a821b612bab922e",
+      "source": "correspondence",
+      "title": "Office bulletin -50",
+      "year": -50,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "8ae01e55ee6ca75e17cb79d569c3bcb35bbf68610e5afd6b7613631c61e711b5"
+    },
+    {
+      "id": "D0b7b7d830e44d098a4bd1b",
+      "source": "correspondence",
+      "title": "Office bulletin -70",
+      "year": -70,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "178b8073b2cdf987fa10fb580b10ac106261d319097022cae49b1be07c20e6e4"
+    },
+    {
+      "id": "D1642912a4b71070048167f",
+      "source": "correspondence",
+      "title": "Office bulletin -60",
+      "year": -60,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "11b5e132d4d19348acccde80a10acfc2f80709bc9dcd81520ae333aa4b4b1d28"
+    },
+    {
+      "id": "D18a088e6239a931898ac8b",
+      "source": "correspondence",
+      "title": "Mill liaison registry statement",
+      "year": 0,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "59d9ca1a285e60f8cb8bb1bbf0203631ce34dd6b7d86d65b6e704c7b06a1a426"
+    },
+    {
+      "id": "D1aa48eeda9eec69172494d",
+      "source": "correspondence",
+      "title": "Office bulletin -40",
+      "year": -40,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "51a91c3bff259de1fa271384e6656e7627fb003bf77096be13db322379ae8de4"
+    },
+    {
+      "id": "D401e391eeec0fca98af2b8",
+      "source": "correspondence",
+      "title": "Records custodian registry statement",
+      "year": 0,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "ee58cff4efb154f0860b89c17c124347b26accd5c75edbe726bb8a50b34cf631"
+    },
+    {
+      "id": "D4c5b9e4416b568527397e4",
+      "source": "correspondence",
+      "title": "Office bulletin -30",
+      "year": -30,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "8f3e89451f98a5f48c412c11e65c4734486a524f67f619a4cce824aa9321007d"
+    },
+    {
+      "id": "D7bbd46a6f1c047a53b6015",
+      "source": "correspondence",
+      "title": "Office bulletin -10",
+      "year": -10,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "591fc3592fb1e2a6bd4b9b37a691bb4829d9d1747fd0aa64a50efd0b4a87da57"
+    },
+    {
+      "id": "D7dfbbc1894426ae1e63729",
+      "source": "correspondence",
+      "title": "District manager registry statement",
+      "year": 0,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "099aadd04bfc3e379c3e85ddcd4c80249fb443f5a1dae3f09da8abd30467d35f"
+    },
+    {
+      "id": "Dc2a72386e8aa9deb9cfbf1",
+      "source": "correspondence",
+      "title": "Community secretary registry statement",
+      "year": 0,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "dad2b0654c847f475595df4c017822ee211993431e8123bbc787c0f6561be7d0"
+    },
+    {
+      "id": "Df4e339d464600e643c5c1a",
+      "source": "correspondence",
+      "title": "Office bulletin -20",
+      "year": -20,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "ab5a7fdd68942b2d9c2dc9347a11606d290205b3f1a36e0ec221d8048378c3f6"
+    },
+    {
+      "id": "Dfc3ffac55b1e3cfd26978e",
+      "source": "correspondence",
+      "title": "Office bulletin 0",
+      "year": 0,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "d55debacb403cc5796777148c6b2e5e369beb162eb992e370f2870a57cb2d08e"
+    },
+    {
+      "id": "D079ca3bb0db9eb2bf3af26",
+      "source": "external",
+      "title": "All L2 records with stable record IDs and source row selectors.",
+      "year": null,
+      "format": "jsonl",
+      "origin": "derived_serialization",
+      "sha256": "1af9a8e526b97f1239e458ef7a2e2883d94387392e743a5de781e1f584c21379"
+    },
+    {
+      "id": "D0d93227c28f2a3e16c575c",
+      "source": "external",
+      "title": "Original complete report with maps, charts and narrative.",
+      "year": null,
+      "format": "pdf",
+      "origin": "native_download",
+      "sha256": "4baaa39bc6e177d2d0e8d5a9eebdc6d7c644ee38f3410bebd5addab68f60d0d2"
+    },
+    {
+      "id": "D1d2d2e3d525109daf990b7",
+      "source": "external",
+      "title": "Readable derived observation card with source link.",
+      "year": null,
+      "format": "html",
+      "origin": "derived_summary",
+      "sha256": "7c7c0db3b67ddec8e91727210f31e2a7cd1f2b6ec2109f3b9fb7a2c11a915471"
+    },
+    {
+      "id": "D2ba3b4dd5b9781985d554a",
+      "source": "external",
+      "title": "All downloaded trap rows; preserve original negative codes.",
+      "year": null,
+      "format": "csv",
+      "origin": "native_download",
+      "sha256": "b8da9a8b90b7511521520832dfb23ff723136748a9115b18aa3a0b789042875c"
+    },
+    {
+      "id": "D4351b344b78fcd24a8bf21",
+      "source": "external",
+      "title": "Original species-reference HTML.",
+      "year": null,
+      "format": "html",
+      "origin": "native_download",
+      "sha256": "b6fbd3cb30696892c47428b214e8d2817b2b437b078645537a64f27b698cb7fe"
+    },
+    {
+      "id": "D4c78142b4c473059e364ba",
+      "source": "external",
+      "title": "One frame per annual aggregate; chronology is years, playback duration is artificial.",
+      "year": null,
+      "format": "gif",
+      "origin": "derived_animation",
+      "sha256": "331cbf177951fc30add9bd0c3914a46f0d694a819dfbf041917f8a4f111bb79f"
+    },
+    {
+      "id": "D51d98459e01b6e028fa6d0",
+      "source": "external",
+      "title": "All downloaded survey rows; source fields unchanged.",
+      "year": null,
+      "format": "csv",
+      "origin": "native_download",
+      "sha256": "292095e6c4afcd6de012f442312b3df090bf13a3711ce91dd3d46a9f3133e349"
+    },
+    {
+      "id": "D5e92ceecef0df58b84d095",
+      "source": "external",
+      "title": "HTML text extraction; original HTML retained.",
+      "year": null,
+      "format": "txt",
+      "origin": "extracted_text",
+      "sha256": "d86c03c5b7143fc9f09053c183d5a63e3be7aafbffcfdac9ce00b8c66955480a"
+    },
+    {
+      "id": "D5f8aa274209541bf2863fa",
+      "source": "external",
+      "title": "PDF extraction; page markers retained, reading order may be imperfect.",
+      "year": null,
+      "format": "txt",
+      "origin": "extracted_text",
+      "sha256": "a51a23f1be5ebac572d2c42d6e01ad0d1d48467455e48ba0ab6daa08a73ceb83"
+    },
+    {
+      "id": "D64102f3877fe5c420babea",
+      "source": "external",
+      "title": "HTML text extraction; original HTML retained.",
+      "year": null,
+      "format": "txt",
+      "origin": "extracted_text",
+      "sha256": "6b9fb0c2bcb4e12883e164d34d5694c0848c3234664f1da1f1a3c27bf4d178ee"
+    },
+    {
+      "id": "D754129a85c2fa7ff4ee620",
+      "source": "external",
+      "title": "Descriptive annual mean/median of L2_TOTAL; varying sample sites and effort, not a population growth estimate.",
+      "year": null,
+      "format": "csv",
+      "origin": "derived_aggregate",
+      "sha256": "a96635b0f841be303116dc600b28812af63a8aaabb039c2f2a5e0f56f18d6cb7"
+    },
+    {
+      "id": "D77c5a633fc219cc544165f",
+      "source": "external",
+      "title": "Annual aggregate visualized; all inputs and denominators retained.",
+      "year": null,
+      "format": "png",
+      "origin": "derived_chart",
+      "sha256": "5e762534227b33b52a8a252ec91d86ca7e43a12f5d7cbfd8a800a037279332e6"
+    },
+    {
+      "id": "D802a13876b44bc2191a02f",
+      "source": "external",
+      "title": "Original species-reference HTML.",
+      "year": null,
+      "format": "html",
+      "origin": "native_download",
+      "sha256": "408ee0b0d88c855dab592c308a431357e45fe09b0c0bc00770dfcd505b35384b"
+    },
+    {
+      "id": "D8d6582cb1b8b8891edfaec",
+      "source": "external",
+      "title": "Original study workbook, four sheets; no edits or inferred row joins.",
+      "year": null,
+      "format": "xlsx",
+      "origin": "native_download",
+      "sha256": "118108b9cc940a8e1ae717cadfbded4f4d22d48798d4ab11ec6d0f6022bff54d"
+    },
+    {
+      "id": "D8ff3ddc88694338e96d4a2",
+      "source": "external",
+      "title": "Point map of latest-year survey locations; no basemap or spatial interpolation.",
+      "year": null,
+      "format": "png",
+      "origin": "derived_map",
+      "sha256": "f357e9935ef4bf5587bc5b710071e4138ff771c7726b1cfddf0ec2b0d50d7542"
+    },
+    {
+      "id": "D93862f8aa04649f17b88a4",
+      "source": "external",
+      "title": "Render of report PDF page 10, including original map/chart and annotations.",
+      "year": null,
+      "format": "png",
+      "origin": "rendered_page",
+      "sha256": "5ffc37728ef3045c396dd241c68f71cfa8fe6652228a97e7435f8e7a9ec58620"
+    },
+    {
+      "id": "D93a4e60dc1f91d5b89b5d1",
+      "source": "external",
+      "title": "730 native daily weather features with measurement flags.",
+      "year": null,
+      "format": "geojson",
+      "origin": "native_download",
+      "sha256": "23a769ad60973ad770dd277fda04d8ea57386f4ade43deffb4a2955efae406a8"
+    },
+    {
+      "id": "D95321897efa303e70286c8",
+      "source": "external",
+      "title": "Embedded image from PDF page 12; source caption/context remains in report.",
+      "year": null,
+      "format": "jpeg",
+      "origin": "extracted_embedded_image",
+      "sha256": "35b2400443c362d9b4e4d5c37511bd38905fd2d66c1d159f8082650276a75982"
+    },
+    {
+      "id": "D9551d9a61a905f3664d90c",
+      "source": "external",
+      "title": "Synthetic tones encoding annual means. No field recording, speech or new biological evidence.",
+      "year": null,
+      "format": "wav",
+      "origin": "derived_sonification",
+      "sha256": "7397c50c62d4cd9544737b2c3bec258d61711f9680155de100a2a38ee38a9d56"
+    },
+    {
+      "id": "Da5bd4d6b764cf987a80f18",
+      "source": "external",
+      "title": "Encoded annual-chart sequence, not real-world video.",
+      "year": null,
+      "format": "mp4",
+      "origin": "derived_video",
+      "sha256": "97d3ffd5cb9291543be5a6d318e2d64c7f865a9e3916ce67900be50728c213f2"
+    },
+    {
+      "id": "Da84bbea98ca86e3d9c575f",
+      "source": "external",
+      "title": "Publisher dataset description, licence and field definitions.",
+      "year": null,
+      "format": "json",
+      "origin": "native_download",
+      "sha256": "9cebcbf7b222cb9ab79843fa3fc94f6f0551f955aec00bfec9dd36d3fbd13045"
+    },
+    {
+      "id": "Db2a6ee0a5ea5f150ed03b8",
+      "source": "external",
+      "title": "Official ECCC collection metadata and field context.",
+      "year": null,
+      "format": "json",
+      "origin": "native_download",
+      "sha256": "8d94adca04db36bb00ab065edd0c308145e423981fd4ab4bd10bf19e94c812e1"
+    },
+    {
+      "id": "Dbf63850ec31cc250b28cab",
+      "source": "external",
+      "title": "Scientific arrays with record IDs and explicit validity mask.",
+      "year": null,
+      "format": "npz",
+      "origin": "derived_array",
+      "sha256": "a7730b3b9f45dfd7861862e823c897430c62298ddd38f4b1f865fc8e6ba80201"
+    },
+    {
+      "id": "Dc87ba7205fb022d93c6f14",
+      "source": "external",
+      "title": "Annual aggregate visualized; all inputs and denominators retained.",
+      "year": null,
+      "format": "svg",
+      "origin": "derived_chart",
+      "sha256": "e97e75272d8325fab4168222e1daff24be359a368f6f0324d83cba5956e639ea"
+    },
+    {
+      "id": "Dd1a1c0388dd38b46319f47",
+      "source": "external",
+      "title": "Native spatial export; same underlying survey as CSV, not additional observations.",
+      "year": null,
+      "format": "geojson",
+      "origin": "native_download",
+      "sha256": "8d39a02669e1a20548f001e1ea26911e27d97a12ee81c1df70851d927ec2e18a"
+    },
+    {
+      "id": "De3ba456ce8644282d9f80f",
+      "source": "external",
+      "title": "First 100 source rows in a nested format; explicit subset.",
+      "year": null,
+      "format": "xml",
+      "origin": "derived_serialization",
+      "sha256": "d6a57bfb7603c7f46ba88ec964e0f90a5fc8563779dcac81953111f0de375109"
+    },
+    {
+      "id": "Dee2adc19ef046399602931",
+      "source": "external",
+      "title": "Publisher trap dataset metadata.",
+      "year": null,
+      "format": "json",
+      "origin": "native_download",
+      "sha256": "8a6866a023a3ef2b97266fe47a2c0b3c349fd9b666cbd957affde985dcc09bc0"
+    },
+    {
+      "id": "Dfcae61daa470b6a522b7e6",
+      "source": "external",
+      "title": "Render of report PDF page 3, including original map/chart and annotations.",
+      "year": null,
+      "format": "png",
+      "origin": "rendered_page",
+      "sha256": "dcce7e8245e52d83119e7e154ede3c04982b05516fc20bb833f1fba0e36f3c63"
+    },
+    {
+      "id": "D00ffb8b37e6f4ca673defa",
+      "source": "field",
+      "title": "enemies observation sheets -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "6be6ddd903c617ea16cf74b642f7be7f0993fdc9d98b48985d960137810e45e0"
+    },
+    {
+      "id": "D09a18a4f9d3c493beffb95",
+      "source": "field",
+      "title": "enemies observation sheets -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "eeea2ce601e091bac170d17ec67e95250da9d26758b5b0197970afdae87096fc"
+    },
+    {
+      "id": "D1d688c0cbd8ff240ac4036",
+      "source": "field",
+      "title": "enemies observation sheets -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "b623c21d2e22ffd9c3df03f6494c6fb4e109da99da49a07addd24ea4c4a6dec8"
+    },
+    {
+      "id": "D1ecf2e0caa6b172e8d7779",
+      "source": "field",
+      "title": "enemies observation sheets -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "fe26cd60f2680bd24725b394ae12fd8046fc8be82e9d1fde5a1630b6bb3498ff"
+    },
+    {
+      "id": "D22520fd121919d66587224",
+      "source": "field",
+      "title": "insects observation sheets -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "909b912481891f40556c468b9e5e972451eb54e658c513a6233e965996e3c817"
+    },
+    {
+      "id": "D45f5a671a3a3ec30960508",
+      "source": "field",
+      "title": "insects observation sheets -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "c267be514446cabecf88432e734e8a30c72baf0dcaaa4ce306fb1638baf4f72a"
+    },
+    {
+      "id": "D5f48cab1aee40b09b25f75",
+      "source": "field",
+      "title": "insects observation sheets -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "d7fe6acb39b160bdab9107b9f4df5587d891c2cdf5d7d991ecbc3bba3e7d6364"
+    },
+    {
+      "id": "D638e1815e63d06ac0706cd",
+      "source": "field",
+      "title": "insects observation sheets -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "f4ff6068df4e5153326b16caf9bddbe81b76acb0dc97c1ab2060a2e1608b3fba"
+    },
+    {
+      "id": "D6d16b6e3467dc9f8cd9810",
+      "source": "field",
+      "title": "insects observation sheets -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "5ce06a5e4e91ef1bef492df6e55e21e499007347bacb9eea68a4780e065b1d30"
+    },
+    {
+      "id": "D8bd62de7d206a7619a37a2",
+      "source": "field",
+      "title": "enemies observation sheets -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "f264d6750f89005ee44b59e21513c037cf502a7512f229dd146fd05983c18af6"
+    },
+    {
+      "id": "D8d5b112570fe774a374364",
+      "source": "field",
+      "title": "Instrument and inventory notes",
+      "year": -1,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "7d253a76e215f82c15123b9f4bf4a24ce432af368b64b275a1b70f6d8ada742d"
+    },
+    {
+      "id": "Daba17be8efdd92594af8b2",
+      "source": "field",
+      "title": "enemies observation sheets -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "a5106a9325b9c427fbc52febcb5e3dffb7560439a75c72134cbf3b3b5553bf4c"
+    },
+    {
+      "id": "Dbf06c8cccb3998a5a74dc0",
+      "source": "field",
+      "title": "insects observation sheets -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "30ec6942e31aaccc76a749a57ae18f41af3660a3c6462c3a7402bdc575147fce"
+    },
+    {
+      "id": "Dd86428757777452a4b4a71",
+      "source": "field",
+      "title": "insects observation sheets -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "6beb2fa09aa21039bcb953fde2702d01a3a4bdbf92ca6ea59cc7796653ad5446"
+    },
+    {
+      "id": "Ddf54d04b3d22bb00c4b247",
+      "source": "field",
+      "title": "insects observation sheets -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "d7c4d7b2f9f272923dc1ba7319d5340f061ae5479e2ddab36e1712e08570c3a6"
+    },
+    {
+      "id": "De0c54b64deb3434320be59",
+      "source": "field",
+      "title": "enemies observation sheets -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "307db47fbc2d51e6e7f335a83edcfba8579bdaa32214bf856ba6dda7014eb61c"
+    },
+    {
+      "id": "Df3dbd62599935b16b27ca8",
+      "source": "field",
+      "title": "enemies observation sheets -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "a97e093deefc15689f3715741dcfb3c2b466d856e1fbdc640398ad455da2cf9e"
+    },
+    {
+      "id": "D004603b427254ae9e99511",
+      "source": "finance",
+      "title": "Procurement ledger -20",
+      "year": -20,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "551d58c5a21d83b9c4fa1ba942d9321021ad534cfa3617193a5800bb029a45d9"
+    },
+    {
+      "id": "D00f70a0c875ac86d35bce0",
+      "source": "finance",
+      "title": "Annual accounts compilation ending -30",
+      "year": -30,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "dc248a0b2b07928e71a09e84a6ddf568b135e6bd49a280f17dd8e06c108103d1"
+    },
+    {
+      "id": "D03ac4461e79a5bfc6aa930",
+      "source": "finance",
+      "title": "Annual accounts compilation ending -20",
+      "year": -20,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "890cf5f15747b8201d09396aaed709e83afd328ba4e86b6c690ab80d091e7363"
+    },
+    {
+      "id": "D1fb365b2685c0f1d59303b",
+      "source": "finance",
+      "title": "Annual accounts compilation ending -70",
+      "year": -70,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "e7b6267f94575e1c42cf7258ddd750b6ca64d765d74858524c9bd0af2020d458"
+    },
+    {
+      "id": "D257b783903876516970e1c",
+      "source": "finance",
+      "title": "Procurement ledger 0",
+      "year": 0,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "235dd64d074f341475eb4bb885761e0d932ab4d9f5825169a4453f555b6839f9"
+    },
+    {
+      "id": "D2c88292352ed365e140985",
+      "source": "finance",
+      "title": "Annual accounts compilation ending -10",
+      "year": -10,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "3c9f590a4bf0972c7851fc5a6f7b5c00443b8bdccbc1bb1600a94cddd44777e2"
+    },
+    {
+      "id": "D32515695505a3cd823cf4e",
+      "source": "finance",
+      "title": "Procurement ledger -65",
+      "year": -65,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "93814c693089592f4e1ed3ab4a1ac8355e1a642360d0b22f651e83fb0e638b9a"
+    },
+    {
+      "id": "D57dc3708faedffaa267884",
+      "source": "finance",
+      "title": "Procurement ledger -5",
+      "year": -5,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "be862214a6d5b9b8bbcfe6f37b55a0d0cbbafa6fa9be203eaae57eab0db419ce"
+    },
+    {
+      "id": "D5801bcdaf96d43c4ed3902",
+      "source": "finance",
+      "title": "Procurement ledger -40",
+      "year": -40,
+      "format": "txt",
+      "origin": "constructed_record",
+      "sha256": "711cb8a19e50b5377fce6e931453193341923dff81f328a14c627f2109ee66c4"
+    },
+    {
+      "id": "D69ef700b2f9fc6b74ef724",
+      "source": "finance",
+      "title": "Annual accounts compilation ending -50",
+      "year": -50,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "1752efb8b0ae94a93e3e0b3f1411f85876cde4c767dbb2ae7d4a2de1a79af4bc"
+    },
+    {
+      "id": "D928b2652bb149509c1f345",
+      "source": "finance",
+      "title": "Annual accounts compilation ending -40",
+      "year": -40,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "607adbe4d3424b8aa1ad0644606ae2cfa392a4b0a925d6667f428339c94e4db3"
+    },
+    {
+      "id": "Db0b195f9d7e7862a6ab4a6",
+      "source": "finance",
+      "title": "Annual accounts compilation ending 0",
+      "year": 0,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "0f7f00b4fa44288c6731642a40731535c9e5e1b5e0c1cf75fde21276540afa9f"
+    },
+    {
+      "id": "De5b73b08628829bbff8931",
+      "source": "finance",
+      "title": "Annual accounts compilation ending -60",
+      "year": -60,
+      "format": "json",
+      "origin": "constructed_record",
+      "sha256": "1609b9f06acef72632164217b15fcf02958b36911039fb8606acb714206103d3"
+    },
+    {
+      "id": "D105d984b9da52e60430562",
+      "source": "forest",
+      "title": "fir observation sheets -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "ef0d97bf293ebc320e7ac3bea12785af2e9444b9147d68a72e567c919ebfc9ad"
+    },
+    {
+      "id": "D12eb61cf9c2a19186ba893",
+      "source": "forest",
+      "title": "foliage observation sheets -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "03e7cac6b331ad8b772aee140ebbdc50e680358ff448ae1126407da44c3ebda1"
+    },
+    {
+      "id": "D152a432d8d234129328efd",
+      "source": "forest",
+      "title": "birch observation sheets -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "69d38ded9591ae9d605c0d48d45013f099178942ab2c242f19163f8ddeb54a8b"
+    },
+    {
+      "id": "D1572983ec3908380c99bf7",
+      "source": "forest",
+      "title": "foliage observation sheets -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "dac59a1d6859fa805937fd286ea7b1c513d42cf06ecd1edb775920ac627b60b1"
+    },
+    {
+      "id": "D19d71729e7f3e4fef6ce17",
+      "source": "forest",
+      "title": "age observation sheets -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "088e2f61fe1c1eb5df17c5dd9a022da2edfe04664f709e7bd1d9f73f8b15d105"
+    },
+    {
+      "id": "D1aeb05ebd568d6942841de",
+      "source": "forest",
+      "title": "foliage observation sheets -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "f3561b2cd906aa19d67696f39c8d7ba136bb25dbd394fa28f27f2b41e10c32b4"
+    },
+    {
+      "id": "D1c321b9db70dd4a0b58c96",
+      "source": "forest",
+      "title": "birch observation sheets -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "354619b812eb24b6fea28bc041b26e0fe78d3409c09d8fcdb5c5eb0e047e01a2"
+    },
+    {
+      "id": "D1fb54f2d1b928dfd223cd0",
+      "source": "forest",
+      "title": "birch observation sheets -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "8d7e33ad7cc335ca40a9b475e313d97439885aa6622d01087d50a5b67acf903a"
+    },
+    {
+      "id": "D2147852afa9c4b14b8f2bf",
+      "source": "forest",
+      "title": "spruce observation sheets -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "fd33764c4dc6518294ce62c16dcb227c35375a1ba6376e191a799a5a98cd257f"
+    },
+    {
+      "id": "D2cfdf2ffd2257bdc49ae24",
+      "source": "forest",
+      "title": "fir observation sheets -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "c4fdd9210fd258e7257412911c99e1ed8fea0afbbcff20b1ce0116012efa46c3"
+    },
+    {
+      "id": "D314be3850595e36f2da99f",
+      "source": "forest",
+      "title": "fir observation sheets -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "cbf77b2ddcecae746f0fd7da26dbd7f334fd8a386d4bc8bcfa720c79acaf676b"
+    },
+    {
+      "id": "D35423f7ed2fd2fb09dc1e1",
+      "source": "forest",
+      "title": "fir observation sheets -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "d3c288a0456cba4a454fc26489fd3928b57d20313845e007c99a8d4429824a6c"
+    },
+    {
+      "id": "D36724471baeb6d8e01f9c2",
+      "source": "forest",
+      "title": "birch observation sheets -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "872167ce7e2797bcdbf847074a86fd2e8276f79c6df67d5203a04f9a6f0d3115"
+    },
+    {
+      "id": "D42d567b09f3eba2a78f647",
+      "source": "forest",
+      "title": "fir observation sheets -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "a734593ed6bafba70c6b9ee5c77c3b69ec8df2e501f8e1f49fbf8bf5e7188b06"
+    },
+    {
+      "id": "D44d913964b3a4be64233cf",
+      "source": "forest",
+      "title": "birch observation sheets -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "06d35eef254e84f7104eb3c5752fa3eb27bd99c32ed1115c0fd7979ee79e5068"
+    },
+    {
+      "id": "D45068e75597ea0f0c35d9a",
+      "source": "forest",
+      "title": "birch observation sheets -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "1b2b07add38f01123fd2bacb600bf2b3079f4c5f5b1c12d45f09b712fd43ef44"
+    },
+    {
+      "id": "D45406534c7fa73e7c70ae8",
+      "source": "forest",
+      "title": "fir observation sheets -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "acd707def32f36f918563e436ddbc4ae63d9bb329ec2f871318ec3511be7239e"
+    },
+    {
+      "id": "D4aaa9a73bfdbca97ad594d",
+      "source": "forest",
+      "title": "spruce observation sheets -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "297ee0b27279ea434b86c95b8d5b33d7d2a21694e93354527c295847ecae4c65"
+    },
+    {
+      "id": "D514791d362b01e4456f891",
+      "source": "forest",
+      "title": "age observation sheets -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "5100bd8d179398d653e6909e34fb386e606b40b1a93b03bffc5ae9a800c88424"
+    },
+    {
+      "id": "D59757ba1c4ba4aec45ba32",
+      "source": "forest",
+      "title": "age observation sheets -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "096f4144090740e8936620f82715c15728b6e74acf1f9f177379fc9ffec8a1b7"
+    },
+    {
+      "id": "D6078b9224939f397156d1d",
+      "source": "forest",
+      "title": "foliage observation sheets -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "703c5aeceb24525dc9f3bf9f53a5b3c3ea1d8e371c1f0599e3552a00077966d3"
+    },
+    {
+      "id": "D666693c5c4b27a8eee4d3f",
+      "source": "forest",
+      "title": "foliage observation sheets -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "de5b32e4a7762fbed6d0a00f50dc402e0f75573879025507f33510b392a8bb2d"
+    },
+    {
+      "id": "D91cf3591d4d78128f262ea",
+      "source": "forest",
+      "title": "foliage observation sheets -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "50f043732095547f5e605e28022403ab9cd053d8509b1302fb23207869a0c4f2"
+    },
+    {
+      "id": "D97061a077f81f55a891f89",
+      "source": "forest",
+      "title": "age observation sheets -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "726226330cd9114b1cb71a98cdfc753aaa592cba03391959a128422b29febefa"
+    },
+    {
+      "id": "D9e170fceedc79cc9ef60ba",
+      "source": "forest",
+      "title": "age observation sheets -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "5dc7a4cb1b8d48da1ff20cfafbb817d46e0dfe9aab1268766fd8f92a05f2ab89"
+    },
+    {
+      "id": "D9ea6b6c840433a59896114",
+      "source": "forest",
+      "title": "fir observation sheets -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "933a277d7ea3434694f9454740e5e9f3b7c764dc72fdd1e2153f7a061238f665"
+    },
+    {
+      "id": "Da62f7d8cc40385c12e408d",
+      "source": "forest",
+      "title": "spruce observation sheets -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "50dd02bd552d1050be86d54017ea851052d01523c1d0cdfbe215fd4fb6cfe64d"
+    },
+    {
+      "id": "Da72b5a8f1a7d118f57b813",
+      "source": "forest",
+      "title": "spruce observation sheets -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "1cc763f38bc878c62093656eacaf2ee656f24ea36397e1c02ebbc1217bb0f143"
+    },
+    {
+      "id": "Daa7c18b3edbd69bb2bd556",
+      "source": "forest",
+      "title": "spruce observation sheets -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "0f8788c9709aba90c47830d6e4cae67569c7664d66ad13334a1062297fec0dbe"
+    },
+    {
+      "id": "Daf55264fef1cc709b4e1b6",
+      "source": "forest",
+      "title": "age observation sheets -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "9f5d800fdb7316f1f39be3672c0feec327226477986882b509feca6b626302de"
+    },
+    {
+      "id": "Db2445e64f1416addb54468",
+      "source": "forest",
+      "title": "age observation sheets -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "3658f226a451853f400549d7686ce7bb37fb91efc52783a12d2d320a1f4cc5de"
+    },
+    {
+      "id": "Dbc25f93719efc3c9bfa120",
+      "source": "forest",
+      "title": "fir observation sheets -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "7523d80553d57f4dd2e56a95e8d5f9bc342ec5f272ca58ab4c7e9f29d730967d"
+    },
+    {
+      "id": "Dc305b113390e8321b65cba",
+      "source": "forest",
+      "title": "age observation sheets -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "1697e1a9cd93fa66d68314ed8e3740f8820f0b6cca9a13100ff0a02d15475bd8"
+    },
+    {
+      "id": "Dc77ce4d26b4d31e51c4167",
+      "source": "forest",
+      "title": "foliage observation sheets -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "3429456c88f4065f79e32a3fb7b80b3cf4830be38cc43a7403bb8548eacf0a87"
+    },
+    {
+      "id": "De9e71deba6a54385084a74",
+      "source": "forest",
+      "title": "birch observation sheets -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "668e0ae91591f922991d774b4f715106d890c4689faab54a66a93a9e86321a8d"
+    },
+    {
+      "id": "Dedb5a7b459a8cd0d8e12e4",
+      "source": "forest",
+      "title": "birch observation sheets -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "e487b23c3809b71934a1697eb9695b87c84e8c5bdca42705b7b4f56ed3e49a84"
+    },
+    {
+      "id": "Df224c79a659669195a37e6",
+      "source": "forest",
+      "title": "foliage observation sheets -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "1aeaa881e292d1ce748445681e87cbcb45c952a23be26ecb8fdd4e823a59fad0"
+    },
+    {
+      "id": "Df2c8fe281608bd7f7402b9",
+      "source": "forest",
+      "title": "spruce observation sheets -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "5254ac6c29382250e490feeee145ca6b98ae37b621c715270adcb961d63441b6"
+    },
+    {
+      "id": "Df2d0934eb618fd92208658",
+      "source": "forest",
+      "title": "spruce observation sheets -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "74645e7f15e60a011084b6a687a1016750c8fd52dea3852c98f4f33ad3f0ba52"
+    },
+    {
+      "id": "Dfeb14ea67104e5ec7882b3",
+      "source": "forest",
+      "title": "spruce observation sheets -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "aa3134b5a623d7df240fa85c2cd0f9299b8a6904729baf76951bdbde3998955c"
+    },
+    {
+      "id": "D43d90046968eba8c2e445e",
+      "source": "laboratory",
+      "title": "Feeding tray register",
+      "year": -3,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "7eff11914c8837bedb6ac993099a804c10e1ab17175f2a2a9f308561e9f22872"
+    },
+    {
+      "id": "Dbaebd7baa72bae08b25b52",
+      "source": "laboratory",
+      "title": "Treatment enclosure trial register",
+      "year": -2,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "ffffed97803c4762d65158b4c1d16d0bb2acf8b690abadcacf7ed2b0fe0f568a"
+    },
+    {
+      "id": "D7754e51b9ad8dc9e1256e1",
+      "source": "maps",
+      "title": "District stand locator",
+      "year": 0,
+      "format": "geojson",
+      "origin": "constructed_record",
+      "sha256": "f2feac7405bb444c063b32c539d41efca29e01f492dc324e62f051ac364f9fa0"
+    },
+    {
+      "id": "D86407bf559406dd9ea68cc",
+      "source": "maps",
+      "title": "foliage survey heat map",
+      "year": 0,
+      "format": "png",
+      "origin": "constructed_record",
+      "sha256": "9be4de1f7a2436e8709d3836f41db5bda56198e318e6d788b24b2cf14c189529"
+    },
+    {
+      "id": "D9a8ecb4d6b83ade2e3bb8c",
+      "source": "maps",
+      "title": "insects survey heat map",
+      "year": 0,
+      "format": "png",
+      "origin": "constructed_record",
+      "sha256": "cf52fef5d84a6a9b0cfdc6ddd5b862131e0e3f293e7b99ca6282a61160749781"
+    },
+    {
+      "id": "De753dc873db3abac6cf04b",
+      "source": "maps",
+      "title": "enemies survey heat map",
+      "year": 0,
+      "format": "png",
+      "origin": "constructed_record",
+      "sha256": "376bda41c26dc5a6790dc6cc6a46d3613dab3be75c0283fd981c5c9df305e998"
+    },
+    {
+      "id": "D0f56ccf59eec658870ff50",
+      "source": "operations",
+      "title": "Completed protection work -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "551c1beb3172e07c0d5c064972e117547558478fa4a8d4638d12219a0fc4a63b"
+    },
+    {
+      "id": "D3104eca7019dd7c731a6d3",
+      "source": "operations",
+      "title": "Completed protection work -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "fb94c6c304a7a064bddf3bcabed3f01288736ee8082d3a6d1348660221496fcf"
+    },
+    {
+      "id": "D756dd3f2e217839ba6cfa5",
+      "source": "operations",
+      "title": "Completed protection work -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "cd16ad9386a1e04f69969a50ed6dfbf385b7e1b68cd08f1b44def5fd5213bdeb"
+    },
+    {
+      "id": "D857be967c43aa0dafa1f2b",
+      "source": "operations",
+      "title": "Completed protection work -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "711fac69973fabe8ac6cabb72221dbbd63d65b3e3121868ee7648a64960dc5d9"
+    },
+    {
+      "id": "D8602a6e83dbf96981667ad",
+      "source": "operations",
+      "title": "Completed protection work -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "56130a57a507083117ed3b42fdf4b9a8566540fd5cc5af474d5f64c1329d444a"
+    },
+    {
+      "id": "D968cfff774f7c6bc54e896",
+      "source": "operations",
+      "title": "Completed protection work -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "ab485e1ca531315d78f553a37427a6ca1767905c1fede6438c9a39ada479314a"
+    },
+    {
+      "id": "De9c00dd54473830e179af1",
+      "source": "operations",
+      "title": "Completed protection work -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "c3ae552f085365bb08434978b410e80dc52b1eab90d5f720eae68f5547413bc2"
+    },
+    {
+      "id": "Df790649aad4bba0a79e3bc",
+      "source": "operations",
+      "title": "Completed protection work -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "826de20a48bd816eeb2602227c50b7f2745d04f1e1ae228554105117dc34bcda"
+    },
+    {
+      "id": "D04f93f9d675a7b6a12359f",
+      "source": "weather",
+      "title": "Station spring register -29 to -20",
+      "year": -20,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "4bf824c9add049a3718777834b26e45aaef0a93ea2217c11478e19c25daf6fc7"
+    },
+    {
+      "id": "D1be29d160136c1823c526e",
+      "source": "weather",
+      "title": "Station spring register -79 to -70",
+      "year": -70,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "c8110012bcb85e67bf26162be688e0bbaa753e6303202936f795849cc241cff4"
+    },
+    {
+      "id": "D2f7ab356672f366fa116a5",
+      "source": "weather",
+      "title": "Station spring register -9 to 0",
+      "year": 0,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "e3ca0587a5165e371f189d0103a8b253b24b2eea6fc8104fa66d20fd00f31a86"
+    },
+    {
+      "id": "D5253a8715d13ad903e1a5d",
+      "source": "weather",
+      "title": "Station spring register -49 to -40",
+      "year": -40,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "9db79eb61b466130a88b80a445595d6556796605e18c2d1b5f75e5903b594281"
+    },
+    {
+      "id": "D5b2bb7a0dd3b467b6ad1eb",
+      "source": "weather",
+      "title": "Station spring register -19 to -10",
+      "year": -10,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "9a4a9d14a7a00e3f6699189e45b6e93cab411bca65eddf600a5fe00e2b89c0fd"
+    },
+    {
+      "id": "D78423832dc1fc717f231ea",
+      "source": "weather",
+      "title": "Station spring register -59 to -50",
+      "year": -50,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "45d4280b15133d6a3276327cd26ff512a2e80e5189e9ab54920142af0e358138"
+    },
+    {
+      "id": "D9a3c8c8250911f69565e25",
+      "source": "weather",
+      "title": "Station spring register -39 to -30",
+      "year": -30,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "2a1d4a699b5fd69afc3d69dd836b588064b2f3db632ed27e625ea6b3f181ff01"
+    },
+    {
+      "id": "De7a997911d12386d967b51",
+      "source": "weather",
+      "title": "Station spring register -69 to -60",
+      "year": -60,
+      "format": "csv",
+      "origin": "constructed_record",
+      "sha256": "ca50e3e51d248b4374329e6dae18972089904e5ed314098f68aaf2f1ed7bb767"
+    }
+  ],
+  "people": [
+    {
+      "id": "accounts",
+      "role": "Accounts clerk"
+    },
+    {
+      "id": "archivist",
+      "role": "Records custodian"
+    },
+    {
+      "id": "community",
+      "role": "Community secretary"
+    },
+    {
+      "id": "manager",
+      "role": "District manager"
+    },
+    {
+      "id": "mill",
+      "role": "Mill liaison"
+    }
+  ]
+}

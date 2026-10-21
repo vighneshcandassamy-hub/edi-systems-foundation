@@ -1,0 +1,60 @@
+{
+  "environment": "bug-tree-investigation-development-0.1",
+  "origin": "Constructed scenario with separately attributed real-domain context.",
+  "current_year": 60,
+  "target_district": "Alder Reach",
+  "target_plots": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08"
+  ],
+  "problem": "Forest damage and protection spending recur. Investigate which information explains the target forest, distinguish competing explanations, and choose a ten-year management policy.",
+  "objective": "Minimize mean foliage-loss fraction + 0.20 * mean annual spending units, with penalties of 5 times terminal foliage below 0.40 and 5 times annual per-plot spending above 1.10.",
+  "policy_options": [
+    "continue",
+    "intensive",
+    "diversify",
+    "combined",
+    "observe"
+  ],
+  "policy_definitions": {
+    "continue": {
+      "spray_trigger": 1.0,
+      "spray_strength": 0.85,
+      "annual_conversion": 0.0
+    },
+    "intensive": {
+      "spray_trigger": 0.3,
+      "spray_strength": 0.95,
+      "annual_conversion": 0.0
+    },
+    "diversify": {
+      "spray_trigger": 25.0,
+      "spray_strength": 0.0,
+      "annual_conversion": 0.045
+    },
+    "combined": {
+      "spray_trigger": 0.8,
+      "spray_strength": 0.85,
+      "annual_conversion": 0.035
+    },
+    "observe": {
+      "spray_trigger": 25.0,
+      "spray_strength": 0.0,
+      "annual_conversion": 0.0
+    }
+  },
+  "submission": {
+    "policy": "one policy option",
+    "predicted_next_year_mean_insects": "nonnegative number under chosen policy",
+    "reasoning": "explanation",
+    "evidence_ids": "list of admitted item IDs",
+    "uncertainties": "list"
+  },
+  "limits": "Only observations through simulation year 60 are requestable. Future outcomes are private. Human and machine clients use identical public endpoints. No relevance labels are supplied."
+}

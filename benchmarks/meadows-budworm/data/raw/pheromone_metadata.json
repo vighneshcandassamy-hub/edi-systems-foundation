@@ -1,0 +1,818 @@
+{
+  "id" : "bw6q-5rw4",
+  "name" : "Pheromone Trap Maps - Spruce Budworm / Cartes des pièges à phéromones -  Tordeuse des bourgeons de l'épinette",
+  "assetType" : "dataset",
+  "attribution" : "Department of Natural Resources / Ministère des Ressources naturelles",
+  "attributionLink" : "https://hub.arcgis.com/datasets/94f56206b6e7472582820a78bf58a246_1/about?locale=en",
+  "averageRating" : 0,
+  "category" : "Lands, Forests and Wildlife",
+  "createdAt" : 1769438869,
+  "description" : "The Forest Health Section currently monitors for two insects using pheromone traps. Pheromones are the chemical signal insects created by the insect for communication. Pheromones are used for numerous types of communication. In some species they are used to call other insects together (e.g. aggregation), in some they are used to repel others (e.g. anti-aggregation), in most insects these chemical signals are very specific and unique. Scientists have been able to identify and reproduce these chemicals in many species, allowing us to monitor species presence/absences and relative abundance in pest management. For both\na) spruce budworm\nb) hemlock looper\nthe sex pheromone is emitted by the female to attract male moths. The Province places traps containing pheromone lures for both throughout the province.\nAt the end of the season, the number of moths found in the traps give an indication of population trends for that season. These result support additional monitoring efforts such as the SBW fall population forecast. The pheromone traps are useful tools, but they only provide a partial picture on populations because in the case of both spruce budworm and hemlock looper the pheromone attract the male moths only.\nEach marker on the spruce budworm map represents three traps hung in a 40m spacing array, the value posted is the average of the three traps counted.\n/\nÀ l’heure actuelle, la Section de la santé forestière surveille deux insectes au moyen de pièges à phéromone. Les phéromones constituent le signal chimique que les insectes créent pour communiquer. Les phéromones servent pour de nombreux types de communications. Pour certaines espèces, elles servent à rassembler d’autres insectes (p. ex., agrégation); pour d’autres, elles servent à repousser les autres (p. ex., anti agrégation). Chez la plupart des insectes, ces signaux chimiques sont très spécifiques et uniques. Les scientifiques ont réussi à déterminer et reproduire ces signaux chimiques avec nombre d’espèces, ce qui nous permet de surveiller la présence/absence des espèces et leur abondance relative sur le plan de la lutte antiparasitaire. Tant pour\na) la tordeuse des bourgeons de l’épinette\nb) l’arpenteuse de la pruche\nla phéromone sexuelle est émise par la femelle pour attirer les papillons mâles. La province a installé des pièges contenant des appâts à phéromone pour les deux insectes aux quatre coins du N.-B. À la fin de la saison, le nombre de papillons trouvés dans les pièges donne une idée des tendances sur le plan des populations pour cette saison.\nCes résultats appuient des efforts de surveillance supplémentaires tels que les prévisions automnales de populations de TBE. Les pièges à phéromone sont utiles, mais ils ne dressent qu’un portrait partiel des populations, et ce, puisque dans le cas à la fois de la tordeuse des bourgeons de l’épinette et de l’arpenteuse de la pruche, la phéromone n’attire que les papillons mâles.\nChaque marqueur sur la carte de l’arpenteuse de la pruche représente trois pièges suspendus espacés de 40 mètres; la valeur affichée est la moyenne du dénombrement des trois pièges.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 487,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "NBOGL",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 41890240,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1769440750,
+  "publicationGroup" : 20242705,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1790838110,
+  "rowsUpdatedBy" : "rxww-w3g4",
+  "tableId" : 20242705,
+  "totalTimesRated" : 0,
+  "viewCount" : 231,
+  "viewLastModified" : 1790838108,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1769520359,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 7314258,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1769441032,
+    "targetAudience" : "public",
+    "workflowId" : 2190,
+    "reviewer" : {
+      "id" : "tsf9-dpg6",
+      "displayName" : "Logan"
+    },
+    "submissionDetails" : {
+      "permissionType" : "read"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1769520359,
+      "failureCount" : 0,
+      "startedAt" : 1769520359,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "rxww-w3g4",
+      "displayName" : "Allister MacLean"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 625220040,
+    "name" : "the_geom",
+    "dataTypeName" : "point",
+    "description" : "",
+    "fieldName" : "the_geom",
+    "position" : 1,
+    "renderTypeName" : "point",
+    "tableColumnId" : 164804975,
+    "cachedContents" : {
+      "non_null" : "1565",
+      "null" : "0",
+      "top" : [ {
+        "item" : {
+          "coordinates" : [ -67.62793837847222, 47.190492353752845 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.94119755275842, 47.27890787968515 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.47923824458825, 47.20871865018893 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.98944402664975, 47.29611793858006 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.64865786248531, 47.45984207203522 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.77641792448348, 47.53129174059867 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.47973259938374, 47.20859498540227 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.67076265855951, 47.12817653810509 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.60054643182703, 47.31879261696204 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.86657945179773, 47.39225307596548 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.79563544923842, 47.27283741092807 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.70023035363698, 47.27864647814889 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.98891766821563, 47.23254991871687 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.49619519956343, 47.361332498493475 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.68080728385841, 47.356227993970485 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.00952012009799, 47.48269626794378 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.7955142397821, 47.272093500503765 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.49642713723958, 47.36172161150057 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.87115143482028, 47.54952782621928 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.51625439091559, 47.14438788704681 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      } ],
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220041,
+    "name" : "OBJECTID",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "objectid",
+    "position" : 2,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164804976,
+    "cachedContents" : {
+      "non_null" : "1565",
+      "largest" : "24453",
+      "null" : "0",
+      "top" : [ {
+        "item" : "12488",
+        "count" : "1"
+      }, {
+        "item" : "15695",
+        "count" : "1"
+      }, {
+        "item" : "18241",
+        "count" : "1"
+      }, {
+        "item" : "19209",
+        "count" : "1"
+      }, {
+        "item" : "24026",
+        "count" : "1"
+      }, {
+        "item" : "17927",
+        "count" : "1"
+      }, {
+        "item" : "17286",
+        "count" : "1"
+      }, {
+        "item" : "5203",
+        "count" : "1"
+      }, {
+        "item" : "20491",
+        "count" : "1"
+      }, {
+        "item" : "18892",
+        "count" : "1"
+      }, {
+        "item" : "22106",
+        "count" : "1"
+      }, {
+        "item" : "5150",
+        "count" : "1"
+      }, {
+        "item" : "23364",
+        "count" : "1"
+      }, {
+        "item" : "13761",
+        "count" : "1"
+      }, {
+        "item" : "24450",
+        "count" : "1"
+      }, {
+        "item" : "21161",
+        "count" : "1"
+      }, {
+        "item" : "3849",
+        "count" : "1"
+      }, {
+        "item" : "20803",
+        "count" : "1"
+      }, {
+        "item" : "24029",
+        "count" : "1"
+      }, {
+        "item" : "16336",
+        "count" : "1"
+      } ],
+      "smallest" : "2561",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220042,
+    "name" : "PLOTID",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "plotid",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 164804977,
+    "cachedContents" : {
+      "non_null" : "1565",
+      "largest" : "SX9",
+      "null" : "0",
+      "top" : [ {
+        "item" : "4737 6773",
+        "count" : "37"
+      }, {
+        "item" : "4645 6561",
+        "count" : "12"
+      }, {
+        "item" : "4770 6615",
+        "count" : "12"
+      }, {
+        "item" : "4595 6593",
+        "count" : "12"
+      }, {
+        "item" : "4747 6711",
+        "count" : "12"
+      }, {
+        "item" : "4762 6581",
+        "count" : "12"
+      }, {
+        "item" : "4585 6546",
+        "count" : "12"
+      }, {
+        "item" : "4783 6826",
+        "count" : "12"
+      }, {
+        "item" : "4729 6673",
+        "count" : "12"
+      }, {
+        "item" : "4796 6802",
+        "count" : "12"
+      }, {
+        "item" : "4741 6615",
+        "count" : "12"
+      }, {
+        "item" : "4729 6540",
+        "count" : "12"
+      }, {
+        "item" : "4553 6541",
+        "count" : "12"
+      }, {
+        "item" : "4678 6603",
+        "count" : "12"
+      }, {
+        "item" : "4713 6654",
+        "count" : "12"
+      }, {
+        "item" : "4575 6661",
+        "count" : "12"
+      }, {
+        "item" : "4676 6637",
+        "count" : "12"
+      }, {
+        "item" : "4669 6579",
+        "count" : "12"
+      }, {
+        "item" : "4702 6530",
+        "count" : "12"
+      }, {
+        "item" : "4645 6626",
+        "count" : "12"
+      } ],
+      "smallest" : "4516 6665",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220043,
+    "name" : "DATE_IN",
+    "dataTypeName" : "calendar_date",
+    "description" : "",
+    "fieldName" : "date_in",
+    "position" : 4,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 164804978,
+    "cachedContents" : {
+      "non_null" : "1494",
+      "largest" : "2020-10-01T00:00:00.000",
+      "null" : "71",
+      "top" : [ {
+        "item" : "2020-08-25T00:00:00.000",
+        "count" : "51"
+      }, {
+        "item" : "2020-08-27T00:00:00.000",
+        "count" : "39"
+      }, {
+        "item" : "2019-08-28T00:00:00.000",
+        "count" : "36"
+      }, {
+        "item" : "2019-09-05T00:00:00.000",
+        "count" : "36"
+      }, {
+        "item" : "2020-08-26T00:00:00.000",
+        "count" : "33"
+      }, {
+        "item" : "2019-10-08T00:00:00.000",
+        "count" : "33"
+      }, {
+        "item" : "2020-09-01T00:00:00.000",
+        "count" : "33"
+      }, {
+        "item" : "2019-09-10T00:00:00.000",
+        "count" : "33"
+      }, {
+        "item" : "2017-08-11T00:00:00.000",
+        "count" : "30"
+      }, {
+        "item" : "2020-08-31T00:00:00.000",
+        "count" : "30"
+      }, {
+        "item" : "2019-09-04T00:00:00.000",
+        "count" : "27"
+      }, {
+        "item" : "2020-08-21T00:00:00.000",
+        "count" : "27"
+      }, {
+        "item" : "2019-08-19T00:00:00.000",
+        "count" : "24"
+      }, {
+        "item" : "2017-08-30T00:00:00.000",
+        "count" : "24"
+      }, {
+        "item" : "2019-08-26T00:00:00.000",
+        "count" : "24"
+      }, {
+        "item" : "2018-09-06T00:00:00.000",
+        "count" : "24"
+      }, {
+        "item" : "2018-08-20T00:00:00.000",
+        "count" : "21"
+      }, {
+        "item" : "2020-08-19T00:00:00.000",
+        "count" : "21"
+      }, {
+        "item" : "2020-08-28T00:00:00.000",
+        "count" : "21"
+      }, {
+        "item" : "2017-08-23T00:00:00.000",
+        "count" : "21"
+      } ],
+      "smallest" : "2017-06-06T00:00:00.000",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : {
+      "view" : "date_dmonthy"
+    }
+  }, {
+    "id" : 625220044,
+    "name" : "OTHER_MOTH",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "other_moth",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 164804979,
+    "cachedContents" : {
+      "non_null" : "1235",
+      "largest" : "9HL; 6OTHER",
+      "top" : [ {
+        "item" : "0",
+        "count" : "137"
+      }, {
+        "item" : "2",
+        "count" : "66"
+      }, {
+        "item" : "1",
+        "count" : "58"
+      }, {
+        "item" : "4",
+        "count" : "55"
+      }, {
+        "item" : "3",
+        "count" : "43"
+      }, {
+        "item" : "1HL",
+        "count" : "39"
+      }, {
+        "item" : "5",
+        "count" : "29"
+      }, {
+        "item" : "1GM",
+        "count" : "28"
+      }, {
+        "item" : "6",
+        "count" : "25"
+      }, {
+        "item" : "2GM",
+        "count" : "21"
+      }, {
+        "item" : "7",
+        "count" : "20"
+      }, {
+        "item" : "2HL",
+        "count" : "18"
+      }, {
+        "item" : "1 GM",
+        "count" : "14"
+      }, {
+        "item" : "3HL",
+        "count" : "12"
+      }, {
+        "item" : "11",
+        "count" : "12"
+      }, {
+        "item" : "8",
+        "count" : "12"
+      }, {
+        "item" : "9",
+        "count" : "12"
+      }, {
+        "item" : "5GM",
+        "count" : "10"
+      }, {
+        "item" : "3GM",
+        "count" : "9"
+      }, {
+        "item" : "2 HL",
+        "count" : "9"
+      } ],
+      "null" : "330",
+      "smallest" : "0",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220045,
+    "name" : "MOTH_COUNT",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "moth_count",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164804980,
+    "cachedContents" : {
+      "non_null" : "1524",
+      "largest" : "1410",
+      "null" : "41",
+      "top" : [ {
+        "item" : "-99",
+        "count" : "164"
+      }, {
+        "item" : "0",
+        "count" : "69"
+      }, {
+        "item" : "1",
+        "count" : "45"
+      }, {
+        "item" : "2",
+        "count" : "45"
+      }, {
+        "item" : "3",
+        "count" : "40"
+      }, {
+        "item" : "10",
+        "count" : "26"
+      }, {
+        "item" : "7",
+        "count" : "25"
+      }, {
+        "item" : "8",
+        "count" : "22"
+      }, {
+        "item" : "12",
+        "count" : "20"
+      }, {
+        "item" : "18",
+        "count" : "20"
+      }, {
+        "item" : "4",
+        "count" : "20"
+      }, {
+        "item" : "6",
+        "count" : "19"
+      }, {
+        "item" : "13",
+        "count" : "18"
+      }, {
+        "item" : "30",
+        "count" : "18"
+      }, {
+        "item" : "20",
+        "count" : "17"
+      }, {
+        "item" : "11",
+        "count" : "17"
+      }, {
+        "item" : "34",
+        "count" : "15"
+      }, {
+        "item" : "21",
+        "count" : "14"
+      }, {
+        "item" : "5",
+        "count" : "14"
+      }, {
+        "item" : "26",
+        "count" : "13"
+      } ],
+      "smallest" : "-99",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220046,
+    "name" : "BF",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "bf",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164804981,
+    "cachedContents" : {
+      "non_null" : "1235",
+      "largest" : "10",
+      "null" : "330",
+      "top" : [ {
+        "item" : "1",
+        "count" : "274"
+      }, {
+        "item" : "8",
+        "count" : "151"
+      }, {
+        "item" : "5",
+        "count" : "145"
+      }, {
+        "item" : "6",
+        "count" : "132"
+      }, {
+        "item" : "4",
+        "count" : "114"
+      }, {
+        "item" : "2",
+        "count" : "114"
+      }, {
+        "item" : "9",
+        "count" : "83"
+      }, {
+        "item" : "10",
+        "count" : "80"
+      }, {
+        "item" : "3",
+        "count" : "78"
+      }, {
+        "item" : "7",
+        "count" : "64"
+      } ],
+      "smallest" : "1",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220047,
+    "name" : "SP",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "sp",
+    "position" : 8,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164804982,
+    "cachedContents" : {
+      "non_null" : "1235",
+      "largest" : "10",
+      "null" : "330",
+      "top" : [ {
+        "item" : "1",
+        "count" : "316"
+      }, {
+        "item" : "10",
+        "count" : "143"
+      }, {
+        "item" : "2",
+        "count" : "135"
+      }, {
+        "item" : "5",
+        "count" : "120"
+      }, {
+        "item" : "4",
+        "count" : "118"
+      }, {
+        "item" : "9",
+        "count" : "115"
+      }, {
+        "item" : "3",
+        "count" : "77"
+      }, {
+        "item" : "8",
+        "count" : "76"
+      }, {
+        "item" : "7",
+        "count" : "69"
+      }, {
+        "item" : "6",
+        "count" : "66"
+      } ],
+      "smallest" : "1",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220048,
+    "name" : "HWD",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "hwd",
+    "position" : 9,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164804983,
+    "cachedContents" : {
+      "non_null" : "1235",
+      "largest" : "9",
+      "top" : [ {
+        "item" : "1",
+        "count" : "819"
+      }, {
+        "item" : "2",
+        "count" : "190"
+      }, {
+        "item" : "3",
+        "count" : "98"
+      }, {
+        "item" : "4",
+        "count" : "69"
+      }, {
+        "item" : "5",
+        "count" : "36"
+      }, {
+        "item" : "6",
+        "count" : "14"
+      }, {
+        "item" : "9",
+        "count" : "3"
+      }, {
+        "item" : "7",
+        "count" : "3"
+      }, {
+        "item" : "8",
+        "count" : "3"
+      } ],
+      "null" : "330",
+      "smallest" : "1",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  }, {
+    "id" : 625220049,
+    "name" : "TRAP_ON_GR",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "trap_on_gr",
+    "position" : 10,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164804984,
+    "cachedContents" : {
+      "non_null" : "1002",
+      "largest" : "5",
+      "null" : "563",
+      "top" : [ {
+        "item" : "4",
+        "count" : "785"
+      }, {
+        "item" : "5",
+        "count" : "150"
+      }, {
+        "item" : "2",
+        "count" : "26"
+      }, {
+        "item" : "1",
+        "count" : "24"
+      }, {
+        "item" : "3",
+        "count" : "17"
+      } ],
+      "smallest" : "1",
+      "count" : "1565",
+      "cardinality" : "1565"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "New Brunswick Open Government Licence"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Department / Ministère" : {
+        "Department / Ministère" : "Natural Resources / Ressources naturelles"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "66qi-73dz",
+    "displayName" : "Open Data NB \\ Données ouvertes NB",
+    "profileImageUrlLarge" : "/api/users/66qi-73dz/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/66qi-73dz/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/66qi-73dz/profile_images/TINY",
+    "screenName" : "Open Data NB \\ Données ouvertes NB",
+    "type" : "interactive",
+    "flags" : [ "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "66qi-73dz",
+    "displayName" : "Open Data NB \\ Données ouvertes NB",
+    "profileImageUrlLarge" : "/api/users/66qi-73dz/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/66qi-73dz/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/66qi-73dz/profile_images/TINY",
+    "screenName" : "Open Data NB \\ Données ouvertes NB",
+    "type" : "interactive",
+    "flags" : [ "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "pheromones", "pheromone", "pheromone trap", "trap", "maps", "cartes", "phéromone", "pièges", "natural resources", "ressources naturelles", "spruce budworm", "tordeuse des bourgeons de l'épinette" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

@@ -1,0 +1,148 @@
+{
+  "schema": "edi-runtime-plan-cases-v1",
+  "scope": "prospective engineering and first development pilot only",
+  "cases": [
+    {
+      "id": "RP-V001",
+      "title": "Freeze exact source/artifact/configuration identity",
+      "procedure": "Inspect source and frozen package hashes; reject missing adapter/model/container pins or changed resume identity.",
+      "acceptance": "No unpinned launch; original frozen files unchanged.",
+      "kind": "contract",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V002",
+      "title": "Native acquisition, chunking and dependent views",
+      "procedure": "Page rows; reassemble chunks; compare raw hashes; repeat same payload with distinct source occurrences; retain failed/partial reads.",
+      "acceptance": "Original bytes/selectors retained; occurrence distinct from content; derivatives stay dependent.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V003",
+      "title": "Public operation completeness and unavailable requests",
+      "procedure": "Check all 13 typed public operations on a disposable world, bounds/authorization/errors, and unsupported source/instrument requests.",
+      "acceptance": "Exact public semantics and error categories; no private/future state response.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V004",
+      "title": "Real inference and exact response binding",
+      "procedure": "Neutral job through C4 export/gateway/import; wrong job/context/model revision, malformed output and unknown usage controls.",
+      "acceptance": "Actual bounded model invocation attributed and counted; invalid bindings rejected without mutation.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V005",
+      "title": "Image transport and modality support",
+      "procedure": "Neutral non-forest image through acquired C1 bytes to actual model image parts; inspect processor/tensor route and digest. Test metadata-only and unsupported audio controls.",
+      "acceptance": "Actual image input demonstrated; metadata-only is not a semantic pass; all unsupported views explicit.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V006",
+      "title": "Candidate history and generated-evidence separation",
+      "procedure": "C4 candidate retained/revised/queried and used by later inquiry; candidate-exploration C5 path; generated outcome echo.",
+      "acceptance": "No model self-admission, no generated independent corroboration, no forced human hypothesis decision.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V007",
+      "title": "Dynamic investigation scheduling",
+      "procedure": "Two neutral evidence cuts with model-selected next work, no authored domain sequence; unsupported intent and stale cut controls.",
+      "acceptance": "Typed authorized dispatch follows actual EDI choice/state; new evidence yields linked fresh inquiry.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V008",
+      "title": "C7 standing authority and human decisions",
+      "procedure": "Adopt neutral simulated-session policy once; allow scoped reads/acquisition/actions/advance; reject wrong world, exceeded grant, operator injection and unilateral objective change.",
+      "acceptance": "No bypass; receipt distinct from effect; objective proposal remains pending.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V009",
+      "title": "Clock, measurement and prospective eligibility",
+      "procedure": "Seal constructed forecast before advancing; capture due work-before-measurement, missing data, later cut and generated/empirical mismatch.",
+      "acceptance": "No future leakage/backdating or simulation relabeling; accepted constructed profile or explicit unscored result.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V010",
+      "title": "Crash, replay and uncertain completion",
+      "procedure": "Stop worker at broker-commit/C1-commit/C0-ack and model-dispatch windows; inspect before trusted retry; reopen same session.",
+      "acceptance": "One committed action/cost; no lost acknowledged evidence; unknown usage retained; no silent reset.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V011",
+      "title": "Deployment isolation",
+      "procedure": "Inspect actual mounts/PIDs/network/token exposure; negative owner-file/audit/state/Docker/egress/auth/private-route probes.",
+      "acceptance": "Required paths inaccessible; model token absent; no leakage; exact allowlist.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V012",
+      "title": "Resource, stop and resume accounting",
+      "procedure": "Exercise quotas, source/model failure, schema repair, heartbeat, progress detection and durable pause/continuation.",
+      "acceptance": "All work including failures counted or unknown; no budget extension or deleted failed attempts.",
+      "kind": "runtime",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V013",
+      "title": "T0 neutral integrated engineering gate",
+      "procedure": "Freeze P1 source fixture/clock/tolerance and execute the existing scoped owner handoffs after authorization, with real bounded model and neutral image route.",
+      "acceptance": "Required V001–V012 evidence plus scoped P1 conditions; no ecological discovery or full-architecture claim.",
+      "kind": "integration",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    },
+    {
+      "id": "RP-V014",
+      "title": "T1 unguided Cedar pilot",
+      "procedure": "Fresh world/memory with exact mission and public files; EDI chooses investigation; close/yield; offline evaluation only afterward.",
+      "acceptance": "Integrity and original report retained; uncertainty allowed; no oracle coaching or one-run advantage claim.",
+      "kind": "integration",
+      "required": true,
+      "status": "specified_not_run",
+      "evidence_ref": null
+    }
+  ],
+  "runtime_or_inference_started": false
+}
+

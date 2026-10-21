@@ -51,6 +51,15 @@ class AgencyAccess:
 
 
 class Agency:
+    def benchmark_authority(self, grant, **identity):
+        """Explicit opt-in extension, after the native C7 store is initialized.
+
+        This method does not change or broaden the research-readonly policy.
+        The caller is the trusted operator/C0 composition, never model JSON.
+        """
+        from edi.agency.benchmark import BenchmarkAuthority
+        return BenchmarkAuthority(self.profile.database, grant, **identity)
+
     capability = Capability(owner="C7", functions=("F70", "F71", "F72", "F73"),
         state="implemented-unqualified", details="Partial C7: attributed information masks, explicit local policy adoption, scoped internal reads, durable command/receipt reconciliation, access review and candidate C3 policy proposals; no external actuator/authentication or runtime qualification")
 

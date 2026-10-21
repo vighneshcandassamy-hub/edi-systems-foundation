@@ -186,6 +186,12 @@ class CandidateChange(Record):
     put: Put
 
 
+class OperationProposal(Record):
+    """Data-only request to C0; never a grant, operator input or execution receipt."""
+    operation: Literal["world-call", "acquire-asset", "select-context", "analysis-compile", "analysis-run", "teacher-review", "yield"]
+    arguments: dict[str, JsonValue]
+
+
 class Response(Record):
     workspace_id: Identifier
     inquiry_id: Identifier
@@ -201,6 +207,7 @@ class Response(Record):
     tests: tuple[InquiryTest, ...] = Field(default=(), max_length=8)
     frontier: tuple[FrontierItem, ...] = Field(default=(), max_length=16)
     candidates: tuple[CandidateChange, ...] = Field(default=(), max_length=16)
+    operation_proposals: tuple[OperationProposal, ...] = Field(default=(), max_length=1)
     feedback_disposition: Literal["not-applicable", "retained-for-review", "challenged", "deferred"] = "not-applicable"
     input_tokens: int | None = Field(default=None, ge=0)
     output_tokens: int | None = Field(default=None, ge=0)
@@ -261,7 +268,7 @@ class Episode(Record):
     sequence: int = Field(ge=1)
     created_at: datetime
     updated_at: datetime
-    implementation: Literal["edi-c4/0.5.0"] = "edi-c4/0.5.0"
+    implementation: Literal["edi-c4/0.5.1"] = "edi-c4/0.5.1"
     profile_snapshot: dict[str, JsonValue]
     operating_profile: dict[str, JsonValue]
     context: Context

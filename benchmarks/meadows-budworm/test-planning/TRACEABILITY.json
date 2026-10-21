@@ -1,0 +1,167 @@
+{
+  "schema": "edi-runtime-plan-trace-v1",
+  "mission": "Connect existing EDI to an unguided controlled-world investigation without supplying the solution",
+  "requirement_type": "derived_test_integration_obligations_not_new_core_architecture",
+  "upstream_authority": {
+    "handoff": "benchmarks/meadows-budworm/TESTING_HANDOFF.md",
+    "implementation": "https://github.com/vighneshcandassamy-hub/edi-systems-foundation/blob/879452b8332a318ca76af4f84589b676b031f253/docs/implementation/C0_INTEGRATED_WORKFLOW.md"
+  },
+  "requirements": [
+    {
+      "id": "RP-R01",
+      "requirement": "Use the already-built EDI v0.9.0 and frozen world",
+      "parent_ids": [
+        "C0-W11"
+      ],
+      "allocation": "Source identity and compatibility",
+      "verification_ids": [
+        "RP-V001"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R02",
+      "requirement": "Unguided investigation with ordinary resources, no ecological handholding",
+      "parent_ids": [
+        "C0-W02"
+      ],
+      "allocation": "C0 scheduler and C4 selections",
+      "verification_ids": [
+        "RP-V007",
+        "RP-V014"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R03",
+      "requirement": "Native heterogeneous evidence with explicit limitations and provenance",
+      "parent_ids": [
+        "C0-W03"
+      ],
+      "allocation": "C1/C2 acquisition and native model views",
+      "verification_ids": [
+        "RP-V002",
+        "RP-V005"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R04",
+      "requirement": "Real bounded attributed inference with complete usage",
+      "parent_ids": [
+        "C0-W06"
+      ],
+      "allocation": "C4 gateway",
+      "verification_ids": [
+        "RP-V004",
+        "RP-V012"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R05",
+      "requirement": "Explicit action and objective authority",
+      "parent_ids": [
+        "C0-W05"
+      ],
+      "allocation": "C0/C7/world adapter",
+      "verification_ids": [
+        "RP-V003",
+        "RP-V008"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R06",
+      "requirement": "Durable continuation and honest unknown completion",
+      "parent_ids": [
+        "C0-W04"
+      ],
+      "allocation": "C0 ledger and owner/broker reconciliation",
+      "verification_ids": [
+        "RP-V010",
+        "RP-V012"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R07",
+      "requirement": "Operator/oracle isolation",
+      "parent_ids": [
+        "C0-W07"
+      ],
+      "allocation": "Deployment boundary",
+      "verification_ids": [
+        "RP-V011"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R08",
+      "requirement": "Prospective evidence and constructed-world clock separation",
+      "parent_ids": [
+        "C0-W09"
+      ],
+      "allocation": "C3/C5/C6 evidence lineage",
+      "verification_ids": [
+        "RP-V006",
+        "RP-V009"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R09",
+      "requirement": "Separate engineering, modeling and scientific claims",
+      "parent_ids": [
+        "C0-W11"
+      ],
+      "allocation": "Operator offline analysis",
+      "verification_ids": [
+        "RP-V013",
+        "RP-V014"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R10",
+      "requirement": "All source/public bounds and whole-task budgets retained",
+      "parent_ids": [
+        "C0-W06"
+      ],
+      "allocation": "All owner resource profiles",
+      "verification_ids": [
+        "RP-V003",
+        "RP-V012"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    }
+  ],
+  "case_ids": [
+    "RP-V001",
+    "RP-V002",
+    "RP-V003",
+    "RP-V004",
+    "RP-V005",
+    "RP-V006",
+    "RP-V007",
+    "RP-V008",
+    "RP-V009",
+    "RP-V010",
+    "RP-V011",
+    "RP-V012",
+    "RP-V013",
+    "RP-V014"
+  ],
+  "source_pin_ref": "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+}
+

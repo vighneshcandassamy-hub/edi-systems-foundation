@@ -1,0 +1,726 @@
+{
+  "schema": "edi-benchmark-package-v1",
+  "package_id": "EDI-MEADOWS-CW-DEV-0.2.1",
+  "package_version": "0.2.1",
+  "active_environment": "environment/v0_2",
+  "implementation_revision": "f041a89e7b955b8135d47ee41185acac2a363c77",
+  "implementation_pin_sha256": "7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+  "participant_files": [
+    "participant/PARTICIPANT.md",
+    "participant/PUBLIC_OPERATIONS.json",
+    "participant/client.py",
+    "participant/mission.json"
+  ],
+  "participant_mirrors": {
+    "participant/client.py": "environment/v0_2/client.py",
+    "participant/PUBLIC_OPERATIONS.json": "environment/v0_2/PUBLIC_OPERATIONS.json",
+    "participant/PARTICIPANT.md": "environment/v0_2/PARTICIPANT.md",
+    "participant/mission.json": "environment/v0_2/fixture/mission.json"
+  },
+  "files": [
+    {
+      "path": "BENCHMARK_SPEC.md",
+      "bytes": 6361,
+      "sha256": "03e03d14ef57d8e0f1ea1adda748388fa13abe832bea2125cc15e57fb24b996f",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "READINESS.json",
+      "bytes": 562,
+      "sha256": "6ded21acf6fc11166cbc3665014754ae57ea608e854b0b6d1c24a356059763a1",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "READINESS.md",
+      "bytes": 1928,
+      "sha256": "5cee1160aef21df133d64633932d5a35ec031b453b0bb458c0a4c08c1f15bd98",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8107,
+      "sha256": "047b2c3e0c8c56fff928096ca26a74467b945b10498989523d4d6605de27b32c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "SHA256SUMS",
+      "bytes": 4376,
+      "sha256": "fb0127fc9494e9b6e1787a02567a8f21456e71dd53ef88be0f85997ee086922c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "TESTING_HANDOFF.md",
+      "bytes": 2717,
+      "sha256": "fc2ed323850e3bdb5d4052380a19610423f32c787af3b94fc6a61c9945323c2f",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "data/derived/balsam_fir.txt",
+      "bytes": 44264,
+      "sha256": "d86c03c5b7143fc9f09053c183d5a63e3be7aafbffcfdac9ce00b8c66955480a",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/black_spruce.txt",
+      "bytes": 44260,
+      "sha256": "6b9fb0c2bcb4e12883e164d34d5694c0848c3234664f1da1f1a3c27bf4d178ee",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_annual_chart.png",
+      "bytes": 64935,
+      "sha256": "5e762534227b33b52a8a252ec91d86ca7e43a12f5d7cbfd8a800a037279332e6",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_annual_chart.svg",
+      "bytes": 50769,
+      "sha256": "e97e75272d8325fab4168222e1daff24be359a368f6f0324d83cba5956e639ea",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_annual_summary.csv",
+      "bytes": 418,
+      "sha256": "a96635b0f841be303116dc600b28812af63a8aaabb039c2f2a5e0f56f18d6cb7",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_locations.png",
+      "bytes": 58245,
+      "sha256": "f357e9935ef4bf5587bc5b710071e4138ff771c7726b1cfddf0ec2b0d50d7542",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_measurements.npz",
+      "bytes": 371442,
+      "sha256": "a7730b3b9f45dfd7861862e823c897430c62298ddd38f4b1f865fc8e6ba80201",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_records.jsonl.gz",
+      "bytes": 1218431,
+      "sha256": "22c24b35b625a9acd46e71d51af47ce094ae23fe256d902fd1c1692446164d42",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_sample.xml",
+      "bytes": 91889,
+      "sha256": "d6a57bfb7603c7f46ba88ec964e0f90a5fc8563779dcac81953111f0de375109",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_sonification.wav",
+      "bytes": 115244,
+      "sha256": "7397c50c62d4cd9544737b2c3bec258d61711f9680155de100a2a38ee38a9d56",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_timeline.gif",
+      "bytes": 48099,
+      "sha256": "331cbf177951fc30add9bd0c3914a46f0d694a819dfbf041917f8a4f111bb79f",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/l2_timeline.mp4",
+      "bytes": 14286,
+      "sha256": "97d3ffd5cb9291543be5a6d318e2d64c7f865a9e3916ce67900be50728c213f2",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/maine_embedded_photo.jpeg",
+      "bytes": 126729,
+      "sha256": "35b2400443c362d9b4e4d5c37511bd38905fd2d66c1d159f8082650276a75982",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/maine_page_03.png",
+      "bytes": 281232,
+      "sha256": "dcce7e8245e52d83119e7e154ede3c04982b05516fc20bb833f1fba0e36f3c63",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/maine_page_10.png",
+      "bytes": 242812,
+      "sha256": "5ffc37728ef3045c396dd241c68f71cfa8fe6652228a97e7435f8e7a9ec58620",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/maine_report_text.txt",
+      "bytes": 26887,
+      "sha256": "a51a23f1be5ebac572d2c42d6e01ad0d1d48467455e48ba0ab6daa08a73ceb83",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/derived/observation_card.html",
+      "bytes": 2096,
+      "sha256": "7c7c0db3b67ddec8e91727210f31e2a7cd1f2b6ec2109f3b9fb7a2c11a915471",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/balsam_fir.html",
+      "bytes": 94891,
+      "sha256": "408ee0b0d88c855dab592c308a431357e45fe09b0c0bc00770dfcd505b35384b",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/black_spruce.html",
+      "bytes": 98160,
+      "sha256": "b6fbd3cb30696892c47428b214e8d2817b2b437b078645537a64f27b698cb7fe",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/l2.csv.gz",
+      "bytes": 551250,
+      "sha256": "70780be0a4a01a52d0dcb377314af126aa41c775131321d0e3fa1c6b85e04209",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/l2_metadata.json",
+      "bytes": 36302,
+      "sha256": "9cebcbf7b222cb9ab79843fa3fc94f6f0551f955aec00bfec9dd36d3fbd13045",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/l2_native.geojson.gz",
+      "bytes": 647755,
+      "sha256": "62a2fea0c24e314cbd6bb6ab0f832510ccac3779169af9f020519e470ef60155",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/larval_study.xlsx",
+      "bytes": 224592,
+      "sha256": "118108b9cc940a8e1ae717cadfbded4f4d22d48798d4ab11ec6d0f6022bff54d",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/maine_report.pdf.gz",
+      "bytes": 2293271,
+      "sha256": "01d5f6715f630a62d17b0f53b7467bedddb8e55d0fe152ff693873772b5266ce",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/pheromone.csv",
+      "bytes": 142063,
+      "sha256": "b8da9a8b90b7511521520832dfb23ff723136748a9115b18aa3a0b789042875c",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/pheromone_metadata.json",
+      "bytes": 22697,
+      "sha256": "8a6866a023a3ef2b97266fe47a2c0b3c349fd9b666cbd957affde985dcc09bc0",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/weather.json.gz",
+      "bytes": 25554,
+      "sha256": "456802d941111fe832775bc8b07f2cd369373963003a323ecb7e11170f38171f",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "data/raw/weather_collection.json",
+      "bytes": 3154,
+      "sha256": "8d94adca04db36bb00ab065edd0c308145e423981fd4ab4bd10bf19e94c812e1",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "database/evidence.sqlite.gz",
+      "bytes": 3754982,
+      "sha256": "ed9a3da935b58f340a961153e37649792abe557728684fcd86385fdf61f93698",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "database/schema.sql",
+      "bytes": 2022,
+      "sha256": "dd1a22a8812312f48f8e57c60473d9b5d0052385328aa98715036e3ad66ced20",
+      "access_class": "broker_only_evidence"
+    },
+    {
+      "path": "docs/CORPUS_CONTRACT.md",
+      "bytes": 3357,
+      "sha256": "034351f418d16e7f75d73395e23555a8d7c49c3f8394b058c0b67a7300fdbe7c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "docs/COVERAGE.md",
+      "bytes": 4021,
+      "sha256": "15fca4af17bc11de62bb6cdda10399c78461a082d5388d66c6d73d1e9a384110",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/DEVELOPMENT_LOG.md",
+      "bytes": 1408,
+      "sha256": "f536064ddd4966e5758ea6781d05ef5a5788b3c3a0f0b66af5718b3b142856c7",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/PLAN.md",
+      "bytes": 6450,
+      "sha256": "91dfd539d84881ab87db9435c7748b8d9b043a0de0f181ac0aa1889bf6998e79",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/README.md",
+      "bytes": 7159,
+      "sha256": "b0e0a5e0d7302b243cdee1d74424099ad6592eadb16b324e63f4115158bcfdac",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/REQUIREMENTS.json",
+      "bytes": 4347,
+      "sha256": "e7a9cc4eda557fb621ddf705490f37ab485cb318c85cda8e3b3e6ed9de7f0ebe",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/audit_reachability.py",
+      "bytes": 10273,
+      "sha256": "d881f9bcbbee3ed0cb8a4361b28af177c5ff119d02f0387814234034e6bc955f",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/broker.py",
+      "bytes": 13993,
+      "sha256": "89beb5b640ecf03d854a0b6c3bc378d6960678681a70619914ba1bb0a6739a24",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/build.py",
+      "bytes": 21426,
+      "sha256": "0de4689f81a6b5e5cd3476cfe4b8ec29a85835e9150cc9a398313108f362a546",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/client.py",
+      "bytes": 1187,
+      "sha256": "416d9a2640504480b3b38b2f32c1373c2ba3ca98ed8e6cf8f46463d305d68c9a",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/evaluate.py",
+      "bytes": 2966,
+      "sha256": "0c0c2c679f08070d28419117b4253dd502642a824c6371d93fb1f774d3856059",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/evaluator/evaluator.sqlite.gz",
+      "bytes": 48609,
+      "sha256": "98a3966b24fc3be24db861f221849bf01e1f10a93829ae61728c80731fa0afaf",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/evaluator/labels.json",
+      "bytes": 41230,
+      "sha256": "c6bedb350e548de7a4016c94f755ca6b505b47e96709f6468c73c72ad0512c58",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/initial/initial.sqlite.gz",
+      "bytes": 16310,
+      "sha256": "43c9083654fb5881374238333fabbb78c87fa0643fbd6bec8a21d85b7631e25a",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/investigation/investigation.sqlite.gz",
+      "bytes": 109916,
+      "sha256": "6e0332228172e24ee939d042367ab1b8583b1f5a43e12823557da78da904614a",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/manifest.json",
+      "bytes": 1585,
+      "sha256": "83aeb287c56a3025706aaeba6af2ff9ba3d2538e7f198d541f8f5a1227198820",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/participant/README.md",
+      "bytes": 1821,
+      "sha256": "09151fdd0131af5e09a4587824bc517805cc55b5304d1f160c538222873db19f",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/participant/client.py",
+      "bytes": 1187,
+      "sha256": "416d9a2640504480b3b38b2f32c1373c2ba3ca98ed8e6cf8f46463d305d68c9a",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/participant/initial.sqlite",
+      "bytes": 143360,
+      "sha256": "145c89c2f7dee3229e0084b7cf2c910aac08f96c7ce0b54a82bc85f833366a0f",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/participant/manifest.json",
+      "bytes": 673,
+      "sha256": "b8a5c930526e876802c2df75763b36cd04600762481b21da09f9cc4b55920cd1",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/participant/mission.json",
+      "bytes": 1865,
+      "sha256": "6be455e2dd0d1bc7fd4ed1f2c163bbb5d7dce1c9700ad0a25b9c7f615f01d7bb",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/reports/NOISE_AUDIT.json",
+      "bytes": 318,
+      "sha256": "20b2b8d6624c2157398242583d3c5dbc5fec1df3830392948cf5a681356b68b9",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/fixture/reports/VALIDATION.json",
+      "bytes": 1681,
+      "sha256": "c339968170221c3852bab16d73e57b1a1708d3923d72835630b4963bda3715db",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/reports/BUILD_PIN.json",
+      "bytes": 813,
+      "sha256": "a7d84f5674b4dcec073cc5de02e23416b1228befc2f15c499d9b5c64a1a8d5ff",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/reports/COMPONENT_REVIEW.json",
+      "bytes": 5062,
+      "sha256": "27e1454e028a74296baf25ddf33fc46fb3209aaea066f1a4ecf632bf24fc02d9",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/reports/INTERFACE_REVIEW.json",
+      "bytes": 13421,
+      "sha256": "f45264713b0a836e472cd3d3a884ea90c9b97e0dd847a147970fa20a588bfa7a",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/reports/RELEASE_CHECKS.json",
+      "bytes": 469,
+      "sha256": "f0e90f1ab4eb6df4494c3735929abab08100323130e64e546a2de3bc2292cc06",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/reports/TRACE_CHECK.json",
+      "bytes": 210,
+      "sha256": "5fc0494e8da5a75bd0b49ea72e83742b8170f4d08159c2ddcecf86def2c60b1c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/restore_environment.py",
+      "bytes": 1174,
+      "sha256": "c4e36581958f370a6a9b99117e8e86d16a6d7167300185f8a3289bbf81ebdeef",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/verify_environment.py",
+      "bytes": 9787,
+      "sha256": "1f3b29952d1c9fae60ee4fce62f914e744b03feb80de6a789d5c939eb9cc7dee",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_1/world.py",
+      "bytes": 3609,
+      "sha256": "fc65a85f5e85d7527a9fb7d1a31b0b075c3a370ff12ddd649b2f9cf50ceefb8a",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/PARTICIPANT.md",
+      "bytes": 3688,
+      "sha256": "3d439eb798e6ee65a656c359bbae1c703cffc73e35bdb0b777006a494b8d82fe",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/PLAN.md",
+      "bytes": 2454,
+      "sha256": "3d9731cfd5a70181b2e39986fd07af7ebb461281900e398edd067b00182d5a0c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/PUBLIC_OPERATIONS.json",
+      "bytes": 6674,
+      "sha256": "793a0b04b3ff11caa2b9904fa7bb4d011bba49f77d3e603ecc95d26dc4fdcb52",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/README.md",
+      "bytes": 6441,
+      "sha256": "8a3a9b9f1e1b5332d6ad41f0f037e08d10827b998335af137ce0135947da9a84",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/REQUIREMENTS.json",
+      "bytes": 4848,
+      "sha256": "b5cab7ba6f36cce19140129b4411b57c07181bef998c604224531b6cb949b08e",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/RESOURCE_CATALOGUE.json",
+      "bytes": 51493,
+      "sha256": "7b09cd5c8632f16041955dac629b3759b7cfb5372fca4c1a7b9d8f5218e1cfb5",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/broker.py",
+      "bytes": 21869,
+      "sha256": "a3837ad2c4aacc82ff27cc6dabc54b906a83a567c8e963aac0836ca10bf26e90",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/build.py",
+      "bytes": 15000,
+      "sha256": "39a3f6822104cc6b5f40c1351f7c5b94f5cd723b0fc308f96c23546045a19255",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/client.py",
+      "bytes": 1201,
+      "sha256": "8e4f455240e99d8baed7bd76246edf06642581f6883abdc4e981a14aec793f73",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/evaluate.py",
+      "bytes": 2094,
+      "sha256": "47cd2bebbcbd9333a3bc52545f9bbd6b6f74a0609d69d64948a00003bb129471",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/export_participant.py",
+      "bytes": 989,
+      "sha256": "f3b8d9c9f4f2f70ec9ce8496f42bb1a5471d8c33d55e5ca1690f74587d3d9b5e",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/fixture/archive.sqlite.gz",
+      "bytes": 173449,
+      "sha256": "daf8886d53d4ff1ea8bb87234dc27fd264569305cea0640a740bfb5dc2f2e821",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/fixture/initial_state.json",
+      "bytes": 4225,
+      "sha256": "9c35b4b94de7eecfab79b27610f97d28258d77f75bfdec22205d444af087785c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/fixture/manifest.json",
+      "bytes": 1337,
+      "sha256": "d1603fbdeba0bb480481ff2a93d7ba2974aeaaec7116570592f4f474a137f654",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/fixture/mission.json",
+      "bytes": 788,
+      "sha256": "017c11c65b98264027ec1a9d6d1db6b8d87d3860f0e339c52809ce97708e72d9",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/reports/BUILD_PIN.json",
+      "bytes": 1720,
+      "sha256": "7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/reports/COMPONENT_REVIEW.json",
+      "bytes": 8882,
+      "sha256": "fc5b07941d364598825591dc37d338cb4a02eb01d9cd57028d23fad7a31b09a3",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/reports/INTERFACE_REVIEW.json",
+      "bytes": 23504,
+      "sha256": "c456f323bb5f7b2b3fea47048cc948c10d2e3c14bd0ea63446ebeb75e79103d3",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/reports/REVIEW_CHECKS.json",
+      "bytes": 401,
+      "sha256": "52abb71479d70e19a0dd3ac5a3569edbb973d7fcf8f3c51eb0fa58a4d887cd61",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/reports/TRACE_CHECK.json",
+      "bytes": 152,
+      "sha256": "56be6367e7056dc88fd68868e9ad0d5c45c2e15293ce271488235bb508319081",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/reports/VALIDATION.json",
+      "bytes": 2928,
+      "sha256": "0796eade1a9bdb9f91b2651e347cddd2c913fed02f99059621116f47a128afee",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/verify.py",
+      "bytes": 12765,
+      "sha256": "55ddae465cd97ddf70439ccca0e58f2d74e4162848bf8d0d21ef2cb6f1ac9e54",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "environment/v0_2/world.py",
+      "bytes": 4438,
+      "sha256": "a05748dac2d911e718b80459fafe4f827a5af4ea71baff0e94486bfaadf918cd",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/IMPORT_STATUS.json",
+      "bytes": 1215,
+      "sha256": "f666d515fdd9091d9b9a2dd5ce198cbe94db1b9ac3d577ec7bc7d19f8ccf9d69",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/INTERFACE_CHECKS.json",
+      "bytes": 283,
+      "sha256": "64775250e6223f9d673eca5c938c123accdee7ce20a3c287997b1bf9e5d9fa25",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/INTERFACE_REVIEW.json",
+      "bytes": 8860,
+      "sha256": "5793319f2e72dc785271be3a4ef07bec80d50e20f3b463bb3c426b8d99e79d4e",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/STORAGE.json",
+      "bytes": 9598,
+      "sha256": "4a74096c94b4964c33aac1de15dbd063eedb64b4ca9d2f01f3a4f52f80cac950",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/VALIDATION.json",
+      "bytes": 527,
+      "sha256": "1eb6161f3f470866f4f1708af9d2675376347ccbcdaa7ec53df83a8007ccbcdb",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/acquisition_log.json",
+      "bytes": 5273,
+      "sha256": "e5737caf2774b41953622de9c4c84782f53280c735eb5d29ec49be39cc4f2735",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/files.json",
+      "bytes": 12306,
+      "sha256": "6344b8195cd2d832d274aa2cfd274efb52ad3abf2992b8260b5d493952c7cbc9",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/source_issues.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "metadata/sources.json",
+      "bytes": 3334,
+      "sha256": "666de88ae541e7f9e843d473ac78fc5d64308e88bda275c157511297c2da5600",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "operator-audit/INTERLUDE_COVERAGE.json",
+      "bytes": 5312,
+      "sha256": "ca3e67700d59f58e2a4eadc4623b84b34e8f6164e2d8f7d2d8ea61633d48bd86",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "operator-audit/REACHABILITY.json",
+      "bytes": 85954,
+      "sha256": "ea973bf0044d24c80df766bb70105a4d141c532de0272947b20636da5970e645",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "operator-audit/README.md",
+      "bytes": 14660,
+      "sha256": "87b1948ae399a9f674dcbb91d523bd6b1dd6f0564ea1e1a4e2ccdf072bb18c4c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "operator/README.md",
+      "bytes": 1573,
+      "sha256": "f70f05f0958631253e11d9a2c0cdb06d066d69b20bdc219aed141a7756b6951c",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "participant/PARTICIPANT.md",
+      "bytes": 3688,
+      "sha256": "3d439eb798e6ee65a656c359bbae1c703cffc73e35bdb0b777006a494b8d82fe",
+      "access_class": "participant_start"
+    },
+    {
+      "path": "participant/PUBLIC_OPERATIONS.json",
+      "bytes": 6674,
+      "sha256": "793a0b04b3ff11caa2b9904fa7bb4d011bba49f77d3e603ecc95d26dc4fdcb52",
+      "access_class": "participant_start"
+    },
+    {
+      "path": "participant/client.py",
+      "bytes": 1201,
+      "sha256": "8e4f455240e99d8baed7bd76246edf06642581f6883abdc4e981a14aec793f73",
+      "access_class": "participant_start"
+    },
+    {
+      "path": "participant/mission.json",
+      "bytes": 788,
+      "sha256": "017c11c65b98264027ec1a9d6d1db6b8d87d3860f0e339c52809ce97708e72d9",
+      "access_class": "participant_start"
+    },
+    {
+      "path": "results/README.md",
+      "bytes": 666,
+      "sha256": "34bbfa964222bc43f56dc3f704b1c689818d89a16a5155e8bc651dac391aa3d9",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "scripts/build_corpus.py",
+      "bytes": 29445,
+      "sha256": "5dcc49e07e29aa5f9a8b5bc0efc0ba7ba4d2a1f64eba9cfd884a5c2e357f568e",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "scripts/package.py",
+      "bytes": 2795,
+      "sha256": "410e28c43a098b4b3eafda23a38e8e839b5ab1a7a547a02f33d1e4d157699d9b",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "scripts/query.py",
+      "bytes": 4156,
+      "sha256": "596db56a20dc956af29b1d7a9bb1300fd4cc73ce3210a3ab0f99d4bd6b616350",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "scripts/restore.py",
+      "bytes": 1289,
+      "sha256": "a1aea8d0bb1c49037ee41cf45e24ceba308c10bfd2280cef1e15216ebb2d0c73",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "scripts/verify.py",
+      "bytes": 4867,
+      "sha256": "5de273f84c6eeb757f264863d299cb9a9fa4e014e1c283e194cedcc6ccacd3d8",
+      "access_class": "operator_package"
+    },
+    {
+      "path": "scripts/verify_benchmark_package.py",
+      "bytes": 5579,
+      "sha256": "7a31867f43e336e072ac57e3a6c91349dcb1d0699347f174c2268111a40b4074",
+      "access_class": "operator_package"
+    }
+  ],
+  "navigation_documents": [
+    "README.md",
+    "BENCHMARK_SPEC.md",
+    "READINESS.md",
+    "TESTING_HANDOFF.md",
+    "operator/README.md",
+    "results/README.md"
+  ],
+  "excluded_generated_or_self_referential": [
+    "PACKAGE_MANIFEST.json",
+    "metadata/PACKAGE_CHECKS.json"
+  ],
+  "dependencies": {
+    "restore": "scripts/restore.py",
+    "package_checker_python": ">=3.11 (sqlite deserialize)",
+    "runtime": "Python standard library; existing native source files or their preserved gzip forms",
+    "rebuild": "Additional original-corpus build libraries and Pillow; see original build docs"
+  },
+  "distribution": "Owner-only complete package. Participant gets only participant_files and later public broker access. No credentials or run journals included.",
+  "results_status": "No participant or comparative run has started."
+}

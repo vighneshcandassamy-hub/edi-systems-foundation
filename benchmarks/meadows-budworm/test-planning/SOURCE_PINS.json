@@ -1,0 +1,238 @@
+{
+  "schema": "edi-test-plan-sources-v1",
+  "date": "2026-10-21",
+  "repository": "vighneshcandassamy-hub/edi-systems-foundation",
+  "implementation": {
+    "branch": "architecture/implementation-tradeoffs-20261020",
+    "commit": "879452b8332a318ca76af4f84589b676b031f253",
+    "code_version": "0.9.0",
+    "entrypoint": "edi = edi.cli:main",
+    "source_state": "source_present_not_runtime_qualified",
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "git_blob_sha": "e61c32ced9b48915035eb889d3b91671c4e0bded",
+        "bytes": 1560
+      },
+      {
+        "path": "WORKFLOW.md",
+        "git_blob_sha": "7e959749159ab206c554e89e0ab0ffe3858e431e",
+        "bytes": 1133
+      },
+      {
+        "path": "README.md",
+        "git_blob_sha": "7fcab375d09674b09b683593b329cadd62c4d620",
+        "bytes": 10762
+      },
+      {
+        "path": "STATE.md",
+        "git_blob_sha": "a7bcda758a60ef8e93e8d3cec9f7bdc9e35503b1",
+        "bytes": 31850
+      },
+      {
+        "path": "pyproject.toml",
+        "git_blob_sha": "14e4cb3b1959dc59d8365bcad48b93b1bc2b3157",
+        "bytes": 618
+      },
+      {
+        "path": "architecture/README.md",
+        "git_blob_sha": "711a4ab089ecbec052fccfefec5e25b4f4f353d7",
+        "bytes": 2987
+      },
+      {
+        "path": "architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md",
+        "git_blob_sha": "d7c69357d6bb29c3367b33bfcc6f7b4e792150a6",
+        "bytes": 531133
+      },
+      {
+        "path": "docs/implementation/INTEGRATION_READINESS.md",
+        "git_blob_sha": "0bc145965a70e6077320ab56a3e2e3829761819c",
+        "bytes": 5179
+      },
+      {
+        "path": "docs/implementation/INTEGRATED_TEST_DESIGN.md",
+        "git_blob_sha": "3efcf091569539b35fb8f4e6b9e4a7b3581ff4c1",
+        "bytes": 20069
+      },
+      {
+        "path": "docs/implementation/C0_INTEGRATED_WORKFLOW.md",
+        "git_blob_sha": "69c5809ccfb8d3ace11d7c14eddf2646a03dcc83",
+        "bytes": 13911
+      },
+      {
+        "path": "docs/implementation/C4_REASONING_RUNTIME.md",
+        "git_blob_sha": "bb622e3dcb5e407f8eb1c5fe94797df1f1a876e9",
+        "bytes": 21693
+      },
+      {
+        "path": "docs/implementation/C3_WORLD_RUNTIME.md",
+        "git_blob_sha": "f84e6558fe13fc2408ffb0d167ee5b13e882589f",
+        "bytes": 24996
+      },
+      {
+        "path": "docs/implementation/C7_AGENCY_RUNTIME.md",
+        "git_blob_sha": "6430d073c36c38e9245b1c3122441dc273e1a5e0",
+        "bytes": 28882
+      },
+      {
+        "path": "docs/implementation/CONTRACTS.md",
+        "git_blob_sha": "d421d809097cddda6bb8b7e8d7ce7091aa2b4beb",
+        "bytes": 22320
+      },
+      {
+        "path": "docs/implementation/INTERFACES.json",
+        "git_blob_sha": "471dd685006b3c9ec299d235fddba69b13037e09",
+        "bytes": 110456
+      },
+      {
+        "path": "src/edi/cli.py",
+        "git_blob_sha": "a321b40ae83c5fc4f8d80ec866f07d88eb869ae5",
+        "bytes": 22177
+      },
+      {
+        "path": "src/edi/inquiry/runtime.py",
+        "git_blob_sha": "34c941e04c7a526c0e76073c9e750cd8b7ebf32f",
+        "bytes": 13212
+      },
+      {
+        "path": "src/edi/inquiry/workflow.py",
+        "git_blob_sha": "7e6b7bc97fc90a3280cbaa6e53e0e9d2119317c7",
+        "bytes": 21727
+      },
+      {
+        "path": "src/edi/inquiry/contracts.py",
+        "git_blob_sha": "034e0593b79df809ac2ce51dc4c933b2629bef97",
+        "bytes": 4046
+      },
+      {
+        "path": "src/edi/reason/ports.py",
+        "git_blob_sha": "a9682914e0e207fbae50e7fb4d1d36942730ce23",
+        "bytes": 589
+      },
+      {
+        "path": "src/edi/reason/contracts.py",
+        "git_blob_sha": "51ce1518b93e8781e7c57458dcac714122a4aea8",
+        "bytes": 10003
+      },
+      {
+        "path": "src/edi/reason/service.py",
+        "git_blob_sha": "0a0dc66aca47a102dbf0439a3271617f664daccc",
+        "bytes": 31028
+      },
+      {
+        "path": "src/edi/reason/config.py",
+        "git_blob_sha": "b2ef8657f3bd37fd340b03fde85b83d0db352bfb",
+        "bytes": 1226
+      },
+      {
+        "path": "src/edi/reason/protocol.py",
+        "git_blob_sha": "68be9c7f3876cedc8c141c63c51fdc8302df5e31",
+        "bytes": 3543
+      },
+      {
+        "path": "src/edi/interpret/decoders.py",
+        "git_blob_sha": "aedfdeeae2585fcf32c2bfbc811cf786440cdd0b",
+        "bytes": 6462
+      },
+      {
+        "path": "src/edi/agency/contracts.py",
+        "git_blob_sha": "52ea17e572656b7638e4c4a537b4b08e0bce4fab",
+        "bytes": 13636
+      },
+      {
+        "path": "src/edi/agency/service.py",
+        "git_blob_sha": "5843766726ec7af5efa53fb40d466fe1a67a5d1e",
+        "bytes": 30531
+      },
+      {
+        "path": "src/edi/analyze/service.py",
+        "git_blob_sha": "ca751ab236aae137eaa6ef38c48625238209180c",
+        "bytes": 21461
+      }
+    ]
+  },
+  "benchmark": {
+    "branch": "main",
+    "commit": "0827e05b2ff2d16ee6803067827a7ac83de6d069",
+    "package_id": "EDI-MEADOWS-CW-DEV-0.2.1",
+    "world_implementation_commit": "f041a89e7b955b8135d47ee41185acac2a363c77",
+    "build_pin_sha256": "7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+    "files": [
+      {
+        "path": "benchmarks/meadows-budworm/TESTING_HANDOFF.md",
+        "git_blob_sha": "ac4b8b1e6c9abbc9b47288969ff04f5eb689284f",
+        "bytes": 2717
+      },
+      {
+        "path": "benchmarks/meadows-budworm/PACKAGE_MANIFEST.json",
+        "git_blob_sha": "2800671cefeea10a900cb33f8bed462227e4f5fb",
+        "bytes": 25559
+      },
+      {
+        "path": "benchmarks/meadows-budworm/participant/mission.json",
+        "git_blob_sha": "45d9b6562c423412fd6f80363f68aa2db38d43d0",
+        "bytes": 788
+      },
+      {
+        "path": "benchmarks/meadows-budworm/participant/PUBLIC_OPERATIONS.json",
+        "git_blob_sha": "6dee53f3e58a2911310935a9cf08ba5c992347cc",
+        "bytes": 6674
+      },
+      {
+        "path": "benchmarks/meadows-budworm/environment/v0_2/broker.py",
+        "git_blob_sha": "e906fbede98927954b538bae99cf31b5e2f2ddf3",
+        "bytes": 21869
+      },
+      {
+        "path": "benchmarks/meadows-budworm/environment/v0_2/reports/BUILD_PIN.json",
+        "git_blob_sha": "e91ff7953306037eddb908aa7652c58b6e7be302",
+        "bytes": 1720
+      },
+      {
+        "path": ".agents/skills/edi-component-review/SKILL.md",
+        "git_blob_sha": "3d784faa907f1b6a675fa21a3d13086ad97cb60e",
+        "bytes": 7535
+      },
+      {
+        "path": ".agents/skills/edi-interface-review/SKILL.md",
+        "git_blob_sha": "6cfb9ee185d2281573ed585c1ca6a2cb74388713",
+        "bytes": 4745
+      },
+      {
+        "path": "benchmarks/meadows-budworm/environment/v0_2/fixture/initial_state.json",
+        "git_blob_sha": "d877c74c7f8ffbc4956ebef53e01d1633ba0aa72",
+        "bytes": 4225
+      },
+      {
+        "path": "benchmarks/meadows-budworm/environment/v0_2/fixture/manifest.json",
+        "git_blob_sha": "ea184640b296113b512db113cecbd0fab08948b7",
+        "bytes": 1337
+      }
+    ]
+  },
+  "source_evidence": {
+    "main_and_implementation_are_different_lines": true,
+    "implementation_not_merged_by_plan": true,
+    "implementation_source_python_files": 59,
+    "scope": "Pinned source inspection, not code execution or qualification"
+  },
+  "technical_references": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "basis": "Publisher text/image input and vLLM serving instructions; model candidate only"
+    },
+    {
+      "url": "https://docs.vllm.ai/en/v0.21.0/models/supported_models/",
+      "basis": "Qwen3VL architecture support; actual serving build not yet pinned"
+    },
+    {
+      "url": "https://docs.docker.com/engine/network/",
+      "basis": "container network namespace sharing and loopback binding"
+    },
+    {
+      "url": "https://docs.docker.com/engine/network/drivers/none/",
+      "basis": "No external interface profile"
+    }
+  ]
+}
+

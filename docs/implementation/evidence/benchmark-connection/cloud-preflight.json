@@ -1,0 +1,65 @@
+{
+  "schema": "edi-benchmark-host-preflight-v1",
+  "scope": "read_only_host_and_launch_prerequisites",
+  "host_os": "Linux",
+  "python_executable": "/workspace/scratch/579b095a2a54/edi-execution/.venv/bin/python",
+  "checks": [
+    {
+      "id": "python",
+      "passed": true,
+      "observed": "3.12.14"
+    },
+    {
+      "id": "pydantic",
+      "passed": true,
+      "observed": "2.12.5"
+    },
+    {
+      "id": "linux_container_daemon",
+      "passed": false,
+      "observed": {
+        "exit_code": null,
+        "error": "FileNotFoundError"
+      }
+    },
+    {
+      "id": "gpu_capacity_allowance",
+      "passed": false,
+      "observed": {
+        "exit_code": null,
+        "error": "FileNotFoundError"
+      },
+      "target": "48000 MiB provisional preparation allowance, not measured model fit"
+    },
+    {
+      "id": "student_vllm",
+      "passed": false,
+      "observed": "not installed"
+    },
+    {
+      "id": "teacher_credential",
+      "passed": false,
+      "observed": "not configured",
+      "required": true
+    },
+    {
+      "id": "pinned_model_artifacts",
+      "passed": false,
+      "observed": "requires exact artifact manifest and neutral real inference/processor check"
+    },
+    {
+      "id": "deployment_isolation",
+      "passed": false,
+      "observed": "requires negative probes of actual launched containers"
+    },
+    {
+      "id": "constructed_forecast_profile",
+      "passed": false,
+      "observed": "unscored C4 hypotheses retained; native C6 constructed-world eligibility not qualified"
+    }
+  ],
+  "ready_for_live_pilot": false,
+  "model_inference_started": false,
+  "teacher_required": true,
+  "token_values_recorded": false
+}

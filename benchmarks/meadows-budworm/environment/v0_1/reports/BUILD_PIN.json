@@ -1,0 +1,13 @@
+{
+  "code_sha256": {
+    "broker.py": "89beb5b640ecf03d854a0b6c3bc378d6960678681a70619914ba1bb0a6739a24",
+    "build.py": "0de4689f81a6b5e5cd3476cfe4b8ec29a85835e9150cc9a398313108f362a546",
+    "client.py": "416d9a2640504480b3b38b2f32c1373c2ba3ca98ed8e6cf8f46463d305d68c9a",
+    "evaluate.py": "0c0c2c679f08070d28419117b4253dd502642a824c6371d93fb1f774d3856059",
+    "restore_environment.py": "c4e36581958f370a6a9b99117e8e86d16a6d7167300185f8a3289bbf81ebdeef",
+    "verify_environment.py": "1f3b29952d1c9fae60ee4fce62f914e744b03feb80de6a789d5c939eb9cc7dee",
+    "world.py": "fc65a85f5e85d7527a9fb7d1a31b0b075c3a370ff12ddd649b2f9cf50ceefb8a"
+  },
+  "fixture_manifest_sha256": "83aeb287c56a3025706aaeba6af2ff9ba3d2538e7f198d541f8f5a1227198820",
+  "source_corpus_commit": "489454450b11102ac590900f9c3962a8ee39acb5"
+}

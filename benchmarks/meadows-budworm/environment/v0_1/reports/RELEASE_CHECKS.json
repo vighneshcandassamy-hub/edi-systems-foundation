@@ -1,0 +1,17 @@
+{
+  "component_report_consistent": true,
+  "interface_inventory_consistent": true,
+  "actual_engineering_campaign_passed": true,
+  "requirement_links_checked": 10,
+  "compressed_fixture_restore_verified": true,
+  "participant_export_file_count": 5,
+  "participant_export_includes_only": [
+    "README.md",
+    "client.py",
+    "initial.sqlite",
+    "manifest.json",
+    "mission.json"
+  ],
+  "original_corpus_unchanged": true,
+  "model_or_human_benchmark_run": false
+}

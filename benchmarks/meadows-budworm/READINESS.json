@@ -1,0 +1,16 @@
+{
+  "package_id": "EDI-MEADOWS-CW-DEV-0.2.1",
+  "package_version": "0.2.1",
+  "active_world": "0.2",
+  "status": "consolidated_for_test_planning",
+  "environment_engineering": "retained_14_scoped_checks_passed",
+  "edi_adapter": "pending",
+  "isolated_participant_deployment": "pending",
+  "edi_run": "not_run",
+  "human_run": "not_run",
+  "comparative_run": "not_run",
+  "test_protocol": "not_frozen",
+  "ecological_historical_validity": "not_established",
+  "full_model_resource_accounting": "not_measured",
+  "package_check": "metadata/PACKAGE_CHECKS.json"
+}

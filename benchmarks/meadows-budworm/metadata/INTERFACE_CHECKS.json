@@ -1,0 +1,11 @@
+{
+  "scope": "interface_inventory_consistency_only",
+  "semantics_independently_verified": false,
+  "component_count": 3,
+  "pair_count": 3,
+  "directed_lane_count": 6,
+  "contract_count": 4,
+  "feedback_groups": [["IMPORT", "READ", "STORE"]],
+  "consistent": true,
+  "errors": []
+}

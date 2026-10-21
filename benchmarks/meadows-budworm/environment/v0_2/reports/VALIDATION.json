@@ -1,0 +1,104 @@
+{
+  "scope": "Single-host constructed environment engineering integration; scripted client, no reasoning agent",
+  "passed": true,
+  "checks": [
+    {
+      "id": "V01",
+      "status": "pass",
+      "detail": "Archive/gzip/assets, clean compressed restore, configuration guard and preserved original corpus hashes"
+    },
+    {
+      "id": "V02",
+      "status": "pass",
+      "detail": "Bounded histories and direct, method-dependent non-target pathway; not ecological calibration"
+    },
+    {
+      "id": "V03",
+      "status": "pass",
+      "detail": "Authentication, private route/path and resource bounds denied"
+    },
+    {
+      "id": "V04",
+      "status": "pass",
+      "detail": "Every archive item discoverable; every original asset retrieved and hash verified without hypothesis templates"
+    },
+    {
+      "id": "V05",
+      "status": "pass",
+      "detail": "All 32,895 original structured rows retrievable through public document selectors"
+    },
+    {
+      "id": "V06",
+      "status": "pass",
+      "detail": "Source-linked role disclosure and honest unavailable measurement/role"
+    },
+    {
+      "id": "V07",
+      "status": "pass",
+      "detail": "Idempotent scheduled measurement, conflict detection and delayed release"
+    },
+    {
+      "id": "V08",
+      "status": "pass",
+      "detail": "Free parameterized interventions, overlapping-work and invalid/past action rejection"
+    },
+    {
+      "id": "V09",
+      "status": "pass",
+      "detail": "Advance executes work and publishes grounded observations with costs exactly once"
+    },
+    {
+      "id": "V10",
+      "status": "pass",
+      "detail": "Pre-commit interruption rolls back world, jobs, evidence and request together"
+    },
+    {
+      "id": "V11",
+      "status": "pass",
+      "detail": "Objective proposal retained without silent adoption; unacquired citations denied"
+    },
+    {
+      "id": "V12",
+      "status": "pass",
+      "detail": "Durable process restart replays committed response without repeated effects"
+    },
+    {
+      "id": "V13",
+      "status": "pass",
+      "detail": "Open final report, session closure, idempotent final replay and offline outcome accounting"
+    },
+    {
+      "id": "V14",
+      "status": "pass",
+      "detail": "Participant export allowlist excludes world, archive, state and operator reports; deployment isolation still unqualified"
+    }
+  ],
+  "documents": 165,
+  "external_structured_rows": 32895,
+  "formats": [
+    "csv",
+    "geojson",
+    "gif",
+    "html",
+    "jpeg",
+    "json",
+    "jsonl",
+    "mp4",
+    "npz",
+    "pdf",
+    "png",
+    "svg",
+    "txt",
+    "wav",
+    "xlsx",
+    "xml"
+  ],
+  "model": "constructed-forest-0.2",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "edi_run": false,
+  "human_run": false,
+  "ecological_fidelity_qualified": false,
+  "comparative_benchmark_run": false,
+  "source_corpus_unchanged": true
+}

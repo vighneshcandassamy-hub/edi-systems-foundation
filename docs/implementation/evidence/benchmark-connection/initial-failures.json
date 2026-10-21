@@ -1,0 +1,27 @@
+{
+  "scope": "first engineering run; normalized from actual test output",
+  "tests_run": 17,
+  "errors": 2,
+  "failures": 1,
+  "findings": [
+    {
+      "test": "test_dynamic_c0_choices_use_native_c4_records",
+      "error": "unrecognized C4 database",
+      "cause": "Extension journal initialized before native owner store",
+      "fix": "Initialize native C0/C4/C7 owner stores before adding namespaced extension tables"
+    },
+    {
+      "test": "test_gateway_fixture_native_import_and_no_redispatch",
+      "error": "external request identity reused with changed input",
+      "cause": "Replay rendered later response history instead of original cut",
+      "fix": "Use immutable earlier-job response cut and omit mutable job status from fingerprint"
+    },
+    {
+      "test": "test_lost_receipt_does_not_duplicate_work",
+      "error": "0.0 != 2",
+      "cause": "Assertion charged scheduled measurement before execution",
+      "fix": "Preserve delayed world charge; verify zero before and exactly two after advance"
+    }
+  ],
+  "subsequent_run": "17/17 passed; no live model claim"
+}

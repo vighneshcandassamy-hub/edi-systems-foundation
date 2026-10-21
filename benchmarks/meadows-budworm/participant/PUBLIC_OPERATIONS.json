@@ -1,0 +1,215 @@
+{
+  "version": "v0.2",
+  "operations": [
+    {
+      "operation": "mission",
+      "endpoint": "POST /v2/mission",
+      "description": "Read the original objective and authority.",
+      "required_fields": [
+        "request_id"
+      ],
+      "optional_or_kind_specific_fields": [],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "sources",
+      "endpoint": "POST /v2/sources",
+      "description": "Browse the complete source directory.",
+      "required_fields": [
+        "request_id"
+      ],
+      "optional_or_kind_specific_fields": [],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "people",
+      "endpoint": "POST /v2/people",
+      "description": "Browse registered roles.",
+      "required_fields": [
+        "request_id"
+      ],
+      "optional_or_kind_specific_fields": [],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "search",
+      "endpoint": "POST /v2/search",
+      "description": "Search ordinary archive text/metadata; empty query browses all records. No relevance labels.",
+      "required_fields": [
+        "request_id"
+      ],
+      "optional_or_kind_specific_fields": [
+        "limit",
+        "offset",
+        "query",
+        "source"
+      ],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "read",
+      "endpoint": "POST /v2/read",
+      "description": "Read a document and optionally its original bytes in bounded chunks.",
+      "required_fields": [
+        "request_id",
+        "document_id"
+      ],
+      "optional_or_kind_specific_fields": [
+        "asset_limit",
+        "asset_offset",
+        "include_asset"
+      ],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "records",
+      "endpoint": "POST /v2/records",
+      "description": "Read rows from an external source asset by its public document ID.",
+      "required_fields": [
+        "request_id",
+        "document_id"
+      ],
+      "optional_or_kind_specific_fields": [
+        "limit",
+        "offset"
+      ],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "ask",
+      "endpoint": "POST /v2/ask",
+      "description": "Send a question to a registered role; return its bounded source-linked records, not generated expertise.",
+      "required_fields": [
+        "request_id",
+        "person_id",
+        "question"
+      ],
+      "optional_or_kind_specific_fields": [],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "measure",
+      "endpoint": "POST /v2/measure",
+      "description": "Commission an instrument observation; available next simulation year.",
+      "required_fields": [
+        "request_id",
+        "plots",
+        "metric"
+      ],
+      "optional_or_kind_specific_fields": [],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "act",
+      "endpoint": "POST /v2/act",
+      "description": "Schedule a supported treatment or harvest for a future simulation year.",
+      "required_fields": [
+        "request_id",
+        "kind",
+        "plots"
+      ],
+      "optional_or_kind_specific_fields": [
+        "dose",
+        "fraction",
+        "method",
+        "year"
+      ],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "advance",
+      "endpoint": "POST /v2/advance",
+      "description": "Advance simulation time; execute admitted work and publish due observations.",
+      "required_fields": [
+        "request_id"
+      ],
+      "optional_or_kind_specific_fields": [
+        "years"
+      ],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "status",
+      "endpoint": "POST /v2/status",
+      "description": "Inspect public time, spending, jobs, observations and submitted proposals.",
+      "required_fields": [
+        "request_id"
+      ],
+      "optional_or_kind_specific_fields": [],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "propose",
+      "endpoint": "POST /v2/propose",
+      "description": "Record a proposed objective revision for operator/human consideration; original objective remains authoritative.",
+      "required_fields": [
+        "request_id",
+        "objective",
+        "reason"
+      ],
+      "optional_or_kind_specific_fields": [],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    },
+    {
+      "operation": "submit",
+      "endpoint": "POST /v2/submit",
+      "description": "Record a final conclusion without selecting a preset policy. Closes the session.",
+      "required_fields": [
+        "request_id",
+        "conclusion"
+      ],
+      "optional_or_kind_specific_fields": [
+        "evidence_ids",
+        "forecast",
+        "recommendations",
+        "uncertainties"
+      ],
+      "note": "No hypothesis/rationale/expected-observation field is required."
+    }
+  ],
+  "limits": {
+    "request_body_bytes": 131072,
+    "search_page": 100,
+    "record_page": 200,
+    "asset_chunk_bytes": 65536,
+    "pending_jobs": 100,
+    "world_years": 50,
+    "annual_budget_units": 240
+  },
+  "action_shapes": {
+    "treat": {
+      "kind": "treat",
+      "plots": [
+        "NATIVE_STAND_ID"
+      ],
+      "method": "broad or selective",
+      "dose": "0..1",
+      "year": "optional, next year through five years ahead"
+    },
+    "harvest": {
+      "kind": "harvest",
+      "plots": [
+        "NATIVE_STAND_ID"
+      ],
+      "fraction": "0..0.35",
+      "year": "optional future year"
+    }
+  },
+  "measurement": {
+    "plots": "1..12 distinct native stand IDs",
+    "metric": [
+      "insects",
+      "enemies",
+      "foliage",
+      "fir",
+      "spruce",
+      "birch",
+      "age"
+    ],
+    "cost_units_per_stand": 2,
+    "due": "next simulation year; work executes before measurement"
+  },
+  "unknowns": "Missing sources, unsupported instruments and unrecorded answers remain unavailable. No future/private model endpoint.",
+  "identity_and_recovery": "Identical operation/body/request_id retries return the committed response; changed reuse returns conflict. World/actions/observations/response commit atomically.",
+  "roles": "ask returns frozen source-linked materials and the received question, not generated conversational expertise."
+}

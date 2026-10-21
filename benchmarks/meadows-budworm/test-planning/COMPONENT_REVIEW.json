@@ -1,0 +1,262 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "Existing EDI v0.9.0 connection to frozen Meadows world",
+  "gate": "contract",
+  "requested_scope": "runtime_connection_isolation_model_and_first_test_plan_only",
+  "input_revision": "879452b8332a318ca76af4f84589b676b031f253 + 0827e05b2ff2d16ee6803067827a7ac83de6d069",
+  "reviewer": {
+    "role": "planner_and_implementer_self_review",
+    "independent": false
+  },
+  "traceability": {
+    "source": "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Ten derived integration obligations map the handoff and actual C0 requirements to planned cases.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Existing endpoints are distinguished from proposed image/scheduler/action/clock contracts; these must be concrete before execution.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse existing C0–C7; three external execution roles, one student, no extra intelligence layer or authored forest workflow.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Case/world/generated/derived/empirical evidence, unknown formats and source identities remain distinct; no narrative-match success.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Prospective root and per-job limits exist; hardware/processor/per-owner deployment capacities require pinning and neutral fit evidence.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "Crash windows and owner reconciliation specified; implement and verify before relying on checkpoint/replay.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Pinned branch code and primary model/engine/container documents support bounded engineering choices.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Fourteen prospective cases distinguish source planning, engineering, pilot usefulness and future scientific comparison.",
+      "references": [
+        "benchmarks/meadows-budworm/test-planning/README.md",
+        "benchmarks/meadows-budworm/test-planning/TRACEABILITY.json",
+        "benchmarks/meadows-budworm/test-planning/SOURCE_PINS.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "RP-G01",
+      "description": "C4 native inference and multimodal context bindings are not implemented; exact model/container/hardware pins remain open.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Implement bounded gateway/context extension, pin environment and verify neutral real image/model job."
+    },
+    {
+      "id": "RP-G02",
+      "description": "C0 fixed workflows and free-text outbox do not yet provide typed dynamic world-operation scheduling.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Add durable generic scheduler/strict operation intents; retain EDI-selected content and existing owner lanes."
+    },
+    {
+      "id": "RP-G03",
+      "description": "C7 research-readonly contract currently rejects broker acquisition/action; no simulated-session dispatch grant exists.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Version scoped benchmark grant and action adapter behind C7; separate operator adoption."
+    },
+    {
+      "id": "RP-G04",
+      "description": "C6 constructed-world temporal correspondence and source eligibility require a concrete profile; simulation cannot be relabeled empirical.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Freeze year/time mapping and a reviewed simulated-world assessment profile or explicit unscored outcome."
+    },
+    {
+      "id": "RP-G05",
+      "description": "Process isolation, finite per-owner capacity and restart/model fit are proposed, unverified deployment properties.",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ],
+      "smallest_correction": "Implement allowlisted deployment and pass neutral engineering/negative-probe cases before pilot."
+    }
+  ],
+  "changes": [
+    {
+      "description": "Recovered actual implementation branch; preserve both source lines and frozen benchmark."
+    },
+    {
+      "description": "Proposed native gateway, image binding, dynamic scheduling, C7 world authority and C6 simulation correspondence."
+    },
+    {
+      "description": "Defined isolated deployment, neutral engineering gate, first unguided pilot and honest model/modality limits."
+    }
+  ],
+  "verification": [
+    {
+      "id": "RP-V001",
+      "kind": "contract",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V002",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V003",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V004",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V005",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V006",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V007",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V008",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V009",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V010",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V011",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V012",
+      "kind": "runtime",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V013",
+      "kind": "integration",
+      "status": "not_run",
+      "required": true
+    },
+    {
+      "id": "RP-V014",
+      "kind": "integration",
+      "status": "not_run",
+      "required": true
+    }
+  ],
+  "measurements": [
+    {
+      "name": "Proposed pilot resource profile",
+      "state": "proposed",
+      "configuration_ref": "benchmarks/meadows-budworm/test-planning/RUN_CONFIG.proposed.json"
+    }
+  ],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "next_step": "Implement/review scoped adapters and exact schemas/pins; freeze neutral fixture, then execute only after separate owner direction."
+}
+

@@ -963,6 +963,44 @@
       "title": "ModelBinding",
       "type": "object"
     },
+    "OperationProposal": {
+      "additionalProperties": false,
+      "description": "Data-only request to C0; never a grant, operator input or execution receipt.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "world-call",
+            "acquire-asset",
+            "select-context",
+            "analysis-compile",
+            "analysis-run",
+            "teacher-review",
+            "yield"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "arguments": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Arguments",
+          "type": "object"
+        }
+      },
+      "required": [
+        "operation",
+        "arguments"
+      ],
+      "title": "OperationProposal",
+      "type": "object"
+    },
     "Participant": {
       "additionalProperties": false,
       "properties": {
@@ -1889,6 +1927,15 @@
       },
       "maxItems": 16,
       "title": "Candidates",
+      "type": "array"
+    },
+    "operation_proposals": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/OperationProposal"
+      },
+      "maxItems": 1,
+      "title": "Operation Proposals",
       "type": "array"
     },
     "feedback_disposition": {

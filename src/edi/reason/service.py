@@ -242,7 +242,7 @@ class Reasoning:
         if response.output_tokens is not None and response.output_tokens > job.output_token_cap:
             raise EDIError(ErrorCode.CAPACITY, "reported output usage exceeds reserved cap; cancel and reconcile externally")
         if job.role == "teacher":
-            if response.hypotheses or response.candidates or response.tests or response.frontier or response.feedback_disposition == "not-applicable":
+            if response.hypotheses or response.candidates or response.tests or response.frontier or response.operation_proposals or response.feedback_disposition == "not-applicable":
                 raise EDIError(ErrorCode.DENIED, "teacher output is fallible critique only; student must revise proposals")
         elif response.feedback_disposition != "not-applicable":
             raise EDIError(ErrorCode.INVALID, "student output cannot label itself teacher feedback")

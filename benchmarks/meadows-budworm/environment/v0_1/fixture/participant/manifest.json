@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "09151fdd0131af5e09a4587824bc517805cc55b5304d1f160c538222873db19f",
+      "bytes": 1821
+    },
+    {
+      "path": "client.py",
+      "sha256": "416d9a2640504480b3b38b2f32c1373c2ba3ca98ed8e6cf8f46463d305d68c9a",
+      "bytes": 1187
+    },
+    {
+      "path": "initial.sqlite",
+      "sha256": "145c89c2f7dee3229e0084b7cf2c910aac08f96c7ce0b54a82bc85f833366a0f",
+      "bytes": 143360
+    },
+    {
+      "path": "mission.json",
+      "sha256": "6be455e2dd0d1bc7fd4ed1f2c163bbb5d7dce1c9700ad0a25b9c7f615f01d7bb",
+      "bytes": 1865
+    }
+  ],
+  "scope": "Participant initial snapshot and public client only."
+}
