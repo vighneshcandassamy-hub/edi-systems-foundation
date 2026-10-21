@@ -1,0 +1,24 @@
+{
+  "benchmark_id": "meadows-budworm",
+  "checkpoint_date": "2026-10-21",
+  "status": "AWAITING_ORIGINAL_DATABASE",
+  "database_uploaded": false,
+  "database_filename": null,
+  "database_sha256": null,
+  "verified_inventory": null,
+  "prior_conversation_report": {
+    "source": "EDI MVP 7 ending, recovered conversation summary",
+    "reported_at": "2026-10-21T07:20:07Z",
+    "structured_records": 23743,
+    "searchable_text_blocks": 1339,
+    "evidence_files": 31,
+    "format_count": 14,
+    "independently_verified": false
+  },
+  "limitations": [
+    "Original database and evidence-file bytes were not recovered.",
+    "Historical reported integrity/provenance checks have not been independently reproduced.",
+    "Matched historical predator counts and stand-level measurements were reported missing."
+  ],
+  "next_action": "Recover original database/archive and validate inventory, integrity and checksums before marking import complete."
+}

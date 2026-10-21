@@ -25,3 +25,7 @@ The private repository [vighneshcandassamy-hub/edi-systems-foundation](https://g
 ## Next development step
 
 Review the retained observation and substrate contracts against the current seven-chapter architecture and semantic reference. Select one capability and an explicit implementation gate with the owner before developing a runtime.
+
+## Benchmark storage checkpoint — 21 October 2026
+
+The stable folder is `benchmarks/meadows-budworm/`. Its README documents the intended evidence/database/metadata/documentation/evaluation/results organization. The import-status record explicitly marks the original database as missing and not uploaded. Historical EDI MVP 7 counts are retained as unverified conversation reports. No database, evidence payload, runtime or benchmark result is added by this checkpoint. Next action: recover the original database/archive, verify its inventory and integrity, and record checksums before importing it.
