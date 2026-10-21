@@ -1,0 +1,48 @@
+{
+  "schema": "edi-test-plan-file-manifest-v1",
+  "plan_version": "0.1",
+  "scope": "operator_only_planning_supplement_not_frozen_participant_package",
+  "files": [
+    {
+      "path": "CHECKS.json",
+      "bytes": 1941,
+      "sha256": "902f78508c9ac9317b9ce342feb341d29d183800180c00d5f7f8a6bf741ff63c"
+    },
+    {
+      "path": "COMPONENT_REVIEW.json",
+      "bytes": 8769,
+      "sha256": "c8f5747fe1333159bf46e46a51eef50f595b906d70ed5b79215652daca5faacd"
+    },
+    {
+      "path": "INTERFACE_REVIEW.json",
+      "bytes": 14978,
+      "sha256": "4f086b42ffe9c6cafdb47a715998b73154a4efca995d0a3a771eeedcece5e4aa"
+    },
+    {
+      "path": "README.md",
+      "bytes": 28666,
+      "sha256": "25fe04a96339d500b33c9fa428a930f35aae46a2a3764fb2bb21f7a12fc05386"
+    },
+    {
+      "path": "RUN_CONFIG.proposed.json",
+      "bytes": 4145,
+      "sha256": "94a2647316002be5bb74f5d80f0e3bbdd6d698d21f63f1785ac32d6af8df4dc5"
+    },
+    {
+      "path": "SOURCE_PINS.json",
+      "bytes": 7855,
+      "sha256": "533621865b044c153096a3b4eced08f8af5546843889035a7934839693ccae88"
+    },
+    {
+      "path": "TRACEABILITY.json",
+      "bytes": 4845,
+      "sha256": "44512bd8194c56fce70248d8d50afa6dc5bd3077813a49603643c35cb954861d"
+    },
+    {
+      "path": "VERIFICATION_CASES.json",
+      "bytes": 6937,
+      "sha256": "15ce8066a4957f79f34d0353e393337088adf810c430927b893ea03908382ac7"
+    }
+  ],
+  "excluded_self": "PLAN_MANIFEST.json"
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "edi-test-plan-checks-v1",
+  "date": "2026-10-21",
+  "scope": "documentation_source_pins_and_frozen_package_integrity_only",
+  "interface_inventory": {
+    "scope": "interface_inventory_consistency_only",
+    "semantics_independently_verified": false,
+    "component_count": 4,
+    "pair_count": 6,
+    "directed_lane_count": 12,
+    "contract_count": 6,
+    "feedback_groups": [
+      [
+        "EDI",
+        "MODEL",
+        "WORLD"
+      ]
+    ],
+    "consistent": true,
+    "errors": []
+  },
+  "component_report": {
+    "scope": "report_consistency_only",
+    "readiness_independently_verified": false,
+    "report": "edi-systems-foundation/benchmarks/meadows-budworm/test-planning/COMPONENT_REVIEW.json",
+    "consistent": true,
+    "errors": []
+  },
+  "frozen_package": {
+    "package_id": "EDI-MEADOWS-CW-DEV-0.2.1",
+    "passed": true,
+    "scope": "static_consolidation_integrity_only",
+    "files_verified": 114,
+    "source_storage_objects_verified": 29,
+    "implementation_files_pinned": 17,
+    "participant_files_verified": 4,
+    "corpus_records": 32895,
+    "corpus_text_blocks": 150,
+    "corpus_assets": 28,
+    "documents": 165,
+    "sources": 10,
+    "roles": 5,
+    "operations": 13,
+    "retained_environment_engineering_checks": 14,
+    "environment_runtime_campaign_rerun": false,
+    "edi_run_started": false,
+    "human_run_started": false,
+    "scientific_or_comparative_qualification": false
+  },
+  "trace_and_navigation": {
+    "passed": true,
+    "derived_requirements": 10,
+    "prospective_cases": 14,
+    "all_cases_not_run": true,
+    "seed_matches_frozen_fixture": true,
+    "configuration_explicitly_non_launchable": true
+  },
+  "product_runtime_tests_executed": false,
+  "model_inference_executed": false,
+  "broker_started": false,
+  "independent_review": false,
+  "contract_readiness": "revise",
+  "runtime_readiness": "blocked_not_run",
+  "integration_readiness": "blocked_not_run"
+}
+

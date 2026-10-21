@@ -1,0 +1,129 @@
+{
+  "schema": "edi-meadows-run-proposal-v1",
+  "plan_version": "0.1",
+  "status": "proposed_not_launchable",
+  "launchable": false,
+  "execution_authorized": false,
+  "system_under_test": {
+    "repository": "vighneshcandassamy-hub/edi-systems-foundation",
+    "implementation_commit": "879452b8332a318ca76af4f84589b676b031f253",
+    "benchmark_commit": "0827e05b2ff2d16ee6803067827a7ac83de6d069",
+    "adapter_commit": null,
+    "integration_commit": null
+  },
+  "run": {
+    "id": null,
+    "kind": "T1-unguided-development-pilot",
+    "world_seed": 7021,
+    "world_seed_policy": "retain seed 7021 from pinned fixture/initial_state.json; broker has no seed CLI override; a new seed requires a separately versioned world package",
+    "fresh_case_memory": true,
+    "world_initial_year": 0,
+    "world_maximum_year": 50,
+    "annual_world_budget_units": 240
+  },
+  "student": {
+    "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "checkpoint_revision": null,
+    "tokenizer_revision": null,
+    "processor_revision": null,
+    "weights_manifest_sha256": null,
+    "engine": "vllm",
+    "engine_version": null,
+    "image_digest": null,
+    "provider": "local-offline",
+    "weights": "fixed",
+    "precision_proposal": "bfloat16",
+    "temperature": 0,
+    "seed": 17,
+    "max_model_len": 16384,
+    "input_token_cap": 12288,
+    "output_token_cap": 4096,
+    "max_images_per_job": 2,
+    "image_pixel_cap": null,
+    "max_concurrent_jobs": 1
+  },
+  "teacher": {
+    "enabled": false,
+    "scope_limit": "First diagnostic pilot does not qualify selective teacher integration",
+    "binding": null
+  },
+  "budgets": {
+    "state": "proposed_guardrails_not_performance_results",
+    "active_wall_seconds_before_pause": 3600,
+    "aggregate_model_tokens": 262144,
+    "max_linked_inquiries": 32,
+    "new_public_requests": 300,
+    "acquired_bytes": 1073741824,
+    "heartbeat_seconds": 60,
+    "checkpoint": "after every durable model/tool result",
+    "on_limit": "durable_yield_incomplete_no_silent_extension",
+    "per_inquiry": {
+      "rounds": 2,
+      "rivals_per_round": 3,
+      "jobs": 4,
+      "one_unresolved_job": true,
+      "reserved_tokens": 65536
+    }
+  },
+  "transport": {
+    "broker": "http://127.0.0.1:8766",
+    "model": "http://127.0.0.1:8000",
+    "broker_operations": [
+      "mission",
+      "sources",
+      "people",
+      "search",
+      "read",
+      "records",
+      "ask",
+      "measure",
+      "act",
+      "advance",
+      "status",
+      "propose",
+      "submit"
+    ],
+    "secrets_in_git": false,
+    "broker_token_value": null
+  },
+  "isolation": {
+    "state": "proposed_unverified",
+    "world_network": "none",
+    "edi_network": "container:<world>",
+    "model_network": "container:<world>",
+    "host_ports_published": false,
+    "shared_mounts_between_world_and_edi": false,
+    "shared_pid_namespace": false,
+    "operator_apis_exposed_to_model": false
+  },
+  "operator_decisions": {
+    "initial_standing_policy": "one explicit adopted simulated-session grant; implementation required",
+    "C3_promotion": "separate trusted operator decision; candidates remain inspectable",
+    "objective_change": "pending_human_review; no automatic replacement"
+  },
+  "clock": {
+    "simulation_year_mapping": null,
+    "C6_constructed_measurement_profile": null,
+    "empirical_forest_claim": false
+  },
+  "model_presentation": {
+    "case_material": "four exact participant files",
+    "operator_plan_visible": false,
+    "operator_audit_visible": false,
+    "ecological_hypotheses_preloaded": false,
+    "tool_sequence_prescribed": false
+  },
+  "required_before_execution": [
+    "reviewed adapter schemas and C7 authority extension",
+    "dynamic C0 scheduling and typed selected intents",
+    "native inference and image context binding",
+    "model/software/image/hardware pins and neutral fit checks",
+    "C6 constructed-world origin and clock eligibility review",
+    "all eight owner profiles and finite deployment resource limits",
+    "standing policy and seed frozen",
+    "T0 engineering and isolation evidence",
+    "later explicit owner direction to execute"
+  ],
+  "runtime_started": false
+}
+
