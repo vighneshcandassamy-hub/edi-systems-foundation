@@ -1,0 +1,23 @@
+{
+  "baseline_revision": "1cbf8505444cdfbbe457da57fe61ff1c806759e7",
+  "files_sha256": {
+    "PLAN.md": "3d9731cfd5a70181b2e39986fd07af7ebb461281900e398edd067b00182d5a0c",
+    "verify.py": "55ddae465cd97ddf70439ccca0e58f2d74e4162848bf8d0d21ef2cb6f1ac9e54",
+    "PARTICIPANT.md": "3d439eb798e6ee65a656c359bbae1c703cffc73e35bdb0b777006a494b8d82fe",
+    "PUBLIC_OPERATIONS.json": "793a0b04b3ff11caa2b9904fa7bb4d011bba49f77d3e603ecc95d26dc4fdcb52",
+    "REQUIREMENTS.json": "b5cab7ba6f36cce19140129b4411b57c07181bef998c604224531b6cb949b08e",
+    "build.py": "39a3f6822104cc6b5f40c1351f7c5b94f5cd723b0fc308f96c23546045a19255",
+    "evaluate.py": "47cd2bebbcbd9333a3bc52545f9bbd6b6f74a0609d69d64948a00003bb129471",
+    "client.py": "8e4f455240e99d8baed7bd76246edf06642581f6883abdc4e981a14aec793f73",
+    "broker.py": "a3837ad2c4aacc82ff27cc6dabc54b906a83a567c8e963aac0836ca10bf26e90",
+    "RESOURCE_CATALOGUE.json": "7b09cd5c8632f16041955dac629b3759b7cfb5372fca4c1a7b9d8f5218e1cfb5",
+    "export_participant.py": "f3b8d9c9f4f2f70ec9ce8496f42bb1a5471d8c33d55e5ca1690f74587d3d9b5e",
+    "world.py": "a05748dac2d911e718b80459fafe4f827a5af4ea71baff0e94486bfaadf918cd",
+    "README.md": "8a3a9b9f1e1b5332d6ad41f0f037e08d10827b998335af137ce0135947da9a84",
+    "fixture/mission.json": "017c11c65b98264027ec1a9d6d1db6b8d87d3860f0e339c52809ce97708e72d9",
+    "fixture/manifest.json": "d1603fbdeba0bb480481ff2a93d7ba2974aeaaec7116570592f4f474a137f654",
+    "fixture/archive.sqlite.gz": "daf8886d53d4ff1ea8bb87234dc27fd264569305cea0640a740bfb5dc2f2e821",
+    "fixture/initial_state.json": "9c35b4b94de7eecfab79b27610f97d28258d77f75bfdec22205d444af087785c"
+  },
+  "scope": "constructed-world implementation and immutable configuration"
+}

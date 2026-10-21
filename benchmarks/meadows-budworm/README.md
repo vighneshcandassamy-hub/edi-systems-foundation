@@ -2,6 +2,8 @@
 
 Version **0.1.0**, built 21 October 2026. Status: **database built; model benchmark not run**.
 
+The new [open investigation environment v0.2](environment/v0_2/README.md) adds broad source access, bounded role questions, scheduled measurements, parameterized interventions and continuing simulated consequences. Its [resource catalogue](environment/v0_2/RESOURCE_CATALOGUE.json) and [operation catalogue](environment/v0_2/PUBLIC_OPERATIONS.json) are available for inspection. This is a constructed development world with scoped engineering checks; EDI/human reasoning, historical fidelity and comparative advantage remain untested. The original corpus described below and the earlier v0_1 fixture are preserved.
+
 This folder stores a recoverable, heterogeneous evidence corpus for the Meadows budworm systems case. It is a new reconstruction from primary sources. The database reported in EDI MVP 7 was unavailable, so this release does not claim to recover that database or reproduce its inventory.
 
 ## What is actually included

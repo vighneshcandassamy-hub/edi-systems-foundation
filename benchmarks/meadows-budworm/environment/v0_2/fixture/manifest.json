@@ -1,0 +1,55 @@
+{
+  "documents": 165,
+  "sources": 10,
+  "people": [
+    {
+      "id": "manager",
+      "role": "District manager"
+    },
+    {
+      "id": "mill",
+      "role": "Mill liaison"
+    },
+    {
+      "id": "community",
+      "role": "Community secretary"
+    },
+    {
+      "id": "accounts",
+      "role": "Accounts clerk"
+    },
+    {
+      "id": "archivist",
+      "role": "Records custodian"
+    }
+  ],
+  "external_assets": 28,
+  "formats": [
+    "csv",
+    "geojson",
+    "gif",
+    "html",
+    "jpeg",
+    "json",
+    "jsonl",
+    "mp4",
+    "npz",
+    "pdf",
+    "png",
+    "svg",
+    "txt",
+    "wav",
+    "xlsx",
+    "xml"
+  ],
+  "origin": "constructed development archive plus attributed external source assets",
+  "archive_sha256": "4a33bec26111fb4e89010e250e8afb66c22ead153a228ce7526c39bf969260fd",
+  "archive_gzip_sha256": "daf8886d53d4ff1ea8bb87234dc27fd264569305cea0640a740bfb5dc2f2e821",
+  "world_sha256": "a05748dac2d911e718b80459fafe4f827a5af4ea71baff0e94486bfaadf918cd",
+  "initial_state_sha256": "9c35b4b94de7eecfab79b27610f97d28258d77f75bfdec22205d444af087785c",
+  "mission_sha256": "017c11c65b98264027ec1a9d6d1db6b8d87d3860f0e339c52809ce97708e72d9",
+  "source_corpus_sha256": "49856811262c175efe99c31635e098e56312bdbca98a4ec1f58fab12794e5bd5",
+  "historical_rows": 960,
+  "model_calibrated": false,
+  "edi_run": false
+}

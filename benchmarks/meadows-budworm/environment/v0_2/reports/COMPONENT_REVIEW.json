@@ -1,0 +1,236 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "Constructed open-investigation environment v0.2",
+  "gate": "runtime",
+  "requested_scope": "Authorized environment implementation and focused scripted workflow",
+  "input_revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+  "reviewer": {
+    "role": "implementer_and_critic",
+    "independent": false
+  },
+  "traceability": {
+    "source": "benchmarks/meadows-budworm/environment/v0_2/REQUIREMENTS.json",
+    "checked": true,
+    "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/TRACE_CHECK.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Unguided mission maps to twelve requirements and fourteen actual environment cases.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/REQUIREMENTS.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Five logical components, ten pairs and twenty directed lanes; actual operations and authority distinct.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/reports/INTERFACE_REVIEW.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Standard-library single host and one atomic journal; no helper LLM or service per concept. External assets reuse pinned originals.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/PLAN.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Origins, lineage, noise bounds and bounded role knowledge explicit; historical/constructed claims separated.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/README.md"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Input/read/queue/budget/horizon limits specified; actual host recorded without performance SLO or energy claim.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/PUBLIC_OPERATIONS.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Actual retries, conflict, injected rollback and process restart checked. No replicated durability claim.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Owner scope and prior Meadows audit motivate mechanisms; all numeric/social rules declared assumptions and calibration unqualified.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/PLAN.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Full source retrieval and scripted continuing workflow verified; no EDI inference or independent ecological review.",
+      "references": [
+        "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "C-SCIENCE",
+      "description": "Constructed parameters, annual observations and institutional preferences are not historical calibration.",
+      "status": "open",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "C-EDI",
+      "description": "Actual EDI connection, human pilot, unseen-world comparisons and full model-resource accounting remain untested.",
+      "status": "open",
+      "blocking_at": [
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    "Broad source access, optional inquiry, raw native assets, bounded role questions, new measurements, parameterized actions and delayed feedback added.",
+    "Direct non-target treatment effect implemented as a declared model assumption; no policy optimized to win.",
+    "First workload probe failed because no historical treatment occurred; retained exploratory build and revised growth assumption before fixture freeze."
+  ],
+  "verification": [
+    {
+      "id": "V01",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V02",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V03",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V04",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V05",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V06",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V07",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V08",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V09",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V10",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V11",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V12",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V13",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    },
+    {
+      "id": "V14",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179"
+    }
+  ],
+  "measurements": [
+    {
+      "name": "public archive assets fetched and hash verified",
+      "state": "measured",
+      "value": 165,
+      "evidence_ref": "benchmarks/meadows-budworm/environment/v0_2/reports/VALIDATION.json",
+      "revision": "sha256:7c0bb4b3bc60b03eb2ae16e3545c2283f4276d4224270bf65db84e1c9f34e179",
+      "conditions": "Scripted loopback client, all source assets"
+    },
+    {
+      "name": "EDI advantage",
+      "state": "not_run"
+    }
+  ],
+  "product_qualification": "passed_scoped",
+  "verdict": "pass",
+  "next_step": "Deploy an isolated participant adapter and conduct an unguided EDI development run; do not infer scientific or competitive performance from engineering verification."
+}

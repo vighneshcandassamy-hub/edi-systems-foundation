@@ -1,0 +1,10 @@
+{
+  "scenario": "Cedar District constructed development world v0.2",
+  "origin": "Constructed ecology and institutions; attributed external records remain external.",
+  "objective": "Investigate recurring forest damage and protection expenditure, and recommend or undertake authorized measures while maintaining district obligations.",
+  "authority": "You may inspect records, ask registered roles, commission supported measurements, schedule treatments/harvest, advance the world and propose a revised objective. No hypothesis or policy menu is supplied.",
+  "initial_year": 0,
+  "annual_budget_units": 240,
+  "maximum_world_year": 50,
+  "limits": "Not a historical reconstruction. Operator model, future state and evaluation files are private. No completed EDI benchmark is claimed."
+}
