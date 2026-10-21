@@ -29,3 +29,15 @@ Review the retained observation and substrate contracts against the current seve
 ## Benchmark storage checkpoint — 21 October 2026
 
 The stable folder is `benchmarks/meadows-budworm/`. Its README documents the intended evidence/database/metadata/documentation/evaluation/results organization. The import-status record explicitly marks the original database as missing and not uploaded. Historical EDI MVP 7 counts are retained as unverified conversation reports. No database, evidence payload, runtime or benchmark result is added by this checkpoint. Next action: recover the original database/archive, verify its inventory and integrity, and record checksums before importing it.
+
+## Reconstructed benchmark database — 21 October 2026
+
+The prior-chat database was unavailable. This commit replaces the pending import with a new primary-source reconstruction under `benchmarks/meadows-budworm/`, version 0.1.0: 32,895 structured records, 150 searchable text blocks and 28 evidence files across 16 formats and seven source groups. Eleven files are native downloads; seventeen are extracted or derived. Alternate CSV/GeoJSON exports share lineage and are not counted as separate observation sets.
+
+The actual SQLite snapshot is stored losslessly as `database/evidence.sqlite.gz`. Original source bytes, hashes, lineage, explicit gaps and bounded read-only retrieval scripts are included. `scripts/restore.py` restores compressed files using the Python standard library. Source explanations remain references and generated audio/video remain derived encodings.
+
+Actual storage checks passed: content hashes, SQLite integrity/foreign keys, FTS inventory, CSV/GeoJSON row and geometry parity, reference filtering, row pagination, byte-range requests, and restore/verification from a freshly extracted archive. The self-reviewed interface inventory covers three components, three pairs, six directed lanes and four implemented storage/read contracts. EDI integration and model benchmarks remain NOT RUN.
+
+Archive: `EDI_Meadows_Benchmark_Database_v0_1_0.zip`; SHA-256 `f34ec3ee283729e8089ddfb75c3b04c146d85f5a12724f47b38ce4d0857c4f8a`. SQLite SHA-256: `49856811262c175efe99c31635e098e56312bdbca98a4ec1f58fab12794e5bd5`.
+
+Next requested scope: add other benchmark materials in this stable folder. Missing matched ecological/management histories and native modality gaps remain explicit. This seed corpus is not a qualified standard benchmark or complete causal account.

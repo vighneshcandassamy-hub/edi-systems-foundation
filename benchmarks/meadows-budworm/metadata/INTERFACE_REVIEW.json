@@ -1,0 +1,246 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Offline corpus import/storage/read interfaces only; EDI integration excluded",
+  "input_revision": "build_corpus.py sha256:5dcc49e07e29aa5f9a8b5bc0efc0ba7ba4d2a1f64eba9cfd884a5c2e357f568e",
+  "components": [
+    {
+      "id": "IMPORT",
+      "name": "Offline corpus builder"
+    },
+    {
+      "id": "STORE",
+      "name": "Versioned evidence archive and SQLite index"
+    },
+    {
+      "id": "READ",
+      "name": "Read-only evidence request CLI"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "IMPORT",
+      "to": "STORE",
+      "disposition": "required",
+      "rationale": "Offline storage or bounded read operation in the pinned corpus.",
+      "contract_ids": [
+        "IMPORT_STORE"
+      ]
+    },
+    {
+      "from": "IMPORT",
+      "to": "READ",
+      "disposition": "not_needed",
+      "rationale": "Reader never starts or mutates an import; builder does not drive a reader session.",
+      "contract_ids": []
+    },
+    {
+      "from": "STORE",
+      "to": "IMPORT",
+      "disposition": "required",
+      "rationale": "Offline storage or bounded read operation in the pinned corpus.",
+      "contract_ids": [
+        "STORE_IMPORT"
+      ]
+    },
+    {
+      "from": "STORE",
+      "to": "READ",
+      "disposition": "required",
+      "rationale": "Offline storage or bounded read operation in the pinned corpus.",
+      "contract_ids": [
+        "STORE_READ"
+      ]
+    },
+    {
+      "from": "READ",
+      "to": "IMPORT",
+      "disposition": "prohibited",
+      "rationale": "Reader never starts or mutates an import; builder does not drive a reader session.",
+      "contract_ids": []
+    },
+    {
+      "from": "READ",
+      "to": "STORE",
+      "disposition": "required",
+      "rationale": "Offline storage or bounded read operation in the pinned corpus.",
+      "contract_ids": [
+        "READ_STORE"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "id": "IMPORT_STORE",
+      "from": "IMPORT",
+      "to": "STORE",
+      "title": "Build and commit corpus snapshot",
+      "producer_port": "build_corpus.py staged writes",
+      "consumer_port": "schema.sql and immutable source files",
+      "status": "implemented",
+      "profile_ref": "corpus_v1",
+      "requirement_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "verification_ids": [
+        "V_STORAGE",
+        "V_RESTORE",
+        "V_QUERY"
+      ]
+    },
+    {
+      "id": "STORE_IMPORT",
+      "from": "STORE",
+      "to": "IMPORT",
+      "title": "Return stored bytes for integrity verification",
+      "producer_port": "SQLite/source file reads",
+      "consumer_port": "verify.py checks",
+      "status": "implemented",
+      "profile_ref": "corpus_v1",
+      "requirement_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "verification_ids": [
+        "V_STORAGE",
+        "V_RESTORE",
+        "V_QUERY"
+      ]
+    },
+    {
+      "id": "STORE_READ",
+      "from": "STORE",
+      "to": "READ",
+      "title": "Return inventory, rows, references or byte ranges",
+      "producer_port": "SQLite/source file reads",
+      "consumer_port": "query.py JSON envelope",
+      "status": "implemented",
+      "profile_ref": "corpus_v1",
+      "requirement_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "verification_ids": [
+        "V_STORAGE",
+        "V_RESTORE",
+        "V_QUERY"
+      ]
+    },
+    {
+      "id": "READ_STORE",
+      "from": "READ",
+      "to": "STORE",
+      "title": "Submit bounded parameter-bound evidence request",
+      "producer_port": "query.py arguments",
+      "consumer_port": "schema.sql and immutable source files",
+      "status": "implemented",
+      "profile_ref": "corpus_v1",
+      "requirement_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "verification_ids": [
+        "V_STORAGE",
+        "V_RESTORE",
+        "V_QUERY"
+      ]
+    }
+  ],
+  "contract_profiles": {
+    "corpus_v1": {
+      "ownership": "Corpus maintainer admits versions; source files are immutable evidence; SQLite is the search index; reader owns only its local response.",
+      "authority": "Offline importer may build a staged snapshot. Reader may issue parameter-bound reads only. It cannot change evidence, launch downloads, run inference or authorize interventions.",
+      "shape_versions": "SQLite schema 0.1.0 in database/schema.sql. Raw file formats and source strings remain authoritative. Unknown fields/flags are retained; unsupported modalities are explicit gaps.",
+      "identity_scope": "File identity uses SHA-256. Record identity is source file ID plus CSV row/workbook sheet row/native feature selector. Shared root groups express lineage, not cross-study physical identity.",
+      "time_order": "Preserve collection timestamps and date-only daily weather labels. Acquisition date precision and build time are separate. No global causal order or precise clock synchronization is inferred.",
+      "delivery_idempotency": "Offline full snapshot build and idempotent hash-checked restoration. Read requests use explicit offsets; retries repeat the same pinned archive. No streaming exactly-once claim.",
+      "commit_recovery": "Staged SQLite file is checked and atomically published by offline maintainer; restore verifies decompressed bytes before atomic placement. Conflicting destination bytes stop restoration.",
+      "retention": "Native and derived snapshots plus manifest and compressed database are versioned in private Git and downloadable ZIP. No automatic eviction or background refresh.",
+      "resource_limits": "Stored version is finite. CLI records limit 200, byte-range limit 65536. Build dependencies and available source cohorts are documented; no token/latency/energy advantage measured.",
+      "errors": "Missing IDs, denied reference selection, hash conflicts, unsupported values, acquisition failures and invalid HTTP success payloads remain explicit. No invented missing observations.",
+      "feedback_grounding": "CSV/GeoJSON are alternate views. Generated audio/video/charts retain shared source lineage. Published explanations remain references. No reader feedback writes evidence or confirms hypotheses."
+    }
+  },
+  "cases": [
+    {
+      "id": "V_STORAGE",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "metadata/VALIDATION.json",
+      "revision": "build_corpus.py sha256:5dcc49e07e29aa5f9a8b5bc0efc0ba7ba4d2a1f64eba9cfd884a5c2e357f568e",
+      "conditions": "SQLite integrity, foreign keys, content hashes, original row payloads, source parity and lineage checked offline."
+    },
+    {
+      "id": "V_RESTORE",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "metadata/VALIDATION.json",
+      "revision": "build_corpus.py sha256:5dcc49e07e29aa5f9a8b5bc0efc0ba7ba4d2a1f64eba9cfd884a5c2e357f568e",
+      "conditions": "Compressed SQLite is restored and rehashed in a disposable copy."
+    },
+    {
+      "id": "V_QUERY",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "metadata/VALIDATION.json",
+      "revision": "build_corpus.py sha256:5dcc49e07e29aa5f9a8b5bc0efc0ba7ba4d2a1f64eba9cfd884a5c2e357f568e",
+      "conditions": "Inventory/reference filter, 2024 row pagination, FTS reference search and bounded byte-range requests exercised."
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "IMPORT",
+        "STORE",
+        "READ"
+      ],
+      "analysis": "Read/verify paths form a transport dependency cycle, not ecological evidence feedback. The reader cannot invoke import or write source state. Generated media are explicitly derived, bounded and share original lineage. Source selection and sampling bias remain external limitations. No concurrent import/read deployment is claimed.",
+      "verification_ids": [
+        "V_STORAGE",
+        "V_RESTORE",
+        "V_QUERY"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "description": "No EDI runtime or autonomous information-seeking integration is implemented by this dataset.",
+      "status": "deferred",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "F02",
+      "description": "Reference filtering is a convenience, not sealed holdout enforcement. A future benchmark broker must enforce access.",
+      "status": "deferred",
+      "blocking_at": [
+        "integration"
+      ]
+    }
+  ],
+  "review": {
+    "gate": "contract",
+    "verdict": "pass",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Self-review of offline storage/read contract and actual corpus checks only. No learning, causal discovery, model performance or benchmark qualification."
+  }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "source_id": "nb_l2",
+    "title": "NB spruce budworm L2 survey",
+    "publisher": "Government of New Brunswick",
+    "source_url": "https://gnb.socrata.com/datasets/e4t9-ku3d",
+    "license_note": "New Brunswick Open Government Licence (publisher metadata licenseId NBOGL).",
+    "role": "observation",
+    "scope_note": "2017-2025 provincial survey. CSV and GeoJSON are alternate exports of the same observations."
+  },
+  {
+    "source_id": "nb_moths",
+    "title": "NB spruce budworm pheromone trapping",
+    "publisher": "Government of New Brunswick",
+    "source_url": "https://gnb.socrata.com/datasets/bw6q-5rw4",
+    "license_note": "New Brunswick Open Government Licence; retained publisher metadata.",
+    "role": "observation",
+    "scope_note": "Trap data and original codes. Negative sentinel values are preserved, not treated as valid counts."
+  },
+  {
+    "source_id": "nrcan_larvae",
+    "title": "SBW L2/L4 samples and defoliation 1998-2022",
+    "publisher": "Natural Resources Canada",
+    "source_url": "https://open.canada.ca/data/en/dataset/42ca63ee-aa9a-4437-8810-7d54d328229e",
+    "license_note": "Government of Canada open-data distribution. Exact dataset licence could not be independently retrieved; confirm before public redistribution.",
+    "role": "observation",
+    "scope_note": "Study spans Ottawa River valley, North Shore and NB. Sheet row order is not an undocumented cross-sheet join key."
+  },
+  {
+    "source_id": "eccc_weather",
+    "title": "Fredericton CDA CS daily weather 2022-2023",
+    "publisher": "Environment and Climate Change Canada",
+    "source_url": "https://api.weather.gc.ca/collections/climate-daily",
+    "license_note": "Open Government Licence - Canada. Preserve station flags and API metadata.",
+    "role": "observation",
+    "scope_note": "One station and two years. Regional context only: no asserted weather-to-survey-site match."
+  },
+  {
+    "source_id": "maine_report",
+    "title": "Spruce Budworm in Maine 2021, March 2022",
+    "publisher": "Maine Forest Service / Michael Parisio",
+    "source_url": "https://www.sprucebudwormmaine.org/wp-content/uploads/2022/03/MFS-Spruce-Budworm-in-Maine-2021-Final-Report.pdf",
+    "license_note": "Publicly distributed agency report. No blanket redistribution licence verified; retained in private research archive with attribution.",
+    "role": "reference",
+    "scope_note": "16-page report includes human explanations, methods, charts, photographs and treatment maps; not blind raw evidence."
+  },
+  {
+    "source_id": "usfs_fir",
+    "title": "Silvics: Balsam Fir",
+    "publisher": "USDA Forest Service",
+    "source_url": "https://research.fs.usda.gov/silvics/balsam-fir",
+    "license_note": "US federal government text; third-party credits, if any, retain their own rights.",
+    "role": "reference",
+    "scope_note": "Species reference and forest uses, not contemporaneous stand measurements."
+  },
+  {
+    "source_id": "usfs_spruce",
+    "title": "Silvics: Black Spruce",
+    "publisher": "USDA Forest Service",
+    "source_url": "https://research.fs.usda.gov/silvics/black-spruce",
+    "license_note": "US federal government text; third-party credits, if any, retain their own rights.",
+    "role": "reference",
+    "scope_note": "Species reference, not observed stand age/foliage time series."
+  }
+]

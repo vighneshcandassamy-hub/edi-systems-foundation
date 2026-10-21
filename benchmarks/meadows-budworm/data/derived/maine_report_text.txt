@@ -1,0 +1,741 @@
+
+--- PDF page 1 ---
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Spruce Budworm in Maine 2021 
+Michael Parisio – Forest Entomologist 
+Maine Forest Service – Forest Health and Monitoring  
+michael.parisio@maine.gov  
+March 2022 
+ 
+Introduction 
+The Maine Forest Service (MFS), University of Maine Cooperative Forestry Research Unit (CFRU), and 
+our cooperator network continue to monitor the spruce budworm situation in Maine carefully as 
+populations still show clear signs of instability. 2021 marked the first year of the current spruce 
+budworm population build-up that aerial surveys were able to detect larval feeding damage and the 
+second year that appreciable feeding damage was detectable during ground surveys. Despite this, 
+average spruce budworm moth capture across Maine has dropped for the second consecutive 
+monitoring season. Results of the CFRU-led L2 survey are forthcoming and will help to shed additional 
+light on Maine’s spruce budworm situation heading into 2022.  
+A comprehensive spruce budworm (SBW) monitoring program requires a multi-pronged approach. It 
+relies on using methods such as pheromone trapping, light trapping, overwintering L2 larval sampling, 
+and both ground and aerial survey. At the core of the MFS monitoring program lies the extensive 
+pheromone trap network throughout western and northern Maine's spruce-fir forests. A permanent 
+pheromone trap network was first established in 1992 and was made up of around 80 sites operated by 
+MFS, J.D. Irving Ltd, Penobscot Nation Department of Natural Resources, and the USDA Forest Service. 
+The program expanded in 2014, and now with the support of a large team of dedicated cooperators, our 
+modern pheromone trap network consists of hundreds of sites statewide. 
+SBW is a native insect whose outbreaks cover vast regions and spread through massive dispersal flights 
+as moths undergo atmospheric transport from impacted areas to new ones. In northeastern North 
+America, SBW outbreaks tend to return on a roughly 30-60 year interval, with the last major SBW 
+outbreak to directly affect Maine occurring during the 1970s-80s. Historical data tells us that Maine is 
+due for another SBW outbreak and monitoring efforts have provided a glimpse of population increase, 
+as both pheromone trap and light trap catches remain above those numbers expected during a typical 
+endemic period. This has been accompanied by regular observations of mature larvae feeding 
+throughout the forests of northern Aroostook County in recent years. Millions of acres of ongoing SBW 
+defoliation in neighboring Canada has crept nearer to the Maine border over the years and Maine’s 
+forests are now being impacted by moths migrating from those areas. Since 2013, several significant in-
+
+--- PDF page 2 ---
+2 
+ 
+flights of moths into northern Maine have been suggested by pheromone and light trap captures, as well 
+as through flight models and weather data, where moth flights have even been documented on radar. 
+Significant atmospheric transport events were not apparent in 2020, meaning the majority of the moths 
+recovered during that monitoring seasons likely completed their entire life cycle here in Maine’s forests. 
+Moth migration into Maine did occur in some degree in 2021, however the extent of any influx is still 
+difficult to determine from flight models alone.  
+ 
+Pheromone Trapping 
+ 
+Spruce Budworm Pheromone Trap Survey Cooperator Network 
+American Forest Management 
+Maine Bureau of Public Lands 
+Appalachian Mountain Club 
+Maine Forest Service 
+Baskahegan Company 
+Passamaquoddy Tribal Forestry Department 
+Baxter State Park 
+Penobscot Indian Nation 
+Forest Society of Maine 
+Prentiss & Carlisle 
+Hilton Timberlands, LLC 
+Rangeley Lakes Heritage Trust 
+Houlton Band of Maliseet Indians 
+Seven Islands Land Company 
+J.M. Huber Corporation 
+The Nature Conservancy 
+J. D. Irving Ltd. 
+USDA Forest Service 
+Katahdin Forest Management, LLC 
+Wagner Forest Management, Ltd. 
+LandVest 
+Weyerhaeuser 
+ 
+Pheromone trapping methods follow a standardized protocol used by both Canadians and Americans 
+since 1986 (http://phero.net/iobc/montpellier/sanders.html). Pheromone trapping efforts are 
+concentrated in northern and western Maine, where the spruce-fir resource is greatest. Cooperators are 
+asked to locate pheromone trap sites in spruce-fir-dominated stands greater than 25 acres at a density 
+of one site per township or roughly every six miles along forest roads. Stands vary in tree size and 
+degree of management, but as a minimum requirement, at least half the trees should be pole-sized or 
+larger. Once established, cooperators tend to reuse sites annually, but sites are occasionally dropped or 
+established due to management activities, changes in access, or other reasons.    
+In 2021, the trap network employed reusable Multipher traps baited with SBW pheromone lures made 
+by ISCA Technologies and distributed by Solida and equipped with Vaportape II insecticide strips (1" x 4", 
+10% DDVP) made by Hercon Environmental. These high-capacity traps can monitor SBW moth numbers 
+over a wide range of population densities ranging from 0–20 at low population densities to over l,000 
+per trap at high densities. Each site consists of three traps arranged in a triangle with ~130 feet between 
+traps. Traps are deployed during the first three weeks of June and retrieved in mid-August or later. Once 
+collected, the bulk of these samples are typically processed at the MFS Insect & Disease lab in Augusta. 
+Due to the peak numbers experienced during the 2019 monitoring season, numbers will be presented 
+here from 2019 to 2021 to better illustrate the most recent downward trend. In 2019, a total of 383 
+usable SBW pheromone trap samples were collected throughout Maine (Figure 1). In 2020, a reduced 
+
+--- PDF page 3 ---
+3 
+ 
+target of 350 pheromone trap sites yielded a total of 345 usable samples from roughly the same 
+geographic area, with fewer sites operated in western Maine (Figure 1). In 2021, 328 usable samples 
+were collected from 351 sites statewide (Figure 2). Overall, the statewide average pheromone trap catch 
+has fallen substantially from 67 in 2019, to 36 in 2020, to 16 in 2021 (Figure 3). The maximum average 
+for any site also fell from 534 in 2019 to 397 in 2020, and the maximum average in 2021 was 174 moths 
+per trap. Over this three-year period, the number of sites recording more than 50 moths per trap has 
+also dropped substantially (Figure 4). Generally speaking, the monitoring sites in northern Maine with 
+high captures still correspond well with those areas that were most affected by the moth migrations of 
+2019. The results of the 2021 pheromone trap monitoring program indicate more clearly now that the 
+greatest population densities appear to remain in one concentrated area in northeastern Aroostook 
+County and one concentrated area in northwestern Aroostook County. Not surprisingly, these sites also 
+correspond with the areas where defoliation was visible during aerial survey in 2021 and an area that 
+received pesticide treatments in 2021 due to average L2 counts exceeding the early the intervention 
+strategy threshold of seven larvae per branch at the end of the 2020 monitoring season.  
+ 
+ 
+Figure 1. Statewide spruce budworm pheromone trap average catches in 2019 (left) and 2020 (right). 
+ 
+
+--- PDF page 4 ---
+4 
+ 
+ 
+Figure 2. Statewide spruce budworm pheromone trap average catches in 2021. 
+ 
+
+--- PDF page 5 ---
+5 
+ 
+ 
+Figure 3. Average SBW pheromone trap capture by county in Maine, 2016–2021. 
+ 
+ 
+ 
+Figure 4. Percent of monitoring sites by average SBW pheromone trap capture, 2016–2021. 
+27
+2
+4
+2
+9
+9
+7
+2
+16
+0
+20
+40
+60
+80
+100
+120
+140
+160
+AVERAGE SBW PER TRAP
+AVERAGE ANNUAL SBW PHEROMONE TRAP CAPTURE BY COUNTY IN MAINE
+2016–2021
+2016
+2017
+2018
+2019
+2020
+2021
+1
+93
+5
+1
+0
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+0
+0.01 - 50.0
+50.01 - 100.0
+100.01 - 200.0
+> 200.1
+PERCENT OF SITES
+AVERAGE SBW PER TRAP
+PERCENT OF SITES STATEWIDE BY AVERAGE SBW PHEROMONE TRAP CAPTURE
+2016-2021
+2016
+2017
+2018
+2019
+2020
+2021
+
+--- PDF page 6 ---
+6 
+ 
+As noted earlier, MFS and cooperators have been monitoring a core set of long-term pheromone trap 
+sites since 1992. Across these long-term sites, from 1992 to 2012, the average number of moths per trap 
+remained well below 10. That average jumped to 18 in 2013, followed by further increases in 2014 and 
+2015 to more than 20 moths per trap. Average catches fell to just seven moths per trap in 2016 and 
+2017, but once again returned to double digits in 2018 with an increase to 15 moths per trap. In 2019, 
+we observed a dramatic increase as the average grew to about 55 moths per trap. We suspect this 2019 
+statistic was largely influenced by mass migrations of SBW moths from outbreak areas in Canada. In 
+2020, the number remained elevated but fell to an average of 30 versus 55 in 2019. Now in 2021, the 
+number has returned to 12. 
+ 
+ 
+Figure 5. Average SBW pheromone trap capture at long term sites operated since 1992 by the Maine 
+Forest Service, J.D. Irving Ltd., Penobscot Nation DNR, and USDA Forest Service. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+12
+0
+10
+20
+30
+40
+50
+60
+AVERAGE SBW PER TRAP
+AVERAGE SBW PHEROMONE TRAP CAPTURE AT LONG TERM SITES
+(MAINE FOREST SERVICE, JD IRVING, PENOBSCOT NATION, US FOREST SERVICE)
+
+--- PDF page 7 ---
+7 
+ 
+Automated Pheromone Trapping 
+New in 2021 was Maine’s participation in a larger network of automated pheromone traps operated by 
+Natural Resources Canada throughout Quebec and the maritime provinces. Maine was provided with 
+two traps that were deployed in the towns of New Canada and Stockholm in Aroostook County. These 
+solar-powered camera traps contain a rotating roll of adhesive paper that is photographed and 
+transmitted to a server each day, where SBW moth capture is counted using software. Understanding 
+SBW activity on a daily basis enables us to calibrate flight periods throughout the season and most 
+importantly provides us with a better start date for SBW flight season in Maine. These traps captured 
+the first flights of SBW occurred on the night of June 21 and morning of June 22, reinforcing the current 
+practice of deploying traps by mid-June (Figure 6). These data also help to inform flight models.  
+ 
+Figure 6. (left) Map of automated SBW pheromone trap locations throughout Canada and Maine and 
+first flight dates for Maine during 2021 monitoring season. (right) Example of automated SBW 
+pheromone trap operated in New Canada, Aroostook County during 2021.  
+ 
+Light Trapping 
+Light trapping has been used in Maine for more than seven decades to monitor forest defoliators and 
+remains a useful tool for monitoring SBW moths. In 2019, 17 light traps were operated statewide, and 
+we witnessed a dramatic increase in SBW light trap catches, with 507 moths captured at 14 sites. In 
+2019, most moths were recovered from just five sites in Aroostook County (135 in Garfield Plt, 127 in 
+Crystal, 89 in St. Pamphile (T15 R15 WELS), 65 in Clayton Lake Twp, 44 in Allagash, and 27 in New 
+Sweden). Overall, there was a substantial decrease in capture to just 107 moths from all 18 light traps 
+operated statewide in 2020. Unfortunately, several of the locations that proved to be the biggest 
+producers in 2019, such as Crystal and St. Pamphile (T15 R15 WELS), were unable to be operated in 
+2020. We believe many of the moths captured in 2019 were Canadian-origin and those captured in 2020 
+to be primarily moths that completed their entire life cycles in Maine. Regardless, notable decreases 
+were still observed however in Allagash, Clayton Lake Twp, and Garfield Plt. 2021 witnessed another 
+substantial drop and just nine moths were recovered statewide (Table 1, Figure 7). Interestingly, the 
+
+--- PDF page 8 ---
+8 
+ 
+most productive light trap in 2020 located in Garfield Plt, recovered no moths in 2021, which appears to 
+be somewhat supported by low pheromone trap catches in surrounding areas. Other productive light 
+traps in previous seasons recovered similarly low numbers in 2021. 
+ 
+Table 1. Spruce budworm moth capture in light traps from 2015 through 2021. 
+TOWN 
+COUNTY 
+2015 
+2016 
+2017 
+2018 
+2019 
+2020 
+2021 
+Allagash 
+Aroostook 
+3 
+25 
+N/A 
+23 
+44 
+9 
+2 
+Ashland 
+Aroostook 
+0 
+3 
+0 
+29 
+N/A 
+N/A 
+N/A 
+Big Twenty Twp 
+Aroostook 
+N/A 
+N/A 
+N/A 
+54 
+N/A 
+0 
+1 
+Bowerbank 
+Piscataquis 
+1 
+0 
+0 
+2 
+1 
+0 
+1 
+Calais 
+Washington 
+2 
+0 
+6 
+2 
+1 
+1 
+0 
+Cape Elizabeth 
+Cumberland 
+0 
+0 
+0 
+1 
+0 
+4 
+0 
+Clayton Lake Twp 
+Aroostook 
+N/A 
+N/A 
+N/A 
+10 
+65 
+2 
+0 
+Crystal 
+Aroostook 
+5 
+53 
+7 
+42 
+127 
+N/A 
+N/A 
+Exeter 
+Penobscot 
+0 
+0 
+0 
+2 
+0 
+0 
+0 
+Garfield (6-Mile CP) 
+Aroostook 
+N/A 
+N/A 
+N/A 
+N/A 
+135 
+82 
+0 
+Jackman 
+Somerset 
+N/A 
+0 
+0 
+0 
+0 
+N/A 
+N/A 
+Madison 
+Somerset 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+0 
+1 
+Millinocket 
+Penobscot 
+1 
+1 
+0 
+0 
+8 
+0 
+N/A 
+Monson 
+Piscataquis 
+N/A 
+N/A 
+N/A 
+0 
+3 
+0 
+3 
+Mount Desert 
+Hancock 
+N/A 
+4 
+N/A 
+0 
+N/A 
+0 
+N/A 
+New Sweden 
+Aroostook 
+2 
+3 
+0 
+12 
+27 
+7 
+0 
+Northport 
+Waldo 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+0 
+N/A 
+Rangeley 
+Franklin 
+1 
+0 
+0 
+0 
+1 
+1 
+1 
+Salem 
+Franklin 
+N/A 
+N/A 
+0 
+0 
+4 
+0 
+0 
+South Berwick 
+York 
+0 
+0 
+0 
+0 
+1 
+1 
+0 
+Topsfield 
+Washington 
+0 
+44 
+18 
+22 
+1 
+0 
+0 
+T3 R11 WELS 
+Aroostook 
+2 
+13 
+0 
+0 
+N/A 
+N/A 
+N/A 
+T15 R15 WELS 
+Aroostook 
+17 
+0 
+10 
+3 
+89 
+N/A 
+N/A 
+TOTAL NUMBER OF SBW MOTHS 
+34 
+146 
+41 
+202 
+507 
+107 
+9 
+ 
+ 
+Figure 7. Total annual statewide light trap catches of SBW moths 2015–2021.   
+9
+0
+100
+200
+300
+400
+500
+600
+TOTAL SBW 
+ANNUAL STATEWIDE SBW LIGHT TRAP CAPTURE
+2015-2021
+
+--- PDF page 9 ---
+9 
+ 
+Overwintering L2 Larval Sampling (2020 Results) 
+CFRU continues to coordinate the overwintering larval (L2) sampling portion of the monitoring program. 
+Since 2014, branch samples from SBW host species, primarily balsam fir, have been collected during the 
+fall or winter in areas where pheromone trap catches were high, where modeling has predicted high-risk 
+stands, or where previous samples had been collected. At each sample site, one 30-inch-long branch is 
+cut from the mid-crown of each of three trees. Branch samples have historically been sent to Canada for 
+processing, but in an exciting development in 2021, a dedicated lab for this purpose has been 
+established through CFRU and is now up and running in Orono, ME. Due to this new development, 
+complete results of the 2021 L2 survey are not currently available but will be made available by CFRU at 
+a later date and included in our 2022 monitoring season report next spring.   
+For recent context, the 2020 overwintering L2 larval survey demonstrated a clear increase in the 
+number of larvae recovered compared to 2019 (Figure 8). A total of 309 larvae were collected from 
+branch samples taken at 328 sites across the state in 2020, versus only 70 larvae recovered from 317 
+sites in 2019. The larvae collected in 2020 came from a total of 99 independent sampling sites compared 
+to just 29 sites in 2019, indicating a more widespread distribution of growing SBW populations. The 
+greatest average recorded at any site in 2019 was 3.1 – 4.0 larvae per branch and was documented at 
+just one site. In 2020, six sites averaged from 3.6 – 4.66 larvae per branch, and most notably, a single 
+site in Cross Lake Township that averaged 7.66 larvae per branch.  
+ 
+Figure 8. Map of statewide results for 2020 overwintering spruce budworm L2 larvae survey. 
+
+--- PDF page 10 ---
+10 
+ 
+2021 Maine Early Intervention Strategy (EIS) Treatments 
+The Cross Lake Township site averaging 7.66 larvae per branch sample, located on land owned by J.D. 
+Irving Ltd, marked the first time in recent years where a local population was above the management 
+threshold of the SBW Early Intervention Strategy (EIS) threshold being employed in Atlantic Canada 
+(https://healthyforestpartnership.ca/what-we-do/targeting-and-treating/). In response to this 
+detection, and subsequent samples taken to delimit the population also above threshold, J.D. Irving Ltd 
+decided to treat this area in accordance with EIS management guidelines.  
+Initial data from standard sampling presented an area of concern of roughly 20,000 acres, however a 
+more intensive follow-up survey led to the development of a much smaller spray block of just 5,000 
+acres, created by interpolating populations across these supplementary sampling sites (Figure 9). This 
+spray block was treated with two aerial applications of Foray 76B from a rotor-winged aircraft, with the 
+first application taking place from June 1 ̶ 4 and the second from June 8 ̶ 11. These dates were selected 
+after monitoring SBW larval development on-site in order to target larvae at their most vulnerable 
+stages and multiple days were required to ensure spraying was performed under optimal conditions for 
+safety and effectiveness. Additional planning and precautions were also required given the proximity of 
+both water bodies and nearby private residential properties. Foray 76B is a biological insecticide 
+containing the spores and endotoxin crystals of the bacterium Bacillus thuringiensis kurstaki (Btk) that 
+targets the larvae of Lepidoptera, such as SBW. It is not a contact insecticide and must be ingested by a 
+feeding larva in order to be effective, therefore limiting non-target effects of other organisms. While 
+effective, Btk also has the advantage of a short residual period and degrades readily in sunlight within a 
+short period of time, sometimes only a matter of days depending on environmental conditions. 
+ 
+Figure 9. 2021 EIS treatment area in Cross Lake Twp, Aroostook Co. Courtesy J.D. Irving Ltd 
+
+--- PDF page 11 ---
+11 
+ 
+Statewide Defoliation Survey (2020 Results) 
+Prior to being submitted for L2 assessment, all branch samples collected undergo defoliation assessment 
+by CFRU staff using the Fettes Method, which systematically quantifies missing foliage on current-year 
+growth. It was used during the last budworm outbreak in Maine and is currently being used in the 
+Canadian provinces. The Fettes Method captures defoliation from all causes and can be used to estimate 
+both current-year defoliation and cumulative defoliation. A brief introduction to the Fettes Method is 
+provided in this document: http://www.sampforestpest.ento.vt.edu/defoliating/spruce-
+budworm/pdf/montgomery-etal1982-sbw.pdf. Results of the 2020 Fettes defoliation assessment survey 
+performed by CFRU are displayed below and each point represents the average defoliation of three 
+branch samples taken at each site (Figures 9). The results of the 2021 statewide defoliation survey along 
+with results of the L2 survey will be available directly from CFRU at a later date and will be included in 
+our 2022 monitoring season report next spring.  
+ 
+ 
+Figure 9. Map of statewide results for 2020 Fettes defoliation survey. 
+
+--- PDF page 12 ---
+12 
+ 
+Aroostook County mid-season Defoliation Surveys  
+Ground surveys for SBW defoliation were conducted in 2020, looking specifically for spruce budworm in 
+northern Maine where damage would be expected to first appear. For the first time since the end of the 
+last major SBW outbreak in Maine, mature SBW larvae are easily found at survey sites in northern 
+Penobscot and Aroostook Counties. A mid-season defoliation survey at 60 sites in Aroostook County 
+found widespread, low-level defoliation from SBW. Sites were reevaluated in 2021 and 37 sites showed 
+slight increases in current season defoliation levels, whereas 23 sites showed decreases. On sites where 
+defoliation increased, it did so only marginally, with an average increase of just 1.5% across all 37 sites 
+and a maximum increase of just 5.5%. None of the sites evaluated in 2020 or 2021 showed concerning 
+levels of defoliation at this point in time (Figure 10).  
+ 
+ 
+Figure 10. Maps of sites evaluated during 2020 (above) and 2021 (below) SBW mid-season defoliation 
+survey and corresponding defoliation intensities. 
+
+--- PDF page 13 ---
+13 
+ 
+Aerial Defoliation Survey 
+MFS conducts extensive aerial survey each season to search for large-scale damage from a variety of 
+forest pests throughout the state, including SBW. Although SBW defoliation visible at ground level has 
+been increasing over the past several seasons, as evidenced from various defoliation surveys and 
+landowner reports, it remained undetectable from the air until 2021 (Figure 11). Since this specific type 
+of damage has not been seen by any of our current aerial surveyors, we used a series of known 
+defoliation sites in Aroostook County to calibrate our search image. This resulted in the identification of 
+several additional areas of defoliation damage in those areas corresponding with above average 
+pheromone trap captures and numbers of overwintering larvae, supporting the results of these other 
+monitoring efforts well. Interestingly, similar damage has not been observed from the air over Big 
+Twenty Township to the west, where results from pheromone trapping and overwintering larval surveys 
+have returned similar numbers over the past several seasons. Although nearly 850 acres of defoliation 
+was documented in 2021, the severity of the damage remains moderate at worst. Additionally, it is 
+important to remember that SBW defoliation at lighter levels is much more widely distributed across 
+northern Maine than these limited areas visible during aerial survey. 
+ 
+ 
+Figure 11. Areas of spruce budworm defoliation in Maine detected during 2021 aerial survey. 
+ 
+
+--- PDF page 14 ---
+14 
+ 
+Remarks 
+The 2021 monitoring season has spelled yet another interesting turn of events in the pursuit to better 
+understand and predict the trajectory of Maine’s current SBW situation. From prior monitoring data, 
+particularly our long-term light trap data, we know to expect ups and downs in the populations during 
+periods of build-up and outbreak (Figure 12). 
+ 
+Figure 12. Long-term monitoring data provide a look at annual variation in Maine SBW populations as 
+measured by light trap catch, acres of defoliation, and pheromone trap catch. 
+Abiotic factors may be playing a significant role in explaining some of the current oscillations. It has been 
+hypothesized that 2021 weather patterns in northwestern New Brunswick and northern Maine could 
+have negatively impacted larval development in these areas and in turn reduced the number of adult 
+moths captured in pheromone traps. For example, June 2021 was the all-time warmest June on record 
+for the Caribou, ME weather station (since that record was previously set in June 2020) and marked the 
+first time since temperature recording began in 1939 that a 90-degree day was reached in the first 10 
+days of June, with back-to-back 92-degree days on June 7 and 8. This was then followed immediately by 
+the coolest July since 2009. Although these events may seem insignificant to us, the effects on 
+temperature-dependent natural processes such as larval/pupal development and host plant phenology 
+can be much more extreme. Under current climate change models, given the long return interval of 
+SBW, there is even conjecture as to whether Maine might ever have an outbreak similar to the 1970’s to 
+1980’s again as the range of suitable climatic conditions for SBW continues to move northwards.  
+0
+1
+2
+3
+4
+5
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+TRAP CATCH METRIC
+DEFOLIATION (MILLIONS OF ACRES)
+SPRUCE BUDWORM POPULATION INDICATORS FOR MAINE (1955-2021)
+DEFOLIATION
+PHEROMONE TRAP (AVG/16)
+LIGHT TRAP (LOG AVG)
+
+--- PDF page 15 ---
+15 
+ 
+As interesting as this may be, it is impossible to determine, since Maine likely received an influx of 
+migrating moths from Quebec on the night of July 17 (Figure 12). This flight could have certainly 
+influenced pheromone trap captures in northern Maine where numbers remained the highest, and so 
+we await further information from the 2021 L2 survey results as we gear up for the 2022 monitoring 
+season.   
+ 
+ 
+Figure 12. Predicted results from SBW flight models for July 17, 2021. Courtesy Rémi Saint-Amant 
+As always, it is our hope that this information will provide land managers with insight on current events 
+so that adequate preparations and responses can be made. Updates during 2022 will be relayed to 
+cooperators and other stakeholders through our monthly conditions report newsletter from the MFS 
+Insect & Disease Lab and through the Spruce Budworm Task Force communications network as 
+important information becomes available.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PDF page 16 ---
+16 
+ 
+Acknowledgements 
+ 
+ 
+On behalf of the Maine Forest Service, we wish to thank our cooperators for their continued participation 
+and dedication to this large-scale and long-term project. The overall success of this program would not 
+be possible without them. This was especially true in a SECOND field season plagued with countless 
+logistics issues for all parties stemming from the ongoing COVID-19 pandemic.  
+Special thanks are due to our partners at the University of Maine Cooperative Forestry Research Unit, 
+especially Dr. Neil Thompson, Dr. Angela Mech, James Stewart, and their staff, who continue to 
+coordinate the overwintering L2 larval survey. The establishment of a dedicated L2-processing lab right 
+here in Maine was an important milestone for these monitoring efforts and will be critical to response.  
+Thanks to each and every one of our SBW colleagues in Canada who provide guidance on many aspects 
+of our SBW monitoring and management activities. We were especially excited to join the automated 
+pheromone trap network this past year with our two traps on loan from Canada and look forward to 
+whatever future collaborations between our groups lie ahead.    
+Another special thank you is due to Maine Forest Service staff, especially Abby Karter, who participated 
+in receiving and counting SBW samples as they came in from the field this season. With more reliable 
+access to the lab again in 2021, this responsibility went back to just a few dedicated sample processors 
+who spent their fair share of time hunched over the lab counter.   
+This program would not be able to function as well as it does without the assistance and experience of 
+our Senior Entomology Technician in northern Maine, Joe Bither. In addition to other SBW tasks and 
+coordinating with cooperators, he alone performs the mid-season defoliation survey across northern 
+Aroostook County. Finally, thanks to Greg Miller for mapping these and all the rest of our SBW survey 
+results for us.  
+We are looking forward to the upcoming monitoring season and working with all of you once again. Let’s 
+hope the numbers remain low but be well-prepared for whatever comes.  
+ 
+Best, 
+Mike  
+ 
+Michael Parisio 
+Forest Entomologist 
+Maine Forest Service                      
+[POSTAL]  168 State House Station 
+[PHYSICAL]  90 Blossom Lane 
+Augusta, ME 04333 
+[OFFICE]  207-287-7094 
+[CELL]  207-592-2562 
+[EMAIL]  michael.parisio@maine.gov  
+ 
+ 

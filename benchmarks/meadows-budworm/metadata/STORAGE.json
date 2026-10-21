@@ -1,0 +1,234 @@
+[
+  {
+    "path": "data/raw/l2.csv",
+    "sha256": "292095e6c4afcd6de012f442312b3df090bf13a3711ce91dd3d46a9f3133e349",
+    "stored_path": "data/raw/l2.csv.gz",
+    "storage_sha256": "70780be0a4a01a52d0dcb377314af126aa41c775131321d0e3fa1c6b85e04209",
+    "stored_bytes": 551250,
+    "encoding": "gzip"
+  },
+  {
+    "path": "data/raw/l2_metadata.json",
+    "sha256": "9cebcbf7b222cb9ab79843fa3fc94f6f0551f955aec00bfec9dd36d3fbd13045",
+    "stored_path": "data/raw/l2_metadata.json",
+    "storage_sha256": "9cebcbf7b222cb9ab79843fa3fc94f6f0551f955aec00bfec9dd36d3fbd13045",
+    "stored_bytes": 36302,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/raw/l2_native.geojson",
+    "sha256": "8d39a02669e1a20548f001e1ea26911e27d97a12ee81c1df70851d927ec2e18a",
+    "stored_path": "data/raw/l2_native.geojson.gz",
+    "storage_sha256": "62a2fea0c24e314cbd6bb6ab0f832510ccac3779169af9f020519e470ef60155",
+    "stored_bytes": 647755,
+    "encoding": "gzip"
+  },
+  {
+    "path": "data/raw/pheromone.csv",
+    "sha256": "b8da9a8b90b7511521520832dfb23ff723136748a9115b18aa3a0b789042875c",
+    "stored_path": "data/raw/pheromone.csv",
+    "storage_sha256": "b8da9a8b90b7511521520832dfb23ff723136748a9115b18aa3a0b789042875c",
+    "stored_bytes": 142063,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/raw/pheromone_metadata.json",
+    "sha256": "8a6866a023a3ef2b97266fe47a2c0b3c349fd9b666cbd957affde985dcc09bc0",
+    "stored_path": "data/raw/pheromone_metadata.json",
+    "storage_sha256": "8a6866a023a3ef2b97266fe47a2c0b3c349fd9b666cbd957affde985dcc09bc0",
+    "stored_bytes": 22697,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/raw/larval_study.xlsx",
+    "sha256": "118108b9cc940a8e1ae717cadfbded4f4d22d48798d4ab11ec6d0f6022bff54d",
+    "stored_path": "data/raw/larval_study.xlsx",
+    "storage_sha256": "118108b9cc940a8e1ae717cadfbded4f4d22d48798d4ab11ec6d0f6022bff54d",
+    "stored_bytes": 224592,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/raw/weather.json",
+    "sha256": "23a769ad60973ad770dd277fda04d8ea57386f4ade43deffb4a2955efae406a8",
+    "stored_path": "data/raw/weather.json.gz",
+    "storage_sha256": "456802d941111fe832775bc8b07f2cd369373963003a323ecb7e11170f38171f",
+    "stored_bytes": 25554,
+    "encoding": "gzip"
+  },
+  {
+    "path": "data/raw/weather_collection.json",
+    "sha256": "8d94adca04db36bb00ab065edd0c308145e423981fd4ab4bd10bf19e94c812e1",
+    "stored_path": "data/raw/weather_collection.json",
+    "storage_sha256": "8d94adca04db36bb00ab065edd0c308145e423981fd4ab4bd10bf19e94c812e1",
+    "stored_bytes": 3154,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/raw/maine_report.pdf",
+    "sha256": "4baaa39bc6e177d2d0e8d5a9eebdc6d7c644ee38f3410bebd5addab68f60d0d2",
+    "stored_path": "data/raw/maine_report.pdf.gz",
+    "storage_sha256": "01d5f6715f630a62d17b0f53b7467bedddb8e55d0fe152ff693873772b5266ce",
+    "stored_bytes": 2293271,
+    "encoding": "gzip"
+  },
+  {
+    "path": "data/raw/balsam_fir.html",
+    "sha256": "408ee0b0d88c855dab592c308a431357e45fe09b0c0bc00770dfcd505b35384b",
+    "stored_path": "data/raw/balsam_fir.html",
+    "storage_sha256": "408ee0b0d88c855dab592c308a431357e45fe09b0c0bc00770dfcd505b35384b",
+    "stored_bytes": 94891,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/raw/black_spruce.html",
+    "sha256": "b6fbd3cb30696892c47428b214e8d2817b2b437b078645537a64f27b698cb7fe",
+    "stored_path": "data/raw/black_spruce.html",
+    "storage_sha256": "b6fbd3cb30696892c47428b214e8d2817b2b437b078645537a64f27b698cb7fe",
+    "stored_bytes": 98160,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/maine_report_text.txt",
+    "sha256": "a51a23f1be5ebac572d2c42d6e01ad0d1d48467455e48ba0ab6daa08a73ceb83",
+    "stored_path": "data/derived/maine_report_text.txt",
+    "storage_sha256": "a51a23f1be5ebac572d2c42d6e01ad0d1d48467455e48ba0ab6daa08a73ceb83",
+    "stored_bytes": 26887,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/maine_page_03.png",
+    "sha256": "dcce7e8245e52d83119e7e154ede3c04982b05516fc20bb833f1fba0e36f3c63",
+    "stored_path": "data/derived/maine_page_03.png",
+    "storage_sha256": "dcce7e8245e52d83119e7e154ede3c04982b05516fc20bb833f1fba0e36f3c63",
+    "stored_bytes": 281232,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/maine_page_10.png",
+    "sha256": "5ffc37728ef3045c396dd241c68f71cfa8fe6652228a97e7435f8e7a9ec58620",
+    "stored_path": "data/derived/maine_page_10.png",
+    "storage_sha256": "5ffc37728ef3045c396dd241c68f71cfa8fe6652228a97e7435f8e7a9ec58620",
+    "stored_bytes": 242812,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/maine_embedded_photo.jpeg",
+    "sha256": "35b2400443c362d9b4e4d5c37511bd38905fd2d66c1d159f8082650276a75982",
+    "stored_path": "data/derived/maine_embedded_photo.jpeg",
+    "storage_sha256": "35b2400443c362d9b4e4d5c37511bd38905fd2d66c1d159f8082650276a75982",
+    "stored_bytes": 126729,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/balsam_fir.txt",
+    "sha256": "d86c03c5b7143fc9f09053c183d5a63e3be7aafbffcfdac9ce00b8c66955480a",
+    "stored_path": "data/derived/balsam_fir.txt",
+    "storage_sha256": "d86c03c5b7143fc9f09053c183d5a63e3be7aafbffcfdac9ce00b8c66955480a",
+    "stored_bytes": 44264,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/black_spruce.txt",
+    "sha256": "6b9fb0c2bcb4e12883e164d34d5694c0848c3234664f1da1f1a3c27bf4d178ee",
+    "stored_path": "data/derived/black_spruce.txt",
+    "storage_sha256": "6b9fb0c2bcb4e12883e164d34d5694c0848c3234664f1da1f1a3c27bf4d178ee",
+    "stored_bytes": 44260,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_records.jsonl",
+    "sha256": "1af9a8e526b97f1239e458ef7a2e2883d94387392e743a5de781e1f584c21379",
+    "stored_path": "data/derived/l2_records.jsonl.gz",
+    "storage_sha256": "22c24b35b625a9acd46e71d51af47ce094ae23fe256d902fd1c1692446164d42",
+    "stored_bytes": 1218431,
+    "encoding": "gzip"
+  },
+  {
+    "path": "data/derived/l2_sample.xml",
+    "sha256": "d6a57bfb7603c7f46ba88ec964e0f90a5fc8563779dcac81953111f0de375109",
+    "stored_path": "data/derived/l2_sample.xml",
+    "storage_sha256": "d6a57bfb7603c7f46ba88ec964e0f90a5fc8563779dcac81953111f0de375109",
+    "stored_bytes": 91889,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_annual_summary.csv",
+    "sha256": "a96635b0f841be303116dc600b28812af63a8aaabb039c2f2a5e0f56f18d6cb7",
+    "stored_path": "data/derived/l2_annual_summary.csv",
+    "storage_sha256": "a96635b0f841be303116dc600b28812af63a8aaabb039c2f2a5e0f56f18d6cb7",
+    "stored_bytes": 418,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_measurements.npz",
+    "sha256": "a7730b3b9f45dfd7861862e823c897430c62298ddd38f4b1f865fc8e6ba80201",
+    "stored_path": "data/derived/l2_measurements.npz",
+    "storage_sha256": "a7730b3b9f45dfd7861862e823c897430c62298ddd38f4b1f865fc8e6ba80201",
+    "stored_bytes": 371442,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_annual_chart.png",
+    "sha256": "5e762534227b33b52a8a252ec91d86ca7e43a12f5d7cbfd8a800a037279332e6",
+    "stored_path": "data/derived/l2_annual_chart.png",
+    "storage_sha256": "5e762534227b33b52a8a252ec91d86ca7e43a12f5d7cbfd8a800a037279332e6",
+    "stored_bytes": 64935,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_annual_chart.svg",
+    "sha256": "e97e75272d8325fab4168222e1daff24be359a368f6f0324d83cba5956e639ea",
+    "stored_path": "data/derived/l2_annual_chart.svg",
+    "storage_sha256": "e97e75272d8325fab4168222e1daff24be359a368f6f0324d83cba5956e639ea",
+    "stored_bytes": 50769,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_locations.png",
+    "sha256": "f357e9935ef4bf5587bc5b710071e4138ff771c7726b1cfddf0ec2b0d50d7542",
+    "stored_path": "data/derived/l2_locations.png",
+    "storage_sha256": "f357e9935ef4bf5587bc5b710071e4138ff771c7726b1cfddf0ec2b0d50d7542",
+    "stored_bytes": 58245,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_timeline.gif",
+    "sha256": "331cbf177951fc30add9bd0c3914a46f0d694a819dfbf041917f8a4f111bb79f",
+    "stored_path": "data/derived/l2_timeline.gif",
+    "storage_sha256": "331cbf177951fc30add9bd0c3914a46f0d694a819dfbf041917f8a4f111bb79f",
+    "stored_bytes": 48099,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_sonification.wav",
+    "sha256": "7397c50c62d4cd9544737b2c3bec258d61711f9680155de100a2a38ee38a9d56",
+    "stored_path": "data/derived/l2_sonification.wav",
+    "storage_sha256": "7397c50c62d4cd9544737b2c3bec258d61711f9680155de100a2a38ee38a9d56",
+    "stored_bytes": 115244,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/l2_timeline.mp4",
+    "sha256": "97d3ffd5cb9291543be5a6d318e2d64c7f865a9e3916ce67900be50728c213f2",
+    "stored_path": "data/derived/l2_timeline.mp4",
+    "storage_sha256": "97d3ffd5cb9291543be5a6d318e2d64c7f865a9e3916ce67900be50728c213f2",
+    "stored_bytes": 14286,
+    "encoding": "identity"
+  },
+  {
+    "path": "data/derived/observation_card.html",
+    "sha256": "7c7c0db3b67ddec8e91727210f31e2a7cd1f2b6ec2109f3b9fb7a2c11a915471",
+    "stored_path": "data/derived/observation_card.html",
+    "storage_sha256": "7c7c0db3b67ddec8e91727210f31e2a7cd1f2b6ec2109f3b9fb7a2c11a915471",
+    "stored_bytes": 2096,
+    "encoding": "identity"
+  },
+  {
+    "path": "database/evidence.sqlite",
+    "sha256": "49856811262c175efe99c31635e098e56312bdbca98a4ec1f58fab12794e5bd5",
+    "stored_path": "database/evidence.sqlite.gz",
+    "storage_sha256": "ed9a3da935b58f340a961153e37649792abe557728684fcd86385fdf61f93698",
+    "stored_bytes": 3754982,
+    "encoding": "gzip"
+  }
+]

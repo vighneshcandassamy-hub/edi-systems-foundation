@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scope": "Evidence storage, archive restore, lineage structure and read-only retrieval; no EDI/model evaluation.",
+  "verified_evidence_files": 28,
+  "structured_records": 32895,
+  "text_blocks": 150,
+  "sqlite_integrity": "ok",
+  "foreign_key_violations": 0,
+  "gzip_roundtrip": true,
+  "reference_filter_test": true,
+  "row_pagination_test": true,
+  "byte_range_request_test": true,
+  "negative_moth_sentinels_preserved": 164,
+  "restore_from_compressed_snapshot": true,
+  "benchmark_executed": false
+}

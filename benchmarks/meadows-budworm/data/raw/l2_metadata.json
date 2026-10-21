@@ -1,0 +1,1471 @@
+{
+  "id" : "e4t9-ku3d",
+  "name" : "Spruce Budworm L2 Mapping / Cartographie L2 pour la tordeuse des bourgeons de l’épinette",
+  "assetType" : "dataset",
+  "attribution" : "Department of Natural Resources / Ministère des Ressources naturelles",
+  "attributionLink" : "https://hub.arcgis.com/datasets/9a96d45906f74b578294d5c82eac995d_0/about?locale=en",
+  "averageRating" : 0,
+  "category" : "Lands, Forests and Wildlife",
+  "createdAt" : 1769614731,
+  "description" : "Spruce budworm is the most destructive, native defoliating insect in eastern Canada. When budworm populations reach outbreak levels, significant ecological and economic damage occurs (see www.healthyforestpartnership.ca for more details). In New Brunswick, budworm populations are tracked through numerous surveys annually. In the fall, the budworm hatch from eggs, crawl to a secure location on the branches of trees and spin a small web to protect them from the winter elements. They will stay in this location, dormant, throughout the winter and into the spring of the following year before emerging to feed on the new needles of spruce and fir branches.This life stage is known as the second larval stage or “L2” for short, and it is an ideal time to sample populations. The survey is significant task, and members of the Forest Health section are aided by regional GNB staff and forestry industry cooperators in collecting the nearly 2000 sample locations across the province. The branches from this survey are taken to Forest Health lab in Fredericton where they go through a “wash” that separates the tiny budworm from the branches. Their numbers are then counted and used to develop maps of spruce budworm populations.These populations are used by the Healthy Forest Partnership research program to develop early intervention strategies to avoid to impacts of outbreak populations.\n/\nLa tordeuse des bourgeons de l’épinette est l’insecte défoliant indigène le plus destructeur de l’est du Canada. Lorsque les populations de TBE atteignent un niveau d’infestation, on observe d’importants dommages sur le plan écologique et économique (voir http://partenariatforetsante.ca/\npour plus d’information). Au Nouveau-Brunswick, on surveille les populations de tordeuse chaque année au moyen de nombreux levés. À l’automne, la tordeuse sort de son œuf, rampe vers un endroit sécuritaire sur les branches des arbres et tisse une petite toile pour se protéger des conditions hivernales. Elle dort à cet emplacement tout au long de l’hiver jusqu’au printemps de l’année suivante, avant d’émerger pour se nourrir des nouvelles aiguilles des branches d’épinette et de sapin.On nomme cette étape du cycle de vie le deuxième stade larvaire (ou L2) et il s’agit de la période idéale pour échantillonner les populations. Le levé représente une tâche considérable et les membres de la Section de la santé forestière reçoivent l’aide du personnel régional du GNB et de coopérateurs de l’industrie forestière pour effectuer la collecte à près de 2 000 emplacements d’échantillonnage à l’échelle de la province. Les branches de ce levé sont envoyées au laboratoire de santé forestière de Fredericton, où elles passent par un « nettoyage » qui sépare la minuscule tordeuse des branches. Ensuite, on les dénombre pour créer des cartes des populations de tordeuse des bourgeons de l’épinette.Le programme de recherche du Partenariat pour une forêt en santé utilise ces populations pour créer des stratégies d’intervention précoce visant à éviter les répercussions des infestations.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 738,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "NBOGL",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 41913400,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1769778371,
+  "publicationGroup" : 20245782,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1790876090,
+  "rowsUpdatedBy" : "rxww-w3g4",
+  "tableId" : 20257233,
+  "totalTimesRated" : 0,
+  "viewCount" : 236,
+  "viewLastModified" : 1790876087,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1769711018,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 7331027,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1769695877,
+    "targetAudience" : "public",
+    "workflowId" : 2190,
+    "reviewer" : {
+      "id" : "tsf9-dpg6",
+      "displayName" : "Logan"
+    },
+    "submissionDetails" : {
+      "permissionType" : "read"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1769711018,
+      "failureCount" : 0,
+      "startedAt" : 1769711018,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "rxww-w3g4",
+      "displayName" : "Allister MacLean"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 625673939,
+    "name" : "BRANCH_AREA_SQM",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "branch_area_sqm",
+    "position" : 1,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898530,
+    "cachedContents" : {
+      "non_null" : "12733",
+      "largest" : "0.675",
+      "null" : "3433",
+      "top" : [ {
+        "item" : "0.225",
+        "count" : "905"
+      }, {
+        "item" : "0.2125",
+        "count" : "901"
+      }, {
+        "item" : "0.25",
+        "count" : "894"
+      }, {
+        "item" : "0.2375",
+        "count" : "878"
+      }, {
+        "item" : "0.2",
+        "count" : "877"
+      }, {
+        "item" : "0.2625",
+        "count" : "807"
+      }, {
+        "item" : "0.1875",
+        "count" : "716"
+      }, {
+        "item" : "0.275",
+        "count" : "702"
+      }, {
+        "item" : "0.175",
+        "count" : "620"
+      }, {
+        "item" : "0.2875",
+        "count" : "609"
+      }, {
+        "item" : "0.1625",
+        "count" : "571"
+      }, {
+        "item" : "0.3",
+        "count" : "570"
+      }, {
+        "item" : "0.3125",
+        "count" : "447"
+      }, {
+        "item" : "0.325",
+        "count" : "439"
+      }, {
+        "item" : "0.3375",
+        "count" : "375"
+      }, {
+        "item" : "0.35",
+        "count" : "316"
+      }, {
+        "item" : "0.15",
+        "count" : "290"
+      }, {
+        "item" : "0.3625",
+        "count" : "264"
+      }, {
+        "item" : "0.375",
+        "count" : "227"
+      }, {
+        "item" : "0.1375",
+        "count" : "199"
+      } ],
+      "smallest" : "0.1125",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673959,
+    "name" : "COLLECTION_DATE",
+    "dataTypeName" : "date",
+    "description" : "",
+    "fieldName" : "collection_date",
+    "position" : 2,
+    "renderTypeName" : "date",
+    "tableColumnId" : 165002563,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "2025-11-13T13:47:52.000Z",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2022-10-11T03:00:00.000Z",
+        "count" : "79"
+      }, {
+        "item" : "2020-09-29T03:00:00.000Z",
+        "count" : "76"
+      }, {
+        "item" : "2020-10-06T03:00:00.000Z",
+        "count" : "72"
+      }, {
+        "item" : "2021-09-14T03:00:00.000Z",
+        "count" : "66"
+      }, {
+        "item" : "2021-09-29T03:00:00.000Z",
+        "count" : "60"
+      }, {
+        "item" : "2020-10-05T03:00:00.000Z",
+        "count" : "59"
+      }, {
+        "item" : "2019-10-08T03:00:00.000Z",
+        "count" : "58"
+      }, {
+        "item" : "2020-10-13T03:00:00.000Z",
+        "count" : "58"
+      }, {
+        "item" : "2019-10-01T03:00:00.000Z",
+        "count" : "56"
+      }, {
+        "item" : "2017-10-03T03:00:00.000Z",
+        "count" : "56"
+      }, {
+        "item" : "2021-09-07T03:00:00.000Z",
+        "count" : "52"
+      }, {
+        "item" : "2019-10-03T03:00:00.000Z",
+        "count" : "52"
+      }, {
+        "item" : "2020-09-28T03:00:00.000Z",
+        "count" : "52"
+      }, {
+        "item" : "2022-10-06T03:00:00.000Z",
+        "count" : "50"
+      }, {
+        "item" : "2019-09-17T03:00:00.000Z",
+        "count" : "50"
+      }, {
+        "item" : "2021-09-08T03:00:00.000Z",
+        "count" : "49"
+      }, {
+        "item" : "2022-10-13T03:00:00.000Z",
+        "count" : "49"
+      }, {
+        "item" : "2022-10-10T03:00:00.000Z",
+        "count" : "47"
+      }, {
+        "item" : "2021-10-06T03:00:00.000Z",
+        "count" : "47"
+      }, {
+        "item" : "2021-09-27T03:00:00.000Z",
+        "count" : "46"
+      } ],
+      "smallest" : "2017-08-08T10:06:34.000Z",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : { }
+  }, {
+    "id" : 625673941,
+    "name" : "EPINOTIA_NANANA_COUNT",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "epinotia_nanana_count",
+    "position" : 3,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898532,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "19",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "15688"
+      }, {
+        "item" : "1",
+        "count" : "319"
+      }, {
+        "item" : "2",
+        "count" : "82"
+      }, {
+        "item" : "3",
+        "count" : "34"
+      }, {
+        "item" : "4",
+        "count" : "16"
+      }, {
+        "item" : "6",
+        "count" : "6"
+      }, {
+        "item" : "7",
+        "count" : "5"
+      }, {
+        "item" : "8",
+        "count" : "3"
+      }, {
+        "item" : "11",
+        "count" : "3"
+      }, {
+        "item" : "9",
+        "count" : "3"
+      }, {
+        "item" : "15",
+        "count" : "2"
+      }, {
+        "item" : "5",
+        "count" : "2"
+      }, {
+        "item" : "19",
+        "count" : "1"
+      }, {
+        "item" : "16",
+        "count" : "1"
+      }, {
+        "item" : "10",
+        "count" : "1"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673942,
+    "name" : "L2_AVERAGE",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "l2_average",
+    "position" : 4,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898533,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "71.0",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0.0",
+        "count" : "10597"
+      }, {
+        "item" : "0.33",
+        "count" : "1953"
+      }, {
+        "item" : "0.67",
+        "count" : "958"
+      }, {
+        "item" : "1.0",
+        "count" : "556"
+      }, {
+        "item" : "1.33",
+        "count" : "379"
+      }, {
+        "item" : "1.67",
+        "count" : "269"
+      }, {
+        "item" : "2.0",
+        "count" : "207"
+      }, {
+        "item" : "2.33",
+        "count" : "148"
+      }, {
+        "item" : "2.67",
+        "count" : "120"
+      }, {
+        "item" : "3.0",
+        "count" : "111"
+      }, {
+        "item" : "3.33",
+        "count" : "77"
+      }, {
+        "item" : "3.67",
+        "count" : "68"
+      }, {
+        "item" : "5.0",
+        "count" : "55"
+      }, {
+        "item" : "4.0",
+        "count" : "51"
+      }, {
+        "item" : "4.33",
+        "count" : "50"
+      }, {
+        "item" : "4.67",
+        "count" : "44"
+      }, {
+        "item" : "5.33",
+        "count" : "37"
+      }, {
+        "item" : "5.67",
+        "count" : "36"
+      }, {
+        "item" : "6.0",
+        "count" : "33"
+      }, {
+        "item" : "7.0",
+        "count" : "28"
+      } ],
+      "smallest" : "0.0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673943,
+    "name" : "L2_BRANCH1",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "l2_branch1",
+    "position" : 5,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898534,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "103",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "13036"
+      }, {
+        "item" : "1",
+        "count" : "1429"
+      }, {
+        "item" : "2",
+        "count" : "562"
+      }, {
+        "item" : "3",
+        "count" : "304"
+      }, {
+        "item" : "4",
+        "count" : "199"
+      }, {
+        "item" : "5",
+        "count" : "122"
+      }, {
+        "item" : "6",
+        "count" : "85"
+      }, {
+        "item" : "7",
+        "count" : "71"
+      }, {
+        "item" : "8",
+        "count" : "52"
+      }, {
+        "item" : "9",
+        "count" : "47"
+      }, {
+        "item" : "12",
+        "count" : "31"
+      }, {
+        "item" : "11",
+        "count" : "31"
+      }, {
+        "item" : "10",
+        "count" : "27"
+      }, {
+        "item" : "13",
+        "count" : "24"
+      }, {
+        "item" : "14",
+        "count" : "18"
+      }, {
+        "item" : "17",
+        "count" : "16"
+      }, {
+        "item" : "15",
+        "count" : "13"
+      }, {
+        "item" : "16",
+        "count" : "11"
+      }, {
+        "item" : "18",
+        "count" : "9"
+      }, {
+        "item" : "19",
+        "count" : "8"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673944,
+    "name" : "L2_BRANCH2",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "l2_branch2",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898535,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "65",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "13003"
+      }, {
+        "item" : "1",
+        "count" : "1430"
+      }, {
+        "item" : "2",
+        "count" : "598"
+      }, {
+        "item" : "3",
+        "count" : "271"
+      }, {
+        "item" : "4",
+        "count" : "199"
+      }, {
+        "item" : "5",
+        "count" : "125"
+      }, {
+        "item" : "6",
+        "count" : "101"
+      }, {
+        "item" : "7",
+        "count" : "74"
+      }, {
+        "item" : "8",
+        "count" : "60"
+      }, {
+        "item" : "9",
+        "count" : "38"
+      }, {
+        "item" : "10",
+        "count" : "38"
+      }, {
+        "item" : "11",
+        "count" : "28"
+      }, {
+        "item" : "13",
+        "count" : "23"
+      }, {
+        "item" : "12",
+        "count" : "21"
+      }, {
+        "item" : "14",
+        "count" : "17"
+      }, {
+        "item" : "19",
+        "count" : "15"
+      }, {
+        "item" : "16",
+        "count" : "13"
+      }, {
+        "item" : "15",
+        "count" : "12"
+      }, {
+        "item" : "18",
+        "count" : "11"
+      }, {
+        "item" : "21",
+        "count" : "8"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673945,
+    "name" : "L2_BRANCH3",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "l2_branch3",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898536,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "159",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "13029"
+      }, {
+        "item" : "1",
+        "count" : "1406"
+      }, {
+        "item" : "2",
+        "count" : "568"
+      }, {
+        "item" : "3",
+        "count" : "295"
+      }, {
+        "item" : "4",
+        "count" : "200"
+      }, {
+        "item" : "5",
+        "count" : "123"
+      }, {
+        "item" : "6",
+        "count" : "103"
+      }, {
+        "item" : "8",
+        "count" : "72"
+      }, {
+        "item" : "7",
+        "count" : "61"
+      }, {
+        "item" : "9",
+        "count" : "40"
+      }, {
+        "item" : "10",
+        "count" : "34"
+      }, {
+        "item" : "12",
+        "count" : "26"
+      }, {
+        "item" : "11",
+        "count" : "25"
+      }, {
+        "item" : "15",
+        "count" : "21"
+      }, {
+        "item" : "13",
+        "count" : "19"
+      }, {
+        "item" : "14",
+        "count" : "18"
+      }, {
+        "item" : "16",
+        "count" : "14"
+      }, {
+        "item" : "17",
+        "count" : "11"
+      }, {
+        "item" : "18",
+        "count" : "11"
+      }, {
+        "item" : "20",
+        "count" : "9"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673946,
+    "name" : "L2_TOTAL",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "l2_total",
+    "position" : 8,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898537,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "213",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "10597"
+      }, {
+        "item" : "1",
+        "count" : "1953"
+      }, {
+        "item" : "2",
+        "count" : "958"
+      }, {
+        "item" : "3",
+        "count" : "556"
+      }, {
+        "item" : "4",
+        "count" : "379"
+      }, {
+        "item" : "5",
+        "count" : "269"
+      }, {
+        "item" : "6",
+        "count" : "207"
+      }, {
+        "item" : "7",
+        "count" : "148"
+      }, {
+        "item" : "8",
+        "count" : "120"
+      }, {
+        "item" : "9",
+        "count" : "111"
+      }, {
+        "item" : "10",
+        "count" : "77"
+      }, {
+        "item" : "11",
+        "count" : "68"
+      }, {
+        "item" : "15",
+        "count" : "55"
+      }, {
+        "item" : "12",
+        "count" : "51"
+      }, {
+        "item" : "13",
+        "count" : "50"
+      }, {
+        "item" : "14",
+        "count" : "44"
+      }, {
+        "item" : "16",
+        "count" : "37"
+      }, {
+        "item" : "17",
+        "count" : "36"
+      }, {
+        "item" : "18",
+        "count" : "33"
+      }, {
+        "item" : "21",
+        "count" : "28"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673947,
+    "name" : "OBJECTID",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "objectid",
+    "position" : 9,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898538,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "57955",
+      "null" : "0",
+      "top" : [ {
+        "item" : "16336",
+        "count" : "1"
+      }, {
+        "item" : "8100",
+        "count" : "1"
+      }, {
+        "item" : "16560",
+        "count" : "1"
+      }, {
+        "item" : "2747",
+        "count" : "1"
+      }, {
+        "item" : "39058",
+        "count" : "1"
+      }, {
+        "item" : "4042",
+        "count" : "1"
+      }, {
+        "item" : "8657",
+        "count" : "1"
+      }, {
+        "item" : "26601",
+        "count" : "1"
+      }, {
+        "item" : "3446",
+        "count" : "1"
+      }, {
+        "item" : "44482",
+        "count" : "1"
+      }, {
+        "item" : "51959",
+        "count" : "1"
+      }, {
+        "item" : "8479",
+        "count" : "1"
+      }, {
+        "item" : "10907",
+        "count" : "1"
+      }, {
+        "item" : "22123",
+        "count" : "1"
+      }, {
+        "item" : "47716",
+        "count" : "1"
+      }, {
+        "item" : "6406",
+        "count" : "1"
+      }, {
+        "item" : "17057",
+        "count" : "1"
+      }, {
+        "item" : "1376",
+        "count" : "1"
+      }, {
+        "item" : "11842",
+        "count" : "1"
+      }, {
+        "item" : "12567",
+        "count" : "1"
+      } ],
+      "smallest" : "1",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673948,
+    "name" : "OTHER_DEFOLIATOR_COUNT",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "other_defoliator_count",
+    "position" : 10,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898539,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "50",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "13475"
+      }, {
+        "item" : "1",
+        "count" : "1428"
+      }, {
+        "item" : "2",
+        "count" : "658"
+      }, {
+        "item" : "3",
+        "count" : "275"
+      }, {
+        "item" : "4",
+        "count" : "147"
+      }, {
+        "item" : "5",
+        "count" : "71"
+      }, {
+        "item" : "6",
+        "count" : "51"
+      }, {
+        "item" : "7",
+        "count" : "23"
+      }, {
+        "item" : "10",
+        "count" : "10"
+      }, {
+        "item" : "9",
+        "count" : "9"
+      }, {
+        "item" : "8",
+        "count" : "7"
+      }, {
+        "item" : "11",
+        "count" : "4"
+      }, {
+        "item" : "12",
+        "count" : "4"
+      }, {
+        "item" : "14",
+        "count" : "2"
+      }, {
+        "item" : "13",
+        "count" : "1"
+      }, {
+        "item" : "50",
+        "count" : "1"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673949,
+    "name" : "PLOT_ID",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "plot_id",
+    "position" : 11,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898540,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "67926789",
+      "null" : "0",
+      "top" : [ {
+        "item" : "47126589",
+        "count" : "11"
+      }, {
+        "item" : "47716630",
+        "count" : "10"
+      }, {
+        "item" : "47276879",
+        "count" : "10"
+      }, {
+        "item" : "47686507",
+        "count" : "10"
+      }, {
+        "item" : "47396801",
+        "count" : "10"
+      }, {
+        "item" : "47546649",
+        "count" : "10"
+      }, {
+        "item" : "47146691",
+        "count" : "10"
+      }, {
+        "item" : "47506581",
+        "count" : "10"
+      }, {
+        "item" : "46996697",
+        "count" : "9"
+      }, {
+        "item" : "47636838",
+        "count" : "9"
+      }, {
+        "item" : "47556573",
+        "count" : "9"
+      }, {
+        "item" : "47216723",
+        "count" : "9"
+      }, {
+        "item" : "47126727",
+        "count" : "9"
+      }, {
+        "item" : "47026576",
+        "count" : "9"
+      }, {
+        "item" : "47846689",
+        "count" : "9"
+      }, {
+        "item" : "47496803",
+        "count" : "9"
+      }, {
+        "item" : "47156682",
+        "count" : "9"
+      }, {
+        "item" : "47506751",
+        "count" : "9"
+      }, {
+        "item" : "47796584",
+        "count" : "9"
+      }, {
+        "item" : "47106697",
+        "count" : "9"
+      } ],
+      "smallest" : "45116689",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673950,
+    "name" : "SAMPLING_STAGE_INDCT",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "sampling_stage_indct",
+    "position" : 12,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898541,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "2",
+      "null" : "0",
+      "top" : [ {
+        "item" : "1",
+        "count" : "15027"
+      }, {
+        "item" : "2",
+        "count" : "1139"
+      } ],
+      "smallest" : "1",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673951,
+    "name" : "SPRUCE_CONEWORM_COUNT",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "spruce_coneworm_count",
+    "position" : 13,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898542,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "44",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "14643"
+      }, {
+        "item" : "1",
+        "count" : "942"
+      }, {
+        "item" : "2",
+        "count" : "302"
+      }, {
+        "item" : "3",
+        "count" : "128"
+      }, {
+        "item" : "4",
+        "count" : "49"
+      }, {
+        "item" : "5",
+        "count" : "30"
+      }, {
+        "item" : "6",
+        "count" : "25"
+      }, {
+        "item" : "7",
+        "count" : "13"
+      }, {
+        "item" : "8",
+        "count" : "10"
+      }, {
+        "item" : "9",
+        "count" : "5"
+      }, {
+        "item" : "10",
+        "count" : "3"
+      }, {
+        "item" : "14",
+        "count" : "3"
+      }, {
+        "item" : "15",
+        "count" : "2"
+      }, {
+        "item" : "12",
+        "count" : "2"
+      }, {
+        "item" : "11",
+        "count" : "2"
+      }, {
+        "item" : "13",
+        "count" : "2"
+      }, {
+        "item" : "23",
+        "count" : "2"
+      }, {
+        "item" : "18",
+        "count" : "1"
+      }, {
+        "item" : "44",
+        "count" : "1"
+      }, {
+        "item" : "22",
+        "count" : "1"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673952,
+    "name" : "SPRUCE_NEEDLE_MINER_COUNT",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "spruce_needle_miner_count",
+    "position" : 14,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898543,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "20",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "10834"
+      }, {
+        "item" : "1",
+        "count" : "3080"
+      }, {
+        "item" : "2",
+        "count" : "1219"
+      }, {
+        "item" : "3",
+        "count" : "499"
+      }, {
+        "item" : "4",
+        "count" : "260"
+      }, {
+        "item" : "5",
+        "count" : "105"
+      }, {
+        "item" : "6",
+        "count" : "70"
+      }, {
+        "item" : "7",
+        "count" : "41"
+      }, {
+        "item" : "9",
+        "count" : "17"
+      }, {
+        "item" : "8",
+        "count" : "15"
+      }, {
+        "item" : "10",
+        "count" : "7"
+      }, {
+        "item" : "11",
+        "count" : "6"
+      }, {
+        "item" : "14",
+        "count" : "3"
+      }, {
+        "item" : "12",
+        "count" : "3"
+      }, {
+        "item" : "20",
+        "count" : "1"
+      }, {
+        "item" : "17",
+        "count" : "1"
+      }, {
+        "item" : "16",
+        "count" : "1"
+      }, {
+        "item" : "19",
+        "count" : "1"
+      }, {
+        "item" : "15",
+        "count" : "1"
+      }, {
+        "item" : "18",
+        "count" : "1"
+      } ],
+      "smallest" : "0",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673953,
+    "name" : "STAND_DEFOLIATION",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "stand_defoliation",
+    "position" : 15,
+    "renderTypeName" : "number",
+    "tableColumnId" : 164898544,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "99",
+      "null" : "0",
+      "top" : [ {
+        "item" : "1",
+        "count" : "14968"
+      }, {
+        "item" : "2",
+        "count" : "912"
+      }, {
+        "item" : "3",
+        "count" : "187"
+      }, {
+        "item" : "99",
+        "count" : "52"
+      }, {
+        "item" : "4",
+        "count" : "35"
+      }, {
+        "item" : "5",
+        "count" : "12"
+      } ],
+      "smallest" : "1",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 625673954,
+    "name" : "STAND_TYPE",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "stand_type",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 164898545,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "T",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N",
+        "count" : "10201"
+      }, {
+        "item" : "T",
+        "count" : "2976"
+      }, {
+        "item" : "P",
+        "count" : "2908"
+      }, {
+        "item" : "A",
+        "count" : "81"
+      } ],
+      "smallest" : "A",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : { }
+  }, {
+    "id" : 625673955,
+    "name" : "TREE_1_SPECIES",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "tree_1_species",
+    "position" : 17,
+    "renderTypeName" : "text",
+    "tableColumnId" : 164898546,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "Ws",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Bf",
+        "count" : "10295"
+      }, {
+        "item" : "R/Bs",
+        "count" : "3614"
+      }, {
+        "item" : "Ws",
+        "count" : "2062"
+      }, {
+        "item" : "Ns",
+        "count" : "195"
+      } ],
+      "smallest" : "Bf",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : { }
+  }, {
+    "id" : 625673956,
+    "name" : "TREE_2_SPECIES",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "tree_2_species",
+    "position" : 18,
+    "renderTypeName" : "text",
+    "tableColumnId" : 164898547,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "Ws",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Bf",
+        "count" : "9660"
+      }, {
+        "item" : "R/Bs",
+        "count" : "4129"
+      }, {
+        "item" : "Ws",
+        "count" : "2183"
+      }, {
+        "item" : "Ns",
+        "count" : "194"
+      } ],
+      "smallest" : "Bf",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : { }
+  }, {
+    "id" : 625673957,
+    "name" : "TREE_3_SPECIES",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "tree_3_species",
+    "position" : 19,
+    "renderTypeName" : "text",
+    "tableColumnId" : 164898548,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "largest" : "Ws",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Bf",
+        "count" : "8694"
+      }, {
+        "item" : "R/Bs",
+        "count" : "4739"
+      }, {
+        "item" : "Ws",
+        "count" : "2547"
+      }, {
+        "item" : "Ns",
+        "count" : "186"
+      } ],
+      "smallest" : "Bf",
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : { }
+  }, {
+    "id" : 625673958,
+    "name" : "point",
+    "dataTypeName" : "point",
+    "description" : "",
+    "fieldName" : "point",
+    "position" : 20,
+    "renderTypeName" : "point",
+    "tableColumnId" : 164898549,
+    "cachedContents" : {
+      "non_null" : "16166",
+      "null" : "0",
+      "top" : [ {
+        "item" : {
+          "coordinates" : [ -68.94074001873736, 47.27850997908572 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.99966999189468, 47.277619959807545 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -64.64353998612445, 45.86809996834198 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.06023999979902, 47.513130028754176 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -66.25191996131103, 47.217629981821325 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.67959002670061, 47.36769997386387 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.87753996142709, 47.21818001678152 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.10807506427153, 47.082972459222304 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -66.08033001548749, 47.8934099980927 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -64.65412161592705, 45.81074040079094 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.18780995514936, 47.45247998180475 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.72833993764328, 47.75231001836094 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -66.34466997787851, 47.35881998384114 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.36723004598309, 45.986519985266106 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -65.42377000733963, 46.77079000201167 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -68.18042995348716, 47.90939002751878 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.6270800623177, 47.831420040783456 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -67.74111006388394, 47.797489998755466 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -66.29197997960979, 47.15726000598148 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      }, {
+        "item" : {
+          "coordinates" : [ -64.78690001665002, 45.897700022070886 ],
+          "type" : "Point"
+        },
+        "count" : "2"
+      } ],
+      "count" : "16166",
+      "cardinality" : "16166"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "New Brunswick Open Government Licence"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Department / Ministère" : {
+        "Department / Ministère" : "Natural Resources / Ressources naturelles"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "66qi-73dz",
+    "displayName" : "Open Data NB \\ Données ouvertes NB",
+    "profileImageUrlLarge" : "/api/users/66qi-73dz/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/66qi-73dz/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/66qi-73dz/profile_images/TINY",
+    "screenName" : "Open Data NB \\ Données ouvertes NB",
+    "type" : "interactive",
+    "flags" : [ "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "66qi-73dz",
+    "displayName" : "Open Data NB \\ Données ouvertes NB",
+    "profileImageUrlLarge" : "/api/users/66qi-73dz/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/66qi-73dz/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/66qi-73dz/profile_images/TINY",
+    "screenName" : "Open Data NB \\ Données ouvertes NB",
+    "type" : "interactive",
+    "flags" : [ "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "spruce budworm", "tordeuse des bourgeons de l’épinette", "natural resources", "ressources naturelles" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

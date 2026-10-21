@@ -1,0 +1,143 @@
+[
+  {
+    "name": "l2.csv",
+    "url": "https://gnb.socrata.com/api/views/e4t9-ku3d/rows.csv?accessType=DOWNLOAD",
+    "final_url": "https://gnb.socrata.com/api/views/e4t9-ku3d/rows.csv",
+    "bytes": 2084212,
+    "content_type": "text/csv; charset=utf-8",
+    "elapsed": 8.9,
+    "status": "downloaded"
+  },
+  {
+    "name": "l2_metadata.json",
+    "url": "https://gnb.socrata.com/api/views/e4t9-ku3d.json",
+    "final_url": "https://gnb.socrata.com/api/views/e4t9-ku3d.json",
+    "bytes": 36302,
+    "content_type": "application/json; charset=utf-8",
+    "elapsed": 8.3,
+    "status": "downloaded"
+  },
+  {
+    "name": "pheromone.csv",
+    "url": "https://gnb.socrata.com/api/views/bw6q-5rw4/rows.csv?accessType=DOWNLOAD",
+    "final_url": "https://gnb.socrata.com/api/views/bw6q-5rw4/rows.csv",
+    "bytes": 142063,
+    "content_type": "text/csv; charset=utf-8",
+    "elapsed": 8.2,
+    "status": "downloaded"
+  },
+  {
+    "name": "larval_study.xlsx",
+    "url": "https://open.canada.ca/data/dataset/42ca63ee-aa9a-4437-8810-7d54d328229e/resource/74630e73-1212-4122-8c7c-db00733ead41/download/cfumiferana_l2_l4.xlsx",
+    "final_url": "https://opencanada.blob.core.windows.net/opengovprod/resources/74630e73-1212-4122-8c7c-db00733ead41/cfumiferana_l2_l4.xlsx",
+    "bytes": 224592,
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "elapsed": 19.3,
+    "status": "downloaded"
+  },
+  {
+    "name": "forest_pests.html",
+    "url": "https://www.gnb.ca/en/topic/environment-resources/forestry-conservation/forest-pests.html",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "elapsed": 6.0
+  },
+  {
+    "name": "eis_policy.html",
+    "url": "https://www.gnb.ca/en/topic/environment-resources/forestry-conservation/spruce-budworm.html",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "elapsed": 6.0
+  },
+  {
+    "name": "eis_evaluation.html",
+    "url": "https://natural-resources.canada.ca/corporate/planning-reporting/audit-evaluation/joint-evaluation-audit-spruce-budworm-early-intervention-strategy-phase-ii",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "elapsed": 7.4
+  },
+  {
+    "name": "maine_report.pdf",
+    "url": "https://www.sprucebudwormmaine.org/wp-content/uploads/2022/03/MFS-Spruce-Budworm-in-Maine-2021-Final-Report.pdf",
+    "final_url": "https://www.sprucebudwormmaine.org/wp-content/uploads/2022/03/MFS-Spruce-Budworm-in-Maine-2021-Final-Report.pdf",
+    "bytes": 2402494,
+    "content_type": "application/pdf",
+    "elapsed": 7.6,
+    "status": "downloaded"
+  },
+  {
+    "name": "weather.json",
+    "url": "https://api.weather.gc.ca/collections/climate-daily/items?f=json&limit=2000&STATION_NAME=FREDERICTON%20CDA&datetime=2022-01-01/2023-12-31",
+    "final_url": "https://api.weather.gc.ca/collections/climate-daily/items",
+    "bytes": 703115,
+    "content_type": "application/json",
+    "elapsed": 6.6,
+    "status": "downloaded"
+  },
+  {
+    "name": "nb_license.html",
+    "url": "https://www2.gnb.ca/content/gnb/en/departments/finance/snb/open_government/open_government_licence.html",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "elapsed": 5.7
+  },
+  {
+    "name": "nb_pest_report.pdf",
+    "url": "https://www.gnb.ca/content/dam/GNB3/t/enr-ern/forest/pest-report.pdf",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "crown_forest_management.pdf",
+    "url": "https://www.gnb.ca/content/dam/GNB3/t/enr-ern/forest-conservation/docs/Managing_NB_Crown_Forests.pdf",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "larval_study_catalogue.json",
+    "url": "https://open.canada.ca/data/api/action/package_show?id=42ca63ee-aa9a-4437-8810-7d54d328229e",
+    "final_url": "https://open.canada.ca/data/api/action/package_show",
+    "bytes": 244,
+    "content_type": "text/html",
+    "status": "invalid_response",
+    "error": "HTML request rejection returned in place of JSON"
+  },
+  {
+    "name": "pheromone_metadata.json",
+    "url": "https://gnb.socrata.com/api/views/bw6q-5rw4.json",
+    "final_url": "https://gnb.socrata.com/api/views/bw6q-5rw4.json",
+    "bytes": 22697,
+    "content_type": "application/json; charset=utf-8",
+    "status": "downloaded"
+  },
+  {
+    "name": "weather_collection.json",
+    "url": "https://api.weather.gc.ca/collections/climate-daily?f=json",
+    "final_url": "https://api.weather.gc.ca/collections/climate-daily",
+    "bytes": 3154,
+    "content_type": "application/json",
+    "status": "downloaded"
+  },
+  {
+    "name": "l2_native.geojson",
+    "url": "https://gnb.socrata.com/api/geospatial/e4t9-ku3d?method=export&format=GeoJSON",
+    "final_url": "https://gnb.socrata.com/api/geospatial/e4t9-ku3d",
+    "bytes": 9098053,
+    "content_type": "application/vnd.geo+json",
+    "status": "downloaded"
+  },
+  {
+    "name": "balsam_fir.html",
+    "url": "https://research.fs.usda.gov/silvics/balsam-fir",
+    "bytes": 94891,
+    "content_type": "text/html; charset=utf-8",
+    "status": "downloaded"
+  },
+  {
+    "name": "black_spruce.html",
+    "url": "https://research.fs.usda.gov/silvics/black-spruce",
+    "bytes": 98160,
+    "content_type": "text/html; charset=utf-8",
+    "status": "downloaded"
+  }
+]
