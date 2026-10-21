@@ -1,0 +1,13 @@
+{
+  "purpose": "neutral ChatGPT-plan eligibility probe",
+  "paid_fallback": false,
+  "status": "neutral_inference_completed",
+  "inference_requests": 1,
+  "plan_usage_authorized": true,
+  "model": "gpt-6.1-sol",
+  "usage": {
+    "input_tokens": 16,
+    "output_tokens": 6,
+    "total_tokens": 22
+  }
+}

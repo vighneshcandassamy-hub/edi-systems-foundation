@@ -1,0 +1,21 @@
+{
+  "stage": "isolated_install",
+  "exit_code": 0,
+  "free_disk_before": 1145951768576,
+  "paid_fallback": false,
+  "benchmark_started": false,
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "pip",
+    "--python",
+    "/kaggle/temp/edi-free-vllm/env/bin/python",
+    "install",
+    "--no-cache-dir",
+    "vllm==0.21.0",
+    "transformers==4.57.6"
+  ],
+  "import_exit_code": 0,
+  "import_stdout": "{\"torch\": \"2.11.0+cu130\", \"cuda\": \"13.0\", \"vllm\": \"0.21.0\", \"transformers\": \"4.57.6\", \"cuda_available\": true}\n",
+  "import_stderr": "Error in sitecustomize; set PYTHONVERBOSE for traceback:\nModuleNotFoundError: No module named 'wrapt'\n"
+}

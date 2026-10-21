@@ -1,0 +1,79 @@
+{
+  "kind": "neutral-model-feasibility-export",
+  "date": "2026-10-22",
+  "all_14_exported_file_hashes_verified_on_desktop": true,
+  "exported_files": {
+    "edi-free-gpu-inventory.json": {
+      "sha256": "7fe017cbb8dd58671e3ce74b09f04f22f58ab7fb5c0c7f503bbb3821c75b8e4d",
+      "bytes": 184,
+      "included_in_git": true
+    },
+    "edi-free-vllm-install.json": {
+      "sha256": "ed090a61795f15d6c9047804af228a98f4b306ab44952b423cb168160f204158",
+      "bytes": 662,
+      "included_in_git": true
+    },
+    "edi-free-vllm-initial-failure.json": {
+      "sha256": "1c85c1eb530754d01ea8cea0667ee62f87dda464b215fcc26929d76c35f0e4f2",
+      "bytes": 111,
+      "included_in_git": true
+    },
+    "edi-free-qwen-artifacts.json": {
+      "sha256": "e5112f4caca44fde4ad09ed6c662b9e2769a10a1429e8b47eaddb9572a0370fb",
+      "bytes": 2360,
+      "included_in_git": true
+    },
+    "edi-free-vllm-probe.json": {
+      "sha256": "a148e48240b0b34c05fd5208697f4113cc53a56ef233ed790ea90d584858d5b2",
+      "bytes": 2159,
+      "included_in_git": true
+    },
+    "edi-free-neutral-responses.json": {
+      "sha256": "a05d274847d60a49ecbb2b0af43ffd2f4013ed58921f5ffba6122c74ea7b5ea3",
+      "bytes": 2033,
+      "included_in_git": true
+    },
+    "edi-free-vllm-probe.json.attempt1": {
+      "sha256": "4a40c036876f266784c012f9115743375d741027e9d439b3fe88579f1f1f8d28",
+      "bytes": 1733,
+      "included_in_git": true
+    },
+    "edi-free-vllm-server.log.attempt1": {
+      "sha256": "745b67961551ab7258cb700e57629da7e5b71321ae51dce3d980f6790f584c99",
+      "bytes": 94367,
+      "included_in_git": false
+    },
+    "edi-free-qwen-probe.log.attempt1": {
+      "sha256": "9273d1b4bdd53db998b3567f3ef691aff01b2c583f59969ae3541bb48074d0bd",
+      "bytes": 398,
+      "included_in_git": false
+    },
+    "edi-free-vllm-server.log": {
+      "sha256": "945d4279998958f1aa4012e0bf50705178227a583fb42ca179197f47a650d7c9",
+      "bytes": 18420,
+      "included_in_git": false
+    },
+    "edi-free-qwen-probe.log": {
+      "sha256": "3af38d2174eb4a0827509f6956947116c24fc8dd7acd394e43588c12f01e98ef",
+      "bytes": 263,
+      "included_in_git": false
+    },
+    "edi-free-vllm-packages.txt": {
+      "sha256": "2b331c54850ba9b7565bb68414b985871cbad57afa0b591587e75a4e4458fdd5",
+      "bytes": 3911,
+      "included_in_git": true
+    },
+    "qwen_neutral_probe.py": {
+      "sha256": "8fe134402abcc9f17a60b9b9ced6ba480a360807a9444ef7c556919560e7f6d8",
+      "bytes": 6432,
+      "included_in_git": false
+    },
+    "qwen_neutral_probe.attempt2.py": {
+      "sha256": "5921c2a351b6e8e26fd628d1df9deb3a9f841e804abc7625c485b6c5d66bea09",
+      "bytes": 6548,
+      "included_in_git": false
+    }
+  },
+  "raw_log_location": "C:/Users/csscs/Documents/Codex/2026-10-22/edi-free-setup/evidence",
+  "benchmark_started": false
+}

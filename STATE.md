@@ -157,3 +157,10 @@ Both Linux and Windows CPU campaigns pass the same 19 scoped engineering checks 
 The available desktop is Windows/RTX 2060 6144 MiB, with Python 3.12 available but no Docker command/WSL distribution; OpenAI key absent in checked process/user/machine environments. No model downgrade, quantization, OS installation, GPU rental or paid inference was performed. Native model/checkpoint/processor/container binding, restricted teacher egress, C6 constructed-world eligibility, full P1/isolation and Cedar investigation remain BLOCKED/NOT RUN. Source integration is a scoped increment, not completion of the full execution plan.
 
 Combined-tree foundation verification additionally passes on the desktop: 40 imported architecture/reference files remain unchanged. The original text-only binary/environment scan and Windows inventory separator issue are recorded with a scoped adapter correction; exact frozen package/verifier hashes and all benchmark checks remain required. An unlisted binary is still rejected by a negative control. Frozen benchmark bytes are unchanged. See baseline-positive.json and baseline-negative-control.json in the execution evidence.
+
+
+## Free model feasibility checkpoint — 22 October 2026
+
+[Free compute setup](docs/implementation/FREE_COMPUTE_SETUP.md) records actual neutral model execution: GPT-6.1 Sol through the owner's ChatGPT Plus plan (22 tokens), and pinned Qwen3-VL-8B through vLLM 0.21.0 on Kaggle T4 x2. Arithmetic and one image request completed; the server stopped and both GPUs were released. The tested student profile is FP16/TP2/4096 context/one bounded image, not the full proposed benchmark profile. A reusable Kaggle notebook and selected exact evidence are saved; all 14 original local exports had matching SHA-256 hashes. Initial ensurepip and FlashInfer sampler failures remain recorded.
+
+No EDI production module, frozen benchmark byte, model weight, credential or browser session was added or changed. The live EDI/C6/isolation/P1/Cedar gates remain open. OpenAI plan availability is demonstrated, but the EDI teacher adapter and restricted connection have not been qualified.
