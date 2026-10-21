@@ -1,0 +1,9 @@
+{
+  "workspace_id": "default",
+  "request_id": "REPLACE-adoption-request",
+  "amendment_id": "REPLACE-amendment",
+  "expected_revision": 0,
+  "decision": "adopt",
+  "operator_id": "local-operator",
+  "rationale": "REPLACE-explicit-local-operator-decision"
+}

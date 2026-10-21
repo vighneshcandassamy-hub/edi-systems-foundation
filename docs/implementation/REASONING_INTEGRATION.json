@@ -1,0 +1,338 @@
+{
+  "schema": "edi-reasoning-integration-design-v0.4",
+  "input_revision": "783a4509461ee3cf66d5580f92b7e6988dcddaaa",
+  "status": "structure_documented_not_qualified",
+  "source_master": "architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md",
+  "source_master_sha256": "ce39263a3eda5ef3ac3bd5aef92dfc55cf549dcc0ce0c48a96cce080c8b011ef",
+  "source_library_version": 5,
+  "diagram": "docs/implementation/INTEGRATED_REASONING.mmd",
+  "specification": "docs/implementation/REASONING_INTEGRATION.md",
+  "counts": {
+    "original_nodes": 82,
+    "original_connections": 241,
+    "integrated_nodes": 98,
+    "integrated_connections": 286,
+    "new_reasoning_and_training_nodes": 16,
+    "new_connections": 45
+  },
+  "new_parts": [
+    {
+      "id": "RCTX",
+      "label": "Scoped world, evidence and unknowns",
+      "function_ids": [
+        "F40",
+        "F41"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R03",
+        "IMP-R04",
+        "IMP-R08",
+        "IMP-R19",
+        "IMP-R26"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RPRO",
+      "label": "Versioned systems reasoning protocol",
+      "function_ids": [
+        "F40",
+        "F41",
+        "F42",
+        "F43"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R15",
+        "IMP-R18",
+        "IMP-R23"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RCTL",
+      "label": "Inquiry and tool controller",
+      "function_ids": [
+        "F40",
+        "F41",
+        "F42",
+        "F43"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RSTU",
+      "label": "Pretrained student served by vLLM",
+      "function_ids": [
+        "F40",
+        "F41"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R19",
+        "IMP-R21",
+        "IMP-R26",
+        "IMP-R33"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RTEA",
+      "label": "Selective pretrained teacher guidance",
+      "function_ids": [
+        "F40",
+        "F41"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R19",
+        "IMP-R21",
+        "IMP-R26",
+        "IMP-R33"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RALT",
+      "label": "Rival mechanisms and explicit unknowns",
+      "function_ids": [
+        "F40",
+        "F41"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R26"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RTEST",
+      "label": "Discriminating inquiries and scenarios",
+      "function_ids": [
+        "F42"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R16",
+        "IMP-R19"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RPATCH",
+      "label": "Typed interpretations and model patches",
+      "function_ids": [
+        "F23",
+        "F40"
+      ],
+      "component_ids": [
+        "C2",
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R26",
+        "IMP-R30"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RADMIT",
+      "label": "C3 model admission and revision authority",
+      "function_ids": [
+        "F31"
+      ],
+      "component_ids": [
+        "C3"
+      ],
+      "requirement_ids": [
+        "IMP-R17",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R26",
+        "IMP-R30"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RFRONT",
+      "label": "Adjacent, internal and temporal frontier",
+      "function_ids": [
+        "F43"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R31",
+        "IMP-R32"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "RACCESS",
+      "label": "Access requests and standing grants",
+      "function_ids": [
+        "F02",
+        "F10",
+        "F72"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C7"
+      ],
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R23",
+        "IMP-R32"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "REPIS",
+      "label": "Attributed attempts, guidance and outcomes",
+      "function_ids": [
+        "F11",
+        "F40",
+        "F61"
+      ],
+      "component_ids": [
+        "C1",
+        "C4",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R19",
+        "IMP-R22",
+        "IMP-R26"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "TCUR",
+      "label": "Curated training episodes",
+      "function_ids": [
+        "F02",
+        "F61",
+        "F63"
+      ],
+      "component_ids": [
+        "C0",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R19",
+        "IMP-R22",
+        "IMP-R26"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "TTRAIN",
+      "label": "Explicit student parameter-training job",
+      "function_ids": [
+        "F02"
+      ],
+      "component_ids": [
+        "C0"
+      ],
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R21",
+        "IMP-R23"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "TCKPT",
+      "label": "Candidate model or adapter checkpoints",
+      "function_ids": [
+        "F02",
+        "F73"
+      ],
+      "component_ids": [
+        "C0",
+        "C7"
+      ],
+      "requirement_ids": [
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R23"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    },
+    {
+      "id": "TADOPT",
+      "label": "C7 operational checkpoint adoption",
+      "function_ids": [
+        "F73"
+      ],
+      "component_ids": [
+        "C7"
+      ],
+      "requirement_ids": [
+        "IMP-R12",
+        "IMP-R21",
+        "IMP-R23"
+      ],
+      "status": "proposed_structure_only",
+      "new_software_owner": false
+    }
+  ],
+  "pair_review": "existing_28_pairs_56_lanes_unchanged; orchestration and no-bypass interpretation documented",
+  "qualification_or_tests_run": false,
+  "runtime_implemented": false,
+  "student_initialization": "pretrained_instruction_or_reasoning_checkpoint",
+  "initial_student_weight_updates": false,
+  "initial_teacher_weight_updates": false,
+  "future_training_path": "dormant_not_configured"
+}

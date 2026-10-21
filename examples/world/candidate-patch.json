@@ -1,0 +1,51 @@
+{
+  "workspace_id": "forest-demo",
+  "request_id": "world-seed-0001",
+  "base_revision": 0,
+  "proposer": "C0",
+  "reason": "Introduce an explicitly hypothetical local system without assuming a discovered mechanism",
+  "change_kind": "organization",
+  "operations": [
+    {
+      "operation": "put",
+      "expected_version": 0,
+      "representation": {
+        "record_id": "fir-population",
+        "scope_id": "forest",
+        "structure": {"family": "constituent", "roles": ["reported population"]},
+        "label": "Fir population",
+        "basis": "assumption",
+        "assumptions": ["This record is an illustrative modeling object, not an independently observed entity"],
+        "uncertainty": {"identity": "unverified", "population": "unknown"}
+      }
+    },
+    {
+      "operation": "put",
+      "expected_version": 0,
+      "representation": {
+        "record_id": "budworm-population",
+        "scope_id": "forest",
+        "structure": {"family": "constituent", "roles": ["reported population"]},
+        "label": "Budworm population",
+        "basis": "assumption",
+        "assumptions": ["Illustrative modeling object; food, climate and predators remain unmodeled"]
+      }
+    },
+    {
+      "operation": "put",
+      "expected_version": 0,
+      "representation": {
+        "record_id": "forest-view",
+        "scope_id": "forest",
+        "structure": {
+          "family": "system-view",
+          "members": [{"record_id": "fir-population"}, {"record_id": "budworm-population"}],
+          "purpose": "An expandable illustrative boundary",
+          "boundary": {"status": "partial", "omissions": ["predators", "weather", "logging", "markets"]}
+        },
+        "basis": "assumption",
+        "assumptions": ["This boundary is provisional and must be expanded with evidence"]
+      }
+    }
+  ]
+}

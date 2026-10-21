@@ -1,0 +1,7 @@
+{
+  "workspace_id": "demo",
+  "inquiry_id": "demo-inquiry",
+  "request_id": "demo-student-job-1",
+  "action": "student",
+  "reason": "Prepare protocol and bounded context for an attributed candidate response"
+}

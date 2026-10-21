@@ -1,0 +1,16 @@
+{
+  "workspace_id": "default",
+  "request_id": "REPLACE-action-request",
+  "decision_id": "REPLACE-decision",
+  "policy_revision": 1,
+  "purpose_version": "research-goal-v1",
+  "grant_id": "REPLACE-grant",
+  "intent": {
+    "operation": "select-observations",
+    "origin_ref": "REPLACE-registered-origin",
+    "limit": 10
+  },
+  "rationale": "REPLACE-question-and-need",
+  "expected_effects_and_limits": "Read native occurrence metadata; no acquisition/perception/effect inference",
+  "attribution": "C0-carried attributed intention"
+}

@@ -1,0 +1,72 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "disposition_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Disposition Id",
+      "type": "string"
+    },
+    "access_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Access Id",
+      "type": "string"
+    },
+    "operator_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Operator Id",
+      "type": "string"
+    },
+    "outcome": {
+      "enum": [
+        "deny",
+        "defer"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "until": {
+      "format": "date-time",
+      "title": "Until",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "disposition_id",
+    "access_id",
+    "operator_id",
+    "outcome",
+    "until",
+    "rationale"
+  ],
+  "title": "AccessDispositionRequest",
+  "type": "object"
+}

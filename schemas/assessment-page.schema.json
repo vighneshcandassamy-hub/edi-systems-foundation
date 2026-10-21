@@ -1,0 +1,91 @@
+{
+  "$defs": {
+    "ArtifactCursor": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "comparison",
+            "review",
+            "finding",
+            "yield"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "watermark": {
+          "minimum": 0,
+          "title": "Watermark",
+          "type": "integer"
+        },
+        "after": {
+          "minimum": 0,
+          "title": "After",
+          "type": "integer"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "watermark",
+        "after",
+        "workspace_id"
+      ],
+      "title": "ArtifactCursor",
+      "type": "object"
+    },
+    "JsonValue": {}
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "type": "object"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "next_cursor": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ArtifactCursor"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "const": "bounded snapshot; not evidence of absence outside selection",
+      "default": "bounded snapshot; not evidence of absence outside selection",
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "items",
+    "next_cursor"
+  ],
+  "title": "ArtifactPage",
+  "type": "object"
+}

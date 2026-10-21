@@ -1,0 +1,197 @@
+{
+  "$defs": {
+    "FrontierItem": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "frontier_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Frontier Id",
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "expand_adjacent",
+            "refine_internal",
+            "resolve_identity",
+            "refresh_temporal",
+            "test_mechanism",
+            "check_boundary",
+            "review_abstraction"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "trigger": {
+          "enum": [
+            "unexplained_prediction_error",
+            "contradictory_source",
+            "uncertain_high_impact_interface",
+            "near_threshold",
+            "aging_assumption",
+            "insufficient_resolution",
+            "decision_sensitive_unknown",
+            "bounded_periodic_review"
+          ],
+          "title": "Trigger",
+          "type": "string"
+        },
+        "target": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "unknown": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Unknown",
+          "type": "string"
+        },
+        "hypothesis_family": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Hypothesis Family",
+          "type": "string"
+        },
+        "capability_scope": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Capability Scope",
+          "type": "array"
+        },
+        "relevance": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Relevance",
+          "type": "number"
+        },
+        "discrimination": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Discrimination",
+          "type": "number"
+        },
+        "impact": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Impact",
+          "type": "number"
+        },
+        "feasibility": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Feasibility",
+          "type": "number"
+        },
+        "relative_cost": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Relative Cost",
+          "type": "number"
+        },
+        "rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "state": {
+          "default": "open",
+          "enum": [
+            "open",
+            "deferred",
+            "denied",
+            "resolved"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "disposition_reason": {
+          "default": "awaiting C0 scheduling/access review",
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Disposition Reason",
+          "type": "string"
+        },
+        "material_change": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Change"
+        }
+      },
+      "required": [
+        "frontier_id",
+        "direction",
+        "trigger",
+        "target",
+        "unknown",
+        "hypothesis_family",
+        "relevance",
+        "discrimination",
+        "impact",
+        "feasibility",
+        "relative_cost",
+        "rationale"
+      ],
+      "title": "FrontierItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "inquiry_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Inquiry Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "item": {
+      "$ref": "#/$defs/FrontierItem"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "inquiry_id",
+    "request_id",
+    "item"
+  ],
+  "title": "FrontierUpdate",
+  "type": "object"
+}

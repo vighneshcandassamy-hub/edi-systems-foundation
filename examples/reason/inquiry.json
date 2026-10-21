@@ -1,0 +1,15 @@
+{
+  "workspace_id": "demo",
+  "inquiry_id": "demo-inquiry",
+  "request_id": "demo-investigate-1",
+  "question": "Which explanations should be investigated once relevant evidence has been supplied?",
+  "purpose": "Prepare a bounded systems inquiry without fabricating a mechanism",
+  "scope": "Explicitly selected records only; no claim of environmental completeness",
+  "horizon": "Unknown until source histories are selected",
+  "model_revision": 0,
+  "world_ids": [],
+  "evidence": [],
+  "axes": ["evidence", "boundary", "organization", "accumulation", "feedback-delay", "nonlinearity", "agency", "resilience-evolution", "rivals", "intervention", "learning"],
+  "unknowns": ["No domain evidence selected yet"],
+  "omitted_frontier": ["Adjacent systems and source histories have not been selected"]
+}

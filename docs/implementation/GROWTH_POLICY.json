@@ -1,0 +1,68 @@
+{
+  "schema": "edi-exploration-policy-v0.2",
+  "status": "proposed_not_implemented",
+  "owner": "C0",
+  "planner": "C4",
+  "assessor": "C6",
+  "authorization_owner": "C7",
+  "specification": "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+  "directions": [
+    "expand_adjacent",
+    "refine_internal",
+    "resolve_identity",
+    "refresh_temporal",
+    "test_mechanism",
+    "check_boundary",
+    "review_abstraction"
+  ],
+  "triggers": [
+    "unexplained_prediction_error",
+    "contradictory_source",
+    "uncertain_high_impact_interface",
+    "near_threshold",
+    "aging_assumption",
+    "insufficient_resolution",
+    "decision_sensitive_unknown",
+    "bounded_periodic_review"
+  ],
+  "ranking": {
+    "defensible_probability_model": "expected_information_gain_or_decision_value_under_declared_model",
+    "otherwise": "declared_discrimination_relevance_feasibility_cost_heuristic",
+    "unknown_model_space": "preserve_other_and_unvisited_frontier"
+  },
+  "access": {
+    "reuse_existing_scoped_grants": true,
+    "request_missing_scope_only": true,
+    "grant_is_not_acquisition": true,
+    "denial_recorded": true,
+    "retry_denial_only_for_material_change": true
+  },
+  "notifications": {
+    "max_new_discretionary_requests_per_project_day": 2,
+    "unchanged_request_cooldown_days": 7,
+    "dedup_fields": [
+      "target",
+      "unknown",
+      "capability_scope",
+      "hypothesis_family"
+    ],
+    "settings_kind": "proposed_configurable_user_experience_policy"
+  },
+  "result_validity_fields": [
+    "basis_model_revision",
+    "evidence_known_at",
+    "dependency_signature",
+    "projection_watermark",
+    "freshness_status",
+    "applicability",
+    "omitted_frontier"
+  ],
+  "success_measures": [
+    "useful_discrimination",
+    "improved_held_out_prediction_or_decision",
+    "retained_inconclusive_or_disproven_result",
+    "complete_cost",
+    "access_request_yield"
+  ],
+  "evidence_state": "all_runtime_cases_not_run"
+}

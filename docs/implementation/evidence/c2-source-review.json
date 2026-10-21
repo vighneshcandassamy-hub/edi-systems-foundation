@@ -1,0 +1,628 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C2-attributed-interpretation-first-local-increment",
+  "gate": "contract",
+  "requested_scope": "C2 source implementation after C3 interface review; product qualification/tests remain deferred by owner",
+  "input_revision": "c43b8d5942b154e7849226208dd82f9d7736ca91",
+  "reviewer": {
+    "role": "implementer_and_source_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/C2_RUNTIME_TRACE.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/C2_INTERPRETATION_RUNTIME.md"
+  },
+  "c3_prerequisite": {
+    "local_interface_source_assessment": "supports bounded C2 implementation; explicit response identity/scope checks repaired",
+    "complete_requirements_satisfied": "not_established",
+    "runtime_qualification": "not_run",
+    "remaining_authority": "docs/implementation/C3_WORLD_RUNTIME.md"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Twelve scoped requirements trace existing parents to F20-F23/source and thirteen unrun cases. Source allocation only.",
+      "references": [
+        "docs/implementation/C2_RUNTIME_TRACE.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "IF-02/08/14 restrictions and candidate-only submission exist in source; rich selectors, perception, temporal compatibility and full consumer integration remain open.",
+      "references": [
+        "src/edi/interpret/service.py"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "One standard-parser pipeline, immutable derived store and bounded candidate port; no mandatory inference stack.",
+      "references": [
+        "docs/decisions/ADR-005-attributed-interpretation.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Original C1 provenance, unknown/opaque status, author-declared roles/basis and assistance are separate from admission/independent observation. Source judgment only.",
+      "references": [
+        "src/edi/interpret/contracts.py"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Finite quotas and cooperative checks coded; hostile-parser isolation, fair durable jobs and complete performance/cost measurements remain open.",
+      "references": [
+        "src/edi/interpret/config.py"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "Local retry/result and explicit cross-store submission repair path coded; no decoder/commit/crash/restore case executed.",
+      "references": [
+        "src/edi/interpret/sqlite.py",
+        "src/edi/interpret/service.py"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Official Python APIs, PNG specification and SI conventions linked; limited native/units subset declared and larger adapters deferred.",
+      "references": [
+        "docs/decisions/ADR-005-attributed-interpretation.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "revise",
+      "rationale": "AST/import/parser/TOML/JSON/doc-link source checks and schema generation only; no Runtime/store/test/example/case execution.",
+      "references": [
+        "docs/implementation/C2_INTERPRETATION_RUNTIME.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "C2-SR01",
+      "status": "repaired-in-source",
+      "detail": "Explicit returned C1 workspace/occurrence identity validation in C2 and C3 evidence validation."
+    },
+    {
+      "id": "C2-SR02",
+      "status": "repaired-in-source",
+      "detail": "Preserve JSON numeric lexemes/duplicate keys, CSV strings/missingness and typed metadata-only/opaque coverage."
+    },
+    {
+      "id": "C2-SR03",
+      "status": "repaired-in-source",
+      "detail": "Normalize CSV/wave/native exceptions and invalid decoded Unicode; reject empty or mismatched quote evidence."
+    },
+    {
+      "id": "C2-SR04",
+      "status": "repaired-in-source",
+      "detail": "Copy canonical request snapshot for retry identity; keep hash correct when budget-excess output is replaced with an explicit failed empty result."
+    },
+    {
+      "id": "C2-SR05",
+      "status": "repaired-in-source",
+      "detail": "Block invalid/incompatible cardinal quantity submissions; retain unsupported/unknown dimensions without inference or conversion."
+    },
+    {
+      "id": "C2-SR06",
+      "status": "repaired-in-source",
+      "detail": "Keep decoder/C2 storage/C3 submission lazy and independent from C1 recording, with exact cross-store receipt retry."
+    },
+    {
+      "id": "C2-SR07",
+      "status": "open",
+      "detail": "C3 and C2 full requirements/contract/runtime/integration acceptance remain open; no qualification cases run."
+    },
+    {
+      "id": "C2-SR08",
+      "status": "repaired-in-source",
+      "detail": "Durably stage exact C3 patch before submission; recover receipt using the original patch rather than an upgraded mapper."
+    }
+  ],
+  "changes": [
+    "C2 contracts/decoders/limited-SI/immutable store",
+    "Versioned attribution/features and source-vs-referent candidates",
+    "C0 lazy composition, candidate submission/CLI and explicit C3 response guards",
+    "Runtime guide/trace/ADR/examples/generated schemas"
+  ],
+  "verification": [
+    {
+      "kind": "source_structure_only",
+      "status": "completed",
+      "detail": "Source AST/application imports/CLI parser construction, TOML/JSON/new-document-link parsing; schemas generated. No Runtime/store/product execution."
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "interface_inventory": {
+    "components": 8,
+    "pairs": 28,
+    "directed_lanes": 56,
+    "new_lanes": 0,
+    "lanes": [
+      {
+        "from": "C0",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-01A"
+        ],
+        "implementation_status": "previous-local-subset; unqualified"
+      },
+      {
+        "from": "C0",
+        "to": "C2",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-02A"
+        ],
+        "implementation_status": "local-C2-interface-subset; unqualified"
+      },
+      {
+        "from": "C0",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-03A"
+        ],
+        "implementation_status": "previous-local-subset; unqualified"
+      },
+      {
+        "from": "C0",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-04A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C0",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-05A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C0",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-06A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C0",
+        "to": "C7",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-07A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C1",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-01B"
+        ],
+        "implementation_status": "previous-local-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C2",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-08A"
+        ],
+        "implementation_status": "local-C2-interface-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-09A"
+        ],
+        "implementation_status": "previous-local-subset; unqualified"
+      },
+      {
+        "from": "C1",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-10A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C1",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-11A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C1",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-12A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C1",
+        "to": "C7",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-13A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C2",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-02B"
+        ],
+        "implementation_status": "local-C2-interface-subset; unqualified"
+      },
+      {
+        "from": "C2",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-08B"
+        ],
+        "implementation_status": "local-C2-interface-subset; unqualified"
+      },
+      {
+        "from": "C2",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-14A"
+        ],
+        "implementation_status": "local-C2-interface-subset; unqualified"
+      },
+      {
+        "from": "C2",
+        "to": "C4",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C2",
+        "to": "C5",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C2",
+        "to": "C6",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C2",
+        "to": "C7",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C3",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-03B"
+        ],
+        "implementation_status": "previous-local-subset; unqualified"
+      },
+      {
+        "from": "C3",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-09B"
+        ],
+        "implementation_status": "previous-local-subset; unqualified"
+      },
+      {
+        "from": "C3",
+        "to": "C2",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-14B"
+        ],
+        "implementation_status": "local-C2-interface-subset; unqualified"
+      },
+      {
+        "from": "C3",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-15A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C3",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-16A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C3",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-17A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C3",
+        "to": "C7",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-18A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C4",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-04B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C4",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-10B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C4",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C4",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-15B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C4",
+        "to": "C5",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C4",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-19A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C4",
+        "to": "C7",
+        "disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C5",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-05B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C5",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-11B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C5",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C5",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-16B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C5",
+        "to": "C4",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C5",
+        "to": "C6",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-20A"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C5",
+        "to": "C7",
+        "disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C6",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-06B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C6",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-12B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C6",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C6",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-17B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C6",
+        "to": "C4",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-19B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C6",
+        "to": "C5",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-20B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C6",
+        "to": "C7",
+        "disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C7",
+        "to": "C0",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-07B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C7",
+        "to": "C1",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-13B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C7",
+        "to": "C2",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C7",
+        "to": "C3",
+        "disposition": "required",
+        "contract_ids": [
+          "IF-18B"
+        ],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C7",
+        "to": "C4",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C7",
+        "to": "C5",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      },
+      {
+        "from": "C7",
+        "to": "C6",
+        "disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "prepared-or-design-only; preserve original disposition"
+      }
+    ]
+  },
+  "next_step": "C4 reasoning architecture/implementation under explicit model binding, retaining C1-C3 outstanding obligations and deferred qualification."
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "namespace": "local-demo",
+  "native_source_id": "forest-sensor-17",
+  "epoch": "installation-1",
+  "deliverer": "local-file-import",
+  "channel": "native-export",
+  "adapter": "edi-local-file/1.0",
+  "producer": null,
+  "binding_basis": "reported",
+  "descriptor": {"note": "Reported source handle; physical identity is not verified"}
+}

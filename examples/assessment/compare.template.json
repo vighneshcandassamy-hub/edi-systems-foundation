@@ -1,0 +1,8 @@
+{
+  "workspace_id": "assessment-demo",
+  "request_id": "example-compare-request-1",
+  "assessment_id": "example-assessment-1",
+  "forecast_id": "REPLACE_WITH_REGISTERED_FORECAST_ID",
+  "outcome_watermark": 0,
+  "rationale": "Replace watermark zero with the actual explicitly selected C1 watermark; template was not executed"
+}

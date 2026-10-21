@@ -1,0 +1,2904 @@
+{
+  "$defs": {
+    "Admission": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "decision": {
+          "default": "candidate",
+          "enum": [
+            "candidate",
+            "accepted_for_use",
+            "rejected",
+            "withdrawn"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "use_scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Use Scope"
+        },
+        "verification_obligation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verification Obligation"
+        },
+        "policy_id": {
+          "const": "local-modeling-use/1.0",
+          "default": "local-modeling-use/1.0",
+          "title": "Policy Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rationale"
+      ],
+      "title": "Admission",
+      "type": "object"
+    },
+    "CompileRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "model_revision": {
+          "minimum": 0,
+          "title": "Model Revision",
+          "type": "integer"
+        },
+        "mechanism_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "use_policy": {
+          "default": "accepted-for-use",
+          "enum": [
+            "accepted-for-use",
+            "candidate-exploration"
+          ],
+          "title": "Use Policy",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "model_revision",
+        "mechanism_ref",
+        "rationale"
+      ],
+      "title": "CompileRequest",
+      "type": "object"
+    },
+    "CompiledModel": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "compiled_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Compiled Id",
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/$defs/CompileRequest"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "compiler": {
+          "const": "edi.stock-flow-compiler/1.0",
+          "default": "edi.stock-flow-compiler/1.0",
+          "title": "Compiler",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "supported",
+            "unsupported"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "program": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Program"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "node_order": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Node Order",
+          "type": "array"
+        },
+        "world": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StoredRepresentation"
+          },
+          "title": "World",
+          "type": "array"
+        },
+        "dependencies": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/DependencyView"
+          },
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "diagnostics": {
+          "items": {
+            "$ref": "#/$defs/Diagnostic"
+          },
+          "title": "Diagnostics",
+          "type": "array"
+        },
+        "context_sha256": {
+          "title": "Context Sha256",
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "profile_snapshot": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Profile Snapshot",
+          "type": "object"
+        },
+        "qualification": {
+          "const": "source-only; runtime unqualified",
+          "default": "source-only; runtime unqualified",
+          "title": "Qualification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "compiled_id",
+        "request",
+        "created_at",
+        "status",
+        "program",
+        "diagnostics",
+        "context_sha256",
+        "artifact_sha256",
+        "profile_snapshot"
+      ],
+      "title": "CompiledModel",
+      "type": "object"
+    },
+    "Constituent": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "constituent",
+          "default": "constituent",
+          "title": "Family",
+          "type": "string"
+        },
+        "parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "roles": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Roles",
+          "type": "array"
+        },
+        "condition": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Condition",
+          "type": "object"
+        },
+        "lifecycle": {
+          "default": "unknown",
+          "title": "Lifecycle",
+          "type": "string"
+        }
+      },
+      "title": "Constituent",
+      "type": "object"
+    },
+    "Correspondence": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "stock_symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Stock Symbol",
+          "type": "string"
+        },
+        "observation_channel": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Observation Channel",
+          "type": "string"
+        },
+        "aggregation": {
+          "const": "instantaneous-state",
+          "default": "instantaneous-state",
+          "title": "Aggregation",
+          "type": "string"
+        },
+        "limitation": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Limitation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stock_symbol",
+        "observation_channel",
+        "limitation"
+      ],
+      "title": "Correspondence",
+      "type": "object"
+    },
+    "DependencyItem": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "owner_id": {
+          "title": "Owner Id",
+          "type": "string"
+        },
+        "owner_version": {
+          "title": "Owner Version",
+          "type": "integer"
+        },
+        "target_id": {
+          "title": "Target Id",
+          "type": "string"
+        },
+        "pinned_version": {
+          "title": "Pinned Version",
+          "type": "integer"
+        },
+        "visible_version": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Visible Version"
+        },
+        "visible_state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Visible State"
+        },
+        "validity": {
+          "enum": [
+            "current",
+            "changed",
+            "inactive",
+            "missing"
+          ],
+          "title": "Validity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "owner_id",
+        "owner_version",
+        "target_id",
+        "pinned_version",
+        "visible_version",
+        "visible_state",
+        "validity"
+      ],
+      "title": "DependencyItem",
+      "type": "object"
+    },
+    "DependencyView": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "integer"
+        },
+        "root_id": {
+          "title": "Root Id",
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "dependencies",
+            "dependents"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "max_depth": {
+          "title": "Max Depth",
+          "type": "integer"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/DependencyItem"
+          },
+          "title": "Items",
+          "type": "array"
+        },
+        "visited_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Visited Ids",
+          "type": "array"
+        },
+        "complete": {
+          "title": "Complete",
+          "type": "boolean"
+        },
+        "truncation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Truncation"
+        },
+        "depth_boundary_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Depth Boundary Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "revision",
+        "root_id",
+        "direction",
+        "max_depth",
+        "items",
+        "visited_ids",
+        "complete",
+        "truncation"
+      ],
+      "title": "DependencyView",
+      "type": "object"
+    },
+    "Diagnostic": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "code": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message"
+      ],
+      "title": "Diagnostic",
+      "type": "object"
+    },
+    "Driver": {
+      "additionalProperties": false,
+      "description": "External piecewise-constant boundary input, not an inferred causal driver.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "title": "Lower",
+          "type": "number"
+        },
+        "upper": {
+          "title": "Upper",
+          "type": "number"
+        }
+      },
+      "required": [
+        "symbol",
+        "value",
+        "unit",
+        "lower",
+        "upper"
+      ],
+      "title": "Driver",
+      "type": "object"
+    },
+    "DriverSchedule": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "symbol",
+        "points"
+      ],
+      "title": "DriverSchedule",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "selector": {
+          "default": "whole-object",
+          "title": "Selector",
+          "type": "string"
+        },
+        "origin_class": {
+          "default": "unknown",
+          "enum": [
+            "external",
+            "generated",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin Class",
+          "type": "string"
+        },
+        "lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "record_id",
+        "sha256"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "FeedbackPath": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "feedback-path",
+          "default": "feedback-path",
+          "title": "Family",
+          "type": "string"
+        },
+        "mechanisms": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Mechanisms",
+          "type": "array"
+        },
+        "closure": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "hypothesized",
+            "reported"
+          ],
+          "title": "Closure",
+          "type": "string"
+        },
+        "polarity": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "balancing",
+            "reinforcing",
+            "context-dependent"
+          ],
+          "title": "Polarity",
+          "type": "string"
+        },
+        "delays": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Delays",
+          "type": "object"
+        },
+        "applicability": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Applicability",
+          "type": "object"
+        }
+      },
+      "title": "FeedbackPath",
+      "type": "object"
+    },
+    "FlowProcess": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "flow-process",
+          "default": "flow-process",
+          "title": "Family",
+          "type": "string"
+        },
+        "participants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Participant"
+          },
+          "title": "Participants",
+          "type": "array"
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quantity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "response": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "prerequisites": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Prerequisites",
+          "type": "array"
+        },
+        "pending_commitments": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Pending Commitments",
+          "type": "array"
+        },
+        "transformation": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Transformation",
+          "type": "object"
+        },
+        "time_basis": {
+          "default": "unknown",
+          "title": "Time Basis",
+          "type": "string"
+        },
+        "resource_use": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Resource Use",
+          "type": "object"
+        }
+      },
+      "title": "FlowProcess",
+      "type": "object"
+    },
+    "FlowSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "world_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "rate_node": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Rate Node",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "sink": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sink"
+        }
+      },
+      "required": [
+        "symbol",
+        "world_ref",
+        "rate_node"
+      ],
+      "title": "FlowSpec",
+      "type": "object"
+    },
+    "HistoryTrajectory": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "history-conditional-trajectory",
+          "default": "history-conditional-trajectory",
+          "title": "Family",
+          "type": "string"
+        },
+        "referents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Referents",
+          "type": "array"
+        },
+        "origin": {
+          "default": "unknown",
+          "enum": [
+            "observation",
+            "source-report",
+            "forecast",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "initial_history": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Initial History",
+          "type": "array"
+        },
+        "points": {
+          "default": [],
+          "items": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "type": "object"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "time_units_aggregation": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Time Units Aggregation",
+          "type": "object"
+        },
+        "driver_assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Driver Assumptions",
+          "type": "array"
+        },
+        "model_policy_versions": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Model Policy Versions",
+          "type": "object"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Run Id"
+        },
+        "horizon": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Horizon",
+          "type": "object"
+        }
+      },
+      "title": "HistoryTrajectory",
+      "type": "object"
+    },
+    "InformationLink": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "information-influence-link",
+          "default": "information-influence-link",
+          "title": "Family",
+          "type": "string"
+        },
+        "participants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Participant"
+          },
+          "title": "Participants",
+          "type": "array"
+        },
+        "channel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel"
+        },
+        "meaning": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Meaning",
+          "type": "object"
+        },
+        "availability_receipt_attention": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Availability Receipt Attention",
+          "type": "object"
+        },
+        "distortion": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Distortion",
+          "type": "object"
+        },
+        "causal_status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "hypothesized",
+            "reported"
+          ],
+          "title": "Causal Status",
+          "type": "string"
+        }
+      },
+      "title": "InformationLink",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "node_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "operator": {
+          "enum": [
+            "constant",
+            "read",
+            "add",
+            "subtract",
+            "multiply",
+            "divide",
+            "negate",
+            "min",
+            "max",
+            "lookup"
+          ],
+          "title": "Operator",
+          "type": "string"
+        },
+        "inputs": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 2,
+          "title": "Inputs",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symbol"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "x_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "y_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "points": {
+          "default": [],
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 128,
+          "title": "Points",
+          "type": "array"
+        },
+        "extrapolation": {
+          "default": "error",
+          "enum": [
+            "error",
+            "clamp"
+          ],
+          "title": "Extrapolation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "operator"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "Parameter": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "title": "Lower",
+          "type": "number"
+        },
+        "upper": {
+          "title": "Upper",
+          "type": "number"
+        }
+      },
+      "required": [
+        "symbol",
+        "value",
+        "unit",
+        "lower",
+        "upper"
+      ],
+      "title": "Parameter",
+      "type": "object"
+    },
+    "Participant": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "role": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "direction": {
+          "default": "unknown",
+          "enum": [
+            "in",
+            "out",
+            "in-out",
+            "symmetric",
+            "unknown"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "port": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Port"
+        }
+      },
+      "required": [
+        "ref",
+        "role"
+      ],
+      "title": "Participant",
+      "type": "object"
+    },
+    "Program": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "ir_version": {
+          "const": "edi.stock-flow-ir/1.0",
+          "default": "edi.stock-flow-ir/1.0",
+          "title": "Ir Version",
+          "type": "string"
+        },
+        "stocks": {
+          "items": {
+            "$ref": "#/$defs/StockSpec"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Stocks",
+          "type": "array"
+        },
+        "parameters": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Parameter"
+          },
+          "maxItems": 64,
+          "title": "Parameters",
+          "type": "array"
+        },
+        "drivers": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Driver"
+          },
+          "maxItems": 32,
+          "title": "Drivers",
+          "type": "array"
+        },
+        "nodes": {
+          "items": {
+            "$ref": "#/$defs/Node"
+          },
+          "maxItems": 256,
+          "minItems": 1,
+          "title": "Nodes",
+          "type": "array"
+        },
+        "flows": {
+          "items": {
+            "$ref": "#/$defs/FlowSpec"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "title": "Flows",
+          "type": "array"
+        },
+        "required_capabilities": {
+          "default": [],
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Required Capabilities",
+          "type": "array"
+        },
+        "time_unit": {
+          "const": "s",
+          "default": "s",
+          "title": "Time Unit",
+          "type": "string"
+        },
+        "history_semantics": {
+          "const": "stock-state-only",
+          "default": "stock-state-only",
+          "title": "History Semantics",
+          "type": "string"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "formalization_rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Formalization Rationale",
+          "type": "string"
+        },
+        "source_equation_status": {
+          "enum": [
+            "authored-formalization",
+            "source-transcription",
+            "proposed-correction"
+          ],
+          "title": "Source Equation Status",
+          "type": "string"
+        },
+        "source_statement": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Source Statement",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stocks",
+        "nodes",
+        "flows",
+        "assumptions",
+        "formalization_rationale",
+        "source_equation_status",
+        "source_statement"
+      ],
+      "title": "Program",
+      "type": "object"
+    },
+    "PurposeCriterion": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "function-purpose-reference-criterion",
+          "default": "function-purpose-reference-criterion",
+          "title": "Family",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "function",
+            "purpose",
+            "goal",
+            "reference",
+            "criterion",
+            "constraint",
+            "inquiry-objective"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "owner": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "attributed_basis": {
+          "default": "unknown",
+          "enum": [
+            "stated",
+            "inferred",
+            "assumed",
+            "unknown"
+          ],
+          "title": "Attributed Basis",
+          "type": "string"
+        },
+        "definition": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Definition",
+          "type": "object"
+        },
+        "horizon": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Horizon",
+          "type": "object"
+        },
+        "conflicts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "feasibility": {
+          "default": "unknown",
+          "title": "Feasibility",
+          "type": "string"
+        },
+        "normative_scope": {
+          "default": "unknown",
+          "title": "Normative Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role"
+      ],
+      "title": "PurposeCriterion",
+      "type": "object"
+    },
+    "Quantity": {
+      "additionalProperties": false,
+      "description": "Exact numeric strings are retained; conversion is an explicit later derivation.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "known",
+            "unknown",
+            "missing",
+            "not-applicable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "scale": {
+          "default": "unknown",
+          "enum": [
+            "cardinal",
+            "ordinal",
+            "categorical",
+            "unknown"
+          ],
+          "title": "Scale",
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "unknown_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unknown Reason"
+        },
+        "context": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Context",
+          "type": "object"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "Quantity",
+      "type": "object"
+    },
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "Representation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "scope_id": {
+          "default": "world",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "structure": {
+          "discriminator": {
+            "mapping": {
+              "constituent": "#/$defs/Constituent",
+              "feedback-path": "#/$defs/FeedbackPath",
+              "flow-process": "#/$defs/FlowProcess",
+              "function-purpose-reference-criterion": "#/$defs/PurposeCriterion",
+              "history-conditional-trajectory": "#/$defs/HistoryTrajectory",
+              "information-influence-link": "#/$defs/InformationLink",
+              "response-relationship": "#/$defs/ResponseRelationship",
+              "stock": "#/$defs/Stock",
+              "system-view": "#/$defs/SystemView"
+            },
+            "propertyName": "family"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/SystemView"
+            },
+            {
+              "$ref": "#/$defs/Constituent"
+            },
+            {
+              "$ref": "#/$defs/Stock"
+            },
+            {
+              "$ref": "#/$defs/FlowProcess"
+            },
+            {
+              "$ref": "#/$defs/InformationLink"
+            },
+            {
+              "$ref": "#/$defs/ResponseRelationship"
+            },
+            {
+              "$ref": "#/$defs/PurposeCriterion"
+            },
+            {
+              "$ref": "#/$defs/FeedbackPath"
+            },
+            {
+              "$ref": "#/$defs/HistoryTrajectory"
+            }
+          ],
+          "title": "Structure"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "dependencies": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "alternatives": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "alternative_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alternative Group"
+        },
+        "basis": {
+          "default": "unknown",
+          "enum": [
+            "source-report",
+            "derivation",
+            "assumption",
+            "hypothesis",
+            "imported",
+            "unknown"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "support": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Support",
+          "type": "array"
+        },
+        "counterevidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "title": "Counterevidence",
+          "type": "array"
+        },
+        "assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "uncertainty": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Uncertainty",
+          "type": "object"
+        },
+        "validity": {
+          "$ref": "#/$defs/Validity"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Properties"
+        },
+        "method_lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Method Lineage",
+          "type": "array"
+        }
+      },
+      "required": [
+        "record_id",
+        "structure"
+      ],
+      "title": "Representation",
+      "type": "object"
+    },
+    "ResponseRelationship": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "response-relationship",
+          "default": "response-relationship",
+          "title": "Family",
+          "type": "string"
+        },
+        "participants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Participant"
+          },
+          "title": "Participants",
+          "type": "array"
+        },
+        "mechanism": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Mechanism",
+          "type": "object"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "domains": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Domains",
+          "type": "object"
+        },
+        "delays": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Delays",
+          "type": "object"
+        },
+        "capacities": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Capacities",
+          "type": "object"
+        },
+        "execution_status": {
+          "default": "unsupported",
+          "enum": [
+            "descriptive",
+            "qualitative",
+            "unsupported"
+          ],
+          "title": "Execution Status",
+          "type": "string"
+        }
+      },
+      "title": "ResponseRelationship",
+      "type": "object"
+    },
+    "RunRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "run_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "compiled_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Compiled Id",
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "numerical",
+            "qualitative"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "scenario": {
+          "$ref": "#/$defs/ScenarioSpec"
+        },
+        "solver": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SolverSpec"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "inquiry_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Inquiry Id"
+        },
+        "test_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Test Id"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "run_id",
+        "compiled_id",
+        "mode",
+        "scenario"
+      ],
+      "title": "RunRequest",
+      "type": "object"
+    },
+    "ScenarioSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "scenario_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "output_times": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 2000,
+          "minItems": 2,
+          "title": "Output Times",
+          "type": "array"
+        },
+        "time_origin": {
+          "$ref": "#/$defs/TimeValue"
+        },
+        "initial_state": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Initial State",
+          "type": "object"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "drivers": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/DriverSchedule"
+          },
+          "maxItems": 32,
+          "title": "Drivers",
+          "type": "array"
+        },
+        "variations": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Variation"
+          },
+          "maxItems": 8,
+          "title": "Variations",
+          "type": "array"
+        },
+        "correspondence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Correspondence"
+          },
+          "maxItems": 32,
+          "title": "Correspondence",
+          "type": "array"
+        },
+        "evidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxItems": 16,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "actor_information_masks": {
+          "default": [],
+          "items": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "type": "object"
+          },
+          "maxItems": 16,
+          "title": "Actor Information Masks",
+          "type": "array"
+        },
+        "terminal_obligations": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Terminal Obligations",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "rationale": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "start",
+        "end",
+        "output_times",
+        "initial_state",
+        "assumptions",
+        "rationale"
+      ],
+      "title": "ScenarioSpec",
+      "type": "object"
+    },
+    "SolverSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "backend": {
+          "const": "scipy.solve_ivp",
+          "default": "scipy.solve_ivp",
+          "title": "Backend",
+          "type": "string"
+        },
+        "scipy_version": {
+          "const": "1.17.0",
+          "default": "1.17.0",
+          "title": "Scipy Version",
+          "type": "string"
+        },
+        "numpy_version": {
+          "const": "2.5.3",
+          "default": "2.5.3",
+          "title": "Numpy Version",
+          "type": "string"
+        },
+        "method": {
+          "default": "RK45",
+          "enum": [
+            "RK45",
+            "DOP853",
+            "Radau",
+            "BDF"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "rtol": {
+          "default": 1e-06,
+          "maximum": 0.01,
+          "minimum": 1e-12,
+          "title": "Rtol",
+          "type": "number"
+        },
+        "atol": {
+          "default": 1e-09,
+          "maximum": 0.01,
+          "minimum": 1e-15,
+          "title": "Atol",
+          "type": "number"
+        },
+        "max_step": {
+          "exclusiveMinimum": 0,
+          "title": "Max Step",
+          "type": "number"
+        },
+        "bound_tolerance": {
+          "default": 1e-08,
+          "maximum": 0.01,
+          "minimum": 0,
+          "title": "Bound Tolerance",
+          "type": "number"
+        }
+      },
+      "required": [
+        "max_step"
+      ],
+      "title": "SolverSpec",
+      "type": "object"
+    },
+    "Stock": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "stock",
+          "default": "stock",
+          "title": "Family",
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "#/$defs/Quantity"
+        },
+        "inflows": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Inflows",
+          "type": "array"
+        },
+        "outflows": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Outflows",
+          "type": "array"
+        },
+        "initial_basis": {
+          "default": "unknown",
+          "title": "Initial Basis",
+          "type": "string"
+        },
+        "bounds": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Bounds",
+          "type": "object"
+        },
+        "reserve_and_access": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Reserve And Access",
+          "type": "object"
+        }
+      },
+      "required": [
+        "quantity"
+      ],
+      "title": "Stock",
+      "type": "object"
+    },
+    "StockSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "world_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit"
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower"
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upper"
+        }
+      },
+      "required": [
+        "symbol",
+        "world_ref",
+        "unit"
+      ],
+      "title": "StockSpec",
+      "type": "object"
+    },
+    "StoredRepresentation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "known_at": {
+          "format": "date-time",
+          "title": "Known At",
+          "type": "string"
+        },
+        "proposer": {
+          "enum": [
+            "C0",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7"
+          ],
+          "title": "Proposer",
+          "type": "string"
+        },
+        "change_kind": {
+          "title": "Change Kind",
+          "type": "string"
+        },
+        "representation": {
+          "$ref": "#/$defs/Representation"
+        },
+        "state": {
+          "enum": [
+            "candidate",
+            "accepted_for_use",
+            "rejected",
+            "withdrawn",
+            "retired"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "admission": {
+          "$ref": "#/$defs/Admission"
+        },
+        "decision_authority": {
+          "enum": [
+            "C3-candidate-policy",
+            "C3-local-operator"
+          ],
+          "title": "Decision Authority",
+          "type": "string"
+        },
+        "use_validity": {
+          "const": "not-certified; inspect-dependencies-and-evidence",
+          "default": "not-certified; inspect-dependencies-and-evidence",
+          "title": "Use Validity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "version",
+        "known_at",
+        "proposer",
+        "change_kind",
+        "representation",
+        "state",
+        "admission",
+        "decision_authority"
+      ],
+      "title": "StoredRepresentation",
+      "type": "object"
+    },
+    "SystemView": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "system-view",
+          "default": "system-view",
+          "title": "Family",
+          "type": "string"
+        },
+        "members": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Members",
+          "type": "array"
+        },
+        "excluded": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Excluded",
+          "type": "array"
+        },
+        "external_drivers": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "External Drivers",
+          "type": "array"
+        },
+        "external_sinks": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "External Sinks",
+          "type": "array"
+        },
+        "boundary": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Boundary",
+          "type": "object"
+        },
+        "purpose": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Purpose"
+        },
+        "level": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Level"
+        },
+        "resolution": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Resolution",
+          "type": "object"
+        },
+        "horizon": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Horizon",
+          "type": "object"
+        },
+        "closure_assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Closure Assumptions",
+          "type": "array"
+        }
+      },
+      "title": "SystemView",
+      "type": "object"
+    },
+    "TimeValue": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "known",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "not supplied",
+          "title": "Reason"
+        }
+      },
+      "title": "TimeValue",
+      "type": "object"
+    },
+    "Trajectory": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "variant": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Variant",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "partial",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "times": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Times",
+          "type": "array"
+        },
+        "states": {
+          "additionalProperties": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "States",
+          "type": "object"
+        },
+        "cumulative_transfers": {
+          "additionalProperties": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Cumulative Transfers",
+          "type": "object"
+        },
+        "final_time": {
+          "title": "Final Time",
+          "type": "number"
+        },
+        "parameter_values": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Parameter Values",
+          "type": "object"
+        },
+        "balance_residuals": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Balance Residuals",
+          "type": "object"
+        },
+        "diagnostics": {
+          "items": {
+            "$ref": "#/$defs/Diagnostic"
+          },
+          "title": "Diagnostics",
+          "type": "array"
+        },
+        "nfev": {
+          "minimum": 0,
+          "title": "Nfev",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "variant",
+        "status",
+        "times",
+        "states",
+        "cumulative_transfers",
+        "final_time",
+        "parameter_values",
+        "balance_residuals",
+        "diagnostics",
+        "nfev"
+      ],
+      "title": "Trajectory",
+      "type": "object"
+    },
+    "Unit": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "symbol": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "dimensions": {
+          "additionalProperties": {
+            "maximum": 8,
+            "minimum": -8,
+            "type": "integer"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Dimensions",
+          "type": "object"
+        },
+        "basis": {
+          "default": "SI",
+          "enum": [
+            "SI",
+            "declared-domain"
+          ],
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "Unit",
+      "type": "object"
+    },
+    "Validity": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "interval",
+            "unbounded"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "start": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End"
+        },
+        "clock_id": {
+          "default": "UTC",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Clock Id",
+          "type": "string"
+        }
+      },
+      "title": "Validity",
+      "type": "object"
+    },
+    "Variation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "parameter_values": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "title": "Parameter Values",
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "parameter_values"
+      ],
+      "title": "Variation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/RunRequest"
+    },
+    "compiled": {
+      "$ref": "#/$defs/CompiledModel"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "finished_at": {
+      "format": "date-time",
+      "title": "Finished At",
+      "type": "string"
+    },
+    "implementation": {
+      "const": "edi-c5/0.6.0",
+      "default": "edi-c5/0.6.0",
+      "title": "Implementation",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "partial",
+        "unsupported",
+        "failed",
+        "cancelled",
+        "interrupted"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "trajectories": {
+      "items": {
+        "$ref": "#/$defs/Trajectory"
+      },
+      "title": "Trajectories",
+      "type": "array"
+    },
+    "scenario_envelope": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Scenario Envelope",
+      "type": "object"
+    },
+    "finite_differences": {
+      "items": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "type": "object"
+      },
+      "title": "Finite Differences",
+      "type": "array"
+    },
+    "diagnostics": {
+      "items": {
+        "$ref": "#/$defs/Diagnostic"
+      },
+      "title": "Diagnostics",
+      "type": "array"
+    },
+    "evidence_metadata": {
+      "items": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "type": "object"
+      },
+      "title": "Evidence Metadata",
+      "type": "array"
+    },
+    "runtime_versions": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Runtime Versions",
+      "type": "object"
+    },
+    "usage": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Usage",
+      "type": "object"
+    },
+    "artifact_sha256": {
+      "title": "Artifact Sha256",
+      "type": "string"
+    },
+    "profile_snapshot": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Profile Snapshot",
+      "type": "object"
+    },
+    "origin_class": {
+      "const": "simulation",
+      "default": "simulation",
+      "title": "Origin Class",
+      "type": "string"
+    },
+    "forecast_seal": {
+      "const": "unsealed; C6 prospective registration required",
+      "default": "unsealed; C6 prospective registration required",
+      "title": "Forecast Seal",
+      "type": "string"
+    },
+    "qualification": {
+      "const": "source-only; runtime unqualified",
+      "default": "source-only; runtime unqualified",
+      "title": "Qualification",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request",
+    "compiled",
+    "created_at",
+    "finished_at",
+    "status",
+    "trajectories",
+    "scenario_envelope",
+    "finite_differences",
+    "diagnostics",
+    "evidence_metadata",
+    "runtime_versions",
+    "usage",
+    "artifact_sha256",
+    "profile_snapshot"
+  ],
+  "title": "RunRecord",
+  "type": "object"
+}

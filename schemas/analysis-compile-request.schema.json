@@ -1,0 +1,92 @@
+{
+  "$defs": {
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "model_revision": {
+      "minimum": 0,
+      "title": "Model Revision",
+      "type": "integer"
+    },
+    "mechanism_ref": {
+      "$ref": "#/$defs/Ref"
+    },
+    "use_policy": {
+      "default": "accepted-for-use",
+      "enum": [
+        "accepted-for-use",
+        "candidate-exploration"
+      ],
+      "title": "Use Policy",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "model_revision",
+    "mechanism_ref",
+    "rationale"
+  ],
+  "title": "CompileRequest",
+  "type": "object"
+}

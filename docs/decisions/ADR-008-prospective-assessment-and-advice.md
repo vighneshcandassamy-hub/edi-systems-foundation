@@ -1,0 +1,15 @@
+# ADR-008: Separate durable expectations, held-out comparisons and fallible advice
+
+Status: adopted for first C6 source increment, code 0.7.0. Runtime/scientific qualification remains open.
+
+C5's immutable conditional run subset supplies C6 inputs, but C5's numerical/full specification acceptance is not established. C6 must keep original expectations, distinguish real outcomes from generated echoes, diagnose discrepancies without declaring a cause from fit, and propose revisions without accepting itself or adopting a policy.
+
+Use explicit C5-sample forecast registration and a separate durable confirmation observed after the payload commit returns. Pin cases, criteria, correspondence, model/IR/run/driver/solver snapshots and source bindings. Require future targets and a trusted local clock assumption. An interrupted confirmation retry receives its actual current timestamp; it cannot be backdated. Pre-reserve the confirmation capacity. This avoids treating a pre-write timestamp as a durable prospective registration and preserves late/incomplete states honestly.
+
+Use a narrow raw external measurement JSON adapter and ordered C1 origin replay at a caller-pinned outcome watermark. Select the first matching event/variable occurrence across the full admitted prefix, including bad/missing/censored outcomes. Preserve unclassifiable earlier records and bounded-scan limitations. Post-hoc caller selection or silent correction replacement was rejected because it permits favorable outcome substitution. Additional source/aggregation/correction policies require separate prospective versions.
+
+Use deterministic scalar errors and declared binary Brier loss with prespecified limits/bins; retain missing denominators and stratify units. Proper-score reference: Gneiting and Raftery (2007), https://sites.stat.washington.edu/raftery/Research/PDF/Gneiting2007jasa.pdf, checked 20 October 2026. These methods do not establish calibrated posteriors, source independence or causal identification. Calibration and yield summaries stay descriptive; confidence, skill, efficiency and strategic usefulness require independent matched evidence.
+
+Store forecast/confirmation/comparison/review/finding/yield and staged C3 submission receipts in C6's bounded immutable SQLite ledger. Reuse C1/C3/C5 ports and expose operation-specific C4/C5 facades. Only C3 admits model changes; only C0 delivers findings; C7 retains adoption authority. A small local ledger and arithmetic implementation avoid unnecessary general evaluation/agent infrastructure. Tradeoffs include repeated immutable snapshot storage and bounded replay cost; indexed/federated stores, richer statistical adapters and supervised workers remain later choices.
+
+Source-clock/provenance trust, unknown dependencies and external knowledge are assumptions, not proven safeguards. Full restore/retention/migration/HA, numerical/measurement/calibration validity and integrated scientific qualification remain open. [The C6 specification](../implementation/C6_ASSESSMENT_RUNTIME.md), [trace](../implementation/C6_RUNTIME_TRACE.json) and source review make the scope and return-path obligations concrete.

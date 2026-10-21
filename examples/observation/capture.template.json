@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "origin_ref": "REPLACE_WITH_REGISTERED_ORIGIN_REF",
+  "idempotency_key": "export-0001",
+  "kind": "native-bytes",
+  "media_type": "text/csv",
+  "time": {
+    "schema_version": "1.0",
+    "event_time": {"schema_version": "1.0", "status": "unknown", "value": null, "reason": "No trusted source clock supplied"},
+    "reported_time": {"schema_version": "1.0", "status": "unknown", "value": null, "reason": "No report timestamp supplied"},
+    "clock_id": null,
+    "sequence": 1
+  },
+  "profiles": {
+    "native-layout/v1": {"encoding": "utf-8", "delimiter": ",", "unit_status": "unknown"},
+    "coverage/v1": {"source_loss": "unknown"}
+  },
+  "critical_profiles": [],
+  "origin_class": "unknown",
+  "lineage": [],
+  "completeness": "complete"
+}

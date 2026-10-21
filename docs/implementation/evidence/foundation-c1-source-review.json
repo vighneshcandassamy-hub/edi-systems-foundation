@@ -1,0 +1,602 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "shared-foundation-and-C1-local-increment",
+  "gate": "contract",
+  "requested_scope": "authorized source implementation; qualification/tests deferred by owner",
+  "input_revision": "0fd018e60373ca08551ebd7d57ac859dbc8b64fd",
+  "reviewer": {
+    "role": "implementer_and_source_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/FOUNDATION_C1_RUNTIME.md",
+    "checked": true,
+    "evidence_ref": "docs/implementation/FOUNDATION_C1_RUNTIME.md"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Manually mapped this bounded increment to OBS/DOWN/IMP functions; no fulfillment claim from source existence.",
+      "references": [
+        "docs/implementation/FOUNDATION_C1_RUNTIME.md"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Concrete local schemas/ports and operation restrictions exist; compatibility, downstream and remote caller authority remain open.",
+      "references": [
+        "src/edi/observe/contracts.py",
+        "src/edi/inquiry/runtime.py"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "One package, store, byte path and replay/outbox log; no mandatory model or broker.",
+      "references": [
+        "docs/decisions/ADR-003-local-observation-runtime.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Reported source binding, unknown time/loss and origin class retained; no physical identity inference or model admission. Source judgment only.",
+      "references": [
+        "src/edi/observe/contracts.py"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Finite local quotas/admission and cooperative deadlines coded; total memory/disk workload, fairness and SLOs unmeasured.",
+      "references": [
+        "src/edi/shared/config.py"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "Atomic payload/metadata/log transaction, retry conflicts, status and backup coded; crash/restore and real storage barriers unqualified.",
+      "references": [
+        "src/edi/observe/sqlite.py"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Earlier SQLite local candidate reconciled with later Postgres preference; official API references linked; no performance claims.",
+      "references": [
+        "docs/decisions/ADR-003-local-observation-runtime.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "revise",
+      "rationale": "AST/import/parser construction only; runtime/integration/scientific cases deliberately not run.",
+      "references": [
+        "docs/implementation/FOUNDATION_C1_RUNTIME.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "C1-SR-01",
+      "status": "repaired-in-source",
+      "detail": "Initial read facade allowed too much; operations now restricted by existing C1 lane, including no C3/C7 payload access."
+    },
+    {
+      "id": "C1-SR-02",
+      "status": "open",
+      "detail": "Local SQLite is a finite one-host adapter; Postgres/object-store, live connectors, resumability, retention, HA and complete F13 are future increments."
+    },
+    {
+      "id": "C1-SR-03",
+      "status": "open",
+      "detail": "Source code has not executed a recording/replay or recovery case; no gate pass or verified runtime capability is asserted."
+    }
+  ],
+  "changes": [
+    "Eight owner modules and shared typed contracts",
+    "Local native C1 implementation and CLI",
+    "Finite profile, examples, backend decision and usage/traceability guide"
+  ],
+  "verification": [
+    {
+      "kind": "source_syntax_and_import",
+      "status": "completed",
+      "detail": "AST parsing of source, importing application classes and constructing CLI parser; no Runtime instantiation"
+    }
+  ],
+  "environment": {
+    "python": "3.14.0",
+    "sqlite": "3.50.4",
+    "pydantic": "2.12.5"
+  },
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "gate_note": "Readiness remains open; this scoped source review is not qualification. No gate helper/product cases were run.",
+  "interface_inventory": {
+    "components": 8,
+    "pairs": 28,
+    "directed_lanes": 56,
+    "new_lanes": 0,
+    "lanes": [
+      {
+        "from": "C0",
+        "to": "C1",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-01A"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C0",
+        "to": "C2",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-02A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C0",
+        "to": "C3",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-03A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C0",
+        "to": "C4",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-04A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C0",
+        "to": "C5",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-05A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C0",
+        "to": "C6",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-06A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C0",
+        "to": "C7",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-07A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C1",
+        "to": "C0",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-01B"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C1",
+        "to": "C2",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-08A"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C1",
+        "to": "C3",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-09A"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C1",
+        "to": "C4",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-10A"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C1",
+        "to": "C5",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-11A"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C1",
+        "to": "C6",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-12A"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C1",
+        "to": "C7",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-13A"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C2",
+        "to": "C0",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-02B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C2",
+        "to": "C1",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-08B"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C2",
+        "to": "C3",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-14A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C2",
+        "to": "C4",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C2",
+        "to": "C5",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C2",
+        "to": "C6",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C2",
+        "to": "C7",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C3",
+        "to": "C0",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-03B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C3",
+        "to": "C1",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-09B"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C3",
+        "to": "C2",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-14B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C3",
+        "to": "C4",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-15A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C3",
+        "to": "C5",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-16A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C3",
+        "to": "C6",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-17A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C3",
+        "to": "C7",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-18A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C4",
+        "to": "C0",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-04B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C4",
+        "to": "C1",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-10B"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C4",
+        "to": "C2",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C4",
+        "to": "C3",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-15B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C4",
+        "to": "C5",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C4",
+        "to": "C6",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-19A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C4",
+        "to": "C7",
+        "design_disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C5",
+        "to": "C0",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-05B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C5",
+        "to": "C1",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-11B"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C5",
+        "to": "C2",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C5",
+        "to": "C3",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-16B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C5",
+        "to": "C4",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C5",
+        "to": "C6",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-20A"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C5",
+        "to": "C7",
+        "design_disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C6",
+        "to": "C0",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-06B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C6",
+        "to": "C1",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-12B"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C6",
+        "to": "C2",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C6",
+        "to": "C3",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-17B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C6",
+        "to": "C4",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-19B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C6",
+        "to": "C5",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-20B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C6",
+        "to": "C7",
+        "design_disposition": "prohibited",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C7",
+        "to": "C0",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-07B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C7",
+        "to": "C1",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-13B"
+        ],
+        "implementation_status": "prepared-subset; peer processing unavailable"
+      },
+      {
+        "from": "C7",
+        "to": "C2",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C7",
+        "to": "C3",
+        "design_disposition": "required",
+        "contract_ids": [
+          "IF-18B"
+        ],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C7",
+        "to": "C4",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C7",
+        "to": "C5",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      },
+      {
+        "from": "C7",
+        "to": "C6",
+        "design_disposition": "not_needed",
+        "contract_ids": [],
+        "implementation_status": "design-only; not implemented in this increment"
+      }
+    ]
+  },
+  "next_step": "Implement minimal C3 hosting/admission/versioned reads, then C2; preserve deferred qualification status."
+}

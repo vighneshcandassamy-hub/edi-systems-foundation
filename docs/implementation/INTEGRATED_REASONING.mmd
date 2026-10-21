@@ -1,0 +1,477 @@
+flowchart TB
+    subgraph SCOPE["Inquiry and selected system view"]
+        direction TB
+        Q["Inquiry and model purpose"]
+        B["Boundary, resolution and horizon"]
+        CR["Stakeholder outcome criteria"]
+        X["External drivers, sources and sinks"]
+        BV["Boundary alternatives and interface closure"]
+        B -.->|"Alternative view definitions"| BV
+        BV -.->|"Assigns input ownership"| X
+        BV -.->|"Qualified view definition"| MD
+        Q -.->|"Selects"| B
+        Q -.->|"Frames evaluation"| CR
+        B -.->|"Declares omissions"| X
+    end
+
+    subgraph ORG["Organization across interacting levels — Chapters 1 and 3"]
+        direction TB
+        EL["Constituents and persistent identity"]
+        CP["Composition, hierarchy and stable assemblies"]
+        IF["Directed exchanges and interfaces"]
+        CO["Coordination and local autonomy"]
+        FU["Functions and attributed purposes"]
+        IC["Information-channel change in examined system"]
+        IC -->|"Changes a feedback interface"| IF
+        EL -.->|"Participate in"| CP
+        CP -.->|"Exposes dependencies"| IF
+        CO -->|"Supports or restricts local work"| EL
+        FU -.->|"Local and wider roles"| CO
+    end
+
+    subgraph DYN["Accumulation and conditional mechanisms — Chapters 1 and 2"]
+        direction TB
+        ST["Stocks, regeneration and buffers"]
+        FL["Inflows, outflows and transformations"]
+        RU["Joint response rules and nonlinear relations"]
+        TM["History, delays and pending effects"]
+        LM["Joint capacities and constraints"]
+        NA["Nonlinear domains and response uncertainty"]
+        NA -.->|"Qualifies applicability"| RU
+        ST -->|"State-dependent availability"| LM
+        ST -->|"Affects rates where specified"| RU
+        RU -->|"Governs"| FL
+        FL -->|"Changes accumulation"| ST
+        TM -->|"Retained conditions"| RU
+        LM -->|"Constrains"| FL
+    end
+
+    subgraph CONTROL["Information, decisions and feedback — Chapters 1–7"]
+        direction TB
+        SE["Sensing and information sources"]
+        PE["Actor perception, interpretation and memory"]
+        GR["Actor goals, incentives and references"]
+        DE["Discrepancy or departure from a reference"]
+        AC["Intended action under an owned policy"]
+        AS["Actor access, receipt and timing"]
+        KC["Known or perceived constraints"]
+        OPT["Perceived options and satisficing rule"]
+        EX["Realized execution and effects"]
+        AS -->|"Delivered constraint information"| KC
+        PE -->|"Interpreted choice possibilities"| OPT
+        KC -->|"Actor-context input"| AC
+        OPT -->|"Candidate choice rule"| AC
+        AC -->|"Attempted action"| EX
+        FB["Balancing and reinforcing feedback paths"]
+        SE -->|"Delivered through declared channels"| AS
+        AS -->|"Attention, filtering and delay"| PE
+        PE -->|"Condition used in comparison"| DE
+        GR -->|"Reference for comparison"| DE
+        DE -->|"Corrective input where applicable"| AC
+        PE -->|"Other available decision input"| AC
+        GR -->|"Other objective where applicable"| AC
+        FB -.->|"Describes closed paths"| AC
+    end
+
+    subgraph RESTORE["Restoration and mechanism repair — Chapter 3"]
+        direction TB
+        CD["Constituent and interface condition"]
+        AP["Alternative restorative mechanisms"]
+        RP["Maintenance and repair processes"]
+        SD["Shared dependencies and repair support"]
+        CD -->|"May trigger repair"| RP
+        SD -->|"Enables or limits repair"| RP
+        RP -->|"Restores capability if successful"| CD
+        SD -->|"May disable several alternatives"| AP
+    end
+
+    subgraph DEVELOP["Real organizational development — Chapter 3"]
+        direction TB
+        VA["Variation and permitted experimentation"]
+        GE["Organizing or adaptation process"]
+        RT["Retention and stabilization conditions"]
+        CH["Actual change of organization"]
+        VA -->|"Possible alternatives"| GE
+        GE -->|"Produces new arrangement"| CH
+        RT -->|"Persistence or rejection"| CH
+    end
+
+    subgraph BEHAVIOR["Conditional behavior and functioning — Chapters 1–7"]
+        direction TB
+        TR["Conditional model trajectories"]
+        EV["Derived events and state or rate samples"]
+        PT["Derived patterns and operating regimes"]
+        OU["Outcomes at local and wider levels"]
+        TR -.->|"Occurrences within history"| EV
+        TR -.->|"Temporal characterization"| PT
+        TR -.->|"Consequences under criteria"| OU
+    end
+
+    subgraph KNOW["Evidence and model construction — analyst level"]
+        direction TB
+        OB["Actual-system observations and source reports"]
+        RE["Retained observation and report records"]
+        PV["Sources, temporal context and uncertainty"]
+        HY["Alternative mechanism explanations"]
+        MP["Pattern-to-domain role and rule mapping"]
+        MD["Versioned system description"]
+        OB -.->|"Recorded with source identity"| RE
+        HY -.->|"Candidate analogy where relevant"| MP
+        MP -.->|"Qualified pattern instantiation"| MD
+        RE -.->|"Qualified by"| PV
+        RE -.->|"Supports or challenges"| HY
+        HY -.->|"Candidate or accepted for use"| MD
+    end
+
+    subgraph SCENARIO["Scenario specification and analysis — analyst level"]
+        direction TB
+        IN["Initial state and required prehistory"]
+        DR["Assumed future drivers and disturbances"]
+        IV["Intervention target, direction and proposed change"]
+        TS["Structural-transition state and history mapping"]
+        AN["Conditional simulation or qualitative analysis"]
+        FO["Commitments and foresight comparisons"]
+        IP["Proposed observation or feedback intervention"]
+        FO -.->|"Conditional timing assumptions"| AN
+        IP -.->|"Scenario change only"| IV
+        TS -.->|"Carry-over and validity rules"| AN
+        IN -.->|"Initializes"| AN
+        DR -.->|"Defines conditions"| AN
+        IV -.->|"Defines hypothetical change"| AN
+    end
+
+    subgraph ASSESS["Assessment and revision — analyst level"]
+        direction TB
+        CM["Compare predictions, evidence and outcomes"]
+        RA["Persistence, recovery and tradeoffs"]
+        AD["Consistency, execution, empirical and decision adequacy"]
+        RV["Targeted model revision or further inquiry"]
+        CM -.->|"Assesses under disturbances"| RA
+        CM -.->|"Separates adequacy claims"| AD
+        AD -.->|"Findings and unresolved questions"| RV
+    end
+
+    B -.->|"Scopes included constituents"| EL
+    EL -.->|"Holds or participates in"| ST
+    IF -->|"Carries exchanges"| FL
+    IF -->|"Carries signals"| SE
+    X -->|"Boundary inputs and conditions"| RU
+    FU -.->|"Actor-specific purposes"| GR
+    CO -->|"Communicated allocations and permissions"| AS
+    CO -->|"Actual authorization or allocation"| EX
+    PE -->|"Status and needs for coordination"| CO
+    ST -->|"Condition available to sensing"| SE
+    EX -->|"Realized process effect"| FL
+    EX -->|"Realized policy effect where applicable"| RU
+    FB -.->|"Shares stock and rate mechanisms"| RU
+    TM -->|"Response timing, not extra knowledge"| AC
+    FL -->|"Creates pending effects where relevant"| TM
+    CD -->|"Enables or degrades sensing"| SE
+    CD -->|"Enables or degrades response"| RU
+    AP -->|"Provides a feasible alternative response"| RU
+    LM -->|"Restricts restorative capacity"| RP
+    LM -->|"Restricts feasible generation"| GE
+    CO -->|"Permits or restricts experimentation"| VA
+    PE -->|"May inform adaptation"| GE
+    CH -->|"Adds, removes or regroups"| EL
+    CH -->|"Changes interfaces"| IF
+    CH -->|"Changes coordination"| CO
+    CH -->|"May create restorative routes"| AP
+    CH -->|"May change governing rules"| RU
+    FL -->|"Evolution of accumulated conditions"| TR
+    CH -->|"Changes subsequent behavior"| TR
+    CP -.->|"Defines relevant levels"| OU
+    MD -.->|"Describes organization"| EL
+    MD -.->|"Specifies candidate mechanisms"| RU
+    MD -.->|"Analyzed model version"| AN
+    AN -.->|"Produces conditional predictions"| TR
+    TR -.->|"Predicted trajectory comparison"| CM
+    CH -.->|"Transition to specify"| TS
+    RE -.->|"Observed comparison"| CM
+    OU -.->|"Outcome coverage"| CM
+    CR -.->|"Evaluation criteria"| CM
+    PT -.->|"Functioning regime"| RA
+    CD -.->|"Condition in the examined model"| RA
+    RV -.->|"Corrects our description"| MD
+    RV -.->|"Selects another scenario"| AN
+    RV -.->|"Reconsiders scope when justified"| B
+    LM -->|"Actual modeled feasibility"| EX
+    CD -->|"Actuation condition"| EX
+    TM -.->|"Pending state and timing"| FO
+    CM -.->|"Review response applicability"| NA
+
+    subgraph INCENTIVE["Rules, consequences and changing capability — Chapter 5"]
+        direction TB
+        BB["Benefit and burden incidence"]
+        RW["Reward allocation and conversion"]
+        OP["Future capability and access"]
+        GV["Governing rules and enforcement"]
+        IR["Indicators and apparent compliance"]
+        GU["Reference updates and rival comparisons"]
+        IT["Intervention and corrective capacity"]
+    end
+
+    subgraph PATTERNS["Conditional archetype views — Chapter 5"]
+        direction TB
+        PA["Policy resistance and commons"]
+        PB["Goal drift and escalation"]
+        PC["Compounding advantage and dependency"]
+        PD["Rule beating and wrong goals"]
+    end
+
+    FL -.->|"Attribute gains and costs"| BB
+    BB -.->|"Distribution and delayed burdens"| OU
+    FL -.->|"Shared reward process role"| RW
+    RW -->|"Funds or grants future means"| OP
+    OP -->|"Actual capability or access"| EX
+    OP -->|"Can influence governance"| GV
+    GV -->|"Actual access and enforcement"| EX
+    GV -->|"Communicated incentives and rules"| SE
+    GV -.->|"Defines formal success"| IR
+    FU -.->|"Attributed intent to compare"| IR
+    EX -->|"Activity selected for measurement"| IR
+    ST -->|"Outcomes selected for measurement"| IR
+    IR -->|"Reported success or compliance"| SE
+    PE -->|"Perceived performance and rival history"| GU
+    GU -->|"Changes reference where specified"| GR
+    IT -->|"Relief or substitution effect"| FL
+    IT -->|"May strengthen or erode"| CD
+    IT -->|"May change visible signals"| SE
+    LM -->|"Finite support resources"| IT
+    GV -->|"Support authorization"| IT
+    CD -->|"Corrective capability informs need"| IT
+    RP -->|"May rebuild capacity"| IT
+    IT -->|"May build or displace repair"| RP
+    CH -->|"Can change adopted rules"| GV
+    CH -->|"Can change reference mechanism"| GU
+    AS -->|"Delivered rules, not hidden knowledge"| OPT
+    MD -.->|"Candidate shared mechanisms"| PA
+    MD -.->|"Candidate shared mechanisms"| PB
+    MD -.->|"Candidate shared mechanisms"| PC
+    MD -.->|"Candidate shared mechanisms"| PD
+    PA -.->|"Competing goals and shared-resource hypotheses"| AN
+    PB -.->|"Reference-update hypotheses"| AN
+    PC -.->|"Opportunity and capacity hypotheses"| AN
+    PD -.->|"Purpose-rule-indicator hypotheses"| AN
+    CM -.->|"Support, contradiction and rival explanation"| PA
+    CM -.->|"Support, contradiction and rival explanation"| PB
+    CM -.->|"Support, contradiction and rival explanation"| PC
+    CM -.->|"Support, contradiction and rival explanation"| PD
+    IV -.->|"Candidate rule change only"| GV
+    IV -.->|"Candidate reference change only"| GU
+    IV -.->|"Candidate support change only"| IT
+    GV -.->|"Actual rule transition to specify"| TS
+    GU -.->|"Reference memory to preserve"| TS
+    RW -.->|"Opportunity distribution"| CM
+    IR -.->|"Compare proxy and intended outcome"| CM
+    GR -.->|"Attributed actor references"| PA
+    ST -.->|"Shared state and resource condition"| PA
+    BB -.->|"Private and shared incidence"| PA
+    GV -.->|"Access and control hypotheses"| PA
+    GU -.->|"Reference-update paths"| PB
+    GR -.->|"Formal and relative references"| PB
+    PE -.->|"Perceived performance and rival state"| PB
+    RW -.->|"Reward feedback"| PC
+    OP -.->|"Future competitive means"| PC
+    IT -.->|"Relief and capacity effects"| PC
+    CD -.->|"Original corrective condition"| PC
+    GV -.->|"Rule and enforcement correspondence"| PD
+    IR -.->|"Apparent compliance and proxy result"| PD
+    AC -.->|"Adaptive strategy hypothesis"| PD
+    OU -.->|"Actual intended-outcome comparison"| PD
+
+    subgraph FRAMING["Interpretation and implementation — Chapter 6"]
+        direction TB
+        FR["Owned actor or community assumptions"]
+        AA["Analyst assumptions and alternative frames"]
+        ADP["Adoption and implementation process"]
+    end
+    subgraph LEVERAGE["Conditional intervention targets — Chapter 6"]
+        direction TB
+        LA["12 Parameters; 11 Buffers; 10 Physical structure"]
+        LB["9 Delays; 8 Balancing; 7 Reinforcing"]
+        LC["6 Information; 5 Rules; 4 Self-organization"]
+        LD["3 Goals; 2 Paradigms; 1 Reconsidering frames"]
+    end
+
+    FR -->|"Shapes interpretation where specified"| PE
+    FR -->|"Can shape owned goals"| GR
+    AS -->|"Available experience for belief update"| FR
+    MD -.->|"Evidence-qualified actor frame account"| FR
+    AA -.->|"Assumptions of candidate description"| MD
+    AA -.->|"Alternative framing hypotheses"| HY
+    RE -.->|"Can challenge analytical assumptions"| AA
+    RV -.->|"Reconsider assumptions without rewriting evidence"| AA
+    IV -.->|"Proposal or scenario adoption only"| ADP
+    EX -->|"Realized authorized implementation activity"| ADP
+    GV -->|"Authority and enforceable permissions"| ADP
+    LM -->|"Implementation resources and limits"| ADP
+    ADP -->|"Produces adopted organizational change"| CH
+    ADP -->|"Changes adopted rules where specified"| GV
+    ADP -->|"Changes reference mechanism where specified"| GU
+    ADP -->|"Implements information-channel change"| IC
+    ADP -->|"Enables or restricts actual experiments"| VA
+    ADP -->|"May influence individual or social uptake"| FR
+    ADP -.->|"Transition and retained history"| TS
+    IV -.->|"Candidate target correspondence"| LA
+    IV -.->|"Candidate target correspondence"| LB
+    IV -.->|"Candidate target correspondence"| LC
+    IV -.->|"Candidate target correspondence"| LD
+    LA -.->|"State, capacity and topology to specify"| AN
+    LB -.->|"Timing and complete feedback paths"| AN
+    LC -.->|"Channel, institution and generation changes"| AN
+    LD -.->|"Purpose and framed-assumption alternatives"| AN
+    ST -.->|"Reserve, capacity and cohort meanings"| LA
+    RU -.->|"Values, domains and critical regimes"| LA
+    TM -.->|"Stage-specific relative timing"| LB
+    FB -.->|"Corrective versus driving mechanism"| LB
+    IF -.->|"New versus tuned channel"| LC
+    GV -.->|"Rule-writing authority and adaptation"| LC
+    GE -.->|"Generation, selection and retention"| LC
+    FU -.->|"Local and wider purpose"| LD
+    FR -.->|"Owned beliefs and priorities"| LD
+    AA -.->|"Revisable analyst frame"| LD
+    CM -.->|"Influence, direction, feasibility and criteria"| IV
+
+    subgraph PRACTICE["Meaning, learning and responsibility — Chapter 7"]
+        direction TB
+        PI["Current versioned response policy"]
+        PM["Actor monitoring and policy review"]
+        UP["Candidate policy amendment"]
+        ER["Actor-owned expectations and error review"]
+        EJ["Analyst expectation and error record"]
+        ME["Meaning, scale and domain correspondence"]
+        QV["Qualitative concerns and affected-party coverage"]
+        RR["Influence, burden, authority and responsibility"]
+    end
+
+    PI -->|"Rule used at this decision time"| AC
+    PE -->|"Available interpreted monitoring input"| PM
+    PI -->|"Current policy and owned expectations"| ER
+    PE -->|"Experienced evidence for comparison"| ER
+    ER -->|"Discrepancy and rival error accounts"| PM
+    GR -->|"Owned review criteria where applicable"| PM
+    GV -->|"Review and amendment permissions"| PM
+    LM -->|"Finite monitoring and review support"| PM
+    PM -->|"May generate a specified revision"| UP
+    UP -->|"Candidate submitted for adoption"| ADP
+    ADP -->|"Authorized implemented policy version"| PI
+    PI -.->|"Policy history and pending effects to preserve"| TS
+    PM -.->|"Actual learning mechanism to describe"| MD
+    MD -.->|"Candidate response-policy description"| PI
+    TR -.->|"Preserves original conditional expectation"| EJ
+    RE -.->|"Independent evidence for aligned comparison"| EJ
+    EJ -.->|"Discrepancy and unresolved explanations"| CM
+    RV -.->|"Records retention or revision rationale"| EJ
+    ME -.->|"Defines variables and permissible operations"| MD
+    ME -.->|"Aligns observations and predictions"| EJ
+    ME -.->|"Declared message interpretation correspondence"| PE
+    PV -.->|"Source wording, transformations and dependencies"| ME
+    MP -.->|"Qualified cross-domain meanings"| ME
+    B -.->|"Causal scope and horizon correspondence"| QV
+    BB -.->|"Affected parties and distributed consequences"| QV
+    QV -.->|"Attributed concerns and disputed priorities"| CR
+    QV -.->|"Qualitative or measured outcome interpretation"| CM
+    TM -.->|"Slow state and residual commitments"| QV
+    EX -.->|"Decision influence to trace"| RR
+    BB -.->|"Burden and benefit incidence"| RR
+    GV -.->|"Decision and amendment authority"| RR
+    OP -.->|"Actual capacity to respond"| RR
+    RR -.->|"Candidate missing consequence feedback"| IP
+    RR -.->|"Attributed responsibility and legitimacy questions"| QV
+    GU -.->|"Reference history and revision rationale"| CM
+    CD -.->|"Existing local capability before intervention"| QV
+    ER -.->|"Owned expectation history in transitions"| TS
+    AS -->|"Available experience for policy review"| ER
+    SE -.->|"Measurement and reporting provenance"| PV
+
+    subgraph EDIRUN["EDI reasoning execution - engineering extension"]
+        direction TB
+        subgraph EDICONTEXT["Context and control"]
+            direction TB
+            RCTX["Scoped world, evidence and unknowns"]
+            RPRO["Versioned systems reasoning protocol"]
+            RCTL["Inquiry and tool controller"]
+        end
+        subgraph EDIMODELS["Replaceable model assistance"]
+            direction TB
+            RSTU["Pretrained student served by vLLM"]
+            RTEA["Selective pretrained teacher guidance"]
+        end
+        subgraph EDIPROPOSAL["Reasoning outputs"]
+            direction TB
+            RALT["Rival mechanisms and explicit unknowns"]
+            RTEST["Discriminating inquiries and scenarios"]
+            RPATCH["Typed interpretations and model patches"]
+        end
+        subgraph EDIEXPLORE["Exploration and retained experience"]
+            direction TB
+            RFRONT["Adjacent, internal and temporal frontier"]
+            RACCESS["Access requests and standing grants"]
+            REPIS["Attributed attempts, guidance and outcomes"]
+        end
+    end
+
+    RADMIT["C3 model admission and revision authority"]
+
+    subgraph EDITRAIN["Future parameter learning - separate from runtime"]
+        direction TB
+        TCUR["Curated training episodes"]
+        TTRAIN["Explicit student parameter-training job"]
+        TCKPT["Candidate model or adapter checkpoints"]
+        TADOPT["C7 operational checkpoint adoption"]
+    end
+
+    Q -.->|"Defines an inquiry"| RCTL
+    B -.->|"Scopes context and resolution"| RCTX
+    CR -.->|"Declared evaluation criteria"| RCTX
+    RE -.->|"Selected records with availability"| RCTX
+    PV -.->|"Source and uncertainty qualification"| RCTX
+    ME -.->|"Meaning and temporal correspondence"| RCTX
+    MD -.->|"Pinned model and dependency view"| RCTX
+    AA -.->|"Declared analytical assumptions"| RCTX
+    RPRO -.->|"Selects relevant reasoning operations"| RCTL
+    RCTL -.->|"Bounded student request"| RSTU
+    RCTX -.->|"Current scoped context"| RSTU
+    RCTX -.->|"Declared teacher context"| RTEA
+    RPRO -.->|"Systems reasoning guidance"| RTEA
+    RSTU -.->|"Selected attempt and difficulty"| RTEA
+    RTEA -.->|"Attributed critique and correction"| RSTU
+    RSTU -.->|"Candidate explanations"| RALT
+    RALT -.->|"Rivals and missing alternatives"| HY
+    RALT -.->|"Questions that could separate rivals"| RTEST
+    RCTL -.->|"Selects feasible methods"| RTEST
+    RTEST -.->|"Scenario initial-history questions"| IN
+    RTEST -.->|"Driver alternatives"| DR
+    RTEST -.->|"Hypothetical intervention proposals"| IV
+    RTEST -.->|"Analysis request through C0"| AN
+    AN -.->|"Results or unsupported status through C0"| RCTL
+    RTEST -.->|"Unresolved evidence needs"| RFRONT
+    RFRONT -.->|"Proposes wider or deeper scope"| B
+    RFRONT -.->|"Specific missing information"| RACCESS
+    RACCESS -.->|"Requests permitted acquisition via C0-C7-C1"| OB
+    RCTL -.->|"Assembles proposed changes"| RPATCH
+    RSTU -.->|"Proposed interpretations and edits"| RPATCH
+    RPATCH -.->|"Proposal with base version and evidence"| RADMIT
+    RADMIT -.->|"Retains status and justified revision"| MD
+    CM -.->|"Discrepancies and rival explanations"| RCTL
+    RV -.->|"Further inquiry or proposed revision"| RCTL
+    RSTU -.->|"Attempts and explicit rationales"| REPIS
+    RTEA -.->|"Generated teacher feedback"| REPIS
+    RTEST -.->|"Inquiry-selection history"| REPIS
+    EJ -.->|"Original forecast references"| REPIS
+    CM -.->|"Outcome assessments with lineage"| REPIS
+    REPIS -.->|"Future scoped dataset selection"| TCUR
+    RPRO -.->|"Declared learning objectives"| TCUR
+    TCUR -.->|"Future frozen training input"| TTRAIN
+    TTRAIN -.->|"Future changed weights or adapters"| TCKPT
+    TCKPT -.->|"Candidate submitted for adoption"| TADOPT
+    TADOPT -.->|"Future explicit loading of adopted version"| RSTU
+
+    classDef edireason fill:#e8f1ff,stroke:#225ea8,stroke-width:2px
+    classDef editeacher fill:#e8f7ec,stroke:#237a3b,stroke-width:2px
+    classDef edifuture fill:#f2f2f2,stroke:#666666,stroke-dasharray:6 4
+    class RCTX,RPRO,RCTL,RSTU,RALT,RTEST,RPATCH,RFRONT,RACCESS,REPIS,RADMIT edireason
+    class RTEA editeacher
+    class TCUR,TTRAIN,TCKPT,TADOPT edifuture
+

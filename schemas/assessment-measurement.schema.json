@@ -1,0 +1,104 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "measurement_schema": {
+      "const": "edi.measurement/1.0",
+      "title": "Measurement Schema",
+      "type": "string"
+    },
+    "variable": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Variable",
+      "type": "string"
+    },
+    "observed_at": {
+      "format": "date-time",
+      "title": "Observed At",
+      "type": "string"
+    },
+    "unit": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Unit",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "observed",
+        "missing",
+        "left-censored",
+        "right-censored",
+        "interval-censored"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value"
+    },
+    "lower": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lower"
+    },
+    "upper": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Upper"
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reason"
+    }
+  },
+  "required": [
+    "measurement_schema",
+    "variable",
+    "observed_at",
+    "unit",
+    "status"
+  ],
+  "title": "Measurement",
+  "type": "object"
+}

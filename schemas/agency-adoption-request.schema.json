@@ -1,0 +1,66 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "amendment_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Amendment Id",
+      "type": "string"
+    },
+    "expected_revision": {
+      "minimum": 0,
+      "title": "Expected Revision",
+      "type": "integer"
+    },
+    "decision": {
+      "enum": [
+        "adopt",
+        "reject",
+        "defer"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "operator_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Operator Id",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "amendment_id",
+    "expected_revision",
+    "decision",
+    "operator_id",
+    "rationale"
+  ],
+  "title": "AdoptionRequest",
+  "type": "object"
+}

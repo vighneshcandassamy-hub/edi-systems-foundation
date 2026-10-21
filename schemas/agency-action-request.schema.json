@@ -1,0 +1,313 @@
+{
+  "$defs": {
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "record_id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "ReplayCursor": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "after": {
+          "default": 0,
+          "minimum": 0,
+          "title": "After",
+          "type": "integer"
+        },
+        "watermark": {
+          "minimum": 0,
+          "title": "Watermark",
+          "type": "integer"
+        },
+        "origin_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Origin Ref"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "watermark"
+      ],
+      "title": "ReplayCursor",
+      "type": "object"
+    },
+    "SelectObservations": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "const": "select-observations",
+          "default": "select-observations",
+          "title": "Operation",
+          "type": "string"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "cursor": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReplayCursor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "limit": {
+          "default": 25,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "origin_ref"
+      ],
+      "title": "SelectObservations",
+      "type": "object"
+    },
+    "SelectWorld": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "const": "select-world",
+          "default": "select-world",
+          "title": "Operation",
+          "type": "string"
+        },
+        "model_revision": {
+          "minimum": 1,
+          "title": "Model Revision",
+          "type": "integer"
+        },
+        "refs": {
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "model_revision",
+        "refs"
+      ],
+      "title": "SelectWorld",
+      "type": "object"
+    },
+    "UnsupportedAction": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "external-action",
+            "acquire-source",
+            "run-simulation"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "description"
+      ],
+      "title": "UnsupportedAction",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "decision_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Decision Id",
+      "type": "string"
+    },
+    "policy_revision": {
+      "minimum": 1,
+      "title": "Policy Revision",
+      "type": "integer"
+    },
+    "purpose_version": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Purpose Version",
+      "type": "string"
+    },
+    "grant_id": {
+      "anyOf": [
+        {
+          "maxLength": 256,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Grant Id"
+    },
+    "intent": {
+      "discriminator": {
+        "mapping": {
+          "acquire-source": "#/$defs/UnsupportedAction",
+          "external-action": "#/$defs/UnsupportedAction",
+          "run-simulation": "#/$defs/UnsupportedAction",
+          "select-observations": "#/$defs/SelectObservations",
+          "select-world": "#/$defs/SelectWorld"
+        },
+        "propertyName": "operation"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/SelectObservations"
+        },
+        {
+          "$ref": "#/$defs/SelectWorld"
+        },
+        {
+          "$ref": "#/$defs/UnsupportedAction"
+        }
+      ],
+      "title": "Intent"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "expected_effects_and_limits": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Expected Effects And Limits",
+      "type": "string"
+    },
+    "attribution": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Attribution",
+      "type": "string"
+    },
+    "boundary": {
+      "const": "edi-runtime",
+      "default": "edi-runtime",
+      "title": "Boundary",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "decision_id",
+    "policy_revision",
+    "purpose_version",
+    "intent",
+    "rationale",
+    "expected_effects_and_limits",
+    "attribution"
+  ],
+  "title": "ActionRequest",
+  "type": "object"
+}

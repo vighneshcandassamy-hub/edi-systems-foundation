@@ -1,0 +1,11 @@
+{
+  "workspace_id": "analysis-demo",
+  "request_id": "example-compile-1",
+  "model_revision": 1,
+  "mechanism_ref": {
+    "record_id": "transfer-law",
+    "version": 1
+  },
+  "use_policy": "candidate-exploration",
+  "rationale": "Compile the explicitly hypothetical first native versions for later qualification"
+}

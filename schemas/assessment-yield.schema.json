@@ -1,0 +1,143 @@
+{
+  "$defs": {
+    "JsonValue": {},
+    "YieldRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "yield_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Yield Id",
+          "type": "string"
+        },
+        "inquiry_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Inquiry Id",
+          "type": "string"
+        },
+        "assessment_ids": {
+          "items": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Assessment Ids",
+          "type": "array"
+        },
+        "selection_basis": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Selection Basis",
+          "type": "string"
+        },
+        "declared_exposure": {
+          "minimum": 1,
+          "title": "Declared Exposure",
+          "type": "integer"
+        },
+        "resource_account": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Resource Account",
+          "type": "object"
+        },
+        "caveats": {
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Caveats",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "yield_id",
+        "inquiry_id",
+        "assessment_ids",
+        "selection_basis",
+        "declared_exposure",
+        "resource_account",
+        "caveats"
+      ],
+      "title": "YieldRequest",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/YieldRequest"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "assessment_hashes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assessment Hashes",
+      "type": "array"
+    },
+    "coverage": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Coverage",
+      "type": "object"
+    },
+    "calibrated_advantage": {
+      "const": "not-established; matched outcomes/control/cost validation required",
+      "default": "not-established; matched outcomes/control/cost validation required",
+      "title": "Calibrated Advantage",
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "title": "Artifact Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request",
+    "created_at",
+    "assessment_hashes",
+    "coverage",
+    "artifact_sha256"
+  ],
+  "title": "YieldReview",
+  "type": "object"
+}

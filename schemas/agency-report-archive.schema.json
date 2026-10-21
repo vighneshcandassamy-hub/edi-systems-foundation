@@ -1,0 +1,522 @@
+{
+  "$defs": {
+    "Capture": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "idempotency_key": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Idempotency Key",
+          "type": "string"
+        },
+        "kind": {
+          "default": "native-bytes",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Kind",
+          "type": "string"
+        },
+        "media_type": {
+          "default": "application/octet-stream",
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Media Type",
+          "type": "string"
+        },
+        "time": {
+          "$ref": "#/$defs/TemporalScope"
+        },
+        "profiles": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Profiles",
+          "type": "object"
+        },
+        "critical_profiles": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Critical Profiles",
+          "type": "array"
+        },
+        "origin_class": {
+          "default": "unknown",
+          "enum": [
+            "external",
+            "generated",
+            "simulation",
+            "unknown"
+          ],
+          "title": "Origin Class",
+          "type": "string"
+        },
+        "lineage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Lineage",
+          "type": "array"
+        },
+        "completeness": {
+          "default": "unknown",
+          "enum": [
+            "complete",
+            "partial",
+            "unknown"
+          ],
+          "title": "Completeness",
+          "type": "string"
+        },
+        "expected_bytes": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Bytes"
+        },
+        "expected_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Sha256"
+        }
+      },
+      "required": [
+        "origin_ref",
+        "idempotency_key"
+      ],
+      "title": "Capture",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "Manifest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "byte_count": {
+          "minimum": 0,
+          "title": "Byte Count",
+          "type": "integer"
+        },
+        "chunk_count": {
+          "minimum": 0,
+          "title": "Chunk Count",
+          "type": "integer"
+        },
+        "chunk_bytes": {
+          "minimum": 1,
+          "title": "Chunk Bytes",
+          "type": "integer"
+        },
+        "media_type": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Media Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sha256",
+        "byte_count",
+        "chunk_count",
+        "chunk_bytes",
+        "media_type"
+      ],
+      "title": "Manifest",
+      "type": "object"
+    },
+    "Observation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "schema_ref": {
+          "const": "edi.observation/1.0",
+          "default": "edi.observation/1.0",
+          "title": "Schema Ref",
+          "type": "string"
+        },
+        "record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "scope_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "kind": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Kind",
+          "type": "string"
+        },
+        "receipt_time": {
+          "format": "date-time",
+          "title": "Receipt Time",
+          "type": "string"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "manifest_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Manifest Ref",
+          "type": "string"
+        },
+        "profiles": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Profiles",
+          "type": "object"
+        },
+        "committed_at": {
+          "format": "date-time",
+          "title": "Committed At",
+          "type": "string"
+        },
+        "commit_position": {
+          "minimum": 1,
+          "title": "Commit Position",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "capture": {
+          "$ref": "#/$defs/Capture"
+        },
+        "manifest": {
+          "$ref": "#/$defs/Manifest"
+        },
+        "durability": {
+          "const": "local-sqlite-full-unqualified",
+          "default": "local-sqlite-full-unqualified",
+          "title": "Durability",
+          "type": "string"
+        }
+      },
+      "required": [
+        "record_id",
+        "scope_id",
+        "kind",
+        "receipt_time",
+        "origin_ref",
+        "manifest_ref",
+        "profiles",
+        "committed_at",
+        "commit_position",
+        "source_id",
+        "capture",
+        "manifest"
+      ],
+      "title": "Observation",
+      "type": "object"
+    },
+    "Receipt": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "const": "committed",
+          "default": "committed",
+          "title": "Status",
+          "type": "string"
+        },
+        "observation": {
+          "$ref": "#/$defs/Observation"
+        },
+        "duplicate": {
+          "title": "Duplicate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "observation",
+        "duplicate"
+      ],
+      "title": "Receipt",
+      "type": "object"
+    },
+    "ReportRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "archive_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Archive Id",
+          "type": "string"
+        },
+        "execution_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Execution Id",
+          "type": "string"
+        },
+        "origin_ref": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "report_text": {
+          "maxLength": 16384,
+          "minLength": 1,
+          "title": "Report Text",
+          "type": "string"
+        },
+        "attribution": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Attribution",
+          "type": "string"
+        },
+        "reported_at": {
+          "format": "date-time",
+          "title": "Reported At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "request_id",
+        "archive_id",
+        "execution_id",
+        "origin_ref",
+        "report_text",
+        "attribution",
+        "reported_at"
+      ],
+      "title": "ReportRequest",
+      "type": "object"
+    },
+    "ReportStage": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/$defs/ReportRequest"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "capture": {
+          "$ref": "#/$defs/Capture"
+        }
+      },
+      "required": [
+        "request",
+        "created_at",
+        "capture"
+      ],
+      "title": "ReportStage",
+      "type": "object"
+    },
+    "TemporalScope": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "event_time": {
+          "$ref": "#/$defs/TimeValue"
+        },
+        "reported_time": {
+          "$ref": "#/$defs/TimeValue"
+        },
+        "clock_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clock Id"
+        },
+        "sequence": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sequence"
+        }
+      },
+      "title": "TemporalScope",
+      "type": "object"
+    },
+    "TimeValue": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "known",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "not supplied",
+          "title": "Reason"
+        }
+      },
+      "title": "TimeValue",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "stage": {
+      "$ref": "#/$defs/ReportStage"
+    },
+    "receipt": {
+      "$ref": "#/$defs/Receipt"
+    },
+    "artifact_sha256": {
+      "title": "Artifact Sha256",
+      "type": "string"
+    },
+    "basis": {
+      "const": "local-operator-report-not-independent-effect",
+      "default": "local-operator-report-not-independent-effect",
+      "title": "Basis",
+      "type": "string"
+    }
+  },
+  "required": [
+    "stage",
+    "receipt",
+    "artifact_sha256"
+  ],
+  "title": "ReportArchive",
+  "type": "object"
+}

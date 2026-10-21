@@ -1,0 +1,135 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "profile_id": {
+      "default": "local-assessment-sqlite-v1",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Profile Id",
+      "type": "string"
+    },
+    "workspace_id": {
+      "default": "default",
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "database": {
+      "format": "path",
+      "title": "Database",
+      "type": "string"
+    },
+    "max_request_bytes": {
+      "default": 262144,
+      "minimum": 1024,
+      "title": "Max Request Bytes",
+      "type": "integer"
+    },
+    "max_document_bytes": {
+      "default": 4194304,
+      "minimum": 32768,
+      "title": "Max Document Bytes",
+      "type": "integer"
+    },
+    "max_context_bytes": {
+      "default": 8388608,
+      "minimum": 32768,
+      "title": "Max Context Bytes",
+      "type": "integer"
+    },
+    "max_records": {
+      "default": 50000,
+      "minimum": 2,
+      "title": "Max Records",
+      "type": "integer"
+    },
+    "max_stored_bytes": {
+      "default": 1073741824,
+      "minimum": 32768,
+      "title": "Max Stored Bytes",
+      "type": "integer"
+    },
+    "max_origins": {
+      "default": 8,
+      "maximum": 16,
+      "minimum": 1,
+      "title": "Max Origins",
+      "type": "integer"
+    },
+    "max_input_refs": {
+      "default": 256,
+      "maximum": 1024,
+      "minimum": 1,
+      "title": "Max Input Refs",
+      "type": "integer"
+    },
+    "max_scan_records": {
+      "default": 2000,
+      "maximum": 100000,
+      "minimum": 1,
+      "title": "Max Scan Records",
+      "type": "integer"
+    },
+    "page_size": {
+      "default": 100,
+      "maximum": 100,
+      "minimum": 1,
+      "title": "Page Size",
+      "type": "integer"
+    },
+    "max_payload_bytes": {
+      "default": 16384,
+      "maximum": 65536,
+      "minimum": 128,
+      "title": "Max Payload Bytes",
+      "type": "integer"
+    },
+    "max_total_read_bytes": {
+      "default": 1048576,
+      "minimum": 128,
+      "title": "Max Total Read Bytes",
+      "type": "integer"
+    },
+    "max_page_bytes": {
+      "default": 8388608,
+      "minimum": 32768,
+      "title": "Max Page Bytes",
+      "type": "integer"
+    },
+    "max_operation_seconds": {
+      "default": 15.0,
+      "exclusiveMinimum": 0,
+      "maximum": 300,
+      "title": "Max Operation Seconds",
+      "type": "number"
+    },
+    "minimum_lead_seconds": {
+      "default": 1.0,
+      "minimum": 0,
+      "title": "Minimum Lead Seconds",
+      "type": "number"
+    },
+    "writer_timeout_seconds": {
+      "default": 5.0,
+      "exclusiveMinimum": 0,
+      "maximum": 60,
+      "title": "Writer Timeout Seconds",
+      "type": "number"
+    },
+    "min_free_disk_bytes": {
+      "default": 268435456,
+      "minimum": 0,
+      "title": "Min Free Disk Bytes",
+      "type": "integer"
+    }
+  },
+  "title": "AssessmentProfile",
+  "type": "object"
+}

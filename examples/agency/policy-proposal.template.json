@@ -1,0 +1,35 @@
+{
+  "workspace_id": "default",
+  "request_id": "REPLACE-proposal-request",
+  "amendment_id": "REPLACE-amendment",
+  "expected_revision": 0,
+  "change_kind": "bootstrap",
+  "proposed": {
+    "policy_id": "REPLACE-policy",
+    "purpose_version": "research-goal-v1",
+    "purpose": "Investigate a bounded system without external actuation",
+    "evaluation_standards": [
+      "Retain uncertainty and original standards"
+    ],
+    "assumptions": [
+      "Trusted local operator/process/filesystem and shared UTC"
+    ],
+    "grants": [
+      {
+        "grant_id": "REPLACE-grant",
+        "operation": "select-observations",
+        "origin_refs": [
+          "REPLACE-registered-origin"
+        ],
+        "not_before": "REPLACE-UTC-start",
+        "expires_at": "REPLACE-UTC-expiry",
+        "max_items": 25,
+        "basis": "REPLACE-existing-authorized-source-scope"
+      }
+    ]
+  },
+  "trigger": "Initial explicit research configuration",
+  "rationale": "REPLACE-owner-rationale",
+  "attribution": "Local operator authored; no model self-authorization",
+  "resource_and_implementation_basis": "Native metadata selection only within configured finite bounds"
+}

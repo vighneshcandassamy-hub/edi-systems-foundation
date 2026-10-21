@@ -1,0 +1,56 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "assessment_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Assessment Id",
+      "type": "string"
+    },
+    "forecast_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Forecast Id",
+      "type": "string"
+    },
+    "outcome_watermark": {
+      "minimum": 0,
+      "title": "Outcome Watermark",
+      "type": "integer"
+    },
+    "rationale": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "assessment_id",
+    "forecast_id",
+    "outcome_watermark",
+    "rationale"
+  ],
+  "title": "CompareRequest",
+  "type": "object"
+}

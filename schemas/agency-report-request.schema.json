@@ -1,0 +1,70 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "request_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "archive_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Archive Id",
+      "type": "string"
+    },
+    "execution_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Execution Id",
+      "type": "string"
+    },
+    "origin_ref": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Origin Ref",
+      "type": "string"
+    },
+    "report_text": {
+      "maxLength": 16384,
+      "minLength": 1,
+      "title": "Report Text",
+      "type": "string"
+    },
+    "attribution": {
+      "maxLength": 8192,
+      "minLength": 1,
+      "title": "Attribution",
+      "type": "string"
+    },
+    "reported_at": {
+      "format": "date-time",
+      "title": "Reported At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "request_id",
+    "archive_id",
+    "execution_id",
+    "origin_ref",
+    "report_text",
+    "attribution",
+    "reported_at"
+  ],
+  "title": "ReportRequest",
+  "type": "object"
+}

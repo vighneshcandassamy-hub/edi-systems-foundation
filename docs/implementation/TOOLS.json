@@ -1,0 +1,1177 @@
+{
+  "schema": "edi-tool-decisions-v0.3",
+  "input_revision": "7b9c9f3bbf19bef6947fac4db271de8e805d207e",
+  "scope": "research_and_design_only",
+  "priorities": {
+    "P0": "first_integrated_capability",
+    "P1": "intelligence_development_when_required",
+    "P2": "measured_scale_or_explicit_availability_need",
+    "P3": "bounded_research_after_relevant_shortfall"
+  },
+  "decisions": [
+    {
+      "id": "T01",
+      "priority": "P0",
+      "mode": "reuse_with_original_policy",
+      "preference": "C0 scheduling: small explicit state machine, bounded workers, Postgres jobs/outbox and checkpoints.",
+      "alternatives": "LangGraph for branching agent execution; Temporal for durable distributed workflows. Both require careful replay, external-effect and version semantics; they solve different parts of the runtime. [S20-S21]",
+      "original_code_or_adoption_trigger": "Inquiry budgets, priority, cancellation, retry/idempotency and progress meaning. Add a framework when custom branching or recovery complexity is measured.",
+      "function_ids": [
+        "F00",
+        "F01",
+        "F02",
+        "F03"
+      ],
+      "component_ids": [
+        "C0"
+      ],
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R23"
+      ],
+      "verification_ids": [
+        "E15",
+        "E29",
+        "E30",
+        "E34",
+        "E35",
+        "E45"
+      ],
+      "source_ids": [
+        "S20",
+        "S21",
+        "S13"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T02",
+      "priority": "P0",
+      "mode": "original_semantics_over_storage",
+      "preference": "C1 capture: native bytes/chunks, hashes, manifests, source/epoch registry and append-only occurrence metadata.",
+      "alternatives": "Single verified artifact directory for DEV1; managed object storage with independent durability/retention controls for HA.",
+      "original_code_or_adoption_trigger": "Source continuity and receipt/commit/replay rules. No native evidence capture should wait for an LLM.",
+      "function_ids": [
+        "F10",
+        "F11",
+        "F12",
+        "F13"
+      ],
+      "component_ids": [
+        "C1"
+      ],
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R02",
+        "IMP-R20",
+        "IMP-R24",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E33",
+        "E34"
+      ],
+      "source_ids": [
+        "S12",
+        "S13"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T03",
+      "priority": "P0",
+      "mode": "reuse_with_original_provenance",
+      "preference": "C2 interpretation: native text/CSV/JSON adapters, Docling for supported documents and FFmpeg for media plumbing; model interpretation only where needed. [S07-S08]",
+      "alternatives": "Provider multimodal models for difficult content; custom sensor/symbol/music/scientific-array adapters for native forms. No parser covers every possible meaning.",
+      "original_code_or_adoption_trigger": "Selector/provenance mapping, event/structure role versus evidential basis and unknown-format preservation. Docling's video transcription does not itself interpret every visual event.",
+      "function_ids": [
+        "F20",
+        "F23"
+      ],
+      "component_ids": [
+        "C2"
+      ],
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R03",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E01",
+        "E05",
+        "E07",
+        "E21"
+      ],
+      "source_ids": [
+        "S07",
+        "S08",
+        "S01",
+        "S03"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T04",
+      "priority": "P0",
+      "mode": "original_association_policy",
+      "preference": "C2 identity: exact supported bindings and reversible association records; Splink for a structured-linkage candidate. [S09]",
+      "alternatives": "Embedding/vision linkage proposes candidates; manual references help development but cannot become hidden ground truth.",
+      "original_code_or_adoption_trigger": "Same-source versus same-referent versus same-payload distinctions, contradiction handling, merge/split and invalidation. Similarity never directly merges canonical identities.",
+      "function_ids": [
+        "F21"
+      ],
+      "component_ids": [
+        "C2"
+      ],
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R04",
+        "IMP-R21",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E03",
+        "E04",
+        "E06",
+        "E32"
+      ],
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T05",
+      "priority": "P0",
+      "mode": "original_model_over_reused_database",
+      "preference": "C3 persistence: Postgres typed tables plus extensible payloads, SQLAlchemy and Alembic. [S12-S13, S49-S50]",
+      "alternatives": "Neo4j for graph-heavy traversal; RDF/SHACL for semantic interoperability; each adds mapping and operational costs. [S18-S19]",
+      "original_code_or_adoption_trigger": "Versioned temporal relation instances, role-indexed participants, admission, alternatives and evidence lineage. Postgres MVCC is not semantic bitemporality.",
+      "function_ids": [
+        "F30",
+        "F31",
+        "F32"
+      ],
+      "component_ids": [
+        "C3"
+      ],
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R05",
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R17",
+        "IMP-R21"
+      ],
+      "verification_ids": [
+        "E08",
+        "E09",
+        "E10",
+        "E14",
+        "E23",
+        "E32"
+      ],
+      "source_ids": [
+        "S12",
+        "S13",
+        "S18",
+        "S19",
+        "S49",
+        "S50"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T06",
+      "priority": "P0",
+      "mode": "original_incremental_semantics",
+      "preference": "C3 growth: application-owned incremental projections, reverse dependency indexes and retraction-aware deltas.",
+      "alternatives": "Materialize for sustained streaming joins/aggregations; it introduces another governed service. [S57-S59]",
+      "original_code_or_adoption_trigger": "Dependency signatures, stale-result policies, coarse/fine invalidation and repair watermarks. Move only when measured maintenance pressure justifies it.",
+      "function_ids": [
+        "F33"
+      ],
+      "component_ids": [
+        "C3"
+      ],
+      "requirement_ids": [
+        "IMP-R20",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
+      ],
+      "verification_ids": [
+        "E32",
+        "E35",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "source_ids": [
+        "S57",
+        "S58",
+        "S59"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T07",
+      "priority": "P1",
+      "mode": "reuse_retrieval_original_selection",
+      "preference": "C2/C3 retrieval: bounded structural/lexical queries first; pgvector plus a qualified embedding adapter when semantic recall is needed. [S10-S11, S14]",
+      "alternatives": "GraphRAG, LightRAG and Graphiti accelerate graph retrieval/memory integration. They do not replace EDI evidence admission or executable mechanisms. [S15-S17]",
+      "original_code_or_adoption_trigger": "Query-context selection, access/time cuts, missing-frontier disclosure and retrieval evaluation. Source-backed claims survive replacement of embeddings or retrieval frameworks.",
+      "function_ids": [
+        "F22",
+        "F32"
+      ],
+      "component_ids": [
+        "C2",
+        "C3"
+      ],
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R19",
+        "IMP-R21",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E04",
+        "E21",
+        "E32",
+        "E38",
+        "E40"
+      ],
+      "source_ids": [
+        "S10",
+        "S11",
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T08",
+      "priority": "P0",
+      "mode": "reuse_model_original_hypotheses",
+      "preference": "C4 deliberate proposal: one replaceable reasoning adapter, initially GPT-6.1 Sol as a cost/quality development candidate. [S01]",
+      "alternatives": "GPT-6 Astra, Claude Opus 5.5/Fable 5.1, Gemini 3.8 Flash, Qwen3.5-9B/Qwen3.6-35B-A3B and DeepSeek-V4 are task/deployment alternatives, not an established ranking. [S01-S06]",
+      "original_code_or_adoption_trigger": "Hypothesis records, evidence selection, bounded revision and tool routing. Pin exact provider settings; choose using held-out mechanism and grounding tasks, not general leaderboard position.",
+      "function_ids": [
+        "F40",
+        "F41"
+      ],
+      "component_ids": [
+        "C4"
+      ],
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R19",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E05",
+        "E14",
+        "E21",
+        "E36",
+        "E37",
+        "E40"
+      ],
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T09",
+      "priority": "P1",
+      "mode": "qualified_optional_fast_adapter",
+      "preference": "Focused decisions: optional Jev adapter after task calibration; deterministic known rules are the cheaper initial baseline. [S52-S56, S60]",
+      "alternatives": "Small local discriminative/rule models; a generative model at bounded effort. Compare useful decision quality, coverage, uncertainty and complete latency.",
+      "original_code_or_adoption_trigger": "Option-set completeness, abstention, escalation, permissions and applicability. Jev does not generate an unrestricted new mechanism space.",
+      "function_ids": [
+        "F42",
+        "F71"
+      ],
+      "component_ids": [
+        "C4",
+        "C7"
+      ],
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R23",
+        "IMP-R29",
+        "IMP-R33"
+      ],
+      "verification_ids": [
+        "E22",
+        "E38",
+        "E40",
+        "E42",
+        "E48"
+      ],
+      "source_ids": [
+        "S52",
+        "S53",
+        "S54",
+        "S55",
+        "S56",
+        "S60"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T10",
+      "priority": "P0",
+      "mode": "original_compiler_reused_solver",
+      "preference": "C5 dynamics: restricted mechanism representation compiled to NumPy/SciPy; choose a supported ODE solver and explicit event/history rules. [S26]",
+      "alternatives": "PySD imports established stock/flow models; SimPy handles discrete events; Mesa supports agent-based models. [S25, S27-S28]",
+      "original_code_or_adoption_trigger": "Compiler, unit/accounting checks, common clock, pending-state transfer and supported/unsupported semantics. Do not build a novel ODE integrator first.",
+      "function_ids": [
+        "F50",
+        "F51",
+        "F53"
+      ],
+      "component_ids": [
+        "C5"
+      ],
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R28"
+      ],
+      "verification_ids": [
+        "E09",
+        "E10",
+        "E11",
+        "E12",
+        "E17",
+        "E18",
+        "E19"
+      ],
+      "source_ids": [
+        "S25",
+        "S26",
+        "S27",
+        "S28"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T11",
+      "priority": "P1",
+      "mode": "conditional_backend_adapter",
+      "preference": "C5 advanced dynamics: add SUNDIALS IDA when actual models need algebraic constraints; JAX/Diffrax when repeated differentiable/stochastic solves justify them. [S64, S69, S76]",
+      "alternatives": "CasADi for differentiable optimization/control; Modelica for equation-based model interchange. These may require different model encodings. [S74, S81]",
+      "original_code_or_adoption_trigger": "Backend capability declarations and semantic lowering; no claim every backend supports arbitrary delay, hybrid topology or DAE initialization.",
+      "function_ids": [
+        "F50",
+        "F51"
+      ],
+      "component_ids": [
+        "C5"
+      ],
+      "requirement_ids": [
+        "IMP-R16",
+        "IMP-R19",
+        "IMP-R21",
+        "IMP-R28"
+      ],
+      "verification_ids": [
+        "E17",
+        "E18",
+        "E19",
+        "E38",
+        "E40"
+      ],
+      "source_ids": [
+        "S64",
+        "S69",
+        "S74",
+        "S76",
+        "S81"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T12",
+      "priority": "P1",
+      "mode": "reuse_search_original_grammar",
+      "preference": "C4/C5 mechanism discovery: compare simple response laws and PySINDy on suitable measured dynamics. [S31]",
+      "alternatives": "PySR searches symbolic expressions more freely; neural dynamics can fit complex functions with weaker direct interpretability. [S68, S64]",
+      "original_code_or_adoption_trigger": "Candidate grammar, units, shared constraints, evidence tests and transfer checks. Equation recovery requires sufficiently informative measured variables; sparse form is an assumption.",
+      "function_ids": [
+        "F40",
+        "F41",
+        "F52",
+        "F62"
+      ],
+      "component_ids": [
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R16",
+        "IMP-R22"
+      ],
+      "verification_ids": [
+        "E09",
+        "E14",
+        "E17",
+        "E18",
+        "E23",
+        "E37"
+      ],
+      "source_ids": [
+        "S31",
+        "S64",
+        "S68"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T13",
+      "priority": "P1",
+      "mode": "reuse_inference_original_identification",
+      "preference": "C4/C6 causal assessment: DoWhy for explicit assumptions, identification and effect-estimation checks. [S30]",
+      "alternatives": "Tigramite for lagged/time-series structure proposals under algorithm-specific assumptions; causal inference under interventions may be preferable when feasible. [S29]",
+      "original_code_or_adoption_trigger": "Hypothesis-to-data correspondence and retention of observational equivalence. Graph direction and time order do not establish an identified causal effect.",
+      "function_ids": [
+        "F41",
+        "F62"
+      ],
+      "component_ids": [
+        "C4",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E14",
+        "E20",
+        "E21",
+        "E22",
+        "E23",
+        "E31"
+      ],
+      "source_ids": [
+        "S29",
+        "S30"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T14",
+      "priority": "P1",
+      "mode": "reuse_inference_original_uncertainty",
+      "preference": "C5/C6 parameter uncertainty: PyMC for readable local Bayesian models and posterior-predictive assessment. [S32-S33]",
+      "alternatives": "NumPyro for JAX-based inference; sbi when a simulator is available but likelihood evaluation is impractical. [S65-S66]",
+      "original_code_or_adoption_trigger": "Parameter/structural/measurement uncertainty distinctions, convergence diagnostics and scoped model alternatives. No universal posterior over all conceivable world structures is claimed.",
+      "function_ids": [
+        "F52",
+        "F61"
+      ],
+      "component_ids": [
+        "C5",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R10",
+        "IMP-R17"
+      ],
+      "verification_ids": [
+        "E14",
+        "E20",
+        "E22",
+        "E23",
+        "E37"
+      ],
+      "source_ids": [
+        "S32",
+        "S33",
+        "S65",
+        "S66"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T15",
+      "priority": "P1",
+      "mode": "reuse_math_original_domains",
+      "preference": "C5 sensitivity: finite perturbation checks first, SALib Morris/Sobol methods when a scoped uncertainty model warrants them. [S67]",
+      "alternatives": "Analytical/local derivatives with SymPy/JAX; scenario ensembles for discontinuous or multimodal behavior. [S70, S76]",
+      "original_code_or_adoption_trigger": "Select domains, dependency assumptions, thresholds and stakeholder-relevant outputs. Sensitivity is not causal identification.",
+      "function_ids": [
+        "F52"
+      ],
+      "component_ids": [
+        "C5"
+      ],
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R08",
+        "IMP-R15",
+        "IMP-R16",
+        "IMP-R31"
+      ],
+      "verification_ids": [
+        "E09",
+        "E12",
+        "E18",
+        "E27",
+        "E44"
+      ],
+      "source_ids": [
+        "S67",
+        "S70",
+        "S76"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T16",
+      "priority": "P0",
+      "mode": "original_evaluation_with_optional_tools",
+      "preference": "C6 evaluation: sealed forecasts, independent outcomes, errors/proper scores and versioned comparison rules.",
+      "alternatives": "MAPIE/conformal prediction for qualified prediction intervals; River drift detectors for investigation triggers. [S42-S43]",
+      "original_code_or_adoption_trigger": "Evidence independence, scoring cuts, discrepancy diagnosis and revision recommendations. Drift does not identify its cause; coverage assumptions can fail across regime changes.",
+      "function_ids": [
+        "F60",
+        "F61",
+        "F62",
+        "F63"
+      ],
+      "component_ids": [
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R22",
+        "IMP-R26",
+        "IMP-R34"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21",
+        "E22",
+        "E23",
+        "E36",
+        "E37",
+        "E48"
+      ],
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T17",
+      "priority": "P1",
+      "mode": "original_inquiry_with_optional_optimizer",
+      "preference": "C0/C4 curiosity: own persistent frontier, rivals, feasible tests and explicit relevance/cost ranking.",
+      "alternatives": "BoTorch for expensive parameterized numerical experiment optimization; information-gain/RL objectives are later bounded research alternatives. [S36, S41]",
+      "original_code_or_adoption_trigger": "Breadth/depth/refinement/access lifecycle, stopping and inquiry yield. A novel observation with large random noise need not be informative.",
+      "function_ids": [
+        "F02",
+        "F42",
+        "F43",
+        "F63"
+      ],
+      "component_ids": [
+        "C0",
+        "C4",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R19",
+        "IMP-R32"
+      ],
+      "verification_ids": [
+        "E15",
+        "E16",
+        "E30",
+        "E31",
+        "E45",
+        "E46",
+        "E48"
+      ],
+      "source_ids": [
+        "S36",
+        "S41"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T18",
+      "priority": "P0",
+      "mode": "original_policy_with_optional_optimizer",
+      "preference": "C7 policy and action: explicit versioned policy/state machine, deterministic rights/feasibility and idempotent connector dispatch.",
+      "alternatives": "OR-Tools for discrete allocation; CVXPY for compatible convex planning; CasADi for supported continuous nonlinear control. [S37-S38, S81]",
+      "original_code_or_adoption_trigger": "Proposal/authority/adoption/effect distinctions and actor information masks. Optimization cannot invent legitimate goals or authority.",
+      "function_ids": [
+        "F70",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "component_ids": [
+        "C7"
+      ],
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R23",
+        "IMP-R25",
+        "IMP-R27"
+      ],
+      "verification_ids": [
+        "E13",
+        "E26",
+        "E28",
+        "E29"
+      ],
+      "source_ids": [
+        "S37",
+        "S38",
+        "S81"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T19",
+      "priority": "P0",
+      "mode": "reuse_types_original_semantics",
+      "preference": "Shared contracts: Pydantic strict validation and Pint; explicit tagged unknown/unsupported states. [S44-S45]",
+      "alternatives": "Plain dataclasses plus hand validation for minimal internal records; Z3 only when a nontrivial logical invariant justifies it. [S71]",
+      "original_code_or_adoption_trigger": "Semantic validation, compatibility and invariants. Well-typed JSON or satisfiable constraints do not establish real-world correctness.",
+      "function_ids": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "F10",
+        "F11",
+        "F12",
+        "F13",
+        "F20",
+        "F21",
+        "F22",
+        "F23",
+        "F30",
+        "F31",
+        "F32",
+        "F33",
+        "F40",
+        "F41",
+        "F42",
+        "F43",
+        "F50",
+        "F51",
+        "F52",
+        "F53",
+        "F60",
+        "F61",
+        "F62",
+        "F63",
+        "F70",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "requirement_ids": [
+        "IMP-R03",
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R21",
+        "IMP-R23",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E07",
+        "E09",
+        "E10",
+        "E17",
+        "E21",
+        "E32"
+      ],
+      "source_ids": [
+        "S44",
+        "S45",
+        "S71"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T20",
+      "priority": "P0",
+      "mode": "reuse_development_tools",
+      "preference": "Development: uv, Ruff, Pyright, pytest and targeted Hypothesis state-machine tests. [S61-S63, S78-S79]",
+      "alternatives": "Existing unittest or a different type checker are adequate if they check the same obligations. Coding assistants help implement/review bounded changes, with tests and source review retained.",
+      "original_code_or_adoption_trigger": "Domain contracts, independent reference fixtures, replay/failure cases and versioned decisions; no automated inference superiority from passing unit tests.",
+      "function_ids": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "F10",
+        "F11",
+        "F12",
+        "F13",
+        "F20",
+        "F21",
+        "F22",
+        "F23",
+        "F30",
+        "F31",
+        "F32",
+        "F33",
+        "F40",
+        "F41",
+        "F42",
+        "F43",
+        "F50",
+        "F51",
+        "F52",
+        "F53",
+        "F60",
+        "F61",
+        "F62",
+        "F63",
+        "F70",
+        "F71",
+        "F72",
+        "F73"
+      ],
+      "component_ids": [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R24"
+      ],
+      "verification_ids": [
+        "E02",
+        "E32",
+        "E33",
+        "E34",
+        "E35",
+        "E38",
+        "E40"
+      ],
+      "source_ids": [
+        "S61",
+        "S62",
+        "S63",
+        "S78",
+        "S79"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T21",
+      "priority": "P0",
+      "mode": "reuse_instrumentation_original_accounting",
+      "preference": "Measurements: OpenTelemetry-compatible spans/metrics and explicit per-run model/solver/resource records. [S48]",
+      "alternatives": "Local JSON/SQL summaries initially; a hosted trace/evaluation platform later if operationally justified.",
+      "original_code_or_adoption_trigger": "Measure end-to-end tail latency, freshness, eligibility, failed work, token/compute/cost and restoration. Trace text is not independent scientific evidence.",
+      "function_ids": [
+        "F02",
+        "F61"
+      ],
+      "component_ids": [
+        "C0",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R24",
+        "IMP-R34"
+      ],
+      "verification_ids": [
+        "E34",
+        "E38",
+        "E39",
+        "E48"
+      ],
+      "source_ids": [
+        "S48"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T22",
+      "priority": "P2",
+      "mode": "conditional_profiled_optimization",
+      "preference": "High-volume analysis/hot kernels: SQL and NumPy first; Polars or DuckDB for suitable columnar/offline analysis. [S72-S73]",
+      "alternatives": "JAX compiled arrays or Rust/PyO3 for a profiled kernel; NetworkX for small reference graph algorithms, not the whole durable world in RAM. [S76-S77, S83]",
+      "original_code_or_adoption_trigger": "Dependency closure/graph projection/bridge kernels with conformance references. Avoid duplicate authoritative stores and benchmark cold compilation/copies too.",
+      "function_ids": [
+        "F32",
+        "F33",
+        "F51"
+      ],
+      "component_ids": [
+        "C3",
+        "C5"
+      ],
+      "requirement_ids": [
+        "IMP-R19",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
+      ],
+      "verification_ids": [
+        "E38",
+        "E40",
+        "E41",
+        "E43",
+        "E47",
+        "E48"
+      ],
+      "source_ids": [
+        "S72",
+        "S73",
+        "S76",
+        "S77",
+        "S83"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T23",
+      "priority": "P1",
+      "mode": "conditional_biology_adapter",
+      "preference": "Internal biology extension: import only supported SBML models through libRoadRunner after model/source qualification. [S75, S80]",
+      "alternatives": "Own supported population/cohort laws can be sufficient; a generic simulator with explicit biological mechanisms remains an option.",
+      "original_code_or_adoption_trigger": "Map biological outputs into existing RefinementBridge contracts. A biochemical model does not by itself predict whole-insect/ecosystem response.",
+      "function_ids": [
+        "F30",
+        "F50",
+        "F51"
+      ],
+      "component_ids": [
+        "C3",
+        "C5"
+      ],
+      "requirement_ids": [
+        "IMP-R05",
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R31"
+      ],
+      "verification_ids": [
+        "E08",
+        "E09",
+        "E17",
+        "E44",
+        "E46"
+      ],
+      "source_ids": [
+        "S75",
+        "S80"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "T24",
+      "priority": "P3",
+      "mode": "conditional_learned_reuse",
+      "preference": "Learned reuse: distill proven recurring decisions or optimize a bounded reasoning program using DSPy. [S24, S84]",
+      "alternatives": "Local rules/compiled models first; Dreamer/V-JEPA-style latent models for separately qualified action or perceptual domains. [S39-S40]",
+      "original_code_or_adoption_trigger": "Keep teacher lineage, independent outcomes, OOD/abstention and replacement checks. No early training of an entire foundation model or inference loop that rewrites its own acceptance criteria.",
+      "function_ids": [
+        "F40",
+        "F42",
+        "F61",
+        "F63"
+      ],
+      "component_ids": [
+        "C4",
+        "C6"
+      ],
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R19",
+        "IMP-R22",
+        "IMP-R33"
+      ],
+      "verification_ids": [
+        "E14",
+        "E21",
+        "E22",
+        "E36",
+        "E37",
+        "E38",
+        "E42"
+      ],
+      "source_ids": [
+        "S24",
+        "S39",
+        "S40",
+        "S84"
+      ],
+      "status": "proposed_not_bound",
+      "specification": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md",
+      "implementation_revision": null,
+      "evidence_ref": null
+    }
+  ],
+  "adoption_experiments": [
+    {
+      "id": "A01",
+      "acceptance": "Simple retrieval/LLM, structured conventional model and EDI on the same observations, tools, task cuts and full cost. Hold out changed mechanisms; include missing/ambiguous evidence. Require useful gain on preselected task metrics with uncertainty, not a handpicked success narrative.",
+      "verification_ids": [
+        "E14",
+        "E20",
+        "E21",
+        "E22",
+        "E23",
+        "E36",
+        "E37",
+        "E38",
+        "E46",
+        "E48"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "A02",
+      "acceptance": "Deterministic, Jev, small/local and generative focused-decision adapters on matched contexts. Pin selective error/calibration/coverage and output-domain policy before latency comparison; include missing correct option, dependence, timeout and OOD.",
+      "verification_ids": [
+        "E22",
+        "E38",
+        "E40",
+        "E42",
+        "E48"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "A03",
+      "acceptance": "Candidate nonlinear laws, PySINDy and PySR on controlled observable dynamics with varied noise, sampling, excitation, hidden driver and regime. Report prediction, structural recovery when known, identifiability failures and search cost separately.",
+      "verification_ids": [
+        "E09",
+        "E14",
+        "E17",
+        "E18",
+        "E23",
+        "E37"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "A04",
+      "acceptance": "Numerical backend conformance on supported ODE/event/history cases, and explicit unsupported DAE/delay cases before adding a new backend. Compare trajectories, invariant tolerances, event timing and carry-over; include precision and compilation cost.",
+      "verification_ids": [
+        "E10",
+        "E11",
+        "E12",
+        "E17",
+        "E18",
+        "E19",
+        "E40",
+        "E44"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "A05",
+      "acceptance": "Fit/uncertainty candidates on identifiable, non-identifiable and misspecified models; check diagnostics and held-out predictive calibration, not just training loss. Keep confounding and model error distinct from parameter uncertainty.",
+      "verification_ids": [
+        "E14",
+        "E20",
+        "E21",
+        "E22",
+        "E23",
+        "E31",
+        "E37"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "A06",
+      "acceptance": "Inquiry heuristic against random/novelty-only and justified information/value criteria under equal acquisition budgets. Include noisy but irrelevant observations, inaccessible data and inconclusive outcomes; compare held-out decision/prediction benefit and access-request burden.",
+      "verification_ids": [
+        "E15",
+        "E16",
+        "E30",
+        "E31",
+        "E45",
+        "E46",
+        "E48"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "A07",
+      "acceptance": "Incremental SQL/application views versus full recomputation, then any proposed Materialize/native-kernel replacement at the same semantics/cutoff. Include corrections, merges/splits, global invalidation, cold start and full restore/maintenance cost.",
+      "verification_ids": [
+        "E32",
+        "E33",
+        "E34",
+        "E35",
+        "E38",
+        "E39",
+        "E40",
+        "E41",
+        "E43",
+        "E47",
+        "E48"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    },
+    {
+      "id": "A08",
+      "acceptance": "Coarse/fine model with valid bridge, invalid bridge and no useful extra detail; expand breadth/depth without resetting memory. Verify quantities, nonlinear aggregation, uncertainty, pending state and cost; a larger graph alone does not pass.",
+      "verification_ids": [
+        "E08",
+        "E09",
+        "E10",
+        "E11",
+        "E16",
+        "E37",
+        "E44",
+        "E46",
+        "E47",
+        "E48"
+      ],
+      "status": "specified_not_run",
+      "implementation_revision": null,
+      "evidence_ref": null
+    }
+  ],
+  "interface_effect": "no_new_owner_operation_or_lane",
+  "all_runtime_cases": "not_run"
+}

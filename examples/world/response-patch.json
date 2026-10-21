@@ -1,0 +1,32 @@
+{
+  "workspace_id": "forest-demo",
+  "request_id": "world-response-0003",
+  "base_revision": 2,
+  "proposer": "C4",
+  "reason": "Retain a candidate joint response with unknown nonlinear law",
+  "change_kind": "organization",
+  "operations": [
+    {
+      "operation": "put",
+      "expected_version": 0,
+      "representation": {
+        "record_id": "candidate-food-response",
+        "scope_id": "forest",
+        "structure": {
+          "family": "response-relationship",
+          "participants": [
+            {"ref": {"record_id": "fir-population"}, "role": "candidate food availability", "direction": "in"},
+            {"ref": {"record_id": "budworm-population"}, "role": "candidate population response", "direction": "in-out"}
+          ],
+          "mechanism": {"status": "unknown", "question": "What joint law, delays and omitted inputs could explain the observations?"},
+          "domains": {"status": "unknown"},
+          "execution_status": "unsupported"
+        },
+        "basis": "hypothesis",
+        "assumptions": ["Participant direction is hypothetical and is not causal identification"],
+        "alternative_group": "budworm-response-rivals",
+        "method_lineage": ["illustrative-authored-example; no LLM or native discovery executed"]
+      }
+    }
+  ]
+}

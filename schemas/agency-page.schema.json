@@ -1,0 +1,81 @@
+{
+  "$defs": {
+    "ArtifactCursor": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "kind": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Kind",
+          "type": "string"
+        },
+        "watermark": {
+          "minimum": 0,
+          "title": "Watermark",
+          "type": "integer"
+        },
+        "after": {
+          "default": 0,
+          "minimum": 0,
+          "title": "After",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "kind",
+        "watermark"
+      ],
+      "title": "ArtifactCursor",
+      "type": "object"
+    },
+    "JsonValue": {}
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "type": "object"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "next_cursor": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ArtifactCursor"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "items",
+    "next_cursor"
+  ],
+  "title": "ArtifactPage",
+  "type": "object"
+}

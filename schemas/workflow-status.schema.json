@@ -1,0 +1,114 @@
+{
+  "$defs": {
+    "JsonValue": {}
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "workspace_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workspace Id",
+      "type": "string"
+    },
+    "workflow_id": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Workflow Id",
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "ready",
+        "waiting-input",
+        "uncertain-completion",
+        "failed",
+        "completed",
+        "cancelled",
+        "yielded"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "completed_steps": {
+      "items": {
+        "maxLength": 256,
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Completed Steps",
+      "type": "array"
+    },
+    "next_step": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Next Step"
+    },
+    "waiting_input": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Waiting Input"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error"
+    },
+    "outputs": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Outputs",
+      "type": "object"
+    },
+    "plan_sha256": {
+      "title": "Plan Sha256",
+      "type": "string"
+    },
+    "qualification": {
+      "const": "scoped-workflow-only; component/scientific-qualification-open",
+      "default": "scoped-workflow-only; component/scientific-qualification-open",
+      "title": "Qualification",
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "workflow_id",
+    "state",
+    "completed_steps",
+    "next_step",
+    "outputs",
+    "plan_sha256"
+  ],
+  "title": "WorkflowStatus",
+  "type": "object"
+}

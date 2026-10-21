@@ -1,0 +1,215 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "EDI implementation architecture: eight logical owners",
+  "gate": "architecture",
+  "requested_scope": "research_and_design_only",
+  "input_revision": "7b9c9f3bbf19bef6947fac4db271de8e805d207e + implementation extension 0.3",
+  "reviewer": {
+    "role": "Codex architecture self-review",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/document-checks.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Explicit mission/system/I7/appendix/retained/consumer requirements flow to implementation requirements, functions, owner contracts and prospective cases. Structural trace validation is separate from semantic or runtime proof.",
+      "references": [
+        "docs/implementation/TRACEABILITY.json",
+        "docs/implementation/evidence/document-checks.json",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "One state owner per domain; all directed pairs and eleven facets specified at proposal level, with concrete schema/grammar obligations reserved for the contract gate.",
+      "references": [
+        "docs/implementation/COMPONENTS.md",
+        "docs/implementation/CONTRACTS.md",
+        "docs/implementation/INTERFACES.json",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Eight logical modules in one application; no service per concept, no compulsory framework cluster or newly trained world model. Conditional adoption triggers compare simpler options.",
+      "references": [
+        "docs/implementation/TRADEOFFS.md",
+        "docs/implementation/VERIFICATION.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Independent role/basis/time/use axes, source and imported-model lineage, rival mechanisms, unknowns and original forecast integrity are explicit.",
+      "references": [
+        "docs/implementation/CONTRACTS.md",
+        "docs/implementation/COMPONENTS.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "DEV1/HA1 and new FAST1 distinguish fixed active work from global coupling, useful response from acknowledgement, cache freshness, escalation coverage and complete costs. All performance remains unmeasured.",
+      "references": [
+        "docs/implementation/VERIFICATION.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Staged artifact/metadata durability, local transactions/outbox, lease fencing, retention invalidation and composed feedback/failure analysis specify bounded recovery responsibilities.",
+      "references": [
+        "docs/implementation/CONTRACTS.md",
+        "docs/implementation/VERIFICATION.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Current provider catalogs, original model cards, official libraries/standards and original research support narrow capability claims. Preferences and representative older research are labeled; no exhaustive global SOTA ranking asserted.",
+      "references": [
+        "docs/implementation/SOURCES.md",
+        "docs/implementation/TRADEOFFS.md",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Forty original and eight extension cases remain prospective. Useful latency, freshness, growing-store correctness, request lifecycle and full cost have explicit proposed profiles; document checks do not qualify runtime behavior.",
+      "references": [
+        "docs/implementation/VERIFICATION.md",
+        "docs/implementation/evidence/document-checks.json",
+        "docs/implementation/SCALING_AND_WORLD_GROWTH.md",
+        "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "OPEN-01",
+      "description": "Concrete record schemas, native-envelope compatibility, admission policy fixtures and first capability contract are not frozen.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "OPEN-02",
+      "description": "Exact dependency/provider/checkpoint/license and OS/hardware compatibility pins require implementation binding.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "OPEN-03",
+      "description": "Restricted numerical grammar, event/history semantics and backend capability fixtures must precede executable-analysis contract qualification.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "OPEN-04",
+      "description": "Runtime capacity/recovery, causal discovery, transfer, intelligence advantage and HA remain unmeasured and unqualified.",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "DOC-01",
+      "description": "Initial document check found its own not-yet-created output link missing. The checker now creates a pending output record before link validation; the original failure is retained in document-checks-initial.json. No product case or acceptance threshold was changed.",
+      "status": "resolved",
+      "blocking_at": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "OPEN-05",
+      "description": "Jev/local fast decisions need pinned model/domain/calibration and caller-region latency qualification; delta, validity, bridge and request schema fixtures must precede their contract pass.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "OPEN-06",
+      "description": "Tool/model packages remain unbound; original IR/refinement/search implementations, matched method selection and all adoption experiments are prospective. Proprietary engineering ownership does not establish novel algorithms or IP clearance.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "description": "New prospective implementation allocation and alternatives preserve the source snapshots and historical review statuses.",
+      "reference": "docs/decisions/ADR-002-implementation-architecture.md"
+    },
+    {
+      "description": "Added intrinsic inquiry/access lifecycle, incremental multiresolution growth and fast/deep operating requirements; corrected the Jev/JEPA interpretation and the previously omitted Jev candidate.",
+      "reference": "docs/implementation/SCALING_AND_WORLD_GROWTH.md"
+    },
+    {
+      "description": "Added first-principles build/reuse priorities, 24 traced tool decisions, eight unrun adoption experiments and mathematical/proprietary-core boundaries; no owner or operation changed.",
+      "reference": "docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md"
+    }
+  ],
+  "verification": [
+    {
+      "id": "DOC-TRACE",
+      "kind": "documentation",
+      "status": "passed",
+      "required": true,
+      "evidence_ref": "docs/implementation/evidence/document-checks.json",
+      "revision": "implementation extension 0.3"
+    },
+    {
+      "id": "PRODUCT-CAMPAIGN",
+      "kind": "integration",
+      "status": "not_run",
+      "required": true
+    }
+  ],
+  "measurements": [
+    {
+      "state": "proposed",
+      "description": "DEV1 and HA1 targets in VERIFICATION.md are not achieved values."
+    }
+  ],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "Bind D0 contracts and compatible dependency versions for one D1 fixture; include tool capability/assumption records before integrating numerical or learned adapters.",
+  "previous_review_revision": "7b9c9f3bbf19bef6947fac4db271de8e805d207e"
+}
