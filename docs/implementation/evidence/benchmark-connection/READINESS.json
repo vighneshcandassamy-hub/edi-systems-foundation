@@ -1,0 +1,38 @@
+{
+  "schema": "edi-benchmark-connection-readiness-v1",
+  "development_version": "0.9.1.dev0",
+  "status": "cpu_connection_verified_live_execution_blocked",
+  "linux_cpu": {
+    "run": 19,
+    "passed": 19,
+    "evidence": "cpu-tests.json"
+  },
+  "desktop_cpu": {
+    "run": 19,
+    "passed": 19,
+    "evidence": "desktop-cpu-tests.json"
+  },
+  "source_manifests_match": true,
+  "teacher_model": "gpt-6.1-sol",
+  "student_model_proposal": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_weights_changed": false,
+  "benchmark_model_calls": 0,
+  "development_assistance_cost": "unknown",
+  "full_P1_run": false,
+  "Cedar_pilot_run": false,
+  "gates": {
+    "contract": "revise",
+    "live_runtime": "blocked",
+    "integration": "blocked",
+    "scientific": "not_run"
+  },
+  "blockers": [
+    "Compatible Linux GPU/container execution environment and actual model fit",
+    "Exact student checkpoint/tokenizer/processor/serving/container pins and token counter",
+    "Secure teacher credential and implemented restricted outbound gateway if teacher enabled",
+    "C6 constructed-world temporal/origin eligibility or explicitly scoped unscored diagnostic",
+    "Full neutral P1 and actual container isolation evidence before Cedar"
+  ],
+  "remote_workspace": "C:\\Users\\csscs\\Documents\\Codex\\2026-10-21\\edi-meadows-runtime",
+  "evidence_kind": "CPU transport/state/authority integrity; authored model wire fixtures, not inference"
+}

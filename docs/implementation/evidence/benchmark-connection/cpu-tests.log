@@ -1,11 +1,13 @@
 test_actual_image_bytes_in_wire_fixture (test_benchmark_connection.ConnectionTests.test_actual_image_bytes_in_wire_fixture) ... ok
 test_all_public_operations_and_pending_objective (test_benchmark_connection.ConnectionTests.test_all_public_operations_and_pending_objective) ... ok
 test_asset_reassembly_external_origin_and_hash (test_benchmark_connection.ConnectionTests.test_asset_reassembly_external_origin_and_hash) ... ok
+test_cancelled_job_cannot_be_dispatched_from_stale_snapshot (test_benchmark_connection.ConnectionTests.test_cancelled_job_cannot_be_dispatched_from_stale_snapshot) ... ok
 test_denied_public_request_is_evidence (test_benchmark_connection.ConnectionTests.test_denied_public_request_is_evidence) ... ok
 test_dynamic_c0_choices_use_native_c4_records (test_benchmark_connection.ConnectionTests.test_dynamic_c0_choices_use_native_c4_records) ... ok
 test_exact_c1_capture_and_replay (test_benchmark_connection.ConnectionTests.test_exact_c1_capture_and_replay) ... ok
 test_gateway_fixture_native_import_and_no_redispatch (test_benchmark_connection.ConnectionTests.test_gateway_fixture_native_import_and_no_redispatch) ... ok
 test_grant_scope_and_expiry (test_benchmark_connection.ConnectionTests.test_grant_scope_and_expiry) ... ok
+test_image_default_cut_keeps_whole_bounded_native_object (test_benchmark_connection.ConnectionTests.test_image_default_cut_keeps_whole_bounded_native_object) ... ok
 test_journal_atomic_dispatch_claim (test_benchmark_connection.ConnectionTests.test_journal_atomic_dispatch_claim) ... ok
 test_lost_receipt_does_not_duplicate_work (test_benchmark_connection.ConnectionTests.test_lost_receipt_does_not_duplicate_work) ... ok
 test_missing_auth_and_private_path (test_benchmark_connection.ConnectionTests.test_missing_auth_and_private_path) ... ok
@@ -17,6 +19,6 @@ test_teacher_key_missing_is_explicit (test_benchmark_connection.ConnectionTests.
 test_token_cap_blocks_before_dispatch (test_benchmark_connection.ConnectionTests.test_token_cap_blocks_before_dispatch) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 9.701s
+Ran 19 tests in 11.468s
 
 OK

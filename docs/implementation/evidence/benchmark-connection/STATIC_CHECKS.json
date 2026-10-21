@@ -1,0 +1,73 @@
+{
+  "schema": "edi-benchmark-connection-static-checks-v1",
+  "scope": "structural_documentation_and_frozen_package_checks_only",
+  "outer_interface": {
+    "scope": "interface_inventory_consistency_only",
+    "semantics_independently_verified": false,
+    "component_count": 5,
+    "pair_count": 10,
+    "directed_lane_count": 20,
+    "contract_count": 8,
+    "feedback_groups": [
+      [
+        "EDI",
+        "MODEL",
+        "TEACHER",
+        "WORLD"
+      ]
+    ],
+    "consistent": true,
+    "errors": []
+  },
+  "owner_interface": {
+    "scope": "interface_inventory_consistency_only",
+    "semantics_independently_verified": false,
+    "component_count": 8,
+    "pair_count": 28,
+    "directed_lane_count": 56,
+    "contract_count": 40,
+    "feedback_groups": [
+      [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    ],
+    "consistent": true,
+    "errors": []
+  },
+  "component_report": {
+    "scope": "report_consistency_only",
+    "readiness_independently_verified": false,
+    "report": "edi-execution/docs/implementation/evidence/benchmark-connection/COMPONENT_REVIEW.json",
+    "consistent": true,
+    "errors": []
+  },
+  "frozen_package": {
+    "package_id": "EDI-MEADOWS-CW-DEV-0.2.1",
+    "passed": true,
+    "scope": "static_consolidation_integrity_only",
+    "files_verified": 114,
+    "source_storage_objects_verified": 29,
+    "implementation_files_pinned": 17,
+    "participant_files_verified": 4,
+    "corpus_records": 32895,
+    "corpus_text_blocks": 150,
+    "corpus_assets": 28,
+    "documents": 165,
+    "sources": 10,
+    "roles": 5,
+    "operations": 13,
+    "retained_environment_engineering_checks": 14,
+    "environment_runtime_campaign_rerun": false,
+    "edi_run_started": false,
+    "human_run_started": false,
+    "scientific_or_comparative_qualification": false
+  },
+  "live_model_or_container_qualification": false
+}

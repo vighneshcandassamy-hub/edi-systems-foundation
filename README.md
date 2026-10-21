@@ -2,9 +2,13 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.9.0. **Status:** first C0-C7 source subsets and a bounded durable C0 integration workflow; unqualified and not executed. Latest owner direction explicitly defers testing while integration and the holistic test design are finalized. Native reasoning-model inference and external actuation remain unavailable. Runtime, numerical/scientific validity and learned advantage remain open.
+**Code version:** 0.9.1.dev0. **Status:** C0-C7 source plus a scoped benchmark connection increment. CPU engineering checks now execute native owner stores and the pinned broker using authored model-wire fixtures. Live student/teacher inference, full P1, container isolation and the unguided benchmark remain unqualified and unrun. The owner has explicitly authorized execution; hardware, binding and contract gates remain open.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
+
+## Benchmark connection execution
+
+[Connection checkpoint and remaining gates](docs/implementation/BENCHMARK_CONNECTION.md), [engineering evidence](docs/implementation/evidence/benchmark-connection/), [CPU test runner](scripts/run_benchmark_connection_tests.py) and [unchanged frozen benchmark](benchmarks/meadows-budworm/README.md) are saved on `benchmark/runtime-integration-20261021`. This execution branch combines the two pinned source lines without merging the implementation proposal into main. Fixture transport checks are distinct from actual model reasoning.
 
 ## Current architecture and saved references
 
@@ -50,7 +54,7 @@ The separate [holistic test design](docs/implementation/INTEGRATED_TEST_DESIGN.m
 
 C1 preserves original bytes, registered source/epoch continuity, immutable occurrence receipts, hashes, bounded replay/range reads, checkpoints and backups. Its initial SQLite adapter commits chunks, metadata and the replay/outbox log in one transaction. PostgreSQL/object storage remains a later adapter. No model inference is needed for recording/replay. See the guide for finite limits and deferred connector, retention, HA and qualification work.
 
-Only syntax/import/CLI-parser checks have run for this code. The sample workflow and product/qualification tests have not run, following the owner's structure-first instruction.
+Before the benchmark connection increment, only syntax/import/CLI-parser checks had run. New scoped CPU engineering evidence is linked above. The full authored P1 workflow and scientific qualification remain unrun.
 
 ## Foundation and supporting documents
 

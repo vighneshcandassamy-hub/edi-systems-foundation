@@ -1,0 +1,354 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "EDI 0.9.1.dev0 benchmark connection source increment",
+  "gate": "contract",
+  "requested_scope": "execute source integration and available CPU engineering; live execution contingent on actual gates",
+  "input_revision": "879452b8332a318ca76af4f84589b676b031f253 + 0.9.1.dev0 source hashes in CPU report",
+  "reviewer": {
+    "role": "implementer_self_review",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Existing code is integrated against the frozen world's public mission; ten inherited planning obligations remain traced.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Scoped broker and job paths implemented; teacher boundary and C6 profile remain concrete contract gaps.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse eight owners and existing typed ports; no domain-specific solver, forest workflow or new intelligence layer.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Exact native bytes, acquired source versus constructed origin, generated fixture/model output and unscored expectations stay distinct.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Finite request/byte/turn/job caps exist; actual model fit, processor, isolation and complete task measurements remain unqualified.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Scoped original-request replay, first-dispatch claim, native owner initialization and unknown inference completion checks passed; full multi-store restoration is not claimed.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Pinned implementation and benchmark plus original plan; official OpenAI Responses API role is documented; no paid call made.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "CPU results and first failures retained. All six live prerequisite cases remain blocked.",
+      "references": [
+        "docs/implementation/BENCHMARK_CONNECTION.md",
+        "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+        "docs/implementation/evidence/benchmark-connection/cpu-tests.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "EX-G01",
+      "description": "Available desktop is Windows RTX 2060 6 GiB with no Docker/WSL distribution; planned full-precision vLLM model and actual isolated deployment not qualified.",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ],
+      "correction": "Compatible authorized Linux GPU/container host; actual neutral fit and isolation evidence."
+    },
+    {
+      "id": "EX-G02",
+      "description": "No teacher API credential configured; restricted outbound teacher proxy and exact input-count binding remain unimplemented/unbound.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "correction": "Secure teacher credential and reviewed outbound boundary; then same-cut real API critique."
+    },
+    {
+      "id": "EX-G03",
+      "description": "C6 constructed-world forecast origin/time eligibility and full P1 demonstration remain open; no empirical guard is bypassed.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "correction": "Version a constructed-world profile or explicitly scope an unscored diagnostic; preserve original expectations."
+    },
+    {
+      "id": "EX-G04",
+      "description": "Model/checkpoint/tokenizer/processor/container pins and complete task/resource/isolation profiles are not frozen.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "correction": "Bind actual artifacts and finite host profile; no approximate token counter or automatic model change."
+    }
+  ],
+  "changes": [
+    {
+      "description": "Owner-scoped broker, job, teacher transport and generic scheduler paths added; no frozen world/source asset modified."
+    }
+  ],
+  "verification": [
+    {
+      "id": "CONN-V01",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V02",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V03",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V04",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V05",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V06",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V07",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V08",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V09",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V10",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V11",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V12",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V13",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V14",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V15",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V16",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V17",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V18",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "CONN-V19",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json"
+    },
+    {
+      "id": "LIVE-V01",
+      "kind": "runtime",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V02",
+      "kind": "runtime",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V03",
+      "kind": "runtime",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V04",
+      "kind": "runtime",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V05",
+      "kind": "runtime",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V06",
+      "kind": "runtime",
+      "required": true,
+      "status": "blocked"
+    }
+  ],
+  "measurements": [
+    {
+      "state": "measured",
+      "name": "CPU engineering test campaign",
+      "value": {
+        "tests": 19,
+        "passed": 19
+      },
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "879452b8332a318ca76af4f84589b676b031f253 + 0.9.1.dev0 source hashes in CPU report",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    }
+  ],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "next_step": "Bind compatible execution hardware, exact student artifacts, restricted teacher gateway/credential and C6 eligibility; then execute full P1/isolation and unguided pilot."
+}

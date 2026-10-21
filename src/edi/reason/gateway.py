@@ -67,6 +67,13 @@ class NativeGateway:
         if not self.lock.acquire(blocking=False):
             raise EDIError(ErrorCode.CAPACITY, "native inference worker already in use")
         try:
+            current = self.runtime.reasoning.get(episode.request.inquiry_id)
+            active = next((j for j in current.jobs if j.job_id == job.job_id), None)
+            recorded = self.journal.get(job.job_id)
+            if active is None or active.status == "cancelled-usage-unknown":
+                raise EDIError(ErrorCode.DENIED, "cancelled or unavailable native job cannot dispatch")
+            if active.status == "completed" and (recorded is None or recorded["state"] != "completed"):
+                raise EDIError(ErrorCode.UNKNOWN_COMMIT, "C4 job already resolved outside this gateway; reconcile original output")
             messages, images = self.messages(job, episode)
             if self.count_tokens is None:
                 raise EDIError(ErrorCode.UNAVAILABLE, "exact pinned tokenizer/processor is not configured")

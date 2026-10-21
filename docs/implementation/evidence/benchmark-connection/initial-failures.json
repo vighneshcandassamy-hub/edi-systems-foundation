@@ -23,5 +23,13 @@
       "fix": "Preserve delayed world charge; verify zero before and exactly two after advance"
     }
   ],
-  "subsequent_run": "17/17 passed; no live model claim"
+  "subsequent_run": "17/17 passed; no live model claim",
+  "desktop_first_campaign": {
+    "tests": 17,
+    "errors": 12,
+    "failure": "Windows WinError 32 during temporary world directory cleanup",
+    "cause": "Preserved broker's sqlite3 transaction contexts leave handle finalization to garbage collection; daemon HTTP workers were not joined",
+    "fix": "Engineering teardown uses joined non-daemon request threads and collects unreachable handles before deletion; no suppressed cleanup exception and no frozen broker edit",
+    "scope_limit": "Not a production handle-lifecycle fix or Windows deployment qualification"
+  }
 }

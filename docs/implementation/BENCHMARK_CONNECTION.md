@@ -21,6 +21,8 @@ Original C0–C7 paths remain authoritative for evidence, representations, analy
 
 The initial run had three consequential failures: extension tables initialized before the native C4 database made the native schema guard reject it; gateway retries accidentally rendered later response history, changing the original fingerprint; and a cost assertion incorrectly expected a future measurement to be charged before advancement. Fixes initialize native owners first, freeze the job's earlier-response cut and preserve the world's actual delayed-charge semantics. Original failures are retained in the execution evidence. Acceptance is not weakened to claim a live model result.
 
+The first Windows campaign also recorded twelve cleanup errors: the preserved broker relies on SQLite handle finalization and Windows refuses deleting open run files. The engineering test teardown now joins non-daemon HTTP workers and explicitly collects unreachable handles before deleting its disposable directory. It does not suppress cleanup errors or modify the frozen broker. This is a test-lifecycle repair, not a production handle-management qualification. A further regression check verifies that a bounded native image larger than the text-cut allowance remains whole rather than silently losing its image view.
+
 Run in a fresh disposable environment:
 
 ```sh

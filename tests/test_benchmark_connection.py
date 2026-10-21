@@ -1,5 +1,6 @@
 """CPU engineering checks. Authored model fixtures are NOT live inference evidence."""
 import base64
+import gc
 from datetime import timedelta
 from hashlib import sha256
 import importlib
@@ -8,10 +9,12 @@ import json
 from pathlib import Path
 import secrets
 import sqlite3
+import struct
 import sys
 import tempfile
 from threading import Thread
 import unittest
+import zlib
 
 from edi.agency.benchmark import BenchmarkAuthority, PublicIntent, SimulationGrant
 from edi.agency.config import AgencyProfile
@@ -40,6 +43,7 @@ class ConnectionTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.token = secrets.token_urlsafe(32)
         self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+        self.server.daemon_threads = False
         self.thread = Thread(target=self.server.serve_forever, daemon=True)
         self.thread.start()
         self.endpoint = 'http://127.0.0.1:' + str(self.server.server_port)
@@ -58,6 +62,10 @@ class ConnectionTests(unittest.TestCase):
 
     def tearDown(self):
         self.server.shutdown(); self.server.server_close(); self.thread.join()
+        # The preserved world uses sqlite3 transaction context managers rather
+        # than explicit closing contexts. Finalize unreachable handles after
+        # joining all request threads; Windows refuses deletion of open files.
+        gc.collect()
         self.temp.cleanup()
 
     def make_authority(self, grant=None):
@@ -205,6 +213,13 @@ class ConnectionTests(unittest.TestCase):
         self.assertEqual(caught.exception.code, ErrorCode.UNKNOWN_COMMIT)
         self.assertEqual(count, 1)
 
+    def test_cancelled_job_cannot_be_dispatched_from_stale_snapshot(self):
+        ep = self.inquiry(); gateway = self.gateway()
+        self.runtime.reasoning.step(StepRequest(workspace_id='engineering',inquiry_id='inquire',request_id='cancel',action='cancel-pending',reason='Authored cancellation check'))
+        with self.assertRaises(EDIError) as caught: gateway.complete(ep.jobs[-1],ep)
+        self.assertEqual(caught.exception.code,ErrorCode.DENIED)
+        self.assertIsNone(gateway.journal.get(ep.jobs[-1].job_id))
+
     def test_token_cap_blocks_before_dispatch(self):
         ep = self.inquiry(); gateway = self.gateway(counter=lambda m:100000)
         with self.assertRaises(EDIError) as caught: gateway.complete(ep.jobs[-1], ep)
@@ -232,6 +247,20 @@ class ConnectionTests(unittest.TestCase):
             'operation_proposals':[{'operation':'world-call','arguments':{'operation':'advance','body':{}}}]}))
         with self.assertRaises(EDIError) as caught:self.runtime.reasoning.import_response(bad)
         self.assertEqual(caught.exception.code, ErrorCode.DENIED)
+
+    def test_image_default_cut_keeps_whole_bounded_native_object(self):
+        def chunk(kind, data):
+            return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data)&0xffffffff)
+        pixels = b''.join(b'\0'+sha256(str(y).encode()).digest()*10 for y in range(100))
+        # 100 rows, 320 bytes per row: grayscale 320x100, generated neutral data.
+        image = b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',320,100,8,0,0,0,0))+chunk(b'IDAT',zlib.compress(pixels,0))+chunk(b'IEND',b'')
+        self.assertGreater(len(image),8192); self.assertLess(len(image),65536)
+        origin = self.runtime.register_origin(OriginSpec(namespace='neutral-large-image', native_source_id='pixels', epoch='1', deliverer='fixture', channel='image', adapter='authored-image'))
+        obs = self.runtime.observe(Capture(origin_ref=origin.origin_ref,idempotency_key='large-image',media_type='image/png',origin_class='generated',completeness='complete'),BytesIO(image)).observation
+        investigation = Investigation(self.runtime,self.connector,self.gateway(),self.root/'c0.sqlite','image-cut')
+        selected = investigation._selection(obs.record_id)
+        self.assertEqual(selected['length'],len(image))
+        self.assertEqual(investigation._bounded_add([],selected),[selected])
 
     def test_teacher_key_missing_is_explicit(self):
         with self.assertRaises(EDIError): OpenAITeacherBackend('')

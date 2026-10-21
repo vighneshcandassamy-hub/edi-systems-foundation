@@ -32,16 +32,21 @@ class Investigation:
 
     def _selection(self, record_id):
         item = self.runtime.observation.get_record(record_id)
-        return {"record_id": record_id, "offset": 0, "length": min(item.manifest.byte_count, 8192)}
+        cap = 65536 if item.manifest.media_type in ("image/png", "image/jpeg") else 8192
+        return {"record_id": record_id, "offset": 0, "length": min(item.manifest.byte_count, cap)}
 
-    @staticmethod
-    def _bounded_add(evidence, item):
+    def _bounded_add(self, evidence, item):
         # Pure byte/recency allocation, no topic/relevance/causal selection.
         items = evidence + [item]
-        retained, size = [], 0
+        retained, text_size, image_size, image_count = [], 0, 0, 0
         for value in reversed(items):
-            if size + value["length"] <= 16384 and len(retained) < 8:
-                retained.append(value); size += value["length"]
+            is_image = self.runtime.observation.get_record(value["record_id"]).manifest.media_type in ("image/png", "image/jpeg")
+            if len(retained) >= 8:
+                continue
+            if is_image and image_count < 2 and image_size + value["length"] <= 131072:
+                retained.append(value); image_size += value["length"]; image_count += 1
+            elif not is_image and text_size + value["length"] <= 16384:
+                retained.append(value); text_size += value["length"]
         return list(reversed(retained))
 
     def bootstrap(self):

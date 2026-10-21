@@ -1,0 +1,364 @@
+{
+  "schema": "edi-benchmark-connection-trace-v1",
+  "scope": "scoped source and CPU engineering increment, not full test-plan completion",
+  "source_baseline": "879452b8332a318ca76af4f84589b676b031f253",
+  "benchmark_planning_baseline": "27c437bbc54310dff0603d46f5dd3516d5e00730",
+  "requirements": [
+    {
+      "id": "RP-R01",
+      "requirement": "Use the already-built EDI v0.9.0 and frozen world",
+      "parent_ids": [
+        "C0-W11"
+      ],
+      "allocation": "Source identity and compatibility",
+      "verification_ids": [
+        "RP-V001"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R02",
+      "requirement": "Unguided investigation with ordinary resources, no ecological handholding",
+      "parent_ids": [
+        "C0-W02"
+      ],
+      "allocation": "C0 scheduler and C4 selections",
+      "verification_ids": [
+        "RP-V007",
+        "RP-V014"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R03",
+      "requirement": "Native heterogeneous evidence with explicit limitations and provenance",
+      "parent_ids": [
+        "C0-W03"
+      ],
+      "allocation": "C1/C2 acquisition and native model views",
+      "verification_ids": [
+        "RP-V002",
+        "RP-V005"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R04",
+      "requirement": "Real bounded attributed inference with complete usage",
+      "parent_ids": [
+        "C0-W06"
+      ],
+      "allocation": "C4 gateway",
+      "verification_ids": [
+        "RP-V004",
+        "RP-V012"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R05",
+      "requirement": "Explicit action and objective authority",
+      "parent_ids": [
+        "C0-W05"
+      ],
+      "allocation": "C0/C7/world adapter",
+      "verification_ids": [
+        "RP-V003",
+        "RP-V008"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R06",
+      "requirement": "Durable continuation and honest unknown completion",
+      "parent_ids": [
+        "C0-W04"
+      ],
+      "allocation": "C0 ledger and owner/broker reconciliation",
+      "verification_ids": [
+        "RP-V010",
+        "RP-V012"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R07",
+      "requirement": "Operator/oracle isolation",
+      "parent_ids": [
+        "C0-W07"
+      ],
+      "allocation": "Deployment boundary",
+      "verification_ids": [
+        "RP-V011"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R08",
+      "requirement": "Prospective evidence and constructed-world clock separation",
+      "parent_ids": [
+        "C0-W09"
+      ],
+      "allocation": "C3/C5/C6 evidence lineage",
+      "verification_ids": [
+        "RP-V006",
+        "RP-V009"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R09",
+      "requirement": "Separate engineering, modeling and scientific claims",
+      "parent_ids": [
+        "C0-W11"
+      ],
+      "allocation": "Operator offline analysis",
+      "verification_ids": [
+        "RP-V013",
+        "RP-V014"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    },
+    {
+      "id": "RP-R10",
+      "requirement": "All source/public bounds and whole-task budgets retained",
+      "parent_ids": [
+        "C0-W06"
+      ],
+      "allocation": "All owner resource profiles",
+      "verification_ids": [
+        "RP-V003",
+        "RP-V012"
+      ],
+      "design_ref": "benchmarks/meadows-budworm/test-planning/README.md",
+      "evidence_status": "planned_not_run"
+    }
+  ],
+  "cases": [
+    {
+      "id": "CONN-V01",
+      "name": "test_actual_image_bytes_in_wire_fixture",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V02",
+      "name": "test_all_public_operations_and_pending_objective",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V03",
+      "name": "test_asset_reassembly_external_origin_and_hash",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V04",
+      "name": "test_cancelled_job_cannot_be_dispatched_from_stale_snapshot",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V05",
+      "name": "test_denied_public_request_is_evidence",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V06",
+      "name": "test_dynamic_c0_choices_use_native_c4_records",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V07",
+      "name": "test_exact_c1_capture_and_replay",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V08",
+      "name": "test_gateway_fixture_native_import_and_no_redispatch",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V09",
+      "name": "test_grant_scope_and_expiry",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V10",
+      "name": "test_image_default_cut_keeps_whole_bounded_native_object",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V11",
+      "name": "test_journal_atomic_dispatch_claim",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V12",
+      "name": "test_lost_receipt_does_not_duplicate_work",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V13",
+      "name": "test_missing_auth_and_private_path",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V14",
+      "name": "test_model_timeout_is_not_retried",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V15",
+      "name": "test_request_identity_conflict",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V16",
+      "name": "test_restart_preserves_original_request_and_evidence",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V17",
+      "name": "test_teacher_cannot_propose_actions",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V18",
+      "name": "test_teacher_key_missing_is_explicit",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V19",
+      "name": "test_token_cap_blocks_before_dispatch",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "LIVE-V01",
+      "name": "Real pinned Qwen/vLLM inference",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V02",
+      "name": "Real model image perception",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V03",
+      "name": "Real GPT-6.1 teacher critique",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V04",
+      "name": "Actual isolated container probes",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V05",
+      "name": "C6 constructed-clock eligibility and full P1",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V06",
+      "name": "Unguided Cedar pilot and offline analysis",
+      "required": true,
+      "status": "blocked"
+    }
+  ],
+  "source_files": [
+    "src/edi/agency/benchmark.py",
+    "src/edi/inquiry/benchmark.py",
+    "src/edi/inquiry/benchmark_preflight.py",
+    "src/edi/observe/benchmark.py",
+    "src/edi/shared/durable_io.py",
+    "src/edi/reason/gateway.py"
+  ],
+  "qualification": "Only CONN cases passed at their declared authored-fixture conditions; LIVE cases blocked."
+}
