@@ -1,0 +1,55 @@
+{
+  "scope": "source_trace_links_inventory_and_review_consistency_only",
+  "consistent": true,
+  "issues": [],
+  "source_files": 69,
+  "model_operations": 35,
+  "new_runtime_cases": 8,
+  "runtime_cases_run": 0,
+  "model_calls": 0,
+  "benchmarks_run": 0,
+  "frozen_benchmark_tree": "9f2e070d1df5ff5d5638d0536e4104920b5a9184",
+  "imported_files_unchanged": 40,
+  "independent_review": false,
+  "OWNER_INTERFACE_REVIEW": {
+    "scope": "interface_inventory_consistency_only",
+    "semantics_independently_verified": false,
+    "component_count": 8,
+    "pair_count": 28,
+    "directed_lane_count": 56,
+    "contract_count": 40,
+    "feedback_groups": [
+      [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    ],
+    "consistent": true,
+    "errors": []
+  },
+  "INTERFACE_REVIEW": {
+    "scope": "interface_inventory_consistency_only",
+    "semantics_independently_verified": false,
+    "component_count": 5,
+    "pair_count": 10,
+    "directed_lane_count": 20,
+    "contract_count": 8,
+    "feedback_groups": [
+      [
+        "EDI",
+        "MODEL",
+        "TEACHER",
+        "WORLD"
+      ]
+    ],
+    "consistent": true,
+    "errors": []
+  },
+  "component_review_errors": []
+}

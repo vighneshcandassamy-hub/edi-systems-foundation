@@ -8,10 +8,96 @@ from urllib.parse import urlsplit
 
 from edi.observe.benchmark import http_json
 from edi.observe.contracts import Capture, OriginSpec
+from pydantic import ValidationError
+
 from edi.reason.contracts import Response
+from edi.reason.exchange import ModelOutputRejected, stored_result
 from edi.reason.operation_args import serving_schema
 from edi.shared.durable_io import CallJournal, canonical, digest
 from edi.shared.errors import EDIError, ErrorCode
+
+
+def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_image_bytes=65536):
+    if job.binding != binding or job.context_sha256 != episode.context.sha256:
+        raise EDIError(ErrorCode.INTEGRITY, "gateway binding/context differs from pending native job")
+    exported = runtime.reasoning.export_job(episode.request.inquiry_id, job.job_id)
+    earlier = {j.job_id for j in episode.jobs[:next(i for i, j in enumerate(episode.jobs) if j.job_id == job.job_id)]}
+    exported["data"] = {"inquiry": episode.request.model_dump(mode="json"), "context": episode.context.model_dump(mode="json"),
+        "prior_responses": [r.model_dump(mode="json") for r in episode.responses if r.job_id in earlier]}
+    control = {**exported["control"], "protocol_questions": [q.model_dump(mode="json") for q in job.questions], "response_identity": {"workspace_id": episode.request.workspace_id,
+        "inquiry_id": episode.request.inquiry_id, "job_id": job.job_id, "context_sha256": episode.context.sha256,
+        "binding": job.binding.model_dump(mode="json"), "origin": "external-model-output"},
+        "operation_rules": "At most one operation_proposals entry. Propose an ordinary public operation, explicit acquired-asset read, context selection, supported analysis, teacher review or yield. Proposals are not executed calls. Never request operator admission or adoption."}
+    from edi.inquiry.operations import contracts as component_contracts
+    control["operation_contract_version"] = "edi-native-operations/1.2"
+    control["available_component_operations"] = list(component_contracts())
+    control["component_call_rule"] = "component-call invokes an existing component operation through C0. Use describe-operation to inspect native argument fields when needed. Arguments exclude workspace_id, request_id and world_request_id, which C0 supplies. Generated results remain attributed, never independent observations."
+    control["operation_argument_contracts"] = {
+        "world-call": {"operation": "public operation name from available access catalogue",
+                       "body": "operation-specific public request object; C0 assigns request_id"},
+        "acquire-asset": {"document_id": "one public document ID string; arguments has ONLY this key, no operation/body wrapper"},
+        "select-context": {"evidence": "array of acquired C1 {record_id, offset, length} objects",
+                           "world_ids": "array of available C3 representation IDs"},
+        "analysis-compile": {"workspace_id": "current workspace", "request_id": "new stable request ID",
+                             "model_revision": "pinned C3 revision", "mechanism_ref": "{record_id, version}",
+                             "use_policy": "accepted-for-use or candidate-exploration", "rationale": "reason"},
+        "analysis-run": {"workspace_id": "current workspace", "request_id": "new stable request ID",
+                         "run_id": "new run ID", "compiled_id": "existing compiled artifact ID",
+                         "mode": "numerical or qualitative", "scenario": "native ScenarioSpec",
+                         "solver": "native SolverSpec or null; do not invent schemas or identifiers"},
+        "component-call": {"operation": "one name from available_component_operations",
+                           "arguments": "native argument object; describe-operation supplies its schema"},
+        "teacher-review": {"trigger": "novel, unresolved, consequential or student-escalation"},
+        "yield": {"reason": "why investigation stops"}
+    }
+    control["response_reference_contract"] = {
+        "version": "edi-native-references/1.0",
+        "prior_hypothesis_ids": [h.hypothesis_id for response in episode.responses
+                                 if response.job_id in earlier for h in response.hypotheses],
+        "hypothesis_ids": "Declare a distinct immutable hypothesis_id for each new hypothesis. Never reuse an earlier hypothesis ID.",
+        "hypotheses.rivals": "IDs of other hypotheses declared in this response or retained prior responses, never self IDs or prose descriptions. An alternative named as a rival must have its own hypothesis record.",
+        "tests.discriminates": "Only hypothesis_id strings of hypotheses declared here or retained prior responses, never names or prose descriptions.",
+        "hypotheses.support_and_counterevidence": "Copy exact reference objects from the pinned context evidence selections. Do not alter record IDs, workspace, hash, selector, origin class or lineage.",
+        "optional_content": "Provide substantive records only when justified. Omitted optional arrays are allowed; never fabricate IDs or execution receipts to fill fields."
+    }
+    if job.role == "teacher":
+        control["response_schema"] = {"type": "object", "properties": {
+            "rationale_summary": {"type": "string", "minLength": 1, "maxLength": 8192},
+            "limitation": {"type": "string", "minLength": 1, "maxLength": 8192},
+            "feedback_disposition": {"enum": ["retained-for-review", "challenged", "deferred"]}},
+            "required": ["rationale_summary", "limitation", "feedback_disposition"], "additionalProperties": False}
+        control.pop("available_component_operations", None)
+        control.pop("operation_argument_contracts", None)
+        control.pop("component_call_rule", None)
+        control["operation_rules"] = "Critique only: no hypotheses, tests, candidates, frontier or operation proposals. Use rationale_summary, limitation and feedback_disposition (retained-for-review, challenged or deferred)."
+    control["generation_rule"] = ("Return only rationale_summary, limitation and feedback_disposition; never fabricate execution or evidence."
+        if job.role == "teacher" else "Return one JSON object. Transport supplies response_identity, attribution and available token usage. Supply rationale_summary and limitation plus any substantive optional Response fields. Never fabricate execution or evidence.")
+    control["response_identity"].update(request_id="gateway:" + job.job_id, response_id="gateway:" + job.job_id)
+    exported["data"]["prior_rejections"] = []
+    for rejection in episode.rejections:
+        if rejection.job_id not in earlier: continue
+        source = runtime.reader_for("C4").get_record(rejection.raw_record_id)
+        length = min(source.manifest.byte_count, 8192)
+        raw = runtime.reader_for("C4").read_payload(rejection.raw_record_id, length=length)
+        exported["data"]["prior_rejections"].append({"receipt": rejection.model_dump(mode="json"),
+            "unaccepted_generated_output_utf8": raw.decode("utf-8", errors="replace"),
+            "selected_bytes": length, "complete": length == source.manifest.byte_count})
+    parts = [{"type": "text", "text": canonical(exported["data"])}]
+    image_refs = []
+    for item in episode.context.evidence:
+        if item.media_type.split(";")[0] not in ("image/png", "image/jpeg"):
+            continue
+        if item.reference.selector != "whole-object" or item.selected_bytes > max_image_bytes or item.critical_profiles:
+            raise EDIError(ErrorCode.UNSUPPORTED, "image inference requires a whole bounded selected native image")
+        if len(image_refs) >= max_images:
+            raise EDIError(ErrorCode.CAPACITY, "selected image count exceeds gateway profile")
+        data = runtime.reader_for("C4").read_payload(item.reference.record_id, length=item.selected_bytes)
+        if sha256(data).hexdigest() != item.reference.sha256:
+            raise EDIError(ErrorCode.INTEGRITY, "selected image no longer matches native context")
+        parts.append({"type": "image_url", "image_url": {"url": "data:" + item.media_type.split(";")[0] + ";base64," + base64.b64encode(data).decode()}})
+        image_refs.append(item.reference.model_dump(mode="json"))
+    return [{"role": "system", "content": canonical(control)}, {"role": "user", "content": parts}], image_refs
+
 
 
 class NativeGateway:
@@ -33,64 +119,12 @@ class NativeGateway:
         self.journal = CallJournal(journal_path, "inference_c4", max_calls=max_calls, max_bytes=128 * 1024**2)
         self.lock = Lock()
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.model.outputs", native_source_id=binding.model_id,
-            epoch=binding.revision, deliverer=binding.provider, channel="inference-response", adapter="edi-native-gateway/1.2", binding_basis="configured",
+            epoch=binding.revision, deliverer=binding.provider, channel="inference-response", adapter="edi-native-gateway/1.3", binding_basis="configured",
             descriptor={"binding": binding.model_dump(mode="json"), "attribution": attribution}))
 
     def messages(self, job, episode):
-        if job.binding != self.binding or job.context_sha256 != episode.context.sha256:
-            raise EDIError(ErrorCode.INTEGRITY, "gateway binding/context differs from pending native job")
-        exported = self.runtime.reasoning.export_job(episode.request.inquiry_id, job.job_id)
-        earlier = {j.job_id for j in episode.jobs[:next(i for i, j in enumerate(episode.jobs) if j.job_id == job.job_id)]}
-        exported["data"] = {"inquiry": episode.request.model_dump(mode="json"), "context": episode.context.model_dump(mode="json"),
-            "prior_responses": [r.model_dump(mode="json") for r in episode.responses if r.job_id in earlier]}
-        control = {**exported["control"], "protocol_questions": [q.model_dump(mode="json") for q in job.questions], "response_identity": {"workspace_id": episode.request.workspace_id,
-            "inquiry_id": episode.request.inquiry_id, "job_id": job.job_id, "context_sha256": episode.context.sha256,
-            "binding": job.binding.model_dump(mode="json"), "origin": "external-model-output"},
-            "operation_rules": "At most one operation_proposals entry. Propose an ordinary public operation, explicit acquired-asset read, context selection, supported analysis, teacher review or yield. Proposals are not executed calls. Never request operator admission or adoption."}
-        control["operation_contract_version"] = "edi-native-operations/1.1"
-        control["operation_argument_contracts"] = {
-            "world-call": {"operation": "public operation name from available access catalogue",
-                           "body": "operation-specific public request object; C0 assigns request_id"},
-            "acquire-asset": {"document_id": "one public document ID string; arguments has ONLY this key, no operation/body wrapper"},
-            "select-context": {"evidence": "array of acquired C1 {record_id, offset, length} objects",
-                               "world_ids": "array of available C3 representation IDs"},
-            "analysis-compile": {"workspace_id": "current workspace", "request_id": "new stable request ID",
-                                 "model_revision": "pinned C3 revision", "mechanism_ref": "{record_id, version}",
-                                 "use_policy": "accepted-for-use or candidate-exploration", "rationale": "reason"},
-            "analysis-run": {"workspace_id": "current workspace", "request_id": "new stable request ID",
-                             "run_id": "new run ID", "compiled_id": "existing compiled artifact ID",
-                             "mode": "numerical or qualitative", "scenario": "native ScenarioSpec",
-                             "solver": "native SolverSpec or null; do not invent schemas or identifiers"},
-            "teacher-review": {"trigger": "novel, unresolved, consequential or student-escalation"},
-            "yield": {"reason": "why investigation stops"}
-        }
-        control["response_reference_contract"] = {
-            "version": "edi-native-references/1.0",
-            "prior_hypothesis_ids": [h.hypothesis_id for response in episode.responses
-                                     if response.job_id in earlier for h in response.hypotheses],
-            "hypothesis_ids": "Declare a distinct immutable hypothesis_id for each new hypothesis. Never reuse an earlier hypothesis ID.",
-            "hypotheses.rivals": "IDs of other hypotheses declared in this response or retained prior responses, never self IDs or prose descriptions. An alternative named as a rival must have its own hypothesis record.",
-            "tests.discriminates": "Only hypothesis_id strings of hypotheses declared here or retained prior responses, never names or prose descriptions.",
-            "hypotheses.support_and_counterevidence": "Copy exact reference objects from the pinned context evidence selections. Do not alter record IDs, workspace, hash, selector, origin class or lineage.",
-            "optional_content": "Provide substantive records only when justified. Omitted optional arrays are allowed; never fabricate IDs or execution receipts to fill fields."
-        }
-        control["generation_rule"] = "Return one JSON object. Transport supplies response_identity, attribution and measured token usage. Supply rationale_summary and limitation plus any substantive optional Response fields. Never fabricate execution or evidence."
-        control["response_identity"].update(request_id="gateway:" + job.job_id, response_id="gateway:" + job.job_id)
-        parts = [{"type": "text", "text": canonical(exported["data"])}]
-        image_refs = []
-        for item in episode.context.evidence:
-            if item.media_type.split(";")[0] not in ("image/png", "image/jpeg"):
-                continue
-            if item.reference.selector != "whole-object" or item.selected_bytes > self.max_image_bytes or item.critical_profiles:
-                raise EDIError(ErrorCode.UNSUPPORTED, "image inference requires a whole bounded selected native image")
-            if len(image_refs) >= self.max_images:
-                raise EDIError(ErrorCode.CAPACITY, "selected image count exceeds gateway profile")
-            data = self.runtime.reader_for("C4").read_payload(item.reference.record_id, length=item.selected_bytes)
-            if sha256(data).hexdigest() != item.reference.sha256:
-                raise EDIError(ErrorCode.INTEGRITY, "selected image no longer matches native context")
-            parts.append({"type": "image_url", "image_url": {"url": "data:" + item.media_type.split(";")[0] + ";base64," + base64.b64encode(data).decode()}})
-            image_refs.append(item.reference.model_dump(mode="json"))
-        return [{"role": "system", "content": canonical(control)}, {"role": "user", "content": parts}], image_refs
+        return render_job_messages(self.runtime, self.binding, job, episode,
+            max_images=self.max_images, max_image_bytes=self.max_image_bytes)
 
     def complete(self, job, episode):
         if not self.lock.acquire(blocking=False):
@@ -106,44 +140,59 @@ class NativeGateway:
             messages, images = self.messages(job, episode)
             if self.count_tokens is None:
                 raise EDIError(ErrorCode.UNAVAILABLE, "exact pinned tokenizer/processor is not configured")
-            count = self.count_tokens(messages)
+            count = (json.loads(recorded["request"])["input_tokens_preflight"]
+                     if recorded and recorded["state"] == "completed" else self.count_tokens(messages))
             if type(count) is not int or count < 0 or count > job.input_token_cap:
                 raise EDIError(ErrorCode.CAPACITY, "complete rendered multimodal input exceeds job cap")
             body = {"job": job.model_dump(mode="json", exclude={"status", "response_id"}), "messages_sha256": digest(messages), "images": images,
                     "input_tokens_preflight": count, "binding": self.binding.model_dump(mode="json")}
             prior = self.journal.begin(job.job_id, body)
             if prior["state"] == "completed":
-                return Response.model_validate_json(canonical(json.loads(prior["result"])["response"]))
+                return stored_result(prior)
             if not self.journal.claim_once(job.job_id):
                 raise EDIError(ErrorCode.UNKNOWN_COMMIT, "model dispatch completion/cost unresolved; no automatic inference retry")
             wire, output, input_tokens, output_tokens = self.send(messages, job)
             receipt = self.runtime.observe(Capture(origin_ref=self.origin.origin_ref,
                 idempotency_key="model:" + job.job_id, kind="model-response", media_type="application/json", origin_class="generated",
-                lineage=("native-inference-gateway/1.2", self.binding.model_id, self.binding.revision, job.job_id),
+                lineage=("native-inference-gateway/1.3", self.binding.model_id, self.binding.revision, job.job_id),
                 profiles={"context_sha256": episode.context.sha256, "messages_sha256": digest(messages), "input_tokens": input_tokens, "output_tokens": output_tokens},
                 completeness="complete", expected_bytes=len(wire), expected_sha256=sha256(wire).hexdigest()), BytesIO(wire))
             if input_tokens is not None and input_tokens != count:
                 raise EDIError(ErrorCode.INTEGRITY, "recorded model prompt usage differs from exact preflight count; reconcile original call")
-            raw = json.loads(output)
-            # These are transport identities, not invented student content.
-            identities = {"workspace_id": episode.request.workspace_id, "inquiry_id": episode.request.inquiry_id,
-                "job_id": job.job_id, "context_sha256": job.context_sha256, "binding": job.binding.model_dump(mode="json"),
-                "origin": "external-model-output", "request_id": "gateway:" + job.job_id, "response_id": "gateway:" + job.job_id}
-            for key, value in identities.items():
-                if key in raw and raw[key] != value:
-                    raise EDIError(ErrorCode.INTEGRITY, "model returned conflicting native job identity")
-                raw[key] = value
-            raw.update(input_tokens=input_tokens, output_tokens=output_tokens, attribution=self.attribution)
-            response = Response.model_validate_json(canonical(raw))
-            # Validate usage before accepting; never make missing usage zero.
+            # Unknown completion/usage stays unresolved; a definite malformed
+            # returned payload is a separate, retained rejection outcome.
             if input_tokens is None or output_tokens is None:
                 raise EDIError(ErrorCode.UNKNOWN_COMMIT, "model response recorded but usage unavailable; reconcile original call")
-            if input_tokens > job.input_token_cap or output_tokens > job.output_token_cap:
-                raise EDIError(ErrorCode.CAPACITY, "actual model usage exceeded reserved cap")
-            self.journal.finish(job.job_id, {"response": response.model_dump(mode="json"), "raw_record_id": receipt.observation.record_id})
+            result = {"raw_record_id": receipt.observation.record_id,
+                      "input_tokens": input_tokens, "output_tokens": output_tokens}
+            try:
+                raw = json.loads(output)
+                if not isinstance(raw, dict):
+                    raise ValueError("native response content must be one JSON object")
+                identities = {"workspace_id": episode.request.workspace_id, "inquiry_id": episode.request.inquiry_id,
+                    "job_id": job.job_id, "context_sha256": job.context_sha256, "binding": job.binding.model_dump(mode="json"),
+                    "origin": "external-model-output", "request_id": "gateway:" + job.job_id, "response_id": "gateway:" + job.job_id}
+                for key, value in identities.items():
+                    if key in raw and raw[key] != value:
+                        raise ValueError("model returned conflicting native job identity")
+                    raw[key] = value
+                raw.update(input_tokens=input_tokens, output_tokens=output_tokens, attribution=self.attribution)
+                response = Response.model_validate_json(canonical(raw))
+                if input_tokens > job.input_token_cap or output_tokens > job.output_token_cap:
+                    raise ValueError("actual model usage exceeded reserved cap")
+            except (ValidationError, ValueError, TypeError) as exc:
+                result.update(outcome="rejected", diagnostic=str(exc)[:8192])
+                self.journal.finish(job.job_id, result)
+                raise ModelOutputRejected(result) from exc
+            result.update(outcome="returned", response=response.model_dump(mode="json"))
+            self.journal.finish(job.job_id, result)
             return response
         finally:
             self.lock.release()
+
+    def receipt(self, job_id):
+        row = self.journal.get(job_id)
+        return json.loads(row["result"]) if row and row["state"] == "completed" else None
 
 
 class VllmBackend:

@@ -28,9 +28,9 @@ class ModelBinding(Record):
 
 
 class Budget(Record):
-    rounds: int = Field(default=2, ge=1, le=2)
+    rounds: int = Field(default=2, ge=1, le=4)
     rivals_per_round: int = Field(default=3, ge=1, le=3)
-    jobs: int = Field(default=4, ge=1, le=4)
+    jobs: int = Field(default=4, ge=1, le=6)
     reserved_tokens: int = Field(default=32768, ge=1, le=131072)
     input_token_cap: int = Field(default=4096, ge=1, le=16384)
     output_token_cap: int = Field(default=4096, ge=1, le=16384)
@@ -107,7 +107,7 @@ class ProtocolQuestion(Record):
 class Job(Record):
     job_id: Identifier
     role: Literal["student", "teacher"]
-    round: int = Field(ge=1, le=2)
+    round: int = Field(ge=1, le=4)
     binding: ModelBinding
     context_sha256: str
     protocol_id: Identifier
@@ -117,7 +117,7 @@ class Job(Record):
     created_at: datetime
     reason: Text
     teacher_trigger: Literal["novel", "unresolved", "consequential", "student-escalation"] | None = None
-    status: Literal["awaiting-import", "completed", "cancelled-usage-unknown"] = "awaiting-import"
+    status: Literal["awaiting-import", "completed", "cancelled-usage-unknown", "rejected"] = "awaiting-import"
     response_id: str | None = None
     dispatch: Literal["export-only; no model call performed"] = "export-only; no model call performed"
 
@@ -188,7 +188,7 @@ class CandidateChange(Record):
 
 class OperationProposal(Record):
     """Data-only request to C0; never a grant, operator input or execution receipt."""
-    operation: Literal["world-call", "acquire-asset", "select-context", "analysis-compile", "analysis-run", "teacher-review", "yield"]
+    operation: Literal["world-call", "acquire-asset", "select-context", "analysis-compile", "analysis-run", "teacher-review", "component-call", "yield"]
     arguments: dict[str, JsonValue]
 
     @model_validator(mode="after")
@@ -269,17 +269,31 @@ class OutboxItem(Record):
     acknowledgement: str | None = None
 
 
+class RejectedResponse(Record):
+    workspace_id: Identifier
+    inquiry_id: Identifier
+    request_id: Identifier
+    job_id: Identifier
+    raw_record_id: Identifier
+    context_sha256: str
+    diagnostic: Text
+    input_tokens: int | None = Field(default=None, ge=0)
+    output_tokens: int | None = Field(default=None, ge=0)
+    status: Literal["returned-output-rejected"] = "returned-output-rejected"
+
+
 class Episode(Record):
     request: InquiryRequest
     sequence: int = Field(ge=1)
     created_at: datetime
     updated_at: datetime
-    implementation: Literal["edi-c4/0.5.1"] = "edi-c4/0.5.1"
+    implementation: Literal["edi-c4/0.6.0"] = "edi-c4/0.6.0"
     profile_snapshot: dict[str, JsonValue]
     operating_profile: dict[str, JsonValue]
     context: Context
     jobs: tuple[Job, ...] = ()
     responses: tuple[Response, ...] = ()
+    rejections: tuple[RejectedResponse, ...] = ()
     frontier: tuple[FrontierItem, ...] = ()
     outbox: tuple[OutboxItem, ...] = ()
     submissions: tuple[Submission, ...] = ()

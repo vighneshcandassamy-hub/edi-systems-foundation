@@ -1,0 +1,186 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "Existing native C0-C7 composition and model-role connection contract",
+  "gate": "contract",
+  "requested_scope": "Connect already developed components before testing; no inference or product execution",
+  "input_revision": "9b275da82e69cd0b77b7d63525067721017a165c + 0.10.0.dev0 source hashes",
+  "reviewer": {
+    "role": "implementer_and_self_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/component-connections-20261022/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/component-connections-20261022/final-checks.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "CI-R01..05 link existing IMP requirements to implemented native wiring and future CI-V01..08; original algorithms and scientific criteria remain unchanged.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Finite C0-mediated existing ports, actual C4 inference bindings, same-cut manual teacher transport and separate C3/C7 authority are explicit. This is a scoped new connection contract, not full original component qualification.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse the existing Runtime/Workflow/native validators and eight owners. Add one composition root, one native catalogue and one teacher transport, without another framework/store/domain solver.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Raw source/output lineage, candidates, teacher fallibility, known rejection, unknown usage/completion and the lack of product evidence are retained explicitly.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Per-owner/journal limits, persistent deadline, inquiry job/round/token reservations and conservative unknown usage are explicit. Aggregate performance/energy and actual manual-teacher context usage remain unmeasured.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Source states distinguish explicit teacher wait, no-dispatch dependency wait, known output rejection and provider-unknown completion. Native request identities/fences are reused; actual crash recovery remains a later verification obligation.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Implementation follows saved REASONING_INTEGRATION and native component contracts, including fixed initial weights and selective fallible teacher. No new third-party technical capability/version is assumed.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Only source AST/import/parser/schema/inventory and review/trace checks run. Runtime/product/model/benchmark counts remain zero at this revision, as explicitly requested.",
+      "references": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CI-F01",
+      "status": "resolved",
+      "description": "Existing native operations/results, selective teacher transport and known-rejection continuation connected in source.",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "CI-F02",
+      "status": "open",
+      "description": "All new runtime/integration cases remain unrun; source review cannot establish actual end-to-end capability.",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    "Finite native component catalogue and actual C4 inference-port binding",
+    "Component results/candidates return to continuation",
+    "Explicit file teacher critique and revised student job",
+    "Retained rejected output and bounded distinct correction jobs",
+    "Application configuration/CLI and source-only build handoff"
+  ],
+  "verification": [
+    {
+      "name": "Source/build contract checks",
+      "kind": "contract",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/component-connections-20261022/source-checks.json",
+      "revision": "0.10.0.dev0 exact source hashes"
+    },
+    {
+      "name": "CI-V01",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    },
+    {
+      "name": "CI-V02",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    },
+    {
+      "name": "CI-V03",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    },
+    {
+      "name": "CI-V04",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    },
+    {
+      "name": "CI-V05",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    },
+    {
+      "name": "CI-V06",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    },
+    {
+      "name": "CI-V07",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    },
+    {
+      "name": "CI-V08",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run",
+      "evidence_ref": null,
+      "revision": null
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "Owner-directed runtime integration verification/debugging after source handoff; no benchmark launched."
+}

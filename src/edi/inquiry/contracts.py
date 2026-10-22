@@ -10,7 +10,7 @@ Operation = Literal[
     "register-origin", "observe-json", "observe-bytes", "coverage", "interpret", "interpret-submit", "interpret-get",
     "world-propose", "world-commit", "world-get", "world-head", "world-ack", "world-query", "world-dependencies", "world-status",
     "reason-investigate", "reason-step", "reason-export", "reason-import", "reason-submit", "reason-frontier", "reason-ack", "reason-assessments", "reason-get", "reason-rank",
-    "analysis-compile", "analysis-run", "analysis-control", "analysis-status", "analysis-get", "assess-seal", "assess-compare", "assess-review", "assess-finding", "assess-yield", "assess-submit", "assess-query", "assess-get",
+    "analysis-compile", "analysis-run", "analysis-control", "analysis-status", "analysis-get", "analysis-get-compiled", "assess-seal", "assess-compare", "assess-review", "assess-finding", "assess-yield", "assess-submit", "assess-query", "assess-get",
     "agency-propose", "agency-adopt", "agency-policy", "agency-check", "agency-dispatch", "agency-receipt", "agency-access", "agency-access-disposition", "agency-actor-view", "agency-archive", "agency-reconcile", "agency-submit",
     "deliver-finding",
 ]

@@ -159,6 +159,12 @@ def _parser():
     p.add_argument("step_id")
     p.add_argument("--after", type=int, default=0)
     p.add_argument("--limit", type=int, default=25)
+    for name in ("integration-config", "integration-step", "integration-teacher-import"):
+        command = sub.add_parser(name)
+        command.add_argument("application", type=Path)
+        if name == "integration-teacher-import":
+            command.add_argument("job_id")
+            command.add_argument("feedback", type=Path)
     return parser
 
 
@@ -173,6 +179,20 @@ def _emit(value):
 def main(argv=None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command.startswith("integration-"):
+            from edi.inquiry.application import ApplicationProfile, IntegratedApplication
+            application_profile = ApplicationProfile.load(args.application)
+            if args.command == "integration-config":
+                _emit({"status": "configuration-valid; execution not started",
+                    "application_id": application_profile.application_id,
+                    "workspace_id": application_profile.observation.workspace_id,
+                    "teacher_mode": application_profile.teacher.mode,
+                    "runtime_initialized": False, "model_calls": 0})
+            else:
+                application = IntegratedApplication(application_profile)
+                _emit(application.step() if args.command == "integration-step" else
+                      application.import_teacher(args.job_id, args.feedback))
+            return 0
         profile = LocalProfile.model_validate_json(args.config.read_bytes()) if args.config else LocalProfile()
         overrides = profile.model_dump()
         if args.database is not None:

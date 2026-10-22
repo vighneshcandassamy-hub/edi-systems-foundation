@@ -7,7 +7,7 @@ from time import monotonic
 from edi.reason.config import ReasoningProfile
 from edi.reason.contracts import (
     Context, Episode, EvidenceSlice, FrontierUpdate, InquiryRequest, Job, OutboxItem,
-    OutboxAck, Response, StepRequest, Submission, SubmissionRequest,
+    OutboxAck, Response, StepRequest, Submission, SubmissionRequest, RejectedResponse,
 )
 from edi.reason.ports import UnavailableInference
 from edi.reason.protocol import IMPLEMENTATION, PROTOCOL_ID, frontier_key, heuristic_score, questions
@@ -20,7 +20,7 @@ from edi.world.contracts import Put, WorldPatch, iter_refs
 class Reasoning:
     capability = Capability(
         owner="C4", functions=("F40", "F41", "F42", "F43"), state="implemented-unqualified",
-        details="Partial C4: pinned context/protocol, bounded export/import inquiry controller, attributed rivals/test proposals, durable frontier/C0 outbox and candidate-only C3 submissions; inference unavailable",
+        details="Partial C4: pinned context/protocol, bounded export/import inquiry controller, attributed rivals/test proposals, durable frontier/C0 outbox and candidate-only C3 submissions; configured native/file model gateways are composed by C0",
     )
 
     def __init__(self, profile: ReasoningProfile, evidence, store, world_factory, assessment_factory=None):
@@ -29,6 +29,22 @@ class Reasoning:
         self._assessment_factory = assessment_factory
         self.student, self.teacher = UnavailableInference("student/vLLM"), UnavailableInference("teacher")
         self._slot = BoundedSemaphore(1)
+
+    def bind_inference(self, student, teacher=None):
+        """Explicit composition-time binding; construction alone performs no call."""
+        if student.binding != self.profile.student or (teacher is not None and teacher.binding != self.profile.teacher):
+            raise EDIError(ErrorCode.INTEGRITY, "inference ports differ from native C4 role bindings")
+        if not isinstance(self.student, UnavailableInference) and self.student is not student:
+            raise EDIError(ErrorCode.CONFLICT, "C4 student port already bound in this runtime")
+        if teacher is not None and not isinstance(self.teacher, UnavailableInference) and self.teacher is not teacher:
+            raise EDIError(ErrorCode.CONFLICT, "C4 teacher port already bound in this runtime")
+        self.student = student
+        if teacher is not None: self.teacher = teacher
+
+    def complete_job(self, job, episode):
+        """The configured C4 port owns dispatch; C0 coordinates the returned artifact."""
+        port = self.student if job.role == "student" else self.teacher
+        return port.complete(job, episode)
 
     @contextmanager
     def _admit(self):
@@ -197,7 +213,7 @@ class Reasoning:
             if request.action == "teacher":
                 if not request.teacher_trigger or not students or students[-1].status != "completed":
                     raise EDIError(ErrorCode.INVALID, "selective teacher requires trigger and completed student")
-                if any(job.role == "teacher" and job.round == round_number for job in old.jobs):
+                if any(job.role == "teacher" and job.round == round_number and job.status != "rejected" for job in old.jobs):
                     raise EDIError(ErrorCode.CONFLICT, "teacher already requested in this round")
             reserve = budget.input_token_cap + budget.output_token_cap
             if round_number > budget.rounds or len(old.jobs) >= budget.jobs or old.tokens_reserved + reserve > budget.reserved_tokens:
@@ -290,6 +306,36 @@ class Reasoning:
                     continue
                 if ref.record_id not in context_versions or ref.version != context_versions[ref.record_id]:
                     raise EDIError(ErrorCode.INVALID, "dependency must reference a selected pinned version or a post-patch candidate")
+
+    def validate_response(self, response):
+        """Read-only native admission check; does not mark a provider call complete."""
+        old = self._current(response.inquiry_id)
+        job = next((j for j in old.jobs if j.job_id == response.job_id and j.status == "awaiting-import"), None)
+        if job is None:
+            raise EDIError(ErrorCode.CONFLICT, "response does not identify a pending job")
+        self._validate_response(old, response, job)
+        self._merge_frontier(old.frontier, response.frontier)
+
+    def reject_response(self, request: RejectedResponse):
+        """Retain a definite returned-output rejection without rewriting its bytes."""
+        with self._admit():
+            command, fingerprint, previous = self._command("response-rejection", request)
+            if previous is not None:
+                return previous
+            old = self._current(request.inquiry_id)
+            job = next((j for j in old.jobs if j.job_id == request.job_id and j.status == "awaiting-import"), None)
+            if job is None or request.context_sha256 != old.context.sha256:
+                raise EDIError(ErrorCode.CONFLICT, "rejection must identify the pending job and original cut")
+            source = self._evidence.get_record(request.raw_record_id)
+            if (source.scope_id != request.workspace_id or source.capture.origin_class != "generated"
+                    or request.job_id not in source.capture.lineage
+                    or source.capture.profiles.get("context_sha256") != old.context.sha256):
+                raise EDIError(ErrorCode.INTEGRITY, "rejection requires retained generated bytes of this job/cut")
+            if (source.capture.profiles.get("input_tokens"), source.capture.profiles.get("output_tokens")) != (request.input_tokens, request.output_tokens):
+                raise EDIError(ErrorCode.INTEGRITY, "rejection usage differs from the retained transport receipt")
+            jobs = tuple(j.model_copy(update={"status": "rejected"}) if j.job_id == job.job_id else j for j in old.jobs)
+            return self._save(command, fingerprint, old, jobs=jobs,
+                rejections=old.rejections + (request,), state="round-complete")
 
     def _merge_frontier(self, existing, incoming):
         result = list(existing)

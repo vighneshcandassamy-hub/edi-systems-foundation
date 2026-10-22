@@ -1,12 +1,14 @@
 from typing import Protocol
 
-from edi.reason.contracts import Episode, Job, Response
+from edi.reason.contracts import Episode, Job, Response, ModelBinding
 from edi.shared.errors import EDIError, ErrorCode
 
 
 class InferencePort(Protocol):
-    """Future gateway must enforce token/deadline/concurrency and reconcile unknown cost."""
+    """Configured gateway; explicit dispatch, retained receipt and unknown-cost status."""
+    binding: ModelBinding
     def complete(self, job: Job, episode: Episode) -> Response: ...
+    def receipt(self, job_id: str) -> dict | None: ...
 
 
 class UnavailableInference:

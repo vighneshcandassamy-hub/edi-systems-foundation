@@ -1,0 +1,24 @@
+{
+  "scope": "package_build_and_archive_integrity_only",
+  "status": "passed",
+  "issues": [],
+  "artifact_path": "C:\\Users\\csscs\\Documents\\Codex\\2026-10-22\\edi-free-setup\\component-build\\edi_systems_foundation-0.10.0.dev0-py3-none-any.whl",
+  "artifact_sha256": "9349924a5e31914e33a84494cf443a86dc07845becf6222c0ea93d00a82c4109",
+  "artifact_bytes": 167284,
+  "wheel_entries": 74,
+  "source_files_verified": 69,
+  "dependencies": {
+    "setuptools": "80.10.2",
+    "wheel": "0.48.0",
+    "packaging": "26.3",
+    "pydantic": "2.12.5"
+  },
+  "initial_failure": {
+    "status": "failed",
+    "reason": "Development venv lacked setuptools.build_meta; offline wheel metadata build could not import its declared build backend.",
+    "correction": "Installed the existing pyproject build requirement setuptools>=77,<81 and wheel in the development venv; no application/model runtime was run."
+  },
+  "product_tests_run": 0,
+  "model_calls": 0,
+  "benchmarks_run": 0
+}

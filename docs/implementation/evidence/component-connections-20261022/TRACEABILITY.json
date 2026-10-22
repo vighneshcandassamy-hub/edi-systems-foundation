@@ -1,0 +1,164 @@
+{
+  "schema": "edi-component-connection-trace/1.0",
+  "input_revision": "9b275da82e69cd0b77b7d63525067721017a165c",
+  "scope": "Wiring existing implemented ports only; future component algorithms unchanged",
+  "source_authorities": [
+    "architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md",
+    "docs/implementation/REASONING_INTEGRATION.md",
+    "docs/implementation/COMPONENTS.md",
+    "docs/implementation/TRACEABILITY.json"
+  ],
+  "requirements": [
+    {
+      "id": "CI-R01",
+      "parents": [
+        "IMP-R04",
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "statement": "Compose the existing owner ports and configured model roles with explicit workspace/identity boundaries.",
+      "implementation": [
+        "src/edi/inquiry/application.py",
+        "src/edi/inquiry/operations.py",
+        "src/edi/inquiry/workflow.py"
+      ],
+      "verification_ids": [
+        "CI-V01",
+        "CI-V06"
+      ],
+      "status": "implemented_in_source_runtime_unverified"
+    },
+    {
+      "id": "CI-R02",
+      "parents": [
+        "IMP-R04",
+        "IMP-R11",
+        "IMP-R19"
+      ],
+      "statement": "Return attributed native results and retained candidates to subsequent bounded reasoning context.",
+      "implementation": [
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "verification_ids": [
+        "CI-V01",
+        "CI-V02",
+        "CI-V07"
+      ],
+      "status": "implemented_in_source_runtime_unverified"
+    },
+    {
+      "id": "CI-R03",
+      "parents": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "statement": "Export/import same-cut selective teacher critique and resume a student revision without teacher admission authority.",
+      "implementation": [
+        "src/edi/reason/exchange.py",
+        "src/edi/reason/gateway.py",
+        "src/edi/reason/service.py"
+      ],
+      "verification_ids": [
+        "CI-V03",
+        "CI-V06"
+      ],
+      "status": "implemented_in_source_runtime_unverified"
+    },
+    {
+      "id": "CI-R04",
+      "parents": [
+        "IMP-R04",
+        "IMP-R19",
+        "IMP-R23"
+      ],
+      "statement": "Distinguish definite output rejection, pending external input and unknown provider completion; retain costs and bound correction.",
+      "implementation": [
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/service.py",
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "verification_ids": [
+        "CI-V04",
+        "CI-V05",
+        "CI-V07"
+      ],
+      "status": "implemented_in_source_runtime_unverified"
+    },
+    {
+      "id": "CI-R05",
+      "parents": [
+        "IMP-R15",
+        "IMP-R33"
+      ],
+      "statement": "Preserve prior failures and report build/contract status separately from runtime and scientific qualification.",
+      "implementation": [
+        "docs/implementation/COMPONENT_CONNECTIONS.md"
+      ],
+      "verification_ids": [
+        "CI-V08"
+      ],
+      "status": "implemented_in_source_runtime_unverified"
+    }
+  ],
+  "cases": [
+    {
+      "id": "CI-V01",
+      "acceptance": "Native acquisition, interpretation, candidate retention and later native retrieval are selected through C0 with actual provenance.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V02",
+      "acceptance": "Supported C5 artifacts and eligible C6 assessment results reach the next inference without a direct C4-C5 lane or generated evidence promotion.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V03",
+      "acceptance": "Exported teacher cut/attempt/images remain original; imported critique is generated; student revision and its candidates are retained; unknown usage stays explicit.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V04",
+      "acceptance": "Shape/semantic rejection retains original bytes and diagnostics, dispatches no proposed action, charges usage and permits only a distinct bounded correction job.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V05",
+      "acceptance": "Unknown provider completion or usage disagreement is not redispatched on resume/crash; known cached completion remains reusable.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V06",
+      "acceptance": "Model-generated component calls cannot request operator admission/adoption/reconciliation, fabricate workspace/request authority or label C2 assistance as operator-authored.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V07",
+      "acceptance": "Repeated bad output, finite budgets, teacher waiting and native-tool errors retain state/cost and resume/yield according to the explicit phase contract.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V08",
+      "acceptance": "A valid response with no investigation/final report remains yielded/unsolved; no source check or teacher agreement is reported as problem-solving success.",
+      "status": "specified_not_run",
+      "required": true,
+      "evidence_ref": null
+    }
+  ],
+  "build_evidence_ref": "docs/implementation/evidence/component-connections-20261022/source-checks.json",
+  "product_qualification": "not_run"
+}

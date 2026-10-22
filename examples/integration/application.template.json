@@ -1,0 +1,68 @@
+{
+  "application_id": "edi-component-integration",
+  "run_id": "integration-run-001",
+  "observation": {
+    "workspace_id": "integration-run-001",
+    "database": ".local/integration-run-001/edi.sqlite3"
+  },
+  "student": {
+    "binding": {
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "provider": "local-vllm",
+      "engine": "vllm-0.21.0",
+      "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "weights": "fixed"
+    },
+    "endpoint": "http://127.0.0.1:8008",
+    "api_key_env": "EDI_VLLM_API_KEY",
+    "max_model_len": 16384,
+    "max_images": 1
+  },
+  "teacher": {
+    "mode": "file-exchange",
+    "binding": {
+      "model_id": "REPLACE_WITH_DECLARED_TEACHER_MODEL",
+      "revision": "REPLACE_WITH_DECLARED_TEACHER_VERSION",
+      "provider": "operator-imported-chatgpt-session",
+      "engine": "explicit-file-exchange",
+      "tokenizer_revision": "provider-managed-unmeasured",
+      "weights": "fixed"
+    },
+    "directory": ".local/integration-run-001/teacher-exchange"
+  },
+  "broker": {
+    "token_env": "EDI_BROKER_TOKEN",
+    "grant": {
+      "grant_id": "REPLACE_WITH_OPERATOR_GRANT",
+      "session_id": "REPLACE_WITH_BROKER_SESSION",
+      "workspace_id": "integration-run-001",
+      "endpoint": "http://127.0.0.1:8031",
+      "token_sha256": "REPLACE_WITH_SHA256_HEX",
+      "mission_sha256": "REPLACE_WITH_SHA256_HEX",
+      "operator_id": "REPLACE_WITH_LOCAL_OPERATOR",
+      "not_before": "REPLACE_WITH_AWARE_ISO_TIMESTAMP",
+      "expires_at": "REPLACE_WITH_AWARE_ISO_TIMESTAMP",
+      "operations": [
+        "mission",
+        "sources",
+        "people",
+        "search",
+        "read",
+        "records",
+        "ask",
+        "measure",
+        "act",
+        "advance",
+        "status",
+        "propose",
+        "submit"
+      ],
+      "maximum_requests": 300
+    }
+  },
+  "max_turns": 32,
+  "max_tokens": 262144,
+  "session_seconds": 3600,
+  "max_corrections": 1
+}

@@ -26,6 +26,9 @@ def validate_arguments(operation, arguments):
     elif operation in ("analysis-compile","analysis-run"):
         cls=CompileRequest if operation=="analysis-compile" else RunRequest
         cls.model_validate_json(json.dumps(arguments,allow_nan=False))
+    elif operation=="component-call":
+        from edi.inquiry.operations import validate_call
+        validate_call(arguments)
     elif operation=="teacher-review":
         if set(arguments)!={"trigger"} or arguments["trigger"] not in TRIGGERS:
             raise ValueError("teacher-review requires one valid trigger")
@@ -63,6 +66,9 @@ def generation_schema():
         "teacher-review":obj({"trigger":{"type":"string","enum":list(TRIGGERS)}},["trigger"]),
         "yield":obj({"reason":{"type":"string"}},[])
     }
+    from edi.inquiry.operations import call_schema
+    arguments["component-call"], component_definitions = call_schema()
+    definitions.update(component_definitions)
     definitions["OperationProposal"]={"anyOf":[obj({
         "schema_version":{"const":"1.0","type":"string"},
         "operation":{"const":operation,"type":"string"},

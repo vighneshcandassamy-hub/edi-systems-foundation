@@ -1,3 +1,5 @@
+> Current source wiring handoff: [COMPONENT_CONNECTIONS.md](COMPONENT_CONNECTIONS.md), version 0.10.0.dev0. Results below remain historical at their pinned revisions; no new-version model/product test was run.
+
 # Native Qwen integration: retained rerun
 
 22 October 2026. Development **0.9.4.dev0**, native C4 implementation **edi-c4/0.5.2**. Input revision f7f25cde7f5434e71ff2e1677802ef50b50f6591.

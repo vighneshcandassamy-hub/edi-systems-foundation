@@ -125,7 +125,7 @@ class Runtime:
         return (
             Capability(owner="C0", functions=("F00", "F01", "F02", "F03"),
                        state="implemented-unqualified",
-                       details="Partial C0: lazy owner composition, bounded durable workflow/inputs/native steps/internal findings and explicit progress handoff; no autonomous scheduler or inference gateway"),
+                       details="Partial C0: lazy owner composition, bounded durable workflow/inputs/native steps/internal findings and explicit progress handoff; explicit integrated application/model gateways are separately configured; no background scheduler"),
             self.observation.capability,
             Interpretation.capability,
             World.capability,

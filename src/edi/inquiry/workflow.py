@@ -220,6 +220,11 @@ class Workflow:
                 if error: return self.status(workflow_id)
             return self.status(workflow_id).model_copy(update={"state": "yielded"})
 
+    def invoke_component(self, step):
+        """Trusted C0 port; model callers first pass the finite operations catalogue."""
+        self._operator(step.operation)
+        return self._invoke("component-call", step, step.arguments)
+
     def _invoke(self, workflow_id, step, arguments):
         from edi.agency import contracts as agency
         from edi.analyze import contracts as analyze
@@ -290,6 +295,7 @@ class Workflow:
             return runtime.reasoning.query_assessments(**data)
         if op == "analysis-status": return runtime.analysis.status(**data)
         if op == "analysis-get": return runtime.analysis.get_run(**data)
+        if op == "analysis-get-compiled": return runtime.analysis.get_compiled(**data)
         if op == "agency-policy": return runtime.agency_for("C0").read_policy(**data)
         if op == "agency-receipt": return runtime.agency_for("C0").get_receipt(**data)
         if op == "assess-query":

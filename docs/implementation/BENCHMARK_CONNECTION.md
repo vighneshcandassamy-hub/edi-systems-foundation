@@ -1,3 +1,5 @@
+> Current source wiring handoff: [COMPONENT_CONNECTIONS.md](COMPONENT_CONNECTIONS.md), version 0.10.0.dev0. Results below remain historical at their pinned revisions; no new-version model/product test was run.
+
 # Benchmark connection execution checkpoint
 
 21 October 2026. Development increment: **0.9.1.dev0**, C4 operation-proposal contract increment **0.5.1**. Source baseline: EDI 0.9.0 at `879452b8332a318ca76af4f84589b676b031f253`. Benchmark/planning baseline: `27c437bbc54310dff0603d46f5dd3516d5e00730`. The owner has now explicitly authorized implementation and execution, superseding the historical defer-testing instruction. The original branch, historical evidence and frozen benchmark are preserved.
