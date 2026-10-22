@@ -1,0 +1,13 @@
+{
+  "kind": "CPU actual grammar validation; earlier grammar_from_json_schema only wrapped input",
+  "original": {
+    "valid": false,
+    "validator_result": "Unimplemented keys: [\"propertyNames\"]",
+    "xgrammar_compiled": true
+  },
+  "serving_native_key_checks": {
+    "valid": false,
+    "validator_result": "oneOf constraints are not supported. Enable 'coerce_one_of' option to approximate oneOf with anyOf\n  while processing json-schema:///#/$defs/Representation",
+    "xgrammar_compiled": true
+  }
+}

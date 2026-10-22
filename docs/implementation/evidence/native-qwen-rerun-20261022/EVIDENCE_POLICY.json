@@ -1,0 +1,10 @@
+{
+  "raw_archive_storage": "Desktop native-rerun-evidence per-trial folders outside Git",
+  "failure_preservation": "First actual failed attempt retained before serving repair or later inference",
+  "raw_state_archive_hash": {
+    "sha256": "ab48fbeb7b11589084b516958318bca4e40b56e832458f03be12e744f21dec16",
+    "bytes": 14134
+  },
+  "partial_counts": "First attempt had no returned usage; zeros in observed totals are not a measured total of zero tokens",
+  "scope": "No forest, teacher, C5/C6 or full P1/isolation qualification"
+}

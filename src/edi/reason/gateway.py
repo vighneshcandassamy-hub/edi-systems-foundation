@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 from edi.observe.benchmark import http_json
 from edi.observe.contracts import Capture, OriginSpec
 from edi.reason.contracts import Response
-from edi.reason.operation_args import generation_schema
+from edi.reason.operation_args import serving_schema
 from edi.shared.durable_io import CallJournal, canonical, digest
 from edi.shared.errors import EDIError, ErrorCode
 
@@ -33,7 +33,7 @@ class NativeGateway:
         self.journal = CallJournal(journal_path, "inference_c4", max_calls=max_calls, max_bytes=128 * 1024**2)
         self.lock = Lock()
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.model.outputs", native_source_id=binding.model_id,
-            epoch=binding.revision, deliverer=binding.provider, channel="inference-response", adapter="edi-native-gateway/1.1", binding_basis="configured",
+            epoch=binding.revision, deliverer=binding.provider, channel="inference-response", adapter="edi-native-gateway/1.2", binding_basis="configured",
             descriptor={"binding": binding.model_dump(mode="json"), "attribution": attribution}))
 
     def messages(self, job, episode):
@@ -63,6 +63,16 @@ class NativeGateway:
                              "solver": "native SolverSpec or null; do not invent schemas or identifiers"},
             "teacher-review": {"trigger": "novel, unresolved, consequential or student-escalation"},
             "yield": {"reason": "why investigation stops"}
+        }
+        control["response_reference_contract"] = {
+            "version": "edi-native-references/1.0",
+            "prior_hypothesis_ids": [h.hypothesis_id for response in episode.responses
+                                     if response.job_id in earlier for h in response.hypotheses],
+            "hypothesis_ids": "Declare a distinct immutable hypothesis_id for each new hypothesis. Never reuse an earlier hypothesis ID.",
+            "hypotheses.rivals": "IDs of other hypotheses declared in this response or retained prior responses, never self IDs or prose descriptions. An alternative named as a rival must have its own hypothesis record.",
+            "tests.discriminates": "Only hypothesis_id strings of hypotheses declared here or retained prior responses, never names or prose descriptions.",
+            "hypotheses.support_and_counterevidence": "Copy exact reference objects from the pinned context evidence selections. Do not alter record IDs, workspace, hash, selector, origin class or lineage.",
+            "optional_content": "Provide substantive records only when justified. Omitted optional arrays are allowed; never fabricate IDs or execution receipts to fill fields."
         }
         control["generation_rule"] = "Return one JSON object. Transport supplies response_identity, attribution and measured token usage. Supply rationale_summary and limitation plus any substantive optional Response fields. Never fabricate execution or evidence."
         control["response_identity"].update(request_id="gateway:" + job.job_id, response_id="gateway:" + job.job_id)
@@ -109,7 +119,7 @@ class NativeGateway:
             wire, output, input_tokens, output_tokens = self.send(messages, job)
             receipt = self.runtime.observe(Capture(origin_ref=self.origin.origin_ref,
                 idempotency_key="model:" + job.job_id, kind="model-response", media_type="application/json", origin_class="generated",
-                lineage=("native-inference-gateway/1.1", self.binding.model_id, self.binding.revision, job.job_id),
+                lineage=("native-inference-gateway/1.2", self.binding.model_id, self.binding.revision, job.job_id),
                 profiles={"context_sha256": episode.context.sha256, "messages_sha256": digest(messages), "input_tokens": input_tokens, "output_tokens": output_tokens},
                 completeness="complete", expected_bytes=len(wire), expected_sha256=sha256(wire).hexdigest()), BytesIO(wire))
             if input_tokens is not None and input_tokens != count:
@@ -152,7 +162,7 @@ class VllmBackend:
             raise ValueError("model context must be a positive explicit integer")
         self.endpoint, self.model_id, self.transport = endpoint.rstrip("/"), model_id, transport
         self.max_model_len = max_model_len
-        self.generation_schema = generation_schema()
+        self.generation_schema = serving_schema()
         # Ephemeral serving secret is never included in messages, bindings or journals.
         self.headers = {"Authorization": "Bearer " + api_key} if api_key else {}
 

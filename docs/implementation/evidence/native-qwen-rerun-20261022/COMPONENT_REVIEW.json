@@ -1,0 +1,146 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "Native Qwen serving and autonomous C0 handoff",
+  "gate": "integration",
+  "requested_scope": "authorized implementation and neutral real-model integration check",
+  "input_revision": "f7f25cd + final 0.9.4.dev0 source manifests",
+  "reviewer": {
+    "role": "implementer_and_self_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "RP-R03/R04/R06/R10 and existing C4 bounded inference obligations govern native capture, exact admission and no duplicate inference.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Selected logical ports are implemented; complete isolation, teacher contract and wider C0-C7 lanes remain open.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse native owner stores and vLLM serving preprocessing; no new service, representation family or domain script.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Generated fixtures/model output remain attributed; schema, usage or reference failure is preserved, not repaired into success.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "Two retained native calls fit 16K; failed costs are retained, first returned usage unknown. Full profile, energy and aggregate cost remain unqualified.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "Completed calls reopen without inference, but C0 semantic rejection leaves pending work and no bounded recovery; full restore unqualified.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Version-specific official vLLM preprocessing and JSON controls were inspected; runtime pins and counts remain empirical obligations.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "28 CPU and two live native cases pass; autonomous required case failed; all current raw evidence exported. Wider gates remain open.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "NR-F01",
+      "status": "open",
+      "description": "Known invalid native response leaves pending C0 turn and C4 awaiting import without a bounded correction/yield transition.",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ],
+      "affected_requirements": [
+        "RP-R04",
+        "RP-R06",
+        "RP-R10"
+      ]
+    },
+    {
+      "id": "NR-F02",
+      "status": "open",
+      "description": "Student supplied no information-seeking operation and used API names as hypothesis references. Valid wire alone would not satisfy the objective.",
+      "blocking_at": [
+        "integration"
+      ],
+      "affected_requirements": [
+        "RP-R02",
+        "RP-R04"
+      ]
+    }
+  ],
+  "changes": [
+    "Serving-compatible envelope with native key bounds preserved",
+    "Explicit XGrammar backend and correct output metadata",
+    "Generic reference semantics in model control",
+    "Verified per-trial exports; no validation bypass"
+  ],
+  "verification": [
+    {
+      "name": "28 CPU checks",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-rerun-20261022/cpu-tests.json",
+      "revision": "0.9.4.dev0 pinned hashes"
+    },
+    {
+      "name": "Two native numeric/image imports and completed-call reopening",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-rerun-20261022/native-success/edi-native-result.json",
+      "revision": "0.9.4.dev0 live 70-file manifest"
+    },
+    {
+      "name": "Autonomous instrument acquisition/report",
+      "kind": "integration",
+      "required": true,
+      "status": "failed",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-rerun-20261022/controller-failure/edi-native-loop3-result.json",
+      "revision": "0.9.4.dev0 live 70-file manifest"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "failed",
+  "verdict": "revise",
+  "next_step": "Review/implement bounded rejection recovery and inquiry selection as proposed in NATIVE_OUTPUT_RECOVERY_PLAN.md; repeat the same fixture with retained costs."
+}

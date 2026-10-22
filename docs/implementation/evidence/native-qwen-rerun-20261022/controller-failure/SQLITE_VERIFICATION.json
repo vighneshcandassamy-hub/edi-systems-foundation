@@ -1,0 +1,64 @@
+{
+  "scope": "SQLite structural integrity of extracted copy; original exported archive retained unchanged",
+  "databases": [
+    {
+      "file": "edi-native-loop3-state/c0.sqlite",
+      "integrity": "ok",
+      "tables": [
+        "info",
+        "plans",
+        "inputs",
+        "steps",
+        "attempts",
+        "io_benchmark_c0",
+        "io_investigation_c0"
+      ]
+    },
+    {
+      "file": "edi-native-loop3-state/c1.sqlite",
+      "integrity": "ok",
+      "tables": [
+        "store_info",
+        "sources",
+        "origins",
+        "observations",
+        "sqlite_sequence",
+        "payload_chunks",
+        "checkpoints"
+      ]
+    },
+    {
+      "file": "edi-native-loop3-state/c1.world.sqlite3",
+      "integrity": "ok",
+      "tables": [
+        "world_info",
+        "world_commits",
+        "world_versions",
+        "world_heads",
+        "world_dependencies",
+        "world_consumers"
+      ]
+    },
+    {
+      "file": "edi-native-loop3-state/c4.sqlite",
+      "integrity": "ok",
+      "tables": [
+        "reason_info",
+        "episodes",
+        "commands",
+        "io_inference_c4"
+      ]
+    },
+    {
+      "file": "edi-native-loop3-state/c7.sqlite",
+      "integrity": "ok",
+      "tables": [
+        "agency_info",
+        "artifacts",
+        "sqlite_sequence",
+        "policy_versions",
+        "io_benchmark_c7"
+      ]
+    }
+  ]
+}

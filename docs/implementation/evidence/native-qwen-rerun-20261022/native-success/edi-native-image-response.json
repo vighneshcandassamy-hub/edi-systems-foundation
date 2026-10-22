@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "workspace_id": "neutral-native-integration-v1",
+  "inquiry_id": "image",
+  "request_id": "gateway:10a04ad6-9932-42b2-853c-eda50e616ac6",
+  "response_id": "gateway:10a04ad6-9932-42b2-853c-eda50e616ac6",
+  "job_id": "10a04ad6-9932-42b2-853c-eda50e616ac6",
+  "context_sha256": "a913fcbff11b532c469d06ab93b6d00a23907a262f9c687aeb30310d0535703e",
+  "origin": "external-model-output",
+  "attribution": "REAL PINNED QWEN INFERENCE; authored neutral inputs; fixed weights",
+  "binding": {
+    "schema_version": "1.0",
+    "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "provider": "local-kaggle",
+    "engine": "vllm/0.21.0",
+    "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "weights": "fixed"
+  },
+  "rationale_summary": "The image contains a red square on the left and a blue circle on the right. This is a direct visual observation of the selected evidence. No causal or identity claims are supported without additional evidence.",
+  "hypotheses": [
+    {
+      "schema_version": "1.0",
+      "hypothesis_id": "hypothesis-001",
+      "claim": "The image contains a red square on the left and a blue circle on the right.",
+      "mechanism": "Direct visual inspection of the selected evidence.",
+      "scope": "The selected evidence and its native metadata.",
+      "support": [
+        {
+          "schema_version": "1.0",
+          "workspace_id": "neutral-native-integration-v1",
+          "record_id": "dcc0935a-af33-40e4-bc2e-50e9dbc66c08",
+          "sha256": "31aba28ccbca908db2c03110ab79ca7f93ea7d50f1fb6ce2e3b1709cbde7eac8",
+          "selector": "whole-object",
+          "origin_class": "generated",
+          "lineage": [
+            "authored-neutral-engineering-v1",
+            "image"
+          ]
+        }
+      ],
+      "counterevidence": [],
+      "dependence_groups": [],
+      "assumptions": [],
+      "confounders": [],
+      "applicability": "Visible in the selected evidence; no causal or identity claims are supported.",
+      "unknowns": [
+        "No causal or identity claims are supported; only direct visual observation is valid."
+      ],
+      "predictions": [],
+      "rivals": [],
+      "status": "candidate"
+    }
+  ],
+  "tests": [],
+  "frontier": [],
+  "candidates": [],
+  "operation_proposals": [],
+  "feedback_disposition": "not-applicable",
+  "input_tokens": 9701,
+  "output_tokens": 426,
+  "limitation": "Only direct visual observation is supported; no causal or identity claims are valid without additional evidence."
+}

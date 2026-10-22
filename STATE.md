@@ -173,3 +173,12 @@ On integration/free-qwen-native-20261022, development 0.9.2.dev0 / edi-c4/0.5.2 
 All 27 Windows CPU engineering checks pass at retained source hashes. Native numeric/image completion and two subsequent controller failures were observed in Kaggle, but the interactive session expired before raw evidence export. A third trial was launched and its outcome is unknown. Recovery found no prior results/source/environment; a replacement session was stopped. Observations, original failures, input source pins and final CPU records are preserved explicitly without claiming replayable live qualification.
 
 No forest package byte changed. No added paid service or training was used; teacher disabled. Final-source live inference, autonomous C0 success, C5/C6, full P1, hard isolation, teacher integration, forest and comparison remain unverified/open. Next: repeat final-source numeric/image diagnostics and immediately export/hash-verify reports and raw state before another trial; then repeat the neutral C0 fixture with the same evidence discipline.
+
+
+## Retained native rerun checkpoint - 22 October 2026
+
+Development 0.9.4.dev0 on integration/free-qwen-native-20261022: all 28 Windows CPU checks pass. Two real native numeric/image responses were accepted, exact token counts matched, and completed gateway calls reopened without new inference. Each produced one formal C4 hypothesis and no C3 representation candidate. The source, model pins, exact responses and complete raw stores were exported and verified.
+
+The C0 instrument trial failed on its first response: zero hypotheses and operation proposals, with a test whose target IDs were public operation names. Only the bootstrap mission request occurred; no instrument read or final report. The model did not demonstrate information seeking. Known rejection also leaves a pending C0 turn / awaiting-import C4 job without a bounded correction path. Overall integration remains incomplete; no forest or scientific comparison ran.
+
+All four trials were exported before proceeding: 48 files and 17 database copies across four retained archives verified. Known measured usage is 37,685 input / 2,634 output tokens; initial server-rejected usage remains unknown. No paid service was added; teacher disabled; Kaggle session off. Full P1/C5/C6/isolation/teacher/forest/comparison gates remain open. See the current Native Qwen integration guide, RESULTS.json and proposed NATIVE_OUTPUT_RECOVERY_PLAN.md. Historical expired-session evidence remains explicitly unrecovered.

@@ -1,0 +1,23 @@
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+ModuleNotFoundError: No module named 'wrapt'
+resolving_model
+downloading_model
+hashing_model
+starting_server
+native_edi_probe
+Traceback (most recent call last):
+  File "/kaggle/working/edi-native-source/examples/free-compute/edi_native_probe.py", line 115, in run
+    response=gateway.complete(job,ep)
+  File "/kaggle/working/edi-native-source/src/edi/reason/gateway.py", line 109, in complete
+    wire, output, input_tokens, output_tokens = self.send(messages, job)
+                                                ~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/kaggle/working/edi-native-source/examples/free-compute/edi_native_probe.py", line 42, in send
+    result = backend(messages, job)
+  File "/kaggle/working/edi-native-source/src/edi/reason/gateway.py", line 181, in __call__
+    raise EDIError(ErrorCode.UNAVAILABLE, "vLLM inference returned non-success; original dispatch remains unresolved")
+edi.shared.errors.EDIError: vLLM inference returned non-success; original dispatch remains unresolved
+native_edi_failed
+native_edi_failed
+Tesla T4, 9479 MiB, 0 %
+Tesla T4, 9479 MiB, 0 %
+

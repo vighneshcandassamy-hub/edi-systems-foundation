@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "workspace_id": "neutral-native-integration-v1",
+  "inquiry_id": "numeric",
+  "request_id": "gateway:0204cde3-a980-488b-aafc-48500a27b23c",
+  "response_id": "gateway:0204cde3-a980-488b-aafc-48500a27b23c",
+  "job_id": "0204cde3-a980-488b-aafc-48500a27b23c",
+  "context_sha256": "d31fa71e8bbd15fbcd9971a99a396522b02cb8f5d7e25fe9371b6f8576704833",
+  "origin": "external-model-output",
+  "attribution": "REAL PINNED QWEN INFERENCE; authored neutral inputs; fixed weights",
+  "binding": {
+    "schema_version": "1.0",
+    "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "provider": "local-kaggle",
+    "engine": "vllm/0.21.0",
+    "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "weights": "fixed"
+  },
+  "rationale_summary": "The table shows a clear linear pattern: count increases by 4 per step, starting from 8 at step 0. This is a simple arithmetic progression. The pattern is confined to the provided data and does not represent a causal law. No external evidence or context is available to support broader claims.",
+  "hypotheses": [
+    {
+      "schema_version": "1.0",
+      "hypothesis_id": "numeric-pattern-linear-001",
+      "claim": "The table exhibits a linear pattern: count increases by 4 per step, starting from 8 at step 0.",
+      "mechanism": "The pattern is a simple arithmetic progression: count = 4 * step + 8.",
+      "scope": "The pattern is confined to the 4-row table provided; no extrapolation to causal laws or external systems.",
+      "support": [
+        {
+          "schema_version": "1.0",
+          "workspace_id": "neutral-native-integration-v1",
+          "record_id": "e70326cf-d802-49df-be0d-c8c39f5765b8",
+          "sha256": "f38938a42b8d6f0305946f950653fd1bf64927486dba19c2f42f0b7159e4ce97",
+          "selector": "whole-object",
+          "origin_class": "generated",
+          "lineage": [
+            "authored-neutral-engineering-v1",
+            "numeric"
+          ]
+        }
+      ],
+      "counterevidence": [],
+      "dependence_groups": [],
+      "assumptions": [
+        "The table represents a deterministic sequence of steps with increasing counts.",
+        "The step index is the independent variable; count is the dependent variable."
+      ],
+      "confounders": [],
+      "applicability": "Applies to the authored table structure; does not extend to causal laws or empirical systems.",
+      "unknowns": [
+        "The table is not a causal law; it is an authored pattern with no empirical validation.",
+        "The pattern may be arbitrary or designed for testing purposes; no external context is provided."
+      ],
+      "predictions": [
+        {
+          "schema_version": "1.0",
+          "conditions": "step = 3",
+          "expected_observation": "count = 20",
+          "rival_difference": "A rival hypothesis might predict a different slope or intercept, but none are supported by the data.",
+          "channel": "numeric-pattern-linear-001",
+          "horizon": "step 3"
+        }
+      ],
+      "rivals": [],
+      "status": "candidate"
+    }
+  ],
+  "tests": [
+    {
+      "schema_version": "1.0",
+      "test_id": "numeric-pattern-linear-001-test-001",
+      "discriminates": [
+        "numeric-pattern-linear-001"
+      ],
+      "intervention_or_observation": "Observation; the pattern is derived from the table.",
+      "expected_differences": "A rival hypothesis would predict a different slope or intercept, but none are supported by the data.",
+      "channels": [
+        "numeric-pattern-linear-001"
+      ],
+      "feasibility": "High; the pattern is clearly defined and can be tested with simple arithmetic.",
+      "confounding_controls": "None; the pattern is deterministic and self-contained.",
+      "cost_and_risk": "Low; no external action or resource use required.",
+      "identifiability_limit": "The pattern is identifiable within the provided data; no external context is available to test broader claims.",
+      "kind": "observation",
+      "status": "proposed-unrun"
+    }
+  ],
+  "frontier": [],
+  "candidates": [],
+  "operation_proposals": [],
+  "feedback_disposition": "not-applicable",
+  "input_tokens": 9715,
+  "output_tokens": 861,
+  "limitation": "The evidence is bounded to a single authored table; no causal laws or empirical systems are involved. The pattern is deterministic and linear, but cannot be generalized to real-world phenomena without additional context."
+}

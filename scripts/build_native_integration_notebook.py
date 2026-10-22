@@ -59,7 +59,7 @@ with Path("/kaggle/working/edi-native-loop3-worker.log").open("w") as log:
 print("Native C0 loop worker PID",child.pid)
 '''
 sections=[
- ("Private EDI native integration","Two engineering diagnostics using real fixed Qwen3-VL inference, not the forest benchmark. Select free GPU T4 x2 and enable internet for setup. No OpenAI credentials belong here. Run each launch cell once; repeat only monitors. Wait for each worker/server to stop before proceeding. Do not use Run All."),
+ ("Private EDI native integration","Two engineering diagnostics using real fixed Qwen3-VL inference, not the forest benchmark. Select free GPU T4 x2 and enable internet for setup. No OpenAI credentials belong here. Run each launch cell once; repeat only monitors. Wait for each worker/server to stop, then export/hash-verify that trial before proceeding. Do not use Run All."),
  ("Install",install),("Launch numeric/image native check",launch),("Monitor native check",monitor("edi-native-")),
  ("Launch C0 neutral instrument investigation",loop),("Monitor C0 investigation",monitor("edi-native-loop3-"))]
 cells=[]
@@ -67,7 +67,7 @@ for i,(heading,body) in enumerate(sections):
  cells.append({"cell_type":"markdown","id":f"native-heading-{i}","metadata":{},"source":[f"# {heading}\n"]+([body] if i==0 else [])})
  if i:
   ast.parse(body);cells.append({"cell_type":"code","id":f"native-code-{i}","metadata":{},"execution_count":None,"outputs":[],"source":body.splitlines(keepends=True)})
-cells.append({"cell_type":"markdown","id":"native-preserve","metadata":{},"source":["Download the edi-native JSON reports, logs, package inventory and both state directories from Output before stopping the session. Preserve failures. The examples stop owned model servers; also stop the Kaggle session to preserve quota. Generated source cache is temporary. This notebook is generated from repository source and contains no recorded outputs; actual evidence is stored separately."]})
+cells.append({"cell_type":"markdown","id":"native-preserve","metadata":{},"source":["Download and hash-verify each trial's JSON reports, logs, source/package inventory and raw state immediately, before another trial or session shutdown. The latest C0 trial failed; rerunning unchanged is not a readiness claim. Preserve failures. The examples stop owned model servers; also stop the Kaggle session to preserve quota. Generated source cache is temporary. This notebook is generated from repository source and contains no recorded outputs; actual evidence is stored separately."]})
 notebook={"cells":cells,"metadata":{"kernelspec":{"display_name":"Python 3","language":"python","name":"python3"},"language_info":{"name":"python"},"edi_source_bundle_sha256":sha},"nbformat":4,"nbformat_minor":5}
 (EXAMPLES/"edi-native-integration.ipynb").write_bytes((json.dumps(notebook,indent=2)+"\n").encode())
 print(json.dumps({"notebook":"examples/free-compute/edi-native-integration.ipynb","source_files":len(files),"source_bundle_sha256":sha,"code_cells_parsed":5,"recorded_outputs":0}))

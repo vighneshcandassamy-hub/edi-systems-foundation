@@ -1,0 +1,54 @@
+{
+  "kind": "per-trial-native-export",
+  "trial_prefix": "edi-native-loop3-",
+  "state_folder_present": true,
+  "files": {
+    "edi-native-loop3-server.json": {
+      "sha256": "7740d0830acd114d2634914dafd60eec5d2639d3920f2fe52d2fb013e404cdee",
+      "bytes": 1861
+    },
+    "edi-native-loop3-result.json": {
+      "sha256": "cf406da1b401de17000ba11e8ac80c7ac91424f45e5b431b721bb7440b820278",
+      "bytes": 3645
+    },
+    "edi-native-loop3-install-tail.txt": {
+      "sha256": "28da4bb96cca0e81449d91e2cbf7259ae347508773e3254fae202eb53bd6cc87",
+      "bytes": 25856
+    },
+    "edi-native-loop3-source-manifest.json": {
+      "sha256": "49c409a5ca9650a6fc3b227b6f22952e2c40fd4f11d3b9ea5d1d41d5a09ddcc2",
+      "bytes": 7327
+    },
+    "edi-native-loop3-server.log": {
+      "sha256": "1709a426473a23f56e29d2b347310510c08c1c9d40d187ebcd387cd43c9f8dad",
+      "bytes": 19879
+    },
+    "edi-native-loop3-worker.log": {
+      "sha256": "de754d575334484902b7e4fac30c987eccb49a1cdae64fb84cbe2b3c8b1aa090",
+      "bytes": 1080
+    },
+    "edi-native-loop3-inventory.json": {
+      "sha256": "954c3ee4243f35493b5372a09fa3fafb0ded58583466686be9ba9dcdf3341fd2",
+      "bytes": 199
+    },
+    "edi-native-loop3-packages.txt": {
+      "sha256": "347e076226b6b76c5e6372b3e07c67c2af9697ed04b4c97a9e5dd296e0c26291",
+      "bytes": 3911
+    },
+    "edi-native-loop3-qwen-artifacts.json": {
+      "sha256": "e5112f4caca44fde4ad09ed6c662b9e2769a10a1429e8b47eaddb9572a0370fb",
+      "bytes": 2360
+    },
+    "edi-native-state.zip": {
+      "sha256": "27381f7d42e1ebb67271cfd107cd0b77d1b9ad5a6290d5fbfdd6336ed77d371c",
+      "bytes": 16123
+    }
+  },
+  "large_install_log": {
+    "sha256": "759e3bee15a0103369d03971b817e1e5fab64b607dfbc6cf89632f8aa0089b3c",
+    "bytes": 77885,
+    "exported": "last 20000 decoded characters only"
+  },
+  "teacher_enabled": false,
+  "forest_benchmark_started": false
+}

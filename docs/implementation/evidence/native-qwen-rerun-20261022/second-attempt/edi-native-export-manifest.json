@@ -1,0 +1,58 @@
+{
+  "kind": "per-trial-native-export",
+  "trial_prefix": "edi-native-",
+  "state_folder_present": true,
+  "files": {
+    "edi-native-server.json": {
+      "sha256": "0723af5cb36549c8b847094dc8648c463752dfc6137b927e2ab167aefc1e18f0",
+      "bytes": 1861
+    },
+    "edi-native-source-manifest.json": {
+      "sha256": "5eecd919fddebd8b6ead449c37e47fcb770afa905d445c9a381f88ce0cc45001",
+      "bytes": 7327
+    },
+    "edi-native-numeric-request.json": {
+      "sha256": "07496a32e49fccff3083a8454660e20642ea80f2914436b8219f1e2cf39bb8c9",
+      "bytes": 41225
+    },
+    "edi-native-qwen-artifacts.json": {
+      "sha256": "e5112f4caca44fde4ad09ed6c662b9e2769a10a1429e8b47eaddb9572a0370fb",
+      "bytes": 2360
+    },
+    "edi-native-worker.log": {
+      "sha256": "defd2f2fd415074142291bd90cf24277a0f54b05765c6ac07f4424e1a5be09da",
+      "bytes": 942
+    },
+    "edi-native-result.json": {
+      "sha256": "5569b5fd5ca702c3f18218e219b1d3226f316d960c1ba99bc148e4dcd3aef758",
+      "bytes": 8664
+    },
+    "edi-native-inventory.json": {
+      "sha256": "954c3ee4243f35493b5372a09fa3fafb0ded58583466686be9ba9dcdf3341fd2",
+      "bytes": 199
+    },
+    "edi-native-packages.txt": {
+      "sha256": "347e076226b6b76c5e6372b3e07c67c2af9697ed04b4c97a9e5dd296e0c26291",
+      "bytes": 3911
+    },
+    "edi-native-install-tail.txt": {
+      "sha256": "28da4bb96cca0e81449d91e2cbf7259ae347508773e3254fae202eb53bd6cc87",
+      "bytes": 25856
+    },
+    "edi-native-server.log": {
+      "sha256": "d0b60feb08bd099148922d91ffa8da98c0248e210b83ec8b1be7d9872ab7d219",
+      "bytes": 20989
+    },
+    "edi-native-state.zip": {
+      "sha256": "b53f8ce9d0dc9f6531ad064f3e604d677a4babde6cb5fe76307b841fb5447b78",
+      "bytes": 17106
+    }
+  },
+  "large_install_log": {
+    "sha256": "759e3bee15a0103369d03971b817e1e5fab64b607dfbc6cf89632f8aa0089b3c",
+    "bytes": 77885,
+    "exported": "last 20000 decoded characters only"
+  },
+  "teacher_enabled": false,
+  "forest_benchmark_started": false
+}

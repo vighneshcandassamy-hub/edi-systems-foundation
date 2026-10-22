@@ -1,0 +1,8 @@
+{
+  "scope": "Offline reconstruction of one retained request, not whole application recovery",
+  "messages_sha256": "64fc9c9ee9cc82a6bca972898dff87055c302a99f52132f63aa61c0a65ca774e",
+  "matches_original_journal": true,
+  "image_parts": 0,
+  "network_or_model_calls": 0,
+  "source_version": "0.9.4.dev0"
+}

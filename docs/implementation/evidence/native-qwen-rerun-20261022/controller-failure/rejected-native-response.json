@@ -1,0 +1,55 @@
+{
+  "raw_record_id": "c62ec6b8-826f-4b7c-83fa-3d21299c9525",
+  "response": {
+    "attribution": "REAL QWEN; public authored neutral instrument; no forest/evaluator data",
+    "binding": {
+      "engine": "vllm/0.21.0",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "provider": "local-kaggle",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "schema_version": "1.0",
+      "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "weights": "fixed"
+    },
+    "candidates": [],
+    "context_sha256": "67c1f33849a9ff81f04dd73bd757dfb95f96f2b7b12bbc5e49c5749800980781",
+    "feedback_disposition": "not-applicable",
+    "frontier": [],
+    "hypotheses": [],
+    "input_tokens": 8728,
+    "inquiry_id": "native-neutral-loop3:inquiry:0",
+    "job_id": "19cdbc98-e51c-4171-8914-0eed89d2c07d",
+    "limitation": "Bounded selected context; not an exhaustive system or causal identification. Source claims/model candidates are fallible; retrieval failure is not absence of evidence. Older acquired records remain in C1; this is a bounded cut, not the full archive.",
+    "operation_proposals": [],
+    "origin": "external-model-output",
+    "output_tokens": 475,
+    "rationale_summary": "The mission requires reporting what changed, what can be inferred, and what remains uncertain using available instrument records. The context provides a public operation protocol and a mission specification that defines the scope as 'Authored neutral engineering instrument only; not empirical science or a forest case.' The available evidence is limited to a single document (record_id: 154b3ce7-5b6c-4c11-b9af-98a7b0e3c539) describing the mission, protocol, and available operations. No further evidence or world context is provided. Therefore, the report must be constrained to what is explicitly stated in this document and acknowledge the bounded nature of the inquiry.",
+    "request_id": "gateway:19cdbc98-e51c-4171-8914-0eed89d2c07d",
+    "response_id": "gateway:19cdbc98-e51c-4171-8914-0eed89d2c07d",
+    "schema_version": "1.0",
+    "tests": [
+      {
+        "channels": [
+          "public-api"
+        ],
+        "confounding_controls": "None; no external variables or confounders are identified in the bounded context.",
+        "cost_and_risk": "Low; no operational or computational risk is involved in retrieving and reporting from the provided context.",
+        "discriminates": [
+          "mission",
+          "read",
+          "sources",
+          "submit"
+        ],
+        "expected_differences": "No differences expected between hypotheses since no evidence or world context is provided to support rival explanations.",
+        "feasibility": "High; the mission is self-contained and can be fulfilled using the provided protocol and evidence.",
+        "identifiability_limit": "The scope is bounded to 'Authored neutral engineering instrument only; not empirical science or a forest case.' This limits the scope of inference and prevents causal identification.",
+        "intervention_or_observation": "Observation; the report is based on the available evidence and mission specification.",
+        "kind": "observation",
+        "schema_version": "1.0",
+        "status": "proposed-unrun",
+        "test_id": "mission-observation-0"
+      }
+    ],
+    "workspace_id": "native-neutral-loop-v3"
+  }
+}

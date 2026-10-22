@@ -1,0 +1,97 @@
+{
+  "kind": "real-C0-neutral-loop",
+  "forest_benchmark_started": false,
+  "teacher_enabled": false,
+  "max_turns": 4,
+  "max_tokens": 65536,
+  "mission": {
+    "objective": "Use the available instrument records to report what changed, what can be inferred, and what remains uncertain. Obtain information as needed and submit a report.",
+    "scope": "Authored neutral engineering instrument only; not empirical science or a forest case.",
+    "public_operations": {
+      "mission": {
+        "body": {},
+        "returns": "original mission"
+      },
+      "sources": {
+        "body": {},
+        "returns": "available document identifiers and descriptions"
+      },
+      "read": {
+        "body": {
+          "document_id": "an acquired document identifier"
+        },
+        "returns": "document content"
+      },
+      "submit": {
+        "body": {
+          "conclusion": "your report and limitations"
+        },
+        "returns": "closure receipt"
+      }
+    },
+    "proposal_protocol": "Request a public operation as {\"operation\":\"world-call\",\"arguments\":{\"operation\":\"a public operation name\",\"body\":{}}}. Put operation-specific arguments inside body. C0 assigns request_id. You may choose an operation or yield with your reason; the operator supplies no investigation sequence."
+  },
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "provider": "local-kaggle",
+    "engine": "vllm/0.21.0",
+    "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "weights": "fixed"
+  },
+  "turns": [],
+  "requests": [
+    {
+      "operation": "mission",
+      "body": {
+        "request_id": "native-neutral-loop3:mission"
+      },
+      "http_status": 200,
+      "response": {
+        "mission": {
+          "objective": "Use the available instrument records to report what changed, what can be inferred, and what remains uncertain. Obtain information as needed and submit a report.",
+          "scope": "Authored neutral engineering instrument only; not empirical science or a forest case.",
+          "public_operations": {
+            "mission": {
+              "body": {},
+              "returns": "original mission"
+            },
+            "sources": {
+              "body": {},
+              "returns": "available document identifiers and descriptions"
+            },
+            "read": {
+              "body": {
+                "document_id": "an acquired document identifier"
+              },
+              "returns": "document content"
+            },
+            "submit": {
+              "body": {
+                "conclusion": "your report and limitations"
+              },
+              "returns": "closure receipt"
+            }
+          },
+          "proposal_protocol": "Request a public operation as {\"operation\":\"world-call\",\"arguments\":{\"operation\":\"a public operation name\",\"body\":{}}}. Put operation-specific arguments inside body. C0 assigns request_id. You may choose an operation or yield with your reason; the operator supplies no investigation sequence."
+        }
+      }
+    }
+  ],
+  "inference_calls": [
+    {
+      "job_id": "19cdbc98-e51c-4171-8914-0eed89d2c07d",
+      "input_tokens": 8728,
+      "output_tokens": 475,
+      "elapsed_seconds": 72.92334068800028
+    }
+  ],
+  "status": "failed",
+  "scope": "Authored trusted-SDK engineering fixture; no hard isolation or C5/C6/scientific qualification",
+  "error_type": "EDIError",
+  "error": "test references unknown hypothesis",
+  "total_input_tokens": 8728,
+  "total_output_tokens": 475,
+  "usage_unknown": false
+}

@@ -1,0 +1,71 @@
+{
+  "source": "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+  "requirements": [
+    {
+      "id": "RP-R02",
+      "native_cases": [
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "evidence_status": "See current CPU/native-success/controller-failure records; no full system requirement PASS"
+    },
+    {
+      "id": "RP-R03",
+      "native_cases": [
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "evidence_status": "See current CPU/native-success/controller-failure records; no full system requirement PASS"
+    },
+    {
+      "id": "RP-R04",
+      "native_cases": [
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "evidence_status": "See current CPU/native-success/controller-failure records; no full system requirement PASS"
+    },
+    {
+      "id": "RP-R05",
+      "native_cases": [
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "evidence_status": "See current CPU/native-success/controller-failure records; no full system requirement PASS"
+    },
+    {
+      "id": "RP-R06",
+      "native_cases": [
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "evidence_status": "See current CPU/native-success/controller-failure records; no full system requirement PASS"
+    },
+    {
+      "id": "RP-R10",
+      "native_cases": [
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "evidence_status": "See current CPU/native-success/controller-failure records; no full system requirement PASS"
+    }
+  ],
+  "interface_delta": "Exact model admission, operation-specific native grammar and terminal state; no domain-directed sequence or authority change",
+  "scientific_cases": "All original unexecuted claims remain unexecuted; no held-out or oracle input used",
+  "scope": "Native numeric/image scoped pass; autonomous investigation failed; full requirements not qualified",
+  "next_prospective_cases": [
+    "NR-V001",
+    "NR-V002",
+    "NR-V003",
+    "NR-V004",
+    "NR-V005",
+    "NR-V006",
+    "NR-V007"
+  ]
+}

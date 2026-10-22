@@ -393,5 +393,29 @@ class ConnectionTests(unittest.TestCase):
         self.assertIn("rationale_summary",schema["required"])
 
 
+    def test_serving_grammar_defers_only_native_map_key_lengths(self):
+        from edi.reason.operation_args import generation_schema, serving_schema
+        from edi.analyze.contracts import ScenarioSpec
+        native, served = generation_schema(), serving_schema()
+        def restore(value, original):
+            if isinstance(value, dict):
+                if "propertyNames" in original:
+                    self.assertNotIn("propertyNames", value)
+                    value["propertyNames"] = original["propertyNames"]
+                for key in value:
+                    if key != "propertyNames":
+                        restore(value[key], original[key])
+            elif isinstance(value, list):
+                for x, y in zip(value, original): restore(x, y)
+        restore(served, native)
+        self.assertEqual(served, native)
+        base = dict(scenario_id="s",start=0,end=1,output_times=[0,1],
+                    initial_state={"x":1},assumptions=["authored control"],rationale="key bounds")
+        self.assertEqual(ScenarioSpec.model_validate_json(canonical(base)).initial_state,{"x":1})
+        for key in ("", "x"*257):
+            with self.assertRaises(ValueError):
+                ScenarioSpec.model_validate_json(canonical({**base,"initial_state":{key:1}}))
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

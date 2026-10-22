@@ -66,3 +66,8 @@ Contract self-review remains REVISE; live runtime/integration/scientific qualifi
 ## Native free-model checkpoint — 22 October 2026
 
 See [Native Qwen integration](NATIVE_QWEN_INTEGRATION.md): 27 CPU checks pass at final source; earlier live observations lost their raw Kaggle records before export, two controller trials failed and a third outcome is unknown. Final live integration is unverified. Forest/C5/C6/isolation/teacher/full P1/comparison gates remain open. The frozen benchmark is unchanged.
+
+
+## Retained rerun - 22 October 2026
+
+[Current native guide](NATIVE_QWEN_INTEGRATION.md): 28 CPU checks and two real numeric/image handoffs pass; autonomous C0 failed on unknown hypothesis references and supplied no operation. Four trials were exported and verified before proceeding. Overall integration remains incomplete. The [recovery/inquiry plan](NATIVE_OUTPUT_RECOVERY_PLAN.md) records the next development gate. The frozen forest package and all wider qualification gates are unchanged.

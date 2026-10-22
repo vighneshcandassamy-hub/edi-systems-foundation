@@ -1,0 +1,14 @@
+{
+  "scope": "artifact/source/trace/hash checks, not independent qualification",
+  "CPU_source_files": 66,
+  "source_files_in_live_prepared_bundle": 70,
+  "bundle_sha256": "3d1c44453c191b114d9bf899dd8692e95c14e4a9a71a4c3d554eb1112c36b2ec",
+  "notebook_cells_AST_parsed": 5,
+  "outputs": 0,
+  "retained_exported_file_hashes": 48,
+  "native_trace_IDs_resolved": 6,
+  "C0_rejected_job_state_observed": "awaiting-import",
+  "frozen_benchmark_tree": "9f2e070d1df5ff5d5638d0536e4104920b5a9184",
+  "frozen_diff_empty": true,
+  "autonomous_case": "failed"
+}

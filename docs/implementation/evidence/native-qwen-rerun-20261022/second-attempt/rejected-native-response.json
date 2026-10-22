@@ -1,0 +1,105 @@
+{
+  "raw_record_id": "ed93ff37-406c-4f76-a94d-92c547ce89a5",
+  "response": {
+    "attribution": "REAL PINNED QWEN INFERENCE; authored neutral inputs; fixed weights",
+    "binding": {
+      "engine": "vllm/0.21.0",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "provider": "local-kaggle",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "schema_version": "1.0",
+      "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "weights": "fixed"
+    },
+    "candidates": [],
+    "context_sha256": "d89972ace5faf14253eb1c2383932af3ba6b8c0580457392c87102df38b2908f",
+    "feedback_disposition": "not-applicable",
+    "frontier": [],
+    "hypotheses": [
+      {
+        "applicability": "This pattern is a deterministic, stepwise progression with fixed increments.",
+        "assumptions": [
+          "The step index is a discrete, ordered variable.",
+          "The count is a measurable, non-negative quantity.",
+          "The relationship is linear and additive across steps."
+        ],
+        "claim": "The count increases by 4 at each step, starting from 8 at step 0.",
+        "confounders": [],
+        "counterevidence": [],
+        "dependence_groups": [],
+        "hypothesis_id": "numeric-step-pattern-001",
+        "mechanism": "The pattern is a simple arithmetic sequence defined by the formula: count = 8 + 4 * step.",
+        "predictions": [
+          {
+            "channel": "numeric-step-pattern-001",
+            "conditions": "step = 3",
+            "expected_observation": "count = 20",
+            "horizon": "step 3",
+            "rival_difference": "A rival hypothesis might predict a different increment or offset, but none are supported by the data.",
+            "schema_version": "1.0"
+          }
+        ],
+        "rivals": [
+          "The pattern is random noise.",
+          "The pattern is exponential growth.",
+          "The pattern is periodic with a hidden cycle."
+        ],
+        "schema_version": "1.0",
+        "scope": "The pattern is confined to the provided 4-step sequence.",
+        "status": "candidate",
+        "support": [
+          {
+            "lineage": [
+              "authored-neutral-engineering-v1",
+              "numeric"
+            ],
+            "origin_class": "generated",
+            "record_id": "2c5c104c-bb7e-46ff-8188-eab1ccf26e59",
+            "schema_version": "1.0",
+            "selector": "whole-object",
+            "sha256": "f38938a42b8d6f0305946f950653fd1bf64927486dba19c2f42f0b7159e4ce97",
+            "workspace_id": "neutral-native-integration-v1"
+          }
+        ],
+        "unknowns": [
+          "The pattern may extend beyond the observed steps.",
+          "The pattern may be part of a larger system with hidden variables."
+        ]
+      }
+    ],
+    "input_tokens": 9541,
+    "inquiry_id": "numeric",
+    "job_id": "18f54667-6842-46be-a29e-319c88826a67",
+    "limitation": "The evidence is limited to a 4-step sequence; no causal mechanism or external drivers are identified. The pattern is not verified as a law, only as a consistent observation.",
+    "operation_proposals": [],
+    "origin": "external-model-output",
+    "output_tokens": 872,
+    "rationale_summary": "The data shows a clear arithmetic progression: step 0 \u2192 8, step 1 \u2192 12, step 2 \u2192 16. This suggests a linear relationship with a fixed increment of 4. No evidence supports a causal law or external drivers. The hypothesis is retained as a candidate for further testing.",
+    "request_id": "gateway:18f54667-6842-46be-a29e-319c88826a67",
+    "response_id": "gateway:18f54667-6842-46be-a29e-319c88826a67",
+    "schema_version": "1.0",
+    "tests": [
+      {
+        "channels": [
+          "numeric-step-pattern-001"
+        ],
+        "confounding_controls": "None; the data is authored and deterministic.",
+        "cost_and_risk": "Low; no external action required.",
+        "discriminates": [
+          "random noise",
+          "exponential growth",
+          "periodic cycle"
+        ],
+        "expected_differences": "A random pattern would show no consistent increment. Exponential growth would show multiplicative increases. Periodic cycles would show repeating values.",
+        "feasibility": "High; the pattern is simple and can be tested with minimal resources.",
+        "identifiability_limit": "The pattern is identifiable within the given data, but cannot be generalized without additional evidence.",
+        "intervention_or_observation": "Observation; no intervention needed.",
+        "kind": "observation",
+        "schema_version": "1.0",
+        "status": "proposed-unrun",
+        "test_id": "numeric-step-pattern-001-test-001"
+      }
+    ],
+    "workspace_id": "neutral-native-integration-v1"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "llguidance_version": "1.3.0",
+  "native_propertyNames_unchanged": true,
+  "original": {
+    "compiled": true,
+    "grammar_bytes": 37297
+  },
+  "lowered": {
+    "compiled": true,
+    "grammar_bytes": 37291
+  }
+}

@@ -6,10 +6,11 @@ from urllib.error import URLError
 from huggingface_hub import HfApi, snapshot_download
 from PIL import Image, ImageDraw
 ROOT=Path("/kaggle/temp/edi-free-vllm")
-OUT=Path("/kaggle/working")
-REPORT={"stage":"starting","sampler":"pytorch","profile_version":"kaggle-t4-fp16-v1","benchmark_started":False,"paid_fallback":False,"model":"Qwen/Qwen3-VL-8B-Instruct",
+OUT=Path(os.environ.get("EDI_DIAGNOSTIC_OUT","/kaggle/working"))
+OUT.mkdir(parents=True,exist_ok=True)
+REPORT={"stage":"starting","sampler":"pytorch","profile_version":"kaggle-t4-native16k-xgrammar-v2","benchmark_started":False,"paid_fallback":False,"model":"Qwen/Qwen3-VL-8B-Instruct",
         "profile":{"dtype":"float16","tensor_parallel_size":2,"max_model_len":16384,"image_count":1,
-                   "max_image_pixels":65536,"max_output_tokens_per_request":32,"temperature":0,"seed":17}}
+                   "max_image_pixels":65536,"max_output_tokens_per_request":4096,"temperature":0,"seed":17}}
 def update(stage,**fields):
     REPORT.update(stage=stage,**fields)
     temp=OUT/"edi-native-loop3-server.json.tmp"
@@ -55,6 +56,7 @@ try:
     command=[sys.executable,"-m","vllm.entrypoints.openai.api_server",
         "--model",str(snapshot),"--served-model-name",REPORT["model"],
         "--tokenizer",str(snapshot),"--host","127.0.0.1","--port","8008",
+        "--structured-outputs-config.backend","xgrammar",
         "--dtype","half","--tensor-parallel-size","2","--max-model-len","16384",
         "--gpu-memory-utilization","0.90","--max-num-seqs","1",
         "--max-num-batched-tokens","16384","--enforce-eager","--disable-custom-all-reduce",

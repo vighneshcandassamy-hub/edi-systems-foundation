@@ -1,0 +1,85 @@
+{
+  "kind": "retained native rerun",
+  "version": "0.9.4.dev0",
+  "parent_revision": "f7f25cde7f5434e71ff2e1677802ef50b50f6591",
+  "CPU_tests": 28,
+  "native_numeric_image": "passed_scoped",
+  "autonomous_controller": "failed",
+  "trial_exports": [
+    {
+      "stage": "stage1",
+      "files_sha256_verified": 11,
+      "state_archive_entries": 4,
+      "archive_crc_verified": true,
+      "source_files_equal_pinned_local": 70,
+      "raw_state_retained": true
+    },
+    {
+      "stage": "stage2",
+      "files_sha256_verified": 11,
+      "state_archive_entries": 4,
+      "archive_crc_verified": true,
+      "source_files_equal_pinned_local": 70,
+      "raw_state_retained": true
+    },
+    {
+      "stage": "stage3",
+      "files_sha256_verified": 16,
+      "state_archive_entries": 4,
+      "archive_crc_verified": true,
+      "source_files_equal_pinned_local": 70,
+      "raw_state_retained": true
+    },
+    {
+      "stage": "stage4",
+      "files_sha256_verified": 10,
+      "state_archive_entries": 5,
+      "archive_crc_verified": true,
+      "source_files_equal_pinned_local": 70,
+      "raw_state_retained": true
+    }
+  ],
+  "files_verified": 48,
+  "database_copies_checked": 17,
+  "native_tokens": {
+    "input": 19416,
+    "output": 1287
+  },
+  "controller_tokens": {
+    "input": 8728,
+    "output": 475
+  },
+  "known_measured_tokens_all_trials": {
+    "input": 37685,
+    "output": 2634,
+    "incomplete_total": true,
+    "reason": "First server-rejected request returned no usage; it is not counted as measured zero"
+  },
+  "native_semantic_self_check": {
+    "numeric": "Correct +4 arithmetic pattern; causal/generalization limits stated",
+    "image": "Correct red square left, blue circle right",
+    "formal_hypotheses": 2,
+    "model_C3_candidates": 0,
+    "independent_review": false
+  },
+  "controller_result": {
+    "hypotheses": 0,
+    "operation_proposals": 0,
+    "test_discriminates": [
+      "mission",
+      "read",
+      "sources",
+      "submit"
+    ],
+    "broker_requests": [
+      "mission"
+    ],
+    "final_report_submitted": false,
+    "C0_pending_turn": 0
+  },
+  "session_off_observed": true,
+  "paid_services_added": false,
+  "teacher_enabled": false,
+  "full_P1_C5_C6_isolation_forest_comparison": "not qualified / not run",
+  "raw_archives": "C:/Users/csscs/Documents/Codex/2026-10-22/edi-free-setup/native-rerun-evidence/{stage1,stage2,stage3,stage4}/edi-native-state.zip"
+}

@@ -1,0 +1,21 @@
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+ModuleNotFoundError: No module named 'wrapt'
+resolving_model
+downloading_model
+hashing_model
+starting_server
+native_edi_probe
+Traceback (most recent call last):
+  File "/kaggle/working/edi-native-fixed-source/examples/free-compute/edi_native_probe.py", line 116, in run
+    imported=runtime.reasoning.import_response(response)
+  File "/kaggle/working/edi-native-fixed-source/src/edi/reason/service.py", line 323, in import_response
+    self._validate_response(old, response, job)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/working/edi-native-fixed-source/src/edi/reason/service.py", line 259, in _validate_response
+    raise EDIError(ErrorCode.INVALID, "rival must reference another retained hypothesis")
+edi.shared.errors.EDIError: rival must reference another retained hypothesis
+native_edi_failed
+native_edi_failed
+Tesla T4, 0 MiB, 60 %
+Tesla T4, 0 MiB, 100 %
+

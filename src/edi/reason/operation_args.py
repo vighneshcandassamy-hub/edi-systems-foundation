@@ -68,3 +68,24 @@ def generation_schema():
         "operation":{"const":operation,"type":"string"},
         "arguments":shape},["operation","arguments"]) for operation,shape in arguments.items()]}
     return schema
+
+
+def serving_schema():
+    """vLLM decoding envelope; native validation still enforces every key bound.
+
+    vLLM 0.21 rejects propertyNames. Only the known native Identifier map-key
+    length constraint is deferred to native validation, never to C0 dispatch.
+    Operation names/shapes, values and all other generated constraints remain.
+    """
+    def compatible(value):
+        if isinstance(value, dict):
+            value = {key: compatible(item) for key, item in value.items()}
+            if "propertyNames" in value:
+                if value["propertyNames"] != {"minLength": 1, "maxLength": 256}:
+                    raise ValueError("Unsupported new native map-key constraint")
+                value.pop("propertyNames")
+            return value
+        if isinstance(value, list):
+            return [compatible(item) for item in value]
+        return value
+    return compatible(generation_schema())
