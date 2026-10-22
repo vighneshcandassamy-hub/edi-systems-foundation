@@ -164,3 +164,12 @@ Combined-tree foundation verification additionally passes on the desktop: 40 imp
 [Free compute setup](docs/implementation/FREE_COMPUTE_SETUP.md) records actual neutral model execution: GPT-6.1 Sol through the owner's ChatGPT Plus plan (22 tokens), and pinned Qwen3-VL-8B through vLLM 0.21.0 on Kaggle T4 x2. Arithmetic and one image request completed; the server stopped and both GPUs were released. The tested student profile is FP16/TP2/4096 context/one bounded image, not the full proposed benchmark profile. A reusable Kaggle notebook and selected exact evidence are saved; all 14 original local exports had matching SHA-256 hashes. Initial ensurepip and FlashInfer sampler failures remain recorded.
 
 No EDI production module, frozen benchmark byte, model weight, credential or browser session was added or changed. The live EDI/C6/isolation/P1/Cedar gates remain open. OpenAI plan availability is demonstrated, but the EDI teacher adapter and restricted connection have not been qualified.
+
+
+## Native Qwen source integration checkpoint — 22 October 2026
+
+On integration/free-qwen-native-20261022, development 0.9.2.dev0 / edi-c4/0.5.2 adds authenticated exact vLLM tokenization, prompt-usage reconciliation, selected protocol rendering, operation-specific generated argument grammar/native validation, and a C0 final-turn terminal-state correction. Fresh workspaces are required. [Native checkpoint](docs/implementation/NATIVE_QWEN_INTEGRATION.md) and its evidence directory are authoritative for this increment.
+
+All 27 Windows CPU engineering checks pass at retained source hashes. Native numeric/image completion and two subsequent controller failures were observed in Kaggle, but the interactive session expired before raw evidence export. A third trial was launched and its outcome is unknown. Recovery found no prior results/source/environment; a replacement session was stopped. Observations, original failures, input source pins and final CPU records are preserved explicitly without claiming replayable live qualification.
+
+No forest package byte changed. No added paid service or training was used; teacher disabled. Final-source live inference, autonomous C0 success, C5/C6, full P1, hard isolation, teacher integration, forest and comparison remain unverified/open. Next: repeat final-source numeric/image diagnostics and immediately export/hash-verify reports and raw state before another trial; then repeat the neutral C0 fixture with the same evidence discipline.

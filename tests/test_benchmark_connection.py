@@ -25,7 +25,7 @@ from edi.observe.benchmark import BrokerConnector, http_json
 from edi.observe.contracts import Capture, OriginSpec
 from edi.reason.config import ReasoningProfile
 from edi.reason.contracts import InquiryRequest, ModelBinding, Response, StepRequest
-from edi.reason.gateway import NativeGateway, OpenAITeacherBackend
+from edi.reason.gateway import NativeGateway, OpenAITeacherBackend, VllmBackend
 from edi.shared.config import LocalProfile
 from edi.shared.contracts import utc_now
 from edi.shared.durable_io import CallJournal, canonical, digest
@@ -287,6 +287,110 @@ class ConnectionTests(unittest.TestCase):
         self.assertEqual(investigation.state()['state'], 'completed')
         self.assertEqual(len(self.runtime.reasoning.get('dynamic:inquiry:0').responses), 1)
         self.assertTrue(self.runtime.reasoning.get('dynamic:inquiry:1').context.evidence)
+
+
+    def test_live_transport_auth_exact_count_and_json_mode(self):
+        calls = []
+        def transport(url, body, headers, **kwargs):
+            calls.append((url,body,headers))
+            if url.endswith("/tokenize"):
+                return 200, canonical({"count":100,"max_model_len":16384}).encode()
+            _, output, incoming, outgoing = self.fixture_response(body["messages"],None)
+            return 200, canonical({"choices":[{"message":{"content":output},"finish_reason":"stop"}],
+                "usage":{"prompt_tokens":incoming,"completion_tokens":outgoing}}).encode()
+        backend=VllmBackend("http://127.0.0.1:8008",self.binding.model_id,api_key="authored-test-key",transport=transport)
+        ep=self.inquiry()
+        gateway=self.gateway(send=backend,counter=backend.count_tokens)
+        response=gateway.complete(ep.jobs[-1],ep)
+        self.runtime.reasoning.import_response(response)
+        self.assertEqual(response.input_tokens,100)
+        self.assertEqual(len(calls),2)
+        self.assertTrue(all(c[2]=={"Authorization":"Bearer authored-test-key"} for c in calls))
+        self.assertEqual(calls[0][1]["messages"],calls[1][1]["messages"])
+        self.assertEqual(calls[1][1]["response_format"]["type"],"json_schema")
+        self.assertTrue(calls[1][1]["response_format"]["json_schema"]["strict"])
+
+    def test_tokenizer_profile_drift_stops_before_generation(self):
+        calls=[]
+        def transport(url,body,headers,**kwargs):
+            calls.append(url)
+            return 200,canonical({"count":100,"max_model_len":4096}).encode()
+        backend=VllmBackend("http://127.0.0.1:8008",self.binding.model_id,transport=transport)
+        ep=self.inquiry()
+        with self.assertRaises(EDIError) as caught:
+            self.gateway(send=backend,counter=backend.count_tokens).complete(ep.jobs[-1],ep)
+        self.assertEqual(caught.exception.code,ErrorCode.INTEGRITY)
+        self.assertEqual(calls,["http://127.0.0.1:8008/tokenize"])
+
+    def test_usage_mismatch_retains_pending_job_and_no_second_inference(self):
+        sent=[]
+        def transport(messages,job):
+            sent.append(True)
+            wire,output,_,out=self.fixture_response(messages,job)
+            return wire,output,101,out
+        gateway=self.gateway(send=transport)
+        ep=self.inquiry()
+        with self.assertRaises(EDIError) as caught: gateway.complete(ep.jobs[-1],ep)
+        self.assertEqual(caught.exception.code,ErrorCode.INTEGRITY)
+        self.assertEqual(self.runtime.reasoning.get("inquire").jobs[-1].status,"awaiting-import")
+        with self.assertRaises(EDIError): gateway.complete(ep.jobs[-1],ep)
+        self.assertEqual(len(sent),1)
+
+    def test_native_messages_include_selected_protocol_questions(self):
+        ep=self.inquiry()
+        messages,_=self.gateway().messages(ep.jobs[-1],ep)
+        control=json.loads(messages[0]["content"])
+        self.assertEqual(control["protocol_questions"],[q.model_dump(mode="json") for q in ep.jobs[-1].questions])
+
+    def test_serving_window_and_teacher_role_are_not_bypassed(self):
+        calls=[]
+        def transport(*args,**kwargs): calls.append(True); raise AssertionError("must not dispatch")
+        backend=VllmBackend("http://127.0.0.1:8008",self.binding.model_id,max_model_len=4096,transport=transport)
+        job=self.inquiry().jobs[-1]
+        with self.assertRaises(EDIError): backend([],job)
+        with self.assertRaises(EDIError): backend([],job.model_copy(update={"role":"teacher"}))
+        self.assertEqual(calls,[])
+
+
+    def test_operation_argument_contracts_distinguish_asset_and_public_wrappers(self):
+        ep=self.inquiry()
+        messages,_=self.gateway().messages(ep.jobs[-1],ep)
+        contracts=json.loads(messages[0]["content"])["operation_argument_contracts"]
+        self.assertEqual(set(contracts["acquire-asset"]),{"document_id"})
+        self.assertEqual(set(contracts["world-call"]),{"operation","body"})
+        self.assertEqual(set(contracts),{"world-call","acquire-asset","select-context","analysis-compile","analysis-run","teacher-review","yield"})
+
+
+    def test_completed_controller_at_exact_turn_limit_stays_completed(self):
+        chosen_count=0
+        def chosen(messages,job):
+            nonlocal chosen_count
+            operation={"operation":"world-call","arguments":{"operation":"sources" if chosen_count==0 else "submit",
+                "body":{} if chosen_count==0 else {"conclusion":"AUTHORED TERMINAL-STATE CONTROL; NO MODEL"}}}
+            chosen_count+=1
+            output={"rationale_summary":"Authored boundary fixture","limitation":"No inference ran","operation_proposals":[operation]}
+            return canonical(output).encode(),canonical(output),100,50
+        loop=Investigation(self.runtime,self.connector,self.gateway(send=chosen),self.root/"c0.sqlite","limit-boundary",max_turns=2)
+        self.assertEqual(loop.step()["state"],"ready")
+        self.assertEqual(loop.step()["state"],"completed")
+        self.assertEqual(loop.state()["state"],"completed")
+        self.assertEqual(chosen_count,2)
+
+
+    def test_native_operation_shapes_reject_nested_control_wrappers(self):
+        from edi.reason.contracts import OperationProposal
+        from edi.reason.operation_args import generation_schema
+        bad=[
+            {"operation":"world-call","arguments":{"operation":"world-call","body":{}}},
+            {"operation":"acquire-asset","arguments":{"operation":"read","body":{"document_id":"id"}}}]
+        for item in bad:
+            with self.assertRaises(ValueError): OperationProposal.model_validate_json(canonical(item))
+        good=OperationProposal.model_validate_json(canonical({"operation":"acquire-asset","arguments":{"document_id":"id"}}))
+        self.assertEqual(good.arguments,{"document_id":"id"})
+        schema=generation_schema()
+        self.assertNotIn("binding",schema["properties"])
+        self.assertEqual(len(schema["$defs"]["OperationProposal"]["anyOf"]),7)
+        self.assertIn("rationale_summary",schema["required"])
 
 
 if __name__ == '__main__':

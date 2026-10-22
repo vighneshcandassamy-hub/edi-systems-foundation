@@ -9,6 +9,7 @@ from urllib.parse import urlsplit
 from edi.observe.benchmark import http_json
 from edi.observe.contracts import Capture, OriginSpec
 from edi.reason.contracts import Response
+from edi.reason.operation_args import generation_schema
 from edi.shared.durable_io import CallJournal, canonical, digest
 from edi.shared.errors import EDIError, ErrorCode
 
@@ -32,7 +33,7 @@ class NativeGateway:
         self.journal = CallJournal(journal_path, "inference_c4", max_calls=max_calls, max_bytes=128 * 1024**2)
         self.lock = Lock()
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.model.outputs", native_source_id=binding.model_id,
-            epoch=binding.revision, deliverer=binding.provider, channel="inference-response", adapter="edi-native-gateway/1.0", binding_basis="configured",
+            epoch=binding.revision, deliverer=binding.provider, channel="inference-response", adapter="edi-native-gateway/1.1", binding_basis="configured",
             descriptor={"binding": binding.model_dump(mode="json"), "attribution": attribution}))
 
     def messages(self, job, episode):
@@ -42,10 +43,28 @@ class NativeGateway:
         earlier = {j.job_id for j in episode.jobs[:next(i for i, j in enumerate(episode.jobs) if j.job_id == job.job_id)]}
         exported["data"] = {"inquiry": episode.request.model_dump(mode="json"), "context": episode.context.model_dump(mode="json"),
             "prior_responses": [r.model_dump(mode="json") for r in episode.responses if r.job_id in earlier]}
-        control = {**exported["control"], "response_identity": {"workspace_id": episode.request.workspace_id,
+        control = {**exported["control"], "protocol_questions": [q.model_dump(mode="json") for q in job.questions], "response_identity": {"workspace_id": episode.request.workspace_id,
             "inquiry_id": episode.request.inquiry_id, "job_id": job.job_id, "context_sha256": episode.context.sha256,
             "binding": job.binding.model_dump(mode="json"), "origin": "external-model-output"},
             "operation_rules": "At most one operation_proposals entry. Propose an ordinary public operation, explicit acquired-asset read, context selection, supported analysis, teacher review or yield. Proposals are not executed calls. Never request operator admission or adoption."}
+        control["operation_contract_version"] = "edi-native-operations/1.1"
+        control["operation_argument_contracts"] = {
+            "world-call": {"operation": "public operation name from available access catalogue",
+                           "body": "operation-specific public request object; C0 assigns request_id"},
+            "acquire-asset": {"document_id": "one public document ID string; arguments has ONLY this key, no operation/body wrapper"},
+            "select-context": {"evidence": "array of acquired C1 {record_id, offset, length} objects",
+                               "world_ids": "array of available C3 representation IDs"},
+            "analysis-compile": {"workspace_id": "current workspace", "request_id": "new stable request ID",
+                                 "model_revision": "pinned C3 revision", "mechanism_ref": "{record_id, version}",
+                                 "use_policy": "accepted-for-use or candidate-exploration", "rationale": "reason"},
+            "analysis-run": {"workspace_id": "current workspace", "request_id": "new stable request ID",
+                             "run_id": "new run ID", "compiled_id": "existing compiled artifact ID",
+                             "mode": "numerical or qualitative", "scenario": "native ScenarioSpec",
+                             "solver": "native SolverSpec or null; do not invent schemas or identifiers"},
+            "teacher-review": {"trigger": "novel, unresolved, consequential or student-escalation"},
+            "yield": {"reason": "why investigation stops"}
+        }
+        control["generation_rule"] = "Return one JSON object. Transport supplies response_identity, attribution and measured token usage. Supply rationale_summary and limitation plus any substantive optional Response fields. Never fabricate execution or evidence."
         control["response_identity"].update(request_id="gateway:" + job.job_id, response_id="gateway:" + job.job_id)
         parts = [{"type": "text", "text": canonical(exported["data"])}]
         image_refs = []
@@ -90,9 +109,11 @@ class NativeGateway:
             wire, output, input_tokens, output_tokens = self.send(messages, job)
             receipt = self.runtime.observe(Capture(origin_ref=self.origin.origin_ref,
                 idempotency_key="model:" + job.job_id, kind="model-response", media_type="application/json", origin_class="generated",
-                lineage=("native-inference-gateway/1.0", self.binding.model_id, self.binding.revision, job.job_id),
+                lineage=("native-inference-gateway/1.1", self.binding.model_id, self.binding.revision, job.job_id),
                 profiles={"context_sha256": episode.context.sha256, "messages_sha256": digest(messages), "input_tokens": input_tokens, "output_tokens": output_tokens},
                 completeness="complete", expected_bytes=len(wire), expected_sha256=sha256(wire).hexdigest()), BytesIO(wire))
+            if input_tokens is not None and input_tokens != count:
+                raise EDIError(ErrorCode.INTEGRITY, "recorded model prompt usage differs from exact preflight count; reconcile original call")
             raw = json.loads(output)
             # These are transport identities, not invented student content.
             identities = {"workspace_id": episode.request.workspace_id, "inquiry_id": episode.request.inquiry_id,
@@ -116,20 +137,53 @@ class NativeGateway:
 
 
 class VllmBackend:
-    """Local serving transport; caller supplies exact pinned processor/token counter."""
-    def __init__(self, endpoint, model_id, *, transport=http_json):
+    """Pinned loopback serving and exact server-side chat/vision token admission.
+
+    The caller owns the serving revision/configuration pin. /tokenize must use
+    the same chat template and multimodal settings as inference. The gateway
+    compares its count to actual prompt usage before accepting any response.
+    """
+    def __init__(self, endpoint, model_id, *, api_key=None, max_model_len=16384,
+                 transport=http_json):
         p = urlsplit(endpoint)
         if p.scheme != "http" or p.hostname != "127.0.0.1" or p.path not in ("", "/") or not p.port or p.query or p.fragment or p.username:
             raise ValueError("vLLM must be a configured loopback service")
+        if type(max_model_len) is not int or max_model_len < 1:
+            raise ValueError("model context must be a positive explicit integer")
         self.endpoint, self.model_id, self.transport = endpoint.rstrip("/"), model_id, transport
+        self.max_model_len = max_model_len
+        self.generation_schema = generation_schema()
+        # Ephemeral serving secret is never included in messages, bindings or journals.
+        self.headers = {"Authorization": "Bearer " + api_key} if api_key else {}
+
+    def count_tokens(self, messages):
+        status, wire = self.transport(self.endpoint + "/tokenize",
+            {"model": self.model_id, "messages": messages, "add_generation_prompt": True},
+            self.headers, timeout=120)
+        if status != 200:
+            raise EDIError(ErrorCode.UNAVAILABLE, "exact server tokenization unavailable; inference not authorized")
+        value = json.loads(wire)
+        count, context = value.get("count"), value.get("max_model_len")
+        if type(count) is not int or count < 0 or type(context) is not int or context != self.max_model_len:
+            raise EDIError(ErrorCode.INTEGRITY, "tokenizer count/context differs from pinned serving profile")
+        return count
 
     def __call__(self, messages, job):
-        status, wire = self.transport(self.endpoint + "/v1/chat/completions", {"model": self.model_id, "messages": messages,
-            "max_tokens": job.output_token_cap, "temperature": 0, "seed": 17}, {}, timeout=120)
+        if job.role != "student" or job.binding.model_id != self.model_id:
+            raise EDIError(ErrorCode.DENIED, "student transport/model differs from native job")
+        if job.input_token_cap + job.output_token_cap > self.max_model_len:
+            raise EDIError(ErrorCode.CAPACITY, "reserved input/output exceed pinned model context")
+        status, wire = self.transport(self.endpoint + "/v1/chat/completions", {
+            "model": self.model_id, "messages": messages, "max_tokens": job.output_token_cap,
+            "temperature": 0, "seed": 17, "response_format": {"type": "json_schema", "json_schema": {"name": "edi_native_response", "strict": True, "schema": self.generation_schema}}},
+            self.headers, timeout=120)
         if status != 200:
             raise EDIError(ErrorCode.UNAVAILABLE, "vLLM inference returned non-success; original dispatch remains unresolved")
         raw = json.loads(wire)
-        return wire, raw["choices"][0]["message"]["content"], raw.get("usage", {}).get("prompt_tokens"), raw.get("usage", {}).get("completion_tokens")
+        choice = raw["choices"][0]
+        # Preserve incomplete content through C1 before native JSON validation;
+        # truncated JSON cannot be repaired or silently retried by this transport.
+        return wire, choice["message"]["content"], raw.get("usage", {}).get("prompt_tokens"), raw.get("usage", {}).get("completion_tokens")
 
 
 class OpenAITeacherBackend:

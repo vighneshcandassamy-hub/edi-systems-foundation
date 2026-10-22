@@ -1,0 +1,26 @@
+{
+  "input_commit": "c6c5791301a3a9c9de1d2b28ed90d2958c74bf27",
+  "bundle_sha256": "f53e0fcdc622edf3e3f6487687a1c330007f5ef74041c5019fda9260e5791c8c",
+  "source_sha256": {
+    "src/edi/reason/gateway.py": "c25b1683a6057bf6d6e4fffe80aa6bc1707bfdfd1dec15202898ffc73fd41dc2",
+    "src/edi/reason/contracts.py": "b116bdf5af628ce3b7e2cee52d230093b6f29030534d6cb47a473436633ff794",
+    "src/edi/reason/operation_args.py": "b3eabbbf8ee1d9f1990267df37450cc4fc18fbae66d7122be5a1486ec43eedb3",
+    "src/edi/reason/protocol.py": "b18f12024e2c05d9e11c880b821cf41df5ece719f93fa946a0aabb647d073efe",
+    "src/edi/inquiry/benchmark.py": "2d12cd43b3bc7e421208672f94ffb4548521181c644713babd28e8c9a7bd6965",
+    "examples/free-compute/edi_neutral_investigation_v3.py": "a8db7950692d4e21a6ec27859b1a2bc40df44b728d067160edb85c5264e19b72",
+    "examples/free-compute/edi_neutral_loop_worker_v3.py": "55f6a1d8d769af51cef068b5b8ddd896ffe0bcc4326744fa619122fa1d3ea9ac"
+  },
+  "mission_unchanged": true,
+  "instrument_csv_unchanged": true,
+  "limits_unchanged": {
+    "max_turns": 4,
+    "max_tokens": 65536
+  },
+  "changes": [
+    "Operation-specific generation JSON schema and native argument validation",
+    "C4 implementation0.5.2, fresh workspace",
+    "Preserve terminal completion at exact turn limit"
+  ],
+  "prior_attempts_preserved": true,
+  "expected_operation_sequence_supplied": false
+}

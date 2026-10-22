@@ -61,3 +61,8 @@ Contract self-review remains REVISE; live runtime/integration/scientific qualifi
 ## Subsequent free-compute feasibility — 22 October 2026
 
 [The free-compute checkpoint](FREE_COMPUTE_SETUP.md) supersedes the earlier assumption that paid GPU access and a separately funded API key are necessary for a neutral model check. Actual Qwen text/image inference on free Kaggle T4 x2 and GPT-6.1 Sol access through the owner's Plus plan succeeded. The scoped 4096-token student profile and plan-access probe are not a live EDI benchmark connection; all remaining integration, full-budget, isolation and scientific gates above retain their stated status.
+
+
+## Native free-model checkpoint — 22 October 2026
+
+See [Native Qwen integration](NATIVE_QWEN_INTEGRATION.md): 27 CPU checks pass at final source; earlier live observations lost their raw Kaggle records before export, two controller trials failed and a third outcome is unknown. Final live integration is unverified. Forest/C5/C6/isolation/teacher/full P1/comparison gates remain open. The frozen benchmark is unchanged.

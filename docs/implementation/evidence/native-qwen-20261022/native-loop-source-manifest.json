@@ -1,0 +1,10 @@
+{
+  "input_commit": "c6c5791301a3a9c9de1d2b28ed90d2958c74bf27",
+  "base_native_bundle_sha256": "50c3f88a9e8983fc2a03437cc86a73b5fe454af4708abacd93914e11bce86337",
+  "loop_bundle_sha256": "847b22cdb57f6f0d46bbf311716710e0f62a6b2ddfe2240f48f6c01033625caa",
+  "files": {
+    "examples/free-compute/edi_neutral_investigation.py": "67979cbc51e947f4f5890e3939e6d90c92de610181ca9d32d8ad014e0c968967",
+    "examples/free-compute/edi_neutral_loop_worker.py": "58f09cadc0ad162aac2aa5cbe00a6e5ee99909f9099e28354e9421774e0b21de"
+  },
+  "scope": "Additional authored neutral C0 loop fixture; production source unchanged from first native run"
+}

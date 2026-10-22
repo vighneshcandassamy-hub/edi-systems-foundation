@@ -1,0 +1,6 @@
+{
+  "scope": "report consistency only",
+  "error": "finding needs ID, description and state",
+  "correction": "Add explicit open status and runtime/integration blocking gates; gate remains REVISE",
+  "product_failure": false
+}

@@ -1,0 +1,26 @@
+python.exe : test_completed_controller_at_exact_turn_limit_stays_completed 
+(test_benchmark_connection.ConnectionTests.test_completed_controller_at_exact_turn_limit_stays_completed) ... FAIL
+At line:4 char:1
++ & '.\.venv-benchmark\Scripts\python.exe' -m unittest test_benchmark_c ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_completed_...leted) ... FAIL:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+======================================================================
+FAIL: test_completed_controller_at_exact_turn_limit_stays_completed 
+(test_benchmark_connection.ConnectionTests.test_completed_controller_at_exact_turn_limit_stays_completed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-21\edi-meadows-runtime\tests\test_benchmark_connection.py", line 375, 
+in test_completed_controller_at_exact_turn_limit_stays_completed
+    self.assertEqual(loop.state()["state"],"completed")
+AssertionError: 'yielded' != 'completed'
+- yielded
++ completed
+
+
+----------------------------------------------------------------------
+Ran 1 test in 1.572s
+
+FAILED (failures=1)

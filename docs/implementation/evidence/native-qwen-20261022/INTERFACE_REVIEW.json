@@ -1,0 +1,739 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Benchmark deployment with optional external teacher; proposed isolation and live model paths unqualified; delta: native Qwen loopback authentication/tokenization/protocol rendering and actual usage checks; no topology or authority change; final-source operation grammar and terminal completion; neutral fixture substitutes public WORLD diagnostic endpoint only",
+  "input_revision": "c6c5791301a3a9c9de1d2b28ed90d2958c74bf27 + 0.9.2.dev0; exact new source hashes in cpu-tests.json and native-source-manifest.json",
+  "components": [
+    {
+      "id": "EDI",
+      "name": "EDI v0.9.0 C0\u2013C7 plus proposed adapters"
+    },
+    {
+      "id": "WORLD",
+      "name": "Frozen v0.2 world broker"
+    },
+    {
+      "id": "MODEL",
+      "name": "Local fixed-weight inference worker"
+    },
+    {
+      "id": "EVAL",
+      "name": "Offline operator evaluator"
+    },
+    {
+      "id": "TEACHER",
+      "name": "Optional GPT-6.1 Sol provider through restricted outbound gateway"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "EDI",
+      "to": "WORLD",
+      "disposition": "required",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "RP-IF01"
+      ]
+    },
+    {
+      "from": "EDI",
+      "to": "MODEL",
+      "disposition": "required",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "RP-IF03"
+      ]
+    },
+    {
+      "from": "EDI",
+      "to": "EVAL",
+      "disposition": "required",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "RP-IF06"
+      ]
+    },
+    {
+      "from": "EDI",
+      "to": "TEACHER",
+      "disposition": "optional",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "EX-IF07"
+      ]
+    },
+    {
+      "from": "WORLD",
+      "to": "EDI",
+      "disposition": "required",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "RP-IF02"
+      ]
+    },
+    {
+      "from": "WORLD",
+      "to": "MODEL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "WORLD",
+      "to": "EVAL",
+      "disposition": "required",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "RP-IF05"
+      ]
+    },
+    {
+      "from": "WORLD",
+      "to": "TEACHER",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "MODEL",
+      "to": "EDI",
+      "disposition": "required",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "RP-IF04"
+      ]
+    },
+    {
+      "from": "MODEL",
+      "to": "WORLD",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "MODEL",
+      "to": "EVAL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "MODEL",
+      "to": "TEACHER",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "EVAL",
+      "to": "EDI",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "EVAL",
+      "to": "WORLD",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "EVAL",
+      "to": "MODEL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "EVAL",
+      "to": "TEACHER",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "TEACHER",
+      "to": "EDI",
+      "disposition": "optional",
+      "rationale": "Only contract-scoped flow; teacher disabled until separately qualified.",
+      "contract_ids": [
+        "EX-IF08"
+      ]
+    },
+    {
+      "from": "TEACHER",
+      "to": "WORLD",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "TEACHER",
+      "to": "MODEL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    },
+    {
+      "from": "TEACHER",
+      "to": "EVAL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": []
+    }
+  ],
+  "contract_profiles": {
+    "run-boundary": {
+      "ownership": "README sections 2 and 6: each C owner retains its own state; broker owns world; evaluator owns post-run analysis.",
+      "authority": "README sections 2 and 4: exact public mission grants only; model has no tool/operator authority; evaluator receives artifacts only after closure.",
+      "shape_versions": "SOURCE_PINS and RUN_CONFIG: native source/public schemas retained; new intent/image/clock schemas proposed and block contract acceptance; exact processor/model versions required.",
+      "identity_scope": "Run/session/workspace plus issuer/source/epoch/document/occurrence, exact selectors and hashes; duplicate payload is not duplicate occurrence.",
+      "time_order": "README clock contract: simulation year, source time, receipt, commit and knowledge cut distinct; inference takes a pinned cut; offline transfer after closure.",
+      "delivery_idempotency": "README restart contract: original stable request/body and operation replay; changed reuse conflicts; no assumed inference HTTP deduplication.",
+      "commit_recovery": "README section 2: no distributed transaction; write-ahead intent, broker replay, C1 occurrence commit then C0 ack; unresolved workers require trusted reconciliation.",
+      "retention": "Private durable run volumes and acquired bytes through analysis; no runtime garbage collection of supporting evidence; capacity yields. Secrets/databases excluded from Git.",
+      "resource_limits": "RUN_CONFIG proposed root budgets and stricter owner/public page/chunk/job caps; all prompt/image/helper/failed work charged or unknown.",
+      "errors": "Explicit denied/unsupported/unavailable/conflict/partial/capacity/timeout/uncertain completion; no semantic answer fabrication or silent fallback.",
+      "feedback_grounding": "Public acquired records remain reports/simulation observations; model/teacher/derived/simulated output is not independent external evidence; no evaluator-to-runtime feedback."
+    }
+  },
+  "contracts": [
+    {
+      "id": "RP-IF01",
+      "from": "EDI",
+      "to": "WORLD",
+      "title": "Authorized public requests",
+      "producer_port": "C0/C1 acquisition or C0/C7 authorization via proposed adapter",
+      "consumer_port": "POST /v2/<operation>",
+      "requirement_ids": [
+        "RP-R02",
+        "RP-R05",
+        "RP-R06",
+        "RP-R10"
+      ],
+      "verification_ids": [
+        "CONN-V01",
+        "CONN-V05"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {},
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md"
+    },
+    {
+      "id": "RP-IF02",
+      "from": "WORLD",
+      "to": "EDI",
+      "title": "Public results and acquired bytes",
+      "producer_port": "Broker public response",
+      "consumer_port": "Proposed C1 broker intake and C0 receipt reconciliation",
+      "requirement_ids": [
+        "RP-R03",
+        "RP-R06",
+        "RP-R08"
+      ],
+      "verification_ids": [
+        "CONN-V01",
+        "CONN-V05"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "shape_versions": "Frozen public operation shapes; raw/base64 chunk hash/offset and paging captured into C1. New C1 capture mapping is proposed; no private state payload."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md"
+    },
+    {
+      "id": "RP-IF03",
+      "from": "EDI",
+      "to": "MODEL",
+      "title": "Pinned selected inference context",
+      "producer_port": "C4 InferencePort.complete(job, episode), proposed native/image binding",
+      "consumer_port": "Local vLLM bounded request",
+      "requirement_ids": [
+        "RP-R03",
+        "RP-R04",
+        "RP-R07"
+      ],
+      "verification_ids": [
+        "LIVE-V01",
+        "LIVE-V04",
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "authority": "POST /tokenize and /v1/chat/completions accept selected context only. Ephemeral bearer header is not model context. Model API has no shell, arbitrary file, operator, broker or evaluator tool. Same Kaggle uid remains shared, so hard process/filesystem isolation is unqualified. No forest/evaluator assets are transferred.",
+        "ownership": "C4 owns pinned inquiry/jobs and inference journal. vLLM owns preprocessing/generation only. C1 durably records exact returned wire bytes; C3 alone owns candidate admission.",
+        "shape_versions": "edi-c4/0.5.2; seven operation-specific strict generation variants and native argument validation. Fresh workspaces; old malformed responses require archived reader. Final grammar live acceptance unverified.",
+        "identity_scope": "Job/inquiry/workspace/context SHA and exact messages digest remain bound; transport fills only native identity, attribution and usage. Model-supplied conflicting identities are rejected. Inputs remain authored/generated occurrences.",
+        "time_order": "C4 freezes the original context/revision before count and dispatch. Count precedes inference; C1 wire commit precedes strict response acceptance. No retroactive evidence cut or prospective empirical forecast is implied.",
+        "delivery_idempotency": "Atomic C4 claim permits one inference. Exact completed replay is read from the journal. Unknown completion is not retried. Tokenization may repeat as a non-generation preprocessing operation; it cannot dispatch an action.",
+        "commit_recovery": "Independent C1/C4 commits; no external-call transaction. Known wire is retained before usage/content checks. Dispatched or invalid-completion calls stay unresolved; completed journal replay does not generate again. Whole-application restore remains unqualified. Session loss erased all owner stores before export; live recovery is not established.",
+        "retention": "Kaggle is ephemeral. Raw live records were lost before export; source pins do not restore them. Immediate verified per-trial export is required before advancing. Only CPU/source and explicitly non-qualifying observed checkpoint are retained.",
+        "resource_limits": "Attempted 16K FP16 TP2 T4x2, one image max65536 pixels; native output2048, neutral C0 output4096, four turns/65536 tokens/600s. Earlier displayed counts are not retained primary evidence; trial3 and total cost/energy unknown.",
+        "errors": "Unavailable/mismatched tokenization blocks generation; input/window/role limits reject; actual count mismatch, invalid JSON/native content, missing usage or conflicting identity does not become accepted evidence of reasoning. Original attempts remain available without automatic inference retry.",
+        "feedback_grounding": "C2 features and Qwen text remain attributed generated candidates, never independent empirical corroboration. Selected protocol questions are generic Meadows questions, not forest hints. C3 promotion, teacher, C5/C6 feedback and world intervention are not exercised here."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md"
+    },
+    {
+      "id": "RP-IF04",
+      "from": "MODEL",
+      "to": "EDI",
+      "title": "Attributed actual model response and usage",
+      "producer_port": "Local inference response",
+      "consumer_port": "C4 strict Response import and C1 model-output capture, proposed gateway",
+      "requirement_ids": [
+        "RP-R04",
+        "RP-R08",
+        "RP-R10"
+      ],
+      "verification_ids": [
+        "LIVE-V01",
+        "LIVE-V04",
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "ownership": "C4 owns pinned inquiry/jobs and inference journal. vLLM owns preprocessing/generation only. C1 durably records exact returned wire bytes; C3 alone owns candidate admission.",
+        "authority": "POST /tokenize and /v1/chat/completions accept selected context only. Ephemeral bearer header is not model context. Model API has no shell, arbitrary file, operator, broker or evaluator tool. Same Kaggle uid remains shared, so hard process/filesystem isolation is unqualified. No forest/evaluator assets are transferred.",
+        "shape_versions": "edi-c4/0.5.2; seven operation-specific strict generation variants and native argument validation. Fresh workspaces; old malformed responses require archived reader. Final grammar live acceptance unverified.",
+        "identity_scope": "Job/inquiry/workspace/context SHA and exact messages digest remain bound; transport fills only native identity, attribution and usage. Model-supplied conflicting identities are rejected. Inputs remain authored/generated occurrences.",
+        "time_order": "C4 freezes the original context/revision before count and dispatch. Count precedes inference; C1 wire commit precedes strict response acceptance. No retroactive evidence cut or prospective empirical forecast is implied.",
+        "delivery_idempotency": "Atomic C4 claim permits one inference. Exact completed replay is read from the journal. Unknown completion is not retried. Tokenization may repeat as a non-generation preprocessing operation; it cannot dispatch an action.",
+        "commit_recovery": "Independent C1/C4 commits; no external-call transaction. Known wire is retained before usage/content checks. Dispatched or invalid-completion calls stay unresolved; completed journal replay does not generate again. Whole-application restore remains unqualified. Session loss erased all owner stores before export; live recovery is not established.",
+        "retention": "Kaggle is ephemeral. Raw live records were lost before export; source pins do not restore them. Immediate verified per-trial export is required before advancing. Only CPU/source and explicitly non-qualifying observed checkpoint are retained.",
+        "resource_limits": "Attempted 16K FP16 TP2 T4x2, one image max65536 pixels; native output2048, neutral C0 output4096, four turns/65536 tokens/600s. Earlier displayed counts are not retained primary evidence; trial3 and total cost/energy unknown.",
+        "errors": "Unavailable/mismatched tokenization blocks generation; input/window/role limits reject; actual count mismatch, invalid JSON/native content, missing usage or conflicting identity does not become accepted evidence of reasoning. Original attempts remain available without automatic inference retry.",
+        "feedback_grounding": "C2 features and Qwen text remain attributed generated candidates, never independent empirical corroboration. Selected protocol questions are generic Meadows questions, not forest hints. C3 promotion, teacher, C5/C6 feedback and world intervention are not exercised here."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md"
+    },
+    {
+      "id": "RP-IF05",
+      "from": "WORLD",
+      "to": "EVAL",
+      "title": "Sealed offline world outcomes",
+      "producer_port": "Operator-copy after closure",
+      "consumer_port": "Existing evaluate.py offline input",
+      "requirement_ids": [
+        "RP-R07",
+        "RP-R09"
+      ],
+      "verification_ids": [
+        "CONN-V01",
+        "CONN-V05"
+      ],
+      "status": "proposed",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "authority": "Offline operator copies immutable artifacts only after stopping inference; no online score or answer route.",
+        "time_order": "After closure or durable stop; retain observed horizon and original cutoff. No adaptation of investigation from evaluator result."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md"
+    },
+    {
+      "id": "RP-IF06",
+      "from": "EDI",
+      "to": "EVAL",
+      "title": "Sealed participant run artifacts",
+      "producer_port": "Operator-copy after closure",
+      "consumer_port": "Offline integrity/content/resource review",
+      "requirement_ids": [
+        "RP-R07",
+        "RP-R09",
+        "RP-R10"
+      ],
+      "verification_ids": [
+        "LIVE-V01",
+        "LIVE-V04"
+      ],
+      "status": "proposed",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "authority": "Offline operator copies immutable artifacts only after stopping inference; no online score or answer route.",
+        "time_order": "After closure or durable stop; retain observed horizon and original cutoff. No adaptation of investigation from evaluator result."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md"
+    },
+    {
+      "id": "EX-IF07",
+      "from": "EDI",
+      "to": "TEACHER",
+      "title": "Selected same-cut teacher job or fallible critique",
+      "producer_port": "C4 NativeGateway / OpenAITeacherBackend",
+      "consumer_port": "Restricted outbound gateway, not yet implemented",
+      "status": "proposed",
+      "profile_ref": "run-boundary",
+      "requirement_ids": [
+        "RP-R04",
+        "RP-R07",
+        "RP-R08"
+      ],
+      "verification_ids": [
+        "CONN-V17",
+        "LIVE-V03",
+        "LIVE-V04"
+      ],
+      "facets": {
+        "authority": "Optional selective critique only, same selected context; no extra tools/world/evaluator/operator access. API credentials confined to separately reviewed gateway.",
+        "resource_limits": "Reserve and count all teacher tokens/calls/failed work. Provider binding and exact counting remain required before dispatch.",
+        "errors": "Missing key/unknown cost are explicit; no retry of unresolved inference."
+      }
+    },
+    {
+      "id": "EX-IF08",
+      "from": "TEACHER",
+      "to": "EDI",
+      "title": "Selected same-cut teacher job or fallible critique",
+      "producer_port": "GPT-6.1 Sol Responses API",
+      "consumer_port": "C4 strict Response import with no actions or evidence acquisition",
+      "status": "proposed",
+      "profile_ref": "run-boundary",
+      "requirement_ids": [
+        "RP-R04",
+        "RP-R07",
+        "RP-R08"
+      ],
+      "verification_ids": [
+        "CONN-V17",
+        "LIVE-V03",
+        "LIVE-V04"
+      ],
+      "facets": {
+        "authority": "Optional selective critique only, same selected context; no extra tools/world/evaluator/operator access. API credentials confined to separately reviewed gateway.",
+        "resource_limits": "Reserve and count all teacher tokens/calls/failed work. Provider binding and exact counting remain required before dispatch.",
+        "errors": "Missing key/unknown cost are explicit; no retry of unresolved inference."
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "CONN-V01",
+      "name": "test_actual_image_bytes_in_wire_fixture",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V02",
+      "name": "test_all_public_operations_and_pending_objective",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V03",
+      "name": "test_asset_reassembly_external_origin_and_hash",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V04",
+      "name": "test_cancelled_job_cannot_be_dispatched_from_stale_snapshot",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V05",
+      "name": "test_denied_public_request_is_evidence",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V06",
+      "name": "test_dynamic_c0_choices_use_native_c4_records",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V07",
+      "name": "test_exact_c1_capture_and_replay",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V08",
+      "name": "test_gateway_fixture_native_import_and_no_redispatch",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V09",
+      "name": "test_grant_scope_and_expiry",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V10",
+      "name": "test_image_default_cut_keeps_whole_bounded_native_object",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V11",
+      "name": "test_journal_atomic_dispatch_claim",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V12",
+      "name": "test_lost_receipt_does_not_duplicate_work",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V13",
+      "name": "test_missing_auth_and_private_path",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V14",
+      "name": "test_model_timeout_is_not_retried",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V15",
+      "name": "test_request_identity_conflict",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V16",
+      "name": "test_restart_preserves_original_request_and_evidence",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V17",
+      "name": "test_teacher_cannot_propose_actions",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V18",
+      "name": "test_teacher_key_missing_is_explicit",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V19",
+      "name": "test_token_cap_blocks_before_dispatch",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "LIVE-V01",
+      "name": "Real pinned Qwen/vLLM inference",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V02",
+      "name": "Real model image perception",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V03",
+      "name": "Real GPT-6.1 teacher critique",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V04",
+      "name": "Actual isolated container probes",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V05",
+      "name": "C6 constructed-clock eligibility and full P1",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V06",
+      "name": "Unguided Cedar pilot and offline analysis",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "NATIVE-CPU",
+      "name": "27 final-source CPU regression checks",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-20261022/cpu-tests.json",
+      "revision": "0.9.2.dev0; source_sha256 in cpu-tests.json",
+      "conditions": "Windows Python 3.12 / pydantic 2.12.5; real frozen broker where applicable; authored model transports"
+    },
+    {
+      "id": "NATIVE-TEXT",
+      "name": "Real native numeric response and completed gateway reopen",
+      "required": true,
+      "status": "specified_not_run",
+      "conditions": "Final-source rerun required; earlier observation not accepted because raw records were lost"
+    },
+    {
+      "id": "NATIVE-IMAGE",
+      "name": "Real native image response and exact multimodal usage",
+      "required": true,
+      "status": "specified_not_run",
+      "conditions": "Final-source rerun required; earlier observation not accepted because raw records were lost"
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "EDI",
+        "MODEL",
+        "TEACHER",
+        "WORLD"
+      ],
+      "analysis": "EDI's selected exposure, optional correlated teacher critique and world interventions form a delayed learning loop. Teacher has the same cut and cannot act or corroborate itself. C1 originals, C3 candidates, generated outputs and actual constructed observations remain distinct. Broker replay and atomic first-dispatch claims prevent repeated admitted work; missing provider completion retains unknown cost. No evaluator return path. Full host/egress/isolation bounds remain unqualified. The new count/generation feedback compares exact admitted prompt count with actual usage, rejecting disagreement. Correlated source features/model output do not become independent evidence. Shared-uid Kaggle diagnostics are not a hard security boundary.",
+      "verification_ids": [
+        "CONN-V10",
+        "CONN-V12",
+        "LIVE-V03",
+        "LIVE-V04",
+        "LIVE-V06",
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE"
+      ]
+    }
+  ],
+  "outside_dependencies": [
+    {
+      "name": "Trusted operator control",
+      "contract": "One explicit initial grant; separate C3/operator changes/recovery and human objective decision; not model-callable."
+    },
+    {
+      "name": "Host/GPU/container runtime",
+      "contract": "Trusted-host threat model, no host mounts/PID/IPC; prestaged artifacts and measured resource profile before launch."
+    }
+  ],
+  "internal_owner_inventory": {
+    "source": "https://github.com/vighneshcandassamy-hub/edi-systems-foundation/blob/879452b8332a318ca76af4f84589b676b031f253/docs/implementation/INTERFACES.json",
+    "owners": 8,
+    "pairs": 28,
+    "directed_lanes": 56,
+    "status": "pinned_source_inventory_not_requalified",
+    "proposed_changes": "Extend only existing C0/C1/C4/C7 duties and version external dependency contracts; no direct C4-C7 or C4-C5 bypass. Re-run full owner/interface review when implementing."
+  },
+  "findings": [
+    {
+      "id": "EX-G01",
+      "description": "Neutral 16K native calls were observed at earlier source, but raw evidence was lost before export. Final-source native/strict-grammar integration remains unverified. Full benchmark resources and hard isolation remain unqualified.",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ],
+      "correction": "Compatible authorized Linux GPU/container host; actual neutral fit and isolation evidence."
+    },
+    {
+      "id": "EX-G02",
+      "description": "Existing Plus plan access was demonstrated separately. Production streaming/refresh/count/retention teacher adapter and restricted gateway are not implemented or qualified; this run disables teacher.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "correction": "Secure teacher credential and reviewed outbound boundary; then same-cut real API critique."
+    },
+    {
+      "id": "EX-G03",
+      "description": "C6 constructed-world forecast origin/time eligibility and full P1 demonstration remain open; no empirical guard is bypassed.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "correction": "Version a constructed-world profile or explicitly scope an unscored diagnostic; preserve original expectations."
+    },
+    {
+      "id": "EX-G04",
+      "description": "Neutral 16K native calls were observed at earlier source, but raw evidence was lost before export. Final-source native/strict-grammar integration remains unverified. Full benchmark resources and hard isolation remain unqualified.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ],
+      "correction": "Bind actual artifacts and finite host profile; no approximate token counter or automatic model change."
+    }
+  ],
+  "review": {
+    "gate": "contract",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "27 retained CPU checks pass; earlier live observations lack retained raw evidence; two failed controller trials and third unknown outcome are explicitly recorded. No full runtime/integration/scientific gate promoted."
+  }
+}

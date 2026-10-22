@@ -191,6 +191,12 @@ class OperationProposal(Record):
     operation: Literal["world-call", "acquire-asset", "select-context", "analysis-compile", "analysis-run", "teacher-review", "yield"]
     arguments: dict[str, JsonValue]
 
+    @model_validator(mode="after")
+    def native_argument_shape(self):
+        from edi.reason.operation_args import validate_arguments
+        validate_arguments(self.operation, self.arguments)
+        return self
+
 
 class Response(Record):
     workspace_id: Identifier

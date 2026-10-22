@@ -1,0 +1,100 @@
+{
+  "schema": "edi-native-observed-checkpoint-v1",
+  "date": "2026-10-22",
+  "evidence_class": "operator_observed_not_exported",
+  "primary_raw_evidence_available": false,
+  "qualification": "not established; terminal observations are not replayable retained evidence",
+  "loss": {
+    "cause": "Kaggle interactive session expired before export",
+    "responsibility": "Export should have preceded the next trial",
+    "recovery_inventory_observed": {
+      "working_files": [
+        {
+          "name": ".virtual_documents",
+          "bytes": 4096
+        }
+      ],
+      "native_result_exists": false,
+      "loop3_result_exists": false,
+      "old_source_exists": false,
+      "old_venv_exists": false
+    },
+    "raw_records_lost": [
+      "native request/response JSON",
+      "all four state directories",
+      "worker/server logs",
+      "runtime model and package inventories"
+    ],
+    "session_stopped_after_recovery": true
+  },
+  "model": {
+    "id": "Qwen/Qwen3-VL-8B-Instruct",
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "vllm": "0.21.0",
+    "transformers": "4.57.6",
+    "hardware": "Kaggle two Tesla T4",
+    "context_window": 16384,
+    "dtype": "float16",
+    "tensor_parallel_size": 2,
+    "teacher_enabled": false
+  },
+  "attempts": [
+    {
+      "id": "native-numeric-image",
+      "observed_status": "two completed native imports and completed-call reopening without new inference",
+      "final_source_equivalent": false,
+      "numeric": {
+        "input_tokens": 9281,
+        "output_tokens": 583
+      },
+      "image": {
+        "input_tokens": 9290,
+        "output_tokens": 516
+      },
+      "actual_prompt_count_equal_preflight_observed": true,
+      "formal_hypotheses": 0,
+      "model_proposed_c3_candidates": 0,
+      "semantic_answer_independently_verified": false,
+      "source_manifest": "native-source-manifest.json",
+      "source_bundle_sha256": "50c3f88a9e8983fc2a03437cc86a73b5fe454af4708abacd93914e11bce86337"
+    },
+    {
+      "id": "neutral-loop-1",
+      "observed_status": "failed",
+      "error": "acquire-asset wrapped direct document_id in operation/body",
+      "input_tokens": 26731,
+      "output_tokens": 1913,
+      "inference_calls": 3,
+      "source_manifest": "native-loop-source-manifest.json",
+      "source_bundle_sha256": "847b22cdb57f6f0d46bbf311716710e0f62a6b2ddfe2240f48f6c01033625caa"
+    },
+    {
+      "id": "neutral-loop-2",
+      "observed_status": "failed",
+      "error": "world-call nested as PublicIntent.operation instead of a public operation enum",
+      "input_tokens": 8536,
+      "output_tokens": 694,
+      "inference_calls": 1,
+      "source_manifest": "native-loop2-source-manifest.json",
+      "source_bundle_sha256": "fbd9c6f969cdae8ca75f5404a4854900444e9a1db94023531a022c7fe48ef906"
+    },
+    {
+      "id": "neutral-loop-3",
+      "observed_status": "launched_outcome_unknown",
+      "last_observed_pid": 1308,
+      "input_tokens": null,
+      "output_tokens": null,
+      "inference_calls": null,
+      "source_manifest": "native-loop3-source-manifest.json",
+      "source_bundle_sha256": "f53e0fcdc622edf3e3f6487687a1c330007f5ef74041c5019fda9260e5791c8c"
+    }
+  ],
+  "cost_limits": "No added paid service used. Total tokens including trial 3, full elapsed time, complete setup cost and energy are unknown.",
+  "gates": {
+    "CPU_regressions": "27 passed at retained hashes",
+    "native_final_source": "unverified",
+    "autonomous_neutral_loop": "unverified",
+    "C5_C6_full_P1_isolation_teacher_forest_comparison": "open or not run"
+  },
+  "next_action": "Rerun final-source numeric/image diagnostic and export/hash-verify reports plus raw owner state before any further trial; then independently run the neutral C0 fixture and export immediately."
+}

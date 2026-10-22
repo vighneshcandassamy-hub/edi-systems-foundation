@@ -1,0 +1,122 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C4 serving/operation contract and C0 terminal-state handling",
+  "gate": "contract",
+  "requested_scope": "authorized implementation and neutral real-model integration check",
+  "input_revision": "c6c5791301a3a9c9de1d2b28ed90d2958c74bf27 + CPU/source hash manifest",
+  "reviewer": {
+    "role": "implementer_and_self_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/benchmark-connection/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "RP-R03/R04/R06/R10 and existing C4 bounded inference obligations govern native capture, exact admission and no duplicate inference.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "revise",
+      "rationale": "Selected logical ports are implemented; complete isolation, teacher contract and wider C0-C7 lanes remain open.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse native owner stores and vLLM serving preprocessing; no new service, representation family or domain script.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Generated fixtures/model output remain attributed; schema, usage or reference failure is preserved, not repaired into success.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "revise",
+      "rationale": "16K runs were observed at earlier source but raw records were lost. Final source, strict grammar, aggregate resource cost and full benchmark profile remain unverified.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "revise",
+      "rationale": "27 CPU checks include completed-state/no-retry behavior; live SQLite/log export failed before session expiry. No application restore or trial3 result is established.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Version-specific official vLLM preprocessing and JSON controls were inspected; runtime pins and counts remain empirical obligations.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "27 final-source CPU checks retained; earlier live observations are explicitly non-qualifying; two controller failures, one unknown outcome. Wider gates open.",
+      "references": [
+        "docs/implementation/NATIVE_QWEN_INTEGRATION.md"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "NATIVE-EVIDENCE-LOSS",
+      "severity": "major",
+      "affected_requirements": [
+        "RP-R04",
+        "RP-R06",
+        "RP-R10"
+      ],
+      "description": "Kaggle expired before raw evidence export; final live outcome unverified",
+      "consequence": "No live runtime/integration PASS",
+      "smallest_correction": "Repeat final-source diagnostics; export and hash-verify each trial before proceeding",
+      "gate_blocked": "runtime/integration",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    "Authentication/exact token admission and actual usage check",
+    "Selected protocol rendering",
+    "Operation-specific generation/native argument constraints, without domain sequence",
+    "C0 final-turn durable completion correction"
+  ],
+  "verification": [
+    {
+      "name": "CPU regression suite",
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-20261022/cpu-tests.json",
+      "kind": "runtime",
+      "required": false,
+      "revision": "0.9.2.dev0; exact source SHA-256 in cpu-tests.json"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "revise",
+  "next_step": "Repeat final-source diagnostics with immediately verified export; preserve failures; keep forest gates closed."
+}

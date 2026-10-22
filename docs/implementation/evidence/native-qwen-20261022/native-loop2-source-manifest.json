@@ -1,0 +1,20 @@
+{
+  "input_commit": "c6c5791301a3a9c9de1d2b28ed90d2958c74bf27",
+  "bundle_sha256": "fbd9c6f969cdae8ca75f5404a4854900444e9a1db94023531a022c7fe48ef906",
+  "files": {
+    "src/edi/reason/gateway.py": "fdf17cec6106990e38ca031301db0d982f6bea42fa4270c9b9d1134f3c4f1755",
+    "examples/free-compute/edi_neutral_investigation_v2.py": "9fcef7078cbe37af5d3151f073eaac7a56326750a5209c44308ff845b91967a1",
+    "examples/free-compute/edi_neutral_loop_worker_v2.py": "056ca6353400fe38dc795d582d484b1dd98c96e62bd82351856c562fbec083b0"
+  },
+  "mission_unchanged": true,
+  "instrument_csv_unchanged": true,
+  "limits_unchanged": {
+    "max_turns": 4,
+    "max_tokens": 65536
+  },
+  "changes": [
+    "Generic operation argument contracts rendered",
+    "Neutral fixture supports the existing native asset range protocol"
+  ],
+  "no_investigation_sequence_added": true
+}

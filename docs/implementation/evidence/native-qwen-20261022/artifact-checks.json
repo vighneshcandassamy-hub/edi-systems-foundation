@@ -1,0 +1,12 @@
+{
+  "scope": "artifact, trace and source consistency only",
+  "CPU_source_hashes_verified": 66,
+  "notebook_bundle_files_equal_current_source": 70,
+  "notebook_code_cells_parsed": 5,
+  "outputs": 0,
+  "native_trace_IDs_resolved": 6,
+  "new_document_local_links": "pass",
+  "frozen_benchmark_tree": "9f2e070d1df5ff5d5638d0536e4104920b5a9184",
+  "frozen_diff_empty": true,
+  "live_integration_verified": false
+}

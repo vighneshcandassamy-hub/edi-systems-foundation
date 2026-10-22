@@ -71,7 +71,8 @@ class Investigation:
             if item["state"] != "completed":
                 return {**current, "state": "uncertain-completion", "pending_turn": turn}
             current = json.loads(item["result"])
-        return {**current, "state": "yielded", "stop_reason": "turn budget exhausted"}
+        return ({**current, "state": "yielded", "stop_reason": "turn budget exhausted"}
+                if current["state"] == "ready" else current)
 
     def step(self):
         state = self.state()
