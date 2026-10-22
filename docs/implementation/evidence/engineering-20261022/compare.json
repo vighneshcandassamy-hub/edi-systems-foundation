@@ -1,0 +1,512 @@
+{
+  "artifact_sha256": "7bbeb65b2d918ba59e1271156433c830ab8ab6ea1ba8214ecf01168475682dd5",
+  "created_at": "2026-10-22T18:15:23.179059Z",
+  "forecast": {
+    "confirmation": {
+      "acknowledgement_observed_at": "2026-10-22T18:14:54.176255Z",
+      "artifact_sha256": "dc74944229776c9829ab742c6176145ea57f745ac076e7a36ac0422a4de30ad4",
+      "clock_assumption": "Trusted common host UTC and honest source event/report clocks assumed; no external timestamp authority or knowledge-independence proof",
+      "forecast_id": "forecast",
+      "schema_version": "1.0",
+      "seal_sha256": "e030076087b08807ed4c0b1fe862dfeba7d014f4c94d8209618a16f45ba44bc0",
+      "status": "local-prospective"
+    },
+    "schema_version": "1.0",
+    "seal": {
+      "active_parameters": {},
+      "artifact_sha256": "e030076087b08807ed4c0b1fe862dfeba7d014f4c94d8209618a16f45ba44bc0",
+      "c1_watermark": 5,
+      "compiled_sha256": "b63c8ff93861dbe4313a88f2b26ebb7b706fabfabaa6c45ce6f78854129b853d",
+      "input_source_ids": [
+        "1ec4f7af-9cf4-44b8-bcc2-74441e048cfb"
+      ],
+      "inputs": [
+        {
+          "lineage": [],
+          "origin_class": "external",
+          "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+          "schema_version": "1.0",
+          "selector": "whole-object",
+          "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+          "workspace_id": "engineering-20261022"
+        }
+      ],
+      "model_assumptions": [
+        "Authored constant four bytes per second",
+        "Initial eight bytes; controlled protocol may differ",
+        "Fixed rate four; measurement apparatus shares same host"
+      ],
+      "model_refs": [
+        {
+          "record_id": "byte-law",
+          "schema_version": "1.0",
+          "version": 3
+        },
+        {
+          "record_id": "byte-stock",
+          "schema_version": "1.0",
+          "version": 2
+        },
+        {
+          "record_id": "byte-flow",
+          "schema_version": "1.0",
+          "version": 2
+        }
+      ],
+      "model_revision": 3,
+      "outcome_origins": [
+        {
+          "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+          "registered_at": "2026-10-22T17:55:22.612854Z",
+          "schema_version": "1.0",
+          "source_id": "8ec684cb-520f-416e-9d76-7e80655669c4",
+          "spec": {
+            "adapter": "engineering-harness/1.0",
+            "binding_basis": "configured",
+            "binding_evidence_ref": null,
+            "channel": "outcomes",
+            "deliverer": "local-file-stat",
+            "descriptor": {
+              "same_host_dependence": true,
+              "scientific_independence": "not established"
+            },
+            "epoch": "engineering-20261022",
+            "namespace": "edi.engineering",
+            "native_source_id": "outcomes",
+            "producer": null,
+            "schema_version": "1.0"
+          },
+          "workspace_id": "engineering-20261022"
+        }
+      ],
+      "points": [
+        {
+          "case": {
+            "case_id": "bytes-at-five",
+            "declared_dependence_group": "same-controlled-host",
+            "interpretation": "point",
+            "interpretation_basis": "Direct cardinal byte count; nominal epoch under constant-window clock mapping",
+            "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+            "relative_time": 5.0,
+            "schema_version": "1.0",
+            "score_limit": 1.0,
+            "stock_symbol": "bytes",
+            "variable": "file-bytes"
+          },
+          "predicted": 28.0,
+          "schema_version": "1.0",
+          "target_time": "2026-10-22T18:15:22.863216Z",
+          "unit": {
+            "basis": "declared-domain",
+            "dimensions": {
+              "domain:byte": 1
+            },
+            "schema_version": "1.0",
+            "symbol": "byte"
+          },
+          "world_ref": {
+            "record_id": "byte-stock",
+            "schema_version": "1.0",
+            "version": 2
+          }
+        }
+      ],
+      "prepared_at": "2026-10-22T18:14:54.165461Z",
+      "profile_snapshot": {
+        "database": "/kaggle/working/edi-engineering-20261022/owners.assess.sqlite3",
+        "max_context_bytes": 8388608,
+        "max_document_bytes": 4194304,
+        "max_input_refs": 256,
+        "max_operation_seconds": 15.0,
+        "max_origins": 8,
+        "max_page_bytes": 8388608,
+        "max_payload_bytes": 16384,
+        "max_records": 50000,
+        "max_request_bytes": 262144,
+        "max_scan_records": 2000,
+        "max_stored_bytes": 1073741824,
+        "max_total_read_bytes": 1048576,
+        "min_free_disk_bytes": 268435456,
+        "minimum_lead_seconds": 1.0,
+        "page_size": 100,
+        "profile_id": "local-assessment-sqlite-v1",
+        "schema_version": "1.0",
+        "workspace_id": "engineering-20261022",
+        "writer_timeout_seconds": 5.0
+      },
+      "program_snapshot": {
+        "assumptions": [
+          "Authored constant four bytes per second",
+          "Initial eight bytes; controlled protocol may differ"
+        ],
+        "drivers": [],
+        "flows": [
+          {
+            "rate_node": "rate",
+            "schema_version": "1.0",
+            "sink": "bytes",
+            "source": null,
+            "symbol": "write",
+            "world_ref": {
+              "record_id": "byte-flow",
+              "schema_version": "1.0",
+              "version": 2
+            }
+          }
+        ],
+        "formalization_rationale": "Exercise typed numerical owner contracts",
+        "history_semantics": "stock-state-only",
+        "ir_version": "edi.stock-flow-ir/1.0",
+        "nodes": [
+          {
+            "extrapolation": "error",
+            "inputs": [],
+            "node_id": "rate",
+            "operator": "constant",
+            "points": [],
+            "schema_version": "1.0",
+            "symbol": null,
+            "unit": {
+              "basis": "declared-domain",
+              "dimensions": {
+                "domain:byte": 1,
+                "s": -1
+              },
+              "schema_version": "1.0",
+              "symbol": "byte/s"
+            },
+            "value": 4.0,
+            "x_unit": null,
+            "y_unit": null
+          }
+        ],
+        "parameters": [],
+        "required_capabilities": [],
+        "schema_version": "1.0",
+        "source_equation_status": "authored-formalization",
+        "source_statement": "Harness-authored dB/dt=4; not discovered or independently validated",
+        "stocks": [
+          {
+            "lower": null,
+            "schema_version": "1.0",
+            "symbol": "bytes",
+            "unit": {
+              "basis": "declared-domain",
+              "dimensions": {
+                "domain:byte": 1
+              },
+              "schema_version": "1.0",
+              "symbol": "byte"
+            },
+            "upper": null,
+            "world_ref": {
+              "record_id": "byte-stock",
+              "schema_version": "1.0",
+              "version": 2
+            }
+          }
+        ],
+        "time_unit": "s"
+      },
+      "request": {
+        "assumptions": [
+          "Controlled writer sets 32 before seal and holds unchanged through epoch; neither model nor teacher receives outcome"
+        ],
+        "cases": [
+          {
+            "case_id": "bytes-at-five",
+            "declared_dependence_group": "same-controlled-host",
+            "interpretation": "point",
+            "interpretation_basis": "Direct cardinal byte count; nominal epoch under constant-window clock mapping",
+            "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+            "relative_time": 5.0,
+            "schema_version": "1.0",
+            "score_limit": 1.0,
+            "stock_symbol": "bytes",
+            "variable": "file-bytes"
+          }
+        ],
+        "forecast_id": "forecast",
+        "rationale": "Prospective registration before target and before outcome capture",
+        "request_id": "c0:915163bb21da4fbd7fb28051522cafc530a86b5f348f1a6ea516fafbd29c8ddb",
+        "rule": {
+          "aggregation": "instantaneous-state",
+          "calibration_edges": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "censored_policy": "report-unscored",
+          "missing_policy": "retain-denominator; no-imputation",
+          "require_disjoint_sources": true,
+          "schema_version": "1.0",
+          "selection_policy": "first-matching-measurement-by-commit",
+          "source_independence_assumption": "Distinct origin IDs, common host and harness. Outcome OS stat is not copied from forecast; scientific independence NOT established."
+        },
+        "run_id": "run",
+        "schema_version": "1.0",
+        "variant": "baseline",
+        "workspace_id": "engineering-20261022"
+      },
+      "run_request": {
+        "compiled_id": "83ea14e9-6139-45bc-9284-cd89f8ca1d73",
+        "inquiry_id": null,
+        "mode": "numerical",
+        "request_id": "c0:428590ce26987737b0b18b30a5c9f02ff956221acec8a050b566d46af349c98f",
+        "run_id": "run",
+        "scenario": {
+          "actor_information_masks": [],
+          "assumptions": [
+            "Fixed rate four; measurement apparatus shares same host"
+          ],
+          "correspondence": [
+            {
+              "aggregation": "instantaneous-state",
+              "limitation": "Authored model versus controlled constant file; future nominal epoch bracketed by stat reads",
+              "observation_channel": "OS stat bytes",
+              "schema_version": "1.0",
+              "stock_symbol": "bytes"
+            }
+          ],
+          "drivers": [],
+          "end": 5.0,
+          "evidence": [
+            {
+              "lineage": [],
+              "origin_class": "external",
+              "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+              "schema_version": "1.0",
+              "selector": "whole-object",
+              "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+              "workspace_id": "engineering-20261022"
+            }
+          ],
+          "initial_state": {
+            "bytes": 8.0
+          },
+          "output_times": [
+            0.0,
+            5.0
+          ],
+          "parameters": {},
+          "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+          "scenario_id": "scenario",
+          "schema_version": "1.0",
+          "start": 0.0,
+          "terminal_obligations": [],
+          "time_origin": {
+            "reason": null,
+            "schema_version": "1.0",
+            "status": "known",
+            "value": "2026-10-22T18:15:17.863216Z"
+          },
+          "variations": []
+        },
+        "schema_version": "1.0",
+        "solver": {
+          "atol": 1e-09,
+          "backend": "scipy.solve_ivp",
+          "bound_tolerance": 1e-08,
+          "max_step": 0.25,
+          "method": "RK45",
+          "numpy_version": "2.5.3",
+          "rtol": 1e-06,
+          "schema_version": "1.0",
+          "scipy_version": "1.17.0"
+        },
+        "test_id": null,
+        "workspace_id": "engineering-20261022"
+      },
+      "run_sha256": "6795e8b4b0ff2175c9b69900c5d24f82c86eacc0c28f55f1f31063af0e941204",
+      "schema_version": "1.0",
+      "status": "payload-durable; confirmation-required"
+    }
+  },
+  "limitations": [
+    "Local store/source timestamps and declared raw provenance do not prove global independence or absence of hidden prior knowledge",
+    "Point errors or Brier loss do not identify causal structure, calibrate a model by themselves or establish EDI superiority",
+    "Unknown dependence, source completeness, C5 numerical qualification, selection/exposure and clock trust remain explicit assumptions"
+  ],
+  "outcome_watermark": 6,
+  "possible_causes": {
+    "changed-policy": "not-established",
+    "non-identifiability": "not-established",
+    "numerical-error": "not-established",
+    "observation-error": "not-established",
+    "semantic-misalignment": "not-established",
+    "unexpected-drivers": "not-established",
+    "wrong-parameters": "not-established",
+    "wrong-rule-or-topology": "not-established"
+  },
+  "profile_snapshot": {
+    "database": "/kaggle/working/edi-engineering-20261022/owners.assess.sqlite3",
+    "max_context_bytes": 8388608,
+    "max_document_bytes": 4194304,
+    "max_input_refs": 256,
+    "max_operation_seconds": 15.0,
+    "max_origins": 8,
+    "max_page_bytes": 8388608,
+    "max_payload_bytes": 16384,
+    "max_records": 50000,
+    "max_request_bytes": 262144,
+    "max_scan_records": 2000,
+    "max_stored_bytes": 1073741824,
+    "max_total_read_bytes": 1048576,
+    "min_free_disk_bytes": 268435456,
+    "minimum_lead_seconds": 1.0,
+    "page_size": 100,
+    "profile_id": "local-assessment-sqlite-v1",
+    "schema_version": "1.0",
+    "workspace_id": "engineering-20261022",
+    "writer_timeout_seconds": 5.0
+  },
+  "qualification": "local held-out assessment only; independent scientific validity unqualified",
+  "request": {
+    "assessment_id": "assessment",
+    "forecast_id": "forecast",
+    "outcome_watermark": 6,
+    "rationale": "Deterministic native first matching measurement; no favorable outcome selection",
+    "request_id": "c0:4b582fb56304f21475bece35aacd0a7d91cd0be80b4489f27334abb14b178564",
+    "schema_version": "1.0",
+    "workspace_id": "engineering-20261022"
+  },
+  "results": [
+    {
+      "evidence": {
+        "lineage": [],
+        "origin_class": "external",
+        "record_id": "a6c511f5-9fea-484f-b10a-adc8d97fb3f4",
+        "schema_version": "1.0",
+        "selector": "whole-object",
+        "sha256": "6fcea5558db7bce920d69356f8dab3506e3423326cf6a376cd7d49f768138137",
+        "workspace_id": "engineering-20261022"
+      },
+      "issues": [],
+      "observation": {
+        "lower": null,
+        "measurement_schema": "edi.measurement/1.0",
+        "observed_at": "2026-10-22T18:15:22.863216Z",
+        "reason": null,
+        "schema_version": "1.0",
+        "status": "observed",
+        "unit": "byte",
+        "upper": null,
+        "value": 32.0,
+        "variable": "file-bytes"
+      },
+      "point": {
+        "case": {
+          "case_id": "bytes-at-five",
+          "declared_dependence_group": "same-controlled-host",
+          "interpretation": "point",
+          "interpretation_basis": "Direct cardinal byte count; nominal epoch under constant-window clock mapping",
+          "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+          "relative_time": 5.0,
+          "schema_version": "1.0",
+          "score_limit": 1.0,
+          "stock_symbol": "bytes",
+          "variable": "file-bytes"
+        },
+        "predicted": 28.0,
+        "schema_version": "1.0",
+        "target_time": "2026-10-22T18:15:22.863216Z",
+        "unit": {
+          "basis": "declared-domain",
+          "dimensions": {
+            "domain:byte": 1
+          },
+          "schema_version": "1.0",
+          "symbol": "byte"
+        },
+        "world_ref": {
+          "record_id": "byte-stock",
+          "schema_version": "1.0",
+          "version": 2
+        }
+      },
+      "schema_version": "1.0",
+      "scores": {
+        "absolute_error": 4.0,
+        "signed_error": -4.0,
+        "squared_error": 16.0
+      },
+      "source_id": "8ec684cb-520f-416e-9d76-7e80655669c4",
+      "status": "scored",
+      "within_declared_limit": false
+    }
+  ],
+  "schema_version": "1.0",
+  "source_coverage": [
+    {
+      "after": 6,
+      "exhausted": true,
+      "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+      "scanned_records": 1,
+      "source_id": "8ec684cb-520f-416e-9d76-7e80655669c4",
+      "stop_reason": null,
+      "watermark": 6
+    }
+  ],
+  "summaries": {
+    "by_quantity_and_interpretation": {
+      "point:byte": {
+        "count": 1,
+        "declared_dependence_groups": 1,
+        "mean_absolute_error": 4.0,
+        "mean_signed_error": -4.0,
+        "mean_squared_error": 16.0,
+        "unique_source_count": 1
+      }
+    },
+    "coverage_fraction": 1.0,
+    "declared_limit_result": "outside-declared-limits",
+    "dependence_limit": "source/group counts are not effective independent sample sizes; no iid confidence or skill claim",
+    "descriptive_calibration_bins": [
+      {
+        "count": 0,
+        "lower": 0.0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "unique_sources": 0,
+        "upper": 0.25
+      },
+      {
+        "count": 0,
+        "lower": 0.25,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "unique_sources": 0,
+        "upper": 0.5
+      },
+      {
+        "count": 0,
+        "lower": 0.5,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "unique_sources": 0,
+        "upper": 0.75
+      },
+      {
+        "count": 0,
+        "lower": 0.75,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "unique_sources": 0,
+        "upper": 1.0
+      }
+    ],
+    "planned_count": 1,
+    "scored_count": 1,
+    "unscored_count": 0
+  },
+  "usage": {
+    "cost_scope": "C6 local scan/scoring only; energy, full pipeline and failed pre-admission work unmeasured",
+    "elapsed_seconds": 0.001560947000143642,
+    "llm_calls": 0,
+    "llm_tokens": 0,
+    "payload_bytes_read": 164,
+    "scanned_records": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "origin_ref": "18f49df6-f050-4e4e-83aa-d4a2eb6529d4",
+  "registered_at": "2026-10-22T17:55:22.566975Z",
+  "schema_version": "1.0",
+  "source_id": "1ec4f7af-9cf4-44b8-bcc2-74441e048cfb",
+  "spec": {
+    "adapter": "engineering-harness/1.0",
+    "binding_basis": "configured",
+    "binding_evidence_ref": null,
+    "channel": "inputs",
+    "deliverer": "local-file-stat",
+    "descriptor": {
+      "same_host_dependence": true,
+      "scientific_independence": "not established"
+    },
+    "epoch": "engineering-20261022",
+    "namespace": "edi.engineering",
+    "native_source_id": "inputs",
+    "producer": null,
+    "schema_version": "1.0"
+  },
+  "workspace_id": "engineering-20261022"
+}

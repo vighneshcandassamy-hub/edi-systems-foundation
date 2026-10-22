@@ -1,0 +1,34 @@
+{
+  "transport": "native explicit file exchange",
+  "context_sha256": "913bd3105b04ae0b86b513c80e73b16fcc7dab23e06a49c3e01c233c6dcf20fb",
+  "teacher_binding": {
+    "engine": "current-assistant-session-unverified",
+    "model_id": "ChatGPT-current-session-operator-declared",
+    "provider": "manual-file-exchange",
+    "revision": "engineering-critique-20261022",
+    "schema_version": "1.0",
+    "tokenizer_revision": "unmeasured",
+    "weights": "fixed"
+  },
+  "identity_and_blinding": "operator-declared, unverified, implementation context known",
+  "exported_request_sha256": "467de725bf69b0f8927f5807384118809d59ea8750fca732d4fbea7f2ca9065e",
+  "imported_feedback_sha256": "cd054251fcf452f2f6f25d8b4df199a214c91cb0aa015dd475e5160c52caf537",
+  "feedback_disposition": "challenged",
+  "critique_summary": "Challenged determinism/time claims and a test claiming no new data; emphasized source dependence and incomplete dependencies.",
+  "actual_revision_summary": "The evidence supports a finite, ordered pattern of byte sizes (8, 12, 16) with consistent 4-byte increments per authored label, consistent with a configured writer behavior. The hypothesis is cautious and limited to the observed data under the assumption of authored sampling labels. The claim avoids stronger terms like 'deterministic' or 'predictable over time', which are not supported by the data. The mechanism is attributed to a configured writer behavior, not independently verified dynamics. The dependency cut at byte-flow is incomplete or stale; the mechanism is not certified. The hypothesis retains the explicit incomplete dependency view and the scope of the evidence. The unknowns include true clock correspondence, unseen writer changes, and what access and costs remain unknown for distinguishing alternative writer behaviors or timing/accounting uncertainty.",
+  "uptake": "partial; test still claims no additional data or tools",
+  "student_jobs": [
+    {
+      "job_id": "45090eb4-b581-43bc-bff2-9dc3f88d9484",
+      "input_tokens": 9481,
+      "output_tokens": 742
+    },
+    {
+      "job_id": "dc29ea86-df0f-4753-8ad3-3d565ba23da7",
+      "input_tokens": 11115,
+      "output_tokens": 981
+    }
+  ],
+  "teacher_usage": "unknown; reservation is accounting policy only",
+  "raw_operational_exchanges": "verified desktop archives, excluded from Git"
+}

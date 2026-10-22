@@ -1,0 +1,6 @@
+{
+  "previous_session": "Free session expired during pause; no native checkpoint exported",
+  "preserved": "Desktop source bundle, authored harness, observed setup failures and notebook outputs",
+  "prior_native_execution": "unknown; no pass claimed",
+  "recovery": "same protocol, fresh stores, foreground notebook monitor"
+}

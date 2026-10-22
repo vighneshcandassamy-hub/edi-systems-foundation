@@ -1,0 +1,11 @@
+{
+  "command": [
+    "C:\\Users\\csscs\\Documents\\Codex\\2026-10-21\\edi-meadows-runtime\\.venv-benchmark\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "scripts/check_implementation_docs.py"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"documentation_traceability_and_inventory_only\",\n  \"source_baseline\": \"830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a\",\n  \"components\": 8,\n  \"functions\": 32,\n  \"overview_nodes\": 42,\n  \"overview_edges\": 69,\n  \"i7_requirements\": 54,\n  \"appendix_requirements\": 20,\n  \"retained_layer_requirements\": 43,\n  \"consumer_obligations\": 8,\n  \"edi_system_requirements\": 16,\n  \"implementation_requirements\": 34,\n  \"prospective_cases\": 48,\n  \"pairs_reviewed\": 28,\n  \"directed_lanes\": 56,\n  \"proposed_contracts\": 40,\n  \"primary_sources\": 84,\n  \"source_snapshots_unchanged\": true,\n  \"model_cases_run\": false,\n  \"runtime_verified\": false,\n  \"independent_review\": false,\n  \"issues\": [],\n  \"tool_decisions\": 24,\n  \"prospective_adoption_experiments\": 8,\n  \"tool_candidates_installed_or_benchmarked\": false\n}\n",
+  "stderr": ""
+}

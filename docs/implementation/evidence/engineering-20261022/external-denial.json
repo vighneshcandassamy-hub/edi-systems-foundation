@@ -1,0 +1,30 @@
+{
+  "artifact_sha256": "219d49b1f3bad31aecb17c02d32e959aad855c62203e9cdbcd6d059e021e8d18",
+  "authority": "research-policy-internal-read-only",
+  "created_at": "2026-10-22T18:15:23.467462Z",
+  "expires_at": "2026-10-22T18:16:23.467462Z",
+  "policy_adoption_sha256": "b6e594ebb7b6e6eef4507e2f819ca9dbca01de3d0e088881c29bec100cc23f9e",
+  "reasons": [
+    "external actions/acquisition and C5 simulation dispatch are not installed in C7; C0 must mediate declared analysis"
+  ],
+  "request": {
+    "attribution": "Authored engineering harness; explicit local operator; not autonomous discovery",
+    "boundary": "edi-runtime",
+    "decision_id": "external-denial",
+    "expected_effects_and_limits": "Native read only, no physical actuation",
+    "grant_id": null,
+    "intent": {
+      "description": "Unallocated external control",
+      "operation": "external-action",
+      "schema_version": "1.0"
+    },
+    "policy_revision": 1,
+    "purpose_version": "v1",
+    "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+    "request_id": "c0:4284e7d27b9a37aeb24e452e5a5f929124cdeaa57383270349587fe4d5f8f6d3",
+    "schema_version": "1.0",
+    "workspace_id": "engineering-20261022"
+  },
+  "schema_version": "1.0",
+  "status": "denied"
+}

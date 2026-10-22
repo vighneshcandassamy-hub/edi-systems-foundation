@@ -1,0 +1,51 @@
+{
+  "artifact_sha256": "9558f7f4e68d2e86d268b6f6289758facdd9ba708137f1c11c807d2adf323618",
+  "created_at": "2026-10-22T18:15:23.354251Z",
+  "profile_id": "local-agency-research-v1",
+  "request": {
+    "amendment_id": "amendment",
+    "attribution": "Authored engineering harness; explicit local operator; not autonomous discovery",
+    "carry_over": "retain-ledgers-recheck-unstarted-block-unresolved",
+    "change_kind": "bootstrap",
+    "expected_revision": 0,
+    "imported_advice": [],
+    "proposed": {
+      "access_cooldown_seconds": 604800,
+      "assumptions": [
+        "Explicit trusted local operator"
+      ],
+      "decision_ttl_seconds": 60,
+      "evaluation_standards": [
+        "Exact origin read only; no external effects"
+      ],
+      "grants": [
+        {
+          "basis": "Authored engineering harness; explicit local operator; not autonomous discovery",
+          "expires_at": "2026-10-22T19:15:23.310404Z",
+          "grant_id": "read-outcomes",
+          "max_items": 10,
+          "not_before": "2026-10-22T18:15:22.310404Z",
+          "operation": "select-observations",
+          "origin_refs": [
+            "066bd23a-e985-489c-ad26-fdd595a1844f"
+          ],
+          "schema_version": "1.0",
+          "world_ids": []
+        }
+      ],
+      "mode": "research-readonly",
+      "policy_id": "engineering-readonly",
+      "purpose": "Controlled engineering observations",
+      "purpose_version": "v1",
+      "schema_version": "1.0"
+    },
+    "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+    "request_id": "c0:f6a4c68a6e28963cf849a93238ad9dcfc876c5dce66a1f6d230c35be569dfadf",
+    "resource_and_implementation_basis": "Finite local native read",
+    "schema_version": "1.0",
+    "trigger": "Explicit engineering authority",
+    "workspace_id": "engineering-20261022"
+  },
+  "schema_version": "1.0",
+  "status": "proposed-not-adopted"
+}

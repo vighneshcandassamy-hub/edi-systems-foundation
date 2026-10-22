@@ -1,0 +1,214 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C0-C7 scheduled engineering runtime integration",
+  "gate": "runtime",
+  "requested_scope": "one controlled native engineering walkthrough, teacher/student revision and normal restart",
+  "input_revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6",
+  "reviewer": {
+    "role": "implementer and self-reviewer using edi-component-review and edi-interface-review",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/component-connections-20261022/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/engineering-20261022/trace-check.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "User authorized one complete engineering walkthrough; original CI-R01\u2013CI-R05 receive explicitly partial evidence, with EI-V01 traced separately.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Eight native owners and separate stores retain authority; the C0/C7 standing-authority facade now forwards the existing typed operation. Native policy and candidate checks ran.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "One missing delegation repaired. No solver, representation family, training path or forest hypothesis added. Two environments resolve the observed NumPy dependency conflict.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Original cuts, failures and model versions retained. Authored fixture/analysis/review are distinguished from generated critique and actual OS stat. Teacher quality and independence limits recorded.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Two actual student calls fit exact preflight caps. Teacher usage and earlier expired-session work remain unknown; policy reservation is not total measured usage. No paid endpoint used; energy unmeasured.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Failed startup and invalid range retained; completed handoffs resume with original inputs. Normal fresh-process replay and eight-store integrity verified; crash and uncertain-provider cases remain outside this pass.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Existing native contracts, actual installer conflict, package freezes, model file hashes and executed source-to-wheel verification ground the repair and deployment split.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "EI-V01 demonstrates the scheduled path and normal restart. Autonomous operation selection, broad CI cases, scientific validity and superiority remain open.",
+      "references": [
+        "docs/implementation/ENGINEERING_RUN.md",
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "EI-F01",
+      "description": "Missing C0/C7 standing-authority facade forwarding repaired and exercised after retained cold-start failure.",
+      "status": "resolved",
+      "blocking_at": [
+        "runtime"
+      ]
+    },
+    {
+      "id": "EI-F02",
+      "description": "Oversized harness selection corrected to manifest byte count; original failed inquiry retained.",
+      "status": "resolved",
+      "blocking_at": [
+        "runtime"
+      ]
+    },
+    {
+      "id": "EI-F03",
+      "description": "Opaque IR and subsequent reads now use native C3 versions; original admitted model preserved.",
+      "status": "resolved",
+      "blocking_at": [
+        "runtime"
+      ]
+    },
+    {
+      "id": "EI-F04",
+      "description": "Serving and numerical dependencies isolated; owned temporary parent created.",
+      "status": "resolved",
+      "blocking_at": [
+        "runtime"
+      ]
+    },
+    {
+      "id": "EI-F05",
+      "description": "Teacher uptake is partial and no autonomous information-seeking action was proposed; broader reasoning/integration quality is unqualified.",
+      "status": "open",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "EI-F06",
+      "description": "Original broader CI scenarios, autonomous Investigation.step and crash/provider-fault coverage remain unrun.",
+      "status": "deferred",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "EI-F07",
+      "description": "Earlier expired-session native work is unavailable and unknown; no result is promoted from it.",
+      "status": "open",
+      "blocking_at": []
+    }
+  ],
+  "changes": [
+    "C0-only forwarding to existing C7 benchmark authority",
+    "Package patch version 0.10.1.dev0",
+    "Authored harness range/operator/version corrections",
+    "Separate serving and pinned numerical environments"
+  ],
+  "verification": [
+    {
+      "name": "Source/generated contracts",
+      "kind": "contract",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/engineering-20261022/source-checks.json",
+      "revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6"
+    },
+    {
+      "name": "Executed source/wheel byte equivalence",
+      "kind": "contract",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/engineering-20261022/build-verification.json",
+      "revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6"
+    },
+    {
+      "name": "EI-V01 scheduled native runtime",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/engineering-20261022/runtime-results.json",
+      "revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6"
+    },
+    {
+      "name": "EI-V01 normal restart and independent native reads",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/engineering-20261022/native-restart-audit.json",
+      "revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6"
+    }
+  ],
+  "measurements": [
+    {
+      "name": "Known student tokens",
+      "state": "measured",
+      "value": {
+        "input": 20596,
+        "output": 1723
+      },
+      "evidence_ref": "docs/implementation/evidence/engineering-20261022/verified-summary.json",
+      "revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6",
+      "conditions": "One authored neutral file-size scenario; real Qwen twice, current assistant manual teacher once; separate serving/numerical environments; no autonomous Investigation.step, blinded outcome or crash/fault qualification."
+    },
+    {
+      "name": "Controlled absolute error",
+      "state": "measured",
+      "value": 4.0,
+      "evidence_ref": "docs/implementation/evidence/engineering-20261022/compare.json",
+      "revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6",
+      "conditions": "Authored forecast 28 versus harness-controlled measured file size 32; not blind accuracy"
+    },
+    {
+      "name": "Energy and comparative efficiency",
+      "state": "not_run"
+    }
+  ],
+  "product_qualification": "passed_scoped",
+  "verdict": "pass",
+  "next_step": "Exercise autonomous controller selection separately; preserve the observed test-planning weakness and broader unresolved CI requirements."
+}

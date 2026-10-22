@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\csscs\\Documents\\Codex\\2026-10-21\\edi-meadows-runtime\\.venv-benchmark\\Scripts\\python.exe",
+    ".agents/skills/edi-interface-review/scripts/interface_matrix.py",
+    "docs/implementation/evidence/engineering-20261022/OWNER_INTERFACE_REVIEW.json",
+    "--root",
+    "C:\\Users\\csscs\\Documents\\Codex\\2026-10-21\\edi-meadows-runtime"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"scope\": \"interface_inventory_consistency_only\",\n  \"semantics_independently_verified\": false,\n  \"component_count\": 8,\n  \"pair_count\": 28,\n  \"directed_lane_count\": 56,\n  \"contract_count\": 42,\n  \"feedback_groups\": [\n    [\n      \"C0\",\n      \"C1\",\n      \"C2\",\n      \"C3\",\n      \"C4\",\n      \"C5\",\n      \"C6\",\n      \"C7\"\n    ]\n  ],\n  \"consistent\": true,\n  \"errors\": []\n}\n",
+  "stderr": ""
+}

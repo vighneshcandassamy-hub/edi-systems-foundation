@@ -1,0 +1,233 @@
+{
+  "derivation": {
+    "artifacts": [
+      {
+        "aggregate_hash_verified": true,
+        "decoder_id": "json",
+        "decoder_version": "edi.native-decoders/1.0;python=3.13.15",
+        "error": null,
+        "evidence": {
+          "lineage": [],
+          "origin_class": "external",
+          "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+          "schema_version": "1.0",
+          "selector": "whole-object",
+          "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+          "workspace_id": "engineering-20261022"
+        },
+        "input_index": 0,
+        "native_features": {
+          "json_nodes": 16,
+          "namespace": "edi.native-features/1.0"
+        },
+        "origin_ref": "18f49df6-f050-4e4e-83aa-d4a2eb6529d4",
+        "output": {
+          "entries": [
+            {
+              "key": "limitation",
+              "value": {
+                "kind": "string",
+                "value": "One controlled file on one host; writer uses configured sizes. No physical causal law inferred."
+              }
+            },
+            {
+              "key": "readings",
+              "value": {
+                "items": [
+                  {
+                    "entries": [
+                      {
+                        "key": "acquired_at",
+                        "value": {
+                          "kind": "string",
+                          "value": "2026-10-22T17:55:22.630251+00:00"
+                        }
+                      },
+                      {
+                        "key": "bytes",
+                        "value": {
+                          "kind": "number",
+                          "lexeme": "8"
+                        }
+                      },
+                      {
+                        "key": "relative_second",
+                        "value": {
+                          "kind": "number",
+                          "lexeme": "0.0"
+                        }
+                      }
+                    ],
+                    "kind": "object"
+                  },
+                  {
+                    "entries": [
+                      {
+                        "key": "acquired_at",
+                        "value": {
+                          "kind": "string",
+                          "value": "2026-10-22T17:55:22.630324+00:00"
+                        }
+                      },
+                      {
+                        "key": "bytes",
+                        "value": {
+                          "kind": "number",
+                          "lexeme": "12"
+                        }
+                      },
+                      {
+                        "key": "relative_second",
+                        "value": {
+                          "kind": "number",
+                          "lexeme": "1.0"
+                        }
+                      }
+                    ],
+                    "kind": "object"
+                  },
+                  {
+                    "entries": [
+                      {
+                        "key": "acquired_at",
+                        "value": {
+                          "kind": "string",
+                          "value": "2026-10-22T17:55:22.630404+00:00"
+                        }
+                      },
+                      {
+                        "key": "bytes",
+                        "value": {
+                          "kind": "number",
+                          "lexeme": "16"
+                        }
+                      },
+                      {
+                        "key": "relative_second",
+                        "value": {
+                          "kind": "number",
+                          "lexeme": "2.0"
+                        }
+                      }
+                    ],
+                    "kind": "object"
+                  }
+                ],
+                "kind": "array"
+              }
+            },
+            {
+              "key": "relative_second_basis",
+              "value": {
+                "kind": "string",
+                "value": "authored sampling labels, not measured elapsed intervals"
+              }
+            }
+          ],
+          "kind": "object"
+        },
+        "schema_version": "1.0",
+        "selected_length": 459,
+        "selected_offset": 0,
+        "selected_sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+        "source_id": "1ec4f7af-9cf4-44b8-bcc2-74441e048cfb",
+        "source_position": 2,
+        "source_time": {
+          "capture": {
+            "clock_id": null,
+            "event_time": {
+              "reason": "not supplied",
+              "schema_version": "1.0",
+              "status": "unknown",
+              "value": null
+            },
+            "reported_time": {
+              "reason": "not supplied",
+              "schema_version": "1.0",
+              "status": "unknown",
+              "value": null
+            },
+            "schema_version": "1.0",
+            "sequence": null
+          },
+          "committed_at": "2026-10-22T17:55:22.658410+00:00",
+          "receipt_time": "2026-10-22T17:55:22.657745+00:00"
+        },
+        "status": "decoded",
+        "warnings": [
+          "Object entry order and duplicate keys retained; numeric lexemes are distinct from strings"
+        ]
+      }
+    ],
+    "claims": [],
+    "created_at": "2026-10-22T17:55:22.726744Z",
+    "derivation_id": "d2-b72c2bdea86a24e962811b5af8e048309896c085d33296ed4f38d842c3bbea2b",
+    "durability": "local-sqlite-full-unqualified",
+    "error": null,
+    "implementation_id": "edi.interpret/1.0",
+    "native_associations": [],
+    "output_sha256": "7cf999dae07a93d3b4d2f762924daedf0b956d5165f32c613309d9bc49c728c3",
+    "profile_snapshot": {
+      "database": "/kaggle/working/edi-engineering-20261022/owners.interpret.sqlite3",
+      "max_cells": 16384,
+      "max_concurrent_operations": 2,
+      "max_depth": 32,
+      "max_derivations": 100000,
+      "max_input_bytes": 8388608,
+      "max_native_associations": 32,
+      "max_nodes": 4096,
+      "max_operation_seconds": 10.0,
+      "max_output_bytes": 4194304,
+      "max_request_bytes": 131072,
+      "max_stored_bytes": 1073741824,
+      "max_text_characters": 262144,
+      "min_free_disk_bytes": 268435456,
+      "profile_id": "local-interpret-sqlite-v1",
+      "read_chunk_bytes": 65536,
+      "schema_version": "1.0",
+      "workspace_id": "engineering-20261022",
+      "writer_timeout_seconds": 5.0
+    },
+    "request": {
+      "annotations": [],
+      "associations": [],
+      "compare_source_and_payload": true,
+      "derive_native_features": true,
+      "inputs": [
+        {
+          "decoder": "json",
+          "delimiter": ",",
+          "length": null,
+          "offset": 0,
+          "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+          "schema_version": "1.0"
+        }
+      ],
+      "request_id": "c0:479f6df1d0bff31131e6b8da4c64254a09ddc40a2050595d989e869198c7a324",
+      "schema_version": "1.0",
+      "scope_id": "world",
+      "workspace_id": "engineering-20261022"
+    },
+    "runtime_versions": {
+      "code": "0.10.1.dev0",
+      "csv_field_limit": 131072,
+      "pydantic": "2.12.5",
+      "python": "3.13.15",
+      "sqlite": "3.45.1"
+    },
+    "schema_version": "1.0",
+    "status": "complete",
+    "usage": {
+      "elapsed_seconds": 0.0027458030001525913,
+      "input_bytes_read": 459,
+      "model_calls": 0,
+      "model_tokens": 0,
+      "output_json_bytes": 2406,
+      "schema_version": "1.0",
+      "scope": "C2 transform before commit; includes C1 reads; excludes acquisition, artifact-commit latency and C3"
+    },
+    "workspace_id": "engineering-20261022"
+  },
+  "duplicate": false,
+  "schema_version": "1.0"
+}

@@ -1,0 +1,96 @@
+{
+  "input_tokens": 11115,
+  "outcome": "returned",
+  "output_tokens": 981,
+  "raw_record_id": "d1110f1a-6746-4e73-9b7c-dd30e0d479fc",
+  "response": {
+    "attribution": "Configured fixed student via vLLM; reported serving usage",
+    "binding": {
+      "engine": "vllm/0.21.0",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "provider": "local-vllm",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "schema_version": "1.0",
+      "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "weights": "fixed"
+    },
+    "candidates": [],
+    "context_sha256": "913bd3105b04ae0b86b513c80e73b16fcc7dab23e06a49c3e01c233c6dcf20fb",
+    "feedback_disposition": "not-applicable",
+    "frontier": [],
+    "hypotheses": [
+      {
+        "applicability": "Applies to the observed file reading sequence under the assumption of authored sampling labels.",
+        "assumptions": [
+          "The file writer uses configured sizes.",
+          "The sampling labels are authored, not measured elapsed intervals.",
+          "No physical causal law is inferred."
+        ],
+        "claim": "The file readings show a finite, ordered pattern of byte sizes (8, 12, 16) with consistent 4-byte increments per authored label, consistent with a configured writer behavior.",
+        "confounders": [
+          "The absence of physical causal law inference limits generalizability.",
+          "No independent repeat or causal identification is available.",
+          "The acquisition timestamps are closely spaced, while C1 event/reported times are unknown.",
+          "The dependency cut at byte-flow is incomplete or stale; the mechanism is not certified."
+        ],
+        "counterevidence": [],
+        "dependence_groups": [],
+        "hypothesis_id": "hypothesis-002",
+        "mechanism": "The writer's behavior is governed by a configured size pattern, producing predictable byte increments at each labeled step. The pattern is finite and ordered, with 4-byte increments per authored label, not a general deterministic law or rate per elapsed second.",
+        "predictions": [],
+        "rivals": [],
+        "schema_version": "1.0",
+        "scope": "Observed file readings only; authored model is an assumption.",
+        "status": "candidate",
+        "support": [
+          {
+            "lineage": [],
+            "origin_class": "external",
+            "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+            "schema_version": "1.0",
+            "selector": "whole-object",
+            "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+            "workspace_id": "engineering-20261022"
+          }
+        ],
+        "unknowns": [
+          "True clock correspondence and unseen writer changes",
+          "No independent repeat or causal identification",
+          "What access and costs remain unknown for distinguishing alternative writer behaviors or timing/accounting uncertainty"
+        ]
+      }
+    ],
+    "input_tokens": 11115,
+    "inquiry_id": "inquiry",
+    "job_id": "dc29ea86-df0f-4753-8ad3-3d565ba23da7",
+    "limitation": "Bounded selected context; not an exhaustive system or causal identification. Source claims/model candidates are fallible; retrieval failure is not absence of evidence. byte-stock: incomplete or stale dependency cut; inspect pinned dependency view. The hypothesis is limited to the observed data under the assumption of authored sampling labels. No physical causal law is inferred, and no independent repeat or causal identification is available.",
+    "operation_proposals": [],
+    "origin": "external-model-output",
+    "output_tokens": 981,
+    "rationale_summary": "The evidence supports a finite, ordered pattern of byte sizes (8, 12, 16) with consistent 4-byte increments per authored label, consistent with a configured writer behavior. The hypothesis is cautious and limited to the observed data under the assumption of authored sampling labels. The claim avoids stronger terms like 'deterministic' or 'predictable over time', which are not supported by the data. The mechanism is attributed to a configured writer behavior, not independently verified dynamics. The dependency cut at byte-flow is incomplete or stale; the mechanism is not certified. The hypothesis retains the explicit incomplete dependency view and the scope of the evidence. The unknowns include true clock correspondence, unseen writer changes, and what access and costs remain unknown for distinguishing alternative writer behaviors or timing/accounting uncertainty.",
+    "request_id": "gateway:dc29ea86-df0f-4753-8ad3-3d565ba23da7",
+    "response_id": "gateway:dc29ea86-df0f-4753-8ad3-3d565ba23da7",
+    "schema_version": "1.0",
+    "tests": [
+      {
+        "channels": [
+          "file-readings"
+        ],
+        "confounding_controls": "Assume authored sampling labels, not measured elapsed intervals.",
+        "cost_and_risk": "Low cost; no physical causal law inference required.",
+        "discriminates": [
+          "hypothesis-002"
+        ],
+        "expected_differences": "No expected differences if the hypothesis is correct; differences would indicate an unmodeled writer behavior or clock correspondence issue.",
+        "feasibility": "Feasible; requires no additional data or tools.",
+        "identifiability_limit": "No independent repeat or causal identification available.",
+        "intervention_or_observation": "Observation of file readings under different sampling label configurations.",
+        "kind": "observation",
+        "schema_version": "1.0",
+        "status": "proposed-unrun",
+        "test_id": "test-002"
+      }
+    ],
+    "workspace_id": "engineering-20261022"
+  }
+}

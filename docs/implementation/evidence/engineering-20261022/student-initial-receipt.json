@@ -1,0 +1,93 @@
+{
+  "input_tokens": 9481,
+  "outcome": "returned",
+  "output_tokens": 742,
+  "raw_record_id": "d7ad7638-2c99-4e27-b9bc-806998878fd9",
+  "response": {
+    "attribution": "Configured fixed student via vLLM; reported serving usage",
+    "binding": {
+      "engine": "vllm/0.21.0",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "provider": "local-vllm",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "schema_version": "1.0",
+      "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "weights": "fixed"
+    },
+    "candidates": [],
+    "context_sha256": "913bd3105b04ae0b86b513c80e73b16fcc7dab23e06a49c3e01c233c6dcf20fb",
+    "feedback_disposition": "not-applicable",
+    "frontier": [],
+    "hypotheses": [
+      {
+        "applicability": "Applies to the observed file reading sequence under the assumption of authored sampling labels.",
+        "assumptions": [
+          "The file writer uses configured sizes.",
+          "The sampling labels are authored, not measured elapsed intervals.",
+          "No physical causal law is inferred."
+        ],
+        "claim": "The file readings support a deterministic, stepwise increase in byte size over time, consistent with a configured writer behavior.",
+        "confounders": [
+          "The absence of physical causal law inference limits generalizability.",
+          "No independent repeat or causal identification is available."
+        ],
+        "counterevidence": [],
+        "dependence_groups": [],
+        "hypothesis_id": "hypothesis-001",
+        "mechanism": "The writer's behavior is governed by a configured size pattern, producing predictable byte increments at each labeled step.",
+        "predictions": [],
+        "rivals": [],
+        "schema_version": "1.0",
+        "scope": "Observed file readings only; authored model is an assumption.",
+        "status": "candidate",
+        "support": [
+          {
+            "lineage": [],
+            "origin_class": "external",
+            "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+            "schema_version": "1.0",
+            "selector": "whole-object",
+            "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+            "workspace_id": "engineering-20261022"
+          }
+        ],
+        "unknowns": [
+          "True clock correspondence and unseen writer changes",
+          "No independent repeat or causal identification"
+        ]
+      }
+    ],
+    "input_tokens": 9481,
+    "inquiry_id": "inquiry",
+    "job_id": "45090eb4-b581-43bc-bff2-9dc3f88d9484",
+    "limitation": "Bounded selected context; not an exhaustive system or causal identification. Source claims/model candidates are fallible; retrieval failure is not absence of evidence. byte-stock: incomplete or stale dependency cut; inspect pinned dependency view.",
+    "operation_proposals": [],
+    "origin": "external-model-output",
+    "output_tokens": 742,
+    "rationale_summary": "The evidence supports a deterministic, stepwise increase in byte size over time, consistent with a configured writer behavior. No physical causal law is inferred, and no independent repeat or causal identification is available. The hypothesis is cautious and limited to the observed data under the assumption of authored sampling labels.",
+    "request_id": "gateway:45090eb4-b581-43bc-bff2-9dc3f88d9484",
+    "response_id": "gateway:45090eb4-b581-43bc-bff2-9dc3f88d9484",
+    "schema_version": "1.0",
+    "tests": [
+      {
+        "channels": [
+          "file-readings"
+        ],
+        "confounding_controls": "Assume authored sampling labels, not measured elapsed intervals.",
+        "cost_and_risk": "Low cost; no physical causal law inference required.",
+        "discriminates": [
+          "hypothesis-001"
+        ],
+        "expected_differences": "No expected differences if the hypothesis is correct; differences would indicate an unmodeled writer behavior or clock correspondence issue.",
+        "feasibility": "Feasible; requires no additional data or tools.",
+        "identifiability_limit": "No independent repeat or causal identification available.",
+        "intervention_or_observation": "Observation of file readings under different sampling label configurations.",
+        "kind": "observation",
+        "schema_version": "1.0",
+        "status": "proposed-unrun",
+        "test_id": "test-001"
+      }
+    ],
+    "workspace_id": "engineering-20261022"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "channel": "C0-internal-workflow-result",
+  "delivered_at": "2026-10-22T18:15:23.516696+00:00",
+  "external_message_sent": false,
+  "finding": {
+    "artifact_sha256": "52c7480a6be5aecc6ef4753e35cb066da560f03c95dda295743cb9014fded9a5",
+    "created_at": "2026-10-22T18:15:23.295958Z",
+    "request": {
+      "affected_parties": [
+        "engineering operator"
+      ],
+      "alternatives": [
+        "Clock mapping",
+        "Rate or writer mismatch"
+      ],
+      "attribution": "Authored engineering harness; explicit local operator; not autonomous discovery",
+      "chain": [
+        "authored model",
+        "measured discrepancy",
+        "further inquiry"
+      ],
+      "chain_status": "mixed-unverified",
+      "counterevidence": [],
+      "expiry": "2026-10-22T19:15:23.278167Z",
+      "finding_id": "finding",
+      "goal": "Verify component handoffs",
+      "horizon": "this run",
+      "newness_priority_basis": "Controlled forecast error",
+      "request_id": "c0:a13d5d39f4381fc38f3dc3fe562515ac623214e0a66a326b9a50729d4c1c964b",
+      "review_id": "review",
+      "review_trigger": "New independent measurement",
+      "schema_version": "1.0",
+      "suggested_action_class": "investigate",
+      "support": [
+        {
+          "lineage": [],
+          "origin_class": "external",
+          "record_id": "a6c511f5-9fea-484f-b10a-adc8d97fb3f4",
+          "schema_version": "1.0",
+          "selector": "whole-object",
+          "sha256": "6fcea5558db7bce920d69356f8dab3506e3423326cf6a376cd7d49f768138137",
+          "workspace_id": "engineering-20261022"
+        }
+      ],
+      "uncertainty": "No causal inference or autonomous discovery demonstrated",
+      "workspace_id": "engineering-20261022"
+    },
+    "review_sha256": "857923bf2a00a9c7f15f58b5b9cc75c5818d699fa773ea97548f247f8a621475",
+    "schema_version": "1.0",
+    "status": "draft; C0 controls delivery and C7 controls adoption"
+  },
+  "finding_id": "finding",
+  "finding_sha256": "52c7480a6be5aecc6ef4753e35cb066da560f03c95dda295743cb9014fded9a5"
+}

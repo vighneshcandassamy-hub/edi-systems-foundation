@@ -2,11 +2,17 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.9.1.dev0. **Status:** C0-C7 source plus a scoped benchmark connection increment. CPU engineering checks now execute native owner stores and the pinned broker using authored model-wire fixtures. Live student/teacher inference, full P1, container isolation and the unguided benchmark remain unqualified and unrun. The owner has explicitly authorized execution; hardware, binding and contract gates remain open.
+**Code version:** 0.10.1.dev0. **Status:** one scheduled C0-C7 engineering walkthrough completed with two real Qwen calls, manual teacher critique/student revision, C5/C6, C7 authority checks and normal restart. The autonomous controller, scientific qualification and Meadows benchmark remain unrun at this source. Wider original contract reviews remain REVISE.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
-## Benchmark connection execution
+## Completed engineering integration walkthrough
+
+[Run report](docs/implementation/ENGINEERING_RUN.md), [current readiness](docs/implementation/INTEGRATION_READINESS.md), [reviewed evidence](docs/implementation/evidence/engineering-20261022/runtime-results.json) and [reproducible harness](examples/engineering/README.md) record 32 completed native handoffs, retained failures, source/model pins, eight-store integrity and normal restart. The source repair connects C0's standing-grant request to the existing C7 authority method. Teacher uptake was partial; test planning still needs improvement. This authored neutral case establishes engineering behavior only.
+
+The following source-increment notes preserve historical scope; use readiness above for current status.
+
+## Historical benchmark connection execution
 
 [Connection checkpoint and remaining gates](docs/implementation/BENCHMARK_CONNECTION.md), [engineering evidence](docs/implementation/evidence/benchmark-connection/), [CPU test runner](scripts/run_benchmark_connection_tests.py) and [unchanged frozen benchmark](benchmarks/meadows-budworm/README.md) are saved on `benchmark/runtime-integration-20261021`. This execution branch combines the two pinned source lines without merging the implementation proposal into main. Fixture transport checks are distinct from actual model reasoning.
 
@@ -18,7 +24,7 @@ This repository brings together the integrated seven-chapter architecture, the a
 
 Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
 
-## Current integrated-workflow source increment
+## Historical integrated-workflow source increment
 
 [C0 workflow specification](docs/implementation/C0_INTEGRATED_WORKFLOW.md), [requirements/case trace](docs/implementation/INTEGRATION_TRACE.json), [readiness and model-tool status](docs/implementation/INTEGRATION_READINESS.md), [source](src/edi/inquiry/) and [28-step skeleton](examples/workflow/) document 51 native operation mappings, immutable plans/inputs, bounded earlier-output references, explicit operator-decision handoffs, durable step intents, acceptance conditions, attempt/recovery records and internal findings delivery. Five schemas and a scoped source/interface review are saved. No workflow or test was run.
 

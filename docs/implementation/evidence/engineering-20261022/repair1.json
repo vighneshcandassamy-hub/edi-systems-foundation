@@ -1,0 +1,14 @@
+{
+  "reason": "Missing C0/C7 standing-authority forwarding; configure the same operator roster for C0 and C7; pin C5 to the authored admission cut",
+  "before": {
+    "src/edi/agency/service.py": "ed1ba35851da11c80c3b2be36178bae3be0703d3f8e190ba5e5ae0cd847aaa03",
+    "src/edi/__init__.py": "e84e80c81163970d30d4a9bef8d44b1eb6a3b2875cc32e4e990f4800e4002b52",
+    "complete_run.py": "4f633c4a2babe81ca29824910f5d3a8b92101fc79012e6f4f922801ddaa11e5a"
+  },
+  "after": {
+    "src/edi/agency/service.py": "13f9c6a0e4e54c90b8f2f7c1e868fc9859d9e9eb99b68bdc316a49fabddb4785",
+    "src/edi/__init__.py": "140fb1060e134f27ddb574846d1827546bd6e96034d664ed0e3a72614a5a6099",
+    "complete_run.py": "6b6c46f22f7f53922dd44fc0aa3a47996b54f05181343197c1d4730967fb92d8"
+  },
+  "provider_calls_before_repair": 0
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "EI-V01 finite engineering evidence; broader CI requirements remain partial",
+  "source": "docs/implementation/evidence/component-connections-20261022/TRACEABILITY.json",
+  "source_sha256": "a57bce9050e6aca98a176953568dbf60c695eceff4583782f0d160a40a454eba",
+  "checked": true,
+  "requirements": [
+    {
+      "id": "CI-R01",
+      "new_case": "EI-V01",
+      "status": "partial evidence only; original broader acceptance not promoted",
+      "evidence_refs": [
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json",
+        "docs/implementation/ENGINEERING_RUN.md"
+      ]
+    },
+    {
+      "id": "CI-R02",
+      "new_case": "EI-V01",
+      "status": "partial evidence only; original broader acceptance not promoted",
+      "evidence_refs": [
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json",
+        "docs/implementation/ENGINEERING_RUN.md"
+      ]
+    },
+    {
+      "id": "CI-R03",
+      "new_case": "EI-V01",
+      "status": "partial evidence only; original broader acceptance not promoted",
+      "evidence_refs": [
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json",
+        "docs/implementation/ENGINEERING_RUN.md"
+      ]
+    },
+    {
+      "id": "CI-R04",
+      "new_case": "EI-V01",
+      "status": "partial evidence only; original broader acceptance not promoted",
+      "evidence_refs": [
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json",
+        "docs/implementation/ENGINEERING_RUN.md"
+      ]
+    },
+    {
+      "id": "CI-R05",
+      "new_case": "EI-V01",
+      "status": "partial evidence only; original broader acceptance not promoted",
+      "evidence_refs": [
+        "docs/implementation/evidence/engineering-20261022/runtime-results.json",
+        "docs/implementation/ENGINEERING_RUN.md"
+      ]
+    }
+  ],
+  "all_evidence_references_exist": true
+}

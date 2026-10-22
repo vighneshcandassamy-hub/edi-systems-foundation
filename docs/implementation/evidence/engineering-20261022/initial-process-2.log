@@ -1,0 +1,26 @@
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+ModuleNotFoundError: No module named 'wrapt'
+origin-inputs completed
+origin-outcomes completed
+input-record completed
+interpret completed
+interpret-submit completed
+model-admission completed
+Traceback (most recent call last):
+  File "/kaggle/temp/edi-engineering-source/complete_run.py", line 326, in <module>
+    try: {"initial": initial, "finish": finish, "restart": restart}[stage]()
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/kaggle/temp/edi-engineering-source/complete_run.py", line 184, in initial
+    op(r, "inquiry", "reason-investigate", {"inquiry_id": "inquiry", "question": "What do these controlled file readings support and fail to establish? Propose cautious hypotheses and useful observations. The labels are authored, not elapsed-time measurements. Keep response concise; tool proposals optional.",
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "purpose": "Real student reasoning in controlled engineering walkthrough", "scope": "Observed file readings only; authored model is an assumption",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        "unknowns": ["True clock correspondence and unseen writer changes", "No independent repeat or causal identification"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "budget": {"rounds": 4, "jobs": 6, "reserved_tokens": 98304, "input_token_cap": 14336, "output_token_cap": 2048}})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/temp/edi-engineering-source/complete_run.py", line 101, in op
+    if status.state != "completed": raise RuntimeError(name + ": " + json.dumps(plain(status)))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: inquiry: {"schema_version": "1.0", "workspace_id": "engineering-20261022", "workflow_id": "inquiry", "state": "failed", "completed_steps": [], "next_step": "handoff", "waiting_input": null, "error": {"code": "malformed-envelope", "message": "C4 selected evidence range exceeds payload", "retryable": false, "status": "error"}, "outputs": {"handoff": {"attempt": 1, "state": "failed", "result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b", "error": {"code": "malformed-envelope", "message": "C4 selected evidence range exceeds payload", "retryable": false, "status": "error"}, "elapsed_seconds": 0.002095439999948212}}, "plan_sha256": "3e437d5c80f2a61519121b6a5dc1422773fb81e4c3faffa37b0866aa60e9b2a3", "qualification": "scoped-workflow-only; component/scientific-qualification-open"}

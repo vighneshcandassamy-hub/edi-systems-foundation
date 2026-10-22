@@ -1,0 +1,23 @@
+{
+  "scope": "release consistency checks; actual native results are retained separately",
+  "all_passed": true,
+  "python_files_parsed": 74,
+  "checks": {
+    "foundation": 0,
+    "implementation-docs": 0,
+    "component-review": 0,
+    "owner-interfaces": 0,
+    "external-interfaces": 0
+  },
+  "markdown_links_checked": 75,
+  "frozen_benchmark_tree": "9f2e070d1df5ff5d5638d0536e4104920b5a9184",
+  "benchmark_diff": false,
+  "wheel_sha256": "e2e7599ccae865acab39582e6c442a13a2eabb6f14cfe41b7a67394b495427cf",
+  "source_files_byte_verified": 69,
+  "document_checker_directory_link_fix": true,
+  "original_failed_document_check_retained": true,
+  "operational_teacher_exchange_files_excluded": true,
+  "credential_field_scan_issues": [],
+  "model_calls_by_these_checks": 0,
+  "independent_review": false
+}

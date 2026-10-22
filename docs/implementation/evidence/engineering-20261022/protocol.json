@@ -1,0 +1,49 @@
+{
+  "budget": {
+    "additional_paid_spend": 0,
+    "input_cap": 14336,
+    "output_cap": 2048,
+    "student_max_calls": 3,
+    "teacher_imports": 1
+  },
+  "campaign": "engineering-20261022",
+  "clock_policy": "Bind UTC origin after model phase, target origin+5s at least 25s in future. Pre/post stat brackets target; only admit nominal event if file metadata identical across bracket. Retain actual acquisition times and declared constant-window mapping.",
+  "limitations": [
+    "One scheduled scenario",
+    "No autonomous component selection claim",
+    "Teacher not blind",
+    "No independent model superiority or Meadows result"
+  ],
+  "model": {
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "student": "Qwen/Qwen3-VL-8B-Instruct",
+    "teacher": "current ChatGPT session, manual file exchange; identity not independently authenticated; implementation context known",
+    "weights": "fixed"
+  },
+  "outcome_protocol": "Authored 32-byte file held unchanged across a future nominal sampling epoch; actual OS stat and read times retained. External refers to OS measurement, not independent scientific provenance. Model 8+4*t is authored; expected discrepancy is intentionally controlled.",
+  "pass_criteria": [
+    "two real admitted student responses separated by retained teacher feedback",
+    "C2 candidate retained",
+    "C5 supported/completed",
+    "C6 local-prospective and scored outcome",
+    "C6 candidate-only revision retained",
+    "C7 internal allowed/external denied",
+    "fresh process replay does not invoke inference",
+    "eight distinct DBs integrity ok"
+  ],
+  "planned_handoffs": [
+    "C1 intake",
+    "C2 decode and candidate submission",
+    "C3 explicit authored model admission",
+    "C4 real student",
+    "C4 exported teacher cut/imported critique",
+    "C4 real student revision",
+    "C5 compile and numerical run",
+    "C6 prospective seal/OS-measured outcome/compare/review/candidate/finding",
+    "C7 access/proposal/operator adoption/authorized read/denied external action/actor mask",
+    "C0 delivery",
+    "fresh-process restart and SQLite integrity"
+  ],
+  "scope": "C0-C7 engineering walkthrough; not Meadows/autonomous/scientific qualification",
+  "source_commit": "0935ce5b9e6d1f66fbb6f8f8566afefddcfd05a8"
+}

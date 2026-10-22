@@ -1,0 +1,29 @@
+{
+  "commit": {
+    "changed_ids": [
+      "review-candidate"
+    ],
+    "committed_at": "2026-10-22T18:15:23.261837Z",
+    "consumed": null,
+    "decision_authority": "C3-candidate-policy",
+    "dependency_impact": "bounded-query-required",
+    "duplicate": false,
+    "durability": "local-sqlite-full-unqualified",
+    "invalidated_projection_ids": [
+      "world.current"
+    ],
+    "previous_revision": 3,
+    "request_id": "c0:d03572ea8b63f290738b36948050db2426a625deddd6d563058784d7dc71cc5d",
+    "revision": 4,
+    "schema_version": "1.0",
+    "workspace_id": "engineering-20261022"
+  },
+  "request": {
+    "reason": "Retain explicitly authored candidate only",
+    "request_id": "c0:d03572ea8b63f290738b36948050db2426a625deddd6d563058784d7dc71cc5d",
+    "review_id": "review",
+    "schema_version": "1.0",
+    "workspace_id": "engineering-20261022"
+  },
+  "schema_version": "1.0"
+}

@@ -48,6 +48,9 @@ class AgencyAccess:
     def review_access_scope(self, request): return self._service.review_access_scope(request)
     def read_policy(self, revision=None): return self._service.read_policy(revision)
     def get_receipt(self, execution_id): return self._service.get_receipt(execution_id)
+    def benchmark_authority(self, grant, **identity):
+        """C0 composition supplies the explicit standing grant; model calls cannot."""
+        return self._service.benchmark_authority(grant, **identity)
 
 
 class Agency:

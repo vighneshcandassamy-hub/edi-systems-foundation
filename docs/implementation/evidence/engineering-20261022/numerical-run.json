@@ -1,0 +1,788 @@
+{
+  "artifact_sha256": "6795e8b4b0ff2175c9b69900c5d24f82c86eacc0c28f55f1f31063af0e941204",
+  "compiled": {
+    "artifact_sha256": "b63c8ff93861dbe4313a88f2b26ebb7b706fabfabaa6c45ce6f78854129b853d",
+    "compiled_id": "83ea14e9-6139-45bc-9284-cd89f8ca1d73",
+    "compiler": "edi.stock-flow-compiler/1.0",
+    "context_sha256": "fd69a67297123fc4aca1f2f266c6d53d59d71758e0023ed693ac7c1bcd8f27bb",
+    "created_at": "2026-10-22T18:14:52.840935Z",
+    "dependencies": [
+      {
+        "complete": true,
+        "depth_boundary_ids": [],
+        "direction": "dependencies",
+        "items": [
+          {
+            "owner_id": "byte-law",
+            "owner_version": 3,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-flow",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          },
+          {
+            "owner_id": "byte-law",
+            "owner_version": 3,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-stock",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          },
+          {
+            "owner_id": "byte-flow",
+            "owner_version": 2,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-stock",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          },
+          {
+            "owner_id": "byte-stock",
+            "owner_version": 2,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-flow",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          }
+        ],
+        "max_depth": 4,
+        "revision": 3,
+        "root_id": "byte-law",
+        "schema_version": "1.0",
+        "truncation": null,
+        "visited_ids": [
+          "byte-flow",
+          "byte-law",
+          "byte-stock"
+        ]
+      },
+      {
+        "complete": true,
+        "depth_boundary_ids": [],
+        "direction": "dependencies",
+        "items": [
+          {
+            "owner_id": "byte-stock",
+            "owner_version": 2,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-flow",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          },
+          {
+            "owner_id": "byte-flow",
+            "owner_version": 2,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-stock",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          }
+        ],
+        "max_depth": 4,
+        "revision": 3,
+        "root_id": "byte-stock",
+        "schema_version": "1.0",
+        "truncation": null,
+        "visited_ids": [
+          "byte-flow",
+          "byte-stock"
+        ]
+      },
+      {
+        "complete": true,
+        "depth_boundary_ids": [],
+        "direction": "dependencies",
+        "items": [
+          {
+            "owner_id": "byte-flow",
+            "owner_version": 2,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-stock",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          },
+          {
+            "owner_id": "byte-stock",
+            "owner_version": 2,
+            "pinned_version": 2,
+            "schema_version": "1.0",
+            "target_id": "byte-flow",
+            "validity": "current",
+            "visible_state": "accepted_for_use",
+            "visible_version": 2
+          }
+        ],
+        "max_depth": 4,
+        "revision": 3,
+        "root_id": "byte-flow",
+        "schema_version": "1.0",
+        "truncation": null,
+        "visited_ids": [
+          "byte-flow",
+          "byte-stock"
+        ]
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "grammar-supported",
+        "message": "Typed grammar/unit/incidence checks only; physical adequacy, numerical accuracy and causal truth are unqualified",
+        "schema_version": "1.0",
+        "severity": "info",
+        "target": null
+      }
+    ],
+    "node_order": [
+      "rate"
+    ],
+    "profile_snapshot": {
+      "database": "/kaggle/working/edi-engineering-20261022/owners.analyze.sqlite3",
+      "dependency_depth": 4,
+      "max_context_bytes": 1048576,
+      "max_operation_seconds": 30.0,
+      "max_output_cells": 100000,
+      "max_records": 10000,
+      "max_request_bytes": 262144,
+      "max_result_bytes": 4194304,
+      "max_rhs_evaluations": 50000,
+      "max_stored_bytes": 1073741824,
+      "max_world_records": 128,
+      "min_free_disk_bytes": 268435456,
+      "profile_id": "local-analysis-sqlite-v1",
+      "schema_version": "1.0",
+      "workspace_id": "engineering-20261022",
+      "writer_timeout_seconds": 5.0
+    },
+    "program": {
+      "assumptions": [
+        "Authored constant four bytes per second",
+        "Initial eight bytes; controlled protocol may differ"
+      ],
+      "drivers": [],
+      "flows": [
+        {
+          "rate_node": "rate",
+          "schema_version": "1.0",
+          "sink": "bytes",
+          "source": null,
+          "symbol": "write",
+          "world_ref": {
+            "record_id": "byte-flow",
+            "schema_version": "1.0",
+            "version": 2
+          }
+        }
+      ],
+      "formalization_rationale": "Exercise typed numerical owner contracts",
+      "history_semantics": "stock-state-only",
+      "ir_version": "edi.stock-flow-ir/1.0",
+      "nodes": [
+        {
+          "extrapolation": "error",
+          "inputs": [],
+          "node_id": "rate",
+          "operator": "constant",
+          "points": [],
+          "schema_version": "1.0",
+          "symbol": null,
+          "unit": {
+            "basis": "declared-domain",
+            "dimensions": {
+              "domain:byte": 1,
+              "s": -1
+            },
+            "schema_version": "1.0",
+            "symbol": "byte/s"
+          },
+          "value": 4.0,
+          "x_unit": null,
+          "y_unit": null
+        }
+      ],
+      "parameters": [],
+      "required_capabilities": [],
+      "schema_version": "1.0",
+      "source_equation_status": "authored-formalization",
+      "source_statement": "Harness-authored dB/dt=4; not discovered or independently validated",
+      "stocks": [
+        {
+          "lower": null,
+          "schema_version": "1.0",
+          "symbol": "bytes",
+          "unit": {
+            "basis": "declared-domain",
+            "dimensions": {
+              "domain:byte": 1
+            },
+            "schema_version": "1.0",
+            "symbol": "byte"
+          },
+          "upper": null,
+          "world_ref": {
+            "record_id": "byte-stock",
+            "schema_version": "1.0",
+            "version": 2
+          }
+        }
+      ],
+      "time_unit": "s"
+    },
+    "qualification": "source-only; runtime unqualified",
+    "request": {
+      "mechanism_ref": {
+        "record_id": "byte-law",
+        "schema_version": "1.0",
+        "version": 3
+      },
+      "model_revision": 3,
+      "rationale": "Compile explicitly authored accepted-for-use engineering law",
+      "request_id": "c0:90b67dec6615a0131e53f5751e64031c5026fa3f022f5c59c62655df98b342a5",
+      "schema_version": "1.0",
+      "use_policy": "accepted-for-use",
+      "workspace_id": "engineering-20261022"
+    },
+    "schema_version": "1.0",
+    "status": "supported",
+    "world": [
+      {
+        "admission": {
+          "decision": "accepted_for_use",
+          "policy_id": "local-modeling-use/1.0",
+          "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+          "schema_version": "1.0",
+          "use_scope": "this controlled walkthrough",
+          "verification_obligation": "No scientific truth established; compare held-out measurement"
+        },
+        "change_kind": "context",
+        "decision_authority": "C3-local-operator",
+        "known_at": "2026-10-22T18:14:52.781867Z",
+        "proposer": "C0",
+        "representation": {
+          "alternative_group": null,
+          "alternatives": [],
+          "assumptions": [
+            "Authored engineering fixture"
+          ],
+          "basis": "assumption",
+          "counterevidence": [],
+          "dependencies": [],
+          "label": null,
+          "method_lineage": [
+            "Authored engineering harness; explicit local operator; not autonomous discovery",
+            "engineering-opaque-IR-version-repair"
+          ],
+          "properties": {},
+          "record_id": "byte-law",
+          "schema_version": "1.0",
+          "scope_id": "world",
+          "structure": {
+            "capacities": {},
+            "delays": {},
+            "domains": {},
+            "execution_status": "descriptive",
+            "family": "response-relationship",
+            "mechanism": {
+              "edi_ir_v1": {
+                "assumptions": [
+                  "Authored constant four bytes per second",
+                  "Initial eight bytes; controlled protocol may differ"
+                ],
+                "flows": [
+                  {
+                    "rate_node": "rate",
+                    "sink": "bytes",
+                    "symbol": "write",
+                    "world_ref": {
+                      "record_id": "byte-flow",
+                      "version": 2
+                    }
+                  }
+                ],
+                "formalization_rationale": "Exercise typed numerical owner contracts",
+                "nodes": [
+                  {
+                    "node_id": "rate",
+                    "operator": "constant",
+                    "unit": {
+                      "basis": "declared-domain",
+                      "dimensions": {
+                        "domain:byte": 1,
+                        "s": -1
+                      },
+                      "symbol": "byte/s"
+                    },
+                    "value": 4.0
+                  }
+                ],
+                "source_equation_status": "authored-formalization",
+                "source_statement": "Harness-authored dB/dt=4; not discovered or independently validated",
+                "stocks": [
+                  {
+                    "symbol": "bytes",
+                    "unit": {
+                      "basis": "declared-domain",
+                      "dimensions": {
+                        "domain:byte": 1
+                      },
+                      "symbol": "byte"
+                    },
+                    "world_ref": {
+                      "record_id": "byte-stock",
+                      "version": 2
+                    }
+                  }
+                ]
+              }
+            },
+            "parameters": {},
+            "participants": [
+              {
+                "direction": "unknown",
+                "port": null,
+                "ref": {
+                  "record_id": "byte-stock",
+                  "schema_version": "1.0",
+                  "version": 2
+                },
+                "role": "stock",
+                "schema_version": "1.0"
+              },
+              {
+                "direction": "unknown",
+                "port": null,
+                "ref": {
+                  "record_id": "byte-flow",
+                  "schema_version": "1.0",
+                  "version": 2
+                },
+                "role": "flow",
+                "schema_version": "1.0"
+              }
+            ],
+            "schema_version": "1.0"
+          },
+          "support": [
+            {
+              "lineage": [],
+              "origin_class": "external",
+              "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+              "schema_version": "1.0",
+              "selector": "whole-object",
+              "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+              "workspace_id": "engineering-20261022"
+            }
+          ],
+          "uncertainty": {
+            "status": "unknown"
+          },
+          "validity": {
+            "clock_id": "UTC",
+            "end": null,
+            "schema_version": "1.0",
+            "start": null,
+            "status": "unknown"
+          }
+        },
+        "schema_version": "1.0",
+        "state": "accepted_for_use",
+        "use_validity": "not-certified; inspect-dependencies-and-evidence",
+        "version": 3,
+        "workspace_id": "engineering-20261022"
+      },
+      {
+        "admission": {
+          "decision": "accepted_for_use",
+          "policy_id": "local-modeling-use/1.0",
+          "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+          "schema_version": "1.0",
+          "use_scope": "this controlled walkthrough",
+          "verification_obligation": "No scientific truth established; compare held-out measurement"
+        },
+        "change_kind": "explanation",
+        "decision_authority": "C3-local-operator",
+        "known_at": "2026-10-22T17:55:22.868830Z",
+        "proposer": "C0",
+        "representation": {
+          "alternative_group": null,
+          "alternatives": [],
+          "assumptions": [
+            "Authored engineering fixture"
+          ],
+          "basis": "assumption",
+          "counterevidence": [],
+          "dependencies": [],
+          "label": null,
+          "method_lineage": [
+            "Authored engineering harness; explicit local operator; not autonomous discovery"
+          ],
+          "properties": {},
+          "record_id": "byte-stock",
+          "schema_version": "1.0",
+          "scope_id": "world",
+          "structure": {
+            "bounds": {},
+            "family": "stock",
+            "inflows": [
+              {
+                "record_id": "byte-flow",
+                "schema_version": "1.0",
+                "version": 2
+              }
+            ],
+            "initial_basis": "unknown",
+            "outflows": [],
+            "quantity": {
+              "context": {},
+              "scale": "cardinal",
+              "schema_version": "1.0",
+              "status": "known",
+              "unit": "byte",
+              "unknown_reason": null,
+              "value": 8
+            },
+            "reserve_and_access": {},
+            "schema_version": "1.0"
+          },
+          "support": [
+            {
+              "lineage": [],
+              "origin_class": "external",
+              "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+              "schema_version": "1.0",
+              "selector": "whole-object",
+              "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+              "workspace_id": "engineering-20261022"
+            }
+          ],
+          "uncertainty": {
+            "status": "unknown"
+          },
+          "validity": {
+            "clock_id": "UTC",
+            "end": null,
+            "schema_version": "1.0",
+            "start": null,
+            "status": "unknown"
+          }
+        },
+        "schema_version": "1.0",
+        "state": "accepted_for_use",
+        "use_validity": "not-certified; inspect-dependencies-and-evidence",
+        "version": 2,
+        "workspace_id": "engineering-20261022"
+      },
+      {
+        "admission": {
+          "decision": "accepted_for_use",
+          "policy_id": "local-modeling-use/1.0",
+          "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+          "schema_version": "1.0",
+          "use_scope": "this controlled walkthrough",
+          "verification_obligation": "No scientific truth established; compare held-out measurement"
+        },
+        "change_kind": "explanation",
+        "decision_authority": "C3-local-operator",
+        "known_at": "2026-10-22T17:55:22.868830Z",
+        "proposer": "C0",
+        "representation": {
+          "alternative_group": null,
+          "alternatives": [],
+          "assumptions": [
+            "Authored engineering fixture"
+          ],
+          "basis": "assumption",
+          "counterevidence": [],
+          "dependencies": [],
+          "label": null,
+          "method_lineage": [
+            "Authored engineering harness; explicit local operator; not autonomous discovery"
+          ],
+          "properties": {},
+          "record_id": "byte-flow",
+          "schema_version": "1.0",
+          "scope_id": "world",
+          "structure": {
+            "family": "flow-process",
+            "participants": [
+              {
+                "direction": "in",
+                "port": null,
+                "ref": {
+                  "record_id": "byte-stock",
+                  "schema_version": "1.0",
+                  "version": 2
+                },
+                "role": "sink",
+                "schema_version": "1.0"
+              }
+            ],
+            "pending_commitments": [],
+            "prerequisites": [],
+            "rate": null,
+            "resource_use": {},
+            "response": null,
+            "schema_version": "1.0",
+            "time_basis": "unknown",
+            "transformation": {}
+          },
+          "support": [
+            {
+              "lineage": [],
+              "origin_class": "external",
+              "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+              "schema_version": "1.0",
+              "selector": "whole-object",
+              "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+              "workspace_id": "engineering-20261022"
+            }
+          ],
+          "uncertainty": {
+            "status": "unknown"
+          },
+          "validity": {
+            "clock_id": "UTC",
+            "end": null,
+            "schema_version": "1.0",
+            "start": null,
+            "status": "unknown"
+          }
+        },
+        "schema_version": "1.0",
+        "state": "accepted_for_use",
+        "use_validity": "not-certified; inspect-dependencies-and-evidence",
+        "version": 2,
+        "workspace_id": "engineering-20261022"
+      }
+    ]
+  },
+  "created_at": "2026-10-22T18:14:52.887184Z",
+  "diagnostics": [
+    {
+      "code": "grammar-supported",
+      "message": "Typed grammar/unit/incidence checks only; physical adequacy, numerical accuracy and causal truth are unqualified",
+      "schema_version": "1.0",
+      "severity": "info",
+      "target": null
+    },
+    {
+      "code": "uncertainty-limit",
+      "message": "Finite variants and numerical tolerances do not quantify all epistemic uncertainty or identify the real system",
+      "schema_version": "1.0",
+      "severity": "warning",
+      "target": null
+    }
+  ],
+  "evidence_metadata": [
+    {
+      "committed_at": "2026-10-22T17:55:22.658410+00:00",
+      "origin_ref": "18f49df6-f050-4e4e-83aa-d4a2eb6529d4",
+      "receipt_time": "2026-10-22T17:55:22.657745+00:00",
+      "reference": {
+        "lineage": [],
+        "origin_class": "external",
+        "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+        "schema_version": "1.0",
+        "selector": "whole-object",
+        "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+        "workspace_id": "engineering-20261022"
+      },
+      "source_id": "1ec4f7af-9cf4-44b8-bcc2-74441e048cfb",
+      "time": {
+        "clock_id": null,
+        "event_time": {
+          "reason": "not supplied",
+          "schema_version": "1.0",
+          "status": "unknown",
+          "value": null
+        },
+        "reported_time": {
+          "reason": "not supplied",
+          "schema_version": "1.0",
+          "status": "unknown",
+          "value": null
+        },
+        "schema_version": "1.0",
+        "sequence": null
+      },
+      "validation": "metadata identity/hash/selector only; scenario numbers remain caller-declared, not parsed measurements"
+    }
+  ],
+  "finished_at": "2026-10-22T18:14:54.105308Z",
+  "finite_differences": [],
+  "forecast_seal": "unsealed; C6 prospective registration required",
+  "implementation": "edi-c5/0.6.0",
+  "origin_class": "simulation",
+  "profile_snapshot": {
+    "database": "/kaggle/working/edi-engineering-20261022/owners.analyze.sqlite3",
+    "dependency_depth": 4,
+    "max_context_bytes": 1048576,
+    "max_operation_seconds": 30.0,
+    "max_output_cells": 100000,
+    "max_records": 10000,
+    "max_request_bytes": 262144,
+    "max_result_bytes": 4194304,
+    "max_rhs_evaluations": 50000,
+    "max_stored_bytes": 1073741824,
+    "max_world_records": 128,
+    "min_free_disk_bytes": 268435456,
+    "profile_id": "local-analysis-sqlite-v1",
+    "schema_version": "1.0",
+    "workspace_id": "engineering-20261022",
+    "writer_timeout_seconds": 5.0
+  },
+  "qualification": "source-only; runtime unqualified",
+  "request": {
+    "compiled_id": "83ea14e9-6139-45bc-9284-cd89f8ca1d73",
+    "inquiry_id": null,
+    "mode": "numerical",
+    "request_id": "c0:428590ce26987737b0b18b30a5c9f02ff956221acec8a050b566d46af349c98f",
+    "run_id": "run",
+    "scenario": {
+      "actor_information_masks": [],
+      "assumptions": [
+        "Fixed rate four; measurement apparatus shares same host"
+      ],
+      "correspondence": [
+        {
+          "aggregation": "instantaneous-state",
+          "limitation": "Authored model versus controlled constant file; future nominal epoch bracketed by stat reads",
+          "observation_channel": "OS stat bytes",
+          "schema_version": "1.0",
+          "stock_symbol": "bytes"
+        }
+      ],
+      "drivers": [],
+      "end": 5.0,
+      "evidence": [
+        {
+          "lineage": [],
+          "origin_class": "external",
+          "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+          "schema_version": "1.0",
+          "selector": "whole-object",
+          "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+          "workspace_id": "engineering-20261022"
+        }
+      ],
+      "initial_state": {
+        "bytes": 8.0
+      },
+      "output_times": [
+        0.0,
+        5.0
+      ],
+      "parameters": {},
+      "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+      "scenario_id": "scenario",
+      "schema_version": "1.0",
+      "start": 0.0,
+      "terminal_obligations": [],
+      "time_origin": {
+        "reason": null,
+        "schema_version": "1.0",
+        "status": "known",
+        "value": "2026-10-22T18:15:17.863216Z"
+      },
+      "variations": []
+    },
+    "schema_version": "1.0",
+    "solver": {
+      "atol": 1e-09,
+      "backend": "scipy.solve_ivp",
+      "bound_tolerance": 1e-08,
+      "max_step": 0.25,
+      "method": "RK45",
+      "numpy_version": "2.5.3",
+      "rtol": 1e-06,
+      "schema_version": "1.0",
+      "scipy_version": "1.17.0"
+    },
+    "test_id": null,
+    "workspace_id": "engineering-20261022"
+  },
+  "runtime_versions": {
+    "numpy": "2.5.3",
+    "pydantic": "2.12.5",
+    "python": "3.13.15",
+    "scipy": "1.17.0"
+  },
+  "scenario_envelope": {
+    "kind": "finite-scenario-range; not confidence interval or posterior",
+    "omitted_variants": [],
+    "states": {
+      "bytes": {
+        "maximum": [
+          8.0,
+          28.0
+        ],
+        "minimum": [
+          8.0,
+          28.0
+        ]
+      }
+    },
+    "times": [
+      0.0,
+      5.0
+    ],
+    "unquantified": "structural uncertainty, unvisited scenarios, inputs and dependence",
+    "variants": [
+      "baseline"
+    ]
+  },
+  "schema_version": "1.0",
+  "status": "completed",
+  "trajectories": [
+    {
+      "balance_residuals": {
+        "bytes": 3.552713678800501e-15
+      },
+      "cumulative_transfers": {
+        "write": [
+          0.0,
+          19.999999999999996
+        ]
+      },
+      "diagnostics": [],
+      "final_time": 5.0,
+      "nfev": 140,
+      "parameter_values": {},
+      "schema_version": "1.0",
+      "states": {
+        "bytes": [
+          8.0,
+          28.0
+        ]
+      },
+      "status": "completed",
+      "times": [
+        0.0,
+        5.0
+      ],
+      "variant": "baseline"
+    }
+  ],
+  "usage": {
+    "cost_scope": "C5 compute only; no measured CPU/energy/provider or complete C0-C6 path cost",
+    "elapsed_seconds": 1.2096749239999554,
+    "llm_calls": 0,
+    "llm_tokens": 0,
+    "requested_variants": 1,
+    "retained_trajectories": 1,
+    "rhs_evaluations_including_failed": 140
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "changed_ids": [
+    "byte-law"
+  ],
+  "committed_at": "2026-10-22T18:14:52.781867Z",
+  "consumed": null,
+  "decision_authority": "C3-local-operator",
+  "dependency_impact": "bounded-query-required",
+  "duplicate": false,
+  "durability": "local-sqlite-full-unqualified",
+  "invalidated_projection_ids": [
+    "world.current"
+  ],
+  "previous_revision": 2,
+  "request_id": "c0:683e26d068f712bd3f37e1217b3fdfdaea4196fcc618414bd93d55f9dd122371",
+  "revision": 3,
+  "schema_version": "1.0",
+  "workspace_id": "engineering-20261022"
+}

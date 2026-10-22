@@ -1,0 +1,70 @@
+{
+  "comparison": [
+    {
+      "evidence": {
+        "lineage": [],
+        "origin_class": "external",
+        "record_id": "a6c511f5-9fea-484f-b10a-adc8d97fb3f4",
+        "schema_version": "1.0",
+        "selector": "whole-object",
+        "sha256": "6fcea5558db7bce920d69356f8dab3506e3423326cf6a376cd7d49f768138137",
+        "workspace_id": "engineering-20261022"
+      },
+      "issues": [],
+      "observation": {
+        "lower": null,
+        "measurement_schema": "edi.measurement/1.0",
+        "observed_at": "2026-10-22T18:15:22.863216Z",
+        "reason": null,
+        "schema_version": "1.0",
+        "status": "observed",
+        "unit": "byte",
+        "upper": null,
+        "value": 32.0,
+        "variable": "file-bytes"
+      },
+      "point": {
+        "case": {
+          "case_id": "bytes-at-five",
+          "declared_dependence_group": "same-controlled-host",
+          "interpretation": "point",
+          "interpretation_basis": "Direct cardinal byte count; nominal epoch under constant-window clock mapping",
+          "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+          "relative_time": 5.0,
+          "schema_version": "1.0",
+          "score_limit": 1.0,
+          "stock_symbol": "bytes",
+          "variable": "file-bytes"
+        },
+        "predicted": 28.0,
+        "schema_version": "1.0",
+        "target_time": "2026-10-22T18:15:22.863216Z",
+        "unit": {
+          "basis": "declared-domain",
+          "dimensions": {
+            "domain:byte": 1
+          },
+          "schema_version": "1.0",
+          "symbol": "byte"
+        },
+        "world_ref": {
+          "record_id": "byte-stock",
+          "schema_version": "1.0",
+          "version": 2
+        }
+      },
+      "schema_version": "1.0",
+      "scores": {
+        "absolute_error": 4.0,
+        "signed_error": -4.0,
+        "squared_error": 16.0
+      },
+      "source_id": "8ec684cb-520f-416e-9d76-7e80655669c4",
+      "status": "scored",
+      "within_declared_limit": false
+    }
+  ],
+  "status": "completed-pending-fresh-process-restart",
+  "student_revisions": 2,
+  "teacher_responses": 1
+}

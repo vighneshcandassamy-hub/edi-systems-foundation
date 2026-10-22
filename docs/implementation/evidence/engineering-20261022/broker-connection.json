@@ -1,0 +1,11 @@
+{
+  "body": {
+    "forest_benchmark_started": false,
+    "kind": "controlled-engineering-status",
+    "ready": true
+  },
+  "evidence_record_id": "0ab7aa10-b39b-4138-a237-fdbc59672bcb",
+  "http_status": 200,
+  "response_bytes": 91,
+  "sha256": "1c7261dbe85a5f72735ce3ba7ab7c11c2328dc0575047c4200b18ddf1fd12c2e"
+}

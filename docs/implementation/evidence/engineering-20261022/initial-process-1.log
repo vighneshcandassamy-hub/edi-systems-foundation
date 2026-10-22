@@ -1,0 +1,15 @@
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+ModuleNotFoundError: No module named 'wrapt'
+Traceback (most recent call last):
+  File "/kaggle/temp/edi-engineering-source/complete_run.py", line 324, in <module>
+    try: {"initial": initial, "finish": finish, "restart": restart}[stage]()
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/kaggle/temp/edi-engineering-source/complete_run.py", line 146, in initial
+    r, s, t = runtime()
+              ~~~~~~~^^
+  File "/kaggle/temp/edi-engineering-source/complete_run.py", line 73, in runtime
+    app = IntegratedApplication(ApplicationProfile.load(profile_path))
+  File "/kaggle/temp/edi-engineering-source/src/edi/inquiry/application.py", line 139, in __init__
+    authority = r.agency_for("C0").benchmark_authority(grant, endpoint=grant.endpoint,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AgencyAccess' object has no attribute 'benchmark_authority'

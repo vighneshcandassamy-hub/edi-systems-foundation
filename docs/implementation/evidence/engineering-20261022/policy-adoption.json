@@ -1,0 +1,49 @@
+{
+  "amendment_sha256": "9558f7f4e68d2e86d268b6f6289758facdd9ba708137f1c11c807d2adf323618",
+  "artifact_sha256": "b6e594ebb7b6e6eef4507e2f819ca9dbca01de3d0e088881c29bec100cc23f9e",
+  "authority": "trusted-local-operator-unverified-identity",
+  "decided_at": "2026-10-22T18:15:23.381304Z",
+  "policy": {
+    "access_cooldown_seconds": 604800,
+    "assumptions": [
+      "Explicit trusted local operator"
+    ],
+    "decision_ttl_seconds": 60,
+    "evaluation_standards": [
+      "Exact origin read only; no external effects"
+    ],
+    "grants": [
+      {
+        "basis": "Authored engineering harness; explicit local operator; not autonomous discovery",
+        "expires_at": "2026-10-22T19:15:23.310404Z",
+        "grant_id": "read-outcomes",
+        "max_items": 10,
+        "not_before": "2026-10-22T18:15:22.310404Z",
+        "operation": "select-observations",
+        "origin_refs": [
+          "066bd23a-e985-489c-ad26-fdd595a1844f"
+        ],
+        "schema_version": "1.0",
+        "world_ids": []
+      }
+    ],
+    "mode": "research-readonly",
+    "policy_id": "engineering-readonly",
+    "purpose": "Controlled engineering observations",
+    "purpose_version": "v1",
+    "schema_version": "1.0"
+  },
+  "previous_revision": 0,
+  "request": {
+    "amendment_id": "amendment",
+    "decision": "adopt",
+    "expected_revision": 0,
+    "operator_id": "engineering-operator",
+    "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+    "request_id": "c0:a7085db42bfcac7fed206c8fc19a3915bfeed745a56059177d5278f872bfbae4",
+    "schema_version": "1.0",
+    "workspace_id": "engineering-20261022"
+  },
+  "revision": 1,
+  "schema_version": "1.0"
+}

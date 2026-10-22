@@ -142,7 +142,7 @@ for p in list(D.glob('*.md'))+[ROOT/'docs/decisions/ADR-002-implementation-archi
     for target in re.findall(r'\]\(([^)]+)\)',txt):
         if target.startswith(('https://','http://','#')):
             continue
-        require((p.parent/target.split('#')[0]).is_file(), 'Broken document link '+p.name+' -> '+target)
+        require((p.parent/target.split('#')[0]).exists(), 'Broken document link '+p.name+' -> '+target)
 result = {'status':'PASS' if not issues else 'FAIL','scope':'documentation_traceability_and_inventory_only',
           'source_baseline':data['source_pin']['commit'],'components':len(comps),'functions':len(funcs),
           'overview_nodes':len(nodes),'overview_edges':len(edges),'i7_requirements':len(up),

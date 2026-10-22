@@ -1,0 +1,22 @@
+{
+  "failure-c7-facade": {
+    "bytes": 210588,
+    "sha256": "28e90d87f54fa3105ee24e4bc7bcb1bf4653fd7a1e1bc48f10f984ef8170a11d",
+    "raw_archive_location": "C:\\Users\\csscs\\Documents\\Codex\\2026-10-22\\edi-free-setup\\engineering-evidence-20261022\\failure-c7-facade\\edi-native-state.zip"
+  },
+  "failure-c4-cut": {
+    "bytes": 264794,
+    "sha256": "f4c8648037415de2843ac28ae1f703ac19a25e44fdd75b15ed036808c29bd42a",
+    "raw_archive_location": "C:\\Users\\csscs\\Documents\\Codex\\2026-10-22\\edi-free-setup\\engineering-evidence-20261022\\failure-c4-cut\\edi-native-state.zip"
+  },
+  "initial": {
+    "bytes": 323802,
+    "sha256": "6478d6e9d0a54a39a0d185dfa9a81fc413b5673f63493ea65aea66a0244970e0",
+    "raw_archive_location": "C:\\Users\\csscs\\Documents\\Codex\\2026-10-22\\edi-free-setup\\engineering-evidence-20261022\\initial\\edi-native-state.zip"
+  },
+  "final": {
+    "bytes": 472735,
+    "sha256": "f9542a975fea6090fc4aa37839eedce98bafc5f6a252f1390188020d86cab2d4",
+    "raw_archive_location": "C:\\Users\\csscs\\Documents\\Codex\\2026-10-22\\edi-free-setup\\engineering-evidence-20261022\\final\\edi-native-state.zip"
+  }
+}

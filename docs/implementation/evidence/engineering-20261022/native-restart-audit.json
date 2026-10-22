@@ -1,0 +1,16 @@
+{
+  "c3_candidate_not_admitted": true,
+  "c5_native_hash_verified": true,
+  "c6_native_hash_verified": true,
+  "c7_native_receipt": "completed",
+  "conservative_charged_tokens": 38703,
+  "energy": "not measured",
+  "known_input_tokens": 20596,
+  "known_output_tokens": 1723,
+  "new_model_calls_in_restart": 0,
+  "paid_spend": 0,
+  "real_student_responses": 2,
+  "status": "passed",
+  "teacher_responses": 1,
+  "teacher_usage": "unknown; full reservation charged"
+}

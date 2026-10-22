@@ -1,0 +1,63 @@
+{
+  "duplicate": false,
+  "observation": {
+    "capture": {
+      "completeness": "complete",
+      "critical_profiles": [],
+      "expected_bytes": 459,
+      "expected_sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+      "idempotency_key": "c0:eded4325be2b27bc0d00194f4751101bd8bf1d5d4f25de4bec0d830602bdc4b2",
+      "kind": "native-bytes",
+      "lineage": [],
+      "media_type": "application/json",
+      "origin_class": "external",
+      "origin_ref": "18f49df6-f050-4e4e-83aa-d4a2eb6529d4",
+      "profiles": {
+        "controlled_writer": true
+      },
+      "schema_version": "1.0",
+      "time": {
+        "clock_id": null,
+        "event_time": {
+          "reason": "not supplied",
+          "schema_version": "1.0",
+          "status": "unknown",
+          "value": null
+        },
+        "reported_time": {
+          "reason": "not supplied",
+          "schema_version": "1.0",
+          "status": "unknown",
+          "value": null
+        },
+        "schema_version": "1.0",
+        "sequence": null
+      }
+    },
+    "commit_position": 2,
+    "committed_at": "2026-10-22T17:55:22.658410Z",
+    "durability": "local-sqlite-full-unqualified",
+    "kind": "native-bytes",
+    "manifest": {
+      "byte_count": 459,
+      "chunk_bytes": 1048576,
+      "chunk_count": 1,
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a"
+    },
+    "manifest_ref": "14117f33-7e37-42ac-9ab9-a83b47928a5e:manifest",
+    "origin_ref": "18f49df6-f050-4e4e-83aa-d4a2eb6529d4",
+    "profiles": {
+      "controlled_writer": true
+    },
+    "receipt_time": "2026-10-22T17:55:22.657745Z",
+    "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+    "schema_ref": "edi.observation/1.0",
+    "schema_version": "1.0",
+    "scope_id": "engineering-20261022",
+    "source_id": "1ec4f7af-9cf4-44b8-bcc2-74441e048cfb"
+  },
+  "schema_version": "1.0",
+  "status": "committed"
+}

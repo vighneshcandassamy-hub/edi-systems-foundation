@@ -1,0 +1,5 @@
+{
+  "reason": "Use actual native C3 record versions. If original opaque IR pins are invalid, retain original model and create an explicit operator correction without changing its equation.",
+  "before": "3a2e4ba540df96186e94e73f56ddd7df25b368fd3ba5dad429a09d08ed5270bb",
+  "after": "8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6"
+}

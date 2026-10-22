@@ -1,0 +1,282 @@
+{
+  "archive_sha256": "f9542a975fea6090fc4aa37839eedce98bafc5f6a252f1390188020d86cab2d4",
+  "archive_bytes": 472735,
+  "zip_crc": "ok",
+  "sqlite_integrity": {
+    "owners.agency.sqlite3": "ok",
+    "owners.analyze.sqlite3": "ok",
+    "owners.assess.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.world.sqlite3": "ok"
+  },
+  "finish": {
+    "comparison": [
+      {
+        "evidence": {
+          "lineage": [],
+          "origin_class": "external",
+          "record_id": "a6c511f5-9fea-484f-b10a-adc8d97fb3f4",
+          "schema_version": "1.0",
+          "selector": "whole-object",
+          "sha256": "6fcea5558db7bce920d69356f8dab3506e3423326cf6a376cd7d49f768138137",
+          "workspace_id": "engineering-20261022"
+        },
+        "issues": [],
+        "observation": {
+          "lower": null,
+          "measurement_schema": "edi.measurement/1.0",
+          "observed_at": "2026-10-22T18:15:22.863216Z",
+          "reason": null,
+          "schema_version": "1.0",
+          "status": "observed",
+          "unit": "byte",
+          "upper": null,
+          "value": 32.0,
+          "variable": "file-bytes"
+        },
+        "point": {
+          "case": {
+            "case_id": "bytes-at-five",
+            "declared_dependence_group": "same-controlled-host",
+            "interpretation": "point",
+            "interpretation_basis": "Direct cardinal byte count; nominal epoch under constant-window clock mapping",
+            "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+            "relative_time": 5.0,
+            "schema_version": "1.0",
+            "score_limit": 1.0,
+            "stock_symbol": "bytes",
+            "variable": "file-bytes"
+          },
+          "predicted": 28.0,
+          "schema_version": "1.0",
+          "target_time": "2026-10-22T18:15:22.863216Z",
+          "unit": {
+            "basis": "declared-domain",
+            "dimensions": {
+              "domain:byte": 1
+            },
+            "schema_version": "1.0",
+            "symbol": "byte"
+          },
+          "world_ref": {
+            "record_id": "byte-stock",
+            "schema_version": "1.0",
+            "version": 2
+          }
+        },
+        "schema_version": "1.0",
+        "scores": {
+          "absolute_error": 4.0,
+          "signed_error": -4.0,
+          "squared_error": 16.0
+        },
+        "source_id": "8ec684cb-520f-416e-9d76-7e80655669c4",
+        "status": "scored",
+        "within_declared_limit": false
+      }
+    ],
+    "status": "completed-pending-fresh-process-restart",
+    "student_revisions": 2,
+    "teacher_responses": 1
+  },
+  "restart": {
+    "checks": {
+      "c4_episode": "identical",
+      "inquiry": "original failure preserved",
+      "owners.agency.sqlite3": "ok",
+      "owners.analyze.sqlite3": "ok",
+      "owners.assess.sqlite3": "ok",
+      "owners.interpret.sqlite3": "ok",
+      "owners.reason.sqlite3": "ok",
+      "owners.sqlite3": "ok",
+      "owners.workflows.sqlite3": "ok",
+      "owners.world.sqlite3": "ok",
+      "workflow_replay": "identical outputs, no native redispatch"
+    },
+    "limitation": "Normal process restart/replay; no fault injection or crash durability qualification",
+    "new_model_calls": 0,
+    "status": "completed"
+  },
+  "native_audit": {
+    "c3_candidate_not_admitted": true,
+    "c5_native_hash_verified": true,
+    "c6_native_hash_verified": true,
+    "c7_native_receipt": "completed",
+    "conservative_charged_tokens": 38703,
+    "energy": "not measured",
+    "known_input_tokens": 20596,
+    "known_output_tokens": 1723,
+    "new_model_calls_in_restart": 0,
+    "paid_spend": 0,
+    "real_student_responses": 2,
+    "status": "passed",
+    "teacher_responses": 1,
+    "teacher_usage": "unknown; full reservation charged"
+  },
+  "server_stopped": true,
+  "forecast": {
+    "acknowledgement_observed_at": "2026-10-22T18:14:54.176255Z",
+    "artifact_sha256": "dc74944229776c9829ab742c6176145ea57f745ac076e7a36ac0422a4de30ad4",
+    "clock_assumption": "Trusted common host UTC and honest source event/report clocks assumed; no external timestamp authority or knowledge-independence proof",
+    "forecast_id": "forecast",
+    "schema_version": "1.0",
+    "seal_sha256": "e030076087b08807ed4c0b1fe862dfeba7d014f4c94d8209618a16f45ba44bc0",
+    "status": "local-prospective"
+  },
+  "compare_scores": {
+    "absolute_error": 4.0,
+    "signed_error": -4.0,
+    "squared_error": 16.0
+  },
+  "acquisition": {
+    "actual_read_at": "2026-10-22T18:15:23.113411+00:00",
+    "after_mtime_ns": 1792692892863302100,
+    "before": {
+      "at": "2026-10-22T18:14:52.863320+00:00",
+      "mtime_ns": 1792692892863302100,
+      "size": 32
+    },
+    "bytes": 32,
+    "jitter_seconds": 0.250195,
+    "mapping_assumption": "No writer between recorded brackets; unchanged mtime/size on controlled private file",
+    "nominal_event_at": "2026-10-22T18:15:22.863216+00:00"
+  },
+  "student_responses": [
+    {
+      "job_id": "45090eb4-b581-43bc-bff2-9dc3f88d9484",
+      "input_tokens": 9481,
+      "output_tokens": 742,
+      "rationale_summary": "The evidence supports a deterministic, stepwise increase in byte size over time, consistent with a configured writer behavior. No physical causal law is inferred, and no independent repeat or causal identification is available. The hypothesis is cautious and limited to the observed data under the assumption of authored sampling labels.",
+      "hypotheses": [
+        {
+          "applicability": "Applies to the observed file reading sequence under the assumption of authored sampling labels.",
+          "assumptions": [
+            "The file writer uses configured sizes.",
+            "The sampling labels are authored, not measured elapsed intervals.",
+            "No physical causal law is inferred."
+          ],
+          "claim": "The file readings support a deterministic, stepwise increase in byte size over time, consistent with a configured writer behavior.",
+          "confounders": [
+            "The absence of physical causal law inference limits generalizability.",
+            "No independent repeat or causal identification is available."
+          ],
+          "counterevidence": [],
+          "dependence_groups": [],
+          "hypothesis_id": "hypothesis-001",
+          "mechanism": "The writer's behavior is governed by a configured size pattern, producing predictable byte increments at each labeled step.",
+          "predictions": [],
+          "rivals": [],
+          "schema_version": "1.0",
+          "scope": "Observed file readings only; authored model is an assumption.",
+          "status": "candidate",
+          "support": [
+            {
+              "lineage": [],
+              "origin_class": "external",
+              "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+              "schema_version": "1.0",
+              "selector": "whole-object",
+              "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+              "workspace_id": "engineering-20261022"
+            }
+          ],
+          "unknowns": [
+            "True clock correspondence and unseen writer changes",
+            "No independent repeat or causal identification"
+          ]
+        }
+      ],
+      "tests": [
+        {
+          "channels": [
+            "file-readings"
+          ],
+          "confounding_controls": "Assume authored sampling labels, not measured elapsed intervals.",
+          "cost_and_risk": "Low cost; no physical causal law inference required.",
+          "discriminates": [
+            "hypothesis-001"
+          ],
+          "expected_differences": "No expected differences if the hypothesis is correct; differences would indicate an unmodeled writer behavior or clock correspondence issue.",
+          "feasibility": "Feasible; requires no additional data or tools.",
+          "identifiability_limit": "No independent repeat or causal identification available.",
+          "intervention_or_observation": "Observation of file readings under different sampling label configurations.",
+          "kind": "observation",
+          "schema_version": "1.0",
+          "status": "proposed-unrun",
+          "test_id": "test-001"
+        }
+      ]
+    },
+    {
+      "job_id": "dc29ea86-df0f-4753-8ad3-3d565ba23da7",
+      "input_tokens": 11115,
+      "output_tokens": 981,
+      "rationale_summary": "The evidence supports a finite, ordered pattern of byte sizes (8, 12, 16) with consistent 4-byte increments per authored label, consistent with a configured writer behavior. The hypothesis is cautious and limited to the observed data under the assumption of authored sampling labels. The claim avoids stronger terms like 'deterministic' or 'predictable over time', which are not supported by the data. The mechanism is attributed to a configured writer behavior, not independently verified dynamics. The dependency cut at byte-flow is incomplete or stale; the mechanism is not certified. The hypothesis retains the explicit incomplete dependency view and the scope of the evidence. The unknowns include true clock correspondence, unseen writer changes, and what access and costs remain unknown for distinguishing alternative writer behaviors or timing/accounting uncertainty.",
+      "hypotheses": [
+        {
+          "applicability": "Applies to the observed file reading sequence under the assumption of authored sampling labels.",
+          "assumptions": [
+            "The file writer uses configured sizes.",
+            "The sampling labels are authored, not measured elapsed intervals.",
+            "No physical causal law is inferred."
+          ],
+          "claim": "The file readings show a finite, ordered pattern of byte sizes (8, 12, 16) with consistent 4-byte increments per authored label, consistent with a configured writer behavior.",
+          "confounders": [
+            "The absence of physical causal law inference limits generalizability.",
+            "No independent repeat or causal identification is available.",
+            "The acquisition timestamps are closely spaced, while C1 event/reported times are unknown.",
+            "The dependency cut at byte-flow is incomplete or stale; the mechanism is not certified."
+          ],
+          "counterevidence": [],
+          "dependence_groups": [],
+          "hypothesis_id": "hypothesis-002",
+          "mechanism": "The writer's behavior is governed by a configured size pattern, producing predictable byte increments at each labeled step. The pattern is finite and ordered, with 4-byte increments per authored label, not a general deterministic law or rate per elapsed second.",
+          "predictions": [],
+          "rivals": [],
+          "schema_version": "1.0",
+          "scope": "Observed file readings only; authored model is an assumption.",
+          "status": "candidate",
+          "support": [
+            {
+              "lineage": [],
+              "origin_class": "external",
+              "record_id": "14117f33-7e37-42ac-9ab9-a83b47928a5e",
+              "schema_version": "1.0",
+              "selector": "whole-object",
+              "sha256": "0e313d4f84e81d27b90e5a7831321a5fab04f4cb94083df4c1508edd645d7f6a",
+              "workspace_id": "engineering-20261022"
+            }
+          ],
+          "unknowns": [
+            "True clock correspondence and unseen writer changes",
+            "No independent repeat or causal identification",
+            "What access and costs remain unknown for distinguishing alternative writer behaviors or timing/accounting uncertainty"
+          ]
+        }
+      ],
+      "tests": [
+        {
+          "channels": [
+            "file-readings"
+          ],
+          "confounding_controls": "Assume authored sampling labels, not measured elapsed intervals.",
+          "cost_and_risk": "Low cost; no physical causal law inference required.",
+          "discriminates": [
+            "hypothesis-002"
+          ],
+          "expected_differences": "No expected differences if the hypothesis is correct; differences would indicate an unmodeled writer behavior or clock correspondence issue.",
+          "feasibility": "Feasible; requires no additional data or tools.",
+          "identifiability_limit": "No independent repeat or causal identification available.",
+          "intervention_or_observation": "Observation of file readings under different sampling label configurations.",
+          "kind": "observation",
+          "schema_version": "1.0",
+          "status": "proposed-unrun",
+          "test_id": "test-002"
+        }
+      ]
+    }
+  ]
+}

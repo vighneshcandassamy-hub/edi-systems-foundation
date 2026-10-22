@@ -1,0 +1,19 @@
+{
+  "changed_ids": [
+    "d2-b72c2bdea86a24e962811b5af8e048309896c085d33296ed4f38d842c3bbea2b.source0"
+  ],
+  "committed_at": "2026-10-22T17:55:22.806971Z",
+  "consumed": null,
+  "decision_authority": "C3-candidate-policy",
+  "dependency_impact": "bounded-query-required",
+  "duplicate": false,
+  "durability": "local-sqlite-full-unqualified",
+  "invalidated_projection_ids": [
+    "world.current"
+  ],
+  "previous_revision": 0,
+  "request_id": "c0:71d21d23bfe5ddef895aaaae38afb73e629140dbcf7d793c8f8b4fa02b4023cd",
+  "revision": 1,
+  "schema_version": "1.0",
+  "workspace_id": "engineering-20261022"
+}

@@ -1,5 +1,7 @@
 # Existing-component integration handoff
 
+This page preserves the 0.10.0 source-only handoff. Subsequent 0.10.1 execution, source defect and repairs are recorded in [ENGINEERING_RUN.md](ENGINEERING_RUN.md). Wider original qualifications remain open.
+
 22 October 2026. Source baseline 9b275da82e69cd0b77b7d63525067721017a165c;
 implementation 0.10.0.dev0 / edi-c4/0.6.0. The owner directed completion of the
 existing component wiring before testing. This increment builds those paths.

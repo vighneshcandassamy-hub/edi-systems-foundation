@@ -1,8 +1,6 @@
 # Integrated application configuration
 
-This is a source handoff, not a launched service or recorded test. The runtime
-connects the existing C0-C7 components. Its public-world connector remains the
-existing loopback BrokerConnector; this does not add a crawler or actuator.
+This guide configures the existing C0-C7 application and autonomous controller. The scheduled 0.10.1 execution is recorded in [ENGINEERING_RUN.md](../../docs/implementation/ENGINEERING_RUN.md); the autonomous controller remains unqualified. The loopback BrokerConnector supplies public-world access. Serving and pinned C5 execution require separate environments under the recorded dependency versions.
 
 1. Prepare a fresh workspace and an operator-issued SimulationGrant for the
    intended public-world broker. The broker, student service and EDI application

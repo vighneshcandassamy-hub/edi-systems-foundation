@@ -1,0 +1,147 @@
+{
+  "intent": {
+    "artifact_sha256": "79ff22b3e41fe15805de13d07dbb723801be39145f0f80a242fff871235b66c7",
+    "created_at": "2026-10-22T18:15:23.434451Z",
+    "decision": {
+      "artifact_sha256": "d9f5d5476c0048c6836b4b5ee0654422487aa16b9b1ee0f7630e485f63fba205",
+      "authority": "research-policy-internal-read-only",
+      "created_at": "2026-10-22T18:15:23.407379Z",
+      "expires_at": "2026-10-22T18:16:23.407379Z",
+      "policy_adoption_sha256": "b6e594ebb7b6e6eef4507e2f819ca9dbca01de3d0e088881c29bec100cc23f9e",
+      "reasons": [
+        "permitted internal read under the pinned policy and named grant; no external action"
+      ],
+      "request": {
+        "attribution": "Authored engineering harness; explicit local operator; not autonomous discovery",
+        "boundary": "edi-runtime",
+        "decision_id": "read-decision",
+        "expected_effects_and_limits": "Native read only, no physical actuation",
+        "grant_id": "read-outcomes",
+        "intent": {
+          "cursor": null,
+          "limit": 10,
+          "operation": "select-observations",
+          "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+          "schema_version": "1.0"
+        },
+        "policy_revision": 1,
+        "purpose_version": "v1",
+        "rationale": "Authored engineering harness; explicit local operator; not autonomous discovery",
+        "request_id": "c0:5b30e6a1a5a174341978ba383752936d7282cb43bf128ce7d3e8a77908a5d713",
+        "schema_version": "1.0",
+        "workspace_id": "engineering-20261022"
+      },
+      "schema_version": "1.0",
+      "status": "allowed"
+    },
+    "effect_class": "internal-read-only",
+    "profile_id": "local-agency-research-v1",
+    "request": {
+      "decision_id": "read-decision",
+      "execution_id": "read-execution",
+      "request_id": "c0:68afbc7d5ee3407e77b3c38f600c451f05975431be517e53128e9a55f000c795",
+      "schema_version": "1.0",
+      "workspace_id": "engineering-20261022"
+    },
+    "schema_version": "1.0"
+  },
+  "receipt": {
+    "artifact_sha256": "eec6fdb29b4cd122cd60b66fd6895374ed7988ba27f2c505d9282780212c7b64",
+    "diagnostic": null,
+    "execution_id": "read-execution",
+    "finished_at": "2026-10-22T18:15:23.439917Z",
+    "intent_sha256": "79ff22b3e41fe15805de13d07dbb723801be39145f0f80a242fff871235b66c7",
+    "measured_effect": "not-established",
+    "reconciliation": null,
+    "report_archive_id": null,
+    "result": {
+      "meaning": "native occurrence metadata; no payload decoding or actor-perception inference",
+      "operation": "select-observations",
+      "page": {
+        "cursor": {
+          "after": 6,
+          "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+          "schema_version": "1.0",
+          "watermark": 6,
+          "workspace_id": "engineering-20261022"
+        },
+        "has_more": false,
+        "items": [
+          {
+            "capture": {
+              "completeness": "complete",
+              "critical_profiles": [],
+              "expected_bytes": 164,
+              "expected_sha256": "6fcea5558db7bce920d69356f8dab3506e3423326cf6a376cd7d49f768138137",
+              "idempotency_key": "c0:f2a50ca9e39245e2d89f855ea037dbe7d660e97637f1dce7169ec0ccd9437406",
+              "kind": "measurement-v1",
+              "lineage": [],
+              "media_type": "application/json",
+              "origin_class": "external",
+              "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+              "profiles": {
+                "actual_acquisition_at": "2026-10-22T18:15:23.113411+00:00",
+                "controlled_fixture": true,
+                "nominal_constant_window_mapping": true
+              },
+              "schema_version": "1.0",
+              "time": {
+                "clock_id": "UTC",
+                "event_time": {
+                  "reason": null,
+                  "schema_version": "1.0",
+                  "status": "known",
+                  "value": "2026-10-22T18:15:22.863216Z"
+                },
+                "reported_time": {
+                  "reason": null,
+                  "schema_version": "1.0",
+                  "status": "known",
+                  "value": "2026-10-22T18:15:23.113411Z"
+                },
+                "schema_version": "1.0",
+                "sequence": null
+              }
+            },
+            "commit_position": 6,
+            "committed_at": "2026-10-22T18:15:23.131404Z",
+            "durability": "local-sqlite-full-unqualified",
+            "kind": "measurement-v1",
+            "manifest": {
+              "byte_count": 164,
+              "chunk_bytes": 1048576,
+              "chunk_count": 1,
+              "media_type": "application/json",
+              "schema_version": "1.0",
+              "sha256": "6fcea5558db7bce920d69356f8dab3506e3423326cf6a376cd7d49f768138137"
+            },
+            "manifest_ref": "a6c511f5-9fea-484f-b10a-adc8d97fb3f4:manifest",
+            "origin_ref": "066bd23a-e985-489c-ad26-fdd595a1844f",
+            "profiles": {
+              "actual_acquisition_at": "2026-10-22T18:15:23.113411+00:00",
+              "controlled_fixture": true,
+              "nominal_constant_window_mapping": true
+            },
+            "receipt_time": "2026-10-22T18:15:23.130708Z",
+            "record_id": "a6c511f5-9fea-484f-b10a-adc8d97fb3f4",
+            "schema_ref": "edi.observation/1.0",
+            "schema_version": "1.0",
+            "scope_id": "engineering-20261022",
+            "source_id": "8ec684cb-520f-416e-9d76-7e80655669c4"
+          }
+        ],
+        "schema_version": "1.0"
+      }
+    },
+    "schema_version": "1.0",
+    "status": "completed",
+    "usage": {
+      "end_to_end_cost": "unknown",
+      "external_actions": 0,
+      "model_calls": 0,
+      "tokens": 0
+    }
+  },
+  "schema_version": "1.0",
+  "status": "resolved"
+}

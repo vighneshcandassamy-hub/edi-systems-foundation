@@ -1,0 +1,33 @@
+{
+  "artifact_sha256": "89b5dedcc7a9839c03f6483abf6d15c936c828bdc4658ef00131d45ffb0e987b",
+  "basis": "attributed-explicit-information-mask",
+  "created_at": "2026-10-22T18:15:23.492317Z",
+  "limitations": [
+    "Contents, channels, receipt, attention, memory, frames and goals are attributed inputs, not inferred or independently verified human psychology.",
+    "Only explicitly supplied content is exposed. No complete C3 record, hidden global state, automatic traversal or inferred transitive knowledge is appended.",
+    "UTC source/model knowledge and actor times share the caller-declared clock mapping. Selector-content correspondence and physical perception remain unestablished.",
+    "Available, received and perceived are distinct; C5 actor-response simulation integration is not installed. Evidence/model eligibility does not establish causal truth."
+  ],
+  "request": {
+    "actor": {
+      "record_id": "operator-actor",
+      "schema_version": "1.0",
+      "version": 2
+    },
+    "as_of": "2026-10-22T18:15:23.476433Z",
+    "attributed_policy": "Research only",
+    "attribution": "Authored engineering harness; explicit local operator; not autonomous discovery",
+    "clock_mapping_assumption": "UTC host; actor mask authored",
+    "data": [],
+    "frames_and_memory": [],
+    "model_revision": 3,
+    "owned_goals": [
+      "Review finding"
+    ],
+    "request_id": "c0:e0d7ff2d51b49450de6c644a8b134d6ad57269283e89184f0d5f8bf110edd3fd",
+    "schema_version": "1.0",
+    "view_id": "actor-view",
+    "workspace_id": "engineering-20261022"
+  },
+  "schema_version": "1.0"
+}

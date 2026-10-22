@@ -1,0 +1,6 @@
+{
+  "reason": "Bound selected bytes to actual C1 manifest; replay successful handoffs with original immutable inputs; retain the failed original inquiry",
+  "before": "6b6c46f22f7f53922dd44fc0aa3a47996b54f05181343197c1d4730967fb92d8",
+  "after": "3a2e4ba540df96186e94e73f56ddd7df25b368fd3ba5dad429a09d08ed5270bb",
+  "provider_calls_before_repair": 0
+}

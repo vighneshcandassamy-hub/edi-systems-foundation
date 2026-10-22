@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "c4_episode": "identical",
+    "inquiry": "original failure preserved",
+    "owners.agency.sqlite3": "ok",
+    "owners.analyze.sqlite3": "ok",
+    "owners.assess.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.world.sqlite3": "ok",
+    "workflow_replay": "identical outputs, no native redispatch"
+  },
+  "limitation": "Normal process restart/replay; no fault injection or crash durability qualification",
+  "new_model_calls": 0,
+  "status": "completed"
+}

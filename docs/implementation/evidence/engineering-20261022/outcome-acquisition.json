@@ -1,0 +1,13 @@
+{
+  "actual_read_at": "2026-10-22T18:15:23.113411+00:00",
+  "after_mtime_ns": 1792692892863302100,
+  "before": {
+    "at": "2026-10-22T18:14:52.863320+00:00",
+    "mtime_ns": 1792692892863302100,
+    "size": 32
+  },
+  "bytes": 32,
+  "jitter_seconds": 0.250195,
+  "mapping_assumption": "No writer between recorded brackets; unchanged mtime/size on controlled private file",
+  "nominal_event_at": "2026-10-22T18:15:22.863216+00:00"
+}
