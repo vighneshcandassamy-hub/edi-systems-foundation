@@ -16,6 +16,12 @@ core files match the built wheel; owner/outside matrix consistency, component
 review consistency and frozen source/package integrity checks pass. See
 [verification](evidence/intensive-teaching-20261023/final-checks.json).
 
+The final teaching story also invokes the production offline restart CLI in a
+fresh process and verifies eight database integrity results with zero dispatch.
+The corrected adapter preserves intensive/memory settings and accurate terminal
+assistance labels. Its original fixture-path failure is retained in the evidence
+notes, alongside the passing native and portable Python 3.12 reruns.
+
 Five authored engineering checks pass. They exercise a complete three-turn
 information acquisition/read/submission story and recovery counterexamples.
 The teacher no longer depends on the student asking for help in intensive mode.

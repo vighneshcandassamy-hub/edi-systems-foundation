@@ -73,10 +73,11 @@
     "src/edi/world/sqlite.py": "287cca30eff4723b9f4573f5b8551802dfe0d9721ad9197db74041148af3187e",
     "src/edi/world/__init__.py": "fa89aea082f985abd2185bc3edcf6682947ff43a82b854a98eaffb9687db7a55",
     "tests/test_information_seeking.py": "cb79cb17fb70a2c0f87232e38dc7c389424e8e02ada290d7ab108fc5af861b2f",
-    "tests/test_intensive_teaching.py": "c06fe62b6a84e318ac2b5ca14738983b490f86f04f9027ffd7f491650c154327",
+    "tests/test_intensive_teaching.py": "f07852de14496670415af648ac4e061e55d11054197bd1dc7d00b3f55c6ae398",
     "scripts/check_information_seeking.py": "6d53992a77bce9aef48c1044094cdd775da5f40e431ca282041a2d494c6e615c",
     "scripts/check_intensive_teaching.py": "663b82db2635dfa3161d3d21e0c6b40fd37037f84fc5f2c7065d629143139bc6",
     "examples/autonomous/prepare_kaggle_run.py": "070d43600145ffa42a3babcc3ea46e73d38b2464f85a7130e8aace18ac6bd35a",
-    "examples/autonomous/run.py": "cb97c07133b8709c58d7d27090baf4f3c43c7b47b2b1eab1c888e8f7cbcad57d"
+    "examples/autonomous/run.py": "6488056209e1c1cedfc7706ea8d1577e7d7e8ae015d508eef6834bf98bb04133",
+    "examples/autonomous/offline_restart.py": "f4cfdc82b091b558cc16c7840724761ea288b46cf58e63f95e2c5e312d74ab15"
   }
 }

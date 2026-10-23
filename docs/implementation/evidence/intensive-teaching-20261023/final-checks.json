@@ -32,5 +32,15 @@
   "portable_native": {
     "exit_code": 0
   },
-  "scope": "Authored engineering and packaging only; live teaching/serving grammar/benchmark readiness not demonstrated"
+  "scope": "Authored engineering and packaging only; live teaching/serving grammar/benchmark readiness not demonstrated",
+  "production_offline_restart_adapter": {
+    "exit_code": 0,
+    "evidence": "native-restart-adapter-fixed.json",
+    "meaning": "Production offline CLI reopens with correct mode and zero dispatch"
+  },
+  "final_portable_python312": {
+    "exit_code": 0,
+    "evidence": "portable-restart-python312.json",
+    "meaning": "Updated full teaching story includes fresh process CLI and portable layout on Python 3.12"
+  }
 }

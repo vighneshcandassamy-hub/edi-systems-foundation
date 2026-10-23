@@ -41,9 +41,10 @@ def main():
     runtime.assessment
     investigation = Investigation(runtime, ForbiddenPort(session_id=profile.broker.grant.session_id),
         ForbiddenPort(binding=profile.student.binding), runtime.workflow.profile.database,
-        profile.run_id, teacher_gateway=ForbiddenPort(binding=profile.teacher.binding),
+        profile.run_id, teacher_gateway=None if profile.teacher.mode == "disabled" else ForbiddenPort(binding=profile.teacher.binding),
         max_turns=profile.max_turns, max_tokens=profile.max_tokens,
-        session_seconds=profile.session_seconds, max_corrections=profile.max_corrections)
+        session_seconds=profile.session_seconds, max_corrections=profile.max_corrections,
+        teaching_mode=profile.teaching_mode, use_teaching_memory=profile.use_teaching_memory)
     baseline = json.loads((root / "restart-baseline.json").read_bytes())
     observed = snapshot(SimpleNamespace(runtime=runtime, investigation=investigation))
     differences = snapshot_differences(baseline, observed)

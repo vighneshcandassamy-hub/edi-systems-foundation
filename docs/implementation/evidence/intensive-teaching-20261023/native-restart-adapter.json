@@ -1,0 +1,19 @@
+{
+  "version": "0.10.8.dev0",
+  "scope": "Authored teacher/student fixtures; native C0/C1/C2/C4/C7, in-process broker handler and real teacher file exchange; no model inference",
+  "passed": false,
+  "tests_run": 5,
+  "errors": [],
+  "failures": [
+    {
+      "test": "test_full_guided_acquire_read_submit_and_retained_history (test_intensive_teaching.IntensiveTeachingTests.test_full_guided_acquire_read_submit_and_retained_history)",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\csscs\\Documents\\Codex\\2026-10-23\\conitnue-edi-mvp-8-here-as\\work\\edi-systems-foundation\\tests\\test_intensive_teaching.py\", line 111, in test_full_guided_acquire_read_submit_and_retained_history\n    self.assertEqual(proc.returncode,0,proc.stdout+proc.stderr)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1 != 0 : Traceback (most recent call last):\n  File \"C:\\Users\\csscs\\Documents\\Codex\\2026-10-23\\conitnue-edi-mvp-8-here-as\\work\\edi-systems-foundation\\examples\\autonomous\\offline_restart.py\", line 9, in <module>\n    from edi.inquiry.application import ApplicationProfile\nModuleNotFoundError: No module named 'edi'\n\n"
+    }
+  ],
+  "live_student_calls": 0,
+  "live_teacher_calls": 0,
+  "neural_weight_updates": 0,
+  "student_learning_demonstrated": false,
+  "benchmark_ready": false,
+  "live_blocker": "Opera disconnected; available Kaggle browser signed out"
+}

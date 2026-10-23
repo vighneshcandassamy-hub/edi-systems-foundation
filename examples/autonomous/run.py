@@ -143,7 +143,7 @@ def main():
         (OUT / "teacher-pending.json").write_text(json.dumps(current, indent=2), encoding="utf-8")
     elif current["state"] not in ("ready", "in-progress", "waiting-model", "uncertain-completion"):
         save("restart-baseline.json", after)
-        save("terminal.json", {"returned_state": current, "snapshot": after, "forest_benchmark_started": False, "scheduling": "real Investigation.step; no authored operation sequence", "teacher_trigger": "student-selected only; optional", "paid_fallback": False})
+        save("terminal.json", {"returned_state": current, "snapshot": after, "forest_benchmark_started": False, "scheduling": "real Investigation.step; no authored operation sequence", "teacher_trigger": "controller-scheduled intensive assessment and critique" if configuration().teaching_mode == "intensive" else "student-selected only; optional", "paid_fallback": False})
     print(json.dumps({"turn": index, "state": current["state"], "stop_reason": current.get("stop_reason"), "broker_requests": after["broker_requests"], "c4_io_counters": after["c4_io_counters"]}), flush=True)
 
 

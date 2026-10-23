@@ -4,6 +4,10 @@ Every student/teacher response here is authored. This is engineering evidence,
 not a live teaching result or a readiness qualification.
 """
 import json
+import os
+import subprocess
+from types import SimpleNamespace
+import importlib.util
 from pathlib import Path
 import sys
 import unittest
@@ -78,6 +82,38 @@ class IntensiveTeachingTests(unittest.TestCase):
         self.assertEqual(len(episode.responses),4)
         self.assertEqual(loop.state()['known_input_tokens'],1200)
         self.assertEqual(loop.state()['known_output_tokens'],600)
+
+        # Exercise the production offline CLI, not only a Python-object reopen.
+        from edi.inquiry.application import ApplicationProfile
+        runtime=loop.runtime
+        config={'application_id':'test','run_id':'run',
+            'observation':runtime.profile.model_dump(mode='json'),
+            'student':{'binding':self.h.binding.model_dump(mode='json')},
+            'teacher':{'binding':self.h.teacher_binding.model_dump(mode='json'),'directory':str(self.h.root/'teacher-files')},
+            'broker':{'grant':self.h.grant.model_dump(mode='json')},
+            'reasoning':runtime.reasoning.profile.model_dump(mode='json'),
+            'agency':runtime.agency.profile.model_dump(mode='json'),
+            'workflow':runtime.workflow.profile.model_dump(mode='json'),
+            'max_turns':5,'max_tokens':393216,'session_seconds':3600,'max_corrections':1,'teaching_mode':'intensive'}
+        profile=ApplicationProfile.model_validate_json(canonical(config))
+        (self.h.root/'application.json').write_text(profile.model_dump_json(),encoding='utf-8')
+        # Construct every owner before recording the quiescent snapshot.
+        runtime.world;runtime.interpretation;runtime.analysis;runtime.assessment
+        source_root=Path(__file__).resolve().parents[1]
+        example_root=source_root/'examples/autonomous' if (source_root/'examples/autonomous').exists() else source_root
+        with patch.dict(os.environ,{'EDI_AUTONOMOUS_ROOT':str(self.h.root),'EDI_AUTONOMOUS_RUN_ID':'run','EDI_AUTONOMOUS_WORKSPACE':'test'}):
+            spec=importlib.util.spec_from_file_location('teaching_snapshot_fixture',example_root/'run.py')
+            module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            baseline=module.snapshot(SimpleNamespace(runtime=runtime,investigation=loop))
+            (self.h.root/'restart-baseline.json').write_text(canonical(baseline),encoding='utf-8')
+            proc=subprocess.run([sys.executable,str(example_root/'offline_restart.py'),'--run-root',str(self.h.root)],
+                capture_output=True,text=True,encoding='utf-8',env={**os.environ,'PYTHONPATH':str(source_root/'src')})
+        self.assertEqual(proc.returncode,0,proc.stdout+proc.stderr)
+        audit=json.loads((self.h.root/'offline-restart-audit.json').read_bytes())
+        self.assertTrue(audit['passed'])
+        self.assertEqual(audit['new_model_dispatches'],0)
+        self.assertEqual(audit['new_broker_requests'],0)
+
 
     def test_file_teacher_and_student_can_be_pending_independently_and_resume(self):
         loop=self.open(file_teacher=True)
