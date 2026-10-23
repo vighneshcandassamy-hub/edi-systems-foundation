@@ -22,7 +22,7 @@ def main():
     repo = Path(__file__).resolve().parents[2]
     files = {"src/" + p.relative_to(repo / "src").as_posix(): p.read_bytes()
              for p in sorted((repo / "src").rglob("*.py"))}
-    for name in ("run.py", "server.py", "neutral_world.py", "checkpoint.py", "offline_restart.py"):
+    for name in ("run.py", "server.py", "neutral_world.py", "checkpoint.py", "offline_restart.py", "teacher_handoff.py"):
         files[name] = (Path(__file__).parent / name).read_bytes()
     files["check_controller_contract.py"] = (repo / "scripts/check_controller_contract.py").read_bytes()
     files["scripts/check_autonomous_dispatch.py"] = (repo / "scripts/check_autonomous_dispatch.py").read_bytes()

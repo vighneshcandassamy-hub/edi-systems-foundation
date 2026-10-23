@@ -1,5 +1,30 @@
 # EDI Systems Foundation - checkpoint
 
+## Current checkpoint - 24 October 2026 IST, interrupted live teaching
+
+The 0.10.9 corrected T4 x2 run completed three teaching cycles and reached
+inquiry 3 without repeating the original 12,288-token context-cap failure.
+Qwen first repeated a failed native asset read, then made a public `read`
+request rejected with HTTP 422. After outcome-linked teaching, its next draft
+and revision selected `sources` correctly, producing HTTP 200 and real source
+identifiers. Three provisional lessons were retained. Known student usage was
+59,866 input / 1,301 output tokens across six completed calls; six teacher jobs
+had unknown usage and were charged full reservation (184,047 policy units).
+Inquiry 3's student draft then repeated `sources` despite the catalogue already
+being present. Feedback use is inconsistent; no readiness or transfer claim.
+
+During a later interruption Kaggle replaced the interactive VM. Its native run
+directory is absent in the new session. The notebook output and downloaded
+279,882-byte initial native checkpoint survive (SHA256
+`913e6660d2687439731864b5b142441de3363d68e4a4333bd69c3f8c7ad1e413`).
+Later native database state was not exported and is lost; surviving transcripts
+are partial evidence, not a restored journal. Do not replay unknown provider
+calls or rewrite expired grants. The operator handoff helper now emits the
+native checkpoint in saved notebook output after each imported teacher stage,
+including bounded-wait failure. Runtime source/profile are otherwise unchanged.
+A fresh run is required to continue live execution. Prior checkpoints below
+retain their historical scope.
+
 ## Current checkpoint - 23 October 2026, live intensive teaching and context repair
 
 Source **0.10.9.dev0**, C0 `edi-c0/integrated-1.5`, on the existing private

@@ -1,3 +1,11 @@
+Teacher exchange persistence: use `teacher_handoff.show_handoff(out, source)`
+at each pause, and `import_feedback(out, source, exact_job_id, feedback)` for
+operator feedback. Each import waits at most 180 seconds for a native pause and
+embeds the ZIP checkpoint in saved notebook output. Download that notebook;
+`recover_checkpoint.py` verifies the recorded digest before extraction. An
+expired VM or authority grant is not automatically resumable. A timeout does
+not establish cross-owner quiescence and must not trigger blind replay.
+
 Current source: **0.10.9.dev0**, C0 integrated-1.5. Intensive prompts keep raw
 observations and bounded provisional lessons; full generated artifacts remain
 available through explicit native context selection. The successor engineering
