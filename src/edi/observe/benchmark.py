@@ -49,8 +49,8 @@ class BrokerConnector:
             deliverer="broker-loopback", channel="public-api", adapter="edi-broker/1.0", binding_basis="configured",
             descriptor={"limits": "constructed world, public observations only"}))
 
-    def _capture(self, request_id, raw, *, suffix="response", media="application/json", profiles=None, origin_class="simulation"):
-        return self.runtime.observe(Capture(origin_ref=self.origin.origin_ref, idempotency_key="benchmark:" + digest([request_id, suffix]),
+    def _capture(self, request_id, raw, *, suffix="response", media="application/json", profiles=None, origin_class="simulation", origin_ref=None):
+        return self.runtime.observe(Capture(origin_ref=origin_ref or self.origin.origin_ref, idempotency_key="benchmark:" + digest([request_id, suffix]),
             kind="constructed-world-public", media_type=media, origin_class=origin_class, lineage=("broker-acquisition-v1", self.session_id, request_id, suffix),
             profiles=profiles or {}, completeness="complete", expected_bytes=len(raw), expected_sha256=sha256(raw).hexdigest()), BytesIO(raw))
 
@@ -99,7 +99,17 @@ class BrokerConnector:
         if offset != total or sha256(data).hexdigest() != expected:
             raise EDIError(ErrorCode.INTEGRITY, "reassembled native asset digest mismatch")
         media = {"png":"image/png", "jpeg":"image/jpeg", "json":"application/json", "csv":"text/csv", "txt":"text/plain", "wav":"audio/wav", "pdf":"application/pdf"}.get(fmt, "application/octet-stream")
+        # Preserve the requested public identity on the origin that C4 actually
+        # sees. Opaque capture profiles alone do not reach reasoning context.
+        # This is a configured broker/session binding, not physical identity or
+        # evidence that repeated reads are independent observations.
+        asset_origin = self.runtime.register_origin(OriginSpec(
+            namespace="benchmark.public.asset", native_source_id="asset:" + digest([self.session_id, document_id]),
+            epoch="1", deliverer="broker-loopback", channel="public-api", adapter="edi-broker-native-asset/1.1",
+            binding_basis="configured", descriptor={"session_id": self.session_id, "document_id": document_id,
+                "identity_scope": "requested public document in this broker session; physical identity and independence unverified"}))
         receipt = self._capture(acquisition_id, data, suffix="native-asset", media=media,
+            origin_ref=asset_origin.origin_ref,
             origin_class="external" if body.get("source") == "external" else "simulation",
             profiles={"document_id": document_id, "native_sha256": expected, "format": fmt, "original_origin": body.get("origin"),
                 "source_metadata": body.get("metadata", {}), "derived_is_independent_evidence": False})

@@ -1,0 +1,131 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C1 native asset origins consumed by C4, coordinated through C0/C7",
+  "gate": "contract",
+  "requested_scope": "authorized source identity integration correction",
+  "input_revision": "0.10.10.dev0 source correction over 9e2b31786beca386c007f8cfa19d68b37a641ab3",
+  "reviewer": {
+    "role": "implementer_and_architecture_critic",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Explicit source/occurrence/content linkage satisfies the stated downstream context obligation without inferring physical sameness.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Existing C0/C7/C1/C4 owners and OriginSpec shape; no added authority or data lane.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse visible origins instead of new state, transcript duplication or forced investigation sequences.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Configured identity is distinct from physical identity; repeated occurrences are not independent confirmation.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Asset, broker and context caps retained; origin metadata overhead bounded by successful distinct acquisitions; performance unmeasured.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Post-verification origin creation, immutable idempotent registration, explicit old-journal fencing and reopened-state regression.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Choice derives from actual pinned context omission and repository source/consumer requirements, not a current external product claim.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "One actual native case verifies metadata delivery and reopen; no corrected live-model, learning or benchmark claim.",
+      "references": [
+        "docs/implementation/ASSET_SOURCE_IDENTITY.md",
+        "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ASSET-ID-01",
+      "description": "C4 lost the requested catalogue document ID on compact native asset context. Existing origins now preserve this configured mapping.",
+      "status": "resolved",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "ASSET-ID-LIVE",
+      "description": "Effect of this correction on Qwen action selection is not measured.",
+      "status": "open",
+      "blocking_at": [
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    "src/edi/observe/benchmark.py",
+    "src/edi/inquiry/benchmark.py",
+    "src/edi/reason/gateway.py",
+    "tests/test_information_seeking.py",
+    "src/edi/__init__.py",
+    "pyproject.toml",
+    "VERSION"
+  ],
+  "verification": [
+    {
+      "id": "ASSET-ID-NATIVE-01",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "revision": "0.10.10.dev0 source correction over 9e2b31786beca386c007f8cfa19d68b37a641ab3",
+      "evidence_ref": "docs/implementation/evidence/asset-source-identity-20261024/native-case.json"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "Preserve the pinned active teaching run separately; inspect the corrected source in the next authorized diagnostic without claiming learned behavior."
+}

@@ -1,3 +1,10 @@
+Current engineering correction: **0.10.10.dev0**, C0 integrated-1.6.
+Native asset origins now preserve requested catalogue document IDs in model
+context. One focused native regression passes; live benefit is unmeasured.
+The prior 0.10.9 intensive run is preserved after six cycles and stopped for
+repeated acquisition. It did not submit findings or establish Meadows readiness.
+See [source identity](docs/implementation/ASSET_SOURCE_IDENTITY.md) and [STATE](STATE.md).
+
 # EDI Systems Foundation
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.

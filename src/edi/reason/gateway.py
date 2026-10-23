@@ -90,7 +90,7 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
                 "not for requesting information through the adopted access catalogue. First identify what is needed, then independently "
                 "choose an available operation that could supply it, or explain why available alternatives are not useful. "
                 "Do not invent document IDs, measurements, prior attempts or future outcomes. Public outcomes are the most recent "
-                "completed C0 world-call receipts (including bootstrap); asset reads and omitted older receipts are not exhaustively listed. "
+                "completed C0 world-call receipts (including bootstrap); asset reads and omitted older receipts are not exhaustively listed. Inspect selected evidence origins, including the configured document_id on native assets, before treating a source as unacquired. A configured document binding identifies the requested source, not a verified physical object or independent repeat. "
                 "Teacher review is optional and only available when controller_progress.teacher_available is true.")
             control["operation_argument_contracts"]["yield"] = {
                 "reason": "nonempty reason for stopping; this is not successful mission completion",

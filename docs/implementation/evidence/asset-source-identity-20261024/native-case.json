@@ -1,0 +1,28 @@
+{
+  "scope": "Authored in-process native engineering regression; no LLM, socket, Meadows or physical-world measurement",
+  "case": "test_native_asset_identity_reaches_both_roles_and_survives_reopen",
+  "status": "passed",
+  "command": "python -m unittest discover -s tests -p test_information_seeking.py -k test_native_asset_identity_reaches_both_roles_and_survives_reopen -v",
+  "python": "3.12, existing .venv-benchmark on Windows",
+  "tests_run": 1,
+  "reported_unittest_seconds": 4.37,
+  "coverage": [
+    "actual C7-authorized broker handler and native C1 capture",
+    "C4 full rendered context for student and independent teacher",
+    "distinct catalogue documents have distinct scoped source origins",
+    "repeated document retains source identity and a distinct occurrence",
+    "payload hashes unchanged",
+    "C0/C4 reopened state identical with no new provider or broker dispatch"
+  ],
+  "per_file_sha256": {
+    "src/edi/observe/benchmark.py": "30a77fd1c1b90f864eae05035b629b3e23d18eb3a9d03e2cb865405c93983d95",
+    "src/edi/inquiry/benchmark.py": "581c9c926e147393d40dbfcf98c4ffbabf969ef513d060d71dd6cdb612132ed0",
+    "src/edi/reason/gateway.py": "09c2a43f6e410e0066d1c2e6dc75ba31c10b358334d3cf00db5e634b30180c4b",
+    "tests/test_information_seeking.py": "7c30bc195861a270f637bf1dea222b1112af990544249a8522fd68c255f5943c",
+    "src/edi/__init__.py": "e82512936144d7a4128d2a389861823dae57ca7089f77b13fbf2b50cd1eba1ff",
+    "pyproject.toml": "7d1676a4fc9e7e8b7b8245e0d83aba295083d9e683921725b2dac0f174628a05",
+    "VERSION": "cda61da4fe66ad87393fc8b824c1c653a3402eb18187463b83c83767b670f423"
+  },
+  "live_behavior_of_corrected_source": "not run",
+  "energy_latency_benefit": "unmeasured"
+}

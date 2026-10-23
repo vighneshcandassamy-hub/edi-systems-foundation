@@ -1,0 +1,36 @@
+{
+  "state": "waiting-teacher",
+  "turn": 6,
+  "known_input_tokens": 143032,
+  "known_output_tokens": 2647,
+  "policy_units": 391439,
+  "teacher_usage_unknown_jobs": 12,
+  "server_stopped": true,
+  "checkpoint_sha256": "6410b51c43e82fff59f2393ff9cd1774f478bbd31ba7abbaebdd98a9fd9b85dc",
+  "checkpoint_bytes": 1366507,
+  "integrity": {
+    "owners.agency.sqlite3": "ok",
+    "owners.analyze.sqlite3": "ok",
+    "owners.assess.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.world.sqlite3": "ok"
+  },
+  "scope": "Stopped partial live run; no completed mission, neural training, transfer or Meadows readiness established.",
+  "student_calls": 13,
+  "all_completed_student_input_tokens": 157747,
+  "all_completed_student_output_tokens": 2900,
+  "completed_cycles": 6,
+  "broker_calls_completed": 7,
+  "selected_action_pattern": [
+    "sources",
+    "register",
+    "capture notebook",
+    "register again",
+    "service bulletin",
+    "register again"
+  ],
+  "limits": "Stopped at a native teacher pause after repeated non-progress; no final submission or readiness claim. Accounting for the thirteenth completed student call is separate from six completed C0 cycles."
+}

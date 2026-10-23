@@ -1,5 +1,39 @@
 # EDI Systems Foundation - checkpoint
 
+## Current checkpoint - 24 October 2026 IST, native asset identity correction
+
+Source **0.10.10.dev0**, C0 `edi-c0/integrated-1.6`. The corrected source now
+exposes each native asset's requested catalogue document ID through an existing
+configured C1 origin, scoped by broker session and document. C4 receives that
+origin with the ordinary evidence slice. Different documents have distinct
+sources; repeated reads share a source while retaining distinct occurrences.
+Raw bytes, hashes, access authority and admission roles are preserved. Old C0
+journals are rejected rather than migrated.
+
+A focused authored native regression passed for student/teacher context,
+source/occurrence distinction, exact hashes and reopen without redispatch.
+The 56-lane interface inventory and scoped component review are consistent.
+This is a contract-level self-review; corrected-source model behavior has not
+been measured. See [source identity correction](docs/implementation/ASSET_SOURCE_IDENTITY.md).
+
+The pinned 0.10.9 run `edi-intensive-durable-20261024` completed six teaching
+cycles. It acquired the catalogue, register, capture notebook and bulletin,
+but repeatedly reacquired the register despite feedback. It was deliberately
+stopped at the next teacher pause, without a final submission. All 13 completed
+student calls reported **157,747 input / 2,900 output tokens**; six completed
+C0 cycles account separately for 143,032 input / 2,647 output and 12 teacher jobs
+with unknown usage charged at full reservation (391,439 policy units). The next
+student draft was completed but its teacher stage was not imported. No weights
+changed; reliable learning or Meadows readiness is not established.
+
+The stopped native checkpoint is downloaded, SHA256
+`6410b51c43e82fff59f2393ff9cd1774f478bbd31ba7abbaebdd98a9fd9b85dc`,
+1,366,507 bytes. ZIP size/digest/CRC verification passed and all eight native
+SQLite databases report integrity `ok`. The owned server confirms stopped.
+These are preservation checks, not mission completion or crash-recovery proof.
+The subsequent corrected-source diagnostic remains pending. Prior dated
+checkpoints below are historical and preserve their original claims.
+
 ## Current checkpoint - 24 October 2026 IST, interrupted live teaching
 
 The 0.10.9 corrected T4 x2 run completed three teaching cycles and reached
@@ -22,8 +56,15 @@ are partial evidence, not a restored journal. Do not replay unknown provider
 calls or rewrite expired grants. The operator handoff helper now emits the
 native checkpoint in saved notebook output after each imported teacher stage,
 including bounded-wait failure. Runtime source/profile are otherwise unchanged.
-A fresh run is required to continue live execution. Prior checkpoints below
-retain their historical scope.
+A fresh run was launched as `edi-intensive-durable-20261024` from source
+revision `9e2b31786beca386c007f8cfa19d68b37a641ab3`. Setup finished and inquiry 0
+reached `waiting-teacher`. The independent job is
+`2c044e40-11ef-45fe-91b3-c78ae1ed4c46`. Browser control disconnected before
+the feedback-import call could execute. No teacher feedback has been confirmed
+imported in this fresh run. Inspect this existing session and pending identity
+when access returns; do not rerun its launcher. The initial native checkpoint
+is embedded in draft notebook output but has not yet been downloaded. Prior
+checkpoints below retain their historical scope.
 
 ## Current checkpoint - 23 October 2026, live intensive teaching and context repair
 

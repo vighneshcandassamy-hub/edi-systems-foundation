@@ -124,6 +124,46 @@ class InformationSeekingTests(unittest.TestCase):
         return Investigation(runtime, connector, student, runtime.workflow.profile.database, run_id,
             teacher_gateway=teacher_gateway, max_turns=5, max_tokens=393216 if teaching_mode=='intensive' else 131072, teaching_mode=teaching_mode, use_teaching_memory=use_teaching_memory, input_token_cap=input_token_cap)
 
+    def test_native_asset_identity_reaches_both_roles_and_survives_reopen(self):
+        """Authored native regression for the actual source-mapping gap; no LLM."""
+        def choose(control, data):
+            turn = data['inquiry']['controller_progress']['turn']
+            if turn < 3:
+                return {'operation': 'acquire-asset', 'arguments': {
+                    'document_id': ('m17', 'r22', 'm17')[turn]}}
+            return stop('ask')
+        loop = self.open(choose, teacher=True, teaching_mode='intensive')
+        for _ in range(4):
+            state = loop.step()
+        self.assertEqual(state['state'], 'yielded')
+        records = self.calls[-1][2]['context']['evidence']
+        assets = [e for e in records if e['origin']['spec']['adapter'] == 'edi-broker-native-asset/1.1']
+        self.assertEqual([e['origin']['spec']['descriptor']['document_id'] for e in assets], ['m17', 'r22', 'm17'])
+        self.assertEqual(assets[0]['origin']['origin_ref'], assets[2]['origin']['origin_ref'])
+        self.assertNotEqual(assets[0]['reference']['record_id'], assets[2]['reference']['record_id'])
+        self.assertNotEqual(assets[0]['origin']['source_id'], assets[1]['origin']['source_id'])
+        for evidence in assets:
+            spec = evidence['origin']['spec']
+            doc = spec['descriptor']['document_id']
+            self.assertEqual(spec['binding_basis'], 'configured')
+            self.assertEqual(spec['descriptor']['session_id'], 'test')
+            self.assertIn('independence unverified', spec['descriptor']['identity_scope'])
+            self.assertEqual(evidence['reference']['sha256'], sha256(evidence['excerpt'].encode()).hexdigest())
+            self.assertIn('0,8' if doc == 'm17' else 'prepared fixture', evidence['excerpt'])
+        for role, control, data in self.calls:
+            if data['inquiry']['controller_progress']['turn'] != 3:
+                continue
+            mapped = [e for e in data['context']['evidence'] if e['origin']['spec']['adapter'] == 'edi-broker-native-asset/1.1']
+            self.assertEqual([e['origin']['spec']['descriptor']['document_id'] for e in mapped], ['m17', 'r22', 'm17'])
+            if control['teaching']['stage'] in ('independent', 'draft'):
+                self.assertEqual(data['prior_responses'], [])
+        calls_before = len(self.calls)
+        reopened = self.open(choose, teacher=True, teaching_mode='intensive')
+        self.assertEqual(reopened.step(), state)
+        self.assertEqual(len(self.calls), calls_before)
+        self.assertEqual(reopened.runtime.reasoning.get('run:inquiry:3').context.evidence,
+            loop.runtime.reasoning.get('run:inquiry:3').context.evidence)
+
     def test_unassessed_yield_is_retained_then_corrected_without_forcing_a_source(self):
         def choose(control, data):
             if data['prior_rejections']:

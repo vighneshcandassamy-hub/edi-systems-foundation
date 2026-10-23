@@ -1,0 +1,2728 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Existing complete 8-owner lane inventory with scoped asset-origin identity delta; unrelated historical proposal status preserved",
+  "input_revision": "0.10.10.dev0 source correction over 9e2b31786beca386c007f8cfa19d68b37a641ab3",
+  "components": [
+    {
+      "id": "C0",
+      "name": "Inquiry and coordination"
+    },
+    {
+      "id": "C1",
+      "name": "Observation and evidence"
+    },
+    {
+      "id": "C2",
+      "name": "Interpretation and correspondence"
+    },
+    {
+      "id": "C3",
+      "name": "Shared world-model substrate"
+    },
+    {
+      "id": "C4",
+      "name": "Reasoning and inquiry development"
+    },
+    {
+      "id": "C5",
+      "name": "Analysis and dynamics"
+    },
+    {
+      "id": "C6",
+      "name": "Assessment and learning"
+    },
+    {
+      "id": "C7",
+      "name": "Agency and adoption"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "C0",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-01A"
+      ]
+    },
+    {
+      "from": "C0",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-02A"
+      ]
+    },
+    {
+      "from": "C0",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-03A"
+      ]
+    },
+    {
+      "from": "C0",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-04A"
+      ]
+    },
+    {
+      "from": "C0",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-05A"
+      ]
+    },
+    {
+      "from": "C0",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-06A"
+      ]
+    },
+    {
+      "from": "C0",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-07A"
+      ]
+    },
+    {
+      "from": "C1",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-01B"
+      ]
+    },
+    {
+      "from": "C1",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-08A"
+      ]
+    },
+    {
+      "from": "C1",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-09A"
+      ]
+    },
+    {
+      "from": "C1",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-10A"
+      ]
+    },
+    {
+      "from": "C1",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-11A"
+      ]
+    },
+    {
+      "from": "C1",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-12A"
+      ]
+    },
+    {
+      "from": "C1",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-13A"
+      ]
+    },
+    {
+      "from": "C2",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-02B"
+      ]
+    },
+    {
+      "from": "C2",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-08B"
+      ]
+    },
+    {
+      "from": "C2",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-14A"
+      ]
+    },
+    {
+      "from": "C2",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C2",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C2",
+      "to": "C6",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C2",
+      "to": "C7",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C3",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-03B"
+      ]
+    },
+    {
+      "from": "C3",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-09B"
+      ]
+    },
+    {
+      "from": "C3",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-14B"
+      ]
+    },
+    {
+      "from": "C3",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-15A"
+      ]
+    },
+    {
+      "from": "C3",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-16A"
+      ]
+    },
+    {
+      "from": "C3",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-17A"
+      ]
+    },
+    {
+      "from": "C3",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-18A"
+      ]
+    },
+    {
+      "from": "C4",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-04B"
+      ]
+    },
+    {
+      "from": "C4",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-10B"
+      ]
+    },
+    {
+      "from": "C4",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C4",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-15B"
+      ]
+    },
+    {
+      "from": "C4",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C4",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-19A"
+      ]
+    },
+    {
+      "from": "C4",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": []
+    },
+    {
+      "from": "C5",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-05B"
+      ]
+    },
+    {
+      "from": "C5",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-11B"
+      ]
+    },
+    {
+      "from": "C5",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C5",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-16B"
+      ]
+    },
+    {
+      "from": "C5",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C5",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-20A"
+      ]
+    },
+    {
+      "from": "C5",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": []
+    },
+    {
+      "from": "C6",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-06B"
+      ]
+    },
+    {
+      "from": "C6",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-12B"
+      ]
+    },
+    {
+      "from": "C6",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C6",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-17B"
+      ]
+    },
+    {
+      "from": "C6",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-19B"
+      ]
+    },
+    {
+      "from": "C6",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-20B"
+      ]
+    },
+    {
+      "from": "C6",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": []
+    },
+    {
+      "from": "C7",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-07B"
+      ]
+    },
+    {
+      "from": "C7",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-13B"
+      ]
+    },
+    {
+      "from": "C7",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C7",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-18B"
+      ]
+    },
+    {
+      "from": "C7",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C7",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    },
+    {
+      "from": "C7",
+      "to": "C6",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": []
+    }
+  ],
+  "contract_profiles": {
+    "edi-proposed-v1": {
+      "ownership": "Each owner commits only its own state domain; persistent authorities and boundary distinctions are specified in CONTRACTS.md sections 1\u00e2\u20ac\u201c3. Shared DB access does not confer cross-owner write rights.",
+      "authority": "Read, propose, admit and execute are separate operation classes. Matrix operation lists and owner rules apply; simulated or model-generated output never authorizes real effects.",
+      "shape_versions": "CommandEnvelope/ResultEnvelope and referenced record types in CONTRACTS.md sections 2\u00e2\u20ac\u201c4; incompatible major/required capabilities reject without mutation. Concrete JSON schemas remain a contract-gate obligation.",
+      "identity_scope": "Workspace-scoped opaque identities; preserve occurrence/payload/source-epoch/referent distinctions, selector and derivation lineage. Association corrections append a decision rather than rewriting sources.",
+      "time_order": "Carry valid/event/received/known/commit times as available, unknown/clock uncertainty and source sequence/gaps. Pin query and actor knowledge cuts; no global physical ordering is inferred. Growth extension: result eligibility includes dependency revisions, evidence-known-at cut, projection watermark and caller freshness policy; a stale view cannot silently count as current.",
+      "delivery_idempotency": "Retry-stable request ID plus fingerprint for mutations; conflicting key reuse rejects. At-least-once notification is permitted. Result lanes return original committed outcomes or explicit unknown_completion.",
+      "commit_recovery": "Local owner transaction and outbox; reference artifacts only after their declared durable stage. Optimistic model revision, job leases/fences and completion reconciliation prevent stale or repeated effects. ModelDelta projection maintenance commits applied-event IDs and local checkpoints consistently; large invalidation closures are explicit bounded repair jobs, never silently complete.",
+      "retention": "Refs obey the selected profile and holds; expired evidence returns unavailable/tombstone. Dependent claims/projections are invalidated or marked limited. No unlimited replay guarantee.",
+      "resource_limits": "DEV1 bounds reads (100 default/1000 or 8 MiB maximum), job wall/work/token/bytes budgets and concurrency. Return partial/continuation/truncation explicitly; protect native intake from discretionary inquiry. FAST1 supplements DEV1 with bounded active context/delta shapes and useful-result latency targets; deep/global work and fresh-answer completion are measured separately. Acquisition requests are deduplicated and reuse existing scoped grants.",
+      "errors": "Typed unsupported/unavailable/denied/conflict/timeout/cancelled/capacity_exceeded/integrity_mismatch/stale_projection/not_identifiable/unknown_completion with owner, retryability and durable partial refs.",
+      "feedback_grounding": "Preserve source/derivation/common-evidence lineage, imported assistance, actual versus simulated origin and selection history. Proposals, summaries and simulation outputs do not become independent observations. Jev/model confidence is not independent evidence or proof that the option set covers every mechanism. Coarse/fine summaries and learned decisions have explicit validity/refinement contracts."
+    }
+  },
+  "contracts": [
+    {
+      "id": "IF-01A",
+      "from": "C0",
+      "to": "C1",
+      "title": "Acquisition control and evidence status requests",
+      "operations": [
+        "request_acquisition",
+        "select_records",
+        "commit_status",
+        "standing_grant_acquisition"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C0.out.IF-01A",
+      "consumer_port": "C1.in.IF-01A",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R09",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R23",
+        "IMP-R30",
+        "IMP-R32"
+      ],
+      "verification_ids": [
+        "E01",
+        "E02",
+        "E31",
+        "E34",
+        "E45",
+        "E46",
+        "ASSET-ID-NATIVE-01"
+      ],
+      "facets": {
+        "ownership": "C0 produces request_acquisition/select_records/commit_status; C1 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: standing_grant_acquisition. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: request_acquisition/select_records/commit_status/standing_grant_acquisition. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8.",
+        "identity_scope": "Scoped native asset correction: configured session/document origins preserve public ID in ordinary C4 context; immutable occurrences, bytes and physical-identity limits remain distinct. See ASSET_SOURCE_IDENTITY.md."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-01B",
+      "from": "C1",
+      "to": "C0",
+      "title": "Evidence receipts, coverage and source progress",
+      "operations": [
+        "receipt",
+        "coverage",
+        "record_selection",
+        "acquisition_or_unavailable_result"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C1.out.IF-01B",
+      "consumer_port": "C0.in.IF-01B",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R09",
+        "IMP-R19",
+        "IMP-R20",
+        "IMP-R23",
+        "IMP-R30",
+        "IMP-R32"
+      ],
+      "verification_ids": [
+        "E01",
+        "E02",
+        "E31",
+        "E34",
+        "E45",
+        "E46",
+        "ASSET-ID-NATIVE-01"
+      ],
+      "facets": {
+        "ownership": "C1 produces receipt/coverage/record_selection; C0 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: acquisition_or_unavailable_result. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: receipt/coverage/record_selection/acquisition_or_unavailable_result. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8.",
+        "identity_scope": "Scoped native asset correction: configured session/document origins preserve public ID in ordinary C4 context; immutable occurrences, bytes and physical-identity limits remain distinct. See ASSET_SOURCE_IDENTITY.md."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-02A",
+      "from": "C0",
+      "to": "C2",
+      "title": "Budgeted decode/interpret work",
+      "operations": [
+        "decode",
+        "interpret",
+        "derive_features"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C0.out.IF-02A",
+      "consumer_port": "C2.in.IF-02A",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R19",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E04",
+        "E05",
+        "E07",
+        "E38"
+      ],
+      "facets": {
+        "ownership": "C0 produces decode/interpret/derive_features; C2 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: decode/interpret/derive_features. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-02B",
+      "from": "C2",
+      "to": "C0",
+      "title": "Attributed interpretation result and usage",
+      "operations": [
+        "derivation_result",
+        "status",
+        "usage"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C2.out.IF-02B",
+      "consumer_port": "C0.in.IF-02B",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R19",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E04",
+        "E05",
+        "E07",
+        "E38"
+      ],
+      "facets": {
+        "ownership": "C2 produces derivation_result/status/usage; C0 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: derivation_result/status/usage. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-03A",
+      "from": "C0",
+      "to": "C3",
+      "title": "Scoped model query or routed authorized proposal",
+      "operations": [
+        "query_view",
+        "propose_patch",
+        "query_dependency_scope",
+        "propose_model_delta"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C0.out.IF-03A",
+      "consumer_port": "C3.in.IF-03A",
+      "requirement_ids": [
+        "IMP-R05",
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E08",
+        "E23",
+        "E32",
+        "E35",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C0 produces query_view/propose_patch; C3 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: query_dependency_scope, propose_model_delta. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: query_view/propose_patch/query_dependency_scope/propose_model_delta. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-03B",
+      "from": "C3",
+      "to": "C0",
+      "title": "Snapshot or admission decision",
+      "operations": [
+        "snapshot",
+        "commit_status",
+        "conflict",
+        "projection_status",
+        "dependency_validity",
+        "model_delta_notice"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C3.out.IF-03B",
+      "consumer_port": "C0.in.IF-03B",
+      "requirement_ids": [
+        "IMP-R05",
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E08",
+        "E23",
+        "E32",
+        "E35",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C3 produces snapshot/commit_status/conflict; C0 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: projection_status, dependency_validity, model_delta_notice. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: snapshot/commit_status/conflict/projection_status/dependency_validity/model_delta_notice. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-04A",
+      "from": "C0",
+      "to": "C4",
+      "title": "Bounded investigation with current scope",
+      "operations": [
+        "investigate",
+        "design_test",
+        "rank_frontier",
+        "schedule_frontier_review",
+        "request_status"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C0.out.IF-04A",
+      "consumer_port": "C4.in.IF-04A",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R19",
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "verification_ids": [
+        "E14",
+        "E15",
+        "E16",
+        "E30",
+        "E38",
+        "E42",
+        "E45",
+        "E46",
+        "E48"
+      ],
+      "facets": {
+        "ownership": "C0 produces investigate/design_test/rank_frontier; C4 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: schedule_frontier_review, request_status. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: investigate/design_test/rank_frontier/schedule_frontier_review/request_status. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-04B",
+      "from": "C4",
+      "to": "C0",
+      "title": "Proposed hypotheses, tests and frontier",
+      "operations": [
+        "candidate_patch",
+        "test_spec",
+        "deferred_frontier",
+        "exploration_frontier",
+        "knowledge_request_proposal"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C4.out.IF-04B",
+      "consumer_port": "C0.in.IF-04B",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R18",
+        "IMP-R19",
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "verification_ids": [
+        "E14",
+        "E15",
+        "E16",
+        "E30",
+        "E38",
+        "E42",
+        "E45",
+        "E46",
+        "E48"
+      ],
+      "facets": {
+        "ownership": "C4 produces candidate_patch/test_spec/deferred_frontier; C0 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: exploration_frontier, knowledge_request_proposal. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: candidate_patch/test_spec/deferred_frontier/exploration_frontier/knowledge_request_proposal. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-05A",
+      "from": "C0",
+      "to": "C5",
+      "title": "Scheduled scenario and cancellation",
+      "operations": [
+        "run_scenario",
+        "cancel_run",
+        "status"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C0.out.IF-05A",
+      "consumer_port": "C5.in.IF-05A",
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R19"
+      ],
+      "verification_ids": [
+        "E09",
+        "E17",
+        "E18",
+        "E19",
+        "E38"
+      ],
+      "facets": {
+        "ownership": "C0 produces run_scenario/cancel_run/status; C5 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: run_scenario/cancel_run/status. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-05B",
+      "from": "C5",
+      "to": "C0",
+      "title": "Run references, diagnostics and usage",
+      "operations": [
+        "run_result",
+        "status",
+        "usage"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C5.out.IF-05B",
+      "consumer_port": "C0.in.IF-05B",
+      "requirement_ids": [
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R19"
+      ],
+      "verification_ids": [
+        "E09",
+        "E17",
+        "E18",
+        "E19",
+        "E38"
+      ],
+      "facets": {
+        "ownership": "C5 produces run_result/status/usage; C0 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: run_result/status/usage. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-06A",
+      "from": "C0",
+      "to": "C6",
+      "title": "Assessment and finding work",
+      "operations": [
+        "compare_outcome",
+        "review_revision",
+        "draft_finding"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C0.out.IF-06A",
+      "consumer_port": "C6.in.IF-06A",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R18"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21",
+        "E23",
+        "E30"
+      ],
+      "facets": {
+        "ownership": "C0 produces compare_outcome/review_revision/draft_finding; C6 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: compare_outcome/review_revision/draft_finding. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-06B",
+      "from": "C6",
+      "to": "C0",
+      "title": "Assessment, revision recommendation or finding",
+      "operations": [
+        "assessment",
+        "recommendation",
+        "strategic_finding"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C6.out.IF-06B",
+      "consumer_port": "C0.in.IF-06B",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R18"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21",
+        "E23",
+        "E30"
+      ],
+      "facets": {
+        "ownership": "C6 produces assessment/recommendation/strategic_finding; C0 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: assessment/recommendation/strategic_finding. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-07A",
+      "from": "C0",
+      "to": "C7",
+      "title": "Action/policy review under explicit capability",
+      "operations": [
+        "check_action",
+        "request_adoption",
+        "dispatch_authorized",
+        "review_access_scope"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C0.out.IF-07A",
+      "consumer_port": "C7.in.IF-07A",
+      "requirement_ids": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R23",
+        "IMP-R32"
+      ],
+      "verification_ids": [
+        "E26",
+        "E28",
+        "E29",
+        "E45"
+      ],
+      "facets": {
+        "ownership": "C0 produces check_action/request_adoption/dispatch_authorized; C7 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: review_access_scope. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: check_action/request_adoption/dispatch_authorized/review_access_scope. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-07B",
+      "from": "C7",
+      "to": "C0",
+      "title": "Authorization, refusal or execution status",
+      "operations": [
+        "policy_decision",
+        "execution_receipt",
+        "access_grant_or_denial"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C7.out.IF-07B",
+      "consumer_port": "C0.in.IF-07B",
+      "requirement_ids": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R23",
+        "IMP-R32"
+      ],
+      "verification_ids": [
+        "E26",
+        "E28",
+        "E29",
+        "E45"
+      ],
+      "facets": {
+        "ownership": "C7 produces policy_decision/execution_receipt; C0 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: access_grant_or_denial. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: policy_decision/execution_receipt/access_grant_or_denial. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-08A",
+      "from": "C1",
+      "to": "C2",
+      "title": "Bounded original evidence for interpretation",
+      "operations": [
+        "record_selection",
+        "payload_range",
+        "coverage"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C1.out.IF-08A",
+      "consumer_port": "C2.in.IF-08A",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E01",
+        "E03",
+        "E05",
+        "E07"
+      ],
+      "facets": {
+        "ownership": "C1 produces record_selection/payload_range/coverage; C2 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: record_selection/payload_range/coverage. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-08B",
+      "from": "C2",
+      "to": "C1",
+      "title": "Original evidence read request",
+      "operations": [
+        "select_records",
+        "read_payload"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C2.out.IF-08B",
+      "consumer_port": "C1.in.IF-08B",
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E01",
+        "E03",
+        "E05",
+        "E07"
+      ],
+      "facets": {
+        "ownership": "C2 produces select_records/read_payload; C1 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: select_records/read_payload. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-09A",
+      "from": "C1",
+      "to": "C3",
+      "title": "Evidence existence, hash and lineage result",
+      "operations": [
+        "record_ref",
+        "integrity",
+        "availability"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C1.out.IF-09A",
+      "consumer_port": "C3.in.IF-09A",
+      "requirement_ids": [
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E02",
+        "E21",
+        "E32",
+        "E33"
+      ],
+      "facets": {
+        "ownership": "C1 produces record_ref/integrity/availability; C3 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: record_ref/integrity/availability. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-09B",
+      "from": "C3",
+      "to": "C1",
+      "title": "Evidence reference validation request",
+      "operations": [
+        "select_records",
+        "commit_status"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C3.out.IF-09B",
+      "consumer_port": "C1.in.IF-09B",
+      "requirement_ids": [
+        "IMP-R20",
+        "IMP-R21",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E02",
+        "E21",
+        "E32",
+        "E33"
+      ],
+      "facets": {
+        "ownership": "C3 produces select_records/commit_status; C1 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: select_records/commit_status. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-10A",
+      "from": "C1",
+      "to": "C4",
+      "title": "Bounded inquiry evidence and unavailable status",
+      "operations": [
+        "record_selection",
+        "payload_range",
+        "coverage"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C1.out.IF-10A",
+      "consumer_port": "C4.in.IF-10A",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E05",
+        "E14",
+        "E31",
+        "ASSET-ID-NATIVE-01"
+      ],
+      "facets": {
+        "ownership": "C1 produces record_selection/payload_range/coverage; C4 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: record_selection/payload_range/coverage. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited.",
+        "identity_scope": "Scoped native asset correction: configured session/document origins preserve public ID in ordinary C4 context; immutable occurrences, bytes and physical-identity limits remain distinct. See ASSET_SOURCE_IDENTITY.md."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-10B",
+      "from": "C4",
+      "to": "C1",
+      "title": "Evidence and acquisition-status read request",
+      "operations": [
+        "select_records",
+        "read_payload",
+        "coverage"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C4.out.IF-10B",
+      "consumer_port": "C1.in.IF-10B",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E05",
+        "E14",
+        "E31",
+        "ASSET-ID-NATIVE-01"
+      ],
+      "facets": {
+        "ownership": "C4 produces select_records/read_payload/coverage; C1 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: select_records/read_payload/coverage. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited.",
+        "identity_scope": "Scoped native asset correction: configured session/document origins preserve public ID in ordinary C4 context; immutable occurrences, bytes and physical-identity limits remain distinct. See ASSET_SOURCE_IDENTITY.md."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-11A",
+      "from": "C1",
+      "to": "C5",
+      "title": "Pinned source-data selections for scenario inputs",
+      "operations": [
+        "record_selection",
+        "payload_range"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C1.out.IF-11A",
+      "consumer_port": "C5.in.IF-11A",
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R16"
+      ],
+      "verification_ids": [
+        "E06",
+        "E11",
+        "E17",
+        "E18"
+      ],
+      "facets": {
+        "ownership": "C1 produces record_selection/payload_range; C5 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: record_selection/payload_range. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-11B",
+      "from": "C5",
+      "to": "C1",
+      "title": "Read-only data selection under scenario cutoff",
+      "operations": [
+        "select_records",
+        "read_payload"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C5.out.IF-11B",
+      "consumer_port": "C1.in.IF-11B",
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R16"
+      ],
+      "verification_ids": [
+        "E06",
+        "E11",
+        "E17",
+        "E18"
+      ],
+      "facets": {
+        "ownership": "C5 produces select_records/read_payload; C1 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: select_records/read_payload. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-12A",
+      "from": "C1",
+      "to": "C6",
+      "title": "Independent source-outcome selections",
+      "operations": [
+        "record_selection",
+        "availability",
+        "lineage"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C1.out.IF-12A",
+      "consumer_port": "C6.in.IF-12A",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R20",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21",
+        "E22",
+        "E33"
+      ],
+      "facets": {
+        "ownership": "C1 produces record_selection/availability/lineage; C6 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: record_selection/availability/lineage. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-12B",
+      "from": "C6",
+      "to": "C1",
+      "title": "Outcome read under evaluation cutoff",
+      "operations": [
+        "select_records",
+        "read_payload",
+        "coverage"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C6.out.IF-12B",
+      "consumer_port": "C1.in.IF-12B",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R20",
+        "IMP-R26"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21",
+        "E22",
+        "E33"
+      ],
+      "facets": {
+        "ownership": "C6 produces select_records/read_payload/coverage; C1 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: select_records/read_payload/coverage. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-13A",
+      "from": "C1",
+      "to": "C7",
+      "title": "Receipt or actor-visible source selection",
+      "operations": [
+        "occurrence_receipt",
+        "record_selection"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C1.out.IF-13A",
+      "consumer_port": "C7.in.IF-13A",
+      "requirement_ids": [
+        "IMP-R11",
+        "IMP-R23",
+        "IMP-R25"
+      ],
+      "verification_ids": [
+        "E06",
+        "E26",
+        "E29"
+      ],
+      "facets": {
+        "ownership": "C1 produces occurrence_receipt/record_selection; C7 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: occurrence_receipt/record_selection. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-13B",
+      "from": "C7",
+      "to": "C1",
+      "title": "Archive original connector report or select permitted evidence",
+      "operations": [
+        "ingest_report",
+        "select_records"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C7.out.IF-13B",
+      "consumer_port": "C1.in.IF-13B",
+      "requirement_ids": [
+        "IMP-R11",
+        "IMP-R23",
+        "IMP-R25"
+      ],
+      "verification_ids": [
+        "E06",
+        "E26",
+        "E29"
+      ],
+      "facets": {
+        "ownership": "C7 produces ingest_report/select_records; C1 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4.",
+        "authority": "Only these declared operations/results are carried: ingest_report/select_records. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-14A",
+      "from": "C2",
+      "to": "C3",
+      "title": "Attributed claim and association proposals",
+      "operations": [
+        "propose_patch",
+        "query_dependency_scope",
+        "propose_model_delta"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C2.out.IF-14A",
+      "consumer_port": "C3.in.IF-14A",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R26",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E04",
+        "E05",
+        "E07",
+        "E23",
+        "E32",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C2 produces propose_patch; C3 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: query_dependency_scope, propose_model_delta. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: propose_patch/query_dependency_scope/propose_model_delta. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-14B",
+      "from": "C3",
+      "to": "C2",
+      "title": "Context/association query result or admission decision",
+      "operations": [
+        "snapshot",
+        "association_history",
+        "commit_status",
+        "projection_status",
+        "dependency_validity",
+        "model_delta_notice"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C3.out.IF-14B",
+      "consumer_port": "C2.in.IF-14B",
+      "requirement_ids": [
+        "IMP-R02",
+        "IMP-R03",
+        "IMP-R17",
+        "IMP-R21",
+        "IMP-R26",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E04",
+        "E05",
+        "E07",
+        "E23",
+        "E32",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C3 produces snapshot/association_history/commit_status; C2 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: projection_status, dependency_validity, model_delta_notice. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: snapshot/association_history/commit_status/projection_status/dependency_validity/model_delta_notice. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-15A",
+      "from": "C3",
+      "to": "C4",
+      "title": "Scoped model, mechanisms and admission result",
+      "operations": [
+        "snapshot",
+        "query_result",
+        "commit_status",
+        "projection_status",
+        "dependency_validity",
+        "model_delta_notice",
+        "refinement_bridge_view"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C3.out.IF-15A",
+      "consumer_port": "C4.in.IF-15A",
+      "requirement_ids": [
+        "IMP-R05",
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R17",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R31"
+      ],
+      "verification_ids": [
+        "E08",
+        "E14",
+        "E16",
+        "E23",
+        "E41",
+        "E43",
+        "E47",
+        "E44",
+        "E46"
+      ],
+      "facets": {
+        "ownership": "C3 produces snapshot/query_result/commit_status; C4 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: projection_status, dependency_validity, model_delta_notice, refinement_bridge_view. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: snapshot/query_result/commit_status/projection_status/dependency_validity/model_delta_notice/refinement_bridge_view. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-15B",
+      "from": "C4",
+      "to": "C3",
+      "title": "Model query and candidate explanation patch",
+      "operations": [
+        "query_view",
+        "propose_patch",
+        "query_dependency_scope",
+        "propose_model_delta",
+        "query_refinement_bridge"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C4.out.IF-15B",
+      "consumer_port": "C3.in.IF-15B",
+      "requirement_ids": [
+        "IMP-R05",
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R17",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R31"
+      ],
+      "verification_ids": [
+        "E08",
+        "E14",
+        "E16",
+        "E23",
+        "E41",
+        "E43",
+        "E47",
+        "E44",
+        "E46"
+      ],
+      "facets": {
+        "ownership": "C4 produces query_view/propose_patch; C3 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: query_dependency_scope, propose_model_delta, query_refinement_bridge. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: query_view/propose_patch/query_dependency_scope/propose_model_delta/query_refinement_bridge. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-16A",
+      "from": "C3",
+      "to": "C5",
+      "title": "Immutable model and supported input history",
+      "operations": [
+        "snapshot",
+        "mechanism_spec",
+        "dependencies",
+        "projection_status",
+        "dependency_validity",
+        "model_delta_notice",
+        "refinement_bridge_view"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C3.out.IF-16A",
+      "consumer_port": "C5.in.IF-16A",
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R28",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R31"
+      ],
+      "verification_ids": [
+        "E09",
+        "E10",
+        "E11",
+        "E17",
+        "E18",
+        "E19",
+        "E41",
+        "E43",
+        "E47",
+        "E44",
+        "E46"
+      ],
+      "facets": {
+        "ownership": "C3 produces snapshot/mechanism_spec/dependencies; C5 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: projection_status, dependency_validity, model_delta_notice, refinement_bridge_view. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: snapshot/mechanism_spec/dependencies/projection_status/dependency_validity/model_delta_notice/refinement_bridge_view. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-16B",
+      "from": "C5",
+      "to": "C3",
+      "title": "Pinned model and dependency read",
+      "operations": [
+        "read_snapshot",
+        "query_dependencies",
+        "query_dependency_scope",
+        "query_refinement_bridge"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C5.out.IF-16B",
+      "consumer_port": "C3.in.IF-16B",
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R16",
+        "IMP-R28",
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R31"
+      ],
+      "verification_ids": [
+        "E09",
+        "E10",
+        "E11",
+        "E17",
+        "E18",
+        "E19",
+        "E41",
+        "E43",
+        "E47",
+        "E44",
+        "E46"
+      ],
+      "facets": {
+        "ownership": "C5 produces read_snapshot/query_dependencies; C3 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: query_dependency_scope, query_refinement_bridge. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: read_snapshot/query_dependencies/query_dependency_scope/query_refinement_bridge. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-17A",
+      "from": "C3",
+      "to": "C6",
+      "title": "Original model/policy and admission result",
+      "operations": [
+        "snapshot",
+        "commit_status",
+        "projection_status",
+        "dependency_validity",
+        "model_delta_notice"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C3.out.IF-17A",
+      "consumer_port": "C6.in.IF-17A",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R26",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21",
+        "E23",
+        "E25",
+        "E28",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C3 produces snapshot/commit_status; C6 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: projection_status, dependency_validity, model_delta_notice. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: snapshot/commit_status/projection_status/dependency_validity/model_delta_notice. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-17B",
+      "from": "C6",
+      "to": "C3",
+      "title": "Read versions or submit evidence-backed revision recommendation",
+      "operations": [
+        "read_snapshot",
+        "propose_patch",
+        "query_dependency_scope",
+        "propose_model_delta"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C6.out.IF-17B",
+      "consumer_port": "C3.in.IF-17B",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R17",
+        "IMP-R26",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E20",
+        "E21",
+        "E23",
+        "E25",
+        "E28",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C6 produces read_snapshot/propose_patch; C3 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: query_dependency_scope, propose_model_delta. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: read_snapshot/propose_patch/query_dependency_scope/propose_model_delta. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-18A",
+      "from": "C3",
+      "to": "C7",
+      "title": "Represented actor view and model-adoption receipt",
+      "operations": [
+        "actor_view",
+        "snapshot",
+        "commit_status",
+        "projection_status",
+        "dependency_validity",
+        "model_delta_notice"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C3.out.IF-18A",
+      "consumer_port": "C7.in.IF-18A",
+      "requirement_ids": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R23",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E06",
+        "E25",
+        "E26",
+        "E28",
+        "E29",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C3 produces actor_view/snapshot/commit_status; C7 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: projection_status, dependency_validity, model_delta_notice. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: actor_view/snapshot/commit_status/projection_status/dependency_validity/model_delta_notice. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-18B",
+      "from": "C7",
+      "to": "C3",
+      "title": "Scoped actor query or attributed policy/adoption patch",
+      "operations": [
+        "query_view",
+        "propose_patch",
+        "query_dependency_scope",
+        "propose_model_delta"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C7.out.IF-18B",
+      "consumer_port": "C3.in.IF-18B",
+      "requirement_ids": [
+        "IMP-R11",
+        "IMP-R12",
+        "IMP-R14",
+        "IMP-R23",
+        "IMP-R29",
+        "IMP-R30"
+      ],
+      "verification_ids": [
+        "E06",
+        "E25",
+        "E26",
+        "E28",
+        "E29",
+        "E41",
+        "E43",
+        "E47"
+      ],
+      "facets": {
+        "ownership": "C7 produces query_view/propose_patch; C3 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: query_dependency_scope, propose_model_delta. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: query_view/propose_patch/query_dependency_scope/propose_model_delta. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-19A",
+      "from": "C4",
+      "to": "C6",
+      "title": "Read assessment and preserved error history",
+      "operations": [
+        "query_assessments",
+        "inquiry_yield_and_calibration_review"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C4.out.IF-19A",
+      "consumer_port": "C6.in.IF-19A",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R17",
+        "IMP-R18",
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "verification_ids": [
+        "E14",
+        "E15",
+        "E20",
+        "E23",
+        "E30",
+        "E42",
+        "E48"
+      ],
+      "facets": {
+        "ownership": "C4 produces query_assessments; C6 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: inquiry_yield_and_calibration_review. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: query_assessments/inquiry_yield_and_calibration_review. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-19B",
+      "from": "C6",
+      "to": "C4",
+      "title": "Assessment history with source dependence and limits",
+      "operations": [
+        "assessment_selection",
+        "inquiry_yield_and_calibration_review"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C6.out.IF-19B",
+      "consumer_port": "C4.in.IF-19B",
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R09",
+        "IMP-R17",
+        "IMP-R18",
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "verification_ids": [
+        "E14",
+        "E15",
+        "E20",
+        "E23",
+        "E30",
+        "E42",
+        "E48"
+      ],
+      "facets": {
+        "ownership": "C6 produces assessment_selection; C4 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: inquiry_yield_and_calibration_review. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: assessment_selection/inquiry_yield_and_calibration_review. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-20A",
+      "from": "C5",
+      "to": "C6",
+      "title": "Register immutable forecast/run artifacts",
+      "operations": [
+        "seal_forecast",
+        "run_record",
+        "coarse_fine_assessment"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C5.out.IF-20A",
+      "consumer_port": "C6.in.IF-20A",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R16",
+        "IMP-R26",
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "verification_ids": [
+        "E17",
+        "E18",
+        "E20",
+        "E21",
+        "E22",
+        "E44",
+        "E48"
+      ],
+      "facets": {
+        "ownership": "C5 produces seal_forecast/run_record; C6 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: coarse_fine_assessment. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: seal_forecast/run_record/coarse_fine_assessment. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    },
+    {
+      "id": "IF-20B",
+      "from": "C6",
+      "to": "C5",
+      "title": "Seal acknowledgement and frozen-run inspection request",
+      "operations": [
+        "forecast_seal",
+        "get_run",
+        "coarse_fine_assessment"
+      ],
+      "status": "proposed",
+      "profile_ref": "edi-proposed-v1",
+      "producer_port": "C6.out.IF-20B",
+      "consumer_port": "C5.in.IF-20B",
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R16",
+        "IMP-R26",
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "verification_ids": [
+        "E17",
+        "E18",
+        "E20",
+        "E21",
+        "E22",
+        "E44",
+        "E48"
+      ],
+      "facets": {
+        "ownership": "C6 produces forecast_seal/get_run; C5 owns admission and persistent state for its corresponding operation/result domain. See COMPONENTS.md owner and CONTRACTS.md sections 1\u00e2\u20ac\u201c4. Extension operation set: coarse_fine_assessment. Existing state ownership is unchanged; scoped read/proposal/result semantics are specified in SCALING_AND_WORLD_GROWTH.md.",
+        "authority": "Only these declared operations/results are carried: forecast_seal/get_run/coarse_fine_assessment. The receiving owner independently validates rights, revision, evidence status and budgets. Direct cross-owner DML and unauthorized external execution are prohibited. Extension operations are proposals, scoped reads/results or owned policy review; their names grant no new mutation or source-access authority. See SCALING_AND_WORLD_GROWTH.md sections 7\u00e2\u20ac\u201c8."
+      },
+      "specification": "docs/implementation/CONTRACTS.md",
+      "evidence_ref": null
+    }
+  ],
+  "cases": [
+    {
+      "id": "E01",
+      "title": "Mixed native capture and duplicate payloads.",
+      "acceptance": "Text, image, waveform, structured numeric and an unknown composite retain byte hashes, order and distinct genuine occurrences; replayed notification does not duplicate an occurrence.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R01"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E02",
+      "title": "Restart between byte staging and metadata commit.",
+      "acceptance": "No false durable receipt, no missing acknowledged artifact, detectable/recoverable orphan or incomplete manifest, and no repeated committed occurrence.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R01",
+        "IMP-R20"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E03",
+      "title": "Long-gap identity and source epoch reset.",
+      "acceptance": "Stable binding survives a simulated two-year interval; replacement/reset is explicit; ambiguous physical continuity remains unknown rather than silently merged.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R02"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E04",
+      "title": "Cross-modal false association and reversal.",
+      "acceptance": "Similar text/image candidates do not force a merge; split/correction preserves sources and invalidates dependent views.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R02"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E05",
+      "title": "Event versus structure and source dependence.",
+      "acceptance": "Direct structural inspection and reported event are represented on independent role/basis axes; rephrased copies remain one source lineage.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R03",
+        "IMP-R25",
+        "IMP-R26"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E06",
+      "title": "Temporal semantics, late arrival and actor visibility.",
+      "acceptance": "Known-at cuts exclude later reports; gaps and uncertain time persist; actors cannot use analyst-only or future information.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R11",
+        "IMP-R25"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E07",
+      "title": "Units, ordinal values and conversions.",
+      "acceptance": "Incompatible dimensional equations are rejected; allowed conversions retain meaning; ordinal/unknown values are not silently treated as numeric or zero.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R03"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E08",
+      "title": "Composition and overlapping system views.",
+      "acceptance": "Shared referent/resource appears once in accounting; query boundaries and external input closure remain explicit.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R05"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E09",
+      "title": "Multi-input nonlinear law.",
+      "acceptance": "One joint mechanism with domain/rivals is retained; unsupported independent edge coefficients are not substituted.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R06"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E10",
+      "title": "Stock-flow accounting and shared constraints.",
+      "acceptance": "Transfers balance under declared conversions/losses and capacity is consumed once; conflicting simultaneous demand is resolved by the declared rule.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R06"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E11",
+      "title": "Delays, backlog and state carry-over.",
+      "acceptance": "Same visible stock with different pending commitments gives the appropriately different forecast; topology change preserves relevant backlog.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R04",
+        "IMP-R06",
+        "IMP-R28"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E12",
+      "title": "Loop closure, sign and changing dominance.",
+      "acceptance": "Open paths are not labeled complete loops; sign is conditional; saturated or dormant mechanisms do not retain an unsupported fixed gain.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R06"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E13",
+      "title": "Scope/interpretation and stakeholder criteria.",
+      "acceptance": "Causal scope, interests, qualitative concerns, local/wider horizons and disagreements remain distinct; no compulsory global utility is invented.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R27"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E14",
+      "title": "Rival mechanism and non-identifiability.",
+      "acceptance": "Several structures fitting present data remain alternatives; the system proposes a distinguishing observation or reports non-identifiability.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R08"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E15",
+      "title": "Curiosity against noisy novelty.",
+      "acceptance": "Test selection favors feasible useful discrimination over uninformative random noise; heuristic utility is not presented as calibrated information gain.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R09"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E16",
+      "title": "System-of-systems boundary expansion.",
+      "acceptance": "Consequential interface frontier is exposed one supported link at a time; omitted drivers and duplicate accounting are detected; resource ceilings cause explicit defer/truncation.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R05",
+        "IMP-R09",
+        "IMP-R18"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E17",
+      "title": "Restricted compilation and unsupported laws.",
+      "acceptance": "Invalid operators/references/units or missing backend capability fail before execution; a qualitative unknown does not generate a precise fabricated trajectory.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R16"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E18",
+      "title": "Numerical refinement and discontinuity.",
+      "acceptance": "Solutions stabilize under declared step/tolerance refinement, balance diagnostics and threshold-event fixtures; unsupported delay/DAE semantics are explicit.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R16",
+        "IMP-R28"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E19",
+      "title": "Hybrid event and shared clock.",
+      "acceptance": "Event ties, continuous advancement, resource contention and pending updates follow one pinned policy without double application.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R16"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E20",
+      "title": "Prospective forecast seal and outcome correspondence.",
+      "acceptance": "Original model/cut/forecast/scoring rule is immutable; new independent outcomes match quantities/units/time; edited forecasts cannot replace old ones.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R26"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E21",
+      "title": "Synthetic evidence echo through a full loop.",
+      "acceptance": "Generated, summarized, exported and reimported simulation artifacts remain generated and cannot become independent corroboration.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R10",
+        "IMP-R26"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E22",
+      "title": "Calibration, missing outcomes and uncertainty.",
+      "acceptance": "Missing/censored data remain explicit; numeric scores are only computed for declared suitable quantities; coverage claims state dependence/stationarity assumptions.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R08"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E23",
+      "title": "Error diagnosis and controlled revision.",
+      "acceptance": "Numerical, source, semantic, driver, parameter, rule and topology explanations remain distinguishable; revision records rationale and affected dependencies.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R08",
+        "IMP-R17",
+        "IMP-R28"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E24",
+      "title": "Repair and finite shared support.",
+      "acceptance": "Repair uses the same resource authority as competing work, takes time and can fail; stable output with eroding restorative capacity remains visible.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R13"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E25",
+      "title": "Real reorganization versus model correction.",
+      "acceptance": "Membership/rewiring history, actual-world evidence and model reinterpretation have different operation types and preserve state.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R14",
+        "IMP-R17"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E26",
+      "title": "Bounded actor response and failed execution.",
+      "acceptance": "Intention uses perceived options; realized effects obey actual modeled capacity; no automatic optimal response or goal success is assumed.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R11",
+        "IMP-R25"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E27",
+      "title": "Eight traps, leverage and adverse transitions.",
+      "acceptance": "Trap labels require mechanism evidence/rivals; interventions specify direction, adoption, time/resources, carry-over and wider/adverse consequences.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R15"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E28",
+      "title": "Policy monitoring, authority and standard integrity.",
+      "acceptance": "Fixed response, amendment proposal, adoption and analyst revision stay separate; refusal/defer is possible; old criteria cannot be silently weakened.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R07",
+        "IMP-R12",
+        "IMP-R17"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E29",
+      "title": "Action dispatch and uncertain completion.",
+      "acceptance": "Unauthorized dispatch is denied; idempotent reconciliation prevents duplicate permitted effects; a receipt remains distinct from observed effect.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R12",
+        "IMP-R23"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E30",
+      "title": "Proactive strategic finding.",
+      "acceptance": "A configured internal finding carries novel decision relevance, mechanism/evidence chain, uncertainty, horizon and test suggestion; duplicates are suppressed without masking a material update.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R18"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E31",
+      "title": "Selective acquisition and bias.",
+      "acceptance": "Selection/exposure/cost lineage is preserved; unvisited or unavailable evidence is not treated as absent or as confirmation.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R18"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E32",
+      "title": "Schema/embedding migration and stale projection.",
+      "acceptance": "Incompatible versions are rejected or explicitly migrated; old/current views do not silently mix; authoritative cutoff queries bypass or expose stale indexes.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R21"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E33",
+      "title": "Retention and restore.",
+      "acceptance": "Tombstones and unavailable refs propagate; acknowledged data and forecasts restore with their histories at a declared coherent point.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R20"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E34",
+      "title": "Queue saturation and model outage.",
+      "acceptance": "Native intake stays within the declared capacity/spool profile; bounded reasoning yields; overload and freshness lag remain visible and counted.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R19"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E35",
+      "title": "Lease fencing, duplicate/reorder and concurrent revision.",
+      "acceptance": "A stale worker or stale base revision cannot overwrite a newer commit; unknown completion is reconciled and outputs remain idempotent.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R20"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E36",
+      "title": "Matched persistent-learning comparison.",
+      "acceptance": "Same base model, observations/tools and accounting; include reset, unrelated and conventional-memory controls; report all pinned outcomes without a predetermined winner.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R22"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E37",
+      "title": "Failure to fit or transfer under regime shift.",
+      "acceptance": "New operating point/parameters/rules/topology/input/measurement are challenged separately; unsupported transfer is withheld and failures remain logged.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R22"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E38",
+      "title": "Whole-path resource accounting.",
+      "acceptance": "Offered/admitted/failing work, all token/media/tool/retry costs and wall time reconcile; unknown usage is not zero; energy claims require instrumentation.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R19"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E39",
+      "title": "HA fault-domain and partition profile.",
+      "acceptance": "Only under an implemented HA1 topology: eligible request, durability, fencing, byte/reference consistency and failover results satisfy the pinned SLO/RPO/RTO and fault conditions.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R24"
+      ],
+      "scope": "later_HA_claim_only",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E40",
+      "title": "Provider/backend replacement.",
+      "acceptance": "Alternate provider or engine respects the same record/status/permission semantics; a version or quality change reopens qualification rather than silently inheriting results.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R21"
+      ],
+      "scope": "prospective_capability_or_engineering_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E41",
+      "title": "Incremental correctness and locality under store growth.",
+      "acceptance": "At the FAST1 sizes, delta/retraction and incremental views match a separately recomputed authoritative reference for the same cutoff; record actual touched work and warm/cold latency. Q1/Q2 and growth targets apply only to their declared operation shapes.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E42",
+      "title": "Fast decision quality, batching and escalation.",
+      "acceptance": "Compare Jev, deterministic and appropriate small/generative alternatives on matched bounded contexts; pin selective error/calibration and coverage before exposure. Include missing correct option, dependence between questions, OOD inputs and timeouts. No model output bypasses deterministic constraints.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R33"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E43",
+      "title": "Global fan-out and stale-cache containment.",
+      "acceptance": "A high-degree/shared driver invalidates all declared dependents; bounded processing exposes remaining backlog. A warm stale cached result cannot be silently returned as fresh or used beyond its permitted policy.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R30",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E44",
+      "title": "Coarse/fine abstraction and nonlinear aggregation.",
+      "acceptance": "Refinement bridges preserve units, time, identity, resource/count semantics and commitments. Demonstrate valid coarse reuse and a counterexample where heterogeneity/thresholds require refinement; compare supported output ranges.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E45",
+      "title": "Missing access, standing grants and request fatigue.",
+      "acceptance": "Reuse an existing scoped grant; create an evidence-specific missing-access request; coalesce duplicates; honor denial/expiry; enforce notification policy and record useful/inconclusive acquisition outcomes.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R32",
+        "IMP-R33"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E46",
+      "title": "Breadth and depth expansion in one evolving world.",
+      "acceptance": "Start with forest observations, add an adjacent logging/market view and internal insect-life-stage evidence without resetting history or duplicating shared referents/resources. Retain unsupported biological mechanisms and update only justified bridges.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R32"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E47",
+      "title": "Long-running growth, corrections and maintenance.",
+      "acceptance": "Reconnect sources, revise identity/rules, compact/reindex, retain/evict evidence and recover a pinned model cut while the store grows. Bound active memory/queues and count full maintenance/storage costs and unavailable evidence.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R30",
+        "IMP-R31",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "E48",
+      "title": "End-to-end useful speed and inquiry yield.",
+      "acceptance": "Measure capture/model freshness, eligible useful response latency, validated-answer time, escalation coverage, exploration benefit and complete cost under FAST1/DEV1. Include correct abstention and failed inquiries; an acknowledgement-only or omission-driven speedup does not pass.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R29",
+        "IMP-R32",
+        "IMP-R33",
+        "IMP-R34"
+      ],
+      "scope": "prospective_growth_speed_and_exploration_case",
+      "evidence_ref": null,
+      "implementation_revision": null
+    },
+    {
+      "id": "ASSET-ID-NATIVE-01",
+      "title": "Native asset identity visible to both model roles after reopen",
+      "acceptance": "Requested document ID and configured source handle survive compact C4 context; repeated source versus occurrence identity stays distinct; no redispatch on terminal reopen.",
+      "status": "passed",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R09"
+      ],
+      "scope": "authored_native_engineering_only",
+      "evidence_ref": "docs/implementation/evidence/asset-source-identity-20261024/native-case.json",
+      "implementation_revision": "0.10.10.dev0 source correction over 9e2b31786beca386c007f8cfa19d68b37a641ab3",
+      "conditions": "Windows Python 3.12; authored model callbacks; in-process broker handler; no LLM or network dispatch",
+      "revision": "0.10.10.dev0 source correction over 9e2b31786beca386c007f8cfa19d68b37a641ab3"
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "analysis": "All application owners form a strongly connected logical scheduling/read/proposal group. CONTRACTS.md sections 7\u00e2\u20ac\u201c8 review generated evidence echoes, temporal leakage, authority escalation, saturation/deadlock, shared model consensus, revision cascades and selection bias with concrete containment. This software SCC does not define a domain causal loop. Version 0.2 additionally reviews high-degree invalidation storms, stale fast decisions, alias/calibration drift, abstraction feedback, selective escalation and repeated access requests; the same eight owners retain authority. Scoped asset delta: generic origins plus omitted transcripts can hide acquired-source identity and contribute to repeated requests; explicit configured document origin improves observability without treating repeated retrieval as independent support. Behavioral improvement is unmeasured.",
+      "verification_ids": [
+        "E06",
+        "E20",
+        "E21",
+        "E23",
+        "E29",
+        "E31",
+        "E34",
+        "E35",
+        "E38",
+        "E41",
+        "E42",
+        "E43",
+        "E44",
+        "E45",
+        "E46",
+        "E47",
+        "E48"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "IF-OPEN-01",
+      "description": "Concrete schema/fixture compatibility and backend grammar remain pending; architecture operation/status/authority boundaries are specified.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "IF-OPEN-02",
+      "description": "Concrete delta/projection-validity, refinement-bridge and access-request schemas, calibration policies and FAST1 runtime measurements remain pending; operation authority and ownership are proposed.",
+      "status": "open",
+      "blocking_at": [
+        "contract",
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "review": {
+    "gate": "architecture",
+    "verdict": "pass",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Self-review of source identity delta on existing IF-01A/B and IF-10A/B; no new lane, no broad runtime or intelligence qualification."
+  }
+}

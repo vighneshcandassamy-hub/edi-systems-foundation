@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edi-systems-foundation"
-version = "0.10.9.dev0"
+version = "0.10.10.dev0"
 description = "Owner-isolated EDI components with bounded durable integrated workflows"
 requires-python = ">=3.12,<3.15"
 dependencies = ["pydantic==2.12.5"]
