@@ -20,6 +20,25 @@ from edi.shared.durable_io import CallJournal, canonical, digest
 from edi.shared.errors import EDIError, ErrorCode
 
 
+def describe_access(mission, grant):
+    """Describe only adopted mission operations also present in C7's grant.
+
+    No source payload, generated proposal or subsequent document can extend this
+    surface. C7 and the broker independently authorize/validate actual requests.
+    """
+    from edi.reason.contracts import ControllerAccess
+    if digest(mission) != grant.mission_sha256:
+        raise EDIError(ErrorCode.INTEGRITY, "mission differs from adopted access description")
+    catalogue = mission.get("public_operations", {})
+    if not isinstance(catalogue, dict):
+        raise EDIError(ErrorCode.INVALID, "adopted mission access catalogue must be an object")
+    return ControllerAccess.model_validate_json(canonical({
+        "grant_id": grant.grant_id, "mission_sha256": grant.mission_sha256,
+        "not_before": grant.not_before.isoformat(), "expires_at": grant.expires_at.isoformat(),
+        "operations": {name: description for name, description in catalogue.items()
+                       if name in grant.operations}}))
+
+
 class Investigation:
     """C0 phases coordinate native receipts; never infer missing completion.
 
@@ -45,7 +64,7 @@ class Investigation:
         self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=256 * 1024**2)
         self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 32 + 4, max_bytes=256 * 1024**2)
         previous = self.journal.get("configuration")
-        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.1":
+        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.3":
             raise EDIError(ErrorCode.UNSUPPORTED, "use a fresh integration workspace; historical C0 state is not migrated")
         deadline = (json.loads(previous["request"])["deadline"] if previous else
                     (utc_now() + timedelta(seconds=session_seconds)).isoformat())
@@ -54,10 +73,10 @@ class Investigation:
             "workspace": runtime.profile.workspace_id, "student": student_gateway.binding.model_dump(mode="json"),
             "teacher": teacher_gateway.binding.model_dump(mode="json") if teacher_gateway else None,
             "max_turns": max_turns, "max_tokens": max_tokens, "session_seconds": session_seconds,
-            "max_corrections": max_corrections, "deadline": deadline, "controller": "edi-c0/integrated-1.1"})
+            "max_corrections": max_corrections, "deadline": deadline, "controller": "edi-c0/integrated-1.3"})
         self.journal.finish("configuration", {"frozen": True})
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.component.results", native_source_id=run_id,
-            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.1",
+            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.3",
             binding_basis="configured", descriptor={"independent_world_evidence": False}))
 
     def _phase(self, key, body, operation):
@@ -107,7 +126,8 @@ class Investigation:
             raise EDIError(ErrorCode.INTEGRITY, "mission differs from explicitly adopted standing grant")
         return {"turn": 0, "mission": result["body"]["mission"], "evidence": [self._selection(result["evidence_record_id"])],
             "world_ids": [], "used_tokens": 0, "known_input_tokens": 0, "known_output_tokens": 0,
-            "usage_unknown_jobs": 0, "state": "ready"}
+            "usage_unknown_jobs": 0, "state": "ready",
+            "public_outcomes": [{"operation": "mission", "request_id": self.run_id + ":mission", "http_status": 200}]}
 
     def state(self):
         row = self.journal.get("bootstrap")
@@ -137,7 +157,13 @@ class Investigation:
             "question": state["mission"]["objective"], "purpose": state["mission"]["objective"],
             "scope": "Acquired evidence and attributed EDI artifacts; choose information and supported operations independently",
             "horizon": "Select the relevant horizon under the original mission authority",
-            "response_mode": "controller-turn", "model_revision": r.world.head(),
+            "response_mode": "controller-turn",
+            "controller_policy": "information-seeking/1.0",
+            "controller_progress": {"turn": state["turn"], "remaining_turns": self.max_turns - state["turn"],
+                "remaining_policy_units": remaining, "teacher_available": self.teacher is not None,
+                "public_outcomes": state["public_outcomes"]},
+            "controller_access": describe_access(state["mission"], self.connector.authority.grant).model_dump(mode="json"),
+            "model_revision": r.world.head(),
             "world_ids": state["world_ids"], "evidence": state["evidence"],
             "budget": Budget(rounds=4, jobs=6, input_token_cap=12288, output_token_cap=4096,
                 reserved_tokens=min(remaining, 98304)).model_dump(mode="json"),
@@ -334,6 +360,8 @@ class Investigation:
             intent = PublicIntent.model_validate_json(canonical(arguments))
             result = self.connector.call(PublicIntent(operation=intent.operation,
                 body={**intent.body, "request_id": command}))
+            state["public_outcomes"] = (state["public_outcomes"] + [{"operation": intent.operation,
+                "request_id": command, "http_status": result["http_status"]}])[-16:]
             state["evidence"] = self._bounded_add(state["evidence"], self._selection(result["evidence_record_id"]))
             decoded = r.interpretation.interpret(InterpretRequest(workspace_id=r.profile.workspace_id,
                 request_id=inquiry_id + ":decode", inputs=(InputSpec(record_id=result["evidence_record_id"]),)))
@@ -372,7 +400,8 @@ class Investigation:
                 state["world_ids"] = list(dict.fromkeys(state["world_ids"] + list(commit.changed_ids)))[-16:]
             state = self._retain_result(operation, result, state)
         elif proposal.operation == "yield":
-            state.update(state="yielded", stop_reason=arguments.get("reason", "Student yielded"))
+            state.update(state="yielded", stop_reason=arguments["reason"],
+                yield_assessment=arguments["assessment"])
         else:
             raise EDIError(ErrorCode.UNSUPPORTED, "operation is not connected to a C0 native port")
         return state

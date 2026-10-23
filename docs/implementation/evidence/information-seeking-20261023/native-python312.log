@@ -1,0 +1,14 @@
+test_actual_closure_receipt_is_required_for_completed_state (test_information_seeking.InformationSeekingTests.test_actual_closure_receipt_is_required_for_completed_state) ... ok
+test_deliberate_stop_is_allowed_before_acquisition_and_reopens_without_calls (test_information_seeking.InformationSeekingTests.test_deliberate_stop_is_allowed_before_acquisition_and_reopens_without_calls) ... ok
+test_empty_cut_legacy_and_new_decoder_requirements_are_separate (test_information_seeking.InformationSeekingTests.test_empty_cut_legacy_and_new_decoder_requirements_are_separate) ... ok
+test_failed_public_receipt_is_not_presented_as_success_or_access_exhaustion (test_information_seeking.InformationSeekingTests.test_failed_public_receipt_is_not_presented_as_success_or_access_exhaustion) ... ok
+test_model_selected_teacher_cycle_stays_critique_only (test_information_seeking.InformationSeekingTests.test_model_selected_teacher_cycle_stays_critique_only) ... ok
+test_nonexistent_stop_alternative_is_rejected_and_valid_stop_remains_possible (test_information_seeking.InformationSeekingTests.test_nonexistent_stop_alternative_is_rejected_and_valid_stop_remains_possible) ... ok
+test_progress_carries_actual_receipts_and_remaining_budget_on_restart (test_information_seeking.InformationSeekingTests.test_progress_carries_actual_receipts_and_remaining_budget_on_restart) ... ok
+test_unassessed_yield_is_retained_then_corrected_without_forcing_a_source (test_information_seeking.InformationSeekingTests.test_unassessed_yield_is_retained_then_corrected_without_forcing_a_source) ... ok
+test_unconfigured_teacher_returns_correction_feedback (test_information_seeking.InformationSeekingTests.test_unconfigured_teacher_returns_correction_feedback) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 10.205s
+
+OK

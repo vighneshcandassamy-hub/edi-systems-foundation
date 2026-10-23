@@ -1,0 +1,18 @@
+{
+  "scope": "interface_inventory_consistency_only",
+  "semantics_independently_verified": false,
+  "component_count": 5,
+  "pair_count": 10,
+  "directed_lane_count": 20,
+  "contract_count": 8,
+  "feedback_groups": [
+    [
+      "EDI",
+      "MODEL",
+      "TEACHER",
+      "WORLD"
+    ]
+  ],
+  "consistent": true,
+  "errors": []
+}

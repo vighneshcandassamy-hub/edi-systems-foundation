@@ -1,0 +1,86 @@
+{
+  "schema": "edi-information-seeking-trace/1.0",
+  "source_version": "0.10.7.dev0",
+  "parent_requirements": "docs/implementation/evidence/autonomous-20261023/TRACEABILITY.json",
+  "requirements": [
+    {
+      "id": "IS-R01",
+      "parents": [
+        "AU-R01"
+      ],
+      "statement": "Distinguish justification of an authorized information request from support for an empirical claim",
+      "implementation": [
+        "src/edi/reason/gateway.py"
+      ],
+      "cases": [
+        "test_unassessed_yield_is_retained_then_corrected_without_forcing_a_source"
+      ]
+    },
+    {
+      "id": "IS-R02",
+      "parents": [
+        "AU-R01",
+        "AU-R03"
+      ],
+      "statement": "Require inspectable stopping assessment; allow a deliberate stop without calling it completion",
+      "implementation": [
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/service.py",
+        "src/edi/reason/operation_args.py"
+      ],
+      "cases": [
+        "test_deliberate_stop_is_allowed_before_acquisition_and_reopens_without_calls",
+        "test_nonexistent_stop_alternative_is_rejected_and_valid_stop_remains_possible",
+        "test_empty_cut_legacy_and_new_decoder_requirements_are_separate"
+      ]
+    },
+    {
+      "id": "IS-R03",
+      "parents": [
+        "AU-R02",
+        "AU-R04"
+      ],
+      "statement": "Carry bounded C0 receipt facts and remaining resource capacity across native reopen",
+      "implementation": [
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "cases": [
+        "test_progress_carries_actual_receipts_and_remaining_budget_on_restart",
+        "test_failed_public_receipt_is_not_presented_as_success_or_access_exhaustion",
+        "test_actual_closure_receipt_is_required_for_completed_state"
+      ]
+    },
+    {
+      "id": "IS-R04",
+      "parents": [
+        "AU-R01",
+        "AU-R03"
+      ],
+      "statement": "Retain optional model-selected critique and accurate dependency availability",
+      "implementation": [
+        "src/edi/reason/service.py",
+        "src/edi/reason/gateway.py"
+      ],
+      "cases": [
+        "test_model_selected_teacher_cycle_stays_critique_only",
+        "test_unconfigured_teacher_returns_correction_feedback"
+      ]
+    },
+    {
+      "id": "IS-R05",
+      "parents": [
+        "AU-R04"
+      ],
+      "statement": "Preserve source evidence, require new workspace and check serving grammar before live inference",
+      "implementation": [
+        "examples/autonomous/prepare_kaggle_run.py",
+        "scripts/check_information_seeking.py"
+      ],
+      "cases": []
+    }
+  ],
+  "case_source": "tests/test_information_seeking.py",
+  "engineering_evidence": "docs/implementation/evidence/information-seeking-20261023/native-regressions.json",
+  "live_acceptance": "unchanged original protocol; not run",
+  "launch_grammar_case": "required preflight; locally unavailable, not claimed passed"
+}

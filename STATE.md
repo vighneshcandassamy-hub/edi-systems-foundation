@@ -1,5 +1,23 @@
 # EDI Systems Foundation — checkpoint
 
+## Current checkpoint - 23 October 2026, information-seeking repair
+
+Source **0.10.7.dev0** on `integration/information-seeking-20261023`.
+C0 now supplies bounded native progress and receipt metadata. The new C4
+information-seeking/1.0 policy distinguishes missing evidence from unavailable
+access, requires an explicit stopping assessment, and describes optional teacher
+availability. Legacy proposal semantics remain; older C0 journals need a fresh
+workspace. Nine authored in-process native regressions pass. The baseline suite
+has 21 passes and 10 socket-policy errors on this host; it is not an all-pass run.
+Serving grammar and a fresh real Qwen diagnostic remain pending. Autonomous
+readiness remains REVISE; Meadows has not started. See
+[repair report](docs/implementation/INFORMATION_SEEKING_REPAIR.md).
+
+Prior source already had 0.10.6 headers; its full input hashes are retained.
+The last actual model result below is historical 0.10.5 evidence, not a result
+for this new source. No paid inference or training was used.
+
+
 ## Current checkpoint —23 October 2026
 
 Code0.10.5.dev0 on integration/autonomous-controller-20261023. The three authorized

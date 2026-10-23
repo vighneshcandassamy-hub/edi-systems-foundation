@@ -50,6 +50,65 @@ class AssessmentNote(Record):
     status: Literal["imported-unverified"] = "imported-unverified"
 
 
+class ControllerAccess(Record):
+    """C0 description from a hash-adopted mission, never an execution grant."""
+    version: Literal["edi-controller-access/1.0"] = "edi-controller-access/1.0"
+    grant_id: Identifier
+    mission_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    not_before: datetime
+    expires_at: datetime
+    operations: dict[str, dict[str, JsonValue]] = Field(max_length=16)
+
+    @model_validator(mode="after")
+    def bounded(self):
+        from edi.agency.benchmark import PublicIntent
+        from edi.shared.durable_io import canonical
+        if len(canonical(self.operations).encode("utf-8")) > 16384:
+            raise ValueError("controller access description exceeds byte bound")
+        for name in self.operations:
+            PublicIntent(operation=name, body={})
+        if self.not_before.utcoffset() is None or self.expires_at.utcoffset() is None or self.expires_at <= self.not_before:
+            raise ValueError("controller access description requires an aware interval")
+        return self
+
+
+class PublicOutcome(Record):
+    """C0 receipt metadata; not a model claim or complete access history."""
+    operation: Identifier
+    request_id: Identifier
+    http_status: int = Field(ge=100, le=599)
+
+
+class ControllerProgress(Record):
+    turn: int = Field(ge=0)
+    remaining_turns: int = Field(ge=0)
+    remaining_policy_units: int = Field(ge=0)
+    teacher_available: bool
+    public_outcomes: tuple[PublicOutcome, ...] = Field(default=(), max_length=16)
+
+
+class StopAlternative(Record):
+    operation: Identifier
+    reason_for_not_using: Text
+
+
+class YieldAssessment(Record):
+    """Attributed stopping judgment, never proof that access is exhausted."""
+    disposition: Literal["blocked", "paused", "no-useful-next-step"]
+    unresolved_needs: tuple[Text, ...] = Field(max_length=8)
+    alternatives_considered: tuple[StopAlternative, ...] = Field(min_length=1, max_length=8)
+    resume_when: Text
+
+    @model_validator(mode="after")
+    def distinct(self):
+        names = [item.operation for item in self.alternatives_considered]
+        if len(names) != len(set(names)):
+            raise ValueError("stop alternatives must have distinct operation names")
+        if self.disposition == "blocked" and not self.unresolved_needs:
+            raise ValueError("blocked stop must identify an unresolved need")
+        return self
+
+
 class InquiryRequest(Record):
     workspace_id: Identifier
     inquiry_id: Identifier
@@ -60,6 +119,9 @@ class InquiryRequest(Record):
     horizon: Text
     response_mode: Literal["proposal", "controller-turn"] = Field(default="proposal",
         description="A controller turn needs exactly one next-operation proposal or explicit yield; proposal mode permits reasoning-only output.")
+    controller_access: ControllerAccess | None = None
+    controller_policy: Literal["legacy", "information-seeking/1.0"] = "legacy"
+    controller_progress: ControllerProgress | None = None
     model_revision: int = Field(ge=0)
     world_ids: tuple[Identifier, ...] = Field(default=(), max_length=16)
     evidence: tuple[EvidenceSelection, ...] = Field(default=(), max_length=16)
@@ -71,6 +133,9 @@ class InquiryRequest(Record):
 
     @model_validator(mode="after")
     def unique(self):
+        if self.controller_policy != "legacy" and (
+                self.response_mode != "controller-turn" or self.controller_access is None or self.controller_progress is None):
+            raise ValueError("information-seeking policy requires a controller turn, adopted access and C0 progress")
         if len(set(self.axes)) != len(self.axes) or len(set(self.world_ids)) != len(self.world_ids):
             raise ValueError("duplicate context IDs or protocol axes")
         return self
@@ -289,7 +354,7 @@ class Episode(Record):
     sequence: int = Field(ge=1)
     created_at: datetime
     updated_at: datetime
-    implementation: Literal["edi-c4/0.6.0", "edi-c4/0.6.1"] = "edi-c4/0.6.1"
+    implementation: Literal["edi-c4/0.6.0", "edi-c4/0.6.1", "edi-c4/0.6.2"] = "edi-c4/0.6.2"
     profile_snapshot: dict[str, JsonValue]
     operating_profile: dict[str, JsonValue]
     context: Context

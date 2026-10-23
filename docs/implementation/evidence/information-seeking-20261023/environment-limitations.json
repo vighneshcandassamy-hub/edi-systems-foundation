@@ -1,0 +1,11 @@
+{
+  "baseline_tests_run": 31,
+  "baseline_passes": 21,
+  "baseline_socket_errors": 10,
+  "socket_error": "WinError 10013: host blocks TCP loopback",
+  "first_baseline_attempt": "default temp location not writable; actual failing result retained in cpu-initial",
+  "local_grammar": "jsonschema/xgrammar unavailable; mandatory serving preflight not executed locally",
+  "first_wheel_build": "default temp permissions; task-specific TEMP fixed; wheel built and byte-verified",
+  "test_fixture_corrections": "teacher fixture initially used nonexistent journal_name argument, then conflicting attribution under same origin; fixed separate explicit teacher binding. No native authority/identity rule relaxed.",
+  "live_model_executed": false
+}

@@ -4,6 +4,7 @@ import base64
 import hashlib
 import io
 import json
+import re
 from pathlib import Path
 import subprocess
 import zipfile
@@ -13,6 +14,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--run-directory", default="edi-autonomous-rerun-20261023")
+    parser.add_argument("--source-revision", help="Verified remote 40-hex revision when local Git metadata is unavailable")
     args = parser.parse_args()
     if not 1 <= len(args.run_directory) <= 80 or any(not (c.isalnum() or c == "-") for c in args.run_directory):
         parser.error("run-directory must be a bounded alphanumeric/hyphen name")
@@ -23,9 +25,17 @@ def main():
         files[name] = (Path(__file__).parent / name).read_bytes()
     files["check_controller_contract.py"] = (repo / "scripts/check_controller_contract.py").read_bytes()
     files["scripts/check_autonomous_dispatch.py"] = (repo / "scripts/check_autonomous_dispatch.py").read_bytes()
-    head = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
-    dirty = subprocess.check_output(["git", "-C", str(repo), "status", "--porcelain"], text=True)
+    files["scripts/check_information_seeking.py"] = (repo / "scripts/check_information_seeking.py").read_bytes()
+    files["tests/test_information_seeking.py"] = (repo / "tests/test_information_seeking.py").read_bytes()
+    if args.source_revision is not None:
+        if not re.fullmatch(r"[0-9a-f]{40}", args.source_revision):
+            parser.error("source-revision must be a verified full remote commit SHA")
+        head, dirty = args.source_revision, "explicit source snapshot; local Git status not available"
+    else:
+        head = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
+        dirty = subprocess.check_output(["git", "-C", str(repo), "status", "--porcelain"], text=True)
     manifest = {"git_head": head, "working_tree_changed": bool(dirty),
+                "git_metadata_basis": "explicit verified remote revision; per-file hashes authoritative" if args.source_revision else "local Git",
                 "files": {n: hashlib.sha256(v).hexdigest() for n, v in files.items()}}
     memory = io.BytesIO()
     with zipfile.ZipFile(memory, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -73,6 +83,9 @@ while time.monotonic()<deadline:
   with (out/"dispatch-regression.log").open("x") as checklog:
    check=subprocess.run(["/kaggle/temp/edi-engineering-compute/bin/python",str(root/"scripts/check_autonomous_dispatch.py"),"--output",str(out/"dispatch-regression.json")],env=checkenv,stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
   if check.returncode:raise RuntimeError("Native dispatch regression failed; inspect log before inference")
+  with (out/"information-seeking-preflight.log").open("x") as checklog:
+   check=subprocess.run(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"scripts/check_information_seeking.py"),"--grammar","--output",str(out/"information-seeking-preflight.json")],env=checkenv,stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
+  if check.returncode:raise RuntimeError("Information-seeking preflight failed; inspect log before inference")
   env=dict(os.environ,EDI_AUTONOMOUS_ROOT=str(out));env.pop("PYTHONPATH",None)
   with (out/"supervisor.log").open("x") as log:
    server=subprocess.Popen(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"server.py")],env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)

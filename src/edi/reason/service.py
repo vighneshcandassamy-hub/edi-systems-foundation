@@ -264,6 +264,24 @@ class Reasoning:
             raise EDIError(ErrorCode.INVALID, "student output cannot label itself teacher feedback")
         if job.role == "student" and old.request.response_mode == "controller-turn" and len(response.operation_proposals) != 1:
             raise EDIError(ErrorCode.INVALID, "controller turn requires one next-operation proposal or explicit yield")
+        if job.role == "student" and old.request.controller_policy == "information-seeking/1.0":
+            decision = response.operation_proposals[0]
+            progress = old.request.controller_progress
+            if decision.operation == "teacher-review" and not progress.teacher_available:
+                raise EDIError(ErrorCode.UNAVAILABLE, "teacher is not configured; choose another operation or assess a stop")
+            if decision.operation == "yield":
+                from edi.reason.contracts import YieldAssessment
+                reason = decision.arguments.get("reason", "")
+                if not reason.strip() or len(reason) > 8192 or "assessment" not in decision.arguments:
+                    raise EDIError(ErrorCode.INVALID,
+                        "information-seeking yield requires a reason and assessment of unresolved needs, available alternatives and resume condition; missing evidence alone does not forbid an information request")
+                assessment = YieldAssessment.model_validate_json(canonical(decision.arguments["assessment"]))
+                available = set(old.request.controller_access.operations) | {
+                    "world-call", "acquire-asset", "select-context", "analysis-compile", "analysis-run", "component-call"}
+                if progress.teacher_available:
+                    available.add("teacher-review")
+                if any(item.operation not in available for item in assessment.alternatives_considered):
+                    raise EDIError(ErrorCode.INVALID, "stop alternatives must name advertised public or native operations; teacher-review requires a configured teacher")
         if len(response.hypotheses) > old.request.budget.rivals_per_round:
             raise EDIError(ErrorCode.CAPACITY, "rival budget exceeded")
         prior_ids = {h.hypothesis_id for r in old.responses for h in r.hypotheses}

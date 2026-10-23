@@ -1,3 +1,9 @@
+Current source is 0.10.7.dev0. New runs require a fresh workspace and typed
+information-seeking/stopping decisions. The launch package runs the additional
+information-seeking regression and actual xgrammar preflight before model startup.
+No new live result is implied. Use --source-revision VERIFIED_FULL_SHA when local
+Git metadata is unavailable; per-file content hashes remain authoritative.
+
 # Autonomous controller engineering run
 
 This runner calls the existing `IntegratedApplication.step()` entry point. It
@@ -50,7 +56,7 @@ Presence of these files does not establish that the run passed.
 The current packager accepts --run-directory to select a fresh owned directory. Its finally block emits a consistent native checkpoint automatically, including rejection/restart failure. The ZIP is embedded in notebook HTML output; Download Notebook preserves the payload for offline recovery. Download and verify it promptly. Original snapshots and failures must remain separate. Detailed restart differences and database integrity results are retained before an equality assertion.
 
 
-Current source0.10.5 runs both native regressions before model startup. The
+The retained source0.10.5 ran both native regressions before model startup. The
 controller contract check includes actual xgrammar compilation and preserves
 proposal-only/teacher semantics. The authored dispatch check reaches the real
 broker and C2, closure, reopen and unknown-completion guard. Its fixed operation

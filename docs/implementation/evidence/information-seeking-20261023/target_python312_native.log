@@ -1,0 +1,1 @@
+{"version": "0.10.7.dev0", "scope": "authored native controller regressions; in-process HTTP handler; no model or socket", "passed": true, "tests_run": 9, "errors": [], "failures": [], "model_calls": 0, "network_verified": false, "grammar": "not_requested"}

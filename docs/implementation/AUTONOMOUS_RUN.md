@@ -1,5 +1,8 @@
 # Autonomous controller engineering investigation — 23 October 2026
 
+Latest source is 0.10.7.dev0: see the [information-seeking repair](INFORMATION_SEEKING_REPAIR.md).
+The runtime outcomes below remain historical 0.10.5 evidence; no newer live pass is claimed.
+
 Current source: **0.10.5.dev0**. The three engineering steps are complete, but
 **autonomous investigation readiness is REVISE**: the student yielded without
 acquiring information. Native execution/restart checks pass. **The first Meadows

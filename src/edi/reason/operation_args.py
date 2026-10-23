@@ -4,7 +4,7 @@ import json
 
 from edi.agency.benchmark import PublicIntent
 from edi.analyze.contracts import CompileRequest, RunRequest
-from edi.reason.contracts import EvidenceSelection, Response
+from edi.reason.contracts import EvidenceSelection, Response, YieldAssessment
 
 TRIGGERS=("novel","unresolved","consequential","student-escalation")
 
@@ -33,11 +33,13 @@ def validate_arguments(operation, arguments):
         if set(arguments)!={"trigger"} or arguments["trigger"] not in TRIGGERS:
             raise ValueError("teacher-review requires one valid trigger")
     elif operation=="yield":
-        if set(arguments)-{"reason"} or ("reason" in arguments and not isinstance(arguments["reason"],str)):
-            raise ValueError("yield accepts an optional reason string")
+        if set(arguments)-{"reason", "assessment"} or ("reason" in arguments and not isinstance(arguments["reason"],str)):
+            raise ValueError("yield accepts a reason string and a typed assessment")
+        if "assessment" in arguments:
+            YieldAssessment.model_validate_json(json.dumps(arguments["assessment"], allow_nan=False))
 
 
-def generation_schema():
+def generation_schema(*, controller_policy="legacy"):
     """Native content schema with transport-owned identities supplied after serving."""
     schema=copy.deepcopy(Response.model_json_schema())
     supplied={"workspace_id","inquiry_id","request_id","response_id","job_id","context_sha256",
@@ -64,8 +66,14 @@ def generation_schema():
         "analysis-compile":native(CompileRequest),
         "analysis-run":native(RunRequest),
         "teacher-review":obj({"trigger":{"type":"string","enum":list(TRIGGERS)}},["trigger"]),
-        "yield":obj({"reason":{"type":"string"}},[])
+        "yield":obj({"reason":{"type":"string"}, "assessment":native(YieldAssessment)},[])
     }
+    if controller_policy == "information-seeking/1.0":
+        arguments["yield"]["properties"]["reason"]["minLength"] = 1
+        arguments["yield"]["properties"]["reason"]["maxLength"] = 8192
+        arguments["yield"]["required"] = ["reason", "assessment"]
+    elif controller_policy != "legacy":
+        raise ValueError("unsupported controller policy")
     from edi.inquiry.operations import call_schema
     arguments["component-call"], component_definitions = call_schema()
     definitions.update(component_definitions)
@@ -76,7 +84,7 @@ def generation_schema():
     return schema
 
 
-def serving_schema(*, evidence_references=None, controller_turn=False):
+def serving_schema(*, evidence_references=None, controller_turn=False, controller_policy="legacy"):
     """vLLM decoding envelope; native validation still enforces every key bound.
 
     vLLM 0.21 rejects propertyNames. Only the known native Identifier map-key
@@ -94,7 +102,7 @@ def serving_schema(*, evidence_references=None, controller_turn=False):
         if isinstance(value, list):
             return [compatible(item) for item in value]
         return value
-    schema = compatible(generation_schema())
+    schema = compatible(generation_schema(controller_policy=controller_policy))
     if controller_turn:
         schema["properties"]["operation_proposals"]["minItems"] = 1
         if "operation_proposals" not in schema["required"]:

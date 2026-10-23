@@ -1,5 +1,8 @@
 # Existing-component integration readiness
 
+Latest source is 0.10.7.dev0: see the [information-seeking repair](INFORMATION_SEEKING_REPAIR.md).
+The runtime outcomes below remain historical 0.10.5 evidence; no newer live pass is claimed.
+
 Current source: **0.10.5.dev0**,23 October 2026. Native repairs and28 CPU checks pass; autonomous acquisition acceptance failed. See [AUTONOMOUS_RUN.md](AUTONOMOUS_RUN.md). The following scheduled walkthrough remains historical0.10.1 evidence. See [ENGINEERING_RUN.md](ENGINEERING_RUN.md) for results, retained failures, source hashes and limits.
 
 | Path | Execution evidence (version noted) |

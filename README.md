@@ -2,7 +2,10 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:**0.10.5.dev0. **Status:** native connection/dispatch repairs and28 CPU checks pass; the autonomous neutral trial yielded without information acquisition, so readiness remains REVISE. Fresh-process restart, eight-store integrity and source/wheel equality pass. The Meadows diagnostic remains unstarted. See [autonomous run report](docs/implementation/AUTONOMOUS_RUN.md).
+**Code version:** 0.10.7.dev0. Native information-seeking/stopping repair implemented;
+nine authored native regressions pass. Socket/serving/live-model verification is
+incomplete and autonomous readiness remains REVISE. Meadows is unstarted. See the
+[repair report](docs/implementation/INFORMATION_SEEKING_REPAIR.md).
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 

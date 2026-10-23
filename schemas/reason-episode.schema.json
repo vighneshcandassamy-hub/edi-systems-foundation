@@ -117,7 +117,7 @@
         },
         "rounds": {
           "default": 2,
-          "maximum": 2,
+          "maximum": 4,
           "minimum": 1,
           "title": "Rounds",
           "type": "integer"
@@ -131,7 +131,7 @@
         },
         "jobs": {
           "default": 4,
-          "maximum": 4,
+          "maximum": 6,
           "minimum": 1,
           "title": "Jobs",
           "type": "integer"
@@ -331,6 +331,112 @@
         "sha256"
       ],
       "title": "Context",
+      "type": "object"
+    },
+    "ControllerAccess": {
+      "additionalProperties": false,
+      "description": "C0 description from a hash-adopted mission, never an execution grant.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "version": {
+          "const": "edi-controller-access/1.0",
+          "default": "edi-controller-access/1.0",
+          "title": "Version",
+          "type": "string"
+        },
+        "grant_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Grant Id",
+          "type": "string"
+        },
+        "mission_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Mission Sha256",
+          "type": "string"
+        },
+        "not_before": {
+          "format": "date-time",
+          "title": "Not Before",
+          "type": "string"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "operations": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "type": "object"
+          },
+          "maxProperties": 16,
+          "title": "Operations",
+          "type": "object"
+        }
+      },
+      "required": [
+        "grant_id",
+        "mission_sha256",
+        "not_before",
+        "expires_at",
+        "operations"
+      ],
+      "title": "ControllerAccess",
+      "type": "object"
+    },
+    "ControllerProgress": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "turn": {
+          "minimum": 0,
+          "title": "Turn",
+          "type": "integer"
+        },
+        "remaining_turns": {
+          "minimum": 0,
+          "title": "Remaining Turns",
+          "type": "integer"
+        },
+        "remaining_policy_units": {
+          "minimum": 0,
+          "title": "Remaining Policy Units",
+          "type": "integer"
+        },
+        "teacher_available": {
+          "title": "Teacher Available",
+          "type": "boolean"
+        },
+        "public_outcomes": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/PublicOutcome"
+          },
+          "maxItems": 16,
+          "title": "Public Outcomes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "turn",
+        "remaining_turns",
+        "remaining_policy_units",
+        "teacher_available"
+      ],
+      "title": "ControllerProgress",
       "type": "object"
     },
     "Decide": {
@@ -1376,6 +1482,47 @@
           "title": "Horizon",
           "type": "string"
         },
+        "response_mode": {
+          "default": "proposal",
+          "description": "A controller turn needs exactly one next-operation proposal or explicit yield; proposal mode permits reasoning-only output.",
+          "enum": [
+            "proposal",
+            "controller-turn"
+          ],
+          "title": "Response Mode",
+          "type": "string"
+        },
+        "controller_access": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ControllerAccess"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "controller_policy": {
+          "default": "legacy",
+          "enum": [
+            "legacy",
+            "information-seeking/1.0"
+          ],
+          "title": "Controller Policy",
+          "type": "string"
+        },
+        "controller_progress": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ControllerProgress"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
         "model_revision": {
           "minimum": 0,
           "title": "Model Revision",
@@ -1605,7 +1752,7 @@
           "type": "string"
         },
         "round": {
-          "maximum": 2,
+          "maximum": 4,
           "minimum": 1,
           "title": "Round",
           "type": "integer"
@@ -1672,7 +1819,8 @@
           "enum": [
             "awaiting-import",
             "completed",
-            "cancelled-usage-unknown"
+            "cancelled-usage-unknown",
+            "rejected"
           ],
           "title": "Status",
           "type": "string"
@@ -1785,6 +1933,7 @@
             "analysis-compile",
             "analysis-run",
             "teacher-review",
+            "component-call",
             "yield"
           ],
           "title": "Operation",
@@ -2163,6 +2312,43 @@
       "title": "ProtocolQuestion",
       "type": "object"
     },
+    "PublicOutcome": {
+      "additionalProperties": false,
+      "description": "C0 receipt metadata; not a model claim or complete access history.",
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operation": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Operation",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "http_status": {
+          "maximum": 599,
+          "minimum": 100,
+          "title": "Http Status",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "operation",
+        "request_id",
+        "http_status"
+      ],
+      "title": "PublicOutcome",
+      "type": "object"
+    },
     "PurposeCriterion": {
       "additionalProperties": false,
       "properties": {
@@ -2417,6 +2603,100 @@
         "record_id"
       ],
       "title": "Ref",
+      "type": "object"
+    },
+    "RejectedResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "workspace_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Workspace Id",
+          "type": "string"
+        },
+        "inquiry_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Inquiry Id",
+          "type": "string"
+        },
+        "request_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "job_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Job Id",
+          "type": "string"
+        },
+        "raw_record_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Raw Record Id",
+          "type": "string"
+        },
+        "context_sha256": {
+          "title": "Context Sha256",
+          "type": "string"
+        },
+        "diagnostic": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Diagnostic",
+          "type": "string"
+        },
+        "input_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input Tokens"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Tokens"
+        },
+        "status": {
+          "const": "returned-output-rejected",
+          "default": "returned-output-rejected",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "workspace_id",
+        "inquiry_id",
+        "request_id",
+        "job_id",
+        "raw_record_id",
+        "context_sha256",
+        "diagnostic"
+      ],
+      "title": "RejectedResponse",
       "type": "object"
     },
     "Representation": {
@@ -3604,8 +3884,12 @@
       "type": "string"
     },
     "implementation": {
-      "const": "edi-c4/0.5.1",
-      "default": "edi-c4/0.5.1",
+      "default": "edi-c4/0.6.2",
+      "enum": [
+        "edi-c4/0.6.0",
+        "edi-c4/0.6.1",
+        "edi-c4/0.6.2"
+      ],
       "title": "Implementation",
       "type": "string"
     },
@@ -3640,6 +3924,14 @@
         "$ref": "#/$defs/Response"
       },
       "title": "Responses",
+      "type": "array"
+    },
+    "rejections": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/RejectedResponse"
+      },
+      "title": "Rejections",
       "type": "array"
     },
     "frontier": {

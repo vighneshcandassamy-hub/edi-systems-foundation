@@ -1,0 +1,512 @@
+test_actual_image_bytes_in_wire_fixture (test_benchmark_connection.ConnectionTests.test_actual_image_bytes_in_wire_fixture) ... ERROR
+test_all_public_operations_and_pending_objective (test_benchmark_connection.ConnectionTests.test_all_public_operations_and_pending_objective) ... ERROR
+test_asset_reassembly_external_origin_and_hash (test_benchmark_connection.ConnectionTests.test_asset_reassembly_external_origin_and_hash) ... ERROR
+test_cancelled_job_cannot_be_dispatched_from_stale_snapshot (test_benchmark_connection.ConnectionTests.test_cancelled_job_cannot_be_dispatched_from_stale_snapshot) ... ERROR
+test_completed_controller_at_exact_turn_limit_stays_completed (test_benchmark_connection.ConnectionTests.test_completed_controller_at_exact_turn_limit_stays_completed) ... ERROR
+test_denied_public_request_is_evidence (test_benchmark_connection.ConnectionTests.test_denied_public_request_is_evidence) ... ERROR
+test_dynamic_c0_choices_use_native_c4_records (test_benchmark_connection.ConnectionTests.test_dynamic_c0_choices_use_native_c4_records) ... ERROR
+test_exact_c1_capture_and_replay (test_benchmark_connection.ConnectionTests.test_exact_c1_capture_and_replay) ... ERROR
+test_gateway_fixture_native_import_and_no_redispatch (test_benchmark_connection.ConnectionTests.test_gateway_fixture_native_import_and_no_redispatch) ... ERROR
+test_grant_scope_and_expiry (test_benchmark_connection.ConnectionTests.test_grant_scope_and_expiry) ... ERROR
+test_image_default_cut_keeps_whole_bounded_native_object (test_benchmark_connection.ConnectionTests.test_image_default_cut_keeps_whole_bounded_native_object) ... ERROR
+test_journal_atomic_dispatch_claim (test_benchmark_connection.ConnectionTests.test_journal_atomic_dispatch_claim) ... ERROR
+test_live_transport_auth_exact_count_and_json_mode (test_benchmark_connection.ConnectionTests.test_live_transport_auth_exact_count_and_json_mode) ... ERROR
+test_lost_receipt_does_not_duplicate_work (test_benchmark_connection.ConnectionTests.test_lost_receipt_does_not_duplicate_work) ... ERROR
+test_missing_auth_and_private_path (test_benchmark_connection.ConnectionTests.test_missing_auth_and_private_path) ... ERROR
+test_model_timeout_is_not_retried (test_benchmark_connection.ConnectionTests.test_model_timeout_is_not_retried) ... ERROR
+test_native_messages_include_selected_protocol_questions (test_benchmark_connection.ConnectionTests.test_native_messages_include_selected_protocol_questions) ... ERROR
+test_native_operation_shapes_reject_nested_control_wrappers (test_benchmark_connection.ConnectionTests.test_native_operation_shapes_reject_nested_control_wrappers) ... ERROR
+test_operation_argument_contracts_distinguish_asset_and_public_wrappers (test_benchmark_connection.ConnectionTests.test_operation_argument_contracts_distinguish_asset_and_public_wrappers) ... ERROR
+test_request_identity_conflict (test_benchmark_connection.ConnectionTests.test_request_identity_conflict) ... ERROR
+test_restart_preserves_original_request_and_evidence (test_benchmark_connection.ConnectionTests.test_restart_preserves_original_request_and_evidence) ... ERROR
+test_serving_grammar_defers_only_native_map_key_lengths (test_benchmark_connection.ConnectionTests.test_serving_grammar_defers_only_native_map_key_lengths) ... ERROR
+test_serving_window_and_teacher_role_are_not_bypassed (test_benchmark_connection.ConnectionTests.test_serving_window_and_teacher_role_are_not_bypassed) ... ERROR
+test_teacher_cannot_propose_actions (test_benchmark_connection.ConnectionTests.test_teacher_cannot_propose_actions) ... ERROR
+test_teacher_key_missing_is_explicit (test_benchmark_connection.ConnectionTests.test_teacher_key_missing_is_explicit) ... ERROR
+test_token_cap_blocks_before_dispatch (test_benchmark_connection.ConnectionTests.test_token_cap_blocks_before_dispatch) ... ERROR
+test_tokenizer_profile_drift_stops_before_generation (test_benchmark_connection.ConnectionTests.test_tokenizer_profile_drift_stops_before_generation) ... ERROR
+test_usage_mismatch_retains_pending_job_and_no_second_inference (test_benchmark_connection.ConnectionTests.test_usage_mismatch_retains_pending_job_and_no_second_inference) ... ERROR
+test_catalogue_is_adopted_intersection_not_authority_expansion (test_controller_access.AccessContractTests.test_catalogue_is_adopted_intersection_not_authority_expansion) ... ok
+test_description_bytes_and_names_are_bounded (test_controller_access.AccessContractTests.test_description_bytes_and_names_are_bounded) ... ok
+test_renderer_promotes_only_c0_description_and_matches_content_fields (test_controller_access.AccessContractTests.test_renderer_promotes_only_c0_description_and_matches_content_fields) ... ok
+
+======================================================================
+ERROR: test_actual_image_bytes_in_wire_fixture (test_benchmark_connection.ConnectionTests.test_actual_image_bytes_in_wire_fixture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpz2fhzz2m\\world'
+
+======================================================================
+ERROR: test_all_public_operations_and_pending_objective (test_benchmark_connection.ConnectionTests.test_all_public_operations_and_pending_objective)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp5p_nadl7\\world'
+
+======================================================================
+ERROR: test_asset_reassembly_external_origin_and_hash (test_benchmark_connection.ConnectionTests.test_asset_reassembly_external_origin_and_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp6xjiu2sb\\world'
+
+======================================================================
+ERROR: test_cancelled_job_cannot_be_dispatched_from_stale_snapshot (test_benchmark_connection.ConnectionTests.test_cancelled_job_cannot_be_dispatched_from_stale_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpa466c1xx\\world'
+
+======================================================================
+ERROR: test_completed_controller_at_exact_turn_limit_stays_completed (test_benchmark_connection.ConnectionTests.test_completed_controller_at_exact_turn_limit_stays_completed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp3s1lz5na\\world'
+
+======================================================================
+ERROR: test_denied_public_request_is_evidence (test_benchmark_connection.ConnectionTests.test_denied_public_request_is_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpbkmtc4x0\\world'
+
+======================================================================
+ERROR: test_dynamic_c0_choices_use_native_c4_records (test_benchmark_connection.ConnectionTests.test_dynamic_c0_choices_use_native_c4_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpvlt9kjdy\\world'
+
+======================================================================
+ERROR: test_exact_c1_capture_and_replay (test_benchmark_connection.ConnectionTests.test_exact_c1_capture_and_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpn534c2q9\\world'
+
+======================================================================
+ERROR: test_gateway_fixture_native_import_and_no_redispatch (test_benchmark_connection.ConnectionTests.test_gateway_fixture_native_import_and_no_redispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpjveowoqf\\world'
+
+======================================================================
+ERROR: test_grant_scope_and_expiry (test_benchmark_connection.ConnectionTests.test_grant_scope_and_expiry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpvjp3oipu\\world'
+
+======================================================================
+ERROR: test_image_default_cut_keeps_whole_bounded_native_object (test_benchmark_connection.ConnectionTests.test_image_default_cut_keeps_whole_bounded_native_object)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp6ewd94nj\\world'
+
+======================================================================
+ERROR: test_journal_atomic_dispatch_claim (test_benchmark_connection.ConnectionTests.test_journal_atomic_dispatch_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpd6wqi8cg\\world'
+
+======================================================================
+ERROR: test_live_transport_auth_exact_count_and_json_mode (test_benchmark_connection.ConnectionTests.test_live_transport_auth_exact_count_and_json_mode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpaeezdozk\\world'
+
+======================================================================
+ERROR: test_lost_receipt_does_not_duplicate_work (test_benchmark_connection.ConnectionTests.test_lost_receipt_does_not_duplicate_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpv31oyzco\\world'
+
+======================================================================
+ERROR: test_missing_auth_and_private_path (test_benchmark_connection.ConnectionTests.test_missing_auth_and_private_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmphvrwxm67\\world'
+
+======================================================================
+ERROR: test_model_timeout_is_not_retried (test_benchmark_connection.ConnectionTests.test_model_timeout_is_not_retried)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpnt45yj2b\\world'
+
+======================================================================
+ERROR: test_native_messages_include_selected_protocol_questions (test_benchmark_connection.ConnectionTests.test_native_messages_include_selected_protocol_questions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp56iu0_qa\\world'
+
+======================================================================
+ERROR: test_native_operation_shapes_reject_nested_control_wrappers (test_benchmark_connection.ConnectionTests.test_native_operation_shapes_reject_nested_control_wrappers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpyvtg5wvz\\world'
+
+======================================================================
+ERROR: test_operation_argument_contracts_distinguish_asset_and_public_wrappers (test_benchmark_connection.ConnectionTests.test_operation_argument_contracts_distinguish_asset_and_public_wrappers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpvwtzml84\\world'
+
+======================================================================
+ERROR: test_request_identity_conflict (test_benchmark_connection.ConnectionTests.test_request_identity_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp115qe080\\world'
+
+======================================================================
+ERROR: test_restart_preserves_original_request_and_evidence (test_benchmark_connection.ConnectionTests.test_restart_preserves_original_request_and_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp23rmx3oq\\world'
+
+======================================================================
+ERROR: test_serving_grammar_defers_only_native_map_key_lengths (test_benchmark_connection.ConnectionTests.test_serving_grammar_defers_only_native_map_key_lengths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpjyat5df4\\world'
+
+======================================================================
+ERROR: test_serving_window_and_teacher_role_are_not_bypassed (test_benchmark_connection.ConnectionTests.test_serving_window_and_teacher_role_are_not_bypassed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp31in6lek\\world'
+
+======================================================================
+ERROR: test_teacher_cannot_propose_actions (test_benchmark_connection.ConnectionTests.test_teacher_cannot_propose_actions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmp9ccvx3jy\\world'
+
+======================================================================
+ERROR: test_teacher_key_missing_is_explicit (test_benchmark_connection.ConnectionTests.test_teacher_key_missing_is_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpr24_q2d9\\world'
+
+======================================================================
+ERROR: test_token_cap_blocks_before_dispatch (test_benchmark_connection.ConnectionTests.test_token_cap_blocks_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpc2_0cezl\\world'
+
+======================================================================
+ERROR: test_tokenizer_profile_drift_stops_before_generation (test_benchmark_connection.ConnectionTests.test_tokenizer_profile_drift_stops_before_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmphv11_1h1\\world'
+
+======================================================================
+ERROR: test_usage_mismatch_retains_pending_job_and_no_second_inference (test_benchmark_connection.ConnectionTests.test_usage_mismatch_retains_pending_job_and_no_second_inference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 45, in setUp
+    self.server = broker.server(WORLD / 'fixture', self.root / 'world', ROOT / 'benchmarks/meadows-budworm/database/evidence.sqlite', self.token)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 286, in server
+    broker=Broker(environment,run,corpus)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\benchmarks\meadows-budworm\environment\v0_2\broker.py", line 70, in __init__
+    self.run.mkdir(parents=True,exist_ok=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\csscs\\AppData\\Local\\Packages\\sandbox.{b9351879-3c29-42d2-97a2-31c6624a4a7c}\\AC\\Temp\\tmpm7bwq9a_\\world'
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.277s
+
+FAILED (errors=28)

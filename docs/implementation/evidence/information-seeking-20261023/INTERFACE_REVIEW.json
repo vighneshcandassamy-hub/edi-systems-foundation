@@ -1,0 +1,1130 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "All existing pair dispositions reviewed for information-seeking/stopping delta; historical wider contracts remain REVISE.",
+  "input_revision": "0.10.7.dev0; recovered input manifest and remote c43b26c3043b6748e24e1ef42309e82c346a34d6",
+  "components": [
+    {
+      "id": "EDI",
+      "name": "EDI 0.10.1.dev0 C0-C7 native composition"
+    },
+    {
+      "id": "WORLD",
+      "name": "Neutral loopback engineering broker; frozen Meadows world not exercised"
+    },
+    {
+      "id": "MODEL",
+      "name": "Local fixed-weight inference worker"
+    },
+    {
+      "id": "EVAL",
+      "name": "Offline operator evaluator"
+    },
+    {
+      "id": "TEACHER",
+      "name": "Configured optional teacher through explicit file export/import; identity operator-declared"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "EDI",
+      "to": "WORLD",
+      "disposition": "required",
+      "rationale": "Original scoped request/result authority retained; current source changes do not establish runtime isolation or product qualification.",
+      "contract_ids": [
+        "RP-IF01"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "EDI",
+      "to": "MODEL",
+      "disposition": "required",
+      "rationale": "Original scoped request/result authority retained; current source changes do not establish runtime isolation or product qualification.",
+      "contract_ids": [
+        "RP-IF03"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "EDI",
+      "to": "EVAL",
+      "disposition": "required",
+      "rationale": "Original scoped request/result authority retained; current source changes do not establish runtime isolation or product qualification.",
+      "contract_ids": [
+        "RP-IF06"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "EDI",
+      "to": "TEACHER",
+      "disposition": "optional",
+      "rationale": "Selective teacher role is composed through manual file exchange in the zero-additional-spend setup; source connected, no runtime feedback executed.",
+      "contract_ids": [
+        "EX-IF07"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "WORLD",
+      "to": "EDI",
+      "disposition": "required",
+      "rationale": "Original scoped request/result authority retained; current source changes do not establish runtime isolation or product qualification.",
+      "contract_ids": [
+        "RP-IF02"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "WORLD",
+      "to": "MODEL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "WORLD",
+      "to": "EVAL",
+      "disposition": "required",
+      "rationale": "Original scoped request/result authority retained; current source changes do not establish runtime isolation or product qualification.",
+      "contract_ids": [
+        "RP-IF05"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "WORLD",
+      "to": "TEACHER",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "MODEL",
+      "to": "EDI",
+      "disposition": "required",
+      "rationale": "Original scoped request/result authority retained; current source changes do not establish runtime isolation or product qualification.",
+      "contract_ids": [
+        "RP-IF04"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "MODEL",
+      "to": "WORLD",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "MODEL",
+      "to": "EVAL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "MODEL",
+      "to": "TEACHER",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "EVAL",
+      "to": "EDI",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "EVAL",
+      "to": "WORLD",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "EVAL",
+      "to": "MODEL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "EVAL",
+      "to": "TEACHER",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "TEACHER",
+      "to": "EDI",
+      "disposition": "optional",
+      "rationale": "Selective teacher role is composed through manual file exchange in the zero-additional-spend setup; source connected, no runtime feedback executed.",
+      "contract_ids": [
+        "EX-IF08"
+      ],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "TEACHER",
+      "to": "WORLD",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "TEACHER",
+      "to": "MODEL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    },
+    {
+      "from": "TEACHER",
+      "to": "EVAL",
+      "disposition": "prohibited",
+      "rationale": "No direct source, tool, operator or evaluator authority.",
+      "contract_ids": [],
+      "autonomous_delta_review": "Disposition retained; changed prompt/reference/controller contracts preserve owner authority. See ADR-012 and scoped delta."
+    }
+  ],
+  "contract_profiles": {
+    "run-boundary": {
+      "ownership": "README sections 2 and 6: each C owner retains its own state; broker owns world; evaluator owns post-run analysis.",
+      "authority": "README sections 2 and 4: exact public mission grants only; model has no tool/operator authority; evaluator receives artifacts only after closure.",
+      "shape_versions": "SOURCE_PINS and RUN_CONFIG: native source/public schemas retained; new intent/image/clock schemas proposed and block contract acceptance; exact processor/model versions required.",
+      "identity_scope": "Run/session/workspace plus issuer/source/epoch/document/occurrence, exact selectors and hashes; duplicate payload is not duplicate occurrence.",
+      "time_order": "README clock contract: simulation year, source time, receipt, commit and knowledge cut distinct; inference takes a pinned cut; offline transfer after closure.",
+      "delivery_idempotency": "README restart contract: original stable request/body and operation replay; changed reuse conflicts; no assumed inference HTTP deduplication.",
+      "commit_recovery": "README section 2: no distributed transaction; write-ahead intent, broker replay, C1 occurrence commit then C0 ack; unresolved workers require trusted reconciliation.",
+      "retention": "Private durable run volumes and acquired bytes through analysis; no runtime garbage collection of supporting evidence; capacity yields. Secrets/databases excluded from Git.",
+      "resource_limits": "RUN_CONFIG proposed root budgets and stricter owner/public page/chunk/job caps; all prompt/image/helper/failed work charged or unknown.",
+      "errors": "Explicit denied/unsupported/unavailable/conflict/partial/capacity/timeout/uncertain completion; no semantic answer fabrication or silent fallback.",
+      "feedback_grounding": "Public acquired records remain reports/simulation observations; model/teacher/derived/simulated output is not independent external evidence; no evaluator-to-runtime feedback."
+    },
+    "component-connection-v1": {
+      "ownership": "Existing C0-C7 native stores remain authoritative. C0 coordinates and retains selected results; C1 owns bytes, C3 admits world changes, C4 owns model jobs/rejections, C6 owns assessments and C7 adopts authority. See COMPONENT_CONNECTIONS.md Connections and Failure contract.",
+      "authority": "Finite component-call catalogue uses existing ports through C0. No raw model intake, recursive job control, direct cross-owner SQL, C3 admission or C7 operator adoption/reconciliation is model-accessible. Trusted-local Workflow operator APIs remain separate.",
+      "shape_versions": "Source 0.10.0.dev0, C4 edi-c4/0.6.0, operations edi-native-operations/1.2. Existing native request schemas are reused and namespaced for serving. Fresh workspaces; no migration of historical episodes. See generated-contracts.json.",
+      "identity_scope": "ApplicationProfile and Runtime check one workspace and eight separate database paths. C0 supplies command identities. C1 source/occurrence identity, C3 revisions and exact model job/context hashes remain native; labels do not authenticate physical identity.",
+      "time_order": "Original C4 cut and prospective C6 rules remain immutable. C0 persists one deadline across restarts and checks before jobs/dispatch. Teacher feedback is later generated assistance against the original exported cut; operator compliance is declared, not independently observed.",
+      "delivery_idempotency": "C0 phases reuse native request IDs and owner receipts. C4 provider journal claims once; unknown completion never authorizes correction/resend. File teacher exchange waits explicitly and retains one immutable imported result per job. Broker deduplicates original requests under its existing contract.",
+      "commit_recovery": "C0 phase results and C4 job/rejection state are separate owner commits. C1 retains raw outputs before native admission. Native staged C3 submissions retain their own receipt recovery. Runtime crash/fault cases remain unrun; a local lock is not multi-process isolation.",
+      "retention": "Original C1 payloads, C4 episodes/rejections and component artifacts remain in their native finite stores. Bounded contexts may omit/truncate them with selectors. No new retention eviction, backup/restore, migration or unlimited replay guarantee is introduced.",
+      "resource_limits": "Native profiles retain finite bytes/items/work. C0 defaults 32 turns, 262144 conservatively charged tokens, 3600 seconds, maximum one correction per rejected attempt; an inquiry reserves at most six 16K jobs and four student rounds. Per-journal byte quotas are independent, not a hard aggregate memory/disk/energy bound.",
+      "errors": "Known bad returned content becomes a C4 rejection and bounded correction/yield. No-dispatch dependency failures wait for the original model job. Teacher export awaits input. Unknown provider/storage completion remains unresolved; native tool errors return as attributed context. No silent scientific content repair.",
+      "feedback_grounding": "Component artifacts, teacher critique and reasoning memory are generated lineage, not independent world evidence. C3 candidates and C6 advice do not become accepted truth. File teacher identity, usage and adherence to the exported cut remain operator-declared; fixed weights and original authority are retained."
+    }
+  },
+  "contracts": [
+    {
+      "id": "RP-IF01",
+      "from": "EDI",
+      "to": "WORLD",
+      "title": "Authorized public requests",
+      "producer_port": "C0/C1 acquisition or C0/C7 authorization via proposed adapter",
+      "consumer_port": "POST /v2/<operation>",
+      "requirement_ids": [
+        "RP-R02",
+        "RP-R05",
+        "RP-R06",
+        "RP-R10"
+      ],
+      "verification_ids": [
+        "CONN-V01",
+        "CONN-V05"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    },
+    {
+      "id": "RP-IF02",
+      "from": "WORLD",
+      "to": "EDI",
+      "title": "Public results and acquired bytes",
+      "producer_port": "Broker public response",
+      "consumer_port": "Proposed C1 broker intake and C0 receipt reconciliation",
+      "requirement_ids": [
+        "RP-R03",
+        "RP-R06",
+        "RP-R08"
+      ],
+      "verification_ids": [
+        "CONN-V01",
+        "CONN-V05"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    },
+    {
+      "id": "RP-IF03",
+      "from": "EDI",
+      "to": "MODEL",
+      "title": "Pinned selected inference context",
+      "producer_port": "C4 InferencePort.complete(job, episode), proposed native/image binding",
+      "consumer_port": "Local vLLM bounded request",
+      "requirement_ids": [
+        "RP-R03",
+        "RP-R04",
+        "RP-R07"
+      ],
+      "verification_ids": [
+        "LIVE-V01",
+        "LIVE-V04",
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE",
+        "CI-V04",
+        "CI-V05"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "authority": "Finite component-call catalogue uses existing ports through C0. No raw model intake, recursive job control, direct cross-owner SQL, C3 admission or C7 operator adoption/reconciliation is model-accessible. Trusted-local Workflow operator APIs remain separate.",
+        "ownership": "Existing C0-C7 native stores remain authoritative. C0 coordinates and retains selected results; C1 owns bytes, C3 admits world changes, C4 owns model jobs/rejections, C6 owns assessments and C7 adopts authority. See COMPONENT_CONNECTIONS.md Connections and Failure contract.",
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified.",
+        "identity_scope": "ApplicationProfile and Runtime check one workspace and eight separate database paths. C0 supplies command identities. C1 source/occurrence identity, C3 revisions and exact model job/context hashes remain native; labels do not authenticate physical identity.",
+        "time_order": "Original C4 cut and prospective C6 rules remain immutable. C0 persists one deadline across restarts and checks before jobs/dispatch. Teacher feedback is later generated assistance against the original exported cut; operator compliance is declared, not independently observed.",
+        "delivery_idempotency": "C0 phases reuse native request IDs and owner receipts. C4 provider journal claims once; unknown completion never authorizes correction/resend. File teacher exchange waits explicitly and retains one immutable imported result per job. Broker deduplicates original requests under its existing contract.",
+        "commit_recovery": "C0 phase results and C4 job/rejection state are separate owner commits. C1 retains raw outputs before native admission. Native staged C3 submissions retain their own receipt recovery. Runtime crash/fault cases remain unrun; a local lock is not multi-process isolation.",
+        "retention": "Original C1 payloads, C4 episodes/rejections and component artifacts remain in their native finite stores. Bounded contexts may omit/truncate them with selectors. No new retention eviction, backup/restore, migration or unlimited replay guarantee is introduced.",
+        "resource_limits": "Native profiles retain finite bytes/items/work. C0 defaults 32 turns, 262144 conservatively charged tokens, 3600 seconds, maximum one correction per rejected attempt; an inquiry reserves at most six 16K jobs and four student rounds. Per-journal byte quotas are independent, not a hard aggregate memory/disk/energy bound.",
+        "errors": "Known bad returned content becomes a C4 rejection and bounded correction/yield. No-dispatch dependency failures wait for the original model job. Teacher export awaits input. Unknown provider/storage completion remains unresolved; native tool errors return as attributed context. No silent scientific content repair.",
+        "feedback_grounding": "Component artifacts, teacher critique and reasoning memory are generated lineage, not independent world evidence. C3 candidates and C6 advice do not become accepted truth. File teacher identity, usage and adherence to the exported cut remain operator-declared; fixed weights and original authority are retained."
+      },
+      "specification": "docs/implementation/COMPONENT_CONNECTIONS.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    },
+    {
+      "id": "RP-IF04",
+      "from": "MODEL",
+      "to": "EDI",
+      "title": "Attributed actual model response and usage",
+      "producer_port": "Local inference response",
+      "consumer_port": "C4 strict Response import and C1 model-output capture, proposed gateway",
+      "requirement_ids": [
+        "RP-R04",
+        "RP-R08",
+        "RP-R10"
+      ],
+      "verification_ids": [
+        "LIVE-V01",
+        "LIVE-V04",
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE",
+        "CI-V04",
+        "CI-V05"
+      ],
+      "status": "implemented",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "ownership": "Existing C0-C7 native stores remain authoritative. C0 coordinates and retains selected results; C1 owns bytes, C3 admits world changes, C4 owns model jobs/rejections, C6 owns assessments and C7 adopts authority. See COMPONENT_CONNECTIONS.md Connections and Failure contract.",
+        "authority": "Finite component-call catalogue uses existing ports through C0. No raw model intake, recursive job control, direct cross-owner SQL, C3 admission or C7 operator adoption/reconciliation is model-accessible. Trusted-local Workflow operator APIs remain separate.",
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified.",
+        "identity_scope": "ApplicationProfile and Runtime check one workspace and eight separate database paths. C0 supplies command identities. C1 source/occurrence identity, C3 revisions and exact model job/context hashes remain native; labels do not authenticate physical identity.",
+        "time_order": "Original C4 cut and prospective C6 rules remain immutable. C0 persists one deadline across restarts and checks before jobs/dispatch. Teacher feedback is later generated assistance against the original exported cut; operator compliance is declared, not independently observed.",
+        "delivery_idempotency": "C0 phases reuse native request IDs and owner receipts. C4 provider journal claims once; unknown completion never authorizes correction/resend. File teacher exchange waits explicitly and retains one immutable imported result per job. Broker deduplicates original requests under its existing contract.",
+        "commit_recovery": "C0 phase results and C4 job/rejection state are separate owner commits. C1 retains raw outputs before native admission. Native staged C3 submissions retain their own receipt recovery. Runtime crash/fault cases remain unrun; a local lock is not multi-process isolation.",
+        "retention": "Original C1 payloads, C4 episodes/rejections and component artifacts remain in their native finite stores. Bounded contexts may omit/truncate them with selectors. No new retention eviction, backup/restore, migration or unlimited replay guarantee is introduced.",
+        "resource_limits": "Native profiles retain finite bytes/items/work. C0 defaults 32 turns, 262144 conservatively charged tokens, 3600 seconds, maximum one correction per rejected attempt; an inquiry reserves at most six 16K jobs and four student rounds. Per-journal byte quotas are independent, not a hard aggregate memory/disk/energy bound.",
+        "errors": "Known bad returned content becomes a C4 rejection and bounded correction/yield. No-dispatch dependency failures wait for the original model job. Teacher export awaits input. Unknown provider/storage completion remains unresolved; native tool errors return as attributed context. No silent scientific content repair.",
+        "feedback_grounding": "Component artifacts, teacher critique and reasoning memory are generated lineage, not independent world evidence. C3 candidates and C6 advice do not become accepted truth. File teacher identity, usage and adherence to the exported cut remain operator-declared; fixed weights and original authority are retained."
+      },
+      "specification": "docs/implementation/COMPONENT_CONNECTIONS.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    },
+    {
+      "id": "RP-IF05",
+      "from": "WORLD",
+      "to": "EVAL",
+      "title": "Sealed offline world outcomes",
+      "producer_port": "Operator-copy after closure",
+      "consumer_port": "Existing evaluate.py offline input",
+      "requirement_ids": [
+        "RP-R07",
+        "RP-R09"
+      ],
+      "verification_ids": [
+        "CONN-V01",
+        "CONN-V05"
+      ],
+      "status": "proposed",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "authority": "Offline operator copies immutable artifacts only after stopping inference; no online score or answer route.",
+        "time_order": "After closure or durable stop; retain observed horizon and original cutoff. No adaptation of investigation from evaluator result.",
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    },
+    {
+      "id": "RP-IF06",
+      "from": "EDI",
+      "to": "EVAL",
+      "title": "Sealed participant run artifacts",
+      "producer_port": "Operator-copy after closure",
+      "consumer_port": "Offline integrity/content/resource review",
+      "requirement_ids": [
+        "RP-R07",
+        "RP-R09",
+        "RP-R10"
+      ],
+      "verification_ids": [
+        "LIVE-V01",
+        "LIVE-V04"
+      ],
+      "status": "proposed",
+      "profile_ref": "run-boundary",
+      "facets": {
+        "authority": "Offline operator copies immutable artifacts only after stopping inference; no online score or answer route.",
+        "time_order": "After closure or durable stop; retain observed horizon and original cutoff. No adaptation of investigation from evaluator result.",
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified."
+      },
+      "specification": "docs/implementation/BENCHMARK_CONNECTION.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    },
+    {
+      "id": "EX-IF07",
+      "from": "EDI",
+      "to": "TEACHER",
+      "title": "Selected same-cut teacher job or fallible critique",
+      "producer_port": "TeacherExchangeGateway.complete / request_path",
+      "consumer_port": "explicit-operator-teacher-request",
+      "status": "concrete",
+      "profile_ref": "component-connection-v1",
+      "requirement_ids": [
+        "RP-R04",
+        "RP-R07",
+        "RP-R08"
+      ],
+      "verification_ids": [
+        "CI-V03",
+        "CI-V04",
+        "CI-V05",
+        "CI-V06"
+      ],
+      "facets": {
+        "ownership": "Existing C0-C7 native stores remain authoritative. C0 coordinates and retains selected results; C1 owns bytes, C3 admits world changes, C4 owns model jobs/rejections, C6 owns assessments and C7 adopts authority. See COMPONENT_CONNECTIONS.md Connections and Failure contract.",
+        "authority": "Finite component-call catalogue uses existing ports through C0. No raw model intake, recursive job control, direct cross-owner SQL, C3 admission or C7 operator adoption/reconciliation is model-accessible. Trusted-local Workflow operator APIs remain separate.",
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified.",
+        "identity_scope": "ApplicationProfile and Runtime check one workspace and eight separate database paths. C0 supplies command identities. C1 source/occurrence identity, C3 revisions and exact model job/context hashes remain native; labels do not authenticate physical identity.",
+        "time_order": "Original C4 cut and prospective C6 rules remain immutable. C0 persists one deadline across restarts and checks before jobs/dispatch. Teacher feedback is later generated assistance against the original exported cut; operator compliance is declared, not independently observed.",
+        "delivery_idempotency": "C0 phases reuse native request IDs and owner receipts. C4 provider journal claims once; unknown completion never authorizes correction/resend. File teacher exchange waits explicitly and retains one immutable imported result per job. Broker deduplicates original requests under its existing contract.",
+        "commit_recovery": "C0 phase results and C4 job/rejection state are separate owner commits. C1 retains raw outputs before native admission. Native staged C3 submissions retain their own receipt recovery. Runtime crash/fault cases remain unrun; a local lock is not multi-process isolation.",
+        "retention": "Original C1 payloads, C4 episodes/rejections and component artifacts remain in their native finite stores. Bounded contexts may omit/truncate them with selectors. No new retention eviction, backup/restore, migration or unlimited replay guarantee is introduced.",
+        "resource_limits": "Native profiles retain finite bytes/items/work. C0 defaults 32 turns, 262144 conservatively charged tokens, 3600 seconds, maximum one correction per rejected attempt; an inquiry reserves at most six 16K jobs and four student rounds. Per-journal byte quotas are independent, not a hard aggregate memory/disk/energy bound.",
+        "errors": "Known bad returned content becomes a C4 rejection and bounded correction/yield. No-dispatch dependency failures wait for the original model job. Teacher export awaits input. Unknown provider/storage completion remains unresolved; native tool errors return as attributed context. No silent scientific content repair.",
+        "feedback_grounding": "Component artifacts, teacher critique and reasoning memory are generated lineage, not independent world evidence. C3 candidates and C6 advice do not become accepted truth. File teacher identity, usage and adherence to the exported cut remain operator-declared; fixed weights and original authority are retained."
+      },
+      "specification": "docs/implementation/COMPONENT_CONNECTIONS.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    },
+    {
+      "id": "EX-IF08",
+      "from": "TEACHER",
+      "to": "EDI",
+      "title": "Selected same-cut teacher job or fallible critique",
+      "producer_port": "TeacherExchangeGateway.import_feedback",
+      "consumer_port": "Reasoning.import_response",
+      "status": "concrete",
+      "profile_ref": "component-connection-v1",
+      "requirement_ids": [
+        "RP-R04",
+        "RP-R07",
+        "RP-R08"
+      ],
+      "verification_ids": [
+        "CI-V03",
+        "CI-V04",
+        "CI-V05",
+        "CI-V06"
+      ],
+      "facets": {
+        "ownership": "Existing C0-C7 native stores remain authoritative. C0 coordinates and retains selected results; C1 owns bytes, C3 admits world changes, C4 owns model jobs/rejections, C6 owns assessments and C7 adopts authority. See COMPONENT_CONNECTIONS.md Connections and Failure contract.",
+        "authority": "Finite component-call catalogue uses existing ports through C0. No raw model intake, recursive job control, direct cross-owner SQL, C3 admission or C7 operator adoption/reconciliation is model-accessible. Trusted-local Workflow operator APIs remain separate.",
+        "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index. Broader original obligations remain unqualified.",
+        "identity_scope": "ApplicationProfile and Runtime check one workspace and eight separate database paths. C0 supplies command identities. C1 source/occurrence identity, C3 revisions and exact model job/context hashes remain native; labels do not authenticate physical identity.",
+        "time_order": "Original C4 cut and prospective C6 rules remain immutable. C0 persists one deadline across restarts and checks before jobs/dispatch. Teacher feedback is later generated assistance against the original exported cut; operator compliance is declared, not independently observed.",
+        "delivery_idempotency": "C0 phases reuse native request IDs and owner receipts. C4 provider journal claims once; unknown completion never authorizes correction/resend. File teacher exchange waits explicitly and retains one immutable imported result per job. Broker deduplicates original requests under its existing contract.",
+        "commit_recovery": "C0 phase results and C4 job/rejection state are separate owner commits. C1 retains raw outputs before native admission. Native staged C3 submissions retain their own receipt recovery. Runtime crash/fault cases remain unrun; a local lock is not multi-process isolation.",
+        "retention": "Original C1 payloads, C4 episodes/rejections and component artifacts remain in their native finite stores. Bounded contexts may omit/truncate them with selectors. No new retention eviction, backup/restore, migration or unlimited replay guarantee is introduced.",
+        "resource_limits": "Native profiles retain finite bytes/items/work. C0 defaults 32 turns, 262144 conservatively charged tokens, 3600 seconds, maximum one correction per rejected attempt; an inquiry reserves at most six 16K jobs and four student rounds. Per-journal byte quotas are independent, not a hard aggregate memory/disk/energy bound.",
+        "errors": "Known bad returned content becomes a C4 rejection and bounded correction/yield. No-dispatch dependency failures wait for the original model job. Teacher export awaits input. Unknown provider/storage completion remains unresolved; native tool errors return as attributed context. No silent scientific content repair.",
+        "feedback_grounding": "Component artifacts, teacher critique and reasoning memory are generated lineage, not independent world evidence. C3 candidates and C6 advice do not become accepted truth. File teacher identity, usage and adherence to the exported cut remain operator-declared; fixed weights and original authority are retained."
+      },
+      "specification": "docs/implementation/COMPONENT_CONNECTIONS.md",
+      "autonomous_delta_review": {
+        "specification": "docs/decisions/ADR-012-autonomous-controller-contract.md",
+        "facets": {
+          "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+          "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added. Permission to request missing information is distinct from empirical support for an assertion; no operation or resource is prescribed.",
+          "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+          "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+          "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+          "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+          "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+          "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+          "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+          "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+          "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared. The0.10.3 repeated-choice run is confounded by a pre-connector serialization failure; it does not isolate model error recovery."
+        },
+        "qualification": "Original wider contract status retained; current runtime scope separate."
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "CONN-V01",
+      "name": "test_actual_image_bytes_in_wire_fixture",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V02",
+      "name": "test_all_public_operations_and_pending_objective",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V03",
+      "name": "test_asset_reassembly_external_origin_and_hash",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V04",
+      "name": "test_cancelled_job_cannot_be_dispatched_from_stale_snapshot",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V05",
+      "name": "test_denied_public_request_is_evidence",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V06",
+      "name": "test_dynamic_c0_choices_use_native_c4_records",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V07",
+      "name": "test_exact_c1_capture_and_replay",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V08",
+      "name": "test_gateway_fixture_native_import_and_no_redispatch",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V09",
+      "name": "test_grant_scope_and_expiry",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V10",
+      "name": "test_image_default_cut_keeps_whole_bounded_native_object",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V11",
+      "name": "test_journal_atomic_dispatch_claim",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V12",
+      "name": "test_lost_receipt_does_not_duplicate_work",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V13",
+      "name": "test_missing_auth_and_private_path",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V14",
+      "name": "test_model_timeout_is_not_retried",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V15",
+      "name": "test_request_identity_conflict",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V16",
+      "name": "test_restart_preserves_original_request_and_evidence",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V17",
+      "name": "test_teacher_cannot_propose_actions",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V18",
+      "name": "test_teacher_key_missing_is_explicit",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "CONN-V19",
+      "name": "test_token_cap_blocks_before_dispatch",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/benchmark-connection/cpu-tests.json",
+      "revision": "0.9.1.dev0; exact source_sha256 map in cpu-tests.json",
+      "conditions": "Linux Python 3.12.14 / Pydantic 2.12.5; real broker; authored model wire fixtures only"
+    },
+    {
+      "id": "LIVE-V01",
+      "name": "Real pinned Qwen/vLLM inference",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V02",
+      "name": "Real model image perception",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V03",
+      "name": "Real GPT-6.1 teacher critique",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V04",
+      "name": "Actual isolated container probes",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V05",
+      "name": "C6 constructed-clock eligibility and full P1",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "LIVE-V06",
+      "name": "Unguided Cedar pilot and offline analysis",
+      "required": true,
+      "status": "blocked"
+    },
+    {
+      "id": "NATIVE-CPU",
+      "name": "28 final-source CPU checks",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-rerun-20261022/cpu-tests.json",
+      "revision": "0.9.4.dev0 exact source hashes",
+      "conditions": "Windows Python 3.12 / pydantic 2.12.5; real frozen broker where applicable; authored model transports"
+    },
+    {
+      "id": "NATIVE-TEXT",
+      "name": "Real native numeric response and completed gateway reopen",
+      "required": true,
+      "status": "passed",
+      "conditions": "Trusted SDK, pinned free T4x2 Qwen/vLLM, 16K one image; two native cases only",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-rerun-20261022/native-success/edi-native-result.json",
+      "revision": "0.9.4.dev0; live source manifest pins all 70 files"
+    },
+    {
+      "id": "NATIVE-IMAGE",
+      "name": "Real native image response and exact multimodal usage",
+      "required": true,
+      "status": "passed",
+      "conditions": "Trusted SDK, pinned free T4x2 Qwen/vLLM, 16K one image; two native cases only",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-rerun-20261022/native-success/edi-native-result.json",
+      "revision": "0.9.4.dev0; live source manifest pins all 70 files"
+    },
+    {
+      "id": "NATIVE-C0",
+      "name": "Autonomous instrument information acquisition/report",
+      "required": true,
+      "status": "failed",
+      "evidence_ref": "docs/implementation/evidence/native-qwen-rerun-20261022/controller-failure/edi-native-loop3-result.json",
+      "revision": "0.9.4.dev0 live 70-file manifest",
+      "conditions": "Original mission/data; four turns/65536 tokens/600 seconds; teacher disabled"
+    },
+    {
+      "id": "CI-V01",
+      "title": "CI-V01 existing-component connection",
+      "acceptance": "Native acquisition, interpretation, candidate retention and later native retrieval are selected through C0 with actual provenance.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R01",
+        "CI-R02"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V02",
+      "title": "CI-V02 existing-component connection",
+      "acceptance": "Supported C5 artifacts and eligible C6 assessment results reach the next inference without a direct C4-C5 lane or generated evidence promotion.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R02"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V03",
+      "title": "CI-V03 existing-component connection",
+      "acceptance": "Exported teacher cut/attempt/images remain original; imported critique is generated; student revision and its candidates are retained; unknown usage stays explicit.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R03"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V04",
+      "title": "CI-V04 existing-component connection",
+      "acceptance": "Shape/semantic rejection retains original bytes and diagnostics, dispatches no proposed action, charges usage and permits only a distinct bounded correction job.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R04"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V05",
+      "title": "CI-V05 existing-component connection",
+      "acceptance": "Unknown provider completion or usage disagreement is not redispatched on resume/crash; known cached completion remains reusable.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R04"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V06",
+      "title": "CI-V06 existing-component connection",
+      "acceptance": "Model-generated component calls cannot request operator admission/adoption/reconciliation, fabricate workspace/request authority or label C2 assistance as operator-authored.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R01",
+        "CI-R03"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V07",
+      "title": "CI-V07 existing-component connection",
+      "acceptance": "Repeated bad output, finite budgets, teacher waiting and native-tool errors retain state/cost and resume/yield according to the explicit phase contract.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R02",
+        "CI-R04"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "CI-V08",
+      "title": "CI-V08 existing-component connection",
+      "acceptance": "A valid response with no investigation/final report remains yielded/unsolved; no source check or teacher agreement is reported as problem-solving success.",
+      "status": "specified_not_run",
+      "required": true,
+      "requirement_ids": [
+        "CI-R05"
+      ],
+      "evidence_ref": null
+    },
+    {
+      "id": "EI-V01",
+      "title": "Scheduled native engineering runtime",
+      "acceptance": "Protocol criteria: real student/teacher/revision, native C1-C7 handoffs, explicit authority, normal restart and retained evidence.",
+      "status": "passed",
+      "required": false,
+      "requirement_ids": [
+        "CI-R01",
+        "CI-R02",
+        "CI-R03",
+        "CI-R04",
+        "CI-R05"
+      ],
+      "evidence_ref": "docs/implementation/evidence/engineering-20261022/runtime-results.json",
+      "revision": "0.10.1.dev0; exact 69 executed source hashes in build-verification.json; final harness 8fc76a1da94971cf73d79a4d02120e847840c3b24ea72331c53fc8f1639f55c6",
+      "conditions": "One authored neutral file-size scenario; real Qwen twice, current assistant manual teacher once; separate serving/numerical environments; no autonomous Investigation.step, blinded outcome or crash/fault qualification."
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "components": [
+        "EDI",
+        "MODEL",
+        "TEACHER",
+        "WORLD"
+      ],
+      "analysis": "EDI's selected exposure, optional correlated teacher critique and world interventions form a delayed learning loop. Teacher has the same cut and cannot act or corroborate itself. C1 originals, C3 candidates, generated outputs and actual constructed observations remain distinct. Broker replay and atomic first-dispatch claims prevent repeated admitted work; missing provider completion retains unknown cost. No evaluator return path. Full host/egress/isolation bounds remain unqualified. The new count/generation feedback compares exact admitted prompt count with actual usage, rejecting disagreement. Correlated source features/model output do not become independent evidence. Shared-uid Kaggle diagnostics are not a hard security boundary. Current source adds C0-mediated component-result feedback, candidate continuity, same-cut file teacher critique/student revision and bounded rejection correction. Generated echoes stay generated; no runtime feedback effectiveness or hard isolation is claimed. Actual EI-V01 verified generated teacher feedback reaching a real revision, C6 candidate-only retention, native C4 assessment reads and normal restart. The proposed test remained weak; autonomous controller and crash paths remain unqualified. Serving/numerical NumPy dependencies were isolated.",
+      "verification_ids": [
+        "CONN-V10",
+        "CONN-V12",
+        "LIVE-V03",
+        "LIVE-V04",
+        "LIVE-V06",
+        "NATIVE-CPU",
+        "NATIVE-TEXT",
+        "NATIVE-IMAGE",
+        "CI-V01",
+        "CI-V02",
+        "CI-V03",
+        "CI-V04",
+        "CI-V05",
+        "CI-V06",
+        "CI-V07",
+        "CI-V08",
+        "EI-V01"
+      ]
+    }
+  ],
+  "outside_dependencies": [
+    {
+      "name": "Trusted operator control",
+      "contract": "One explicit initial grant; separate C3/operator changes/recovery and human objective decision; not model-callable."
+    },
+    {
+      "name": "Host/GPU/container runtime",
+      "contract": "Trusted-host threat model, no host mounts/PID/IPC; prestaged artifacts and measured resource profile before launch."
+    }
+  ],
+  "internal_owner_inventory": {
+    "source": "https://github.com/vighneshcandassamy-hub/edi-systems-foundation/blob/879452b8332a318ca76af4f84589b676b031f253/docs/implementation/INTERFACES.json",
+    "owners": 8,
+    "pairs": 28,
+    "directed_lanes": 56,
+    "status": "pinned_source_inventory_not_requalified",
+    "proposed_changes": "Extend only existing C0/C1/C4/C7 duties and version external dependency contracts; no direct C4-C7 or C4-C5 bypass. Re-run full owner/interface review when implementing."
+  },
+  "findings": [
+    {
+      "id": "CI-F01",
+      "status": "resolved",
+      "description": "Existing native owner operations and their return results are wired in source; source checks recorded separately from execution.",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "CI-F02",
+      "status": "open",
+      "description": "New-version runtime, crash, authority, teacher/student and end-to-end investigation cases are intentionally unrun.",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    },
+    {
+      "id": "CI-F03",
+      "status": "deferred",
+      "description": "Wider original conceptual/component obligations, automatic hosted teacher, hard isolation, training and unsupported numerical/perception functions are outside existing-port wiring.",
+      "blocking_at": []
+    },
+    {
+      "id": "EI-FACADE",
+      "description": "Missing C0/C7 standing-authority forwarding found in execution, fixed and re-executed; original broader contracts are not promoted.",
+      "status": "resolved",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "EI-OPEN",
+      "description": "Scientific and autonomous capability, broader CI cases, hard isolation and fault coverage remain open.",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "review": {
+    "gate": "contract",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Broader original required cases remain unrun. Separate COMPONENT_REVIEW records the EI-V01 scheduled runtime pass only."
+  },
+  "autonomous_delta": {
+    "new_components": 0,
+    "new_lanes": 0,
+    "facets": {
+      "ownership": "C0 retains controller turn/phase records; C4 owns immutable job/context and admission; C1 owns original bytes. C2/C5/C6 are constructed only by preflight. No ownership moves.",
+      "authority": "Student proposes one next operation or yield; C0 schedules under C7 grant. Teacher remains critique-only. No direct model SQL, C3 admission, C7 adoption, forced operation order or teacher turn is added.",
+      "shape_versions": "0.10.5.dev0; C0 integrated-1.1 requires a fresh older-controller workspace; C4 0.6.1 reads historical 0.6.0 episodes. Inquiry response_mode defaults proposal; controller-turn explicitly requires one decision. Exact complete EvidenceRef enum includes lineage. Full decoder retained when prompt schema becomes a field index.",
+      "identity_scope": "Exact context/workspace/record hash/selector/origin/lineage remain native. The transport repair resumes the same undispatched job/cut. Initial and repaired source manifests identify mixed source epochs; prior returned outputs are not reinterpreted as new calls. Shared canonical JSON now converts nested typed native values; existing JSON-native bytes/identities stay unchanged; unsupported objects/nonfinite numbers still fail. Dispatch identity and unresolved-call lookup serialize the same proposal.",
+      "time_order": "Persisted controller deadline remains unchanged across normal processes. One live run uses 600-second bounded completion timeout; no deadline, evidence time or model revision is rewritten. Unobserved future sample remains unknown.",
+      "delivery_idempotency": "Native phase and provider journals remain once-claimed; no unknown call is resent. Definite preflight capacity failure before journal dispatch permits repairing transport then resuming the same job. Prior accepted operations remain retained.",
+      "commit_recovery": "Eight separate SQLite owners, staged native receipts and C0 phase commits remain. Per-database backups are consistent but do not imply atomic cross-owner/crash recovery. Normal continuation and final snapshot must be checked separately.",
+      "retention": "Original lost attempt is explicitly unavailable. Retained repeat and pre-repair checkpoint are immutable outside Git; curated synthetic evidence and hashes are in Git. Latest repaired export remains separately identified. Finite context omission is explicit; no unlimited history guarantee.",
+      "resource_limits": "Case remains 24 turns,393216 policy units,3600 seconds,64 public requests,one correction,12288 input and4096 output per job. Complete pinned tokenizer preflight still gates dispatch. Removing duplicate prompt schema changes neither model context limit nor original cut.",
+      "errors": "Missing lineage and absent controller decision are explicit rejections. Preflight over-capacity waits without dispatch; unknown provider completion never authorizes retry. Empty-cut yield remains representable. Constructor-only owner initialization is not qualification of those business functions.",
+      "feedback_grounding": "Mission remains fallible framing. Generated hypotheses, component results and teacher feedback retain generated lineage and are not independent observations. The neutral resource catalogue and objective contain no solution or operation sequence. Fixed pretrained weights/priors remain declared."
+    },
+    "whole_system_feedback": [
+      "Returned component results may amplify generated hypotheses; lineage and admission remain explicit, but sound inference is not guaranteed.",
+      "Repeated schema/interpretation reads can consume context and stall before selection; exact tokenizer blocks oversize input, duplicate schema rendering repaired.",
+      "Teacher wait is bounded by persisted deadline; no automatic selection is imposed.",
+      "Normal restart does not qualify crash/provider-fault recovery or hard OS isolation.",
+      "Nested typed results previously broke command hashing and result feedback before acquisition/closure. Shared serialization repair and authored end-to-end native regression now cover both; scientific inference is a separate gate.",
+      "A clean premature yield can stop inquiry before acquisition.0.10.5 clarifies permission to request missing evidence; live acceptance remains separate from structural/contract checks."
+    ],
+    "gates": {
+      "architecture": "pass_scoped_delta",
+      "contract": "pass_scoped_delta",
+      "runtime": "pass_native_execution_restart_only",
+      "integration": "revise_autonomous_acquisition_failed"
+    },
+    "independent": false
+  },
+  "information_seeking_delta": {
+    "new_components": 0,
+    "new_lanes": 0,
+    "facets": {
+      "ownership": "C0 owns native progress/receipts and journals; C4 owns typed decision validation; C1 owns exact source/output bytes. No ownership transfer.",
+      "authority": "Requests remain intersected with adopted mission/C7 grant. A need justifies a request, not world truth. Teacher is optional critique only; no admission/adoption bypass.",
+      "shape_versions": "0.10.7; C0 integrated-1.3 fresh journals; C4 0.6.3; information-seeking/1.0 requires typed access/progress and assessed yield. Legacy requests remain readable with legacy defaults.",
+      "identity_scope": "Progress contains actual original request IDs/statuses. Last sixteen world-call receipts are a partial operational summary. Evidence hashes/lineage, bindings and source identity are unchanged.",
+      "time_order": "C0 deadline and total budgets remain persisted. Receipt order is execution order, not world event time. New policies are not replayed into historical runs.",
+      "delivery_idempotency": "Original phase/provider fences remain. Invalid returned outputs use existing one-correction path and accounting. No unknown inference/broker completion is retried.",
+      "commit_recovery": "Fresh-controller requirement prevents mixed dispatch semantics. Native normal reopen tested in process; crash consistency and live service restart remain unqualified.",
+      "retention": "Yield judgment is retained in C4 raw response and C0 state. Native progress bounded to sixteen receipts. Complete journals remain within original finite retention bounds.",
+      "resource_limits": "Original 24-turn/393216-unit/hour/64-request diagnostic envelope unchanged. Assessment max eight needs/eight alternatives; prompt grows and exact tokenizer still gates real dispatch.",
+      "errors": "Missing assessments/invented alternative names return retained native rejection; unavailable teacher receives correction feedback. Legal reasoned stop still allowed; no successful completion invented.",
+      "feedback_grounding": "Student stopping explanations remain generated judgments, never independent availability evidence. No auto-selected source/teacher; admitted closure is operational completion only."
+    },
+    "changed_lanes": [
+      "C0 -> C4: adopted access, new policy and progress",
+      "C4 -> C0: assessed yield or next operation",
+      "C0/C4 -> optional teacher: availability check; critique remains selective"
+    ],
+    "whole_system_feedback": [
+      "Required stop explanation may improve decision inspection but does not certify its truth or usefulness.",
+      "Reject/correct loop consumes existing budget; no unbounded reconsideration.",
+      "Partial receipt summary must not become a claim of exhaustive acquired-world coverage.",
+      "Source instructions cannot promote authority; teacher generated feedback stays attributed."
+    ],
+    "gates": {
+      "architecture": "pass_scoped_design",
+      "contract": "pass_native_scope",
+      "runtime": "pass_in_process_fixtures_only; network/serving grammar pending",
+      "integration": "revise_live_autonomous_unproven"
+    },
+    "independent": false
+  }
+}

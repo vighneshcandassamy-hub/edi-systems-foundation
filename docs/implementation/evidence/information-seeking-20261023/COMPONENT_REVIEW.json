@@ -1,0 +1,136 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C0/C4 information-seeking and stopping contract",
+  "gate": "contract",
+  "requested_scope": "Authorized scoped repair and native engineering verification; no live capability claim",
+  "input_revision": "0.10.7.dev0; input-source-manifest.json",
+  "reviewer": {
+    "role": "implementer_and_self_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/information-seeking-20261023/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "Scoped IS requirements trace to prior AU obligations and executed native cases; live IS-R05 serving obligation remains pending.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "C0 owns metadata, C4 validates proposals, C7 authorizes, teacher critiques. Eleven facets/pair matrices retained.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Prompt-only fix failed; typed stop/progress adds no new owner or forced action. Deliberate abstention remains possible.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Stop assessment is an attributed judgment. Actual outcomes are native receipt metadata. Acquisition success is not inferred.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Existing finite diagnostic budgets retained. New output bounded and tokenizer must gate added prompt size before real inference.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Empty/invalid stop retained with bounded correction; native reopen without redispatch covered. Socket and crash/live restart claims excluded.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Local retained 0.10.5 output and recovered source motivate repair; no claim about SOTA or external performance.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Nine native authored fixtures pass; original socket suite blocked partly. Local grammar unavailable; preflight mandatory before inference.",
+      "references": [
+        "docs/decisions/ADR-013-information-seeking-and-stopping.md",
+        "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "IS-F01",
+      "status": "resolved",
+      "description": "Empty yield silently terminated controller; new policy requires native assessment.",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "IS-F02",
+      "status": "open",
+      "description": "Actual student acquisition under new policy, serving grammar and network integration not demonstrated on this host.",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    "Typed stop assessment",
+    "Native progress and receipt summary",
+    "Selective teacher availability",
+    "Versioned fresh workspace",
+    "Mandatory serving preflight"
+  ],
+  "verification": [
+    {
+      "id": "IS-NATIVE",
+      "kind": "runtime",
+      "required": false,
+      "status": "passed",
+      "revision": "0.10.7.dev0",
+      "evidence_ref": "docs/implementation/evidence/information-seeking-20261023/native-regressions.json"
+    },
+    {
+      "id": "IS-LIVE",
+      "kind": "integration",
+      "required": true,
+      "status": "not_run"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "Run mandatory serving grammar preflight and one fresh pinned autonomous neutral diagnostic; acquisition acceptance unchanged."
+}

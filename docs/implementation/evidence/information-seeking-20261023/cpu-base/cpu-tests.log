@@ -1,0 +1,679 @@
+test_actual_image_bytes_in_wire_fixture (test_benchmark_connection.ConnectionTests.test_actual_image_bytes_in_wire_fixture) ... ok
+test_all_public_operations_and_pending_objective (test_benchmark_connection.ConnectionTests.test_all_public_operations_and_pending_objective) ... ERROR
+test_asset_reassembly_external_origin_and_hash (test_benchmark_connection.ConnectionTests.test_asset_reassembly_external_origin_and_hash) ... ERROR
+test_cancelled_job_cannot_be_dispatched_from_stale_snapshot (test_benchmark_connection.ConnectionTests.test_cancelled_job_cannot_be_dispatched_from_stale_snapshot) ... ok
+test_completed_controller_at_exact_turn_limit_stays_completed (test_benchmark_connection.ConnectionTests.test_completed_controller_at_exact_turn_limit_stays_completed) ... ERROR
+test_denied_public_request_is_evidence (test_benchmark_connection.ConnectionTests.test_denied_public_request_is_evidence) ... ERROR
+test_dynamic_c0_choices_use_native_c4_records (test_benchmark_connection.ConnectionTests.test_dynamic_c0_choices_use_native_c4_records) ... ERROR
+test_exact_c1_capture_and_replay (test_benchmark_connection.ConnectionTests.test_exact_c1_capture_and_replay) ... ERROR
+test_gateway_fixture_native_import_and_no_redispatch (test_benchmark_connection.ConnectionTests.test_gateway_fixture_native_import_and_no_redispatch) ... ok
+test_grant_scope_and_expiry (test_benchmark_connection.ConnectionTests.test_grant_scope_and_expiry) ... ok
+test_image_default_cut_keeps_whole_bounded_native_object (test_benchmark_connection.ConnectionTests.test_image_default_cut_keeps_whole_bounded_native_object) ... ok
+test_journal_atomic_dispatch_claim (test_benchmark_connection.ConnectionTests.test_journal_atomic_dispatch_claim) ... ok
+test_live_transport_auth_exact_count_and_json_mode (test_benchmark_connection.ConnectionTests.test_live_transport_auth_exact_count_and_json_mode) ... ok
+test_lost_receipt_does_not_duplicate_work (test_benchmark_connection.ConnectionTests.test_lost_receipt_does_not_duplicate_work) ... ERROR
+test_missing_auth_and_private_path (test_benchmark_connection.ConnectionTests.test_missing_auth_and_private_path) ... ERROR
+test_model_timeout_is_not_retried (test_benchmark_connection.ConnectionTests.test_model_timeout_is_not_retried) ... ok
+test_native_messages_include_selected_protocol_questions (test_benchmark_connection.ConnectionTests.test_native_messages_include_selected_protocol_questions) ... ok
+test_native_operation_shapes_reject_nested_control_wrappers (test_benchmark_connection.ConnectionTests.test_native_operation_shapes_reject_nested_control_wrappers) ... ok
+test_operation_argument_contracts_distinguish_asset_and_public_wrappers (test_benchmark_connection.ConnectionTests.test_operation_argument_contracts_distinguish_asset_and_public_wrappers) ... ok
+test_request_identity_conflict (test_benchmark_connection.ConnectionTests.test_request_identity_conflict) ... ERROR
+test_restart_preserves_original_request_and_evidence (test_benchmark_connection.ConnectionTests.test_restart_preserves_original_request_and_evidence) ... ERROR
+test_serving_grammar_defers_only_native_map_key_lengths (test_benchmark_connection.ConnectionTests.test_serving_grammar_defers_only_native_map_key_lengths) ... ok
+test_serving_window_and_teacher_role_are_not_bypassed (test_benchmark_connection.ConnectionTests.test_serving_window_and_teacher_role_are_not_bypassed) ... ok
+test_teacher_cannot_propose_actions (test_benchmark_connection.ConnectionTests.test_teacher_cannot_propose_actions) ... ok
+test_teacher_key_missing_is_explicit (test_benchmark_connection.ConnectionTests.test_teacher_key_missing_is_explicit) ... ok
+test_token_cap_blocks_before_dispatch (test_benchmark_connection.ConnectionTests.test_token_cap_blocks_before_dispatch) ... ok
+test_tokenizer_profile_drift_stops_before_generation (test_benchmark_connection.ConnectionTests.test_tokenizer_profile_drift_stops_before_generation) ... ok
+test_usage_mismatch_retains_pending_job_and_no_second_inference (test_benchmark_connection.ConnectionTests.test_usage_mismatch_retains_pending_job_and_no_second_inference) ... ok
+test_catalogue_is_adopted_intersection_not_authority_expansion (test_controller_access.AccessContractTests.test_catalogue_is_adopted_intersection_not_authority_expansion) ... ok
+test_description_bytes_and_names_are_bounded (test_controller_access.AccessContractTests.test_description_bytes_and_names_are_bounded) ... ok
+test_renderer_promotes_only_c0_description_and_matches_content_fields (test_controller_access.AccessContractTests.test_renderer_promotes_only_c0_description_and_matches_content_fields) ... ok
+
+======================================================================
+ERROR: test_all_public_operations_and_pending_objective (test_benchmark_connection.ConnectionTests.test_all_public_operations_and_pending_objective)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 158, in test_all_public_operations_and_pending_objective
+    self.assertEqual(self.call('sources')['http_status'], 200)
+                     ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 81, in call
+    return self.connector.call(PublicIntent(operation=op, body=body))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_asset_reassembly_external_origin_and_hash (test_benchmark_connection.ConnectionTests.test_asset_reassembly_external_origin_and_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 149, in test_asset_reassembly_external_origin_and_hash
+    docs = self.call('search', source='external', limit=100)['body']['items']
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 81, in call
+    return self.connector.call(PublicIntent(operation=op, body=body))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_completed_controller_at_exact_turn_limit_stays_completed (test_benchmark_connection.ConnectionTests.test_completed_controller_at_exact_turn_limit_stays_completed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 374, in test_completed_controller_at_exact_turn_limit_stays_completed
+    self.assertEqual(loop.step()["state"],"ready")
+                     ~~~~~~~~~^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 273, in step
+    return self._step()
+           ~~~~~~~~~~^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 279, in _step
+    state = self.state()
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 136, in state
+    self.journal.finish("bootstrap", self.bootstrap())
+                                     ~~~~~~~~~~~~~~^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 122, in bootstrap
+    result = self.connector.call(PublicIntent(operation="mission", body={"request_id": self.run_id + ":mission"}))
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_denied_public_request_is_evidence (test_benchmark_connection.ConnectionTests.test_denied_public_request_is_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 185, in test_denied_public_request_is_evidence
+    result = self.call('measure', plots=['S01'], metric='unsupported')
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 81, in call
+    return self.connector.call(PublicIntent(operation=op, body=body))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_dynamic_c0_choices_use_native_c4_records (test_benchmark_connection.ConnectionTests.test_dynamic_c0_choices_use_native_c4_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 284, in test_dynamic_c0_choices_use_native_c4_records
+    first = investigation.step(); self.assertEqual(first['state'], 'ready')
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 273, in step
+    return self._step()
+           ~~~~~~~~~~^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 279, in _step
+    state = self.state()
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 136, in state
+    self.journal.finish("bootstrap", self.bootstrap())
+                                     ~~~~~~~~~~~~~~^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\inquiry\benchmark.py", line 122, in bootstrap
+    result = self.connector.call(PublicIntent(operation="mission", body={"request_id": self.run_id + ":mission"}))
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_exact_c1_capture_and_replay (test_benchmark_connection.ConnectionTests.test_exact_c1_capture_and_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 107, in test_exact_c1_capture_and_replay
+    result = self.call('mission', request_id='mission')
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 81, in call
+    return self.connector.call(PublicIntent(operation=op, body=body))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_lost_receipt_does_not_duplicate_work (test_benchmark_connection.ConnectionTests.test_lost_receipt_does_not_duplicate_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 131, in test_lost_receipt_does_not_duplicate_work
+    with self.assertRaises(TimeoutError): connector.call(intent)
+                                          ~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 124, in lose
+    result = http_json(url, body, headers)
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_missing_auth_and_private_path (test_benchmark_connection.ConnectionTests.test_missing_auth_and_private_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 190, in test_missing_auth_and_private_path
+    status, _ = http_json(self.endpoint+'/v2/status', {'request_id':'wrong-auth'}, {})
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_request_identity_conflict (test_benchmark_connection.ConnectionTests.test_request_identity_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 115, in test_request_identity_conflict
+    self.call('search', request_id='same', query='first')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 81, in call
+    return self.connector.call(PublicIntent(operation=op, body=body))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+======================================================================
+ERROR: test_restart_preserves_original_request_and_evidence (test_benchmark_connection.ConnectionTests.test_restart_preserves_original_request_and_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python314\Lib\urllib\request.py", line 1321, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Python314\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ~~~~~~~~~~~~~~~~~~~~~~~^
+        (self.host,self.port), self.timeout, self.source_address)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 870, in create_connection
+    raise exceptions[0]
+  File "C:\Python314\Lib\socket.py", line 855, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 142, in test_restart_preserves_original_request_and_evidence
+    before = self.call('status', request_id='restart')
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\tests\test_benchmark_connection.py", line 81, in call
+    return self.connector.call(PublicIntent(operation=op, body=body))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 69, in call
+    status, raw = self.transport(self.endpoint + "/v2/" + intent.operation, intent.body, {"Authorization": "Bearer " + self.token})
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation\src\edi\observe\benchmark.py", line 25, in http_json
+    response = opener.open(req, timeout=timeout)
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1324, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>
+
+----------------------------------------------------------------------
+Ran 31 tests in 17.708s
+
+FAILED (errors=10)
