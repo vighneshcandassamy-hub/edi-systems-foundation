@@ -47,7 +47,7 @@ class Investigation:
     file exchange is an explicit waiting input, not a failed model inference.
     """
     def __init__(self, runtime, connector, student_gateway, path, run_id, *, teacher_gateway=None,
-                 max_turns=32, max_tokens=262144, session_seconds=3600, max_corrections=1, teaching_mode="selective", use_teaching_memory=False):
+                 max_turns=32, max_tokens=262144, session_seconds=3600, max_corrections=1, teaching_mode="selective", use_teaching_memory=False, input_token_cap=12288):
         if not 1 <= len(run_id) <= 96 or max_turns < 1 or max_tokens < 1 or session_seconds <= 0 or max_corrections not in (0, 1):
             raise EDIError(ErrorCode.INVALID, "invalid bounded investigation configuration")
         if path.resolve() != runtime.workflow.profile.database.resolve():
@@ -58,6 +58,9 @@ class Investigation:
             raise EDIError(ErrorCode.INTEGRITY, "teacher gateway differs from C4 binding")
         if teaching_mode not in ("selective", "intensive") or (teaching_mode == "intensive" and teacher_gateway is None):
             raise EDIError(ErrorCode.INVALID, "intensive teaching requires a configured teacher")
+        if type(input_token_cap) is not int or not 1 <= input_token_cap <= 16384:
+            raise EDIError(ErrorCode.INVALID, "controller input cap must be 1..16384")
+        self.input_token_cap = input_token_cap
         self.teaching_mode = teaching_mode
         self.use_teaching_memory = bool(use_teaching_memory)
         self.runtime, self.connector = runtime, connector
@@ -68,7 +71,7 @@ class Investigation:
         self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=256 * 1024**2)
         self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 32 + 4, max_bytes=256 * 1024**2)
         previous = self.journal.get("configuration")
-        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.4":
+        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.5":
             raise EDIError(ErrorCode.UNSUPPORTED, "use a fresh integration workspace; historical C0 state is not migrated")
         deadline = (json.loads(previous["request"])["deadline"] if previous else
                     (utc_now() + timedelta(seconds=session_seconds)).isoformat())
@@ -77,10 +80,10 @@ class Investigation:
             "workspace": runtime.profile.workspace_id, "student": student_gateway.binding.model_dump(mode="json"),
             "teacher": teacher_gateway.binding.model_dump(mode="json") if teacher_gateway else None,
             "max_turns": max_turns, "max_tokens": max_tokens, "session_seconds": session_seconds,
-            "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.4"})
+            "input_token_cap": input_token_cap, "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.5"})
         self.journal.finish("configuration", {"frozen": True})
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.component.results", native_source_id=run_id,
-            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.4",
+            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.5",
             binding_basis="configured", descriptor={"independent_world_evidence": False}))
 
     def _phase(self, key, body, operation):
@@ -119,7 +122,15 @@ class Investigation:
             idempotency_key="component:" + digest([self.run_id, label, result]), kind="component-result",
             media_type="application/json", origin_class="generated", lineage=("C0-mediated-native-result", self.run_id, label),
             expected_bytes=len(raw), expected_sha256=sha256(raw).hexdigest()), BytesIO(raw))
-        state["evidence"] = self._bounded_add(state["evidence"], self._selection(receipt.observation.record_id))
+        selection = self._selection(receipt.observation.record_id)
+        if self.teaching_mode == "intensive" and label in ("interpret", "reasoning-memory", "teaching-outcome"):
+            # Full artifacts remain in C1/C4. Carry references, not duplicate
+            # generated transcripts alongside the already selected observations
+            # and the separately bounded provisional C4 teaching lessons.
+            state["artifact_frontier"] = (state.get("artifact_frontier", []) + [
+                {"operation": label, **selection}])[-16:]
+        else:
+            state["evidence"] = self._bounded_add(state["evidence"], selection)
         return state
 
     def bootstrap(self):
@@ -172,9 +183,11 @@ class Investigation:
             "controller_access": describe_access(state["mission"], self.connector.authority.grant).model_dump(mode="json"),
             "model_revision": r.world.head(),
             "world_ids": state["world_ids"], "evidence": state["evidence"],
-            "budget": Budget(rounds=4, jobs=6, input_token_cap=12288, output_token_cap=4096,
-                reserved_tokens=min(remaining, 98304)).model_dump(mode="json"),
-            "omitted_frontier": ["Older acquired records, derivations, C4 episodes and C3 candidates remain available through native component reads; this is a bounded cut"],
+            "budget": Budget(rounds=4, jobs=6, input_token_cap=self.input_token_cap, output_token_cap=4096,
+                reserved_tokens=min(remaining, 6 * (self.input_token_cap + 4096))).model_dump(mode="json"),
+            "omitted_frontier": ["Older acquired records, derivations, C4 episodes and C3 candidates remain available through native component reads; this is a bounded cut"] + [
+                "Generated artifact available for explicit context selection: " + canonical(item)
+                for item in state.get("artifact_frontier", [])],
             "unknowns": ["Information not yet acquired remains unknown; generated feedback is not independent evidence"]})))
 
     def _receive(self, inquiry_id, action, gateway, label, trigger=None, teaching_stage="standard"):
@@ -290,7 +303,7 @@ class Investigation:
         turn = state["turn"]
         if utc_now() >= datetime.fromisoformat(self.deadline):
             return {**state, "state": "yielded", "stop_reason": "persisted session deadline reached; pending jobs remain inspectable"}
-        if state["used_tokens"] + (65536 if self.teaching_mode == "intensive" else 16384) > self.max_tokens:
+        if state["used_tokens"] + ((4 if self.teaching_mode == "intensive" else 1) * (self.input_token_cap + 4096)) > self.max_tokens:
             return {**state, "state": "yielded", "stop_reason": "remaining token budget cannot admit another job"}
         key, inquiry_id = "turn:" + str(turn), self.run_id + ":inquiry:" + str(turn)
         self.journal.begin(key, state, reserve_bytes=4 * 1024**2)
@@ -335,7 +348,7 @@ class Investigation:
                     "result_record_ids": [x["record_id"] for x in next_state["evidence"]],
                     "status": "provisional; execution evidence is not reasoning validation"}
                 next_state = self._retain_result("teaching-outcome", outcome, next_state)
-                record_id = next_state["evidence"][-1]["record_id"]
+                record_id = next_state["artifact_frontier"][-1]["record_id"]
                 self._phase(key + ":teaching-memory", {"inquiry_id": inquiry_id, "record_id": record_id},
                     lambda: self.runtime.reasoning.record_teaching_outcome(inquiry_id, record_id))
         except AwaitingModelAvailability as exc:

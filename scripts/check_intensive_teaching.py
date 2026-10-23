@@ -18,7 +18,7 @@ def main():
         'passed':result.wasSuccessful(),'tests_run':result.testsRun,'errors':[{'test':str(t),'traceback':s} for t,s in result.errors],
         'failures':[{'test':str(t),'traceback':s} for t,s in result.failures],
         'live_student_calls':0,'live_teacher_calls':0,'neural_weight_updates':0,'student_learning_demonstrated':False,
-        'benchmark_ready':False,'live_blocker':'Opera disconnected; available Kaggle browser signed out'}
+        'benchmark_ready':False,'live_status':'Not assessed by authored fixtures; consult the separate live run evidence'}
     args.output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps(report));return 0 if result.wasSuccessful() else 1
 
 if __name__=='__main__':raise SystemExit(main())

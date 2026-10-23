@@ -1,0 +1,23 @@
+{
+  "scope": "authored fixed operation sequence; native integration regression, not autonomous model qualification",
+  "passed": true,
+  "nested_native_values_canonical": true,
+  "unsupported_objects_rejected": true,
+  "model_calls": 0,
+  "authored_gateway_calls": 4,
+  "public_request_order": [
+    "mission",
+    "read",
+    "sources",
+    "read",
+    "submit",
+    "status"
+  ],
+  "invalid_asset_reached_broker": true,
+  "native_asset_error_returned": true,
+  "sources_read_submit_reached_broker": true,
+  "C2_interpretation_returned": true,
+  "terminal_reopen_no_redispatch": true,
+  "unresolved_broker_call_preserved_unknown": true,
+  "adopted_access_description_reaches_C4": true
+}

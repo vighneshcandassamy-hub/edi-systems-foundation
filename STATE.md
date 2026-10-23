@@ -1,4 +1,36 @@
-# EDI Systems Foundation — checkpoint
+# EDI Systems Foundation - checkpoint
+
+## Current checkpoint - 23 October 2026, live intensive teaching and context repair
+
+Source **0.10.9.dev0**, C0 `edi-c0/integrated-1.5`, on the existing private
+`integration/intensive-teaching-20261023` branch.
+
+A real Kaggle T4 x2 run of 0.10.8 completed its first blind assessment,
+student draft, teacher critique, student revision and actual `sources` call.
+Qwen initially confused a stored mission record UUID with a public document ID;
+after critique it requested the source catalogue successfully. One provisional
+lesson was retained. Two student calls used 7,657/263 and 9,705/328 reported
+input/output tokens. Two teacher jobs have unknown usage and were charged at
+full reservation. No neural weights changed; no autonomous transfer benefit or
+Meadows readiness is established.
+
+Turn 1 then stopped before inference: the complete prompt measured 15,082
+input tokens against a 12,288 cap. Full C2 and teaching transcripts had been
+selected alongside raw observations and compact C4 lessons. Failure checkpoint
+SHA256 `83f2366c4e363dfa722fd1f5208f100437e84c18e9914d388f4a1e6d590fca90`
+is retained locally. The original supervisor was asked to stop. Prior identities
+and frozen cuts are not rewritten.
+
+The repair retains all artifacts natively and makes generated transcript,
+interpretation and outcome records explicit context-selection references,
+instead of automatically copying them back into every intensive prompt. Whole
+provisional C4 lessons have a 4 KiB recall bound. A separately declared 20,480
+model-context / 16,384 input / 4,096 output engineering profile freezes its input
+cap and reservation; the finite total run ceiling is 786,432 policy units.
+Six authored native checks passed, including artifact re-read availability,
+blind-stage isolation, fresh-process restart and frozen input-cap fencing.
+Live execution of this corrected profile is pending. See
+[context repair](docs/implementation/INTENSIVE_CONTEXT_REPAIR.md).
 
 ## Current checkpoint - 23 October 2026, intensive teaching
 

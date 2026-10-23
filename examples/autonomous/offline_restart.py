@@ -44,7 +44,8 @@ def main():
         profile.run_id, teacher_gateway=None if profile.teacher.mode == "disabled" else ForbiddenPort(binding=profile.teacher.binding),
         max_turns=profile.max_turns, max_tokens=profile.max_tokens,
         session_seconds=profile.session_seconds, max_corrections=profile.max_corrections,
-        teaching_mode=profile.teaching_mode, use_teaching_memory=profile.use_teaching_memory)
+        teaching_mode=profile.teaching_mode, use_teaching_memory=profile.use_teaching_memory,
+        input_token_cap=min(16384, profile.student.max_model_len - 4096))
     baseline = json.loads((root / "restart-baseline.json").read_bytes())
     observed = snapshot(SimpleNamespace(runtime=runtime, investigation=investigation))
     differences = snapshot_differences(baseline, observed)

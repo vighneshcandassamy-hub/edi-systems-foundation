@@ -7,8 +7,8 @@ from huggingface_hub import HfApi, snapshot_download
 ROOT=Path("/kaggle/temp/edi-free-vllm")
 OUT=Path(os.environ.get("EDI_AUTONOMOUS_ROOT", "/kaggle/working/edi-autonomous-20261023"))
 OUT.mkdir(parents=True,exist_ok=True)
-REPORT={"stage":"starting","sampler":"pytorch","profile_version":"kaggle-t4-native16k-xgrammar-v2","benchmark_started":False,"paid_fallback":False,"model":"Qwen/Qwen3-VL-8B-Instruct",
-        "profile":{"dtype":"float16","tensor_parallel_size":2,"max_model_len":16384,"image_count":1,
+REPORT={"stage":"starting","sampler":"pytorch","profile_version":"kaggle-t4-native20k-xgrammar-v3","benchmark_started":False,"paid_fallback":False,"model":"Qwen/Qwen3-VL-8B-Instruct",
+        "profile":{"dtype":"float16","tensor_parallel_size":2,"max_model_len":20480,"image_count":1,
                    "max_image_pixels":65536,"max_output_tokens_per_request":4096,"temperature":0,"seed":17}}
 def update(stage,**fields):
     REPORT.update(stage=stage,**fields)
@@ -56,7 +56,7 @@ try:
         "--model",str(snapshot),"--served-model-name",REPORT["model"],
         "--tokenizer",str(snapshot),"--host","127.0.0.1","--port","8008",
         "--structured-outputs-config.backend","xgrammar",
-        "--dtype","half","--tensor-parallel-size","2","--max-model-len","16384",
+        "--dtype","half","--tensor-parallel-size","2","--max-model-len","20480",
         "--gpu-memory-utilization","0.90","--max-num-seqs","1",
         "--max-num-batched-tokens","16384","--enforce-eager","--disable-custom-all-reduce",
         "--load-format","safetensors","--attention-backend","TRITON_ATTN",

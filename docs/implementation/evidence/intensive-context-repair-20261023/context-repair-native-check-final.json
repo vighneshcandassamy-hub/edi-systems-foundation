@@ -1,0 +1,14 @@
+{
+  "version": "0.10.9.dev0",
+  "scope": "Authored teacher/student fixtures; native C0/C1/C2/C4/C7, in-process broker handler and real teacher file exchange; no model inference",
+  "passed": true,
+  "tests_run": 6,
+  "errors": [],
+  "failures": [],
+  "live_student_calls": 0,
+  "live_teacher_calls": 0,
+  "neural_weight_updates": 0,
+  "student_learning_demonstrated": false,
+  "benchmark_ready": false,
+  "live_status": "Not assessed by authored fixtures; consult the separate live run evidence"
+}

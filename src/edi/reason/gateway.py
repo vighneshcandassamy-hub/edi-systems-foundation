@@ -239,7 +239,7 @@ class NativeGateway:
             count = (json.loads(recorded["request"])["input_tokens_preflight"]
                      if recorded and recorded["state"] == "completed" else self.count_tokens(messages))
             if type(count) is not int or count < 0 or count > job.input_token_cap:
-                raise EDIError(ErrorCode.CAPACITY, "complete rendered multimodal input exceeds job cap")
+                raise EDIError(ErrorCode.CAPACITY, f"complete rendered multimodal input exceeds job cap: {count} > {job.input_token_cap}")
             body = {"job": job.model_dump(mode="json", exclude={"status", "response_id"}), "messages_sha256": digest(messages), "images": images,
                     "input_tokens_preflight": count, "binding": self.binding.model_dump(mode="json"),
                     "decoding_schema_sha256": (digest(self.send.generation_schema_for(messages))

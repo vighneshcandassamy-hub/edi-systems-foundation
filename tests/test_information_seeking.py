@@ -76,7 +76,7 @@ class InformationSeekingTests(unittest.TestCase):
         gc.collect()
         self.temp.cleanup()
 
-    def open(self, choose, *, teacher=False, teaching_mode="selective", teacher_feedback=None, file_teacher=False, workflow_name="owners.workflows.sqlite3", run_id="run", use_teaching_memory=False):
+    def open(self, choose, *, teacher=False, teaching_mode="selective", teacher_feedback=None, file_teacher=False, workflow_name="owners.workflows.sqlite3", run_id="run", use_teaching_memory=False, input_token_cap=12288):
         from edi.inquiry.contracts import WorkflowProfile
         runtime = Runtime(LocalProfile(database=self.root/'owners.sqlite3', workspace_id='test', min_free_disk_bytes=0),
             reasoning_profile=ReasoningProfile(database=self.root/'reason.sqlite3', workspace_id='test',
@@ -122,7 +122,7 @@ class InformationSeekingTests(unittest.TestCase):
         connector = BrokerConnector(runtime, self.endpoint, self.token, 'test', authority,
             runtime.workflow.profile.database, transport=transport)
         return Investigation(runtime, connector, student, runtime.workflow.profile.database, run_id,
-            teacher_gateway=teacher_gateway, max_turns=5, max_tokens=393216 if teaching_mode=='intensive' else 131072, teaching_mode=teaching_mode, use_teaching_memory=use_teaching_memory)
+            teacher_gateway=teacher_gateway, max_turns=5, max_tokens=393216 if teaching_mode=='intensive' else 131072, teaching_mode=teaching_mode, use_teaching_memory=use_teaching_memory, input_token_cap=input_token_cap)
 
     def test_unassessed_yield_is_retained_then_corrected_without_forcing_a_source(self):
         def choose(control, data):

@@ -158,7 +158,8 @@ class IntegratedApplication:
         self.investigation = Investigation(r, connector, student, r.workflow.profile.database,
             profile.run_id, teacher_gateway=self.teacher, max_turns=profile.max_turns,
             max_tokens=profile.max_tokens, session_seconds=profile.session_seconds,
-            max_corrections=profile.max_corrections, teaching_mode=profile.teaching_mode, use_teaching_memory=profile.use_teaching_memory)
+            max_corrections=profile.max_corrections, teaching_mode=profile.teaching_mode, use_teaching_memory=profile.use_teaching_memory,
+            input_token_cap=min(16384, profile.student.max_model_len - 4096))
 
     def step(self):
         return self.investigation.step()

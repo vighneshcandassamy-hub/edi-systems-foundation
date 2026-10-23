@@ -1,7 +1,10 @@
 # Intensive teacher/student loop - 23 October 2026
 
-**0.10.8.dev0: teaching implementation present; live teaching blocked; Meadows
-readiness unproven. No neural weights have been trained.**
+**Current: 0.10.9.dev0. A real 0.10.8 teaching cycle corrected an identifier
+error, then a later prompt-cap failure exposed duplicated carry-forward context.
+The [context repair](INTENSIVE_CONTEXT_REPAIR.md) documents the correction and
+changed engineering resource profile. Meadows readiness remains unproven;
+neural weights remain unchanged. Results below describe the 0.10.8 baseline.**
 
 The requested sequence is now connected: independent teacher assessment and
 student draft, teacher comparison/critique, student revision, native action,

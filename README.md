@@ -2,10 +2,11 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.10.8.dev0. Intensive teacher/student loop and provisional
-procedural memory implemented; five authored engineering cases pass. Live
-teaching is blocked by Kaggle access, and Meadows readiness remains unproven.
-See [intensive teaching](docs/implementation/INTENSIVE_TEACHING.md).
+**Code version:** 0.10.9.dev0. One real teacher/student cycle corrected an
+identifier mistake into a successful source-catalogue call. The next turn hit a
+retained prompt-cap failure. The corrected context carry-forward design passes
+six authored cases; its fresh live run is pending. Meadows readiness remains
+unproven. See [context repair](docs/implementation/INTENSIVE_CONTEXT_REPAIR.md).
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 

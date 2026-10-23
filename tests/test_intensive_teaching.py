@@ -52,6 +52,15 @@ class IntensiveTeachingTests(unittest.TestCase):
     def open(self, **kwargs):
         return self.h.open(self.decision,teacher=True,teaching_mode='intensive',teacher_feedback=self.critique,**kwargs)
 
+    def test_explicit_input_cap_is_frozen_and_reserved(self):
+        loop=self.open(input_token_cap=16384)
+        self.assertEqual(loop.step()['state'],'ready')
+        episode=loop.runtime.reasoning.get('run:inquiry:0')
+        self.assertEqual(episode.request.budget.input_token_cap,16384)
+        self.assertEqual(episode.request.budget.reserved_tokens,122880)
+        with self.assertRaises(EDIError):
+            self.open(input_token_cap=12288)
+
     def test_full_guided_acquire_read_submit_and_retained_history(self):
         loop=self.open()
         self.assertEqual(loop.step()['state'],'ready')
@@ -68,6 +77,12 @@ class IntensiveTeachingTests(unittest.TestCase):
         self.assertEqual(len(history),1)
         self.assertEqual(history[0]['status'],'provisional')
         self.assertTrue(history[0]['guidance'])
+        state=loop.state()
+        self.assertTrue(state['artifact_frontier'])
+        self.assertFalse({x['record_id'] for x in state['artifact_frontier']} &
+                         {x['record_id'] for x in state['evidence']})
+        for artifact in state['artifact_frontier']:
+            self.assertGreater(loop.runtime.observation.get_record(artifact['record_id']).manifest.byte_count, 0)
         # Reopen rather than carrying Python memory into the next turn.
         loop=self.open()
         self.assertEqual(loop.step()['state'],'ready')

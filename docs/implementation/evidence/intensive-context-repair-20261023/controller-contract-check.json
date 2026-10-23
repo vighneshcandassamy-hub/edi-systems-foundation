@@ -1,0 +1,14 @@
+{
+  "scope": "authored native contract fixtures; not model/investigation qualification",
+  "passed": true,
+  "model_calls": 0,
+  "provider_contacts": 0,
+  "results": {
+    "transport-schema-index": "native data and other control identical; full decoder retained",
+    "missing-operation": "rejected by both wire schema and native admission",
+    "missing-lineage": "rejected by both wire schema and native admission",
+    "controller-turn": "valid content compiled and passed native validation",
+    "proposal": "valid content compiled and passed native validation",
+    "empty-cut": "grammar compiled; explicit yield valid without fabricated support"
+  }
+}

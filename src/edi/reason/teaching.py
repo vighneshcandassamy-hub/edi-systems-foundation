@@ -62,6 +62,6 @@ class TeachingMemory:
                 limitation=value['limitation'])
             # Omit whole lessons rather than truncate an instruction or remove
             # a negation. Source IDs allow explicit native reinspection.
-            if len(canonical(selected+[view]).encode('utf-8'))<=12288:
+            if len(canonical(selected+[view]).encode('utf-8'))<=4096:
                 selected.append(view)
         return selected

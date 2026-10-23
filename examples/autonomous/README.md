@@ -1,3 +1,13 @@
+Current source: **0.10.9.dev0**, C0 integrated-1.5. Intensive prompts keep raw
+observations and bounded provisional lessons; full generated artifacts remain
+available through explicit native context selection. The successor engineering
+profile uses a 20,480 model window, 16,384 input cap, 4,096 output allowance and
+786,432 total policy units. A fresh workspace is required. The first actual 0.10.8
+teaching cycle and its later prompt-cap failure are preserved in the
+[context repair](../../docs/implementation/INTENSIVE_CONTEXT_REPAIR.md).
+
+The following launch and historical descriptions retain their original scope.
+
 Intensive mode (0.10.8.dev0): add `--teaching-mode intensive` when building a
 fresh launch cell. The teacher first assesses the same cut independently, then
 critiques the student draft; the student revises before execution. Two teacher

@@ -41,13 +41,13 @@ def configuration():
     teacher = {"model_id": "ChatGPT-current-session-operator-declared", "revision": "autonomous-critique-20261023", "provider": "manual-file-exchange", "engine": "current-assistant-session-unverified", "tokenizer_revision": "unmeasured"}
     config = {"application_id": WORKSPACE, "run_id": RUN,
         "observation": {"workspace_id": WORKSPACE, "database": str(OUT / "owners.sqlite3")},
-        "student": {"binding": binding, "max_images": 0, "completion_timeout_seconds": 600},
+        "student": {"binding": binding, "max_images": 0, "max_model_len": 20480, "completion_timeout_seconds": 600},
         "teacher": {"binding": teacher, "directory": str(OUT / "teacher-exchange"), "attribution": "Current ChatGPT assistant; operator-declared identity; implementation context known; critique only"},
         "agency": {"workspace_id": WORKSPACE, "database": str(OUT / "owners.agency.sqlite3"), "operator_ids": ["engineering-operator"]},
         "broker": {"grant": {"grant_id": WORKSPACE, "session_id": WORKSPACE, "workspace_id": WORKSPACE, "endpoint": "http://127.0.0.1:8098", "token_sha256": hashlib.sha256(os.environ["EDI_BROKER_TOKEN"].encode()).hexdigest(), "mission_sha256": digest(MISSION), "operator_id": "engineering-operator", "not_before": (now - timedelta(seconds=1)).isoformat(), "expires_at": (now + timedelta(hours=2)).isoformat(), "operations": list(MISSION["public_operations"]), "maximum_requests": 64}},
         "teaching_mode": os.environ.get("EDI_TEACHING_MODE", "selective"),
         "use_teaching_memory": os.environ.get("EDI_USE_TEACHING_MEMORY", "0") == "1",
-        "max_turns": 24, "max_tokens": 393216, "session_seconds": 3600, "max_corrections": 1}
+        "max_turns": 24, "max_tokens": 786432, "session_seconds": 3600, "max_corrections": 1}
     profile = ApplicationProfile.model_validate_json(json.dumps(config))
     save("application.json", profile.model_dump(mode="json"))
     return ApplicationProfile.load(path)
