@@ -26,8 +26,9 @@ receipts, not a complete asset acquisition log; its prior disclaimer is kept.
 An additional acquisition-log schema was rejected because the existing origin
 already carries the necessary identity without duplicated controller state.
 C0 integrated-1.6 rejects older controller journals rather than rewriting old
-captures, frozen cuts or pending provider jobs. The active Kaggle run remains
-pinned to 0.10.9 and is not a live result for this correction.
+captures, frozen cuts or pending provider jobs. The prior 0.10.9 run was stopped
+before launching a fresh run pinned to this correction; neither run's native
+state or model profile was silently migrated.
 
 ## Requirements and review
 
@@ -68,6 +69,24 @@ broker handler, C1 capture, rendered student/teacher context, duplicate source
 occurrences and C0/C4 reopen. It makes no LLM or network calls. See
 [evidence](evidence/asset-source-identity-20261024/native-case.json) and
 [component review](evidence/asset-source-identity-20261024/component-review.json).
-Contract for this mapping: PASS, self-reviewed. Corrected-source live behavior,
-autonomous transfer, neural training, comparative benefit and Meadows readiness:
-not established. No additional neutral-model run is represented as completed.
+Contract for this mapping: PASS, self-reviewed. The subsequent corrected-source
+live diagnostic confirms explicit source IDs in both roles' ordinary evidence
+context. It completed four teaching cycles before an operator stop at the next
+independent teacher pause. Revised actions were `sources`, `m17`, `r22`, `r22`.
+The last revision repeated the complete capture notebook despite critique
+pointing out its content and an available interview. Its rationale still denied
+available context and relevant identifiers. The next draft selected `m17` again.
+Thus delivery is confirmed, but reliable evidence use and feedback application
+are not demonstrated; the repair's causal contribution was not isolated.
+
+The stopped run has nine completed student calls (99,694 input / 2,000 output
+tokens), four retained teaching outcomes and no interview or final submission.
+Its 867,323-byte checkpoint was downloaded and verified for digest, size and ZIP
+CRC; all eight native databases report integrity `ok`. The owned model server
+confirms stopped. These are preservation checks, not a terminal C0 reopen or
+cross-owner recovery qualification. See the aggregate
+[corrected live summary](evidence/asset-source-identity-20261024/live-corrected-summary.json).
+Raw notebook, database and exchange state remain outside Git. Weights are fixed;
+autonomous transfer, neural training, comparative benefit and Meadows readiness
+remain unestablished. Repeating this diagnostic unchanged is not justified by
+its result; a new implementation hypothesis needs a separate rationale.

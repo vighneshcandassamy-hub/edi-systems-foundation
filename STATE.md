@@ -13,8 +13,30 @@ journals are rejected rather than migrated.
 A focused authored native regression passed for student/teacher context,
 source/occurrence distinction, exact hashes and reopen without redispatch.
 The 56-lane interface inventory and scoped component review are consistent.
-This is a contract-level self-review; corrected-source model behavior has not
-been measured. See [source identity correction](docs/implementation/ASSET_SOURCE_IDENTITY.md).
+This is a contract-level self-review. The corrected-source live run is now
+preserved after four teaching cycles and deliberately stopped for repeated
+acquisition. Source IDs reached both roles, but Qwen still denied available
+context and identifiers. After critique explicitly identified the available
+interview, its revision reread the already complete capture notebook with the
+same rationale; the next draft again requested the register. Revised actions
+were `sources`, `m17`, `r22`, `r22`. There was no interview or final submission.
+See [source identity correction](docs/implementation/ASSET_SOURCE_IDENTITY.md)
+and [corrected live evidence](docs/implementation/evidence/asset-source-identity-20261024/live-corrected-summary.json).
+
+All nine completed student calls reported **99,694 input / 2,000 output tokens**.
+Four completed C0 cycles separately account for 86,532 input / 1,772 output;
+eight teacher jobs with unknown usage were charged at full reservation, giving
+252,144 policy units. The ninth student call is the next draft, whose teacher
+feedback was not imported. The owned server confirms stopped. The downloaded
+867,323-byte checkpoint has SHA256
+`ecb3f07bf26495dc0c86e6add16dc8925e596d7a238a75d3012ca603798460ed`;
+ZIP size/digest/CRC and all eight native SQLite integrity checks passed.
+This is a preserved partial run, not mission completion or restart qualification.
+No weights changed. Reliable feedback use, transfer, comparative benefit and
+Meadows readiness remain unestablished. Further identical teaching repetitions
+are not justified by this result; the next engineering decision must address
+evidence-to-action grounding without encoding a hidden solution or granting
+teacher advice world-evidence authority.
 
 The pinned 0.10.9 run `edi-intensive-durable-20261024` completed six teaching
 cycles. It acquired the catalogue, register, capture notebook and bulletin,
@@ -31,7 +53,7 @@ The stopped native checkpoint is downloaded, SHA256
 1,366,507 bytes. ZIP size/digest/CRC verification passed and all eight native
 SQLite databases report integrity `ok`. The owned server confirms stopped.
 These are preservation checks, not mission completion or crash-recovery proof.
-The subsequent corrected-source diagnostic remains pending. Prior dated
+The subsequent corrected-source diagnostic is recorded above. Prior dated
 checkpoints below are historical and preserve their original claims.
 
 ## Current checkpoint - 24 October 2026 IST, interrupted live teaching

@@ -1,6 +1,8 @@
 Current engineering correction: **0.10.10.dev0**, C0 integrated-1.6.
 Native asset origins now preserve requested catalogue document IDs in model
-context. One focused native regression passes; live benefit is unmeasured.
+context. One focused native regression passes. A live four-cycle diagnostic
+confirms delivery but still shows repeated acquisition despite direct feedback.
+The run is stopped and preserved; reliable feedback use remains unresolved.
 The prior 0.10.9 intensive run is preserved after six cycles and stopped for
 repeated acquisition. It did not submit findings or establish Meadows readiness.
 See [source identity](docs/implementation/ASSET_SOURCE_IDENTITY.md) and [STATE](STATE.md).
@@ -9,11 +11,11 @@ See [source identity](docs/implementation/ASSET_SOURCE_IDENTITY.md) and [STATE](
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.10.9.dev0. One real teacher/student cycle corrected an
-identifier mistake into a successful source-catalogue call. The next turn hit a
-retained prompt-cap failure. The corrected context carry-forward design passes
-six authored cases; its fresh live run is pending. Meadows readiness remains
-unproven. See [context repair](docs/implementation/INTENSIVE_CONTEXT_REPAIR.md).
+**Code version:** 0.10.10.dev0. Prompt carry-forward and native source-identity
+repairs are implemented and checked. Live teacher-assisted revisions sometimes
+choose a useful source, but Qwen still overlooks acquired evidence and repeats
+reads. No neural weights changed and Meadows readiness remains unproven.
+See [current checkpoint](STATE.md) and [context repair](docs/implementation/INTENSIVE_CONTEXT_REPAIR.md).
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 

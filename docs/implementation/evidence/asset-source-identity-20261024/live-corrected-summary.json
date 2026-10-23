@@ -1,0 +1,152 @@
+{
+  "scope": "Stopped partial authored neutral live run; no completed mission, neural training, transfer or Meadows readiness established.",
+  "source_revision": "3ffa1091c5e4e32237f49c0d9626aca53f622d36",
+  "version": "0.10.10.dev0",
+  "c0": "edi-c0/integrated-1.6",
+  "run_identity": "edi-intensive-identity-20261024",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "completed_cycles": 4,
+  "student_calls": 9,
+  "all_completed_student_input_tokens": 99694,
+  "all_completed_student_output_tokens": 2000,
+  "c0_completed_cycle_input_tokens": 86532,
+  "c0_completed_cycle_output_tokens": 1772,
+  "teacher_usage_unknown_jobs": 8,
+  "policy_units": 252144,
+  "usage_basis": "known reported counts plus full reservation for unknown usage; not an energy/cost measurement",
+  "state": "waiting-teacher",
+  "turn": 4,
+  "pending_teaching_stage": "independent",
+  "pending_feedback_imported": false,
+  "server_stopped": true,
+  "mission_terminal_present": false,
+  "restart_complete_present": false,
+  "checkpoint_bytes": 867323,
+  "checkpoint_sha256": "ecb3f07bf26495dc0c86e6add16dc8925e596d7a238a75d3012ca603798460ed",
+  "notebook_sha256": "a22c0866cc919bfeae06bac76690bd4c0a4500d272e1af981b2330cefff9980a",
+  "zip_crc": "passed",
+  "integrity": {
+    "owners.agency.sqlite3": "ok",
+    "owners.analyze.sqlite3": "ok",
+    "owners.assess.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.world.sqlite3": "ok"
+  },
+  "cycles": [
+    {
+      "inquiry": 0,
+      "state": "round-complete",
+      "draft_operations": [
+        {
+          "arguments": {
+            "document_id": "588c9574-3acd-4830-9a41-495facfc2c09"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_operations": [
+        {
+          "arguments": {
+            "body": {},
+            "operation": "sources"
+          },
+          "operation": "world-call",
+          "schema_version": "1.0"
+        }
+      ]
+    },
+    {
+      "inquiry": 1,
+      "state": "round-complete",
+      "draft_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ]
+    },
+    {
+      "inquiry": 2,
+      "state": "round-complete",
+      "draft_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_operations": [
+        {
+          "arguments": {
+            "document_id": "r22"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ]
+    },
+    {
+      "inquiry": 3,
+      "state": "round-complete",
+      "draft_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_operations": [
+        {
+          "arguments": {
+            "document_id": "r22"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ]
+    },
+    {
+      "inquiry": 4,
+      "state": "awaiting-response",
+      "draft_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_operations": null
+    }
+  ],
+  "findings": [
+    "Source document IDs reached both roles in ordinary evidence origins.",
+    "The student used correction to request sources and later acquire r22.",
+    "At inquiry 3 the student denied available context and relevant identifiers despite the catalogue and complete r22 being in context.",
+    "The critique explicitly identified the interview and suggested a question directed at missing measurement information. Its revision reread r22 with the same rationale, and the next draft again selected m17.",
+    "No interview, final submission, weights update or benchmark execution occurred.",
+    "Source mapping repair is verified as delivered, but reliable use of evidence or teaching feedback is not demonstrated. No isolated causal comparison was performed."
+  ]
+}
