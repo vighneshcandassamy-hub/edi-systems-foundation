@@ -358,6 +358,27 @@
       "title": "Controller Policy",
       "type": "string"
     },
+    "teaching_mode": {
+      "default": "selective",
+      "enum": [
+        "selective",
+        "intensive"
+      ],
+      "title": "Teaching Mode",
+      "type": "string"
+    },
+    "teaching_history": {
+      "default": [],
+      "items": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "type": "object"
+      },
+      "maxItems": 4,
+      "title": "Teaching History",
+      "type": "array"
+    },
     "controller_progress": {
       "anyOf": [
         {

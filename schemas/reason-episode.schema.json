@@ -1512,6 +1512,27 @@
           "title": "Controller Policy",
           "type": "string"
         },
+        "teaching_mode": {
+          "default": "selective",
+          "enum": [
+            "selective",
+            "intensive"
+          ],
+          "title": "Teaching Mode",
+          "type": "string"
+        },
+        "teaching_history": {
+          "default": [],
+          "items": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "type": "object"
+          },
+          "maxItems": 4,
+          "title": "Teaching History",
+          "type": "array"
+        },
         "controller_progress": {
           "anyOf": [
             {
@@ -1813,6 +1834,18 @@
           ],
           "default": null,
           "title": "Teacher Trigger"
+        },
+        "teaching_stage": {
+          "default": "standard",
+          "enum": [
+            "standard",
+            "independent",
+            "draft",
+            "critique",
+            "revision"
+          ],
+          "title": "Teaching Stage",
+          "type": "string"
         },
         "status": {
           "default": "awaiting-import",
@@ -2942,6 +2975,17 @@
           "minLength": 1,
           "title": "Rationale Summary",
           "type": "string"
+        },
+        "procedural_guidance": {
+          "default": [],
+          "items": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Procedural Guidance",
+          "type": "array"
         },
         "hypotheses": {
           "default": [],

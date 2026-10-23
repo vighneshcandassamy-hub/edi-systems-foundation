@@ -1,0 +1,9 @@
+Processing c:\users\csscs\documents\codex\2026-10-23\conitnue-edi-mvp-8-here-as\work\edi-systems-foundation
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: edi-systems-foundation
+  Building wheel for edi-systems-foundation (pyproject.toml): started
+  Building wheel for edi-systems-foundation (pyproject.toml): finished with status 'done'
+  Created wheel for edi-systems-foundation: filename=edi_systems_foundation-0.10.8.dev0-py3-none-any.whl size=177080 sha256=1d6c5ae90b2b604f88993770256a397062c5ca329a8f08aa50af77852d425078
+  Stored in directory: c:\users\csscs\appdata\local\packages\sandbox.{bc23c9bf-9591-4fe2-b3ee-7ac35dfb3ff6}\ac\pip\cache\wheels\bb\62\9a\b3102818db9f2cd3816ab8f1f6a2be6d7fe192abfaa80a2a69
+Successfully built edi-systems-foundation

@@ -26,7 +26,8 @@ def main():
     with args.output.with_suffix('.log').open('w', encoding='utf-8') as log:
         result = unittest.TextTestRunner(stream=log, verbosity=2).run(
             unittest.defaultTestLoader.loadTestsFromModule(test_information_seeking))
-    report = {'version': '0.10.7.dev0', 'scope': 'authored native controller regressions; in-process HTTP handler; no model or socket',
+    from edi import __version__
+    report = {'version': __version__, 'scope': 'authored native controller regressions; in-process HTTP handler; no model or socket',
         'passed': result.wasSuccessful(), 'tests_run': result.testsRun,
         'errors': [{'test':str(t),'traceback':s} for t,s in result.errors],
         'failures': [{'test':str(t),'traceback':s} for t,s in result.failures],

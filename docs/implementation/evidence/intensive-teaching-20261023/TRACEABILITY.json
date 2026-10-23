@@ -1,0 +1,88 @@
+{
+  "schema": "edi-intensive-teaching-trace/1.0",
+  "source_version": "0.10.8.dev0",
+  "authority": "Owner direction in current conversation and prior IS requirements; original live acquisition acceptance unchanged",
+  "parent_requirements": "docs/implementation/evidence/information-seeking-20261023/TRACEABILITY.json",
+  "requirements": [
+    {
+      "id": "IT-R01",
+      "parents": [
+        "IS-R01",
+        "IS-R04"
+      ],
+      "statement": "Isolate independent teacher/student first assessments; critique before execution",
+      "implementation": [
+        "src/edi/reason/service.py",
+        "src/edi/reason/gateway.py",
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "cases": [
+        "test_full_guided_acquire_read_submit_and_retained_history",
+        "test_file_teacher_and_student_can_be_pending_independently_and_resume"
+      ]
+    },
+    {
+      "id": "IT-R02",
+      "parents": [
+        "IS-R02",
+        "IS-R04"
+      ],
+      "statement": "Teacher outage waits; only final student revision executes under native authority",
+      "implementation": [
+        "src/edi/reason/exchange.py",
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "cases": [
+        "test_teacher_outage_never_silently_downgrades_to_unguided_execution"
+      ]
+    },
+    {
+      "id": "IT-R03",
+      "parents": [
+        "IS-R03",
+        "IS-R05"
+      ],
+      "statement": "Retain immutable outcome-linked provisional guidance across native continuation",
+      "implementation": [
+        "src/edi/reason/teaching.py",
+        "src/edi/reason/service.py"
+      ],
+      "cases": [
+        "test_provisional_teaching_survives_a_separate_controller_investigation"
+      ]
+    },
+    {
+      "id": "IT-R04",
+      "parents": [
+        "IS-R03",
+        "IS-R05"
+      ],
+      "statement": "Separate intensive teaching, reduced assistance with memory, and clean baseline",
+      "implementation": [
+        "src/edi/inquiry/application.py",
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "cases": [
+        "test_reduced_assistance_can_recall_memory_while_clean_baseline_omits_it"
+      ]
+    },
+    {
+      "id": "IT-R05",
+      "parents": [
+        "IS-R05"
+      ],
+      "statement": "Count every stage and preserve fixed resources, pins and failed evidence",
+      "implementation": [
+        "examples/autonomous/prepare_kaggle_run.py",
+        "examples/autonomous/run.py",
+        "scripts/check_intensive_teaching.py"
+      ],
+      "cases": [
+        "test_file_teacher_and_student_can_be_pending_independently_and_resume"
+      ]
+    }
+  ],
+  "case_source": "tests/test_intensive_teaching.py",
+  "evidence": "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json",
+  "live_status": "blocked; not qualified"
+}

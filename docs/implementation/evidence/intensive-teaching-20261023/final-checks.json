@@ -1,0 +1,36 @@
+{
+  "selective_compatibility": {
+    "exit_code": 0
+  },
+  "owner_matrix": {
+    "exit_code": 0
+  },
+  "outside_matrix": {
+    "exit_code": 0
+  },
+  "component_review": {
+    "exit_code": 0
+  },
+  "frozen_source_and_package": {
+    "exit_code": 0
+  },
+  "target_python312": {
+    "exit_code": 0
+  },
+  "wheel_build": {
+    "exit_code": 0
+  },
+  "packager": {
+    "exit_code": 0
+  },
+  "wheel_identity": {
+    "files": 70,
+    "mismatched": [],
+    "sha256": "1d6c5ae90b2b604f88993770256a397062c5ca329a8f08aa50af77852d425078",
+    "passed": true
+  },
+  "portable_native": {
+    "exit_code": 0
+  },
+  "scope": "Authored engineering and packaging only; live teaching/serving grammar/benchmark readiness not demonstrated"
+}

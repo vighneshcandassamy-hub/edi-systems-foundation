@@ -1,3 +1,10 @@
+Intensive mode (0.10.8.dev0): add `--teaching-mode intensive` when building a
+fresh launch cell. The teacher first assesses the same cut independently, then
+critiques the student draft; the student revises before execution. Two teacher
+file exchanges per normal turn are expected. Unknown usage is fully reserved.
+The extra teaching preflight must pass before model startup. No live result is
+implied. See [teaching protocol](../../docs/implementation/INTENSIVE_TEACHING.md).
+
 Current source is 0.10.7.dev0. New runs require a fresh workspace and typed
 information-seeking/stopping decisions. The launch package runs the additional
 information-seeking regression and actual xgrammar preflight before model startup.

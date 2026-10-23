@@ -1,0 +1,44 @@
+{
+  "schema": "edi-intensive-teaching-protocol/1.0",
+  "date": "2026-10-23",
+  "source_version": "0.10.8.dev0",
+  "parent": "e5dc7b6013a1503a5b87cc1b92dbe410e4e1da87",
+  "user_direction": "Actively teach every consequential student step using independent assessment, critique, revision and retained outcome; assess whether weight training is needed",
+  "phase": "developmental teacher-assisted neutral investigation; not Meadows qualification",
+  "stages": [
+    "teacher independent assessment / student draft (peer responses hidden)",
+    "teacher critique of both first assessments",
+    "student revision",
+    "C0/C7 authorized execution",
+    "provisional outcome-linked C4 memory"
+  ],
+  "limits": {
+    "turns": 24,
+    "policy_units": 393216,
+    "seconds": 3600,
+    "public_requests": 64,
+    "per_job_input_cap": 12288,
+    "per_job_output_cap": 4096,
+    "per_inquiry_jobs": 6,
+    "per_inquiry_student_rounds": 4,
+    "corrections_per_job": 1
+  },
+  "live_acceptance": [
+    "actual student-selected acquisition beyond mission",
+    "raw instrument source acquired and used in supported submission",
+    "teacher critique and student revision retained with all real usage or explicit unknown reservations",
+    "uncertainty, unavailable data and unmeasured future sample retained honestly",
+    "normal fresh-process restart without redispatch; all eight native databases checked"
+  ],
+  "reduced_assistance_followup": "Fresh neutral material; teacher disabled, retained workspace guidance enabled, versus a clean memory-off run; no result claimed yet",
+  "prohibitions": [
+    "no authored live source sequence",
+    "no hidden Meadows answers or evaluator access",
+    "no automatic promotion of teacher advice to world truth",
+    "no unapproved paid inference or weight training",
+    "no claim of independent reviewer identity"
+  ],
+  "live_status": "blocked; signed-out Kaggle and disconnected Opera",
+  "benchmark_ready": false,
+  "neural_training_required": "unknown; no evidence yet requiring it"
+}

@@ -76,12 +76,14 @@ class InformationSeekingTests(unittest.TestCase):
         gc.collect()
         self.temp.cleanup()
 
-    def open(self, choose, *, teacher=False):
+    def open(self, choose, *, teacher=False, teaching_mode="selective", teacher_feedback=None, file_teacher=False, workflow_name="owners.workflows.sqlite3", run_id="run", use_teaching_memory=False):
+        from edi.inquiry.contracts import WorkflowProfile
         runtime = Runtime(LocalProfile(database=self.root/'owners.sqlite3', workspace_id='test', min_free_disk_bytes=0),
             reasoning_profile=ReasoningProfile(database=self.root/'reason.sqlite3', workspace_id='test',
                 student=self.binding, teacher=self.teacher_binding, min_free_disk_bytes=0),
             agency_profile=AgencyProfile(database=self.root/'agency.sqlite3', workspace_id='test',
-                operator_ids=('fixture',), min_free_disk_bytes=0))
+                operator_ids=('fixture',), min_free_disk_bytes=0),
+            workflow_profile=WorkflowProfile(database=self.root/workflow_name,workspace_id='test',min_free_disk_bytes=0))
         def send(messages, job):
             control = json.loads(messages[0]['content'])
             data = json.loads(messages[1]['content'][0]['text'])
@@ -89,6 +91,8 @@ class InformationSeekingTests(unittest.TestCase):
             if job.role == 'teacher':
                 content = {'rationale_summary': 'Authored critique only', 'limitation': 'No inference',
                     'feedback_disposition': 'retained-for-review'}
+                if teacher_feedback is not None:
+                    content = teacher_feedback(control,data)
             else:
                 content = {'rationale_summary': 'Authored regression', 'limitation': 'No inference',
                     'operation_proposals': [choose(control, data)]}
@@ -98,6 +102,10 @@ class InformationSeekingTests(unittest.TestCase):
         teacher_gateway = NativeGateway(runtime, self.teacher_binding, runtime.reasoning.profile.database,
             send, lambda messages: 100, attribution='Authored teacher fixture; no live model',
 ) if teacher else None
+        if file_teacher:
+            from edi.reason.exchange import TeacherExchangeGateway
+            teacher_gateway = TeacherExchangeGateway(runtime, self.teacher_binding,
+                runtime.reasoning.profile.database, self.root/'teacher-files', attribution='Authored file teacher fixture')
         authority = runtime.agency_for('C0').benchmark_authority(self.grant, endpoint=self.endpoint,
             token_sha256=self.grant.token_sha256, workspace_id='test', session_id='test')
         def transport(url, body, headers):
@@ -113,8 +121,8 @@ class InformationSeekingTests(unittest.TestCase):
             return handler.response_status, handler.wfile.getvalue()
         connector = BrokerConnector(runtime, self.endpoint, self.token, 'test', authority,
             runtime.workflow.profile.database, transport=transport)
-        return Investigation(runtime, connector, student, runtime.workflow.profile.database, 'run',
-            teacher_gateway=teacher_gateway, max_turns=5, max_tokens=131072)
+        return Investigation(runtime, connector, student, runtime.workflow.profile.database, run_id,
+            teacher_gateway=teacher_gateway, max_turns=5, max_tokens=393216 if teaching_mode=='intensive' else 131072, teaching_mode=teaching_mode, use_teaching_memory=use_teaching_memory)
 
     def test_unassessed_yield_is_retained_then_corrected_without_forcing_a_source(self):
         def choose(control, data):

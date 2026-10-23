@@ -75,8 +75,8 @@ class TeacherExchangeGateway:
         messages[0]["content"] = canonical(control)
         request = {"inquiry_id": episode.request.inquiry_id, "job": job.model_dump(mode="json", exclude={"status", "response_id"}), "messages": messages,
             "image_refs": images, "messages_sha256": digest(messages), "transport": "explicit-file-exchange",
-            "feedback_content_fields": ["rationale_summary", "limitation", "feedback_disposition"],
-            "instructions": "Return fallible critique of the student against this exact cut. No world access, new evidence, tool execution or admission. Import content through edi integration-teacher-import.",
+            "feedback_content_fields": ["rationale_summary", "limitation", "feedback_disposition"] + (["procedural_guidance"] if job.teaching_stage == "critique" else []),
+            "instructions": "Follow the recorded teaching stage against this exact cut. Independent assessment sees no current student draft; critique reviews both initial assessments. No world access, new evidence, tool execution or admission. Import through edi integration-teacher-import.",
             "cost_status": "usage unknown unless supplied; C0 charges the full reservation when unknown"}
         row = self.journal.begin(job.job_id, request, reserve_bytes=1024 * 1024)
         if row["state"] == "completed":
@@ -127,8 +127,8 @@ class TeacherExchangeGateway:
         try:
             if usage_error:
                 raise ValueError("teacher usage requires an object with nonnegative integer or null counts")
-            if not isinstance(content, dict) or set(content) - {"rationale_summary", "limitation", "feedback_disposition", "usage"}:
-                raise ValueError("feedback permits rationale_summary, limitation, feedback_disposition and optional usage only")
+            if not isinstance(content, dict) or set(content) - ({"rationale_summary", "limitation", "feedback_disposition", "usage"} | ({"procedural_guidance"} if job.get("teaching_stage") == "critique" else set())):
+                raise ValueError("feedback permits rationale_summary, limitation, feedback_disposition, optional usage and critique-stage procedural_guidance")
             if usage and set(usage) - {"input_tokens", "output_tokens"}:
                 raise ValueError("usage permits only input_tokens and output_tokens")
             response = Response.model_validate_json(canonical({

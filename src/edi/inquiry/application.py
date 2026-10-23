@@ -60,6 +60,8 @@ class ApplicationProfile(Record):
     assessment: AssessmentProfile | None = None
     agency: AgencyProfile | None = None
     workflow: WorkflowProfile | None = None
+    teaching_mode: Literal["selective", "intensive"] = "selective"
+    use_teaching_memory: bool = False
     max_turns: int = Field(default=32, ge=1, le=1000)
     max_tokens: int = Field(default=262144, ge=16384)
     session_seconds: int = Field(default=3600, ge=1, le=604800)
@@ -71,6 +73,8 @@ class ApplicationProfile(Record):
         endpoint = urlsplit(self.student.endpoint)
         if endpoint.scheme != "http" or endpoint.hostname != "127.0.0.1" or not endpoint.port or endpoint.path not in ("", "/") or endpoint.query or endpoint.fragment or endpoint.username:
             raise ValueError("student service must be explicitly configured on loopback")
+        if self.teaching_mode == "intensive" and self.teacher.mode == "disabled":
+            raise ValueError("intensive teaching requires a teacher connection")
         active = [self.student.binding] + ([self.teacher.binding] if self.teacher.mode != "disabled" else [])
         if any(value.model_id == "unbound" or value.revision == "unbound" or value.tokenizer_revision == "unknown"
                 or any(item.startswith("REPLACE_") for item in (value.model_id, value.revision, value.tokenizer_revision)) for value in active):
@@ -154,7 +158,7 @@ class IntegratedApplication:
         self.investigation = Investigation(r, connector, student, r.workflow.profile.database,
             profile.run_id, teacher_gateway=self.teacher, max_turns=profile.max_turns,
             max_tokens=profile.max_tokens, session_seconds=profile.session_seconds,
-            max_corrections=profile.max_corrections)
+            max_corrections=profile.max_corrections, teaching_mode=profile.teaching_mode, use_teaching_memory=profile.use_teaching_memory)
 
     def step(self):
         return self.investigation.step()

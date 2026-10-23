@@ -1,0 +1,10 @@
+test_file_teacher_and_student_can_be_pending_independently_and_resume (test_intensive_teaching.IntensiveTeachingTests.test_file_teacher_and_student_can_be_pending_independently_and_resume) ... ok
+test_full_guided_acquire_read_submit_and_retained_history (test_intensive_teaching.IntensiveTeachingTests.test_full_guided_acquire_read_submit_and_retained_history) ... ok
+test_provisional_teaching_survives_a_separate_controller_investigation (test_intensive_teaching.IntensiveTeachingTests.test_provisional_teaching_survives_a_separate_controller_investigation) ... ok
+test_reduced_assistance_can_recall_memory_while_clean_baseline_omits_it (test_intensive_teaching.IntensiveTeachingTests.test_reduced_assistance_can_recall_memory_while_clean_baseline_omits_it) ... ok
+test_teacher_outage_never_silently_downgrades_to_unguided_execution (test_intensive_teaching.IntensiveTeachingTests.test_teacher_outage_never_silently_downgrades_to_unguided_execution) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 10.990s
+
+OK

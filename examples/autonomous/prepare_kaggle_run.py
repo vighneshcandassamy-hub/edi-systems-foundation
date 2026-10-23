@@ -15,6 +15,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--run-directory", default="edi-autonomous-rerun-20261023")
     parser.add_argument("--source-revision", help="Verified remote 40-hex revision when local Git metadata is unavailable")
+    parser.add_argument("--teaching-mode", choices=("selective", "intensive"), default="selective")
     args = parser.parse_args()
     if not 1 <= len(args.run_directory) <= 80 or any(not (c.isalnum() or c == "-") for c in args.run_directory):
         parser.error("run-directory must be a bounded alphanumeric/hyphen name")
@@ -27,6 +28,8 @@ def main():
     files["scripts/check_autonomous_dispatch.py"] = (repo / "scripts/check_autonomous_dispatch.py").read_bytes()
     files["scripts/check_information_seeking.py"] = (repo / "scripts/check_information_seeking.py").read_bytes()
     files["tests/test_information_seeking.py"] = (repo / "tests/test_information_seeking.py").read_bytes()
+    files["tests/test_intensive_teaching.py"] = (repo / "tests/test_intensive_teaching.py").read_bytes()
+    files["scripts/check_intensive_teaching.py"] = (repo / "scripts/check_intensive_teaching.py").read_bytes()
     if args.source_revision is not None:
         if not re.fullmatch(r"[0-9a-f]{40}", args.source_revision):
             parser.error("source-revision must be a verified full remote commit SHA")
@@ -86,7 +89,11 @@ while time.monotonic()<deadline:
   with (out/"information-seeking-preflight.log").open("x") as checklog:
    check=subprocess.run(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"scripts/check_information_seeking.py"),"--grammar","--output",str(out/"information-seeking-preflight.json")],env=checkenv,stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
   if check.returncode:raise RuntimeError("Information-seeking preflight failed; inspect log before inference")
-  env=dict(os.environ,EDI_AUTONOMOUS_ROOT=str(out));env.pop("PYTHONPATH",None)
+  if __EDI_TEACHING_MODE__ == "intensive":
+   with (out/"intensive-teaching-preflight.log").open("x") as checklog:
+    check=subprocess.run(["/kaggle/temp/edi-engineering-compute/bin/python",str(root/"scripts/check_intensive_teaching.py"),"--output",str(out/"intensive-teaching-preflight.json")],env=checkenv,stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
+   if check.returncode:raise RuntimeError("Intensive teaching preflight failed; inspect log before inference")
+  env=dict(os.environ,EDI_AUTONOMOUS_ROOT=str(out),EDI_TEACHING_MODE=__EDI_TEACHING_MODE__);env.pop("PYTHONPATH",None)
   with (out/"supervisor.log").open("x") as log:
    server=subprocess.Popen(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"server.py")],env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
  for n in ("serve-install.log","compute-install.log","supervisor.log","turn-process-1.log"):
@@ -111,6 +118,7 @@ else:raise TimeoutError("Preserve logs and native state")
     body = cell
     cell = "try:\n" + "".join(" " + line + "\n" for line in body.splitlines())
     cell += "finally:\n import runpy\n checkpoint=globals().get('root',pathlib.Path('/nonexistent-edi-source'))/'checkpoint.py'\n if checkpoint.exists():runpy.run_path(str(checkpoint))['display_checkpoint'](out,root)\n"
+    cell = cell.replace("__EDI_TEACHING_MODE__", repr(args.teaching_mode))
     cell = cell.replace("__EDI_BUNDLE__", repr(base64.b64encode(data).decode()))
     cell = cell.replace("__EDI_DIGEST__", repr(hashlib.sha256(data).hexdigest()))
     cell = cell.replace("__EDI_INSTALLER__", repr(installer))

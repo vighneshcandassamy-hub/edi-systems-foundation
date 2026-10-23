@@ -1,5 +1,22 @@
 # EDI Systems Foundation — checkpoint
 
+## Current checkpoint - 23 October 2026, intensive teaching
+
+Source **0.10.8.dev0**, branch `integration/intensive-teaching-20261023`.
+The owner requested active independent teacher/student assessment, critique,
+revision, execution and retained guidance. That loop is implemented with a
+same-cut blind first-assessment pair, selective authority, actual outcome links
+and provisional C4 teaching memory. Five authored teaching checks pass. Memory
+can be explicitly enabled in a reduced-assistance run and omitted from a clean
+baseline. Weights are unchanged; no live learning benefit is established.
+
+Live execution is blocked: Opera disconnected and the available Kaggle browser
+is signed out. The local environment briefly disconnected, then returned with
+source and verification files intact. Meadows readiness remains unproven. See
+[intensive teaching](docs/implementation/INTENSIVE_TEACHING.md). Broader original
+and scientific gates remain REVISE. Previous checkpoints below are historical.
+
+
 ## Current checkpoint - 23 October 2026, information-seeking repair
 
 Source **0.10.7.dev0** on `integration/information-seeking-20261023`.

@@ -121,6 +121,8 @@ class InquiryRequest(Record):
         description="A controller turn needs exactly one next-operation proposal or explicit yield; proposal mode permits reasoning-only output.")
     controller_access: ControllerAccess | None = None
     controller_policy: Literal["legacy", "information-seeking/1.0"] = "legacy"
+    teaching_mode: Literal["selective", "intensive"] = "selective"
+    teaching_history: tuple[dict[str, JsonValue], ...] = Field(default=(), max_length=4)
     controller_progress: ControllerProgress | None = None
     model_revision: int = Field(ge=0)
     world_ids: tuple[Identifier, ...] = Field(default=(), max_length=16)
@@ -133,6 +135,12 @@ class InquiryRequest(Record):
 
     @model_validator(mode="after")
     def unique(self):
+        if self.teaching_mode == "intensive" and (
+                self.controller_policy != "information-seeking/1.0" or self.controller_progress is None or
+                not self.controller_progress.teacher_available):
+            raise ValueError("intensive teaching requires information-seeking policy and a configured teacher")
+        if len(str(self.teaching_history).encode('utf-8')) > 16384:
+            raise ValueError("teaching history exceeds the bounded context allocation")
         if self.controller_policy != "legacy" and (
                 self.response_mode != "controller-turn" or self.controller_access is None or self.controller_progress is None):
             raise ValueError("information-seeking policy requires a controller turn, adopted access and C0 progress")
@@ -184,6 +192,7 @@ class Job(Record):
     created_at: datetime
     reason: Text
     teacher_trigger: Literal["novel", "unresolved", "consequential", "student-escalation"] | None = None
+    teaching_stage: Literal["standard", "independent", "draft", "critique", "revision"] = "standard"
     status: Literal["awaiting-import", "completed", "cancelled-usage-unknown", "rejected"] = "awaiting-import"
     response_id: str | None = None
     dispatch: Literal["export-only; no model call performed"] = "export-only; no model call performed"
@@ -276,6 +285,7 @@ class Response(Record):
     attribution: Text
     binding: ModelBinding
     rationale_summary: Text
+    procedural_guidance: tuple[Text, ...] = Field(default=(), max_length=4)
     hypotheses: tuple[Hypothesis, ...] = Field(default=(), max_length=3)
     tests: tuple[InquiryTest, ...] = Field(default=(), max_length=8)
     frontier: tuple[FrontierItem, ...] = Field(default=(), max_length=16)
@@ -294,6 +304,7 @@ class StepRequest(Record):
     action: Literal["student", "teacher", "yield", "cancel-pending"]
     reason: Text
     teacher_trigger: Literal["novel", "unresolved", "consequential", "student-escalation"] | None = None
+    teaching_stage: Literal["standard", "independent", "draft", "critique", "revision"] = "standard"
 
 
 class FrontierUpdate(Record):

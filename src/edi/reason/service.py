@@ -30,6 +30,14 @@ class Reasoning:
         self.student, self.teacher = UnavailableInference("student/vLLM"), UnavailableInference("teacher")
         self._slot = BoundedSemaphore(1)
 
+    def teaching_history(self, *, limit=4):
+        from edi.reason.teaching import TeachingMemory
+        return TeachingMemory(self.profile, self._evidence).recent(limit=limit)
+
+    def record_teaching_outcome(self, inquiry_id, outcome_record_id):
+        from edi.reason.teaching import TeachingMemory
+        return TeachingMemory(self.profile, self._evidence).retain(self.get(inquiry_id), outcome_record_id)
+
     def bind_inference(self, student, teacher=None):
         """Explicit composition-time binding; construction alone performs no call."""
         if student.binding != self.profile.student or (teacher is not None and teacher.binding != self.profile.teacher):
@@ -203,18 +211,52 @@ class Reasoning:
                 jobs = tuple(job.model_copy(update={"status": "cancelled-usage-unknown"})
                              if job.status == "awaiting-import" else job for job in old.jobs)
                 return self._save(command, fingerprint, old, jobs=jobs, state="yielded", stop_reason=request.reason)
-            if old.state == "yielded" or pending:
-                raise EDIError(ErrorCode.CONFLICT, "inquiry yielded or already has an unresolved job")
+            intensive = old.request.teaching_mode == "intensive"
+            stage = request.teaching_stage
+            # Only blind-teacher/initial-student work may coexist. Admissions
+            # remain serialized; model/file dispatch is independently journaled.
+            permitted_pending = intensive and (
+                (request.action == "student" and stage == "draft" and
+                 all(j.role == "teacher" and j.teaching_stage == "independent" for j in pending)) or
+                (request.action == "teacher" and stage == "independent" and
+                 all(j.role == "student" and j.teaching_stage == "draft" for j in pending)))
+            if old.state == "yielded" or (pending and not permitted_pending):
+                raise EDIError(ErrorCode.CONFLICT, "inquiry yielded or has incompatible unresolved work")
             budget = old.request.budget
             if request.action == "student" and request.teacher_trigger is not None:
                 raise EDIError(ErrorCode.INVALID, "teacher trigger belongs only to teacher jobs")
             students = [job for job in old.jobs if job.role == "student"]
             round_number = len(students) + 1 if request.action == "student" else len(students)
-            if request.action == "teacher":
-                if not request.teacher_trigger or not students or students[-1].status != "completed":
-                    raise EDIError(ErrorCode.INVALID, "selective teacher requires trigger and completed student")
-                if any(job.role == "teacher" and job.round == round_number and job.status != "rejected" for job in old.jobs):
-                    raise EDIError(ErrorCode.CONFLICT, "teacher already requested in this round")
+            if intensive:
+                if stage == "standard":
+                    raise EDIError(ErrorCode.INVALID, "intensive teaching requires an explicit stage")
+                if request.action == "teacher" and stage == "independent":
+                    if students and not any(j.teaching_stage == "independent" for j in old.jobs):
+                        raise EDIError(ErrorCode.CONFLICT, "blind assessment must be allocated before the first student draft")
+                    round_number = 1
+                elif request.action == "teacher" and stage == "critique":
+                    if not students or students[-1].status != "completed" or not any(
+                            j.role == "teacher" and j.teaching_stage == "independent" and j.status == "completed" for j in old.jobs):
+                        raise EDIError(ErrorCode.CONFLICT, "critique requires completed blind assessment and student draft")
+                elif request.action == "student" and stage == "draft":
+                    if any(j.role == "student" and j.status == "completed" for j in old.jobs):
+                        raise EDIError(ErrorCode.CONFLICT, "initial draft is already complete")
+                elif request.action == "student" and stage == "revision":
+                    if not any(j.role == "teacher" and j.teaching_stage == "critique" and j.status == "completed" for j in old.jobs):
+                        raise EDIError(ErrorCode.CONFLICT, "student revision requires completed teacher critique")
+                else:
+                    raise EDIError(ErrorCode.INVALID, "role does not own requested teaching stage")
+                if request.action == "teacher" and (not request.teacher_trigger or any(
+                        j.role == "teacher" and j.teaching_stage == stage and j.status != "rejected" for j in old.jobs)):
+                    raise EDIError(ErrorCode.CONFLICT, "teacher stage already allocated or trigger missing")
+            else:
+                if stage != "standard":
+                    raise EDIError(ErrorCode.INVALID, "teaching stages require an intensive inquiry")
+                if request.action == "teacher":
+                    if not request.teacher_trigger or not students or students[-1].status != "completed":
+                        raise EDIError(ErrorCode.INVALID, "selective teacher requires trigger and completed student")
+                    if any(job.role == "teacher" and job.round == round_number and job.status != "rejected" for job in old.jobs):
+                        raise EDIError(ErrorCode.CONFLICT, "teacher already requested in this round")
             reserve = budget.input_token_cap + budget.output_token_cap
             if round_number > budget.rounds or len(old.jobs) >= budget.jobs or old.tokens_reserved + reserve > budget.reserved_tokens:
                 return self._save(command, fingerprint, old, state="yielded", stop_reason="bounded rounds/jobs/token reservations exhausted")
@@ -223,7 +265,7 @@ class Reasoning:
                       context_sha256=old.context.sha256, protocol_id=PROTOCOL_ID,
                       questions=questions(old.request.axes), input_token_cap=budget.input_token_cap,
                       output_token_cap=budget.output_token_cap, created_at=utc_now(), reason=request.reason,
-                      teacher_trigger=request.teacher_trigger)
+                      teacher_trigger=request.teacher_trigger, teaching_stage=stage)
             return self._save(command, fingerprint, old, jobs=old.jobs + (job,),
                               tokens_reserved=old.tokens_reserved + reserve, state="awaiting-response")
 
@@ -257,6 +299,8 @@ class Reasoning:
             raise EDIError(ErrorCode.CAPACITY, "reported input usage exceeds reserved cap; cancel and reconcile externally")
         if response.output_tokens is not None and response.output_tokens > job.output_token_cap:
             raise EDIError(ErrorCode.CAPACITY, "reported output usage exceeds reserved cap; cancel and reconcile externally")
+        if response.procedural_guidance and (job.role != "teacher" or job.teaching_stage != "critique"):
+            raise EDIError(ErrorCode.DENIED, "reusable guidance belongs only to intensive teacher critique")
         if job.role == "teacher":
             if response.hypotheses or response.candidates or response.tests or response.frontier or response.operation_proposals or response.feedback_disposition == "not-applicable":
                 raise EDIError(ErrorCode.DENIED, "teacher output is fallible critique only; student must revise proposals")
@@ -355,7 +399,7 @@ class Reasoning:
                 raise EDIError(ErrorCode.INTEGRITY, "rejection usage differs from the retained transport receipt")
             jobs = tuple(j.model_copy(update={"status": "rejected"}) if j.job_id == job.job_id else j for j in old.jobs)
             return self._save(command, fingerprint, old, jobs=jobs,
-                rejections=old.rejections + (request,), state="round-complete")
+                rejections=old.rejections + (request,), state="awaiting-response" if any(j.status == "awaiting-import" for j in jobs) else "round-complete")
 
     def _merge_frontier(self, existing, incoming):
         result = list(existing)
@@ -400,7 +444,7 @@ class Reasoning:
                     messages.append(OutboxItem(message_id=new_id(), kind="knowledge_request_proposal", artifact_id=item.frontier_id, artifact_sequence=old.sequence + 1))
             jobs = tuple(j.model_copy(update={"status": "completed", "response_id": response.response_id}) if j.job_id == job.job_id else j for j in old.jobs)
             return self._save(command, fingerprint, old, responses=old.responses + (response,), jobs=jobs,
-                              frontier=frontier, outbox=old.outbox + tuple(messages), state="round-complete")
+                              frontier=frontier, outbox=old.outbox + tuple(messages), state="awaiting-response" if any(j.status == "awaiting-import" for j in jobs) else "round-complete")
 
     def update_frontier(self, request: FrontierUpdate) -> Episode:
         with self._admit():

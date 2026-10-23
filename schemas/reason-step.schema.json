@@ -58,6 +58,18 @@
       ],
       "default": null,
       "title": "Teacher Trigger"
+    },
+    "teaching_stage": {
+      "default": "standard",
+      "enum": [
+        "standard",
+        "independent",
+        "draft",
+        "critique",
+        "revision"
+      ],
+      "title": "Teaching Stage",
+      "type": "string"
     }
   },
   "required": [

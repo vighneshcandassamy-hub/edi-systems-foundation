@@ -47,7 +47,7 @@ class Investigation:
     file exchange is an explicit waiting input, not a failed model inference.
     """
     def __init__(self, runtime, connector, student_gateway, path, run_id, *, teacher_gateway=None,
-                 max_turns=32, max_tokens=262144, session_seconds=3600, max_corrections=1):
+                 max_turns=32, max_tokens=262144, session_seconds=3600, max_corrections=1, teaching_mode="selective", use_teaching_memory=False):
         if not 1 <= len(run_id) <= 96 or max_turns < 1 or max_tokens < 1 or session_seconds <= 0 or max_corrections not in (0, 1):
             raise EDIError(ErrorCode.INVALID, "invalid bounded investigation configuration")
         if path.resolve() != runtime.workflow.profile.database.resolve():
@@ -56,6 +56,10 @@ class Investigation:
             raise EDIError(ErrorCode.INTEGRITY, "student gateway differs from C4 binding")
         if teacher_gateway is not None and teacher_gateway.binding != runtime.reasoning.profile.teacher:
             raise EDIError(ErrorCode.INTEGRITY, "teacher gateway differs from C4 binding")
+        if teaching_mode not in ("selective", "intensive") or (teaching_mode == "intensive" and teacher_gateway is None):
+            raise EDIError(ErrorCode.INVALID, "intensive teaching requires a configured teacher")
+        self.teaching_mode = teaching_mode
+        self.use_teaching_memory = bool(use_teaching_memory)
         self.runtime, self.connector = runtime, connector
         runtime.reasoning.bind_inference(student_gateway, teacher_gateway)
         self.student, self.teacher = runtime.reasoning.student, (runtime.reasoning.teacher if teacher_gateway is not None else None)
@@ -64,7 +68,7 @@ class Investigation:
         self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=256 * 1024**2)
         self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 32 + 4, max_bytes=256 * 1024**2)
         previous = self.journal.get("configuration")
-        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.3":
+        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.4":
             raise EDIError(ErrorCode.UNSUPPORTED, "use a fresh integration workspace; historical C0 state is not migrated")
         deadline = (json.loads(previous["request"])["deadline"] if previous else
                     (utc_now() + timedelta(seconds=session_seconds)).isoformat())
@@ -73,10 +77,10 @@ class Investigation:
             "workspace": runtime.profile.workspace_id, "student": student_gateway.binding.model_dump(mode="json"),
             "teacher": teacher_gateway.binding.model_dump(mode="json") if teacher_gateway else None,
             "max_turns": max_turns, "max_tokens": max_tokens, "session_seconds": session_seconds,
-            "max_corrections": max_corrections, "deadline": deadline, "controller": "edi-c0/integrated-1.3"})
+            "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.4"})
         self.journal.finish("configuration", {"frozen": True})
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.component.results", native_source_id=run_id,
-            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.3",
+            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.4",
             binding_basis="configured", descriptor={"independent_world_evidence": False}))
 
     def _phase(self, key, body, operation):
@@ -159,6 +163,9 @@ class Investigation:
             "horizon": "Select the relevant horizon under the original mission authority",
             "response_mode": "controller-turn",
             "controller_policy": "information-seeking/1.0",
+            "teaching_mode": self.teaching_mode,
+            "teaching_history": r.reasoning.teaching_history() if self.teaching_mode == "intensive" or self.use_teaching_memory else [],
+            "axes": list(__import__('edi.reason.protocol', fromlist=['QUESTIONS']).QUESTIONS) if self.teaching_mode == "intensive" else ["evidence", "boundary", "rivals", "learning"],
             "controller_progress": {"turn": state["turn"], "remaining_turns": self.max_turns - state["turn"],
                 "remaining_policy_units": remaining, "teacher_available": self.teacher is not None,
                 "public_outcomes": state["public_outcomes"]},
@@ -170,7 +177,7 @@ class Investigation:
             "omitted_frontier": ["Older acquired records, derivations, C4 episodes and C3 candidates remain available through native component reads; this is a bounded cut"],
             "unknowns": ["Information not yet acquired remains unknown; generated feedback is not independent evidence"]})))
 
-    def _receive(self, inquiry_id, action, gateway, label, trigger=None):
+    def _receive(self, inquiry_id, action, gateway, label, trigger=None, teaching_stage="standard"):
         r = self.runtime
         from datetime import datetime
         for attempt in range(self.max_corrections + 1):
@@ -179,7 +186,7 @@ class Investigation:
             key = inquiry_id + ":" + label + ":" + str(attempt)
             episode = r.reasoning.step(StepRequest(workspace_id=r.profile.workspace_id, inquiry_id=inquiry_id,
                 request_id=key, action=action, reason=("Continue against the original evidence cut" if attempt == 0
-                    else "Correct only the retained rejected output; retain uncertainty and original evidence"), teacher_trigger=trigger))
+                    else "Correct only the retained rejected output; retain uncertainty and original evidence"), teacher_trigger=trigger, teaching_stage=teaching_stage))
             job = episode.jobs[-1] if episode.jobs else None
             if episode.state == "yielded" or job is None:
                 raise EDIError(ErrorCode.CAPACITY, "native inquiry job/round/token reservation exhausted")
@@ -283,16 +290,19 @@ class Investigation:
         turn = state["turn"]
         if utc_now() >= datetime.fromisoformat(self.deadline):
             return {**state, "state": "yielded", "stop_reason": "persisted session deadline reached; pending jobs remain inspectable"}
-        if state["used_tokens"] + 16384 > self.max_tokens:
+        if state["used_tokens"] + (65536 if self.teaching_mode == "intensive" else 16384) > self.max_tokens:
             return {**state, "state": "yielded", "stop_reason": "remaining token budget cannot admit another job"}
         key, inquiry_id = "turn:" + str(turn), self.run_id + ":inquiry:" + str(turn)
         self.journal.begin(key, state, reserve_bytes=4 * 1024**2)
         self._inquiry(state, inquiry_id)
         next_state = {**state, "turn": turn + 1}
         try:
-            response = self._receive(inquiry_id, "student", self.student, "student")
+            if self.teaching_mode == "intensive":
+                response = self._teaching_turn(inquiry_id)
+            else:
+                response = self._receive(inquiry_id, "student", self.student, "student")
             next_state = self._retain_candidates(response, next_state)
-            if response.operation_proposals and response.operation_proposals[0].operation == "teacher-review":
+            if self.teaching_mode == "selective" and response.operation_proposals and response.operation_proposals[0].operation == "teacher-review":
                 if self.teacher is None:
                     raise EDIError(ErrorCode.UNAVAILABLE, "teacher review requested but no teacher is configured")
                 trigger = response.operation_proposals[0].arguments["trigger"]
@@ -316,6 +326,18 @@ class Investigation:
                 "teacher_feedback": [value.model_dump(mode="json") for value in episode.responses
                     if next(j for j in episode.jobs if j.job_id == value.job_id).role == "teacher"]}
             next_state = self._retain_result("reasoning-memory", memory, next_state)
+            if self.teaching_mode == "intensive":
+                # Attach the actual dispatched revision/outcome. This is a
+                # provisional teaching episode, not proof the lesson is useful.
+                outcome = {"inquiry_id": inquiry_id, "student_response_id": response.response_id,
+                    "chosen_operation": response.operation_proposals[0].model_dump(mode="json"),
+                    "controller_state": next_state["state"], "public_outcomes": next_state["public_outcomes"],
+                    "result_record_ids": [x["record_id"] for x in next_state["evidence"]],
+                    "status": "provisional; execution evidence is not reasoning validation"}
+                next_state = self._retain_result("teaching-outcome", outcome, next_state)
+                record_id = next_state["evidence"][-1]["record_id"]
+                self._phase(key + ":teaching-memory", {"inquiry_id": inquiry_id, "record_id": record_id},
+                    lambda: self.runtime.reasoning.record_teaching_outcome(inquiry_id, record_id))
         except AwaitingModelAvailability as exc:
             return {**state, "state": "waiting-model", "job_id": exc.job_id,
                 "inquiry_id": inquiry_id, "error": exc.as_dict(),
@@ -330,6 +352,22 @@ class Investigation:
         next_state = self._account(next_state, inquiry_id)
         self.journal.finish(key, next_state)
         return next_state
+
+    def _teaching_turn(self, inquiry_id):
+        # Export the blind teacher request before completing the student draft.
+        # A file teacher can remain pending while the student works; neither
+        # first assessment sees the other's first response. No parallel writes
+        # to native admission stores are introduced.
+        waiting = None
+        try:
+            self._receive(inquiry_id, "teacher", self.teacher, "independent", "consequential", "independent")
+        except AwaitingModelResponse as exc:
+            waiting = exc
+        self._receive(inquiry_id, "student", self.student, "draft", teaching_stage="draft")
+        if waiting is not None:
+            raise waiting
+        self._receive(inquiry_id, "teacher", self.teacher, "critique", "consequential", "critique")
+        return self._receive(inquiry_id, "student", self.student, "revision", teaching_stage="revision")
 
     def _dispatch_known(self, proposal, state, inquiry_id):
         def unresolved_broker():

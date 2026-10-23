@@ -2,10 +2,10 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.10.7.dev0. Native information-seeking/stopping repair implemented;
-nine authored native regressions pass. Socket/serving/live-model verification is
-incomplete and autonomous readiness remains REVISE. Meadows is unstarted. See the
-[repair report](docs/implementation/INFORMATION_SEEKING_REPAIR.md).
+**Code version:** 0.10.8.dev0. Intensive teacher/student loop and provisional
+procedural memory implemented; five authored engineering cases pass. Live
+teaching is blocked by Kaggle access, and Meadows readiness remains unproven.
+See [intensive teaching](docs/implementation/INTENSIVE_TEACHING.md).
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 

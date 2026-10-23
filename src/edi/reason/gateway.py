@@ -22,8 +22,17 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
         raise EDIError(ErrorCode.INTEGRITY, "gateway binding/context differs from pending native job")
     exported = runtime.reasoning.export_job(episode.request.inquiry_id, job.job_id)
     earlier = {j.job_id for j in episode.jobs[:next(i for i, j in enumerate(episode.jobs) if j.job_id == job.job_id)]}
+    if episode.request.teaching_mode == "intensive" and job.teaching_stage in ("independent", "draft"):
+        earlier = {j.job_id for j in episode.jobs if j.job_id in earlier and
+                   j.role == job.role and j.teaching_stage == job.teaching_stage}
     exported["data"] = {"inquiry": episode.request.model_dump(mode="json"), "context": episode.context.model_dump(mode="json"),
         "prior_responses": [r.model_dump(mode="json") for r in episode.responses if r.job_id in earlier]}
+    if episode.request.teaching_mode == "intensive":
+        if job.teaching_stage in ("independent", "draft"):
+            exported["data"]["prior_responses"] = []
+        # First assessments deliberately exclude every peer response. The
+        # teacher's review stage sees both initial assessments; revision sees
+        # the critique. Same native evidence cut and tool descriptions apply.
     control = {**exported["control"], "protocol_questions": [q.model_dump(mode="json") for q in job.questions], "response_identity": {"workspace_id": episode.request.workspace_id,
         "inquiry_id": episode.request.inquiry_id, "job_id": job.job_id, "context_sha256": episode.context.sha256,
         "binding": job.binding.model_dump(mode="json"), "origin": "external-model-output"},
@@ -105,6 +114,29 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
         control.pop("operation_argument_contracts", None)
         control.pop("component_call_rule", None)
         control["operation_rules"] = "Critique only: no hypotheses, tests, candidates, frontier or operation proposals. Use rationale_summary, limitation and feedback_disposition (retained-for-review, challenged or deferred)."
+    if episode.request.teaching_mode == "intensive":
+        control["teaching"] = {
+            "mode": "intensive", "stage": job.teaching_stage,
+            "rule": "Offer concise decision justifications, uncertainties and checks; do not invent private reasoning traces or outcomes.",
+            "checklist": ["What does acquired evidence support?", "What uncertainty matters for the objective?",
+                "What alternative explanation or boundary could change the decision?", "Which available action could distinguish alternatives?",
+                "What actual result changed the understanding?", "What justifies continuing, seeking help or stopping?"],
+            "memory_rule": "teaching_history is provisional generated guidance, not world evidence or a mandatory policy. Check scope before reuse; challenge guidance when observations disagree."}
+        if job.role == "teacher":
+            if job.teaching_stage == "independent":
+                control["teaching"]["task"] = "Independently assess the objective, acquired evidence, available information/action catalogue and useful next inquiry. No current student draft is supplied. Keep any action suggestion in fallible critique prose; you cannot execute actions."
+            else:
+                control["teaching"]["task"] = "Compare the student's initial decision with your independent assessment. Ask what was missed, offer alternative considerations, correct confused constraints and explain how to evaluate the next step. Offer up to four reusable procedural_guidance statements, with conditions and limitations. Do not provide hidden task solutions or invent observations."
+            # Access is descriptive, not execution authority for the teacher.
+            control["teaching"]["available_access"] = episode.request.controller_access.model_dump(mode="json")
+            if job.teaching_stage == "critique":
+                control["response_schema"]["properties"]["procedural_guidance"] = {"type":"array","items":{"type":"string","minLength":1,"maxLength":8192},"maxItems":4}
+            control["operation_rules"] += " Optional procedural_guidance is allowed only in the intensive critique stage; it is generated advice, never an admitted rule."
+            control["generation_rule"] = "Return rationale_summary, limitation, feedback_disposition and optional procedural_guidance for critique; no direct operation proposals."
+        elif job.teaching_stage == "draft":
+            control["teaching"]["task"] = "Make your own first next-step proposal against the acquired evidence and available access. The current teacher assessment is withheld."
+        else:
+            control["teaching"]["task"] = "Review both first assessments and the teacher critique. Revise your next-operation proposal, or explain why you retain it. You own the decision; do not treat the teacher's opinion as evidence."
     if schema_in_transport and job.role == "student":
         # The complete schema is already sent as response_format. Keep a field
         # index in the prompt instead of serializing its large definition graph
@@ -127,10 +159,18 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
                               if value.get("properties")}}
     control["generation_rule"] = ("Return only rationale_summary, limitation and feedback_disposition; never fabricate execution or evidence."
         if job.role == "teacher" else "Return one JSON object. Transport supplies response_identity, attribution and available token usage. Supply rationale_summary and limitation plus any substantive optional Response fields. Never fabricate execution or evidence.")
+    if episode.request.teaching_history:
+        control["teaching_memory_rule"] = "Retained teaching_history is provisional generated guidance from prior episodes. Check applicability, costs and actual observations; it is not world evidence, a mandatory rule or proof of learning."
+    if job.role == "teacher" and job.teaching_stage == "critique":
+        control["generation_rule"] = "Return rationale_summary, limitation, feedback_disposition and optional procedural_guidance; no actions, evidence claims or model edits."
     control["response_identity"].update(request_id="gateway:" + job.job_id, response_id="gateway:" + job.job_id)
     exported["data"]["prior_rejections"] = []
     for rejection in episode.rejections:
         if rejection.job_id not in earlier: continue
+        if episode.request.teaching_mode == "intensive":
+            rejected_job = next(j for j in episode.jobs if j.job_id == rejection.job_id)
+            if rejected_job.role != job.role or rejected_job.teaching_stage != job.teaching_stage:
+                continue
         source = runtime.reader_for("C4").get_record(rejection.raw_record_id)
         length = min(source.manifest.byte_count, 8192)
         raw = runtime.reader_for("C4").read_payload(rejection.raw_record_id, length=length)

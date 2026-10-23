@@ -43,7 +43,7 @@ def generation_schema(*, controller_policy="legacy"):
     """Native content schema with transport-owned identities supplied after serving."""
     schema=copy.deepcopy(Response.model_json_schema())
     supplied={"workspace_id","inquiry_id","request_id","response_id","job_id","context_sha256",
-              "origin","attribution","binding","input_tokens","output_tokens"}
+              "origin","attribution","binding","input_tokens","output_tokens","procedural_guidance"}
     for key in supplied:
         schema["properties"].pop(key,None)
     schema["required"]=[x for x in schema.get("required",[]) if x not in supplied]

@@ -1,0 +1,136 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C0/C4 intensive teacher/student loop and provisional procedural memory",
+  "gate": "contract",
+  "requested_scope": "Owner-authorized intensive teaching implementation and engineering verification; actual instruction/learning remains blocked",
+  "input_revision": "0.10.8.dev0; parent e5dc7b6013a1503a5b87cc1b92dbe410e4e1da87",
+  "reviewer": {
+    "role": "implementer_and_self_reviewer",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/intensive-teaching-20261023/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "IT-R01..IT-R05 trace the requested active teaching loop to native cases; live acceptance remains open.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Explicit stages, paired pending exception, critique-only guidance and outcome-linked memory preserve C0/C4/C1/C7 authority.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse existing jobs, file teacher and owner stores. No new service, automatic teacher truth or mandatory world action.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "All lessons provisional. Fixture success, teacher judgments, empirical sources and operational receipts remain distinct.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Original global budgets; four normal stages and six-job ceiling; finite memory; full unknown teacher reservation charged.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Native/file waits and normal reopen covered; teacher outage suspends original turn without unguided execution or resend.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Owner proposal and retained unguided failure motivate change. No claim that a training technique or model is generally superior.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Five authored cases pass; model training/learning/transfer and Meadows readiness remain unproven; access blocker explicit.",
+      "references": [
+        "docs/decisions/ADR-014-intensive-teaching.md",
+        "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "IT-F01",
+      "description": "Teacher formerly depended on student request; intensive staged scheduling implemented.",
+      "status": "resolved",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "IT-F02",
+      "description": "Live teacher/student performance, retained-guidance usefulness and benchmark readiness remain blocked/unproven.",
+      "status": "open",
+      "blocking_at": [
+        "runtime",
+        "integration"
+      ]
+    }
+  ],
+  "changes": [
+    "Independent first-assessment views",
+    "Teacher critique before final revision/action",
+    "Native outcome-linked provisional teaching memory",
+    "Reduced-assistance and memory-off baseline controls",
+    "Pinned intensive launch mode and native preflight"
+  ],
+  "verification": [
+    {
+      "id": "IT-NATIVE",
+      "kind": "runtime",
+      "required": false,
+      "status": "passed",
+      "revision": "0.10.8.dev0",
+      "evidence_ref": "docs/implementation/evidence/intensive-teaching-20261023/native-teaching.json"
+    },
+    {
+      "id": "IT-LIVE",
+      "kind": "integration",
+      "required": true,
+      "status": "blocked"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "Reconnect authorized Kaggle session, run pinned live intensive teaching, then measure reduced assistance on fresh material before deciding weight training."
+}
