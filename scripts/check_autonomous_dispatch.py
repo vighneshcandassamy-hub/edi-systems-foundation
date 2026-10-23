@@ -34,6 +34,9 @@ def main():
         def __init__(self):
             self.binding, self.calls = binding, 0
         def complete(self, job, episode):
+            access = episode.request.controller_access
+            assert access is not None and access.operations == MISSION["public_operations"]
+            assert access.mission_sha256 == digest(MISSION)
             turn = int(episode.request.inquiry_id.rsplit(":", 1)[1])
             mission_record = episode.context.evidence[0].reference.record_id
             decisions = [
@@ -121,7 +124,7 @@ def main():
                 "public_request_order": requests, "invalid_asset_reached_broker": True,
                 "native_asset_error_returned": True, "sources_read_submit_reached_broker": True,
                 "C2_interpretation_returned": True, "terminal_reopen_no_redispatch": True,
-                "unresolved_broker_call_preserved_unknown": True}
+                "unresolved_broker_call_preserved_unknown": True, "adopted_access_description_reaches_C4": True}
         finally:
             server.shutdown()
             server.server_close()
