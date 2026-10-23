@@ -1,0 +1,12 @@
+{
+  "scope": "staged private code/evidence upload",
+  "staged_paths_reviewed": 77,
+  "raw_databases_archives_notebooks_weights_credentials_staged": false,
+  "frozen_benchmark_tree": "9f2e070d1df5ff5d5638d0536e4104920b5a9184",
+  "frozen_benchmark_staged_diff_empty": true,
+  "whitespace_check": "passed; LF source/docs, CRLF evidence/log bytes permitted and preserved",
+  "baseline_after_staging": "passed",
+  "destination": "vighneshcandassamy-hub/edi-systems-foundation",
+  "branch": "integration/autonomous-controller-20261023",
+  "autonomous_readiness": "REVISE"
+}

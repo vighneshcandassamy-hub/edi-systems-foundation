@@ -2,7 +2,7 @@
 
 The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
 
-**Code version:** 0.10.1.dev0. **Status:** one scheduled C0-C7 engineering walkthrough completed with two real Qwen calls, manual teacher critique/student revision, C5/C6, C7 authority checks and normal restart. The autonomous controller, scientific qualification and Meadows benchmark remain unrun at this source. Wider original contract reviews remain REVISE.
+**Code version:**0.10.5.dev0. **Status:** native connection/dispatch repairs and28 CPU checks pass; the autonomous neutral trial yielded without information acquisition, so readiness remains REVISE. Fresh-process restart, eight-store integrity and source/wheel equality pass. The Meadows diagnostic remains unstarted. See [autonomous run report](docs/implementation/AUTONOMOUS_RUN.md).
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 

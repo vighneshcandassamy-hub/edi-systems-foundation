@@ -1,0 +1,225 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C0/C4 autonomous native integration and scoped neutral investigation",
+  "gate": "integration",
+  "requested_scope": "Inspect wiring, run actual autonomous neutral case, preserve evidence and verify native restart; no authored live operation sequence",
+  "input_revision": "0.10.5.dev0; parent68111c370042b465a262f6210c25da6915c8f535; all69 core hashes/source/wheel pinned in build-verification.json",
+  "reviewer": {
+    "role": "implementer self-review using edi-component-review and edi-interface-review",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/evidence/autonomous-20261023/TRACEABILITY.json",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/autonomous-20261023/trace-check.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "The authorized three-step engineering task is traced through existing CI-R01/02/04/05 and AU-R01..04 to six scoped cases. Failed acquisition criteria are retained rather than weakened.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "C0 coordinates one proposed decision, C4 admits model output, C1 owns original bytes, C3/C7 retain admission/authority. Complete references and nested native serialization are enforced without rewriting model content.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "No solver, domain hypothesis, new owner or prescribed live operation is added. One response-mode distinction, exact-address decoder, duplicate-schema removal and central native serializer repair address observed failures. Generic access clarification leaves operation/stop choice to the student.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Lost initial raw state is declared unavailable. Retained repeat, preflight-capacity, nested serialization and clean-yield attempts stay distinct. The final student yielded without evidence acquisition; no ability or fundamental-impossibility claim is inferred.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Current run reports4018 input/170 output tokens and4188 policy units, zero unknown-usage jobs, within unchanged caps. Teacher was not requested. Free GPU/loopback services were stopped after verified export; no paid API, energy or comparative cost result is asserted.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Native regression preserves UNKNOWN_COMMIT on response loss; completed terminal reopen adds no broker/model call. Actual final fresh-process snapshot and eight-store integrity pass. Crash, cross-host and model-service restart remain outside this gate.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Observed raw native errors, actual xgrammar compilation, package freezes, model hashes, source/wheel equality and native broker/store regressions ground the repairs. Source-only checks are distinguished from live reasoning.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "revise",
+      "rationale": "Acquisition and supported submission acceptance failed: the actual student chose yield after mission only, also after a generic access clarification. Native contract/dispatch pass cannot promote autonomous readiness. Broader original matrices remain REVISE.",
+      "references": [
+        "docs/implementation/AUTONOMOUS_RUN.md",
+        "docs/implementation/evidence/autonomous-20261023/runtime-results.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "AU-F01",
+      "description": "Omitted lineage caused native rejection; complete pinned evidence addresses enforced by decoder and admission.",
+      "status": "resolved",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "AU-F02",
+      "description": "Reasoning-only output did not drive C0; explicit controller-turn mode now requires one operation/yield while proposal mode remains compatible.",
+      "status": "resolved",
+      "blocking_at": [
+        "contract"
+      ]
+    },
+    {
+      "id": "AU-F03",
+      "description": "Duplicate response schema exceeded exact input cap; field index preserves complete original data and full decoder.",
+      "status": "resolved",
+      "blocking_at": [
+        "runtime"
+      ]
+    },
+    {
+      "id": "AU-F04",
+      "description": "Nested typed proposal/result values failed JSON serialization before connector/result completion; native conversion and full authored dispatch regression now pass.",
+      "status": "resolved",
+      "blocking_at": [
+        "runtime"
+      ]
+    },
+    {
+      "id": "AU-F05",
+      "description": "Actual student yielded at the mission despite access catalogue, including after generic access clarification. Acquisition/submission criteria fail for this student/protocol setup.",
+      "status": "open",
+      "blocking_at": [
+        "integration"
+      ]
+    },
+    {
+      "id": "AU-F06",
+      "description": "Initial expired native state is unavailable; only retained notebook/source/printed counts support that attempt.",
+      "status": "open",
+      "blocking_at": []
+    },
+    {
+      "id": "AU-F07",
+      "description": "Original broad component scenarios, scientific qualification, crash/isolation/scale and teacher advantage remain unestablished.",
+      "status": "deferred",
+      "blocking_at": []
+    }
+  ],
+  "changes": [
+    "Native controller-turn versus proposal mode",
+    "Exact complete evidence-reference decoder",
+    "Prompt field index with unchanged full decoder/data cut",
+    "Bounded completion timeout and all-owner constructor preflight",
+    "Nested native proposal/result serialization repair",
+    "Generic information-access permission clarification without chosen operations",
+    "Automatic raw notebook checkpoint and exact snapshot recovery selector"
+  ],
+  "verification": [
+    {
+      "name": "Controller/grammar native fixtures",
+      "kind": "contract",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/autonomous-20261023/controller-contract-check.json",
+      "revision": "0.10.5.dev0; exact implementation/configuration in build-verification.json and runtime-results.json"
+    },
+    {
+      "name": "Native authored dispatch and unknown-completion regression",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/autonomous-20261023/dispatch-regression.json",
+      "revision": "0.10.5.dev0; exact implementation/configuration in build-verification.json and runtime-results.json"
+    },
+    {
+      "name": "28 CPU broker/native-store checks",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/autonomous-20261023/cpu-regression-0.10.5/cpu-tests.json",
+      "revision": "0.10.5.dev0; exact implementation/configuration in build-verification.json and runtime-results.json"
+    },
+    {
+      "name": "Actual autonomous information acquisition/submission",
+      "kind": "integration",
+      "required": true,
+      "status": "failed",
+      "evidence_ref": "docs/implementation/evidence/autonomous-20261023/ACCEPTANCE_REVIEW.json",
+      "revision": "0.10.5.dev0; exact implementation/configuration in build-verification.json and runtime-results.json"
+    },
+    {
+      "name": "Actual fresh-process restart and eight stores",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/autonomous-20261023/native-restart-audit.json",
+      "revision": "0.10.5.dev0; exact implementation/configuration in build-verification.json and runtime-results.json"
+    },
+    {
+      "name": "76 exported sources/69 core wheel equality",
+      "kind": "contract",
+      "required": true,
+      "status": "passed",
+      "evidence_ref": "docs/implementation/evidence/autonomous-20261023/build-verification.json",
+      "revision": "0.10.5.dev0; exact implementation/configuration in build-verification.json and runtime-results.json"
+    }
+  ],
+  "measurements": [
+    {
+      "name": "Final real student tokens",
+      "state": "measured",
+      "value": {
+        "input": 4018,
+        "output": 170,
+        "policy_units": 4188,
+        "unknown_jobs": 0
+      },
+      "evidence_ref": "docs/implementation/evidence/autonomous-20261023/runtime-results.json",
+      "revision": "0.10.5.dev0",
+      "conditions": "One fixed Qwen student call, mission only, no teacher or further public request; no energy/efficiency claim"
+    },
+    {
+      "name": "Energy, general intelligence and comparative efficiency",
+      "state": "not_run"
+    }
+  ],
+  "product_qualification": "failed",
+  "verdict": "revise",
+  "next_step": "Review generic information-seeking, stopping and escalation semantics against original architecture; preserve independent operation choice. Do not start Meadows as if acquisition acceptance passed."
+}

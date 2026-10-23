@@ -1,0 +1,77 @@
+{
+  "integrity": {
+    "owners.agency.sqlite3": "ok",
+    "owners.analyze.sqlite3": "ok",
+    "owners.assess.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.world.sqlite3": "ok"
+  },
+  "new_broker_requests": 0,
+  "new_model_dispatches": 0,
+  "same_native_snapshot": true,
+  "state": {
+    "evidence": [
+      {
+        "length": 1309,
+        "offset": 0,
+        "record_id": "263a4498-787b-43fb-9a35-867012d6cb09"
+      },
+      {
+        "length": 2008,
+        "offset": 0,
+        "record_id": "c645a0cb-98ca-4e46-a6bc-ebc784202535"
+      }
+    ],
+    "known_input_tokens": 4018,
+    "known_output_tokens": 170,
+    "last_response_id": "gateway:3fcec15a-43b8-41f7-bbcc-62ad7fe07664",
+    "mission": {
+      "access_protocol": "Public operations use world-call with arguments {operation: public name, body: operation-specific object}. C0 assigns request_id. This catalogue defines available access, not an investigation sequence. Native EDI component operations and selective teacher review are also available through the configured controller.",
+      "objective": "Investigate the recorded change in instrument readings. Determine what the available information supports about the change and a next-reading prediction. Obtain information as needed, then submit findings, uncertainty and any further information needed.",
+      "public_operations": {
+        "ask": {
+          "body": {
+            "person_id": "catalogue interview ID",
+            "question": "your information request"
+          },
+          "returns": "available interview record; unsupported requests remain unknown"
+        },
+        "mission": {
+          "body": {},
+          "returns": "original objective and access catalogue"
+        },
+        "read": {
+          "body": {
+            "document_id": "catalogue document ID"
+          },
+          "returns": "raw document, source attribution and digest"
+        },
+        "sources": {
+          "body": {},
+          "returns": "available document and interview identifiers"
+        },
+        "status": {
+          "body": {},
+          "returns": "session status"
+        },
+        "submit": {
+          "body": {
+            "conclusion": "findings and limitations"
+          },
+          "returns": "closure receipt"
+        }
+      },
+      "scope": "Authored neutral instrument engineering environment; no forest case or empirical science."
+    },
+    "state": "yielded",
+    "stop_reason": "Student yielded",
+    "turn": 1,
+    "usage_basis": "known reported counts plus full reservation for unknown usage; not an energy/cost measurement",
+    "usage_unknown_jobs": 0,
+    "used_tokens": 4188,
+    "world_ids": []
+  }
+}

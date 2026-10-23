@@ -1,5 +1,23 @@
 # EDI Systems Foundation — checkpoint
 
+## Current checkpoint —23 October 2026
+
+Code0.10.5.dev0 on integration/autonomous-controller-20261023. The three authorized
+engineering steps are complete. Existing controller wiring was inspected; exact
+citation/controller-decision, prompt duplication and nested native serialization
+faults were repaired.28 CPU checks and authored native dispatch/grammar regressions
+pass. The final real Qwen trial yielded after mission only:4,018 input/170 output
+tokens, no acquisition, teacher request or submission. Autonomous readiness is
+REVISE; the first Meadows diagnostic has not started. Fresh native restart is
+identical with zero redispatch, all eight databases pass integrity, and76 exported
+source files/all69 core wheel files match. Raw evidence is recovered and the owned
+server/session are stopped. See [current report](docs/implementation/AUTONOMOUS_RUN.md)
+for exact paths, hashes, retained failures, scoped review and next design work.
+No paid API, weight training or scientific/comparative result is claimed.
+
+The dated checkpoints below preserve earlier scope and are historical.
+
+
 Date: 21 October 2026. Code version: 0.9.0; conceptual source baseline retained.
 
 ## What is stored
@@ -206,3 +224,10 @@ The engine repair adds missing AgencyAccess forwarding to existing benchmark_aut
 Four native archives are retained outside Git, including startup/range failures and both successful checkpoints. Final archive: 472,735 bytes, SHA-256 f9542a975fea6090fc4aa37839eedce98bafc5f6a252f1390188020d86cab2d4; hashes, CRC and SQLite integrity passed. An earlier free session expired before native export; execution/compute are unknown and no result is counted. Raw databases and operational teacher exchanges remain on the authorized desktop; reviewed synthetic evidence and source are saved privately. Model server and Kaggle session are stopped. No paid inference, training, imported-reference or frozen Meadows package change occurred. Remote identity/visibility and returned revision are checked during synchronization.
 
 Documentation release check: corrected the Markdown link validator to accept existing directories as well as files. The original failure and the passing rerun are retained under engineering-20261022; engine execution is unchanged.
+
+
+## Autonomous controller diagnostic — 23 October 2026
+
+On integration/autonomous-controller-20261023, the existing 0.10.1 Investigation.step was exercised with only a neutral objective/access catalogue. First turn yielded after two rejected outputs; retained notebook counts are 19,747 input/1,672 output tokens. No additional information acquisition was observed. Restart process returned one; precise rejection/restart diagnostics were not retained before session expiration and desktop restart. The downloaded notebook and recovered deployment bundle are preserved; 69 embedded engine files match 68111c3. Raw first-attempt databases/provider wires are unavailable, explicitly not verified. See AUTONOMOUS_RUN.md and attempt1-retained-output.json.
+
+A fresh repeat keeps the objective, native validation, pinned model and engine unchanged. Harness-only changes automatically embed consistent native ZIP checkpoints in notebook output, add restart-difference/integrity diagnostics, distinguish run identities, and correct copied serving metadata from 2,048 to the actual native 4,096 output cap. The repeat is pending. Broader readiness remains REVISE; no forest or scientific comparison is authorized by this checkpoint.

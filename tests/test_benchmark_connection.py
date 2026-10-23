@@ -358,7 +358,7 @@ class ConnectionTests(unittest.TestCase):
         contracts=json.loads(messages[0]["content"])["operation_argument_contracts"]
         self.assertEqual(set(contracts["acquire-asset"]),{"document_id"})
         self.assertEqual(set(contracts["world-call"]),{"operation","body"})
-        self.assertEqual(set(contracts),{"world-call","acquire-asset","select-context","analysis-compile","analysis-run","teacher-review","yield"})
+        self.assertEqual(set(contracts),{"world-call","acquire-asset","select-context","analysis-compile","analysis-run","component-call","teacher-review","yield"})
 
 
     def test_completed_controller_at_exact_turn_limit_stays_completed(self):
@@ -387,9 +387,14 @@ class ConnectionTests(unittest.TestCase):
             with self.assertRaises(ValueError): OperationProposal.model_validate_json(canonical(item))
         good=OperationProposal.model_validate_json(canonical({"operation":"acquire-asset","arguments":{"document_id":"id"}}))
         self.assertEqual(good.arguments,{"document_id":"id"})
+        component=OperationProposal.model_validate_json(canonical({"operation":"component-call","arguments":{"operation":"world-head","arguments":{}}}))
+        self.assertEqual(component.arguments["operation"],"world-head")
+        with self.assertRaises(EDIError) as denied:
+            OperationProposal.model_validate_json(canonical({"operation":"component-call","arguments":{"operation":"world-commit","arguments":{}}}))
+        self.assertEqual(denied.exception.code,ErrorCode.DENIED)
         schema=generation_schema()
         self.assertNotIn("binding",schema["properties"])
-        self.assertEqual(len(schema["$defs"]["OperationProposal"]["anyOf"]),7)
+        self.assertEqual({branch["properties"]["operation"]["const"] for branch in schema["$defs"]["OperationProposal"]["anyOf"]}, {"world-call","acquire-asset","select-context","analysis-compile","analysis-run","component-call","teacher-review","yield"})
         self.assertIn("rationale_summary",schema["required"])
 
 

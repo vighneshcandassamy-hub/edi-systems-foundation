@@ -1,0 +1,52 @@
+test_actual_image_bytes_in_wire_fixture (test_benchmark_connection.ConnectionTests.test_actual_image_bytes_in_wire_fixture) ... ok
+test_all_public_operations_and_pending_objective (test_benchmark_connection.ConnectionTests.test_all_public_operations_and_pending_objective) ... ok
+test_asset_reassembly_external_origin_and_hash (test_benchmark_connection.ConnectionTests.test_asset_reassembly_external_origin_and_hash) ... ok
+test_cancelled_job_cannot_be_dispatched_from_stale_snapshot (test_benchmark_connection.ConnectionTests.test_cancelled_job_cannot_be_dispatched_from_stale_snapshot) ... ok
+test_completed_controller_at_exact_turn_limit_stays_completed (test_benchmark_connection.ConnectionTests.test_completed_controller_at_exact_turn_limit_stays_completed) ... ok
+test_denied_public_request_is_evidence (test_benchmark_connection.ConnectionTests.test_denied_public_request_is_evidence) ... ok
+test_dynamic_c0_choices_use_native_c4_records (test_benchmark_connection.ConnectionTests.test_dynamic_c0_choices_use_native_c4_records) ... ok
+test_exact_c1_capture_and_replay (test_benchmark_connection.ConnectionTests.test_exact_c1_capture_and_replay) ... ok
+test_gateway_fixture_native_import_and_no_redispatch (test_benchmark_connection.ConnectionTests.test_gateway_fixture_native_import_and_no_redispatch) ... ok
+test_grant_scope_and_expiry (test_benchmark_connection.ConnectionTests.test_grant_scope_and_expiry) ... ok
+test_image_default_cut_keeps_whole_bounded_native_object (test_benchmark_connection.ConnectionTests.test_image_default_cut_keeps_whole_bounded_native_object) ... ok
+test_journal_atomic_dispatch_claim (test_benchmark_connection.ConnectionTests.test_journal_atomic_dispatch_claim) ... ok
+test_live_transport_auth_exact_count_and_json_mode (test_benchmark_connection.ConnectionTests.test_live_transport_auth_exact_count_and_json_mode) ... ok
+test_lost_receipt_does_not_duplicate_work (test_benchmark_connection.ConnectionTests.test_lost_receipt_does_not_duplicate_work) ... ok
+test_missing_auth_and_private_path (test_benchmark_connection.ConnectionTests.test_missing_auth_and_private_path) ... ok
+test_model_timeout_is_not_retried (test_benchmark_connection.ConnectionTests.test_model_timeout_is_not_retried) ... ok
+test_native_messages_include_selected_protocol_questions (test_benchmark_connection.ConnectionTests.test_native_messages_include_selected_protocol_questions) ... ok
+test_native_operation_shapes_reject_nested_control_wrappers (test_benchmark_connection.ConnectionTests.test_native_operation_shapes_reject_nested_control_wrappers) ... ERROR
+test_operation_argument_contracts_distinguish_asset_and_public_wrappers (test_benchmark_connection.ConnectionTests.test_operation_argument_contracts_distinguish_asset_and_public_wrappers) ... ok
+test_request_identity_conflict (test_benchmark_connection.ConnectionTests.test_request_identity_conflict) ... ok
+test_restart_preserves_original_request_and_evidence (test_benchmark_connection.ConnectionTests.test_restart_preserves_original_request_and_evidence) ... ok
+test_serving_grammar_defers_only_native_map_key_lengths (test_benchmark_connection.ConnectionTests.test_serving_grammar_defers_only_native_map_key_lengths) ... ok
+test_serving_window_and_teacher_role_are_not_bypassed (test_benchmark_connection.ConnectionTests.test_serving_window_and_teacher_role_are_not_bypassed) ... ok
+test_teacher_cannot_propose_actions (test_benchmark_connection.ConnectionTests.test_teacher_cannot_propose_actions) ... ok
+test_teacher_key_missing_is_explicit (test_benchmark_connection.ConnectionTests.test_teacher_key_missing_is_explicit) ... ok
+test_token_cap_blocks_before_dispatch (test_benchmark_connection.ConnectionTests.test_token_cap_blocks_before_dispatch) ... ok
+test_tokenizer_profile_drift_stops_before_generation (test_benchmark_connection.ConnectionTests.test_tokenizer_profile_drift_stops_before_generation) ... ok
+test_usage_mismatch_retains_pending_job_and_no_second_inference (test_benchmark_connection.ConnectionTests.test_usage_mismatch_retains_pending_job_and_no_second_inference) ... ok
+
+======================================================================
+ERROR: test_native_operation_shapes_reject_nested_control_wrappers (test_benchmark_connection.ConnectionTests.test_native_operation_shapes_reject_nested_control_wrappers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\csscs\Documents\Codex\2026-10-21\edi-meadows-runtime\tests\test_benchmark_connection.py", line 393, in test_native_operation_shapes_reject_nested_control_wrappers
+    OperationProposal.model_validate_json(canonical({"operation":"component-call","arguments":{"operation":"world-commit","arguments":{}}}))
+  File "C:\Users\csscs\Documents\Codex\2026-10-21\edi-meadows-runtime\.venv-benchmark\Lib\site-packages\pydantic\main.py", line 766, in model_validate_json
+    return cls.__pydantic_validator__.validate_json(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csscs\Documents\Codex\2026-10-21\edi-meadows-runtime\src\edi\reason\contracts.py", line 199, in native_argument_shape
+    validate_arguments(self.operation, self.arguments)
+  File "C:\Users\csscs\Documents\Codex\2026-10-21\edi-meadows-runtime\src\edi\reason\operation_args.py", line 31, in validate_arguments
+    validate_call(arguments)
+  File "C:\Users\csscs\Documents\Codex\2026-10-21\edi-meadows-runtime\src\edi\inquiry\operations.py", line 139, in validate_call
+    native_arguments(arguments["operation"], arguments["arguments"])
+  File "C:\Users\csscs\Documents\Codex\2026-10-21\edi-meadows-runtime\src\edi\inquiry\operations.py", line 127, in native_arguments
+    raise EDIError(ErrorCode.DENIED, "operation is outside the model-accessible component catalogue")
+edi.shared.errors.EDIError: operation is outside the model-accessible component catalogue
+
+----------------------------------------------------------------------
+Ran 28 tests in 22.831s
+
+FAILED (errors=1)

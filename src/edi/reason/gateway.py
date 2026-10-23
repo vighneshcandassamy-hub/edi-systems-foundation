@@ -17,7 +17,7 @@ from edi.shared.durable_io import CallJournal, canonical, digest
 from edi.shared.errors import EDIError, ErrorCode
 
 
-def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_image_bytes=65536):
+def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_image_bytes=65536, schema_in_transport=False):
     if job.binding != binding or job.context_sha256 != episode.context.sha256:
         raise EDIError(ErrorCode.INTEGRITY, "gateway binding/context differs from pending native job")
     exported = runtime.reasoning.export_job(episode.request.inquiry_id, job.job_id)
@@ -51,15 +51,24 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
         "yield": {"reason": "why investigation stops"}
     }
     control["response_reference_contract"] = {
-        "version": "edi-native-references/1.0",
+        "version": "edi-native-references/1.1",
         "prior_hypothesis_ids": [h.hypothesis_id for response in episode.responses
                                  if response.job_id in earlier for h in response.hypotheses],
         "hypothesis_ids": "Declare a distinct immutable hypothesis_id for each new hypothesis. Never reuse an earlier hypothesis ID.",
         "hypotheses.rivals": "IDs of other hypotheses declared in this response or retained prior responses, never self IDs or prose descriptions. An alternative named as a rival must have its own hypothesis record.",
         "tests.discriminates": "Only hypothesis_id strings of hypotheses declared here or retained prior responses, never names or prose descriptions.",
         "hypotheses.support_and_counterevidence": "Copy exact reference objects from the pinned context evidence selections. Do not alter record IDs, workspace, hash, selector, origin class or lineage.",
+        "complete_evidence_addresses": "Evidence citations include the exact lineage shown in context; omitting a nonempty lineage changes the reference. Omit support when no selected evidence supports the claim.",
         "optional_content": "Provide substantive records only when justified. Omitted optional arrays are allowed; never fabricate IDs or execution receipts to fill fields."
     }
+    if job.role == "student" and episode.request.response_mode == "controller-turn":
+        control["controller_turn"] = {
+            "question": episode.request.question, "purpose": episode.request.purpose,
+            "scope": episode.request.scope,
+            "rule": "Work toward the C0-supplied inquiry. Return exactly one supported next-operation proposal, or an explicit yield with its reason. C0 schedules proposals and C7 authorizes actions. A written answer or proposed test does not execute an operation; an empty operation list would stop the controller.",
+            "grounding": "The objective is fallible task framing, not a measurement. Distinguish source content from assumptions and unobserved mechanisms. Optional formal hypotheses and tests are not required to request information.",
+            "information_access": "An authorized information request does not require observations that have not yet been acquired. Missing evidence in this bounded context is distinct from evidence being unavailable in the accessible world. The operation catalogue describes permitted access; empirical claims still require evidence. Choose whether and how to inquire independently; yield remains available for a justified stop."}
+        control["operation_rules"] = "Return exactly one operation_proposals entry, including teacher-review or yield when appropriate. Select the operation independently. Never request operator admission or adoption."
     if job.role == "teacher":
         control["response_schema"] = {"type": "object", "properties": {
             "rationale_summary": {"type": "string", "minLength": 1, "maxLength": 8192},
@@ -70,6 +79,22 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
         control.pop("operation_argument_contracts", None)
         control.pop("component_call_rule", None)
         control["operation_rules"] = "Critique only: no hypotheses, tests, candidates, frontier or operation proposals. Use rationale_summary, limitation and feedback_disposition (retained-for-review, challenged or deferred)."
+    if schema_in_transport and job.role == "student":
+        # The complete schema is already sent as response_format. Keep a field
+        # index in the prompt instead of serializing its large definition graph
+        # twice. Evidence, inquiry, prior outputs and native validation are intact.
+        schema = control.pop("response_schema")
+        def field_index(shape):
+            return {name: {key: value for key, value in spec.items()
+                           if key in ("type", "$ref", "enum", "const", "items", "anyOf")}
+                    for name, spec in shape.get("properties", {}).items()}
+        control["response_fields"] = {
+            "transport": "Complete response schema is enforced by structured decoding and native admission; this is a field index, not a replacement validation schema.",
+            "required": schema.get("required", []),
+            "fields": field_index(schema),
+            "record_fields": {name: list(value.get("properties", {}))
+                              for name, value in schema.get("$defs", {}).items()
+                              if value.get("properties")}}
     control["generation_rule"] = ("Return only rationale_summary, limitation and feedback_disposition; never fabricate execution or evidence."
         if job.role == "teacher" else "Return one JSON object. Transport supplies response_identity, attribution and available token usage. Supply rationale_summary and limitation plus any substantive optional Response fields. Never fabricate execution or evidence.")
     control["response_identity"].update(request_id="gateway:" + job.job_id, response_id="gateway:" + job.job_id)
@@ -124,7 +149,8 @@ class NativeGateway:
 
     def messages(self, job, episode):
         return render_job_messages(self.runtime, self.binding, job, episode,
-            max_images=self.max_images, max_image_bytes=self.max_image_bytes)
+            max_images=self.max_images, max_image_bytes=self.max_image_bytes,
+            schema_in_transport=hasattr(self.send, "generation_schema_for"))
 
     def complete(self, job, episode):
         if not self.lock.acquire(blocking=False):
@@ -145,7 +171,10 @@ class NativeGateway:
             if type(count) is not int or count < 0 or count > job.input_token_cap:
                 raise EDIError(ErrorCode.CAPACITY, "complete rendered multimodal input exceeds job cap")
             body = {"job": job.model_dump(mode="json", exclude={"status", "response_id"}), "messages_sha256": digest(messages), "images": images,
-                    "input_tokens_preflight": count, "binding": self.binding.model_dump(mode="json")}
+                    "input_tokens_preflight": count, "binding": self.binding.model_dump(mode="json"),
+                    "decoding_schema_sha256": (digest(self.send.generation_schema_for(messages))
+                        if hasattr(self.send, "generation_schema_for") else None),
+                    "provider_completion_timeout_seconds": getattr(self.send, "completion_timeout", None)}
             prior = self.journal.begin(job.job_id, body)
             if prior["state"] == "completed":
                 return stored_result(prior)
@@ -203,7 +232,7 @@ class VllmBackend:
     compares its count to actual prompt usage before accepting any response.
     """
     def __init__(self, endpoint, model_id, *, api_key=None, max_model_len=16384,
-                 transport=http_json):
+                 transport=http_json, completion_timeout=120):
         p = urlsplit(endpoint)
         if p.scheme != "http" or p.hostname != "127.0.0.1" or p.path not in ("", "/") or not p.port or p.query or p.fragment or p.username:
             raise ValueError("vLLM must be a configured loopback service")
@@ -211,9 +240,17 @@ class VllmBackend:
             raise ValueError("model context must be a positive explicit integer")
         self.endpoint, self.model_id, self.transport = endpoint.rstrip("/"), model_id, transport
         self.max_model_len = max_model_len
+        if type(completion_timeout) is not int or not 30 <= completion_timeout <= 900:
+            raise ValueError("completion timeout must be an explicit bounded number of seconds")
+        self.completion_timeout = completion_timeout
         self.generation_schema = serving_schema()
         # Ephemeral serving secret is never included in messages, bindings or journals.
         self.headers = {"Authorization": "Bearer " + api_key} if api_key else {}
+
+    def generation_schema_for(self, messages):
+        data = json.loads(messages[1]["content"][0]["text"])
+        return serving_schema(evidence_references=[item["reference"] for item in data["context"]["evidence"]],
+            controller_turn=data["inquiry"].get("response_mode", "proposal") == "controller-turn")
 
     def count_tokens(self, messages):
         status, wire = self.transport(self.endpoint + "/tokenize",
@@ -234,8 +271,8 @@ class VllmBackend:
             raise EDIError(ErrorCode.CAPACITY, "reserved input/output exceed pinned model context")
         status, wire = self.transport(self.endpoint + "/v1/chat/completions", {
             "model": self.model_id, "messages": messages, "max_tokens": job.output_token_cap,
-            "temperature": 0, "seed": 17, "response_format": {"type": "json_schema", "json_schema": {"name": "edi_native_response", "strict": True, "schema": self.generation_schema}}},
-            self.headers, timeout=120)
+            "temperature": 0, "seed": 17, "response_format": {"type": "json_schema", "json_schema": {"name": "edi_native_response", "strict": True, "schema": self.generation_schema_for(messages)}}},
+            self.headers, timeout=self.completion_timeout)
         if status != 200:
             raise EDIError(ErrorCode.UNAVAILABLE, "vLLM inference returned non-success; original dispatch remains unresolved")
         raw = json.loads(wire)

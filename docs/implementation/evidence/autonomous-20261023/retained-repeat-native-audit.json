@@ -1,0 +1,333 @@
+{
+  "source_files": 73,
+  "engine_files": 69,
+  "source_hashes_verified": true,
+  "integrity": {
+    "owners.agency.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.world.sqlite3": "ok"
+  },
+  "dormant_databases": [
+    "owners.interpret.sqlite3",
+    "owners.analyze.sqlite3",
+    "owners.assess.sqlite3"
+  ],
+  "state": {
+    "error": {
+      "code": "malformed-envelope",
+      "message": "bounded output correction exhausted; rejected originals retained",
+      "retryable": false,
+      "status": "error"
+    },
+    "evidence": [
+      {
+        "length": 1309,
+        "offset": 0,
+        "record_id": "3002d9c0-3a0a-4fd2-a7a4-6c59c7c1c5ad"
+      }
+    ],
+    "known_input_tokens": 20028,
+    "known_output_tokens": 1878,
+    "mission": {
+      "access_protocol": "Public operations use world-call with arguments {operation: public name, body: operation-specific object}. C0 assigns request_id. This catalogue defines available access, not an investigation sequence. Native EDI component operations and selective teacher review are also available through the configured controller.",
+      "objective": "Investigate the recorded change in instrument readings. Determine what the available information supports about the change and a next-reading prediction. Obtain information as needed, then submit findings, uncertainty and any further information needed.",
+      "public_operations": {
+        "ask": {
+          "body": {
+            "person_id": "catalogue interview ID",
+            "question": "your information request"
+          },
+          "returns": "available interview record; unsupported requests remain unknown"
+        },
+        "mission": {
+          "body": {},
+          "returns": "original objective and access catalogue"
+        },
+        "read": {
+          "body": {
+            "document_id": "catalogue document ID"
+          },
+          "returns": "raw document, source attribution and digest"
+        },
+        "sources": {
+          "body": {},
+          "returns": "available document and interview identifiers"
+        },
+        "status": {
+          "body": {},
+          "returns": "session status"
+        },
+        "submit": {
+          "body": {
+            "conclusion": "findings and limitations"
+          },
+          "returns": "closure receipt"
+        }
+      },
+      "scope": "Authored neutral instrument engineering environment; no forest case or empirical science."
+    },
+    "state": "yielded",
+    "stop_reason": "bounded output correction exhausted; rejected originals retained",
+    "turn": 1,
+    "usage_basis": "known reported counts plus full reservation for unknown usage; not an energy/cost measurement",
+    "usage_unknown_jobs": 0,
+    "used_tokens": 21906,
+    "world_ids": []
+  },
+  "episodes": [
+    {
+      "allowed_evidence": [
+        {
+          "lineage": [
+            "broker-acquisition-v1",
+            "edi-autonomous-rerun-20261023",
+            "neutral-controller-edi-autonomous-rerun-20261023:mission",
+            "response"
+          ],
+          "origin_class": "simulation",
+          "record_id": "3002d9c0-3a0a-4fd2-a7a4-6c59c7c1c5ad",
+          "schema_version": "1.0",
+          "selector": "whole-object",
+          "sha256": "8876beabd12b3cfb2d033cba5316784661bf2417a11332c64761c462daccd60a",
+          "workspace_id": "edi-autonomous-rerun-20261023"
+        }
+      ],
+      "rejections": [
+        {
+          "context_sha256": "c8e08a0324d78d7a54595dd2cba933969f2bf1c12c7a72d97e7bdbabcd58a3e5",
+          "diagnostic": "hypothesis cites evidence outside pinned C1 selection",
+          "input_tokens": 9130,
+          "inquiry_id": "neutral-controller-edi-autonomous-rerun-20261023:inquiry:0",
+          "job_id": "319798ca-bcdf-46e7-a8df-fef4034ec866",
+          "output_tokens": 932,
+          "raw_record_id": "14125cf8-3708-496c-b50b-466b24f2ea92",
+          "request_id": "neutral-controller-edi-autonomous-rerun-20261023:inquiry:0:student:0:rejected",
+          "schema_version": "1.0",
+          "status": "returned-output-rejected",
+          "workspace_id": "edi-autonomous-rerun-20261023"
+        },
+        {
+          "context_sha256": "c8e08a0324d78d7a54595dd2cba933969f2bf1c12c7a72d97e7bdbabcd58a3e5",
+          "diagnostic": "hypothesis cites evidence outside pinned C1 selection",
+          "input_tokens": 10898,
+          "inquiry_id": "neutral-controller-edi-autonomous-rerun-20261023:inquiry:0",
+          "job_id": "0acb6c66-075b-4c7c-8ce1-47529b9c6df6",
+          "output_tokens": 946,
+          "raw_record_id": "dfb8507d-ce91-4f08-b7f9-82ab07415138",
+          "request_id": "neutral-controller-edi-autonomous-rerun-20261023:inquiry:0:student:1:rejected",
+          "schema_version": "1.0",
+          "status": "returned-output-rejected",
+          "workspace_id": "edi-autonomous-rerun-20261023"
+        }
+      ],
+      "returned_outputs": [
+        {
+          "attribution": "Configured fixed student via vLLM; reported serving usage",
+          "binding": {
+            "engine": "vllm/0.21.0",
+            "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+            "provider": "local-vllm",
+            "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+            "schema_version": "1.0",
+            "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+            "weights": "fixed"
+          },
+          "candidates": [],
+          "context_sha256": "c8e08a0324d78d7a54595dd2cba933969f2bf1c12c7a72d97e7bdbabcd58a3e5",
+          "feedback_disposition": "not-applicable",
+          "frontier": [],
+          "hypotheses": [
+            {
+              "applicability": "The available evidence supports a bounded, simulation-based investigation of instrument readings under neutral engineering conditions.",
+              "assumptions": [
+                "The instrument readings are deterministic within the simulated environment.",
+                "The mission objective is to predict the next reading based on available evidence.",
+                "No external drivers or empirical science are involved."
+              ],
+              "claim": "The recorded change in instrument readings is attributable to internal system dynamics within the simulated environment.",
+              "confounders": [
+                "The simulation may not capture all real-world physical behaviors.",
+                "The model may not account for all possible system interactions."
+              ],
+              "counterevidence": [],
+              "dependence_groups": [],
+              "hypothesis_id": "hypothesis-001",
+              "mechanism": "The change in instrument readings is driven by internal system dynamics within the simulated environment, as no external drivers or empirical science are involved.",
+              "predictions": [
+                {
+                  "channel": "instrument-readings",
+                  "conditions": "The system is in a stable state with no external drivers.",
+                  "expected_observation": "The next reading will follow a predictable pattern based on internal system dynamics.",
+                  "horizon": "Immediate next reading",
+                  "rival_difference": "Rivals would predict deviations due to unmodeled external factors or empirical science.",
+                  "schema_version": "1.0"
+                }
+              ],
+              "rivals": [],
+              "schema_version": "1.0",
+              "scope": "The investigation is limited to the acquired evidence and attributed EDI artifacts within the simulated environment.",
+              "status": "candidate",
+              "support": [
+                {
+                  "lineage": [],
+                  "origin_class": "simulation",
+                  "record_id": "3002d9c0-3a0a-4fd2-a7a4-6c59c7c1c5ad",
+                  "schema_version": "1.0",
+                  "selector": "whole-object",
+                  "sha256": "8876beabd12b3cfb2d033cba5316784661bf2417a11332c64761c462daccd60a",
+                  "workspace_id": "edi-autonomous-rerun-20261023"
+                }
+              ],
+              "unknowns": [
+                "The simulation may not capture all real-world physical behaviors.",
+                "The model may not account for all possible system interactions."
+              ]
+            }
+          ],
+          "input_tokens": 9130,
+          "inquiry_id": "neutral-controller-edi-autonomous-rerun-20261023:inquiry:0",
+          "job_id": "319798ca-bcdf-46e7-a8df-fef4034ec866",
+          "limitation": "The investigation is bounded to the acquired evidence and attributed EDI artifacts within the simulated environment. Older records, derivations, C4 episodes, and C3 candidates remain available through native component reads but are not included in this bounded cut.",
+          "operation_proposals": [],
+          "origin": "external-model-output",
+          "output_tokens": 932,
+          "rationale_summary": "The available evidence supports a bounded, simulation-based investigation of instrument readings under neutral engineering conditions. The claim is that the recorded change in instrument readings is attributable to internal system dynamics within the simulated environment. The mechanism is that the change is driven by internal system dynamics, as no external drivers or empirical science are involved. The prediction is that the next reading will follow a predictable pattern based on internal system dynamics. The unknowns are that the simulation may not capture all real-world physical behaviors and the model may not account for all possible system interactions.",
+          "request_id": "gateway:319798ca-bcdf-46e7-a8df-fef4034ec866",
+          "response_id": "gateway:319798ca-bcdf-46e7-a8df-fef4034ec866",
+          "schema_version": "1.0",
+          "tests": [
+            {
+              "channels": [
+                "instrument-readings"
+              ],
+              "confounding_controls": "The simulation is deterministic and no external drivers are involved.",
+              "cost_and_risk": "Low cost and risk as the investigation is bounded to the acquired evidence and attributed EDI artifacts within the simulated environment.",
+              "discriminates": [
+                "hypothesis-001"
+              ],
+              "expected_differences": "Rivals would predict deviations due to unmodeled external factors or empirical science.",
+              "feasibility": "High feasibility as the investigation is bounded to the acquired evidence and attributed EDI artifacts within the simulated environment.",
+              "identifiability_limit": "The simulation may not capture all real-world physical behaviors and the model may not account for all possible system interactions.",
+              "intervention_or_observation": "Observation of the next reading.",
+              "kind": "observation",
+              "schema_version": "1.0",
+              "status": "proposed-unrun",
+              "test_id": "test-001"
+            }
+          ],
+          "workspace_id": "edi-autonomous-rerun-20261023"
+        },
+        {
+          "attribution": "Configured fixed student via vLLM; reported serving usage",
+          "binding": {
+            "engine": "vllm/0.21.0",
+            "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+            "provider": "local-vllm",
+            "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+            "schema_version": "1.0",
+            "tokenizer_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+            "weights": "fixed"
+          },
+          "candidates": [],
+          "context_sha256": "c8e08a0324d78d7a54595dd2cba933969f2bf1c12c7a72d97e7bdbabcd58a3e5",
+          "feedback_disposition": "not-applicable",
+          "frontier": [],
+          "hypotheses": [
+            {
+              "applicability": "The available evidence supports a bounded, simulation-based investigation of instrument readings under neutral engineering conditions. The mission objective is to predict the next reading based on available evidence, and no external drivers or empirical science are involved.",
+              "assumptions": [
+                "The instrument readings are deterministic within the simulated environment.",
+                "The mission objective is to predict the next reading based on available evidence.",
+                "No external drivers or empirical science are involved."
+              ],
+              "claim": "The recorded change in instrument readings is attributable to internal system dynamics within the simulated environment.",
+              "confounders": [
+                "The simulation may not capture all real-world physical behaviors.",
+                "The model may not account for all possible system interactions."
+              ],
+              "counterevidence": [],
+              "dependence_groups": [],
+              "hypothesis_id": "hypothesis-001",
+              "mechanism": "The change in instrument readings is driven by internal system dynamics within the simulated environment, as no external drivers or empirical science are involved.",
+              "predictions": [
+                {
+                  "channel": "instrument-readings",
+                  "conditions": "The system is in a stable state with no external drivers.",
+                  "expected_observation": "The next reading will follow a predictable pattern based on internal system dynamics.",
+                  "horizon": "Immediate next reading",
+                  "rival_difference": "Rivals would predict deviations due to unmodeled external factors or empirical science.",
+                  "schema_version": "1.0"
+                }
+              ],
+              "rivals": [],
+              "schema_version": "1.0",
+              "scope": "The investigation is limited to the acquired evidence and attributed EDI artifacts within the simulated environment.",
+              "status": "candidate",
+              "support": [
+                {
+                  "lineage": [],
+                  "origin_class": "simulation",
+                  "record_id": "3002d9c0-3a0a-4fd2-a7a4-6c59c7c1c5ad",
+                  "schema_version": "1.0",
+                  "selector": "whole-object",
+                  "sha256": "8876beabd12b3cfb2d033cba5316784661bf2417a11332c64761c462daccd60a",
+                  "workspace_id": "edi-autonomous-rerun-20261023"
+                }
+              ],
+              "unknowns": [
+                "The simulation may not capture all real-world physical behaviors.",
+                "The model may not account for all possible system interactions."
+              ]
+            }
+          ],
+          "input_tokens": 10898,
+          "inquiry_id": "neutral-controller-edi-autonomous-rerun-20261023:inquiry:0",
+          "job_id": "0acb6c66-075b-4c7c-8ce1-47529b9c6df6",
+          "limitation": "The investigation is bounded to the acquired evidence and attributed EDI artifacts within the simulated environment. Older records, derivations, C4 episodes, and C3 candidates remain available through native component reads but are not included in this bounded cut.",
+          "operation_proposals": [],
+          "origin": "external-model-output",
+          "output_tokens": 946,
+          "rationale_summary": "The available evidence supports a bounded, simulation-based investigation of instrument readings under neutral engineering conditions. The claim is that the recorded change in instrument readings is attributable to internal system dynamics within the simulated environment. The mechanism is that the change is driven by internal system dynamics, as no external drivers or empirical science are involved. The prediction is that the next reading will follow a predictable pattern based on internal system dynamics. The unknowns are that the simulation may not capture all real-world physical behaviors and the model may not account for all possible system interactions.",
+          "request_id": "gateway:0acb6c66-075b-4c7c-8ce1-47529b9c6df6",
+          "response_id": "gateway:0acb6c66-075b-4c7c-8ce1-47529b9c6df6",
+          "schema_version": "1.0",
+          "tests": [
+            {
+              "channels": [
+                "instrument-readings"
+              ],
+              "confounding_controls": "The simulation is deterministic and no external drivers are involved.",
+              "cost_and_risk": "Low cost and risk as the investigation is bounded to the acquired evidence and attributed EDI artifacts within the simulated environment.",
+              "discriminates": [
+                "hypothesis-001"
+              ],
+              "expected_differences": "Rivals would predict deviations due to unmodeled external factors or empirical science.",
+              "feasibility": "High feasibility as the investigation is bounded to the acquired evidence and attributed EDI artifacts within the simulated environment.",
+              "identifiability_limit": "The simulation may not capture all real-world physical behaviors and the model may not account for all possible system interactions.",
+              "intervention_or_observation": "Observation of the next reading.",
+              "kind": "observation",
+              "schema_version": "1.0",
+              "status": "proposed-unrun",
+              "test_id": "test-001"
+            }
+          ],
+          "workspace_id": "edi-autonomous-rerun-20261023"
+        }
+      ]
+    }
+  ],
+  "restart_mismatch": {
+    "differences": [],
+    "same": true
+  },
+  "process_failures": [
+    {
+      "error": "",
+      "error_type": "AssertionError",
+      "no_automatic_inference_retry": true,
+      "traceback": "Traceback (most recent call last):\n  File \"/kaggle/temp/edi-autonomous-rerun-20261023-source/run.py\", line 145, in <module>\n    main()\n    ~~~~^^\n  File \"/kaggle/temp/edi-autonomous-rerun-20261023-source/run.py\", line 108, in main\n    assert len(integrity) == 8 and set(integrity.values()) == {\"ok\"}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    }
+  ]
+}

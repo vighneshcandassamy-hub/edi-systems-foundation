@@ -1,0 +1,8 @@
+{
+  "scope": "retained native checkpoint transport recovery only",
+  "exact_selected_sha256": "bcbcf5469bef9594bd45dcef1fb0236041fd373ad2486a4552441eeaec2cfb2b",
+  "other_checkpoint_not_extracted": true,
+  "unknown_selector_rejected": true,
+  "model_calls": 0,
+  "passed": true
+}

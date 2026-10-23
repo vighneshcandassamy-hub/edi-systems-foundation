@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"documentation/import/graph checks only\",\n  \"imported_files\": 40,\n  \"payload_files_checked\": 732,\n  \"master_foundations\": 346,\n  \"master_requirements\": 54,\n  \"master_prospective_cases\": 192,\n  \"master_nodes\": 82,\n  \"master_edges\": 241,\n  \"reference_source_entries\": 102,\n  \"reference_requirements\": 20,\n  \"reference_prospective_cases\": 24,\n  \"model_cases_run\": false,\n  \"remote_status_checked_by_this_script\": false,\n  \"issues\": []\n}\n",
+  "stderr": ""
+}

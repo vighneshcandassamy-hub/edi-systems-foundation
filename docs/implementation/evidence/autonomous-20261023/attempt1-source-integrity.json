@@ -1,0 +1,13 @@
+{
+  "engine_source_unchanged": true,
+  "engine_files_verified": 69,
+  "parent": "68111c370042b465a262f6210c25da6915c8f535",
+  "runner_files": {
+    "examples/autonomous/neutral_world.py": "5782272affe20b77976bcf44332ce6fd13a5d5908ef06edacf4a420fdafbd339",
+    "examples/autonomous/prepare_kaggle_run.py": "7326adb9c61f60c47bd0cb5f4f086eca8385eb13c767c3e923b9b6d15b457f35",
+    "examples/autonomous/run.py": "feafab568266d94c06e9b4a5e7d013f55cf6cb5049d07c8e9db796d675eac001",
+    "examples/autonomous/server.py": "0891392a28f872cb97330c606d0c6ff2b70ad4213bd66d2a6d5d827fee7fdb07"
+  },
+  "provider_calls": 0,
+  "scope": "preflight source integrity and syntax only"
+}

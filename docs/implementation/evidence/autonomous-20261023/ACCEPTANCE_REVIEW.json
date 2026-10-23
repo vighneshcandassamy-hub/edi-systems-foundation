@@ -1,0 +1,12 @@
+{
+  "autonomous_information_acquisition": false,
+  "raw_instrument_used_in_submission": false,
+  "supported_final_submission": false,
+  "justified_information_coverage_before_stop": false,
+  "fresh_process_native_restart": true,
+  "eight_owner_integrity": true,
+  "source_and_wheel_identity": true,
+  "verdict": "revise",
+  "independent": false,
+  "basis": "Student explicitly yielded after the mission only; no execution/validation error; sources/read/ask/submit/teacher never requested. No fabricated measurement was accepted, but abstention alone does not satisfy acquisition/submission criteria."
+}

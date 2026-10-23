@@ -10,9 +10,13 @@ from edi.shared.errors import EDIError, ErrorCode
 
 
 def canonical(value):
-    if hasattr(value, "model_dump"):
-        value = value.model_dump(mode="json")
-    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    def native(item):
+        if hasattr(item, "model_dump"):
+            return item.model_dump(mode="json")
+        raise TypeError("Object of type " + type(item).__name__ + " is not JSON serializable")
+    # json.dumps applies this conversion at every nested value, including typed
+    # proposals inside digest lists and component results inside envelopes.
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False, default=native)
 
 
 def digest(value):

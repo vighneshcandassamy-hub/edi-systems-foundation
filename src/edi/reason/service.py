@@ -262,6 +262,8 @@ class Reasoning:
                 raise EDIError(ErrorCode.DENIED, "teacher output is fallible critique only; student must revise proposals")
         elif response.feedback_disposition != "not-applicable":
             raise EDIError(ErrorCode.INVALID, "student output cannot label itself teacher feedback")
+        if job.role == "student" and old.request.response_mode == "controller-turn" and len(response.operation_proposals) != 1:
+            raise EDIError(ErrorCode.INVALID, "controller turn requires one next-operation proposal or explicit yield")
         if len(response.hypotheses) > old.request.budget.rivals_per_round:
             raise EDIError(ErrorCode.CAPACITY, "rival budget exceeded")
         prior_ids = {h.hypothesis_id for r in old.responses for h in r.hypotheses}

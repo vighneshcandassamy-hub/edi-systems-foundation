@@ -1,0 +1,34 @@
+{
+  "schema": "edi-autonomous-execution-amendment/1.0",
+  "parent": "68111c370042b465a262f6210c25da6915c8f535",
+  "original_protocol": "protocol.json is retained unchanged as the first attempted source baseline",
+  "current_engine": "0.10.5.dev0",
+  "current_bundle_files": 76,
+  "reason": [
+    "Retained repeat omitted nonempty lineage; controller output did not require an explicit operation.",
+    "Duplicated schema in prompt exceeded input cap before provider dispatch.",
+    "Recovered raw state exposed nested native serialization failure in command identity; authored native regression also exposed nested C2 result envelope failure.",
+    "0.10.4 cleanly yielded because missing selected readings were interpreted as preventing an information request. Generic access contract clarifies permission versus empirical support without any world ID or chosen operation."
+  ],
+  "preserved": [
+    "Original lost raw state declared unavailable",
+    "Retained 0.10.1 repeat and native rejection diagnostics",
+    "0.10.2 preflight failure checkpoint",
+    "0.10.3 12 accepted decisions with zero selected connector calls; serialization failure, not successful operations",
+    "First authored dispatch regression failure",
+    "Initial CPU stale catalogue failures and fixture exception mismatch"
+  ],
+  "unchanged": [
+    "Mission objective",
+    "Resource contents and accessibility",
+    "Acceptance criteria",
+    "Pinned Qwen checkpoint and fixed weights",
+    "24 turn,393216 policy units,3600 seconds,64 public requests,one correction limits",
+    "No imposed live operation sequence or hypothesis",
+    "Teacher optional and student-selected",
+    "No paid fallback or scientific/comparative claim"
+  ],
+  "interpretation": "Post-repair engineering diagnostic; not an unchanged-engine preregistered scientific result.",
+  "prior_engine": "0.10.4.dev0",
+  "current_bundle_sha256": "007143ebcebda85fc4721c5c12202eaf47f70c3b486ed92122447ef9420943b0"
+}

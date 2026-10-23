@@ -1,0 +1,37 @@
+{
+  "scope": "repository/source/report consistency; actual native/live evidence is separately scoped",
+  "results": [
+    {
+      "name": "baseline",
+      "exit_code": 0,
+      "log": "checks/baseline.log"
+    },
+    {
+      "name": "documentation",
+      "exit_code": 0,
+      "log": "checks/documentation.log"
+    },
+    {
+      "name": "component-review",
+      "exit_code": 0,
+      "log": "checks/component-review.log"
+    },
+    {
+      "name": "owner-interfaces",
+      "exit_code": 0,
+      "log": "checks/owner-interfaces.log"
+    },
+    {
+      "name": "outside-interfaces",
+      "exit_code": 0,
+      "log": "checks/outside-interfaces.log"
+    },
+    {
+      "name": "diff-whitespace",
+      "exit_code": 2,
+      "log": "checks/diff-whitespace.log"
+    }
+  ],
+  "harness_ast": "passed",
+  "passed": false
+}

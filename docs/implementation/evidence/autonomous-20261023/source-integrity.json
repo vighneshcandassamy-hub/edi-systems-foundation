@@ -1,0 +1,14 @@
+{
+  "engine_files_unchanged": 69,
+  "parent": "68111c370042b465a262f6210c25da6915c8f535",
+  "harness_files": {
+    "checkpoint.py": "72acc024c04939c4d3698cde54dedbdbfc9b96402d2c11d044c629dcedc7a242",
+    "neutral_world.py": "5782272affe20b77976bcf44332ce6fd13a5d5908ef06edacf4a420fdafbd339",
+    "prepare_kaggle_run.py": "8bb23ebec8c05f0a0e141efc20988d7c16b618525f8a377178a0ca452665a55b",
+    "recover_checkpoint.py": "669ea19572789f4f3d0a6f3a8488f0d43e615748eb49a50043d4c5c9cd7143b4",
+    "run.py": "c3067915ed9c9f77f1ac0506b7a068eb81365fcad3fdcb0015d7e5aa7b5a4900",
+    "server.py": "201d6f61d7fa4307b6f27059f7827ad1a3799e5d244a6289338970fff55eb5cf"
+  },
+  "model_calls_by_check": 0,
+  "scope": "source integrity/syntax only"
+}

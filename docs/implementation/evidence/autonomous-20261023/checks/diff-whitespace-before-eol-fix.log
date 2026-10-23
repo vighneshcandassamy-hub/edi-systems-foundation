@@ -1,0 +1,716 @@
+README.md:1: trailing whitespace.
++# EDI Systems Foundation
+README.md:2: trailing whitespace.
++
+README.md:3: trailing whitespace.
++The Meadows-based system-of-systems architecture baseline for the next EDI iteration.
+README.md:4: trailing whitespace.
++
+README.md:5: trailing whitespace.
++**Code version:**0.10.5.dev0. **Status:** native connection/dispatch repairs and28 CPU checks pass; the autonomous neutral trial yielded without information acquisition, so readiness remains REVISE. Fresh-process restart, eight-store integrity and source/wheel equality pass. The Meadows diagnostic remains unstarted. See [autonomous run report](docs/implementation/AUTONOMOUS_RUN.md).
+README.md:6: trailing whitespace.
++
+README.md:7: trailing whitespace.
++This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
+README.md:8: trailing whitespace.
++
+README.md:9: trailing whitespace.
++## Completed engineering integration walkthrough
+README.md:10: trailing whitespace.
++
+README.md:11: trailing whitespace.
++[Run report](docs/implementation/ENGINEERING_RUN.md), [current readiness](docs/implementation/INTEGRATION_READINESS.md), [reviewed evidence](docs/implementation/evidence/engineering-20261022/runtime-results.json) and [reproducible harness](examples/engineering/README.md) record 32 completed native handoffs, retained failures, source/model pins, eight-store integrity and normal restart. The source repair connects C0's standing-grant request to the existing C7 authority method. Teacher uptake was partial; test planning still needs improvement. This authored neutral case establishes engineering behavior only.
+README.md:12: trailing whitespace.
++
+README.md:13: trailing whitespace.
++The following source-increment notes preserve historical scope; use readiness above for current status.
+README.md:14: trailing whitespace.
++
+README.md:15: trailing whitespace.
++## Historical benchmark connection execution
+README.md:16: trailing whitespace.
++
+README.md:17: trailing whitespace.
++[Connection checkpoint and remaining gates](docs/implementation/BENCHMARK_CONNECTION.md), [engineering evidence](docs/implementation/evidence/benchmark-connection/), [CPU test runner](scripts/run_benchmark_connection_tests.py) and [unchanged frozen benchmark](benchmarks/meadows-budworm/README.md) are saved on `benchmark/runtime-integration-20261021`. This execution branch combines the two pinned source lines without merging the implementation proposal into main. Fixture transport checks are distinct from actual model reasoning.
+README.md:18: trailing whitespace.
++
+README.md:19: trailing whitespace.
++## Current architecture and saved references
+README.md:20: trailing whitespace.
++
+README.md:21: trailing whitespace.
++- [Saved asset index](docs/ASSET_INDEX.md) — current architecture, references, requirements, interfaces and skills; pinned GitHub storage audit.
+README.md:22: trailing whitespace.
++- [Full integrated architecture v0.8](architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) and [integrated diagram](docs/implementation/INTEGRATED_REASONING_DIAGRAM.md).
+README.md:23: trailing whitespace.
++- [Consolidated architecture, tools and mathematics reference v1.0](docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md).
+README.md:24: trailing whitespace.
++
+README.md:25: trailing whitespace.
++Latest design/reference and code additions are stored on `architecture/implementation-tradeoffs-20261020` through [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). Main retains the earlier foundation until that proposal is merged. Training and product qualification remain open.
+README.md:26: trailing whitespace.
++
+README.md:27: trailing whitespace.
++## Historical integrated-workflow source increment
+README.md:28: trailing whitespace.
++
+README.md:29: trailing whitespace.
++[C0 workflow specification](docs/implementation/C0_INTEGRATED_WORKFLOW.md), [requirements/case trace](docs/implementation/INTEGRATION_TRACE.json), [readiness and model-tool status](docs/implementation/INTEGRATION_READINESS.md), [source](src/edi/inquiry/) and [28-step skeleton](examples/workflow/) document 51 native operation mappings, immutable plans/inputs, bounded earlier-output references, explicit operator-decision handoffs, durable step intents, acceptance conditions, attempt/recovery records and internal findings delivery. Five schemas and a scoped source/interface review are saved. No workflow or test was run.
+README.md:30: trailing whitespace.
++
+README.md:31: trailing whitespace.
++The separate [holistic test design](docs/implementation/INTEGRATED_TEST_DESIGN.md) covers engineering integration, nonlinear ecology, human information/latent causes, cumulative world growth/transfer, failure/capacity and strong matched LLM/memory comparisons. Fixtures, native models and scientific acceptance details remain explicit pre-execution decisions; the plan is not an executed benchmark or full qualification.
+README.md:32: trailing whitespace.
++
+README.md:33: trailing whitespace.
++## Prior C7 code increment
+README.md:34: trailing whitespace.
++
+README.md:35: trailing whitespace.
++[C7 specification](docs/implementation/C7_AGENCY_RUNTIME.md), [requirements trace](docs/implementation/C7_RUNTIME_TRACE.json), [ADR-009](docs/decisions/ADR-009-research-agency-and-policy-adoption.md), [source](src/edi/agency/) and [templates](examples/agency/) document attributed actor-information masks, explicit owned policy amendments/adoption, scoped internal-read grants, durable command/receipt reconciliation, access review and candidate-only C3 policy descriptions. C1 archives bounded generated reports through a restricted facade. No policy, actor view, command, report, Runtime/store or product/qualification case ran. All eight owners now have a first source subset; integrated C0 orchestration, native inference and qualification remain open.
+README.md:36: trailing whitespace.
++
+README.md:37: trailing whitespace.
++## Prior C6 code increment
+README.md:38: trailing whitespace.
++
+README.md:39: trailing whitespace.
++[C6 specification](docs/implementation/C6_ASSESSMENT_RUNTIME.md), [trace](docs/implementation/C6_RUNTIME_TRACE.json), [ADR-008](docs/decisions/ADR-008-prospective-assessment-and-advice.md), [source](src/edi/assess/) and [examples](examples/assessment/) document immutable forecast/confirmation records, fixed-cut first-occurrence measurement selection, scalar/Brier scores, descriptive calibration, missing/censored-data handling, attributed revision/finding/inquiry reviews and staged candidate-only C3 proposals. Native C4/C5 facades connect the assessment path while C3 retains admission. No registration, scan, score, Runtime/store or qualification case ran.
+README.md:40: trailing whitespace.
++
+README.md:41: trailing whitespace.
++## Prior C5 code increment
+README.md:42: trailing whitespace.
++
+README.md:43: trailing whitespace.
++[C5 specification](docs/implementation/C5_ANALYSIS_RUNTIME.md), [requirements trace](docs/implementation/C5_RUNTIME_TRACE.json), [ADR-007](docs/decisions/ADR-007-restricted-conditional-analysis.md), [source](src/edi/analyze/) and [examples](examples/analysis/) define the restricted dimensional stock/flow compiler, optional pinned SciPy ODE adapter, isolated parameter scenarios, conditional trajectories/accounting diagnostics, finite ranges/secants and durable run/cancellation/fencing lifecycle. C0 routes analysis; C5 reads C1/C3 and exposes immutable results to future C6. Simulation-origin outputs remain unsealed for prospective assessment. No compiler, solver, Runtime/store, scenario or product/qualification case ran.
+README.md:44: trailing whitespace.
++
+README.md:45: trailing whitespace.
++## Prior C4 code increment
+README.md:46: trailing whitespace.
++
+README.md:47: trailing whitespace.
++[C4 specification and usage](docs/implementation/C4_REASONING_RUNTIME.md), [requirements trace](docs/implementation/C4_RUNTIME_TRACE.json), [ADR-006](docs/decisions/ADR-006-bounded-reasoning-control.md), [source](src/edi/reason/) and [examples](examples/reason/) describe pinned C1/C3 context, a selectable Meadows protocol, bounded student/teacher export/import jobs, attributed rival hypotheses and test designs, a persistent exploration frontier/C0 outbox and candidate-only C3 submission. Exact pretrained model/provider/hardware bindings and native inference remain open. No model call, runtime/product test, simulation or qualification ran.
+README.md:48: trailing whitespace.
++
+README.md:49: trailing whitespace.
++## Prior C2 code increment
+README.md:50: trailing whitespace.
++
+README.md:51: trailing whitespace.
++[C2 specification and usage](docs/implementation/C2_INTERPRETATION_RUNTIME.md), [requirements trace](docs/implementation/C2_RUNTIME_TRACE.json), [ADR-005](docs/decisions/ADR-005-attributed-interpretation.md), [source](src/edi/interpret/), [examples](examples/interpret/) and [schemas](schemas/) describe native decoding, versioned attribution/features and candidate-only C3 proposals. C2 never rewrites original C1 evidence or accepts its own claims. Unsupported formats remain explicit. No runtime/product/qualification cases ran. C3 supports this bounded source integration, but complete C3 requirement acceptance remains open.
+README.md:52: trailing whitespace.
++
+README.md:53: trailing whitespace.
++## Preserved C3 code increment
+README.md:54: trailing whitespace.
++
+README.md:55: trailing whitespace.
++[C3 runtime specification and usage](docs/implementation/C3_WORLD_RUNTIME.md) cover nine typed representation families, evidence links to C1, candidate/operator admission, append-only versions, bounded views and dependency queries. [ADR-004](docs/decisions/ADR-004-versioned-world-hosting.md), [examples](examples/world/) and [generated contract schemas](schemas/) record the implementation. C3 uses its own lazily opened local store so C1 recording does not depend on C3 storage availability. No product tests, qualification or benchmarks have run for this increment.
+README.md:56: trailing whitespace.
++
+README.md:57: trailing whitespace.
++## Preserved first C1 code increment
+README.md:58: trailing whitespace.
++
+README.md:59: trailing whitespace.
++[Runtime specification and local-use guide](docs/implementation/FOUNDATION_C1_RUNTIME.md) describe the [shared code](src/edi/), [local examples](examples/observation/), [backend decision](docs/decisions/ADR-003-local-observation-runtime.md) and [scoped source review](docs/implementation/evidence/foundation-c1-source-review.json).
+README.md:60: trailing whitespace.
++
+README.md:61: trailing whitespace.
++C1 preserves original bytes, registered source/epoch continuity, immutable occurrence receipts, hashes, bounded replay/range reads, checkpoints and backups. Its initial SQLite adapter commits chunks, metadata and the replay/outbox log in one transaction. PostgreSQL/object storage remains a later adapter. No model inference is needed for recording/replay. See the guide for finite limits and deferred connector, retention, HA and qualification work.
+README.md:62: trailing whitespace.
++
+README.md:63: trailing whitespace.
++Before the benchmark connection increment, only syntax/import/CLI-parser checks had run. New scoped CPU engineering evidence is linked above. The full authored P1 workflow and scientific qualification remain unrun.
+README.md:64: trailing whitespace.
++
+README.md:65: trailing whitespace.
++## Foundation and supporting documents
+README.md:66: trailing whitespace.
++
+README.md:67: trailing whitespace.
++1. [Preserved conceptual foundation v0.7](architecture/world-model/Meadows_Chapters_1_2_3_4_5_6_7_Integrated_Architecture_Audit_v0_7.md) — nine representation families; one master diagram; 54 cumulative requirements; 192 prospective scenarios.
+README.md:68: trailing whitespace.
++2. [Semantic foundation](architecture/reference/Meadows_Appendix_187_203_Semantic_Foundation_Reference_v1_0.md) — appendix pages 187–203; 18 glossary terms, 40 principles, eight traps, twelve intervention positions, fifteen guidelines and nine model families.
+README.md:69: trailing whitespace.
++3. [Architecture precedence](architecture/README.md) — how current foundations relate to retained component plans.
+README.md:70: trailing whitespace.
++4. [Project state](STATE.md), [development roadmap](docs/ROADMAP.md) and [baseline decision](docs/decisions/ADR-001-foundation-baseline.md).
+README.md:71: trailing whitespace.
++5. [Component review skill](.agents/skills/edi-component-review/SKILL.md) and [interface review skill](.agents/skills/edi-interface-review/SKILL.md).
+README.md:72: trailing whitespace.
++6. [Implementation architecture and technique assessment](docs/implementation/README.md) — current model/framework tradeoffs, component specifications, requirements flowdown, proposed interfaces and prospective verification profiles, documented before runtime development.
+README.md:73: trailing whitespace.
++
+README.md:74: trailing whitespace.
++## Retained component plans
+README.md:75: trailing whitespace.
++
+README.md:76: trailing whitespace.
++- [Observation](architecture/observation/OBSERVATION_PLAN.md) and [component specifications](architecture/observation/COMPONENT_SPECS.md).
+README.md:77: trailing whitespace.
++- [Substrate plan](architecture/substrate/SUBSTRATE_PLAN.md) and [blueprint](architecture/substrate/SUBSTRATE_BLUEPRINT.md).
+README.md:78: trailing whitespace.
++- [Observation–substrate interfaces](architecture/integration/OBSERVATION_SUBSTRATE.md).
+README.md:79: trailing whitespace.
++
+README.md:80: trailing whitespace.
++These plans retain their original evidence and assumptions. Reconcile them against the current architecture and semantic reference before implementation. Their previous document-check results do not qualify a new runtime or settle every later semantic decision.
+README.md:81: trailing whitespace.
++
+README.md:82: trailing whitespace.
++## Verify this snapshot
+README.md:83: trailing whitespace.
++
+README.md:84: trailing whitespace.
++```sh
+README.md:85: trailing whitespace.
++python scripts/verify_baseline.py
+README.md:86: trailing whitespace.
++```
+README.md:87: trailing whitespace.
++
+README.md:88: trailing whitespace.
++This checks preserved-file hashes, canonical source allocations, requirement/case identifiers, the master graph, key reference counts and credential-pattern exclusion. It does not run the 192 architecture scenarios or the 24 reference-use scenarios. Those catalogues overlap and must not be presented as 216 independent tests.
+README.md:89: trailing whitespace.
++
+README.md:90: trailing whitespace.
++## Provenance and ownership
+README.md:91: trailing whitespace.
++
+README.md:92: trailing whitespace.
++Intended private GitHub destination: `vighneshcandassamy-hub/edi-systems-foundation`.
+README.md:93: trailing whitespace.
++The previous research repository is [edi-lab](https://github.com/vighneshcandassamy-hub/edi-lab). It remains the source for earlier implementations, experiments and their original limitations.
+README.md:94: trailing whitespace.
++
+README.md:95: trailing whitespace.
++[Import manifest](evidence/import_manifest.json) records exact file hashes and source identity. The source book is an external reference; this snapshot contains the architecture's analysis and paraphrased appendix reference. No model weights or inference credentials are required.
+STATE.md:1: trailing whitespace.
++# EDI Systems Foundation — checkpoint
+STATE.md:2: trailing whitespace.
++
+STATE.md:3: trailing whitespace.
++## Current checkpoint —23 October 2026
+STATE.md:4: trailing whitespace.
++
+STATE.md:5: trailing whitespace.
++Code0.10.5.dev0 on integration/autonomous-controller-20261023. The three authorized
+STATE.md:6: trailing whitespace.
++engineering steps are complete. Existing controller wiring was inspected; exact
+STATE.md:7: trailing whitespace.
++citation/controller-decision, prompt duplication and nested native serialization
+STATE.md:8: trailing whitespace.
++faults were repaired.28 CPU checks and authored native dispatch/grammar regressions
+STATE.md:9: trailing whitespace.
++pass. The final real Qwen trial yielded after mission only:4,018 input/170 output
+STATE.md:10: trailing whitespace.
++tokens, no acquisition, teacher request or submission. Autonomous readiness is
+STATE.md:11: trailing whitespace.
++REVISE; the first Meadows diagnostic has not started. Fresh native restart is
+STATE.md:12: trailing whitespace.
++identical with zero redispatch, all eight databases pass integrity, and76 exported
+STATE.md:13: trailing whitespace.
++source files/all69 core wheel files match. Raw evidence is recovered and the owned
+STATE.md:14: trailing whitespace.
++server/session are stopped. See [current report](docs/implementation/AUTONOMOUS_RUN.md)
+STATE.md:15: trailing whitespace.
++for exact paths, hashes, retained failures, scoped review and next design work.
+STATE.md:16: trailing whitespace.
++No paid API, weight training or scientific/comparative result is claimed.
+STATE.md:17: trailing whitespace.
++
+STATE.md:18: trailing whitespace.
++The dated checkpoints below preserve earlier scope and are historical.
+STATE.md:19: trailing whitespace.
++
+STATE.md:20: trailing whitespace.
++
+STATE.md:21: trailing whitespace.
++Date: 21 October 2026. Code version: 0.9.0; conceptual source baseline retained.
+STATE.md:22: trailing whitespace.
++
+STATE.md:23: trailing whitespace.
++## What is stored
+STATE.md:24: trailing whitespace.
++
+STATE.md:25: trailing whitespace.
++- Integrated Meadows Chapters 1–7 conceptual architecture, internal v0.7, saved source version 5.
+STATE.md:26: trailing whitespace.
++- Appendix pages 187–203 semantic reference, v1.0.
+STATE.md:27: trailing whitespace.
++- Retained observation, substrate and integration planning snapshots with their original evidence.
+STATE.md:28: trailing whitespace.
++- Existing component-review and interface-review skills and bundled helpers.
+STATE.md:29: trailing whitespace.
++- Import hashes, a local consistency checker and the initial repository decision.
+STATE.md:30: trailing whitespace.
++
+STATE.md:31: trailing whitespace.
++## Evidence status
+STATE.md:32: trailing whitespace.
++
+STATE.md:33: trailing whitespace.
++The conceptual documents have consistency/traceability reviews. The master architecture contains nine representation families, 346 catalogue units, 54 requirements and 192 prospective scenarios. Its master graph has 82 nodes and 241 named connections. The appendix reference allocates 102 source entries, 20 working requirements and 24 prospective reference-use cases. All model scenarios remain PLANNED — NOT RUN. Earlier retained checks are historical and do not establish a new runtime.
+STATE.md:34: trailing whitespace.
++
+STATE.md:35: trailing whitespace.
++## Current scope
+STATE.md:36: trailing whitespace.
++
+STATE.md:37: trailing whitespace.
++The baseline, research, bounded first source implementations across C0-C7 and C0 integration-workflow source are stored on the architecture branch. The latest owner instruction explicitly defers testing while integration and a holistic test design are finalized. Native reasoning inference, runtime integration, product qualification and broader original obligations remain open. No earlier runtime was migrated; no inference/benchmark, superiority, throughput, cost, energy, availability or arbitrary scalability result is established.
+STATE.md:38: trailing whitespace.
++
+STATE.md:39: trailing whitespace.
++## Remote status
+STATE.md:40: trailing whitespace.
++
+STATE.md:41: trailing whitespace.
++The private repository [vighneshcandassamy-hub/edi-systems-foundation](https://github.com/vighneshcandassamy-hub/edi-systems-foundation) is created and populated on `main`. Baseline commit: `059f302abd277756639d858c44f89db0fd324daa`. All 53 remote file blob hashes were verified against the prepared snapshot; its Git tree is `31b1d285f61d3fc8e6527cee1ee5cdb662dbb905`, identical to local snapshot `1ca0fdc8c286eaf09f5b50b0c1aa0e8bafcdb57a`. Remote history was initialized through the authenticated GitHub connection, so the remote commit ID differs from the portable snapshot while the baseline file tree is identical. The subsequent checkpoint records this verified upload and makes the documentation checker explicitly read UTF-8 on Windows as well as Linux. Documentation/import/graph checks pass; no model scenarios were executed.
+STATE.md:42: trailing whitespace.
++
+STATE.md:43: trailing whitespace.
++## Next development step
+STATE.md:44: trailing whitespace.
++
+STATE.md:45: trailing whitespace.
++Review the [C0 workflow](docs/implementation/C0_INTEGRATED_WORKFLOW.md), [readiness/model-tool status](docs/implementation/INTEGRATION_READINESS.md) and [holistic test design](docs/implementation/INTEGRATED_TEST_DESIGN.md). Source integration is present; freeze concrete fixture/clock/acceptance/baseline/model profiles before any later authorized execution. All runtime/testing is currently deferred by explicit owner direction, and full original C0-C7 acceptance remains unestablished.
+STATE.md:46: trailing whitespace.
++
+STATE.md:47: trailing whitespace.
++## Implementation research checkpoint
+STATE.md:48: trailing whitespace.
++
+STATE.md:49: trailing whitespace.
++Date: 20 October 2026. Research baseline: `830b6ee5384b1c9a6cbd723f94cb8bd5bb3e353a`. Review branch: [architecture/implementation-tradeoffs-20261020](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/tree/architecture/implementation-tradeoffs-20261020/docs/implementation). Main retains the published foundation baseline; the new specification is proposed on the review branch.
+STATE.md:50: trailing whitespace.
++
+STATE.md:51: trailing whitespace.
++The package compares current reasoning/perception models, retrieval/memory, storage, orchestration, causal/system identification, simulation, uncertainty, exploration and planning techniques using 84 primary references. It specifies eight logical modules and 32 functions, covers all 42 overview nodes and 69 supplied connections, and traces 54 I7 requirements, 20 appendix requirements, 43 retained observation/substrate requirements, eight consumer obligations and 16 EDI system requirements through 34 implementation requirements. All 28 component pairs and 56 directed lanes are reviewed, with 40 proposed operation/result contracts and explicit no-link/prohibited directions.
+STATE.md:52: trailing whitespace.
++
+STATE.md:53: trailing whitespace.
++Documentation traceability, interface inventory and review-report checks pass within their stated scope; the source snapshots remain unchanged. The first documentation-output-link failure was repaired and retained separately. 48 additional prospective cases and finite DEV1/later HA profiles are specified. No product case or inference benchmark ran. Architecture self-review is scoped to proposal coherence; concrete contract, runtime, integration and scientific gates remain open as recorded in the specification and evidence files. Historical substrate REVISE status is preserved.
+STATE.md:54: trailing whitespace.
++
+STATE.md:55: trailing whitespace.
++## Speed and cumulative world growth extension
+STATE.md:56: trailing whitespace.
++
+STATE.md:57: trailing whitespace.
++Specification v0.2 extends review input `2af45f59169ec3855f10a8861d6e6acc4c8cfb07` on the same review branch and [draft PR #1](https://github.com/vighneshcandassamy-hub/edi-systems-foundation/pull/1). [Scaling and world growth](docs/implementation/SCALING_AND_WORLD_GROWTH.md) specifies qualified Jev fast decisions, incremental update/query projections, coarse/fine refinement bridges, and outward/inward/temporal exploration with contextual access requests. Jev was omitted in the preceding comparison and is now distinguished from JEPA. Six new implementation requirements and eight new cases raise the inventories to 34 and 48. The eight owners, 32 functions and 56 directed lanes are preserved. FAST1 targets and all runtime/quality/growth cases are unmeasured; the proposed exploration policy has not been installed as an automation or runtime.
+STATE.md:58: trailing whitespace.
++
+STATE.md:59: trailing whitespace.
++## Tools, mathematics and original-core research extension
+STATE.md:60: trailing whitespace.
++
+STATE.md:61: trailing whitespace.
++Specification v0.3 extends input `7b9c9f3bbf19bef6947fac4db271de8e805d207e` on the same review branch/draft PR. [Tools and proprietary core](docs/implementation/TOOLS_AND_PROPRIETARY_CORE.md) and [TOOLS.json](docs/implementation/TOOLS.json) record 24 decisions, P0-P3 adoption priorities, eight unrun adoption experiments and explicit ownership of representation/admission, restricted compilation, dependency revision, refinement and inquiry. Mathematical candidates include nonlinear identification, symbolic search, causal inference, Bayesian/simulation-based inference, sensitivity and information-seeking. The source register contains 84 primary entries; the eight owners, 32 functions, 34 implementation requirements, 48 scientific/engineering cases and 56 lanes are unchanged. No package, model, runtime or benchmark was installed/run and no proprietary novelty, speed or intelligence advantage is established.
+STATE.md:62: trailing whitespace.
++
+STATE.md:63: trailing whitespace.
++## Explicit reasoning structure checkpoint
+STATE.md:64: trailing whitespace.
++
+STATE.md:65: trailing whitespace.
++The owner requested the integrated structure before qualification/tests. The [v0.8 master](architecture/world-model/Meadows_EDI_Integrated_Architecture_v0_8.md) and [full diagram](docs/implementation/INTEGRATED_REASONING_DIAGRAM.md) retain all 82 original nodes/241 connections and add sixteen reasoning/admission/training parts. The [integration specification](docs/implementation/REASONING_INTEGRATION.md) and [allocation record](docs/implementation/REASONING_INTEGRATION.json) recommend a pretrained instruction/reasoning student served by vLLM, fixed student/teacher weights initially, explicit world/protocol/weight-update distinctions and a dormant future training path. Eight software owners, 32 functions and existing directed lanes are preserved; no new direct C4-C5/C7 bypass is introduced. No qualification or tests were run for this change; earlier evidence remains scoped to v0.3.
+STATE.md:66: trailing whitespace.
++
+STATE.md:67: trailing whitespace.
++The open integrated master was updated under its existing document identity to version 6 as Meadows_EDI_Integrated_Architecture_v0_8.md. The prior v0.7 conceptual snapshot remains unchanged in Git. The new graph contains 98 nodes and 286 named connections.
+STATE.md:68: trailing whitespace.
++
+STATE.md:69: trailing whitespace.
++## Consolidated architecture/tools/mathematics reference
+STATE.md:70: trailing whitespace.
++
+STATE.md:71: trailing whitespace.
++[Reference v1.0](docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md) consolidates input `fb3dc745ba27c4664e01ab4b18d20cbf593d9b46`: all eight owners/32 functions, 24 tool-decision families, 22 mathematical techniques, six original EDI assets, fixed-pretrained student/teacher roles and the separate future training path. Selected initial preferences are distinguished from conditional/deferred methods and open checkpoints/versions. The implementation index now removes ambiguity between the earlier hosted reasoning candidate and the local vLLM student. This documentation-only consolidation changes no owners, lanes, requirements, scientific acceptance targets or qualification results. No tests, training or runtime work were performed.
+STATE.md:72: trailing whitespace.
++
+STATE.md:73: trailing whitespace.
++## Complete GitHub storage audit
+STATE.md:74: trailing whitespace.
++
+STATE.md:75: trailing whitespace.
++On 20 October 2026, all 82 tracked files at remote architecture-branch revision `1dd1dbbedd48a8f3676f014fa2011737b854c84b` were fetched and matched against local committed content hashes; zero missing/mismatched files. [Asset index](docs/ASSET_INDEX.md) and [storage audit](evidence/github_asset_verification.json) record the scope and paths. New index/audit/navigation files are published after that input inventory. Latest design assets remain in draft PR #1; main still holds the earlier foundation. This verifies file persistence only; no architecture qualification or product tests ran.
+STATE.md:76: trailing whitespace.
++
+STATE.md:77: trailing whitespace.
++## Shared foundation and C1 code checkpoint
+STATE.md:78: trailing whitespace.
++
+STATE.md:79: trailing whitespace.
++20 October 2026. Input remote architecture revision `0fd018e60373ca08551ebd7d57ac859dbc8b64fd`. The owner authorized building the shared foundation and then Observation C1. [Runtime specification](docs/implementation/FOUNDATION_C1_RUNTIME.md), [ADR-003](docs/decisions/ADR-003-local-observation-runtime.md), [source](src/edi/) and [source review](docs/implementation/evidence/foundation-c1-source-review.json) describe the delivered increment.
+STATE.md:80: trailing whitespace.
++
+STATE.md:81: trailing whitespace.
++Code version 0.2.0: eight owner modules, shared typed records/ports, partial C0 composition and bounded C1 native file/finite-stream intake, immutable source/epoch registry, byte/occurrence identity separation, transactional chunk/metadata/log commits, retry/status, bounded payload reads/replay, checkpoints, coverage and backup. C2-C7, student/teacher/vLLM and mathematical adapters remain declared/unavailable. SQLite is the first finite local backend; Postgres/object storage remains a later adapter. Source identity continuity is registered/reported, not inferred physical recognition. No HA/scalability/latency result is claimed.
+STATE.md:82: trailing whitespace.
++
+STATE.md:83: trailing whitespace.
++Only Python AST syntax, application imports and CLI parser construction were checked using existing Python 3.14.0, SQLite 3.50.4 and Pydantic 2.12.5. No package installation, Runtime instantiation, recording/replay example, product/qualification test, inference, training, scientific comparison or benchmark ran. The owner's structure-first instruction defers qualification. Contract/runtime/integration gates remain open; the self-review is not independent. Historical reports and original architecture snapshots are unchanged.
+STATE.md:84: trailing whitespace.
++
+STATE.md:85: trailing whitespace.
++Prepared interfaces retain all 28 pairs/56 lane dispositions, with operation-restricted C1 read facades; no direct C4-C5/C7 execution or cross-owner database writes are introduced. Next: minimal C3 hosting/admission/versioned reads, followed by C2 derivation against C1/C3. This checkpoint is published on the existing private architecture branch/draft PR; main remains the earlier foundation. Publication content hashes are checked separately from product qualification.
+STATE.md:86: trailing whitespace.
++
+STATE.md:87: trailing whitespace.
++## C3 world-hosting code checkpoint
+STATE.md:88: trailing whitespace.
++
+STATE.md:89: trailing whitespace.
++20 October 2026. Input remote revision `bd8b05d6c17114fe6747c18801399444838125a3`. Owner authorized C3 implementation. [C3 runtime guide](docs/implementation/C3_WORLD_RUNTIME.md), [ADR-004](docs/decisions/ADR-004-versioned-world-hosting.md), [source](src/edi/world/), [schemas](schemas/) and [source review](docs/implementation/evidence/c3-source-review.json) record the increment.
+STATE.md:90: trailing whitespace.
++
+STATE.md:91: trailing whitespace.
++Code 0.3.0 hosts nine typed representation families with roles/direction, composition, uncertainty, alternatives, valid time and source-linked evidence. Candidate-only component proposals and trusted-local modeling-use decisions append immutable versions. Optimistic base/record versions, request retry/status, bounded scoped historical/current reads, pinned refs, dependency validity/truncation, coarse revision invalidation and transactional selected C3 consumer progress are implemented in source. C3 has a separate lazily opened SQLite store; C1 recording never opens/waits for it. C0 may advance C1's checkpoint only after durable C3 progress. No shared C1/C3 transaction or physical identity/truth recognition is claimed.
+STATE.md:92: trailing whitespace.
++
+STATE.md:93: trailing whitespace.
++All sixteen SUB obligations are allocated with open work; all 28 pairs/56 directed lanes retain their design disposition. Historical internal SUB-C1/C2/C3 labels are distinguished from global owner IDs. Actor-view policy, executable mechanisms, automatic refinement/discovery, complete admission/semantic compatibility, whole-application backup/restore, retention/failover and product qualification remain open. C2 and C4-C7 remain unavailable; partial C0/C1/C3 implementations are not full component acceptance.
+STATE.md:94: trailing whitespace.
++
+STATE.md:95: trailing whitespace.
++Checks: source AST parsing, application imports, CLI parser construction and authored TOML/JSON parsing; schemas generated from code. No Runtime/store instance, example, integrated product case, test suite, benchmark, inference, training or simulation ran. No gate PASS issued; scoped source review remains REVISE with future obligations. Original snapshots and historical evidence remain preserved. Next component: C2 interpretation connecting C1 native evidence to C3 candidate structures. Source is saved on the private architecture branch/draft PR; main remains the earlier foundation. Publication hashes are verified separately from product qualification.
+STATE.md:96: trailing whitespace.
++
+STATE.md:97: trailing whitespace.
++## C2 attributed-interpretation checkpoint
+STATE.md:98: trailing whitespace.
++
+STATE.md:99: trailing whitespace.
++20 October 2026 UTC. Input source revision `c43b8d5942b154e7849226208dd82f9d7736ca91`. Owner requested C2 if C3 aligns with prior specifications. [C2 guide](docs/implementation/C2_INTERPRETATION_RUNTIME.md), [trace](docs/implementation/C2_RUNTIME_TRACE.json), [ADR-005](docs/decisions/ADR-005-attributed-interpretation.md), [source review](docs/implementation/evidence/c2-source-review.json), examples and generated schemas document the scoped implementation. Full C3 requirement satisfaction/qualification is NOT established; C3's existing candidate/evidence/version interface subset supports this bounded source integration. Explicit returned C1 workspace/occurrence guards were added to C2/C3.
+STATE.md:100: trailing whitespace.
++
+STATE.md:101: trailing whitespace.
++Code 0.4.0: partial C2 native UTF-8/JSON/CSV decoding, PNG/WAV metadata, opaque/unsupported states, exact source hashes/ranges/times, orthogonal authored role/basis annotations/quotes, limited declared SI dimensions, source/payload association candidates, explicit referent hypotheses and native versioned features. Immutable C2 derivations and submission receipts live in their own lazy SQLite store. Candidate-only C3 patches/retries preserve origin/assistance lineage and optional selected consumer progress; C2 never admits itself or writes C1 evidence. C0/C1/C2/C3 remain partial; C4-C7 are unavailable.
+STATE.md:102: trailing whitespace.
++
+STATE.md:103: trailing whitespace.
++Twelve scoped derived requirements and thirteen future C2 cases are allocated without changing original inventories/evidence. Full perception/semantic matching, arbitrary units, embeddings, isolation, retention/restore, complete usage, larger storage and C1-C3 qualification remain open. Checks: AST/import/parser construction and authored TOML/JSON/new-doc links; schemas generated. No Runtime/store, decoder/example, product/qualification test, benchmark, inference, training, simulation or deployment ran. No gate PASS or measured advantage is claimed. Next owner: C4 reasoning, with explicit model/provider/hardware binding still open. Source is saved on the private architecture branch/draft PR; publication hashes are checked separately from product qualification.
+STATE.md:104: trailing whitespace.
++
+STATE.md:105: trailing whitespace.
++## C4 bounded-inquiry source checkpoint
+STATE.md:106: trailing whitespace.
++
+STATE.md:107: trailing whitespace.
++20 October 2026 UTC. Input remote revision `11e3517544b78a79e6fc73b81c2345723f67b14c`. Owner authorized C4 against specifications/references/plans. [C4 guide](docs/implementation/C4_REASONING_RUNTIME.md), [requirements trace](docs/implementation/C4_RUNTIME_TRACE.json), [ADR-006](docs/decisions/ADR-006-bounded-reasoning-control.md), [source review](docs/implementation/evidence/c4-source-review.json), examples and generated schemas record the increment. C0-C4 remain partial; C5-C7 and native student/teacher inference are unavailable.
+STATE.md:108: trailing whitespace.
++
+STATE.md:109: trailing whitespace.
++Code 0.5.0 supplies revision-pinned C1/C3 context with source/epoch/range/time/lineage and dependency limitations; eleven selectable Meadows question axes; bounded durable export/import jobs; attributed rival hypotheses/conditional predictions/test proposals; seven-direction exploration frontier with heuristic ranking, dedup and retained denial; versioned C0 outbox/acknowledgements; immutable episode/command history and exact staged candidate-only C3 submissions. Budgets retain full token reservations, including unknown usage, and one unresolved job per workspace. Teacher critique is selective, fallible, fixed-binding and limited to the same cut. Export-only jobs do not constitute reasoning-model execution or discovery.
+STATE.md:110: trailing whitespace.
++
+STATE.md:111: trailing whitespace.
++Twelve scoped C4 requirements/eighteen future cases and all 28 pairs/56 lanes are allocated without changing the architecture or historical evidence. Existing owner facades preserve no direct C4-C2/C5/C7 bypass. C1 intake never initializes C4/C3; separate lazy owner databases are enforced. Exact model/tokenizer/provider/hardware binding, inference gateway, C6 feedback, C0 autonomous scheduling/access/notifications, incremental refinement/freshness, complete cost, retention/restore/isolation/HA and C1-C4 qualification remain open. Next source owner: C5 analysis.
+STATE.md:112: trailing whitespace.
++
+STATE.md:113: trailing whitespace.
++Source checks only: AST, imports, CLI parser construction, JSON/TOML/new-document links and schema generation. No Runtime/store, example, model call, product/qualification case, gate validator, benchmark, simulation, training or deployment ran. Overall source contract self-review remains REVISE; no component acceptance, endogenous intelligence or speed advantage is established. Source is saved on the existing private architecture branch/draft PR; committed-tree/pinned-file publication checks are separate from qualification.
+STATE.md:114: trailing whitespace.
++
+STATE.md:115: trailing whitespace.
++## C5 conditional-analysis source checkpoint
+STATE.md:116: trailing whitespace.
++
+STATE.md:117: trailing whitespace.
++20 October 2026 UTC. Input remote revision `9d43b356335006b68ee9a5ce99a48ab3668b194d`. Owner authorized C5 against prior specifications, requirements, interfaces, rationale, schema and assumptions after C4 review. C4's bounded source subset supports a C0-mediated proposal/analysis handoff; full C4 acceptance/native inference/qualification remains unestablished. [C5 guide](docs/implementation/C5_ANALYSIS_RUNTIME.md), [trace](docs/implementation/C5_RUNTIME_TRACE.json), [ADR-007](docs/decisions/ADR-007-restricted-conditional-analysis.md), [source review](docs/implementation/evidence/c5-source-review.json), examples and nine generated schemas document this increment.
+STATE.md:118: trailing whitespace.
++
+STATE.md:119: trailing whitespace.
++Code 0.6.0 supplies a flat typed arithmetic/read/lookup stock-flow IR in an explicitly versioned C3 response, pinned dependency/native participant/inventory/unit checks and supported/unsupported compilation artifacts. An optional pinned SciPy 1.17.0/NumPy 2.5.3 adapter provides declared ODE methods/tolerances, segmented driver changes, finite parameter variants/secants, conditional trajectories/cumulative transfers and accounting/feasibility diagnostics. The source preserves explicit initial conditions, assumptions, source-formalization status, generated origin and unsealed prospective-forecast status. Unknown/unmapped delay, resource, backlog, actor, hybrid, DAE, topology and refinement semantics reject rather than silently approximate.
+STATE.md:120: trailing whitespace.
++
+STATE.md:121: trailing whitespace.
++C5's separate lazy owner store retains immutable compiled/run artifacts, pre-execution run intents, one active workspace worker, reserved result/control capacity, original-result retry/status, durable cancellation and exact-attempt fencing with unknown interrupted usage. C0 invokes C5, C1/C3 reads remain restricted, and future C6 gets a read-only artifact facade; all 28 pairs/56 directions retain their dispositions. No C4/C2/C7 execution bypass or source/world/adoption write is introduced. C1 intake never initializes C5 or numerical packages.
+STATE.md:122: trailing whitespace.
++
+STATE.md:123: trailing whitespace.
++Fourteen derived requirements and twenty future cases are allocated; original architecture/catalogues/historical evidence remain unchanged. C0-C5 remain partial, C6-C7 and native reasoning inference unavailable. Advanced dynamics, numerical/model/scientific validity, native C6 comparison, complete uncertainty/cost, process supervision, per-variable tolerances, retention/restore/migration/HA and all broader C1-C5 obligations remain open. Next source owner: C6 assessment and learning.
+STATE.md:124: trailing whitespace.
++
+STATE.md:125: trailing whitespace.
++Only AST/import/parser construction, authored JSON/TOML/new-document links, trace/inventory references, installed version metadata and schema generation were checked. No package installation, Runtime/store, compiler, numerical solver/scenario/example, simulation, product/qualification case, gate validator, inference, training, benchmark or deployment ran. Source contract self-review remains REVISE; no component acceptance, numerical accuracy or intelligence/efficiency result is claimed. Assets are saved on the private architecture branch/draft PR and publication hashes verified separately.
+STATE.md:126: trailing whitespace.
++
+STATE.md:127: trailing whitespace.
++## C6 prospective-assessment source checkpoint
+STATE.md:128: trailing whitespace.
++
+STATE.md:129: trailing whitespace.
++21 October 2026 UTC. Input remote revision `7ea2b3ada81db6a42ce6a8a3ebfd315f465ae3a2`. Owner authorized C6 against specifications, constraints, rationale, schemas and assumptions after C5 review. C5's immutable conditional-output subset supports this integration; full C5 numerical/runtime/specification acceptance remains unestablished. [C6 guide](docs/implementation/C6_ASSESSMENT_RUNTIME.md), [trace](docs/implementation/C6_RUNTIME_TRACE.json), [ADR-008](docs/decisions/ADR-008-prospective-assessment-and-advice.md), [source review](docs/implementation/evidence/c6-source-review.json), fourteen schemas and authored templates record the increment.
+STATE.md:130: trailing whitespace.
++
+STATE.md:131: trailing whitespace.
++Code 0.7.0 supplies immutable exact-sample C5 forecast registration with post-payload-commit confirmation, explicit future targets and frozen model/IR/scenario/solver/driver/correspondence/criteria/source cuts. Bounded C1 origin replay chooses the first matching occurrence at an explicitly pinned outcome watermark, retaining pre-existing/bad/generated/missing/censored evidence and scan incompleteness. Point errors, declared Bernoulli Brier loss, stratified coverage and prespecified descriptive calibration retain source/dependence/clock/unit/availability caveats. No score implies causal identity or universal truth.
+STATE.md:132: trailing whitespace.
++
+STATE.md:133: trailing whitespace.
++Eight rival diagnostic categories remain unestablished; attributed revision causes/tests, affected C3 targets/dependents, retained rivals, uncertainty and verification burden are preserved. Finding drafts retain affected parties/goal/horizon, chain status, evidence/alternatives, expiry and review trigger; C0 delivery and C7 adoption remain separate. Inquiry reviews deduplicate linked forecast snapshots and retain declared exposure/resources without claiming useful information gain or calibrated advantage. Exact candidate-only C3 submissions stage their patch and reserve receipt capacity; C3 retains admission authority.
+STATE.md:134: trailing whitespace.
++
+STATE.md:135: trailing whitespace.
++C6 owns a separate lazy SQLite ledger, immutable request outcomes and bounded artifact selections. Confirmation/C3 receipt quota is prepaid. Distinct native C4 selection/inquiry-review and C5 registration/receipt facades are wired without direct C2/C7 bypasses; all 28 pairs/56 lanes preserve original dispositions. All six owner store paths/workspaces are checked; native recording does not initialize the assessment/model/solver stores. C0-C6 remain partial; C7 and native C4 inference are unavailable.
+STATE.md:136: trailing whitespace.
++
+STATE.md:137: trailing whitespace.
++Fourteen scoped requirements/twenty future cases are allocated without changing original architecture/catalogues/evidence. Source-clock/provenance trust, hidden dependencies/knowledge, broader measurement/statistical/causal/refinement methods, real calibration/skill/yield/strategic usefulness, complete costs, C0 scheduling, retention/restore/migration/isolation/HA and all C1-C6 qualification remain open. Next source owner is C7 agency/authorized adoption.
+STATE.md:138: trailing whitespace.
++
+STATE.md:139: trailing whitespace.
++Checks were AST/import/parser construction, authored JSON/TOML/new-document links, trace/lane references and schema generation only. No Runtime/store, registration, outcome scan, scoring/calibration, C3 proposal, example/product case, gate validator, simulation, model call, training, benchmark or deployment ran. Overall contract source self-review remains REVISE; no component acceptance, learned advantage or independent scientific result is claimed. Assets are saved on the private architecture branch/draft PR; committed-tree and pinned-file hashes verify publication separately.
+STATE.md:140: trailing whitespace.
++
+STATE.md:141: trailing whitespace.
++## C7 research-agency source checkpoint
+STATE.md:142: trailing whitespace.
++
+STATE.md:143: trailing whitespace.
++21 October 2026 UTC. Input remote revision `686da92ec4a9c0892998aee1b85280b723d8f199`. Owner authorized C7 against specifications, constraints, rationale, interfaces, schemas, assumptions and decisions after C6 review. C6's first source subset supports C0-carried attributed advice; full C6 requirements/runtime/scientific acceptance remains unestablished. No direct C6-C7 lane is introduced. [C7 guide](docs/implementation/C7_AGENCY_RUNTIME.md), [trace](docs/implementation/C7_RUNTIME_TRACE.json), [ADR-009](docs/decisions/ADR-009-research-agency-and-policy-adoption.md), [source review](docs/implementation/evidence/c7-source-review.json), twenty-one generated schemas and authored templates record this increment.
+STATE.md:144: trailing whitespace.
++
+STATE.md:145: trailing whitespace.
++Code 0.8.0 separates represented actor information from actual EDI operating authority. C7 qualifies explicit attributed actor masks with pinned evidence/model/time correspondence without appending global state. Immutable research policies retain purpose/standards, exact finite grants and separate amendment/adopt/reject/defer decisions. Purpose/standard changes require a new explicit goal version. Configured local operator IDs are not authenticated identities; the SDK/CLI remains trusted-local only. Native C3 actor perception and C5 actor-response dynamics remain open.
+STATE.md:146: trailing whitespace.
++
+STATE.md:147: trailing whitespace.
++Internal native observation-metadata and pinned model reads have scoped authorization, expiry/policy rechecks, post-writer-lock time checks, single-use decisions, durable pre-invocation intents, one unresolved workspace command, prepaid completion allowance and cooperative active-command/policy fences. Interrupted commands remain unresolved and original retry does not redispatch. Dedicated generated reports preserve exact original bytes in C1 before explicit local reconciliation; reported completion remains distinct from measured effect. C7 has no external actuation, acquisition or direct C5 dispatch adapter.
+STATE.md:148: trailing whitespace.
++
+STATE.md:149: trailing whitespace.
++Access reviews reuse standing grants and retain exact-need coalescing, denial/defer/expiry; C0 owns notification/scheduling and C1 future acquisition. Represented policy/organization updates stage exact attributed candidate-only C3 puts and original receipts; C3 retains admission and no actual domain adoption is inferred. Native C0/C1/C3 facades preserve all 28 pairs/56 directed dispositions. All seven owner stores have separate checked paths/workspaces and lazy composition; C1 recording does not initialize C7, model or solver stores.
+STATE.md:150: trailing whitespace.
++
+STATE.md:151: trailing whitespace.
++Sixteen scoped requirements and twenty-four future cases are allocated; overall contract self-review remains REVISE. Full original C0-C7 obligations, authenticated authority, independent perception/causal effects, complete end-to-end costs, hard isolation, retention/export/restore/migration/HA, independent review and all product/scientific qualification remain open. Next development scope is a bounded C0 integrated workflow and separately pinned native reasoning binding; no C8, paid inference, benchmark, deployment or external action is implied.
+STATE.md:152: trailing whitespace.
++
+STATE.md:153: trailing whitespace.
++Checks are source AST/import/CLI-parser construction, schema generation, authored JSON/TOML/new-document links and trace/lane inventory references only. No Runtime/store, policy proposal/adoption, actor qualification, action check/dispatch, report capture/reconciliation, access review, C3 proposal, example/product case, gate validator, compiler/solver, model call, simulation, training, benchmark or deployment ran. Source and reference assets are saved on the private architecture branch/draft PR; committed tree and pinned-file hashes verify publication separately from qualification.
+STATE.md:154: trailing whitespace.
++
+STATE.md:155: trailing whitespace.
++## C0 integrated-workflow source and holistic test-design checkpoint
+STATE.md:156: trailing whitespace.
++
+STATE.md:157: trailing whitespace.
++21 October 2026 UTC. Input remote revision `945460a2458cf343633ccf2e49e5355e43d66cea`. The owner requested full integration/capability demonstration, then explicitly directed **do not test yet; design the test holistically and finalize integration first**. That latest direction supersedes execution authorization for the current work. No Runtime, workflow, store, native command, solver, model, fixture, example, product test, gate validator, simulation, training, benchmark or deployment was run.
+STATE.md:158: trailing whitespace.
++
+STATE.md:159: trailing whitespace.
++Code 0.9.0 adds [C0 source](src/edi/inquiry/), [workflow specification](docs/implementation/C0_INTEGRATED_WORKFLOW.md), [trace](docs/implementation/INTEGRATION_TRACE.json), [readiness/model-tool status](docs/implementation/INTEGRATION_READINESS.md), [ADR-010](docs/decisions/ADR-010-bounded-integrated-workflow.md), [source/interface review](docs/implementation/evidence/integration-source-review.json), five schemas and an authored [28-step skeleton](examples/workflow/). Fifty-one finite native operations connect C0 to existing C1-C7 ports. Plans/inputs, bounded prior-output selectors, original native request keys, durable step intents, result conditions, prepaid terminal capacity, attempt history/fences, explicit missing-input/uncertain states and internal finding delivery are present in source. All eight owner paths/workspaces are separate and the C0 ledger is lazy.
+STATE.md:160: trailing whitespace.
++
+STATE.md:161: trailing whitespace.
++Operator admission/adoption/reconciliation/control inputs are separated from ordinary data/model input, disabled by default and retained through a distinct trusted-local API. Computed model output cannot become an operator decision. Local operator IDs remain configuration assumptions rather than authentication. C7's first subset supports the source handoff, while its full requirements/runtime/security acceptance and all wider C0-C7 obligations remain unestablished. All 28 pairs/56 directed dispositions remain unchanged.
+STATE.md:162: trailing whitespace.
++
+STATE.md:163: trailing whitespace.
++The [holistic test design](docs/implementation/INTEGRATED_TEST_DESIGN.md), proposed v0.1, separates engineering integration, nonlinear ecology, human information/latent causes, cumulative adjacent/internal/temporal world growth, failure/capacity and matched LLM/retrieval/structured-memory comparisons. It requires original prospective forecasts, oracle separation, appropriate abstention/nonidentifiability, realistic source/timing/provenance, denial/refusal controls, complete costs and preserved failures. The controlled accumulator is a future engineering fixture, not autonomous discovery. Exact fixture clocks/cuts, model/checkpoints/provider/hardware, scientific sample/statistical protocol and comparison thresholds remain explicit pre-execution decisions.
+STATE.md:164: trailing whitespace.
++
+STATE.md:165: trailing whitespace.
++Eleven scoped coordination requirements and twenty-four planned unrun cases are allocated. Source/artifact checks are AST/import/CLI-parser construction, schema generation, JSON/TOML, new-document links and trace/lane/registry inventories only. Overall contract self-review remains REVISE; source checks do not establish integrated runtime capability or superiority. Native vLLM/student/teacher execution remains unconnected. Next is review/freeze of the holistic protocol and remaining binding/fixture choices, followed only by later owner-directed execution. Assets are saved on the private architecture branch/draft PR and publication hashes verified separately.
+STATE.md:166: trailing whitespace.
++
+STATE.md:167: trailing whitespace.
++## Benchmark connection execution checkpoint — 21 October 2026
+STATE.md:168: trailing whitespace.
++
+STATE.md:169: trailing whitespace.
++Owner authorization now covers implementing and executing the saved plan, superseding earlier historical defer-testing instructions. Execution branch `benchmark/runtime-integration-20261021` combines EDI source `879452b8332a318ca76af4f84589b676b031f253` and frozen benchmark/planning `27c437bbc54310dff0603d46f5dd3516d5e00730`; original main and implementation branches remain unchanged. Development version 0.9.1.dev0, C4 contract implementation 0.5.1. Fresh workspaces required; no old episode migration claimed.
+STATE.md:170: trailing whitespace.
++
+STATE.md:171: trailing whitespace.
++[Connection checkpoint](docs/implementation/BENCHMARK_CONNECTION.md) documents implemented source, actual CPU tests, initial failures and remaining live gates. C1 records exact authenticated broker responses/native asset chunks; C0 journals selected requests and dynamic C4 operation proposals; C7 provides an explicit scoped simulated-session standing grant; C4 has native image/response/usage transport and local vLLM/GPT-6.1 teacher backend source. Existing research policy and empirical C6 guard are preserved. No forest explanation, expected feedback loop or intervention sequence is supplied to EDI.
+STATE.md:172: trailing whitespace.
++
+STATE.md:173: trailing whitespace.
++Both Linux and Windows CPU campaigns pass the same 19 scoped engineering checks at identical source hashes; logs and preflight evidence are separately retained. Authored wire fixtures exercise model handoffs and image-byte delivery, not real inference or perception. The first Linux campaign failed three checks and the first desktop campaign had twelve cleanup errors; corrections and original conditions remain recorded. New internal (28 pairs/56 lanes) and outer (10 pairs/20 lanes including optional teacher) matrices and component review remain contract REVISE. Static helper success is not independent review.
+STATE.md:174: trailing whitespace.
++
+STATE.md:175: trailing whitespace.
++The available desktop is Windows/RTX 2060 6144 MiB, with Python 3.12 available but no Docker command/WSL distribution; OpenAI key absent in checked process/user/machine environments. No model downgrade, quantization, OS installation, GPU rental or paid inference was performed. Native model/checkpoint/processor/container binding, restricted teacher egress, C6 constructed-world eligibility, full P1/isolation and Cedar investigation remain BLOCKED/NOT RUN. Source integration is a scoped increment, not completion of the full execution plan.
+STATE.md:176: trailing whitespace.
++
+STATE.md:177: trailing whitespace.
++Combined-tree foundation verification additionally passes on the desktop: 40 imported architecture/reference files remain unchanged. The original text-only binary/environment scan and Windows inventory separator issue are recorded with a scoped adapter correction; exact frozen package/verifier hashes and all benchmark checks remain required. An unlisted binary is still rejected by a negative control. Frozen benchmark bytes are unchanged. See baseline-positive.json and baseline-negative-control.json in the execution evidence.
+STATE.md:178: trailing whitespace.
++
+STATE.md:179: trailing whitespace.
++
+STATE.md:180: trailing whitespace.
++## Free model feasibility checkpoint — 22 October 2026
+STATE.md:181: trailing whitespace.
++
+STATE.md:182: trailing whitespace.
++[Free compute setup](docs/implementation/FREE_COMPUTE_SETUP.md) records actual neutral model execution: GPT-6.1 Sol through the owner's ChatGPT Plus plan (22 tokens), and pinned Qwen3-VL-8B through vLLM 0.21.0 on Kaggle T4 x2. Arithmetic and one image request completed; the server stopped and both GPUs were released. The tested student profile is FP16/TP2/4096 context/one bounded image, not the full proposed benchmark profile. A reusable Kaggle notebook and selected exact evidence are saved; all 14 original local exports had matching SHA-256 hashes. Initial ensurepip and FlashInfer sampler failures remain recorded.
+STATE.md:183: trailing whitespace.
++
+STATE.md:184: trailing whitespace.
++No EDI production module, frozen benchmark byte, model weight, credential or browser session was added or changed. The live EDI/C6/isolation/P1/Cedar gates remain open. OpenAI plan availability is demonstrated, but the EDI teacher adapter and restricted connection have not been qualified.
+STATE.md:185: trailing whitespace.
++
+STATE.md:186: trailing whitespace.
++
+STATE.md:187: trailing whitespace.
++## Native Qwen source integration checkpoint — 22 October 2026
+STATE.md:188: trailing whitespace.
++
+STATE.md:189: trailing whitespace.
++On integration/free-qwen-native-20261022, development 0.9.2.dev0 / edi-c4/0.5.2 adds authenticated exact vLLM tokenization, prompt-usage reconciliation, selected protocol rendering, operation-specific generated argument grammar/native validation, and a C0 final-turn terminal-state correction. Fresh workspaces are required. [Native checkpoint](docs/implementation/NATIVE_QWEN_INTEGRATION.md) and its evidence directory are authoritative for this increment.
+STATE.md:190: trailing whitespace.
++
+STATE.md:191: trailing whitespace.
++All 27 Windows CPU engineering checks pass at retained source hashes. Native numeric/image completion and two subsequent controller failures were observed in Kaggle, but the interactive session expired before raw evidence export. A third trial was launched and its outcome is unknown. Recovery found no prior results/source/environment; a replacement session was stopped. Observations, original failures, input source pins and final CPU records are preserved explicitly without claiming replayable live qualification.
+STATE.md:192: trailing whitespace.
++
+STATE.md:193: trailing whitespace.
++No forest package byte changed. No added paid service or training was used; teacher disabled. Final-source live inference, autonomous C0 success, C5/C6, full P1, hard isolation, teacher integration, forest and comparison remain unverified/open. Next: repeat final-source numeric/image diagnostics and immediately export/hash-verify reports and raw state before another trial; then repeat the neutral C0 fixture with the same evidence discipline.
+STATE.md:194: trailing whitespace.
++
+STATE.md:195: trailing whitespace.
++
+STATE.md:196: trailing whitespace.
++## Retained native rerun checkpoint - 22 October 2026
+STATE.md:197: trailing whitespace.
++
+STATE.md:198: trailing whitespace.
++Development 0.9.4.dev0 on integration/free-qwen-native-20261022: all 28 Windows CPU checks pass. Two real native numeric/image responses were accepted, exact token counts matched, and completed gateway calls reopened without new inference. Each produced one formal C4 hypothesis and no C3 representation candidate. The source, model pins, exact responses and complete raw stores were exported and verified.
+STATE.md:199: trailing whitespace.
++
+STATE.md:200: trailing whitespace.
++The C0 instrument trial failed on its first response: zero hypotheses and operation proposals, with a test whose target IDs were public operation names. Only the bootstrap mission request occurred; no instrument read or final report. The model did not demonstrate information seeking. Known rejection also leaves a pending C0 turn / awaiting-import C4 job without a bounded correction path. Overall integration remains incomplete; no forest or scientific comparison ran.
+STATE.md:201: trailing whitespace.
++
+STATE.md:202: trailing whitespace.
++All four trials were exported before proceeding: 48 files and 17 database copies across four retained archives verified. Known measured usage is 37,685 input / 2,634 output tokens; initial server-rejected usage remains unknown. No paid service was added; teacher disabled; Kaggle session off. Full P1/C5/C6/isolation/teacher/forest/comparison gates remain open. See the current Native Qwen integration guide, RESULTS.json and proposed NATIVE_OUTPUT_RECOVERY_PLAN.md. Historical expired-session evidence remains explicitly unrecovered.
+STATE.md:203: trailing whitespace.
++
+STATE.md:204: trailing whitespace.
++
+STATE.md:205: trailing whitespace.
++## Existing-component connection source handoff - 22 October 2026
+STATE.md:206: trailing whitespace.
++
+STATE.md:207: trailing whitespace.
++Owner directed review of the agreed architecture/components and completion of their connections before testing. On integration/connect-components-20261022, source 0.10.0.dev0 / edi-c4/0.6.0 composes the existing C0-C7 owners and actual C4 inference ports. A finite 35-operation catalogue exposes existing native capabilities through C0, with metadata/schema discovery and separately retained C3/C7 operator boundaries. C2/C5/C6/C7 results and C4 candidate/critique continuity return to subsequent bounded reasoning context instead of remaining unused C0 fields.
+STATE.md:208: trailing whitespace.
++
+STATE.md:209: trailing whitespace.
++The selective teacher role now has explicit file export/import for the zero-additional-spend setup: original cut/attempt/images, retained generated critique and a revised student job. This is a manual transport, not an automatic ChatGPT subscription API; teacher identity, cut compliance and usage remain operator-declared. Initial weights remain fixed as specified. Definite returned-output rejection now has a C4 receipt and bounded distinct correction-or-yield path; pre-dispatch availability waits and unknown provider completion remain separate. Original failures and frozen benchmark bytes are unchanged. Fresh workspaces are required; historical episodes are not migrated.
+STATE.md:210: trailing whitespace.
++
+STATE.md:211: trailing whitespace.
++[Current connection handoff](docs/implementation/COMPONENT_CONNECTIONS.md), [readiness](docs/implementation/INTEGRATION_READINESS.md), [configuration](examples/integration/README.md), ADR-011 and component-connections-20261022 evidence describe the concrete build. Source AST/import/parser/schema/routing checks pass across 69 Python files, 35 operations, 42 generated contract documents and 1,089 resolved schema references. The installable 0.10.0.dev0 wheel builds and all 69 source bytes match its manifest. Initial missing-build-backend failure and the nonfatal existing Path-default schema warnings are retained explicitly; build tools were added only to the development venv.
+STATE.md:212: trailing whitespace.
++
+STATE.md:213: trailing whitespace.
++All 40 imported reference files and the frozen benchmark tree remain unchanged. The 56-owner-lane and 20-outer-lane inventories and trace/review consistency checks pass structurally. The scoped new connection contract is self-reviewed; broader original contracts remain REVISE. This is not independent review or product qualification.
+STATE.md:214: trailing whitespace.
++
+STATE.md:215: trailing whitespace.
++No Runtime/store, workflow, model call, simulation, product test or benchmark ran at this revision. Eight prospective integration cases remain unrun under the owner's explicit direction. Earlier 0.9.4 results do not qualify this source. Next stage is separately authorized runtime integration verification/debugging after this source handoff, with no additional domain-solving algorithm, paid teacher or trainer enabled.
+STATE.md:216: trailing whitespace.
++
+STATE.md:217: trailing whitespace.
++
+STATE.md:218: trailing whitespace.
++## Completed controlled engineering walkthrough — 22 October 2026
+STATE.md:219: trailing whitespace.
++
+STATE.md:220: trailing whitespace.
++On integration/complete-engineering-run-20261022, 0.10.1.dev0 completed the authorized scheduled C0-C7 walkthrough: 32 completed native handoffs, one retained failed inquiry, two actual Qwen responses separated by one teacher-file import, C5 compilation/numerical execution, local-prospective C6 scoring/review/candidate/finding, C7 policy/internal read/external-action denial/actor mask and internal C0 delivery. Fresh-process replay and native artifact reads passed without inference; eight databases passed integrity checks. See [ENGINEERING_RUN.md](docs/implementation/ENGINEERING_RUN.md), readiness and engineering-20261022 evidence.
+STATE.md:221: trailing whitespace.
++
+STATE.md:222: trailing whitespace.
++The engine repair adds missing AgencyAccess forwarding to existing benchmark_authority; package version is 0.10.1.dev0. Harness fixes align operators, bound the evidence slice and use native C3 versions. Original failures/model are preserved. Separate environments resolve vLLM's NumPy constraint while C5 keeps NumPy 2.5.3/SciPy 1.17.0. All 69 engine files and wheel contents match the executed export. Known student usage: 20,596 input/1,723 output tokens. Teacher actual usage is unknown; 38,703 policy units include its full 16,384-unit reservation. Uptake was partial and test planning remained weak. Autonomous Investigation.step, broader CI cases, crash/hard-isolation coverage, scientific learning and superiority remain unqualified. Original matrices remain REVISE; the new self-review passes this scoped runtime case only.
+STATE.md:223: trailing whitespace.
++
+STATE.md:224: trailing whitespace.
++Four native archives are retained outside Git, including startup/range failures and both successful checkpoints. Final archive: 472,735 bytes, SHA-256 f9542a975fea6090fc4aa37839eedce98bafc5f6a252f1390188020d86cab2d4; hashes, CRC and SQLite integrity passed. An earlier free session expired before native export; execution/compute are unknown and no result is counted. Raw databases and operational teacher exchanges remain on the authorized desktop; reviewed synthetic evidence and source are saved privately. Model server and Kaggle session are stopped. No paid inference, training, imported-reference or frozen Meadows package change occurred. Remote identity/visibility and returned revision are checked during synchronization.
+STATE.md:225: trailing whitespace.
++
+STATE.md:226: trailing whitespace.
++Documentation release check: corrected the Markdown link validator to accept existing directories as well as files. The original failure and the passing rerun are retained under engineering-20261022; engine execution is unchanged.
+STATE.md:227: trailing whitespace.
++
+STATE.md:228: trailing whitespace.
++
+STATE.md:229: trailing whitespace.
++## Autonomous controller diagnostic — 23 October 2026
+STATE.md:230: trailing whitespace.
++
+STATE.md:231: trailing whitespace.
++On integration/autonomous-controller-20261023, the existing 0.10.1 Investigation.step was exercised with only a neutral objective/access catalogue. First turn yielded after two rejected outputs; retained notebook counts are 19,747 input/1,672 output tokens. No additional information acquisition was observed. Restart process returned one; precise rejection/restart diagnostics were not retained before session expiration and desktop restart. The downloaded notebook and recovered deployment bundle are preserved; 69 embedded engine files match 68111c3. Raw first-attempt databases/provider wires are unavailable, explicitly not verified. See AUTONOMOUS_RUN.md and attempt1-retained-output.json.
+STATE.md:232: trailing whitespace.
++
+STATE.md:233: trailing whitespace.
++A fresh repeat keeps the objective, native validation, pinned model and engine unchanged. Harness-only changes automatically embed consistent native ZIP checkpoints in notebook output, add restart-difference/integrity diagnostics, distinguish run identities, and correct copied serving metadata from 2,048 to the actual native 4,096 output cap. The repeat is pending. Broader readiness remains REVISE; no forest or scientific comparison is authorized by this checkpoint.
+docs/implementation/INTEGRATION_READINESS.md:1: trailing whitespace.
++# Existing-component integration readiness
+docs/implementation/INTEGRATION_READINESS.md:2: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:3: trailing whitespace.
++Current source: **0.10.5.dev0**,23 October 2026. Native repairs and28 CPU checks pass; autonomous acquisition acceptance failed. See [AUTONOMOUS_RUN.md](AUTONOMOUS_RUN.md). The following scheduled walkthrough remains historical0.10.1 evidence. See [ENGINEERING_RUN.md](ENGINEERING_RUN.md) for results, retained failures, source hashes and limits.
+docs/implementation/INTEGRATION_READINESS.md:4: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:5: trailing whitespace.
++| Path | Execution evidence (version noted) |
+docs/implementation/INTEGRATION_READINESS.md:6: trailing whitespace.
++| --- | --- |
+docs/implementation/INTEGRATION_READINESS.md:7: trailing whitespace.
++| C0 composition and Workflow | Native startup, scoped broker connection, 32 completed handoffs, internal delivery and normal restart passed; one original failed inquiry remains failed |
+docs/implementation/INTEGRATION_READINESS.md:8: trailing whitespace.
++| Autonomous Investigation controller |0.10.5 actual student yielded after mission only; acquisition/submission failed. Native restart identical, eight databases OK. Earlier failures and all source pins retained in AUTONOMOUS_RUN.md |
+docs/implementation/INTEGRATION_READINESS.md:9: trailing whitespace.
++| C1 | Controlled JSON observations and measured outcome retained with provenance; broad modality coverage not tested here |
+docs/implementation/INTEGRATION_READINESS.md:10: trailing whitespace.
++| C2 to C3 | Native JSON interpretation and candidate submission completed |
+docs/implementation/INTEGRATION_READINESS.md:11: trailing whitespace.
++| C3 | Explicit authored model admission, corrected opaque IR version pins and separate C6 candidate retention verified |
+docs/implementation/INTEGRATION_READINESS.md:12: trailing whitespace.
++| C4 student / teacher | Two real Qwen calls, one manual teacher import and a real student revision completed against the same original cut |
+docs/implementation/INTEGRATION_READINESS.md:13: trailing whitespace.
++| C4 candidate / operation proposals | Historical0.10.1 responses supplied neither.0.10.5 handled an explicit yield; the neutral trial does not qualify candidate branches |
+docs/implementation/INTEGRATION_READINESS.md:14: trailing whitespace.
++| C5 | Supported typed compilation and completed numerical execution using the authored constant-rate model |
+docs/implementation/INTEGRATION_READINESS.md:15: trailing whitespace.
++| C6 | Local-prospective seal, controlled OS outcome, scoring, review, candidate submission and finding completed; one comparison returned through C4's native read port |
+docs/implementation/INTEGRATION_READINESS.md:16: trailing whitespace.
++| C7 | Explicit policy adoption, authorized internal read, denied external action and actor-mask creation completed |
+docs/implementation/INTEGRATION_READINESS.md:17: trailing whitespace.
++| Persistence | Fresh-process replay, native artifact reads, eight SQLite integrity checks and source/wheel byte verification passed; crash and cross-host runtime recovery unqualified |
+docs/implementation/INTEGRATION_READINESS.md:18: trailing whitespace.
++| Future parameter training | Dormant and outside this execution |
+docs/implementation/INTEGRATION_READINESS.md:19: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:20: trailing whitespace.
++The run exposed and repaired a missing C0-to-C7 facade delegation. The harness also needed consistent operator configuration, bounded evidence selections and actual C3 versions. Original failures and models are retained. Serving and C5 use separate environments to satisfy their incompatible NumPy dependencies.
+docs/implementation/INTEGRATION_READINESS.md:21: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:22: trailing whitespace.
++Teacher feedback reached the student: its revised headline became more cautious. Its proposed test remained weak and still claimed no additional data was needed. This is partial critique uptake, not a demonstrated reasoning advantage. The teacher uses explicit file exchange with operator-declared identity and unknown usage. No paid teacher API, weight update or forest benchmark was used.
+docs/implementation/INTEGRATION_READINESS.md:23: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:24: trailing whitespace.
++The forecast deliberately differed from a harness-controlled file size. The result verifies registration, scoring and retention mechanics. Scientific independence and blind forecast accuracy are not established. Raw evidence was exported and verified before the owned model server and Kaggle session stopped.
+docs/implementation/INTEGRATION_READINESS.md:25: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:26: trailing whitespace.
++The wider original component and interface contracts remain **REVISE**. The new runtime pass is scoped to this authored case. The source-only handoff is preserved in [COMPONENT_CONNECTIONS.md](COMPONENT_CONNECTIONS.md); historical 0.9.x results retain their original qualification.
+docs/implementation/INTEGRATION_READINESS.md:27: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:28: trailing whitespace.
++The next question is how the autonomous controller acquires information and selects operations in the controlled world, including the observed weaknesses in discriminating-test planning. Full architecture qualification remains separate from this walkthrough.
+docs/implementation/INTEGRATION_READINESS.md:29: trailing whitespace.
++
+docs/implementation/INTEGRATION_READINESS.md:30: trailing whitespace.
++Current decision: **REVISE for autonomous investigation readiness**.0.10.5 repaired controller/citation contracts, duplicate schema rendering and nested native dispatch/result serialization. The final actual student call still yielded before acquisition. Teacher review remained available and was not requested. Next: review general information-seeking/stopping semantics, then a fresh diagnostic with unchanged anti-handholding constraints. No forest/model comparison or scientific result is implied.

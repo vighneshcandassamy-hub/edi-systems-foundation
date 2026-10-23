@@ -1,0 +1,9 @@
+{
+  "model_server_stopped": true,
+  "kaggle_ui_observed": "Draft Session off (run a cell to start); Session stopped",
+  "observed_after_final_recovery": true,
+  "native_export_sha256": "59d86a7d1c418c9dbc3af22e174857eb5002ebcd8e2dab8e2c2208fda2ff0d51",
+  "screenshot_retained_on_operator_laptop": "autonomous-owned.png",
+  "model_calls_by_shutdown_or_export": 0,
+  "paid_fallback": false
+}

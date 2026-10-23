@@ -76,7 +76,7 @@ def generation_schema():
     return schema
 
 
-def serving_schema():
+def serving_schema(*, evidence_references=None, controller_turn=False):
     """vLLM decoding envelope; native validation still enforces every key bound.
 
     vLLM 0.21 rejects propertyNames. Only the known native Identifier map-key
@@ -94,4 +94,26 @@ def serving_schema():
         if isinstance(value, list):
             return [compatible(item) for item in value]
         return value
-    return compatible(generation_schema())
+    schema = compatible(generation_schema())
+    if controller_turn:
+        schema["properties"]["operation_proposals"]["minItems"] = 1
+        if "operation_proposals" not in schema["required"]:
+            schema["required"].append("operation_proposals")
+    if evidence_references is not None:
+        from edi.shared.contracts import EvidenceRef
+        references = [EvidenceRef.model_validate_json(json.dumps(ref, allow_nan=False)).model_dump(mode="json")
+                      for ref in evidence_references]
+        if references:
+            # Address choices are exactly the complete references already in the
+            # pinned context, including lineage; no output is silently rewritten.
+            schema["$defs"]["EvidenceRef"] = {"enum": references}
+        else:
+            def empty_support(value):
+                if isinstance(value, dict):
+                    if value.get("items") == {"$ref": "#/$defs/EvidenceRef"}:
+                        value["maxItems"] = 0
+                    for item in value.values(): empty_support(item)
+                elif isinstance(value, list):
+                    for item in value: empty_support(item)
+            empty_support(schema)
+    return schema

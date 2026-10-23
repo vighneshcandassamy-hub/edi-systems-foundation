@@ -1,0 +1,30 @@
+{
+  "scope": "one autonomous neutral engineering investigation",
+  "date": "2026-10-23",
+  "parent": "68111c370042b465a262f6210c25da6915c8f535",
+  "engine": "0.10.1.dev0 unchanged",
+  "construction": "IntegratedApplication.step / Investigation.step; no authored operation sequence",
+  "objective": "Investigate recorded change and support for next-reading prediction; obtain information as needed, submit findings and uncertainty",
+  "provided": "mission and operation catalogue only at bootstrap; further documents/interview require model-selected requests",
+  "environment": "three authored documents (raw samples, capture notebook, unrelated bulletin) and a separately requested operator interview",
+  "predeclared_acceptance": [
+    "controller selects and executes information acquisition beyond bootstrap",
+    "actual raw instrument information acquired and used in final submission",
+    "uncertainty and missing evidence reported; no fabricated operation or observation treated as completed",
+    "fresh-process continuation preserves prior native state and terminal restart adds no inference or broker request",
+    "all eight owner databases pass integrity checks; failures and source/model pins retained"
+  ],
+  "limits": {
+    "turns": 24,
+    "token_policy_units": 393216,
+    "session_seconds": 3600,
+    "corrections_per_job": 1,
+    "maximum_public_requests": 64
+  },
+  "teacher": "available through existing student-selected trigger only; no forced teacher turn; manual current ChatGPT session, declared unverified identity and unknown usage",
+  "scientific_claim": false,
+  "comparative_claim": false,
+  "forest_benchmark_started": false,
+  "paid_fallback": false,
+  "review": "self-review; original broader contract matrices remain REVISE"
+}

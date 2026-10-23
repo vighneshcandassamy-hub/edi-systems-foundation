@@ -1,0 +1,145 @@
+{
+  "scope": "retained notebook outputs only; raw native databases and wire outputs unavailable after VM expiration",
+  "notebook_bytes": 1996418,
+  "notebook_sha256": "73da515e6d13c998a53717d8bf9bd20ccbddcc6058f959eb8a854ac5c26faa19",
+  "raw_native_checkpoint_verified": false,
+  "native_directory_recovery": false,
+  "last_state": {
+    "evidence": [
+      {
+        "length": 1309,
+        "offset": 0,
+        "record_id": "153b3b39-b9c7-4d44-88c1-4157da39935d"
+      }
+    ],
+    "known_input_tokens": 19747,
+    "known_output_tokens": 1672,
+    "mission": {
+      "access_protocol": "Public operations use world-call with arguments {operation: public name, body: operation-specific object}. C0 assigns request_id. This catalogue defines available access, not an investigation sequence. Native EDI component operations and selective teacher review are also available through the configured controller.",
+      "objective": "Investigate the recorded change in instrument readings. Determine what the available information supports about the change and a next-reading prediction. Obtain information as needed, then submit findings, uncertainty and any further information needed.",
+      "public_operations": {
+        "ask": {
+          "body": {
+            "person_id": "catalogue interview ID",
+            "question": "your information request"
+          },
+          "returns": "available interview record; unsupported requests remain unknown"
+        },
+        "mission": {
+          "body": {},
+          "returns": "original objective and access catalogue"
+        },
+        "read": {
+          "body": {
+            "document_id": "catalogue document ID"
+          },
+          "returns": "raw document, source attribution and digest"
+        },
+        "sources": {
+          "body": {},
+          "returns": "available document and interview identifiers"
+        },
+        "status": {
+          "body": {},
+          "returns": "session status"
+        },
+        "submit": {
+          "body": {
+            "conclusion": "findings and limitations"
+          },
+          "returns": "closure receipt"
+        }
+      },
+      "scope": "Authored neutral instrument engineering environment; no forest case or empirical science."
+    },
+    "state": "yielded",
+    "turn": 1,
+    "usage_unknown_jobs": 0,
+    "used_tokens": 21419,
+    "world_ids": [],
+    "stop_reason": "bounded output correction exhausted; rejected originals retained",
+    "error": {
+      "status": "error",
+      "code": "malformed-envelope",
+      "message": "bounded output correction exhausted; rejected originals retained",
+      "retryable": false
+    },
+    "usage_basis": "known reported counts plus full reservation for unknown usage; not an energy/cost measurement"
+  },
+  "last_server_report": {
+    "stage": "autonomous_restart_returned",
+    "sampler": "pytorch",
+    "profile_version": "kaggle-t4-native16k-xgrammar-v2",
+    "benchmark_started": false,
+    "paid_fallback": false,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "profile": {
+      "dtype": "float16",
+      "tensor_parallel_size": 2,
+      "max_model_len": 16384,
+      "image_count": 1,
+      "max_image_pixels": 65536,
+      "max_output_tokens_per_request": 2048,
+      "temperature": 0,
+      "seed": 17
+    },
+    "versions": {
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "vllm": "0.21.0",
+      "transformers": "4.57.6"
+    },
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "server_command": [
+      "/kaggle/temp/edi-engineering-serve/bin/python",
+      "-m",
+      "vllm.entrypoints.openai.api_server",
+      "--model",
+      "/kaggle/temp/edi-free-vllm/hf-cache/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "--served-model-name",
+      "Qwen/Qwen3-VL-8B-Instruct",
+      "--tokenizer",
+      "/kaggle/temp/edi-free-vllm/hf-cache/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8008",
+      "--structured-outputs-config.backend",
+      "xgrammar",
+      "--dtype",
+      "half",
+      "--tensor-parallel-size",
+      "2",
+      "--max-model-len",
+      "16384",
+      "--gpu-memory-utilization",
+      "0.90",
+      "--max-num-seqs",
+      "1",
+      "--max-num-batched-tokens",
+      "16384",
+      "--enforce-eager",
+      "--disable-custom-all-reduce",
+      "--load-format",
+      "safetensors",
+      "--attention-backend",
+      "TRITON_ATTN",
+      "--mm-encoder-attn-backend",
+      "TORCH_SDPA",
+      "--limit-mm-per-prompt",
+      "{\"image\": 1, \"video\": 0}",
+      "--mm-processor-kwargs",
+      "{\"min_pixels\": 4096, \"max_pixels\": 65536}"
+    ],
+    "returncode": 1,
+    "stage_log": "restart-process-2.log"
+  },
+  "recovered_deployment_bundle": {
+    "bundle_sha256": "90459ceb0e5307670e27b9c558ac21864a031f09a18280175222358257fa28f9",
+    "bytes": 176055,
+    "bundle_files": 72,
+    "engine_files_verified_against_parent": 69,
+    "parent": "68111c370042b465a262f6210c25da6915c8f535",
+    "source": "embedded source bundle recovered from saved notebook, not runtime database recovery"
+  }
+}

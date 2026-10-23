@@ -45,7 +45,7 @@ class Investigation:
         self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=256 * 1024**2)
         self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 32 + 4, max_bytes=256 * 1024**2)
         previous = self.journal.get("configuration")
-        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.0":
+        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.1":
             raise EDIError(ErrorCode.UNSUPPORTED, "use a fresh integration workspace; historical C0 state is not migrated")
         deadline = (json.loads(previous["request"])["deadline"] if previous else
                     (utc_now() + timedelta(seconds=session_seconds)).isoformat())
@@ -54,10 +54,10 @@ class Investigation:
             "workspace": runtime.profile.workspace_id, "student": student_gateway.binding.model_dump(mode="json"),
             "teacher": teacher_gateway.binding.model_dump(mode="json") if teacher_gateway else None,
             "max_turns": max_turns, "max_tokens": max_tokens, "session_seconds": session_seconds,
-            "max_corrections": max_corrections, "deadline": deadline, "controller": "edi-c0/integrated-1.0"})
+            "max_corrections": max_corrections, "deadline": deadline, "controller": "edi-c0/integrated-1.1"})
         self.journal.finish("configuration", {"frozen": True})
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.component.results", native_source_id=run_id,
-            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.0",
+            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.1",
             binding_basis="configured", descriptor={"independent_world_evidence": False}))
 
     def _phase(self, key, body, operation):
@@ -136,7 +136,8 @@ class Investigation:
             "workspace_id": r.profile.workspace_id, "inquiry_id": inquiry_id, "request_id": inquiry_id,
             "question": state["mission"]["objective"], "purpose": state["mission"]["objective"],
             "scope": "Acquired evidence and attributed EDI artifacts; choose information and supported operations independently",
-            "horizon": "Select the relevant horizon under the original mission authority", "model_revision": r.world.head(),
+            "horizon": "Select the relevant horizon under the original mission authority",
+            "response_mode": "controller-turn", "model_revision": r.world.head(),
             "world_ids": state["world_ids"], "evidence": state["evidence"],
             "budget": Budget(rounds=4, jobs=6, input_token_cap=12288, output_token_cap=4096,
                 reserved_tokens=min(remaining, 98304)).model_dump(mode="json"),
@@ -307,7 +308,7 @@ class Investigation:
     def _dispatch_known(self, proposal, state, inquiry_id):
         def unresolved_broker():
             if proposal.operation != "world-call": return False
-            row = self.connector.journal.get("c0:" + digest([self.run_id, state["turn"], proposal]))
+            row = self.connector.journal.get("c0:" + digest([self.run_id, state["turn"], proposal.model_dump(mode="json")]))
             return row is not None and row["state"] == "pending" and bool(row["attempts"])
         try:
             return self._dispatch(proposal, state, inquiry_id)
@@ -328,7 +329,7 @@ class Investigation:
             raise EDIError(ErrorCode.CAPACITY, "persisted session deadline reached before operation dispatch")
         from edi.inquiry.operations import invoke
         r, arguments = self.runtime, proposal.arguments
-        command = "c0:" + digest([self.run_id, state["turn"], proposal])
+        command = "c0:" + digest([self.run_id, state["turn"], proposal.model_dump(mode="json")])
         if proposal.operation == "world-call":
             intent = PublicIntent.model_validate_json(canonical(arguments))
             result = self.connector.call(PublicIntent(operation=intent.operation,

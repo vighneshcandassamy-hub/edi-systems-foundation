@@ -1,0 +1,8 @@
+{
+  "scope": "first authored native dispatch regression after explicit proposal-key repair",
+  "passed": false,
+  "expected": "completed after sources/read/submit",
+  "observed": "ready after turn4; requests reached broker",
+  "diagnosis": "Nested typed C2 Derivation inside result envelope still failed canonical JSON serialization, so subsequent result/closure bookkeeping did not complete. Shared canonical serializer now converts native models recursively and rejects unsupported objects.",
+  "model_calls": 0
+}

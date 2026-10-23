@@ -1,0 +1,72 @@
+{
+  "gate": "contract",
+  "verdict": "pass_scoped",
+  "review": "implementer self-review",
+  "implementation": "0.10.1.dev0 unchanged from68111c370042b465a262f6210c25da6915c8f535",
+  "scope": "existing Investigation controller routes plus neutral broker compatibility",
+  "routes": [
+    [
+      "bootstrap",
+      "C0 Investigation.bootstrap -> C7 grant -> C1 BrokerConnector mission"
+    ],
+    [
+      "reason",
+      "C0 _inquiry/_receive -> C4 native gateway -> loopback vLLM"
+    ],
+    [
+      "acquire",
+      "C4 world-call/acquire-asset -> C0 _dispatch -> C7 -> broker -> C1 -> C2"
+    ],
+    [
+      "retain",
+      "C4 candidates -> C3 proposal receipt; no model operator admission"
+    ],
+    [
+      "components",
+      "C4 component-call -> C0 operations.invoke -> existing Workflow.invoke_component;35 typed operations"
+    ],
+    [
+      "feedback",
+      "C5/C6/C7 native results -> attributed C1 component-result -> next bounded C4 context"
+    ],
+    [
+      "teacher",
+      "student teacher-review trigger -> exact-cut file exchange -> C4 student revision"
+    ],
+    [
+      "resume",
+      "native C0 phase and C4 dispatch journals; original identities retained; unknown provider completion not replayed"
+    ]
+  ],
+  "findings": [
+    {
+      "id": "AC-F01",
+      "state": "no_missing_source_route_found",
+      "rationale": "Source inspection confirms branches and feedback already connected; actual autonomous selection remains runtime obligation"
+    },
+    {
+      "id": "AC-F02",
+      "state": "resolved_in_run_configuration",
+      "rationale": "Agency operator explicitly matches grant engineering-operator; no reuse of historical stores"
+    },
+    {
+      "id": "AC-F03",
+      "state": "open_broader_scope",
+      "rationale": "Normal trusted SDK run does not provide OS/container isolation, scientific validity or qualification of all optional operation branches"
+    }
+  ],
+  "matrix_baselines": {
+    "owners": "docs/implementation/evidence/engineering-20261022/OWNER_INTERFACE_REVIEW.json",
+    "outside": "docs/implementation/evidence/engineering-20261022/INTERFACE_REVIEW.json",
+    "unchanged_contracts": true,
+    "broader_verdict": "REVISE"
+  },
+  "source_check": "docs/implementation/evidence/autonomous-20261023/source-checks.json",
+  "runtime_status": "not_yet_observed_at_preflight",
+  "requirements_basis": [
+    "docs/implementation/INTEGRATION_TRACE.json",
+    "docs/implementation/COMPONENT_CONNECTIONS.md"
+  ],
+  "new_domain_solver": false,
+  "scientific_claim": false
+}

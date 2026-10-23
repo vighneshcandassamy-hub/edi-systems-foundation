@@ -1,0 +1,113 @@
+{
+  "schema": "edi-autonomous-integration-trace/1.0",
+  "authority": "predeclared protocol.json plus existing CI-R01..CI-R05; no scientific acceptance change",
+  "source_parent": "68111c370042b465a262f6210c25da6915c8f535",
+  "requirements": [
+    {
+      "id": "AU-R01",
+      "parents": [
+        "CI-R01"
+      ],
+      "statement": "Provide objective/access and require a typed next decision without prescribing operations",
+      "implementation": [
+        "src/edi/inquiry/benchmark.py",
+        "src/edi/reason/contracts.py",
+        "src/edi/reason/service.py"
+      ],
+      "cases": [
+        "AU-V01",
+        "AU-V04"
+      ]
+    },
+    {
+      "id": "AU-R02",
+      "parents": [
+        "CI-R02"
+      ],
+      "statement": "Preserve complete evidence addresses and return attributed native results to the next bounded cut",
+      "implementation": [
+        "src/edi/reason/operation_args.py",
+        "src/edi/reason/gateway.py",
+        "src/edi/shared/durable_io.py"
+      ],
+      "cases": [
+        "AU-V01",
+        "AU-V02",
+        "AU-V04"
+      ]
+    },
+    {
+      "id": "AU-R03",
+      "parents": [
+        "CI-R04"
+      ],
+      "statement": "Retain failed work and distinguish no dispatch, definite native failure and unknown completion under fixed resource limits",
+      "implementation": [
+        "src/edi/inquiry/benchmark.py",
+        "src/edi/reason/gateway.py"
+      ],
+      "cases": [
+        "AU-V02",
+        "AU-V03",
+        "AU-V04"
+      ]
+    },
+    {
+      "id": "AU-R04",
+      "parents": [
+        "CI-R05"
+      ],
+      "statement": "Reopen native state without extra calls and preserve verified source/state evidence",
+      "implementation": [
+        "examples/autonomous/run.py",
+        "examples/autonomous/checkpoint.py",
+        "examples/autonomous/recover_checkpoint.py",
+        "examples/autonomous/offline_restart.py"
+      ],
+      "cases": [
+        "AU-V03",
+        "AU-V05",
+        "AU-V06"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "AU-V01",
+      "scope": "Authored native response/grammar and transport invariance",
+      "status": "passed",
+      "evidence": "controller-contract-check.json"
+    },
+    {
+      "id": "AU-V02",
+      "scope": "Authored native dispatch, C2 return, closure and unresolved transport",
+      "status": "passed",
+      "evidence": "dispatch-regression.json"
+    },
+    {
+      "id": "AU-V03",
+      "scope": "CPU broker/native-store checks with authored inference fixtures",
+      "status": "passed",
+      "evidence": "cpu-regression-0.10.5/cpu-tests.json"
+    },
+    {
+      "id": "AU-V04",
+      "scope": "Actual pinned free student autonomous acquisition/submission",
+      "status": "failed",
+      "evidence": "runtime-results.json"
+    },
+    {
+      "id": "AU-V05",
+      "scope": "Fresh process continuation/restart and eight databases",
+      "status": "passed",
+      "evidence": "native-restart-audit.json"
+    },
+    {
+      "id": "AU-V06",
+      "scope": "Raw export/digest/CRC/source/wheel equality",
+      "status": "passed",
+      "evidence": "build-verification.json"
+    }
+  ],
+  "limits": "No forced teacher, pre-admitted model, authored live operation order, parameter training or scientific/comparative claim. Current teacher selection remains optional; past scheduled teacher path retains separate scope."
+}

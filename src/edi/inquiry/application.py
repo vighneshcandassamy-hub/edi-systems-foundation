@@ -29,6 +29,7 @@ class StudentConnection(Record):
     api_key_env: Identifier = "EDI_VLLM_API_KEY"
     max_model_len: int = Field(default=16384, ge=16384)
     max_images: int = Field(default=1, ge=0, le=2)
+    completion_timeout_seconds: int = Field(default=120, ge=30, le=900)
     attribution: str = "Configured fixed student via vLLM; reported serving usage"
 
 
@@ -142,7 +143,8 @@ class IntegratedApplication:
         connector = BrokerConnector(r, grant.endpoint, token, grant.session_id, authority,
             r.workflow.profile.database, max_requests=grant.maximum_requests)
         backend = VllmBackend(profile.student.endpoint, profile.student.binding.model_id,
-            api_key=serving_key, max_model_len=profile.student.max_model_len)
+            api_key=serving_key, max_model_len=profile.student.max_model_len,
+            completion_timeout=profile.student.completion_timeout_seconds)
         student = NativeGateway(r, profile.student.binding, r.reasoning.profile.database, backend,
             backend.count_tokens, attribution=profile.student.attribution,
             max_images=profile.student.max_images, max_calls=profile.max_turns * 6)

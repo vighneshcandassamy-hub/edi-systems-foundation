@@ -58,6 +58,8 @@ class InquiryRequest(Record):
     purpose: Text
     scope: Text
     horizon: Text
+    response_mode: Literal["proposal", "controller-turn"] = Field(default="proposal",
+        description="A controller turn needs exactly one next-operation proposal or explicit yield; proposal mode permits reasoning-only output.")
     model_revision: int = Field(ge=0)
     world_ids: tuple[Identifier, ...] = Field(default=(), max_length=16)
     evidence: tuple[EvidenceSelection, ...] = Field(default=(), max_length=16)
@@ -287,7 +289,7 @@ class Episode(Record):
     sequence: int = Field(ge=1)
     created_at: datetime
     updated_at: datetime
-    implementation: Literal["edi-c4/0.6.0"] = "edi-c4/0.6.0"
+    implementation: Literal["edi-c4/0.6.0", "edi-c4/0.6.1"] = "edi-c4/0.6.1"
     profile_snapshot: dict[str, JsonValue]
     operating_profile: dict[str, JsonValue]
     context: Context

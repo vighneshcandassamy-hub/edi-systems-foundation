@@ -1,0 +1,9 @@
+{
+  "scope": "local requirement/case/path trace consistency plus implementer semantic review; not proof of capability",
+  "consistent": true,
+  "requirements": 4,
+  "cases": 6,
+  "issues": [],
+  "original_CI_requirements_preserved": true,
+  "acceptance_changed": false
+}

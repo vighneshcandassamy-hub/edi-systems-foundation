@@ -1,0 +1,49 @@
+{
+  "scope": "repository/source/report consistency; actual native/live evidence is separately scoped",
+  "results": [
+    {
+      "name": "baseline",
+      "exit_code": 0,
+      "log": "checks/baseline.log"
+    },
+    {
+      "name": "documentation",
+      "exit_code": 0,
+      "log": "checks/documentation.log"
+    },
+    {
+      "name": "component-review",
+      "exit_code": 0,
+      "log": "checks/component-review.log"
+    },
+    {
+      "name": "owner-interfaces",
+      "exit_code": 0,
+      "log": "checks/owner-interfaces.log"
+    },
+    {
+      "name": "outside-interfaces",
+      "exit_code": 0,
+      "log": "checks/outside-interfaces.log"
+    },
+    {
+      "name": "diff-whitespace",
+      "exit_code": 0,
+      "log": "checks/diff-whitespace.log"
+    }
+  ],
+  "harness_ast": "passed",
+  "passed": true,
+  "eol_correction": {
+    "authored_docs_normalized_to_LF": [
+      "examples/autonomous/README.md",
+      "docs/implementation/AUTONOMOUS_RUN.md",
+      "docs/decisions/ADR-012-autonomous-controller-contract.md",
+      "docs/implementation/INTEGRATION_READINESS.md",
+      "README.md",
+      "STATE.md"
+    ],
+    "all76_executed_sources_unchanged": true,
+    "original_evidence_log_bytes_preserved": true
+  }
+}
