@@ -1,0 +1,24 @@
+{
+  "version": "0.10.12.dev0",
+  "scope": "Authored native mission and rejected-draft recovery, teacher file pause/reopen, invalid-revision containment, actual broker handler, blind first assessments, closure and no-redispatch reopen. No model inference or autonomous reasoning result.",
+  "passed": true,
+  "tests_run": 5,
+  "grammar": "not-run-on-this-host",
+  "json_schema": "native Pydantic admission exercised; external schema checker not run",
+  "errors": [],
+  "failures": [],
+  "model_calls": 0,
+  "neural_weight_updates": 0,
+  "files_sha256": {
+    "src/edi/reason/contracts.py": "0ce5220311bbe6b6d03538df29db213741840fb64c1f55f5e529e6b8217dfe1e",
+    "src/edi/reason/decision.py": "803d2f17b1998003c28c8c29cc80d2f855ec786ea8b226cf5ef6ef415f903f0c",
+    "src/edi/reason/gateway.py": "be4d745e1586e66acdd96875ac4a50616adcce1dbe7f07f09429665731a2e00a",
+    "src/edi/reason/operation_args.py": "5e474be7a8a30aae039015fb0d2eb673be9406862bffd71ea3caf0eb06f7af93",
+    "src/edi/reason/service.py": "c2b7cc46d72bc2dfb7ad49b8816171ba5ead832878576a919cc5cb09577fabe6",
+    "src/edi/reason/teaching.py": "6cf1f9d0368666e5f7fb338cd0d3e449abd4abcfa4c44821b8845f8a4007a9d1",
+    "src/edi/inquiry/benchmark.py": "971872f4a1e55c2ef8bceaaca4c035d5d3b816a57c961a70776e9141b2b93489",
+    "tests/test_decision_grounding.py": "a0df317fac63fbd945496414b539c8790e65849d1e9c7b97446334abb1d8df56",
+    "tests/test_information_seeking.py": "62a3f26399e7e26fef38dc7b803aae72c93237f973155575109a6caa2aa20eb3"
+  },
+  "nonbehavioral_postcheck_note": "Updated ControllerAccess docstring to describe separately pinned public manual; no fields or admission behavior changed after this check."
+}

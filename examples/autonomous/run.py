@@ -15,7 +15,7 @@ import traceback
 from edi.inquiry.application import ApplicationProfile, IntegratedApplication
 from edi.shared.durable_io import canonical, digest
 from edi.shared.errors import EDIError, ErrorCode
-from neutral_world import MISSION
+from active_world import MISSION, PUBLIC_OPERATIONS, KIND, broker_snapshot
 
 OUT = Path(os.environ.get("EDI_AUTONOMOUS_ROOT", "/kaggle/working/edi-autonomous-20261023"))
 REV = "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
@@ -41,13 +41,16 @@ def configuration():
     teacher = {"model_id": "ChatGPT-current-session-operator-declared", "revision": "autonomous-critique-20261023", "provider": "manual-file-exchange", "engine": "current-assistant-session-unverified", "tokenizer_revision": "unmeasured"}
     config = {"application_id": WORKSPACE, "run_id": RUN,
         "observation": {"workspace_id": WORKSPACE, "database": str(OUT / "owners.sqlite3")},
-        "student": {"binding": binding, "max_images": 0, "max_model_len": 20480, "completion_timeout_seconds": 600},
+        "student": {"binding": binding, "max_images": 1 if KIND=="cedar" else 0, "max_model_len": 20480, "completion_timeout_seconds": 600},
         "teacher": {"binding": teacher, "directory": str(OUT / "teacher-exchange"), "attribution": "Current ChatGPT assistant; operator-declared identity; implementation context known; critique only"},
         "agency": {"workspace_id": WORKSPACE, "database": str(OUT / "owners.agency.sqlite3"), "operator_ids": ["engineering-operator"]},
-        "broker": {"grant": {"grant_id": WORKSPACE, "session_id": WORKSPACE, "workspace_id": WORKSPACE, "endpoint": "http://127.0.0.1:8098", "token_sha256": hashlib.sha256(os.environ["EDI_BROKER_TOKEN"].encode()).hexdigest(), "mission_sha256": digest(MISSION), "operator_id": "engineering-operator", "not_before": (now - timedelta(seconds=1)).isoformat(), "expires_at": (now + timedelta(hours=2)).isoformat(), "operations": list(MISSION["public_operations"]), "maximum_requests": 64}},
+        "broker": {"grant": {"grant_id": WORKSPACE, "session_id": WORKSPACE, "workspace_id": WORKSPACE, "endpoint": "http://127.0.0.1:8098", "token_sha256": hashlib.sha256(os.environ["EDI_BROKER_TOKEN"].encode()).hexdigest(), "mission_sha256": digest(MISSION), "public_operations": PUBLIC_OPERATIONS, "operator_id": "engineering-operator", "not_before": (now - timedelta(seconds=1)).isoformat(), "expires_at": (now + timedelta(hours=2)).isoformat(), "operations": list(PUBLIC_OPERATIONS if PUBLIC_OPERATIONS is not None else MISSION["public_operations"]), "maximum_requests": 64}},
         "teaching_mode": os.environ.get("EDI_TEACHING_MODE", "selective"),
         "use_teaching_memory": os.environ.get("EDI_USE_TEACHING_MEMORY", "0") == "1",
         "max_turns": 24, "max_tokens": 786432, "session_seconds": 3600, "max_corrections": 1}
+    save("world-selection.json", {"kind":KIND,"mission_sha256":digest(MISSION),
+        "public_manual_sha256":digest(PUBLIC_OPERATIONS) if PUBLIC_OPERATIONS is not None else None,
+        "scope":"teacher-assisted single-host diagnostic; independent isolation and comparison unqualified"})
     profile = ApplicationProfile.model_validate_json(json.dumps(config))
     save("application.json", profile.model_dump(mode="json"))
     return ApplicationProfile.load(path)
@@ -65,7 +68,7 @@ def snapshot(app):
                 break
             raise
         episodes.append(ep.model_dump(mode="json"))
-    ledger = json.loads((OUT / "world-session.json").read_bytes())
+    ledger = broker_snapshot(OUT)
     # Gateway table names are owner-defined; snapshot all IO counters for audit.
     counters = {}
     with sqlite3.connect(app.runtime.reasoning.profile.database) as db:
@@ -142,8 +145,11 @@ def main():
         save("teacher-pending-" + current["job_id"] + ".json", current)
         (OUT / "teacher-pending.json").write_text(json.dumps(current, indent=2), encoding="utf-8")
     elif current["state"] not in ("ready", "in-progress", "waiting-model", "uncertain-completion"):
+        if KIND=="cedar":
+            from meadows_world import evaluate_closed
+            save("meadows-outcome.json", evaluate_closed(OUT))
         save("restart-baseline.json", after)
-        save("terminal.json", {"returned_state": current, "snapshot": after, "forest_benchmark_started": False, "scheduling": "real Investigation.step; no authored operation sequence", "teacher_trigger": "controller-scheduled intensive assessment and critique" if configuration().teaching_mode == "intensive" else "student-selected only; optional", "paid_fallback": False})
+        save("terminal.json", {"returned_state": current, "snapshot": after, "forest_benchmark_started": KIND=="cedar", "scheduling": "real Investigation.step; no authored operation sequence", "teacher_trigger": "controller-scheduled intensive assessment and critique" if configuration().teaching_mode == "intensive" else "student-selected only; optional", "paid_fallback": False})
     print(json.dumps({"turn": index, "state": current["state"], "stop_reason": current.get("stop_reason"), "broker_requests": after["broker_requests"], "c4_io_counters": after["c4_io_counters"]}), flush=True)
 
 

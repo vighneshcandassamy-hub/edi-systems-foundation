@@ -29,6 +29,9 @@ class SimulationGrant(Record):
     not_before: datetime
     expires_at: datetime
     operations: tuple[PublicOperation, ...]
+    # Optional trusted operator description for worlds whose mission and public
+    # operation manual are separate artifacts. It cannot add granted names.
+    public_operations: dict[str, JsonValue] | None = Field(default=None, max_length=13)
     maximum_requests: int = Field(default=300, ge=1, le=10000)
     authority: Literal["explicit-human-simulated-world-mission"] = "explicit-human-simulated-world-mission"
 
@@ -41,6 +44,8 @@ class SimulationGrant(Record):
             raise ValueError("grant needs an aware nonempty interval")
         if not self.operations or len(set(self.operations)) != len(self.operations):
             raise ValueError("grant needs distinct finite operations")
+        if self.public_operations is not None and not set(self.public_operations) <= set(self.operations):
+            raise ValueError("public operation descriptions cannot expand granted operations")
         return self
 
 

@@ -1,0 +1,139 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C0/C4 rejected-draft teaching recovery and existing C1/C7 Cedar adapter",
+  "gate": "contract",
+  "requested_scope": "Authorized full teaching-path repair and one Cedar development diagnostic",
+  "input_revision": "0.10.12.dev0 over cad9c270eb1c3b7cfb6d3023a3d93fde8eae12fa",
+  "reviewer": {
+    "role": "implementer_and_architecture_critic",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/TEACHING_RECOVERY.md",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "IMP-R08/R09/R18/R19/R26/R32/R33 trace the complete teaching/error/action path in TEACHING_RECOVERY.md.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Rejected drafts stay rejected; teacher critique consumes raw diagnostic records; only admitted revisions execute. Operator public manual cannot expand granted names.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Reuse existing rejection record/status and teaching stages; no forced action selector, extra owner or blind retry before critique.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Advice, rejected model output and provisional lessons retain generated status; exact pinned context and raw public responses preserved.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Existing six-job/four-round bounds, exact tokenizer caps, one revision correction and complete known/unknown usage charging retained. Source-only large world inputs are omitted explicitly from pause checkpoints.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Saved rejected draft reaches critique; file-teacher pause/reopen avoids replay; unknown completion remains pending; invalid revisions cannot dispatch. Full cross-owner crash recovery remains unqualified.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Exact native saved failure, frozen Cedar public protocol and existing architecture/requirements drive the repair; no private answers are coaching inputs.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Five authored recovery checks, eight related integration/compatibility cases and unpacked Cedar connection pass; actual model performance remains separate.",
+      "references": [
+        "docs/implementation/TEACHING_RECOVERY.md",
+        "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+      ]
+    }
+  ],
+  "findings": [],
+  "changes": [
+    "src/edi/inquiry/benchmark.py",
+    "src/edi/reason/service.py",
+    "src/edi/reason/gateway.py",
+    "src/edi/reason/teaching.py",
+    "src/edi/reason/contracts.py",
+    "src/edi/agency/benchmark.py",
+    "examples/autonomous/active_world.py",
+    "examples/autonomous/meadows_world.py",
+    "examples/autonomous/run.py",
+    "examples/autonomous/server.py",
+    "examples/autonomous/checkpoint.py",
+    "examples/autonomous/offline_restart.py",
+    "examples/autonomous/prepare_kaggle_run.py",
+    "tests/test_decision_grounding.py",
+    "tests/test_meadows_launch.py",
+    "tests/fixtures/rejected_draft_20261024.json",
+    "scripts/check_decision_grounding.py",
+    "VERSION",
+    "pyproject.toml",
+    "src/edi/__init__.py"
+  ],
+  "verification": [
+    {
+      "id": "RECOVERY-NATIVE-01",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "revision": "0.10.12.dev0 file hashes in regression-summary.json",
+      "evidence_ref": "docs/implementation/evidence/teaching-recovery-20261024/native-recovery.json"
+    },
+    {
+      "id": "CEDAR-ADAPTER-01",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "revision": "0.10.12.dev0 file hashes in regression-summary.json",
+      "evidence_ref": "docs/implementation/evidence/teaching-recovery-20261024/regression-summary.json"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "Pin reviewed source and execute the recorded Cedar diagnostic; retain actual failure or completion.",
+  "live_model_result": {
+    "status": "not yet run at this source",
+    "prior_failure": "docs/implementation/evidence/decision-grounding-20261024/live-result.json"
+  }
+}

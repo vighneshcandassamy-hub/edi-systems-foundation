@@ -1,0 +1,68 @@
+{
+  "scope": "Targeted engineering checks; authored callbacks only; no live Meadows or learning result.",
+  "version": "0.10.12.dev0",
+  "source_parent": "cad9c270eb1c3b7cfb6d3023a3d93fde8eae12fa",
+  "model_calls": 0,
+  "checks": [
+    {
+      "command": "python -m unittest test_decision_grounding -v",
+      "tests": 13,
+      "passed": true,
+      "seconds": 42.361,
+      "scope": "Initial three recovery cases plus ten imported information-seeking compatibility cases"
+    },
+    {
+      "command": "python -m unittest test_meadows_launch.MeadowsLaunchTests test_decision_grounding.DecisionGroundingTests.test_unknown_student_completion_never_becomes_a_reviewable_rejection test_intensive_teaching.IntensiveTeachingTests -v",
+      "tests": 8,
+      "passed": true,
+      "seconds": 29.073,
+      "scope": "Frozen Cedar/native connection, unknown dispatch fencing and six intensive teaching regressions, including production no-dispatch reopen"
+    },
+    {
+      "command": "python scripts/check_decision_grounding.py --output .../native-recovery.json",
+      "tests": 5,
+      "passed": true,
+      "scope": "Includes exact saved failed draft with only record-pointer remapping; authored coach/revision, not actual Qwen recovery"
+    },
+    {
+      "command": "unpacked-bundle python -m unittest discover -s tests -p test_meadows_launch.py -v",
+      "tests": 1,
+      "passed": true,
+      "seconds": 5.586,
+      "scope": "Actual generated bundle, 127 exact per-file hashes, frozen mission and broker; direct public dispatch transport, no TCP or model"
+    },
+    {
+      "command": "compile changed launch/reopen modules",
+      "passed": true,
+      "scope": "Syntax only; checkpoint export behavior checked at live pause"
+    }
+  ],
+  "source_hashes": {
+    "src/edi/inquiry/benchmark.py": "971872f4a1e55c2ef8bceaaca4c035d5d3b816a57c961a70776e9141b2b93489",
+    "src/edi/reason/service.py": "c2b7cc46d72bc2dfb7ad49b8816171ba5ead832878576a919cc5cb09577fabe6",
+    "src/edi/reason/gateway.py": "be4d745e1586e66acdd96875ac4a50616adcce1dbe7f07f09429665731a2e00a",
+    "src/edi/reason/teaching.py": "6cf1f9d0368666e5f7fb338cd0d3e449abd4abcfa4c44821b8845f8a4007a9d1",
+    "src/edi/reason/contracts.py": "0ce5220311bbe6b6d03538df29db213741840fb64c1f55f5e529e6b8217dfe1e",
+    "src/edi/agency/benchmark.py": "376cc3dcc54ffded9574c8435bcf0388912c389e2c00dc684c4718295b5eb878",
+    "examples/autonomous/active_world.py": "14971df0fbd7c67c8ca9ec0703c99409167e22501a91f30fe0cbe4dbdbd982bd",
+    "examples/autonomous/meadows_world.py": "5996bff5a56d79468566910440acf841ff3d3b4315d453415c91f69bdf6570dc",
+    "examples/autonomous/run.py": "2ab90199f3f8e5f04126a3a21f5feef4c8ed2b0442645522facd665a479947ee",
+    "examples/autonomous/server.py": "22cbbe52964df4fcf8f07d8d50f36924b77b521f127d9ed0ea38c438b59c1a1f",
+    "examples/autonomous/checkpoint.py": "0f6c2ec76e01070325130d5c5d8842bfcc0bfee606369c178c4e339dfaead4b7",
+    "examples/autonomous/offline_restart.py": "08a62850bc77ecd33878aba9f542f12b2add12cd14470e5d1bfd14fe0662cda5",
+    "examples/autonomous/prepare_kaggle_run.py": "179ec24855b9395b886b35622ee88853f8c231984f54f113fc6eb63c02537799",
+    "tests/test_decision_grounding.py": "a0df317fac63fbd945496414b539c8790e65849d1e9c7b97446334abb1d8df56",
+    "tests/test_meadows_launch.py": "81ff45b4fddb0561fa0ed805d529524566eadfa872f424441fef4f8197a2edac",
+    "tests/fixtures/rejected_draft_20261024.json": "4389cfe692f59cd669e47da957d027b27be489ab9bebac5c7ae8c8f297997289",
+    "scripts/check_decision_grounding.py": "579eea581df4d0f3cc30327ae95e4d0a03697f7c532cbda5acd69ff842092622",
+    "VERSION": "d1d98b16aeb1827223d8d6db19987c96608027c23665c8d885b9a187eadd4ffc",
+    "pyproject.toml": "f989ff0194412e27ceebd6a37ceb151353e4338926b79e4f23b87f0efc3f6550",
+    "src/edi/__init__.py": "9d7ba957d42c750cab4f3647035ba69b0368b7695406361aa72bd838114f9b33"
+  },
+  "limits": [
+    "No neural updates or model performance/learning claim.",
+    "JSON schema/grammar actual compilation remains a mandatory serving-host preflight.",
+    "Single-host model-facing protocol isolation; independent OS/container and crash recovery remain unqualified.",
+    "Frozen world/corpus files were read and packaged unchanged, never used as teacher answer material."
+  ]
+}

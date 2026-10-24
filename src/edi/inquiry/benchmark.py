@@ -21,7 +21,7 @@ from edi.shared.errors import EDIError, ErrorCode
 
 
 def describe_access(mission, grant):
-    """Describe only adopted mission operations also present in C7's grant.
+    """Describe adopted mission/manual operations also present in C7's grant.
 
     No source payload, generated proposal or subsequent document can extend this
     surface. C7 and the broker independently authorize/validate actual requests.
@@ -29,7 +29,7 @@ def describe_access(mission, grant):
     from edi.reason.contracts import ControllerAccess
     if digest(mission) != grant.mission_sha256:
         raise EDIError(ErrorCode.INTEGRITY, "mission differs from adopted access description")
-    catalogue = mission.get("public_operations", {})
+    catalogue = mission.get("public_operations", grant.public_operations or {})
     if not isinstance(catalogue, dict):
         raise EDIError(ErrorCode.INVALID, "adopted mission access catalogue must be an object")
     return ControllerAccess.model_validate_json(canonical({
@@ -74,7 +74,7 @@ class Investigation:
         self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=256 * 1024**2)
         self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 32 + 4, max_bytes=256 * 1024**2)
         previous = self.journal.get("configuration")
-        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.7":
+        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.8":
             raise EDIError(ErrorCode.UNSUPPORTED, "use a fresh integration workspace; historical C0 state is not migrated")
         deadline = (json.loads(previous["request"])["deadline"] if previous else
                     (utc_now() + timedelta(seconds=session_seconds)).isoformat())
@@ -83,10 +83,10 @@ class Investigation:
             "workspace": runtime.profile.workspace_id, "student": student_gateway.binding.model_dump(mode="json"),
             "teacher": teacher_gateway.binding.model_dump(mode="json") if teacher_gateway else None,
             "max_turns": max_turns, "max_tokens": max_tokens, "session_seconds": session_seconds,
-            "controller_policy": controller_policy, "input_token_cap": input_token_cap, "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.7"})
+            "controller_policy": controller_policy, "input_token_cap": input_token_cap, "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.8"})
         self.journal.finish("configuration", {"frozen": True})
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.component.results", native_source_id=run_id,
-            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.7",
+            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.8",
             binding_basis="configured", descriptor={"independent_world_evidence": False}))
 
     def _phase(self, key, body, operation):
@@ -249,6 +249,10 @@ class Investigation:
             if ((rejection.input_tokens is not None and rejection.input_tokens > job.input_token_cap) or
                     (rejection.output_tokens is not None and rejection.output_tokens > job.output_token_cap)):
                 raise EDIError(ErrorCode.CAPACITY, "provider usage exceeded the original cap; no correction dispatched")
+            if self.teaching_mode == "intensive" and teaching_stage == "draft":
+                # A definite returned bad draft is useful critique input, not an
+                # executable response. Do not spend a blind retry before teaching.
+                return rejection
         raise EDIError(ErrorCode.INVALID, "bounded output correction exhausted; rejected originals retained")
 
     def _retain_candidates(self, response, state):

@@ -1,3 +1,5 @@
+> Current 0.10.12 recovery and Cedar diagnostic: [TEACHING_RECOVERY.md](docs/implementation/TEACHING_RECOVERY.md). Rejected drafts can reach critique; only validated revisions execute. Offline authored recovery/adapter checks pass; live result pending. No weights changed.
+
 Current engineering repair: **0.10.11.dev0**, C0 integrated-1.7.
 A saved nine-call audit confirms prompts, raw responses and revised dispatches
 match. The decision step now has a compact evidence index and native grounding

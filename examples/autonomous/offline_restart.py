@@ -21,6 +21,8 @@ def main():
     os.environ["EDI_AUTONOMOUS_ROOT"] = str(root)
     os.environ["EDI_AUTONOMOUS_RUN_ID"] = profile.run_id
     os.environ["EDI_AUTONOMOUS_WORKSPACE"] = profile.application_id
+    selection=root/"world-selection.json"
+    if selection.exists():os.environ["EDI_ENGINEERING_WORLD"]=json.loads(selection.read_bytes())["kind"]
     from run import snapshot, snapshot_differences
 
     class ForbiddenPort:

@@ -235,11 +235,12 @@ class Reasoning:
                         raise EDIError(ErrorCode.CONFLICT, "blind assessment must be allocated before the first student draft")
                     round_number = 1
                 elif request.action == "teacher" and stage == "critique":
-                    if not students or students[-1].status != "completed" or not any(
-                            j.role == "teacher" and j.teaching_stage == "independent" and j.status == "completed" for j in old.jobs):
-                        raise EDIError(ErrorCode.CONFLICT, "critique requires completed blind assessment and student draft")
+                    if (not students or students[-1].teaching_stage != "draft"
+                            or students[-1].status not in ("completed", "rejected") or not any(
+                            j.role == "teacher" and j.teaching_stage == "independent" and j.status == "completed" for j in old.jobs)):
+                        raise EDIError(ErrorCode.CONFLICT, "critique requires completed blind assessment and a returned student draft")
                 elif request.action == "student" and stage == "draft":
-                    if any(j.role == "student" and j.status == "completed" for j in old.jobs):
+                    if any(j.role == "student" and j.status in ("completed", "rejected") for j in old.jobs):
                         raise EDIError(ErrorCode.CONFLICT, "initial draft is already complete")
                 elif request.action == "student" and stage == "revision":
                     if not any(j.role == "teacher" and j.teaching_stage == "critique" and j.status == "completed" for j in old.jobs):

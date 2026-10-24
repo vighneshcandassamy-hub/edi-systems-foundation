@@ -16,13 +16,14 @@ def main():
     parser.add_argument("--run-directory", default="edi-autonomous-rerun-20261023")
     parser.add_argument("--source-revision", help="Verified remote 40-hex revision when local Git metadata is unavailable")
     parser.add_argument("--teaching-mode", choices=("selective", "intensive"), default="selective")
+    parser.add_argument("--world", choices=("neutral","cedar"), default="neutral")
     args = parser.parse_args()
     if not 1 <= len(args.run_directory) <= 80 or any(not (c.isalnum() or c == "-") for c in args.run_directory):
         parser.error("run-directory must be a bounded alphanumeric/hyphen name")
     repo = Path(__file__).resolve().parents[2]
     files = {"src/" + p.relative_to(repo / "src").as_posix(): p.read_bytes()
              for p in sorted((repo / "src").rglob("*.py"))}
-    for name in ("run.py", "server.py", "neutral_world.py", "checkpoint.py", "offline_restart.py", "teacher_handoff.py"):
+    for name in ("run.py", "server.py", "neutral_world.py", "checkpoint.py", "offline_restart.py", "teacher_handoff.py", "active_world.py", "meadows_world.py"):
         files[name] = (Path(__file__).parent / name).read_bytes()
     files["check_controller_contract.py"] = (repo / "scripts/check_controller_contract.py").read_bytes()
     files["scripts/check_autonomous_dispatch.py"] = (repo / "scripts/check_autonomous_dispatch.py").read_bytes()
@@ -31,7 +32,23 @@ def main():
     files["tests/test_intensive_teaching.py"] = (repo / "tests/test_intensive_teaching.py").read_bytes()
     files["scripts/check_intensive_teaching.py"] = (repo / "scripts/check_intensive_teaching.py").read_bytes()
     files["tests/test_decision_grounding.py"] = (repo / "tests/test_decision_grounding.py").read_bytes()
+    files["tests/fixtures/rejected_draft_20261024.json"] = (repo / "tests/fixtures/rejected_draft_20261024.json").read_bytes()
     files["scripts/check_decision_grounding.py"] = (repo / "scripts/check_decision_grounding.py").read_bytes()
+    if args.world == "cedar":
+        benchmark = repo / "benchmarks/meadows-budworm"
+        keep = ["environment/v0_2/broker.py", "environment/v0_2/world.py", "environment/v0_2/evaluate.py",
+            "environment/v0_2/PUBLIC_OPERATIONS.json", "environment/v0_2/PARTICIPANT.md",
+            "environment/v0_2/fixture/mission.json", "environment/v0_2/fixture/manifest.json",
+            "environment/v0_2/fixture/initial_state.json", "environment/v0_2/fixture/archive.sqlite.gz",
+            "database/evidence.sqlite.gz"]
+        # Every original source asset remains available; prefer its exact frozen
+        # gzip snapshot when present. No operator audit or evaluation answers.
+        for item in json.loads((benchmark/"metadata/files.json").read_bytes()):
+            source=benchmark/item["path"]
+            chosen=Path(str(source)+".gz") if Path(str(source)+".gz").exists() else source
+            keep.append(chosen.relative_to(benchmark).as_posix())
+        for name in sorted(set(keep)):files["meadows/"+name]=(benchmark/name).read_bytes()
+        files["tests/test_meadows_launch.py"]=(repo/"tests/test_meadows_launch.py").read_bytes()
     if args.source_revision is not None:
         if not re.fullmatch(r"[0-9a-f]{40}", args.source_revision):
             parser.error("source-revision must be a verified full remote commit SHA")
@@ -98,7 +115,11 @@ while time.monotonic()<deadline:
    with (out/"decision-grounding-preflight.log").open("x") as checklog:
     check=subprocess.run(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"scripts/check_decision_grounding.py"),"--grammar","--output",str(out/"decision-grounding-preflight.json")],env=checkenv,stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
    if check.returncode:raise RuntimeError("Decision-grounding preflight failed; inspect log before inference")
-  env=dict(os.environ,EDI_AUTONOMOUS_ROOT=str(out),EDI_TEACHING_MODE=__EDI_TEACHING_MODE__);env.pop("PYTHONPATH",None)
+  if __EDI_WORLD__ == "cedar":
+   with (out/"cedar-native-preflight.log").open("x") as checklog:
+    check=subprocess.run(["/kaggle/temp/edi-engineering-compute/bin/python","-m","unittest","discover","-s",str(root/"tests"),"-p","test_meadows_launch.py","-v"],env=dict(checkenv,EDI_MEADOWS_ROOT=str(root/"meadows"),PYTHONPATH=str(root/"src")+os.pathsep+str(root)),stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
+   if check.returncode:raise RuntimeError("Cedar native connection failed; inspect log before inference")
+  env=dict(os.environ,EDI_AUTONOMOUS_ROOT=str(out),EDI_TEACHING_MODE=__EDI_TEACHING_MODE__,EDI_ENGINEERING_WORLD=__EDI_WORLD__);env.pop("PYTHONPATH",None)
   with (out/"supervisor.log").open("x") as log:
    server=subprocess.Popen(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"server.py")],env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
  for n in ("serve-install.log","compute-install.log","supervisor.log","turn-process-1.log"):
@@ -124,6 +145,7 @@ else:raise TimeoutError("Preserve logs and native state")
     cell = "try:\n" + "".join(" " + line + "\n" for line in body.splitlines())
     cell += "finally:\n import runpy\n checkpoint=globals().get('root',pathlib.Path('/nonexistent-edi-source'))/'checkpoint.py'\n if checkpoint.exists():runpy.run_path(str(checkpoint))['display_checkpoint'](out,root)\n"
     cell = cell.replace("__EDI_TEACHING_MODE__", repr(args.teaching_mode))
+    cell = cell.replace("__EDI_WORLD__", repr(args.world))
     cell = cell.replace("__EDI_BUNDLE__", repr(base64.b64encode(data).decode()))
     cell = cell.replace("__EDI_DIGEST__", repr(hashlib.sha256(data).hexdigest()))
     cell = cell.replace("__EDI_INSTALLER__", repr(installer))

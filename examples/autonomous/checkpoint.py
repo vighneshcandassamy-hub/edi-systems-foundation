@@ -16,11 +16,12 @@ def display_checkpoint(out, source):
         print("EDI_CHECKPOINT_UNAVAILABLE: run directory absent", flush=True)
         return
     memory = io.BytesIO()
+    immutable_source_omissions=[]
     with zipfile.ZipFile(memory, "w", zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(out.rglob("*")):
             if not path.is_file() or path.name.endswith(("-wal", "-shm", ".tmp")) or path.name.startswith("checkpoint-"):
                 continue
-            if path.suffix == ".sqlite3":
+            if path.suffix in (".sqlite3", ".sqlite"):
                 temporary = out / ("checkpoint-backup-" + path.name)
                 with sqlite3.connect(path) as original, sqlite3.connect(temporary) as target:
                     original.backup(target)
@@ -28,8 +29,27 @@ def display_checkpoint(out, source):
                 temporary.unlink()
             else:
                 archive.write(path, path.relative_to(out).as_posix())
-        for path in sorted(source.rglob("*.py")):
-            archive.write(path, "source/" + path.relative_to(source).as_posix())
+        source_manifest=source/"source-manifest.json"
+        if source_manifest.exists():
+            pinned=json.loads(source_manifest.read_bytes())
+            for name,expected in sorted(pinned["files"].items()):
+                relative=Path(name)
+                if relative.is_absolute() or ".." in relative.parts:
+                    raise ValueError("Invalid pinned source path")
+                path=source/relative
+                if hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
+                    raise ValueError("Source changed during run: "+name)
+                public_startup={"meadows/environment/v0_2/PUBLIC_OPERATIONS.json",
+                    "meadows/environment/v0_2/PARTICIPANT.md",
+                    "meadows/environment/v0_2/fixture/mission.json"}
+                if path.suffix==".py" or name in public_startup:
+                    archive.write(path,"source/"+name)
+                else:
+                    immutable_source_omissions.append(name)
+            archive.write(source_manifest,"source/source-manifest.json")
+        else:
+            for path in sorted(source.rglob("*.py")):
+                archive.write(path, "source/" + path.relative_to(source).as_posix())
     data = memory.getvalue()
     if len(data) > 16 * 1024**2:
         raise ValueError("Checkpoint exceeds the declared 16 MiB export envelope")
@@ -37,7 +57,9 @@ def display_checkpoint(out, source):
         "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "run_directory": str(out),
         "basis": "consistent per-database backups; terminal/status artifacts separately determine controller completion and cross-owner quiescence",
         "controller_terminal_present": (out / "terminal.json").exists(),
-        "forest_benchmark_started": False, "model_calls_by_export": 0}
+        "forest_benchmark_started": (out/"world-selection.json").exists() and json.loads((out/"world-selection.json").read_bytes()).get("kind")=="cedar", "model_calls_by_export": 0,
+        "source_basis":"Native Python and public startup text retained; immutable world assets remain in the original launch bundle with full source-manifest hashes. Full service recovery requires that pinned input bundle.",
+        "immutable_source_omissions":immutable_source_omissions}
     path = out / "checkpoint-native.zip"
     path.write_bytes(data)
     (out / "checkpoint-manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")

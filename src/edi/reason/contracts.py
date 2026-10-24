@@ -51,7 +51,7 @@ class AssessmentNote(Record):
 
 
 class ControllerAccess(Record):
-    """C0 description from a hash-adopted mission, never an execution grant."""
+    """C0 description from an adopted mission/public manual, never an execution grant."""
     version: Literal["edi-controller-access/1.0"] = "edi-controller-access/1.0"
     grant_id: Identifier
     mission_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")

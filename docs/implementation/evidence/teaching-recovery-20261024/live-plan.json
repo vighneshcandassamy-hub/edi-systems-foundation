@@ -1,0 +1,29 @@
+{
+  "run_identity": "edi-cedar-20261024",
+  "recorded_before_launch": true,
+  "date_timezone": "24 October 2026 Asia/Calcutta",
+  "purpose": "One teacher-assisted Cedar District v0.2 end-to-end diagnostic today, directly after saved-failure recovery repair; no further neutral live practice.",
+  "source": "0.10.12.dev0 over cad9c270eb1c3b7cfb6d3023a3d93fde8eae12fa; verified remote pin required before launch",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "weights": "fixed",
+  "teacher": "Current assistant explicit exact-job file exchange; implementation context known; identity operator-declared and usage unknown",
+  "assistance": "Independent teacher first withheld from current draft; critique may inspect retained draft rejection; only admitted student revision executes. Teacher may coach against acquired public evidence but must not introduce private world state, future results, evaluator answers or a hidden investigation sequence.",
+  "limits": {
+    "max_turns": 24,
+    "max_policy_units": 786432,
+    "input_tokens_per_job": 16384,
+    "output_tokens_per_job": 4096,
+    "model_window": 20480,
+    "session_seconds": 3600,
+    "max_public_requests": 64,
+    "max_corrections_after_revision": 1,
+    "teacher_jobs_per_cycle": 2,
+    "paid_fallback": false
+  },
+  "completion": "Native admitted student submit and actual broker HTTP 200 closure receipt; report and uncertainty inspected after termination. Submission receipt alone does not establish causal accuracy or advantage.",
+  "stopping": "Frozen time/token/turn/request bounds; unresolved inference is fenced without replay; definite invalid draft routes to critique, invalid revision exhausts bounded correction and yields. Preserve any failed result; do not silently resume an expired grant or rewrite a completed journal.",
+  "evidence": "Exact launch bundle and world-source hashes, model/package pins, raw C1 model/broker records, C4 stages/rejections/memory, actual operation requests/results, checkpoints, native reopen and post-terminal official outcome vector.",
+  "qualification": "Teacher-assisted single-host development diagnostic. Not a blind held-out benchmark, matched comparison, full 192-scenario campaign or independently isolated production qualification.",
+  "frozen_world_manifest_sha256": "d1603fbdeba0bb480481ff2a93d7ba2974aeaaec7116570592f4f474a137f654"
+}

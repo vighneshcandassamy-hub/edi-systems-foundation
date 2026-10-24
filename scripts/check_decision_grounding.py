@@ -28,10 +28,10 @@ def main():
         grammar='compiled'
     args.output.parent.mkdir(parents=True,exist_ok=True)
     with args.output.with_suffix('.log').open('w',encoding='utf-8') as stream:
-        suite=unittest.TestSuite([DecisionGroundingTests('test_native_grounded_mission_rejects_unsupported_basis_and_closes')])
+        suite=unittest.defaultTestLoader.loadTestsFromTestCase(DecisionGroundingTests)
         result=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
     files=['src/edi/reason/contracts.py','src/edi/reason/decision.py','src/edi/reason/gateway.py','src/edi/reason/operation_args.py','src/edi/reason/service.py','src/edi/reason/teaching.py','src/edi/inquiry/benchmark.py','tests/test_decision_grounding.py','tests/test_information_seeking.py']
-    report={'version':__version__,'scope':'One authored native five-turn mission, actual broker handler, admission rejections, blind first assessments, revision feedback, closure and no-redispatch reopen. No model inference or autonomous reasoning result.','passed':result.wasSuccessful(),'tests_run':result.testsRun,'grammar':grammar,'json_schema':schema_status,'errors':[{'test':str(t),'traceback':s} for t,s in result.errors],'failures':[{'test':str(t),'traceback':s} for t,s in result.failures],'model_calls':0,'neural_weight_updates':0,'files_sha256':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest() for f in files}}
+    report={'version':__version__,'scope':'Authored native mission and rejected-draft recovery, teacher file pause/reopen, invalid-revision containment, actual broker handler, blind first assessments, closure and no-redispatch reopen. No model inference or autonomous reasoning result.','passed':result.wasSuccessful(),'tests_run':result.testsRun,'grammar':grammar,'json_schema':schema_status,'errors':[{'test':str(t),'traceback':s} for t,s in result.errors],'failures':[{'test':str(t),'traceback':s} for t,s in result.failures],'model_calls':0,'neural_weight_updates':0,'files_sha256':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest() for f in files}}
     args.output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps(report));return 0 if result.wasSuccessful() else 1
 
 if __name__=='__main__':raise SystemExit(main())

@@ -18,8 +18,9 @@ class TeachingMemory:
         critique = [r for r in episode.responses if by_job[r.job_id].teaching_stage=='critique']
         drafts = [r for r in episode.responses if by_job[r.job_id].teaching_stage=='draft']
         revisions = [r for r in episode.responses if by_job[r.job_id].teaching_stage=='revision']
-        if not critique or not drafts or not revisions:
-            raise EDIError(ErrorCode.INCOMPLETE, 'teaching memory requires completed draft, critique and revision')
+        rejected_drafts = [r for r in episode.rejections if by_job[r.job_id].teaching_stage=='draft']
+        if not critique or not (drafts or rejected_drafts) or not revisions:
+            raise EDIError(ErrorCode.INCOMPLETE, 'teaching memory requires a returned draft, completed critique and admitted revision')
         source = self.evidence.get_record(record_id)
         if (source.scope_id != self.profile.workspace_id or source.capture.origin_class != 'generated'
                 or source.capture.kind != 'component-result' or 'teaching-outcome' not in source.capture.lineage):
@@ -36,7 +37,9 @@ class TeachingMemory:
         entry = {'lesson_id':key, 'workspace_id':self.profile.workspace_id,
             'inquiry_id':episode.request.inquiry_id, 'objective':episode.request.purpose,
             'context_sha256':episode.context.sha256,
-            'draft_response_id':drafts[-1].response_id,
+            'draft_response_id':drafts[-1].response_id if drafts else None,
+            'rejected_draft_records':[{'job_id':r.job_id, 'raw_record_id':r.raw_record_id,
+                'diagnostic':r.diagnostic} for r in rejected_drafts],
             'independent_response_ids':[r.response_id for r in episode.responses if by_job[r.job_id].teaching_stage=='independent'],
             'critique_response_id':critique[-1].response_id, 'revision_response_id':revisions[-1].response_id,
             'guidance':list(critique[-1].procedural_guidance), 'outcome_record_id':record_id,

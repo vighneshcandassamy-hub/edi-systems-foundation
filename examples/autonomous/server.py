@@ -82,13 +82,14 @@ try:
     else:
         raise TimeoutError("vLLM startup deadline exceeded")
     update("engineering_server_ready")
-    from neutral_world import start_world
+    from active_world import start_world, KIND
+    REPORT["benchmark_started"]=KIND=="cedar"
     broker_token=secrets.token_urlsafe(32)
     broker=start_world(OUT,broker_token)
     runenv=dict(os.environ,EDI_VLLM_API_KEY=key,EDI_BROKER_TOKEN=broker_token,EDI_AUTONOMOUS_ROOT=str(OUT))
     runenv["PYTHONPATH"]=str(Path(__file__).parent/"src")
     runenv["EDI_AUTONOMOUS_WORKSPACE"]=OUT.name
-    runenv["EDI_AUTONOMOUS_RUN_ID"]="neutral-controller-"+OUT.name
+    runenv["EDI_AUTONOMOUS_RUN_ID"]=("cedar-controller-" if KIND=="cedar" else "neutral-controller-")+OUT.name
     attempt=0
     def stage(name):
         global attempt
