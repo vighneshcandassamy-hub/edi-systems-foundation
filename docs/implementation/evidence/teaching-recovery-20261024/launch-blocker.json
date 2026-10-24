@@ -1,0 +1,23 @@
+{
+  "stage": "blocked-private-input-upload-awaiting-explicit-authorization",
+  "source_revision": "3d23e23663680cfcd1816df25fc8fa5135ae4ff6",
+  "run_identity": "edi-cedar-20261024",
+  "bundle_sha256": "b6c121c4e7309545840791d8968b990500a680c6e1855fdaca133547a4865a73",
+  "bundle_files": 127,
+  "model_calls": 0,
+  "meadows_started": false,
+  "gpu_session": "off (run a cell to start)",
+  "automatic_approval_review": {
+    "action": "Upload edi-cedar-input-bundle.zip to a private Kaggle dataset/input",
+    "result": "rejected",
+    "reason": "This action uploads a private source bundle to Kaggle, an external destination; the user authorized continuing the run but did not explicitly authorize disclosing this bundle there."
+  },
+  "small_launcher": {
+    "path": "work/EDI_Cedar_Private_Input_Kaggle.ipynb",
+    "bytes": 8200,
+    "sha256": "230456aa09f99393403ec6c04078f03f3488e1438653ff76af9b2cba3f2f3160"
+  },
+  "resume_rule": "Obtain explicit authorization for this prepared private bundle upload. Do not bypass the rejection through notebook code, a different transport or public hosting. Source/runtime stay pinned. No model or broker run has begun.",
+  "bundle_bytes": 10394424,
+  "scope": "Launch/deployment blocker, not a model result. Offline native recovery/adapter results remain valid."
+}
