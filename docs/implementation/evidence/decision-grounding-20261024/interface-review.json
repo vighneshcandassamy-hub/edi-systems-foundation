@@ -786,7 +786,8 @@
         "E45",
         "E46",
         "E48",
-        "DECISION-NATIVE-01"
+        "DECISION-NATIVE-01",
+        "DECISION-LIVE-01"
       ],
       "facets": {
         "ownership": "C4 owns its bounded DecisionBasis and source index; C0 owns scheduling and frozen decision policy. C1 retains bytes and C3 alone admits world changes. See DECISION_GROUNDING.md.",
@@ -838,7 +839,8 @@
         "E45",
         "E46",
         "E48",
-        "DECISION-NATIVE-01"
+        "DECISION-NATIVE-01",
+        "DECISION-LIVE-01"
       ],
       "facets": {
         "ownership": "C4 owns its bounded DecisionBasis and source index; C0 owns scheduling and frozen decision policy. C1 retains bytes and C3 alone admits world changes. See DECISION_GROUNDING.md.",
@@ -2715,6 +2717,22 @@
       ],
       "scope": "authored_native_engineering_only",
       "implementation_revision": "0.10.11.dev0 file hashes in native-case.json"
+    },
+    {
+      "id": "DECISION-LIVE-01",
+      "title": "One pinned real-model engineering mission",
+      "acceptance": "Use acquired evidence and obtain useful information as needed, then submit supported findings and uncertainty.",
+      "status": "failed",
+      "required": true,
+      "requirement_ids": [
+        "IMP-R09",
+        "IMP-R19",
+        "IMP-R32"
+      ],
+      "scope": "scoped_real_model_engineering_flow_only",
+      "revision": "2e492b7032f2186192b15a73938f6a433efd6f65",
+      "conditions": "Free Kaggle T4 x2, fixed Qwen3-VL-8B, policy 1.1, manual exact-job teacher; two completed cycles then repeated invalid draft and correction exhaustion.",
+      "evidence_ref": "docs/implementation/evidence/decision-grounding-20261024/live-result.json"
     }
   ],
   "feedback_reviews": [
@@ -2729,7 +2747,7 @@
         "C6",
         "C7"
       ],
-      "analysis": "All application owners form a strongly connected logical scheduling/read/proposal group. CONTRACTS.md sections 7\u00e2\u20ac\u201c8 review generated evidence echoes, temporal leakage, authority escalation, saturation/deadlock, shared model consensus, revision cascades and selection bias with concrete containment. This software SCC does not define a domain causal loop. Version 0.2 additionally reviews high-degree invalidation storms, stale fast decisions, alias/calibration drift, abstraction feedback, selective escalation and repeated access requests; the same eight owners retain authority. Scoped asset delta: generic origins plus omitted transcripts can hide acquired-source identity and contribute to repeated requests; explicit configured document origin improves observability without treating repeated retrieval as independent support. Behavioral improvement is unmeasured. Decision delta: Student and teacher remain blind initially; critique feeds student revision only; native C4 rejection does not pick an action. C0 freezes policy and schedules admitted decisions. Same evidence or advice cannot be promoted to independent observations. Existing bounded stages prevent recursive assistance loops.",
+      "analysis": "All application owners form a strongly connected logical scheduling/read/proposal group. CONTRACTS.md sections 7\u00e2\u20ac\u201c8 review generated evidence echoes, temporal leakage, authority escalation, saturation/deadlock, shared model consensus, revision cascades and selection bias with concrete containment. This software SCC does not define a domain causal loop. Version 0.2 additionally reviews high-degree invalidation storms, stale fast decisions, alias/calibration drift, abstraction feedback, selective escalation and repeated access requests; the same eight owners retain authority. Scoped asset delta: generic origins plus omitted transcripts can hide acquired-source identity and contribute to repeated requests; explicit configured document origin improves observability without treating repeated retrieval as independent support. Behavioral improvement is unmeasured. Decision delta: Student and teacher remain blind initially; critique feeds student revision only; native C4 rejection does not pick an action. C0 freezes policy and schedules admitted decisions. Same evidence or advice cannot be promoted to independent observations. Existing bounded stages prevent recursive assistance loops. Actual policy-1.1 live result: the guard prevented repeated complete-source reads, but C4 rejection exhausted the draft corrections before teacher critique. This blocks usable decision-flow qualification; teacher inability or neural-training necessity is not established.",
       "verification_ids": [
         "E06",
         "E20",
@@ -2748,17 +2766,18 @@
         "E46",
         "E47",
         "E48",
-        "DECISION-NATIVE-01"
+        "DECISION-NATIVE-01",
+        "DECISION-LIVE-01"
       ]
     }
   ],
   "findings": [],
   "review": {
-    "gate": "architecture",
-    "verdict": "pass",
+    "gate": "integration",
+    "verdict": "revise",
     "independent": false,
     "product_qualification": "not_run",
-    "scope_limit": "Self-review of decision contract and existing IF-04A/B and IF-10A/B; no new lane, no model or broad runtime qualification.",
+    "scope_limit": "Scoped C0/C4 real-model decision flow failed before submission. Mechanical native guard/reopen passed. Historical broad lane status preserved; no intelligence or full product qualification.",
     "scope": "Scoped contract self-review only; actual Qwen benefit unqualified"
   }
 }

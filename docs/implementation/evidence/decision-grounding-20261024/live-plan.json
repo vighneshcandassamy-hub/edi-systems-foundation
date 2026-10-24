@@ -1,0 +1,46 @@
+{
+  "recorded_at_utc": "2026-10-24T07:00:22.772067+00:00",
+  "source_revision": "2e492b7032f2186192b15a73938f6a433efd6f65",
+  "source_bundle_sha256": "3fa58c22b94841525957d548088c2dfc5096b434e7c58be4faee6fe51c2b53d5",
+  "run_directory": "/kaggle/working/edi-grounded-20261024",
+  "scope": "One fresh authored neutral engineering mission; this plan is not a successful execution result.",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "weights": "fixed",
+  "teaching_mode": "intensive",
+  "teacher": "Current assistant via exact-job file exchange; operator-declared identity and unknown token use charged at reservation",
+  "profile": {
+    "model_context": 20480,
+    "input_cap": 16384,
+    "output_cap": 4096,
+    "temperature": 0,
+    "seed": 17,
+    "run_policy_units": 786432,
+    "turn_cap": 24
+  },
+  "success_conditions": [
+    "Actual acquired information is used rather than denied as unavailable.",
+    "Useful further inquiries are chosen when information is missing; no prescribed source ordering or hidden facts are supplied.",
+    "Final submission separates observed/reported information, conditional prediction and unresolved uncertainty.",
+    "Native closure receipt and no-redispatch reopen are preserved with full run usage/failures."
+  ],
+  "stopping_conditions": [
+    "Terminal native result or explicit infrastructure/provider/authority failure.",
+    "Same evidence-use failure persists through feedback, or revised actions repeatedly reacquire selected complete sources without a defensible new purpose.",
+    "Frozen token/turn/time/grant capacity exhausted."
+  ],
+  "integrity_conditions": [
+    "No implementation, model, grant or frozen context changes mid-run.",
+    "No replay of unknown provider completion.",
+    "Teacher independent assessment is made before viewing the current draft.",
+    "Teacher critique is fallible generated advice and cannot execute actions.",
+    "No Meadows case or hidden scientific answer is used to coach this neutral mission."
+  ],
+  "claims_excluded": [
+    "neural training",
+    "transfer",
+    "causal comparative advantage",
+    "energy savings inferred from token counts",
+    "Meadows readiness from authored fixtures"
+  ]
+}

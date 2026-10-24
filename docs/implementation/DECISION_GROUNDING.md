@@ -106,9 +106,44 @@ Scoped component and interface self-reviews cover the existing eight owners,
 student-teacher-controller feedback cycle. No authority is broadened. Structural
 review consistency and authored native execution are distinct from Qwen benefit.
 
-Next: one fresh pinned Qwen engineering mission with the same fixed model and
-resource profile. Complete through useful inquiry and a supported submission,
-or stop on repeated nonprogress/explicit failure and preserve it. Do not change
-this source mid-run or add repetitive teaching runs. Only demonstrated usable
-engineering flow permits proceeding to the frozen Meadows comparison. No neural
-weights, transfer, EDI advantage or benchmark readiness are established here.
+## Live result and remaining orchestration gap
+
+The one fresh mission ran from verified commit
+`2e492b7032f2186192b15a73938f6a433efd6f65`. All five serving preflights passed,
+including actual xgrammar compilation of policy 1.1. The first teacher-assisted
+revision acquired the catalogue and the second acquired m17. On the next cut,
+Qwen recognized 8,12,16 in its understanding but requested the already selected
+complete m17 to get a supposedly fuller version. Native admission rejected the
+unexplained repeat and returned its diagnostic. The correction returned exactly
+the same raw content, again with repeat_reason null. Neither duplicate read was
+executed. The controller yielded on its frozen correction bound.
+
+This run completed two teaching cycles and six student calls: 41,770 reported
+input / 2,596 output tokens. Four teacher responses were imported; five teacher
+jobs, including an uncompleted allocated job, were charged at full reservation.
+Total policy accounting is 146,766 units, not money or energy. No capture
+notebook, interview or final submission occurred. The model server and GPU
+session are stopped. See [live result](evidence/decision-grounding-20261024/live-result.json)
+and the prospective [run plan](evidence/decision-grounding-20261024/live-plan.json).
+
+The 606,323-byte final native checkpoint has SHA256
+`a1826e9c4ad8604b04410d119b18bf842afdb78a4e1d9f57acfbeda3a5d788d3`.
+Download size/hash/CRC and all eight database integrity checks passed. The
+normal terminal reopen preserved the native snapshot with zero new model or
+broker dispatches. It is not a crash-recovery qualification. Full notebook,
+messages and native databases remain outside Git.
+
+The mechanical guard works; reliable evidence-to-action reasoning did not
+improve enough to complete this mission. There is also a specific orchestration
+limit: the repeated draft was rejected before inquiry 2 could reach its teacher
+critique. Thus the run does not establish that an intensive teacher could not
+correct that draft. The next engineering question is how to retain rejected
+draft decisions for fallible teacher review before correction exhaustion, while
+allowing only admitted revisions to execute. This is a proposed next question,
+not an implemented new path or permission to replay this terminal run.
+
+No further identical teaching run was started. Meadows comparison remains
+blocked by the demonstrated incomplete decision flow. Weights remain fixed;
+no neural training, transfer, comparative advantage or benchmark readiness is
+claimed. The result does not establish that weight training or model replacement
+is necessary; the observed orchestration boundary must first be addressed.

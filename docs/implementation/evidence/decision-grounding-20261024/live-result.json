@@ -1,0 +1,205 @@
+{
+  "scope": "One fresh pinned neutral engineering mission; guard behavior passed, useful model completion failed. No Meadows benchmark or neural training.",
+  "source_revision": "2e492b7032f2186192b15a73938f6a433efd6f65",
+  "version": "0.10.11.dev0",
+  "controller": "edi-c0/integrated-1.7",
+  "policy": "information-seeking/1.1",
+  "run_identity": "edi-grounded-20261024",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "weights": "fixed",
+  "terminal_state": "yielded",
+  "stop_reason": "bounded output correction exhausted; rejected originals retained",
+  "completed_teaching_cycles": 2,
+  "student_calls": 6,
+  "reported_input_tokens": 41770,
+  "reported_output_tokens": 2596,
+  "teacher_usage_unknown_jobs_charged_full_reservation": 5,
+  "imported_teacher_responses": 4,
+  "policy_units": 146766,
+  "usage_basis": "known reported counts plus full reservation for unknown usage; not an energy/cost measurement",
+  "cycles": [
+    {
+      "inquiry": 0,
+      "state": "round-complete",
+      "draft_operations": [
+        {
+          "arguments": {
+            "document_id": "<internal mission record ID; redacted>"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_operations": [
+        {
+          "arguments": {
+            "body": {},
+            "operation": "sources"
+          },
+          "operation": "world-call",
+          "schema_version": "1.0"
+        }
+      ],
+      "completed_teaching_cycle": true,
+      "imported_teacher_responses": 2,
+      "rejections": [],
+      "rejected_outputs": []
+    },
+    {
+      "inquiry": 1,
+      "state": "round-complete",
+      "draft_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "completed_teaching_cycle": true,
+      "imported_teacher_responses": 2,
+      "rejections": [],
+      "rejected_outputs": []
+    },
+    {
+      "inquiry": 2,
+      "state": "awaiting-response",
+      "draft_operations": null,
+      "revision_operations": null,
+      "completed_teaching_cycle": false,
+      "imported_teacher_responses": 0,
+      "rejections": [
+        {
+          "diagnostic": "complete source already selected; supply a concrete repeat_reason or revise the action",
+          "input_tokens": 7710,
+          "output_tokens": 396
+        },
+        {
+          "diagnostic": "complete source already selected; supply a concrete repeat_reason or revise the action",
+          "input_tokens": 8705,
+          "output_tokens": 396
+        }
+      ],
+      "rejected_outputs": [
+        {
+          "input_tokens": 7710,
+          "output_tokens": 396,
+          "finish_reason": "stop",
+          "raw_content_sha256": "ea1d9c9a52e62e4e694fd35a87dd1fc7e48874f9dac7cdb9fff6d042aa587a53",
+          "rationale_summary": "The current evidence supports a linear trend in instrument readings, enabling a prediction of the next reading. However, the lack of contextual information limits the confidence in this prediction. Acquiring the full instrument register export (document_id: m17) is the next logical step to obtain additional context for validating or refining the trend assumption.",
+          "operation_proposals": [
+            {
+              "arguments": {
+                "document_id": "m17"
+              },
+              "operation": "acquire-asset",
+              "schema_version": "1.0"
+            }
+          ],
+          "basis_excerpt": {
+            "understanding": "The instrument readings show a steady increase: 8, 12, 16 bytes at sample labels 0, 1, 2. This suggests a consistent rate of change of +4 bytes per sample interval. Without additional context, the next reading is predicted to be 20 bytes.",
+            "information_need": "The current evidence supports a linear increase in readings, but does not provide context for why the change occurred or whether the trend will continue. Further information about instrument calibration or environmental factors would improve prediction accuracy.",
+            "expected_use": "The acquired CSV data directly supports the mission objective by providing the instrument readings over time. This enables calculation of the change rate and prediction of the next reading, fulfilling the core information need.",
+            "repeat_reason": null,
+            "feedback_response": null
+          },
+          "selected_evidence_count": 1
+        },
+        {
+          "input_tokens": 8705,
+          "output_tokens": 396,
+          "finish_reason": "stop",
+          "raw_content_sha256": "ea1d9c9a52e62e4e694fd35a87dd1fc7e48874f9dac7cdb9fff6d042aa587a53",
+          "rationale_summary": "The current evidence supports a linear trend in instrument readings, enabling a prediction of the next reading. However, the lack of contextual information limits the confidence in this prediction. Acquiring the full instrument register export (document_id: m17) is the next logical step to obtain additional context for validating or refining the trend assumption.",
+          "operation_proposals": [
+            {
+              "arguments": {
+                "document_id": "m17"
+              },
+              "operation": "acquire-asset",
+              "schema_version": "1.0"
+            }
+          ],
+          "basis_excerpt": {
+            "understanding": "The instrument readings show a steady increase: 8, 12, 16 bytes at sample labels 0, 1, 2. This suggests a consistent rate of change of +4 bytes per sample interval. Without additional context, the next reading is predicted to be 20 bytes.",
+            "information_need": "The current evidence supports a linear increase in readings, but does not provide context for why the change occurred or whether the trend will continue. Further information about instrument calibration or environmental factors would improve prediction accuracy.",
+            "expected_use": "The acquired CSV data directly supports the mission objective by providing the instrument readings over time. This enables calculation of the change rate and prediction of the next reading, fulfilling the core information need.",
+            "repeat_reason": null,
+            "feedback_response": null
+          },
+          "selected_evidence_count": 1
+        }
+      ]
+    }
+  ],
+  "rejected_raw_contents_identical": true,
+  "server_stopped": true,
+  "checkpoint_bytes": 606323,
+  "checkpoint_sha256": "a1826e9c4ad8604b04410d119b18bf842afdb78a4e1d9f57acfbeda3a5d788d3",
+  "notebook_sha256": "bbff82fef013707e635d863fcc6ef5f20b047b1c14a9323d3d87681077953691",
+  "zip_crc": "passed",
+  "database_integrity": {
+    "owners.agency.sqlite3": "ok",
+    "owners.analyze.sqlite3": "ok",
+    "owners.assess.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.world.sqlite3": "ok"
+  },
+  "restart_audit": {
+    "same_native_snapshot": true,
+    "new_model_dispatches": 0,
+    "new_broker_requests": 0
+  },
+  "preflights": {
+    "decision-grounding-preflight.json": {
+      "version": "0.10.11.dev0",
+      "passed": true,
+      "tests_run": 1,
+      "grammar": "compiled",
+      "json_schema": "valid"
+    },
+    "intensive-teaching-preflight.json": {
+      "version": "0.10.11.dev0",
+      "passed": true,
+      "tests_run": 6
+    },
+    "information-seeking-preflight.json": {
+      "version": "0.10.11.dev0",
+      "passed": true,
+      "tests_run": 10,
+      "grammar": "compiled with xgrammar; valid stop accepted and incomplete stops rejected by JSON Schema"
+    },
+    "controller-contract-check.json": {
+      "passed": true
+    },
+    "dispatch-regression.json": {
+      "passed": true
+    }
+  },
+  "findings": [
+    "The initial namespace error was corrected through teacher feedback; sources and m17 were successfully acquired.",
+    "On the acquired register cut Qwen identified 8,12,16 in its understanding, yet requested the already selected complete m17 as a full version.",
+    "Two native admission rejections explicitly required a repeat reason or revised action. The returned raw content was identical twice, with repeat_reason null.",
+    "C0 did not execute either rejected duplicate read. It stopped on the frozen correction bound.",
+    "The failed draft stopped inquiry 2 before its teacher critique; this run therefore does not establish that an intensive teacher could not correct that draft.",
+    "Typed justification and prompt compaction improve observability and mechanical protection but do not demonstrate reliable evidence-to-action reasoning.",
+    "No interview, capture notebook or final submission occurred. No weights changed, transfer or comparative benefit was shown.",
+    "Reopening retained the same native snapshot without new dispatches. This is a normal terminal reopen, not cross-owner crash recovery qualification."
+  ],
+  "next_engineering_question": "How should rejected draft decisions reach fallible teacher review before correction exhaustion while only admitted revisions can execute? Diagnose that orchestration boundary before any further identical live run.",
+  "representation_note": "Aggregate engineering evidence. Opaque local observation IDs and full transport/session state are omitted; native backups and raw-content hashes preserve provenance."
+}

@@ -14,15 +14,33 @@ and revisions that do not address critique. A reasoned repeat and teacher
 disagreement remain allowed. Advice and explanations remain generated judgments.
 C0 requires a fresh workspace and freezes policy; offline reopen uses that
 exact saved policy. No weights changed. One authored native mission passes;
-serving grammar and live model benefit remain pre-inference/runtime obligations.
+all serving preflights, including actual grammar compilation, passed in Kaggle.
+The fresh real-model mission failed to reach submission.
 See [repair and acceptance](docs/implementation/DECISION_GROUNDING.md).
 
 The counterfactual saved-failure prompt keeps identical Context and guidance;
 system characters fall 28,082 -> 16,593, user characters 25,703 -> 23,995,
 and schema-index characters 13,514 -> 765. These are character counts, not
-measured token, latency or energy savings. One fresh pinned live mission is
-planned; no launch or readiness is claimed at this checkpoint. Prior sections
-below preserve their dated evidence and scope.
+measured token, latency or energy savings. The one pinned live mission is now complete as a failed execution: two teaching
+cycles acquired the catalogue and register, then two identical drafts requested
+the already selected complete m17 with no repeat_reason. C4 rejected both and
+C0 yielded before executing either duplicate. Six student calls reported
+41,770 input / 2,596 output tokens. Four teacher responses were imported; five
+allocated teacher jobs with unknown usage were charged full reservation, giving
+146,766 policy units. No notebook, interview or final submission occurred.
+
+The failed draft stopped inquiry 2 before teacher critique. The next engineering
+question is how rejected drafts can reach fallible teacher review while only
+admitted revisions may execute. That path is not implemented and no new model
+run was started. Mechanical protection passes; usable decision flow and Meadows
+readiness remain blocked. See [live result](docs/implementation/evidence/decision-grounding-20261024/live-result.json).
+
+The model server and GPU session are stopped. The downloaded final checkpoint
+is 606,323 bytes, SHA256
+`a1826e9c4ad8604b04410d119b18bf842afdb78a4e1d9f57acfbeda3a5d788d3`.
+ZIP size/hash/CRC and all eight native database integrity checks passed. Normal
+terminal reopen retained the native snapshot with no new model or broker calls;
+crash recovery remains unqualified. Prior sections below preserve dated scope.
 
 ## Current checkpoint - 24 October 2026 IST, native asset identity correction
 

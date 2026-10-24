@@ -120,5 +120,11 @@
   "measurements": [],
   "product_qualification": "not_run",
   "verdict": "pass",
-  "next_step": "One pinned fresh live engineering mission after serving grammar preflight; stop and preserve repeated nonprogress. Model benefit and Meadows readiness unqualified."
+  "next_step": "Review routing of rejected draft outputs to fallible teacher critique before bounded correction exhaustion, while only admitted revisions execute. No further identical live run.",
+  "live_model_result": {
+    "mission": "failed before submission",
+    "evidence_ref": "docs/implementation/evidence/decision-grounding-20261024/live-result.json",
+    "mechanical_guard": "prevented duplicate execution",
+    "learning": "not established"
+  }
 }

@@ -1,8 +1,10 @@
 Current engineering repair: **0.10.11.dev0**, C0 integrated-1.7.
 A saved nine-call audit confirms prompts, raw responses and revised dispatches
 match. The decision step now has a compact evidence index and native grounding
-checks. One authored native mission passes; actual Qwen benefit and Meadows
-readiness remain unqualified. No neural weights changed.
+checks. The one live mission acquired the register, then returned the same
+unexplained reread twice. The guard prevented execution and C0 stopped before
+teacher critique of that failed draft. The run is saved and compute stopped.
+Reliable decision flow and Meadows readiness remain blocked. No weights changed.
 See [decision repair](docs/implementation/DECISION_GROUNDING.md) and [STATE](STATE.md).
 
 # EDI Systems Foundation
@@ -11,8 +13,8 @@ The Meadows-based system-of-systems architecture baseline for the next EDI itera
 
 **Code version:** 0.10.11.dev0. Source identity and prompt carry-forward fixes
 are retained. The new policy makes selected evidence use, result purpose,
-repeated-read reasons and feedback response explicit. The next live mission
-must establish usable behavior before Meadows comparison.
+repeated-read reasons and feedback response explicit. The live mission failed to establish usable decision flow; Meadows comparison
+remains blocked. Rejected-draft review is the next orchestration question.
 
 This repository brings together the integrated seven-chapter architecture, the appendix semantic reference, retained observation/substrate plans and their review workflows. It preserves source meanings, engineering interpretations, unknowns and evidence status separately.
 
