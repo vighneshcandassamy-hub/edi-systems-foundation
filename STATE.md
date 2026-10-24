@@ -1,5 +1,11 @@
 # EDI Systems Foundation - checkpoint
 
+## Latest checkpoint - 24 October 2026 UTC, Cedar started; execution access interrupted
+
+The explicit bundle-upload authorization was received and used. The private Kaggle input was uploaded and the actual frozen-source Cedar run `edi-cedar-20261024` started. Four teaching cycles were observed through archive discovery and a successful historical observation-file read. No final submission or benchmark score was confirmed. Earlier upload-blocker and GPU-off entries below describe older checkpoints.
+
+The current task environment and browser control became unavailable. The latest pending job, terminal outcome and GPU shutdown cannot be verified. Do not relaunch Run All or extend the frozen grant; recover the existing native journal first. Runtime source remains `3d23e23663680cfcd1816df25fc8fa5135ae4ff6`. No weights or benchmark contents changed. See [provisional assessment and exact recovery handoff](docs/implementation/CEDAR_ACCESS_INTERRUPTION_20261024.md).
+
 ## Current checkpoint - 24 October 2026 IST, rejected-draft recovery and Cedar launch
 
 Source **0.10.12.dev0**, C0 `edi-c0/integrated-1.8`. The full rejected-draft path now reaches fallible teacher critique while preserving the original rejection. Only an admitted student revision may execute. Teaching memory references rejected raw records without inventing accepted drafts. Unknown inference completion remains fenced; invalid revisions still exhaust the bounded correction without effects. No weights changed.
