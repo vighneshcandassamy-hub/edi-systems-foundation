@@ -19,5 +19,11 @@
   },
   "resume_rule": "Obtain explicit authorization for this prepared private bundle upload. Do not bypass the rejection through notebook code, a different transport or public hosting. Source/runtime stay pinned. No model or broker run has begun.",
   "bundle_bytes": 10394424,
-  "scope": "Launch/deployment blocker, not a model result. Offline native recovery/adapter results remain valid."
+  "scope": "Launch/deployment blocker, not a model result. Offline native recovery/adapter results remain valid.",
+  "latest_approval_review": {
+    "action": "Upload edi-cedar-input-bundle.zip to the private Kaggle input/dataset",
+    "result": "rejected after owner requested continuing assessment",
+    "reason": "This sends a potentially sensitive source-and-benchmark bundle to Kaggle; the user authorized proceeding with testing but did not explicitly authorize disclosure of this exact payload to that external destination."
+  },
+  "assessment_protocol": "docs/implementation/CEDAR_ASSESSMENT_PROTOCOL.md"
 }
