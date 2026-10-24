@@ -14,24 +14,33 @@ def main():
     parser.add_argument('--grammar',action='store_true')
     args=parser.parse_args()
     from test_decision_grounding import DecisionGroundingTests
+    from test_context_capacity import ContextCapacityTests
+    from edi.reason.gateway import VllmBackend
     from edi import __version__
     from edi.reason.operation_args import serving_schema
     schema=serving_schema(controller_turn=True,controller_policy='information-seeking/1.1',evidence_references=[])
-    grammar='not-run-on-this-host'
+    revision=VllmBackend('http://127.0.0.1:8008','grammar-only-no-dispatch').generation_schema_for([
+        {'role':'system','content':json.dumps({'teaching':{'stage':'revision'}})},
+        {'role':'user','content':[{'type':'text','text':json.dumps({'inquiry':{'response_mode':'controller-turn',
+            'controller_policy':'information-seeking/1.1'},'context':{'evidence':[]}})}]}])
+    grammar='not-run-on-this-host' 
     schema_status='native Pydantic admission exercised; external schema checker not run'
     if args.grammar:
         import jsonschema
         jsonschema.Draft202012Validator.check_schema(schema)
+        jsonschema.Draft202012Validator.check_schema(revision)
         schema_status="valid"
         import xgrammar
         xgrammar.Grammar.from_json_schema(json.dumps(schema))
+        xgrammar.Grammar.from_json_schema(json.dumps(revision))
         grammar='compiled'
     args.output.parent.mkdir(parents=True,exist_ok=True)
     with args.output.with_suffix('.log').open('w',encoding='utf-8') as stream:
         suite=unittest.defaultTestLoader.loadTestsFromTestCase(DecisionGroundingTests)
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(ContextCapacityTests))
         result=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
-    files=['src/edi/reason/contracts.py','src/edi/reason/decision.py','src/edi/reason/gateway.py','src/edi/reason/operation_args.py','src/edi/reason/service.py','src/edi/reason/teaching.py','src/edi/inquiry/benchmark.py','tests/test_decision_grounding.py','tests/test_information_seeking.py']
-    report={'version':__version__,'scope':'Authored native mission and rejected-draft recovery, teacher file pause/reopen, invalid-revision containment, actual broker handler, blind first assessments, closure and no-redispatch reopen. No model inference or autonomous reasoning result.','passed':result.wasSuccessful(),'tests_run':result.testsRun,'grammar':grammar,'json_schema':schema_status,'errors':[{'test':str(t),'traceback':s} for t,s in result.errors],'failures':[{'test':str(t),'traceback':s} for t,s in result.failures],'model_calls':0,'neural_weight_updates':0,'files_sha256':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest() for f in files}}
+    files=['src/edi/reason/contracts.py','src/edi/reason/decision.py','src/edi/reason/gateway.py','src/edi/reason/operation_args.py','src/edi/reason/service.py','src/edi/reason/teaching.py','src/edi/inquiry/benchmark.py','tests/test_decision_grounding.py','tests/test_information_seeking.py','tests/test_context_capacity.py']
+    report={'version':__version__,'scope':'Authored native mission and rejected-draft recovery, teacher file pause/reopen, invalid-revision containment, actual broker handler, blind first assessments, closure and no-redispatch reopen. No model inference or autonomous reasoning result.','passed':result.wasSuccessful(),'tests_run':result.testsRun,'grammar':grammar,'grammar_stages':['initial','revision'],'json_schema':schema_status,'errors':[{'test':str(t),'traceback':s} for t,s in result.errors],'failures':[{'test':str(t),'traceback':s} for t,s in result.failures],'model_calls':0,'neural_weight_updates':0,'files_sha256':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest() for f in files}}
     args.output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps(report));return 0 if result.wasSuccessful() else 1
 
 if __name__=='__main__':raise SystemExit(main())

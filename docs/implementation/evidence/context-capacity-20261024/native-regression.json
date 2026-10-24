@@ -1,0 +1,35 @@
+{
+  "version": "0.10.13.dev0",
+  "controller": "edi-c0/integrated-1.9",
+  "source_parent": "4925f4a63493ec46b613884fd1476b9263b8b792",
+  "scope": "Scoped native integration, saved public CSV replay and authored saturation counters. No real inference, official evaluator, benchmark, trainer or neural update.",
+  "passed": true,
+  "tests_run": 6,
+  "test_module": "tests/test_context_capacity.py plus two existing native integration stories",
+  "saved_checkpoint_sha256": "53d2c145d033e9fcfe0d775efd1bf5fc647be00e221b67104abe46308e45ac34",
+  "saved_read_native_bytes": 4353,
+  "saved_read_encoded_characters": 5804,
+  "real_token_counts_for_repaired_prompt": "not measured on this host; counters in tests are authored",
+  "pinned_serving_tokenizer_check": "not-run",
+  "revision_grammar_compilation": "not-run-on-this-host",
+  "original_failure_preserved": true,
+  "initial_verification_failure": {
+    "case": "revision grammar test",
+    "diagnostic": "Authored fixture omitted mandatory decision_basis, causing yielded instead of ready",
+    "correction": "Supplied a valid authored decision basis to the fixture; no production validation weakened"
+  },
+  "model_calls": 0,
+  "weight_updates": 0,
+  "source_hashes": {
+    "src/edi/__init__.py": "3615b801880e501f60016a62c2a863a9ddfc43ca8d41ad3d6865022c907a02e2",
+    "pyproject.toml": "16d9879b7f48fd7511e8ce8857bc16bc12c40eeeb92165789cb70269ebf747be",
+    "src/edi/observe/benchmark.py": "e2cd620604b4eb6bcca273a626fcaa19bbb1b1bbdb198cd85c26092d6c387586",
+    "src/edi/inquiry/benchmark.py": "6edf389bd6a91570ed02301bcecd8a527f4fdc0472c954131c394ef760a4d7ed",
+    "src/edi/reason/service.py": "6ddb0ed2ae3c7e86af7f16af3b2aab7687063288f75082603ff1d7ba892682a4",
+    "src/edi/reason/gateway.py": "311cb04e691c6928b9e7d78c724f3a4db66555f33a2cfaf19a1bdb1b269ac4af",
+    "tests/test_context_capacity.py": "174b38026c3208f4547bbd751fd98c8e70804efd95398e6421d9f68c47ddf1f2",
+    "examples/autonomous/prepare_kaggle_run.py": "3a7d626166ad0f067a475faf3ccf823d26f0d8218b019578580361a02a9c6a89",
+    "scripts/check_decision_grounding.py": "91b0996cd8f8d09cada9c1ef6ef99b06e96bd5c2178fa831105736b15a2b1118"
+  },
+  "next_gate": "Pinned serving tokenizer and revision grammar, then separately identified teacher-assisted Cedar rerun; prior run remains failed"
+}

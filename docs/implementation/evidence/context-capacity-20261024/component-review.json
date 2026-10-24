@@ -1,0 +1,121 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C0 prompt selection/C4 prospective sizing/C1 verified delivered assets",
+  "gate": "contract",
+  "requested_scope": "Repair the preserved first Cedar input-capacity failure; engineering checks, no new live run",
+  "input_revision": "4925f4a63493ec46b613884fd1476b9263b8b792 with 0.10.13.dev0 source delta",
+  "reviewer": {
+    "role": "implementer_and_architecture_critic",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+    "checked": true,
+    "evidence_ref": "docs\\implementation\\evidence\\context-capacity-20261024\\trace.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "IMP-R09/R19/R26 and scoped CP-01..CP-05 connect budgeted inquiry, preserved evidence and resource failure to source and checks.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "C0 selects, C1 captures, C4 previews then admits. No prospective provider/world work; exact final gate and existing authority remain.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Existing owners, selectors, stores and tokenization are reused. No new service, model, summarizer, arbitrary larger window or hidden answer.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Raw response and source bytes retained; complete native hashes verified; omissions/narrow ranges explicit. Generated lessons remain provisional.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "Planning bounded at 40 tokenizations with deadline checks; 4096/512 stage margins are explicit assumptions, and final exact gating can still reject. No token/cost superiority claim.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Saved CSV replay, native capture idempotency, invalid hash/incomplete ranges, pre-job unfit cut and later exact capacity failure tested; old failed run is never resumed under changed source.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Actual recovered 18107>16384 failure and acquired public bytes drive the repair, with original protocol, source and benchmark preserved.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "Six scoped native checks pass; pinned tokenizer and actual revision grammar compilation are explicitly not run. Contract self-review is not independent review or model/scientific qualification.",
+      "references": [
+        "docs/implementation/CONTEXT_CAPACITY_REPAIR.md",
+        "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+      ]
+    }
+  ],
+  "findings": [],
+  "changes": [
+    "src/edi/__init__.py",
+    "pyproject.toml",
+    "src/edi/observe/benchmark.py",
+    "src/edi/inquiry/benchmark.py",
+    "src/edi/reason/service.py",
+    "src/edi/reason/gateway.py",
+    "tests/test_context_capacity.py",
+    "examples/autonomous/prepare_kaggle_run.py",
+    "scripts/check_decision_grounding.py"
+  ],
+  "verification": [
+    {
+      "id": "CONTEXT-NATIVE-01",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "revision": "0.10.13.dev0 exact source hashes in native-regression.json",
+      "evidence_ref": "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json",
+      "scope": "six offline native cases; no live model or real-token reduction measured"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "Pinned serving tokenizer and revision grammar, then separately identified teacher-assisted Cedar rerun; prior run remains failed",
+  "live_model_result": {
+    "status": "not yet run at this source",
+    "prior_failure": "docs/implementation/evidence/decision-grounding-20261024/live-result.json"
+  }
+}

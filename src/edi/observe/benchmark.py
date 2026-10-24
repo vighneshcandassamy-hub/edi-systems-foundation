@@ -98,6 +98,38 @@ class BrokerConnector:
         data = b"".join(blocks)
         if offset != total or sha256(data).hexdigest() != expected:
             raise EDIError(ErrorCode.INTEGRITY, "reassembled native asset digest mismatch")
+        return self._store_asset(document_id, acquisition_id, data, body, fmt)
+
+    def extract_returned_asset(self, result, document_id, acquisition_id, *, max_bytes=16 * 1024**2):
+        """Decode only a complete asset already delivered by the selected public call.
+
+        This makes no broker request and does not infer a missing range. Exact
+        envelope bytes remain in their original C1 record. A range/incomplete
+        asset remains available through that record, without claiming completeness.
+        """
+        if result["http_status"] != 200:
+            return None
+        body = result["body"]
+        asset = body.get("asset")
+        if not asset:
+            return None
+        if asset.get("offset") != 0 or asset.get("has_more") is not False:
+            return None
+        total = asset.get("total_bytes")
+        if (asset.get("encoding") != "base64" or body.get("id") != document_id or
+                type(total) is not int or not 0 <= total <= max_bytes):
+            raise EDIError(ErrorCode.INTEGRITY, "complete returned asset identity or range is invalid")
+        try:
+            data = base64.b64decode(asset["data"], validate=True)
+        except (ValueError, TypeError, KeyError) as exc:
+            raise EDIError(ErrorCode.INTEGRITY, "returned asset encoding is invalid") from exc
+        if len(data) != total or sha256(data).hexdigest() != body.get("sha256"):
+            raise EDIError(ErrorCode.INTEGRITY, "returned native asset size or hash differs")
+        return self._store_asset(document_id, acquisition_id, data, body, body.get("format"),
+            source_response_record_id=result["evidence_record_id"])
+
+    def _store_asset(self, document_id, acquisition_id, data, body, fmt, source_response_record_id=None):
+        expected = sha256(data).hexdigest()
         media = {"png":"image/png", "jpeg":"image/jpeg", "json":"application/json", "csv":"text/csv", "txt":"text/plain", "wav":"audio/wav", "pdf":"application/pdf"}.get(fmt, "application/octet-stream")
         # Preserve the requested public identity on the origin that C4 actually
         # sees. Opaque capture profiles alone do not reach reasoning context.
@@ -112,5 +144,6 @@ class BrokerConnector:
             origin_ref=asset_origin.origin_ref,
             origin_class="external" if body.get("source") == "external" else "simulation",
             profiles={"document_id": document_id, "native_sha256": expected, "format": fmt, "original_origin": body.get("origin"),
-                "source_metadata": body.get("metadata", {}), "derived_is_independent_evidence": False})
+                "source_metadata": body.get("metadata", {}), "derived_is_independent_evidence": False,
+                "source_response_record_id": source_response_record_id})
         return receipt.observation

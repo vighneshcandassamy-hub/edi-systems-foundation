@@ -1,0 +1,11 @@
+test_later_exact_capacity_failure_is_terminal_without_unknown_retry (test_context_capacity.ContextCapacityTests.test_later_exact_capacity_failure_is_terminal_without_unknown_retry) ... ok
+test_revision_grammar_requires_nonnull_feedback_without_forcing_action (test_context_capacity.ContextCapacityTests.test_revision_grammar_requires_nonnull_feedback_without_forcing_action) ... ok
+test_saved_public_read_delivers_verified_native_bytes_and_bounded_cut (test_context_capacity.ContextCapacityTests.test_saved_public_read_delivers_verified_native_bytes_and_bounded_cut) ... ok
+test_unsatisfiable_context_yields_before_job_or_provider_dispatch (test_context_capacity.ContextCapacityTests.test_unsatisfiable_context_yields_before_job_or_provider_dispatch) ... ok
+test_native_grounded_mission_rejects_unsupported_basis_and_closes (test_decision_grounding.DecisionGroundingTests.test_native_grounded_mission_rejects_unsupported_basis_and_closes) ... ok
+test_file_teacher_and_student_can_be_pending_independently_and_resume (test_intensive_teaching.IntensiveTeachingTests.test_file_teacher_and_student_can_be_pending_independently_and_resume) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 14.750s
+
+OK

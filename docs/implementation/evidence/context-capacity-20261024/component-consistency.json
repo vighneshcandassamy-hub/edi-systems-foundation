@@ -1,0 +1,7 @@
+{
+  "scope": "report_consistency_only",
+  "readiness_independently_verified": false,
+  "report": "docs\\implementation\\evidence\\context-capacity-20261024\\component-review.json",
+  "consistent": true,
+  "errors": []
+}

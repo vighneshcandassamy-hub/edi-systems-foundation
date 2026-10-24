@@ -74,7 +74,7 @@ class Investigation:
         self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=256 * 1024**2)
         self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 32 + 4, max_bytes=256 * 1024**2)
         previous = self.journal.get("configuration")
-        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.8":
+        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.9":
             raise EDIError(ErrorCode.UNSUPPORTED, "use a fresh integration workspace; historical C0 state is not migrated")
         deadline = (json.loads(previous["request"])["deadline"] if previous else
                     (utc_now() + timedelta(seconds=session_seconds)).isoformat())
@@ -83,10 +83,10 @@ class Investigation:
             "workspace": runtime.profile.workspace_id, "student": student_gateway.binding.model_dump(mode="json"),
             "teacher": teacher_gateway.binding.model_dump(mode="json") if teacher_gateway else None,
             "max_turns": max_turns, "max_tokens": max_tokens, "session_seconds": session_seconds,
-            "controller_policy": controller_policy, "input_token_cap": input_token_cap, "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.8"})
+            "controller_policy": controller_policy, "input_token_cap": input_token_cap, "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.9"})
         self.journal.finish("configuration", {"frozen": True})
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.component.results", native_source_id=run_id,
-            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.8",
+            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.9",
             binding_basis="configured", descriptor={"independent_world_evidence": False}))
 
     def _phase(self, key, body, operation):
@@ -106,16 +106,19 @@ class Investigation:
 
     def _bounded_add(self, evidence, item):
         items = [value for value in evidence if value["record_id"] != item["record_id"]] + [item]
-        retained, text_size, image_size, image_count = [], 0, 0, 0
+        bootstrap = self.journal.get("bootstrap")
+        mission = json.loads(bootstrap["result"])["evidence"][0] if bootstrap and bootstrap["state"] == "completed" else None
+        retained, text_size, image_size, image_count = ([mission] if mission else []), (mission["length"] if mission else 0), 0, 0
         image_limit = getattr(self.student, "max_images", 1)
         for value in reversed(items):
+            if mission and value["record_id"] == mission["record_id"]: continue
             is_image = self.runtime.observation.get_record(value["record_id"]).manifest.media_type in ("image/png", "image/jpeg")
             if len(retained) >= 8: continue
             if is_image and image_count < image_limit and image_size + value["length"] <= 131072:
                 retained.append(value); image_size += value["length"]; image_count += 1
             elif not is_image and text_size + value["length"] <= 16384:
                 retained.append(value); text_size += value["length"]
-        return list(reversed(retained))
+        return [mission] + list(reversed(retained[1:])) if mission else list(reversed(retained))
 
     def _retain_result(self, label, result, state):
         raw = canonical({"operation": label, "result": result,
@@ -170,7 +173,7 @@ class Investigation:
         except EDIError as exc:
             if exc.code != ErrorCode.NOT_FOUND: raise
         remaining = self.max_tokens - state["used_tokens"]
-        return r.reasoning.investigate(InquiryRequest.model_validate_json(canonical({
+        request = InquiryRequest.model_validate_json(canonical({
             "workspace_id": r.profile.workspace_id, "inquiry_id": inquiry_id, "request_id": inquiry_id,
             "question": state["mission"]["objective"], "purpose": state["mission"]["objective"],
             "scope": "Acquired evidence and attributed EDI artifacts; choose information and supported operations independently",
@@ -185,13 +188,65 @@ class Investigation:
                 "public_outcomes": state["public_outcomes"]},
             "controller_access": describe_access(state["mission"], self.connector.authority.grant).model_dump(mode="json"),
             "model_revision": r.world.head(),
-            "world_ids": state["world_ids"], "evidence": state["evidence"],
+            "world_ids": state["world_ids"], "evidence": self._bounded_add(state["evidence"], json.loads(self.journal.get("bootstrap")["result"])["evidence"][0]),
             "budget": Budget(rounds=4, jobs=6, input_token_cap=self.input_token_cap, output_token_cap=4096,
                 reserved_tokens=min(remaining, 6 * (self.input_token_cap + 4096))).model_dump(mode="json"),
             "omitted_frontier": ["Older acquired records, derivations, C4 episodes and C3 candidates remain available through native component reads; this is a bounded cut"] + [
                 "Generated artifact available for explicit context selection: " + canonical(item)
                 for item in state.get("artifact_frontier", [])],
-            "unknowns": ["Information not yet acquired remains unknown; generated feedback is not independent evidence"]})))
+            "unknowns": ["Information not yet acquired remains unknown; generated feedback is not independent evidence"]}))
+        fitted = self._phase(inquiry_id + ":context-fit", request.model_dump(mode="json"),
+            lambda: self._fit_context(request))
+        return r.reasoning.investigate(InquiryRequest.model_validate_json(canonical(fitted["request"])))
+
+    def _fit_context(self, request):
+        """C0 selects a bounded prospective cut before C4 freezes it.
+
+        Keep mission authority and latest observation. Defer older selections,
+        then provisional lessons/world views; narrow a latest textual range only
+        as a last resort. Every omission is explicit; all native records persist.
+        No peer response, private world state or scientific answer is supplied.
+        """
+        preview = getattr(self.student, "preview", None)
+        if not callable(preview):
+            raise EDIError(ErrorCode.UNAVAILABLE, "student port has no exact prospective prompt sizing")
+        candidate = request.model_dump(mode="json")
+        reserve = 4096 if request.teaching_mode == "intensive" else 512
+        omissions, trials = [], []
+        initial_frontier = list(candidate["omitted_frontier"])
+        for _ in range(40):
+            from datetime import datetime
+            if utc_now() >= datetime.fromisoformat(self.deadline):
+                raise EDIError(ErrorCode.CAPACITY, "persisted session deadline reached during context fitting")
+            candidate["omitted_frontier"] = initial_frontier[:30] + ([
+                "Token-budget selection; deferred native content remains available: " + canonical(omissions)] if omissions else [])
+            current = InquiryRequest.model_validate_json(canonical(candidate))
+            try:
+                sized = preview(current)
+            except EDIError as exc:
+                if exc.code != ErrorCode.CAPACITY: raise
+                sized = {"input_tokens": None, "diagnostic": str(exc)}
+            trials.append(sized)
+            if sized["input_tokens"] is not None and sized["input_tokens"] + reserve <= self.input_token_cap:
+                return {"request": candidate, "trials": trials, "stage_headroom_tokens": reserve,
+                    "omissions": omissions, "policy": "edi-context-fit/1.0",
+                    "limitation": "Later generated output can still exceed headroom; every dispatch is checked exactly and failure is terminal capacity, not an availability wait"}
+            evidence = candidate["evidence"]
+            if len(evidence) > 2:
+                omissions.append({"deferred_evidence": evidence.pop(1)})
+            elif candidate["teaching_history"]:
+                lesson = candidate["teaching_history"].pop(0)
+                omissions.append({"deferred_lesson": lesson.get("inquiry_id", "attributed prior teaching")})
+            elif candidate["world_ids"]:
+                omissions.append({"deferred_world_id": candidate["world_ids"].pop(0)})
+            elif len(evidence) > 1 and evidence[-1]["length"] > 256 and self.runtime.observation.get_record(
+                    evidence[-1]["record_id"]).manifest.media_type.split(";")[0] not in ("image/png", "image/jpeg"):
+                previous = dict(evidence[-1])
+                evidence[-1]["length"] = max(256, evidence[-1]["length"] // 2)
+                omissions.append({"narrowed_evidence": previous, "retained_length": evidence[-1]["length"]})
+            else:
+                raise EDIError(ErrorCode.CAPACITY, "complete mission/access/protocol and minimum selected evidence cannot fit the input budget with stage headroom")
+        raise EDIError(ErrorCode.CAPACITY, "bounded prospective context fitting exhausted")
 
     def _receive(self, inquiry_id, action, gateway, label, trigger=None, teaching_stage="standard"):
         r = self.runtime
@@ -222,6 +277,8 @@ class Investigation:
                     if row is not None and row["state"] == "pending" and row["attempts"]:
                         raise EDIError(ErrorCode.UNKNOWN_COMMIT, "Provider call remains unresolved; original inference must not be resent") from exc
                     if row is None or (row["state"] == "pending" and not row["attempts"]):
+                        if exc.code == ErrorCode.CAPACITY:
+                            raise
                         raise AwaitingModelAvailability(job.job_id, str(exc)) from exc
                     raise
                 except (ValueError, TypeError, KeyError, UnicodeError) as exc:
@@ -314,9 +371,9 @@ class Investigation:
             return {**state, "state": "yielded", "stop_reason": "remaining token budget cannot admit another job"}
         key, inquiry_id = "turn:" + str(turn), self.run_id + ":inquiry:" + str(turn)
         self.journal.begin(key, state, reserve_bytes=4 * 1024**2)
-        self._inquiry(state, inquiry_id)
         next_state = {**state, "turn": turn + 1}
         try:
+            self._inquiry(state, inquiry_id)
             if self.teaching_mode == "intensive":
                 response = self._teaching_turn(inquiry_id)
             else:
@@ -369,7 +426,10 @@ class Investigation:
             if exc.code in (ErrorCode.UNKNOWN_COMMIT, ErrorCode.STORAGE):
                 return {**state, "state": "uncertain-completion", "inquiry_id": inquiry_id, "error": exc.as_dict()}
             next_state.update(state="yielded", stop_reason=str(exc), error=exc.as_dict())
-        next_state = self._account(next_state, inquiry_id)
+        try:
+            next_state = self._account(next_state, inquiry_id)
+        except EDIError as exc:
+            if exc.code != ErrorCode.NOT_FOUND: raise
         self.journal.finish(key, next_state)
         return next_state
 
@@ -421,8 +481,18 @@ class Investigation:
             state["public_outcomes"] = (state["public_outcomes"] + [{"operation": intent.operation,
                 "request_id": command, "http_status": result["http_status"]}])[-16:]
             state["evidence"] = self._bounded_add(state["evidence"], self._selection(result["evidence_record_id"]))
+            selected_record_id = result["evidence_record_id"]
+            if intent.operation == "read" and "document_id" in intent.body:
+                asset = self.connector.extract_returned_asset(result, intent.body["document_id"], command + ":returned-native")
+                if asset is not None:
+                    selected_record_id = asset.record_id
+                    state["evidence"] = [item for item in state["evidence"]
+                        if item["record_id"] != result["evidence_record_id"]]
+                    state["evidence"] = self._bounded_add(state["evidence"], self._selection(selected_record_id))
+                    state["artifact_frontier"] = (state.get("artifact_frontier", []) + [
+                        {"operation": "raw-public-read-envelope", **self._selection(result["evidence_record_id"])}])[-16:]
             decoded = r.interpretation.interpret(InterpretRequest(workspace_id=r.profile.workspace_id,
-                request_id=inquiry_id + ":decode", inputs=(InputSpec(record_id=result["evidence_record_id"]),)))
+                request_id=inquiry_id + ":decode", inputs=(InputSpec(record_id=selected_record_id),)))
             state = self._retain_result("interpret", decoded, state)
             state["last_public_result"] = result
             if intent.operation == "submit" and result["http_status"] == 200:

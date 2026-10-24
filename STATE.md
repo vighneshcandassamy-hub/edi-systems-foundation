@@ -1,16 +1,28 @@
 # EDI Systems Foundation - checkpoint
 
+## Latest checkpoint - 24 October 2026 IST, context repair implemented offline
+
+The owner reports the Kaggle session stopped. The failed Cedar ZIP and original source remain preserved. Source is now **0.10.13.dev0**, C0 **integrated-1.9**, with pre-inquiry token sizing/explicit context selection, mission retention, complete delivered asset decoding with size/hash/document checks, required revision-feedback grammar, and deterministic capacity yielding instead of availability waits. Fresh workspaces are required; the stopped run is not migrated or resumed.
+
+Six scoped offline native cases pass, including the actual saved public CSV, corrupt/incomplete asset containment, saturated and impossible context, late-stage capacity, independent-first teacher flow and native mission closure. Counters/model responses are authored; no repaired Qwen token count, inference, neural update or new benchmark occurred. Initial test-fixture and review-metadata errors are retained and corrected. The scoped component contract self-review and 56-lane consistency are recorded; broad historical gates remain REVISE.
+
+[Context capacity repair](docs/implementation/CONTEXT_CAPACITY_REPAIR.md) contains the source/requirement/evidence handoff. **Next gate: pinned serving tokenizer plus actual initial/revision grammar compilation, followed by a distinct Cedar run only after those pass.** Browser control is currently unavailable; no replacement GPU session was started.
+
 ## Latest checkpoint - 24 October 2026 IST, actual Cedar run blocked by prompt capacity
 
 Recovered the owner's 1,327,341-byte ZIP, SHA256 `53d2c145d033e9fcfe0d775efd1bf5fc647be00e221b67104abe46308e45ac34`; ZIP CRC and all nine databases pass integrity. Native state is waiting-model at turn 4: exact input 18,107 tokens exceeds frozen 16,384 cap. The blocked job has no provider-journal dispatch. Four cycles completed through a forest document read; 11 student calls reported 106,988 input / 5,118 output tokens. Eight teacher responses completed. There is no final submission, terminal receipt or benchmark score in the export. GPU shutdown is unverified.
 
 [Detailed blocked-run assessment](docs/implementation/CEDAR_BLOCKED_ASSESSMENT_20261024.md) records actual draft/revision behavior, rationale-to-action inconsistencies, partial feedback uptake, encoded-payload context waste, the exact capacity failure and proposed repairs. Browser access loss was a separate later operational failure; restoring it alone cannot repair this frozen oversized job. Runtime source and benchmark remain unchanged. Stop owned compute after preservation; do not relaunch, raise frozen caps or replay stale teacher feedback.
 
-## Latest checkpoint - 24 October 2026 UTC, Cedar started; execution access interrupted
+## Active checkpoint - 24 October 2026 IST, actual Cedar assessment running
 
-The explicit bundle-upload authorization was received and used. The private Kaggle input was uploaded and the actual frozen-source Cedar run `edi-cedar-20261024` started. Four teaching cycles were observed through archive discovery and a successful historical observation-file read. No final submission or benchmark score was confirmed. Earlier upload-blocker and GPU-off entries below describe older checkpoints.
+The owner explicitly authorized the exact EDI source/Cedar asset upload to private Kaggle account vigini. Private dataset **EDI Cedar Inputs 20261024** was created and attached. Kaggle unpacked the ZIP and seven gzip assets; the launcher verified the original manifest and every delivered file against the original bundle's compressed or uncompressed hashes. EDI Python source and frozen scientific contents remain unchanged at runtime source **3d23e23663680cfcd1816df25fc8fa5135ae4ff6**, 0.10.12.dev0. Delivery conversion is recorded separately.
 
-The current task environment and browser control became unavailable. The latest pending job, terminal outcome and GPU shutdown cannot be verified. Do not relaunch Run All or extend the frozen grant; recover the existing native journal first. Runtime source remains `3d23e23663680cfcd1816df25fc8fa5135ae4ff6`. No weights or benchmark contents changed. See [provisional assessment and exact recovery handoff](docs/implementation/CEDAR_ACCESS_INTERRUPTION_20261024.md).
+The actual teacher-assisted Meadows/Cedar run **edi-cedar-20261024** has started on the pinned fixed Qwen checkpoint. All mandatory host preflights passed. The initial native checkpoint is downloaded and verified (356027 bytes, SHA256 2d27550a06310bf3c054ee7276baa07ae7e9360bb1f2cac9a51db32b6d7116f5); all eight EDI databases and the broker database passed integrity checks. A later preserved checkpoint (789370 bytes, SHA256 0ae877a58e502220c16cec038a93f128fe96201f330a258283773edb94a71941) includes the first two completed cycles and the next draft/teacher stages.
+
+Three cycles completed before the current fourth-cycle revision. First, the student repeated an internal mission record UUID as a public asset ID despite critique and the read failed. In one admitted revision its feedback_response claimed it would browse while its actual action still acquired the invalid UUID; native action matches the raw provider output. Concrete public-call coaching then produced successful sources and forest-search requests. The selected evidence now includes source-directory and document-listing metadata; underlying scientific measurements have not yet been read. A subsequent draft used a valid public search before its current critique. This is limited observed carry-forward under teaching memory, not a neural update or transfer/comparative result.
+
+**Run is active; do not relaunch the notebook or source.** Continue only original exact-job teacher handoffs against the printed pinned cut, keeping independent first assessments blind to the current draft. Preserve checkpointed failures and actual actions. No final report, ecological mechanism qualification or benchmark success is established yet. See work/cedar-live-progress.json for the most recent local operational state; the prospective assessment remains docs/implementation/CEDAR_ASSESSMENT_PROTOCOL.md.
 
 ## Current checkpoint - 24 October 2026 IST, rejected-draft recovery and Cedar launch
 

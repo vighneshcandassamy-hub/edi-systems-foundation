@@ -32,6 +32,7 @@ def main():
     files["tests/test_intensive_teaching.py"] = (repo / "tests/test_intensive_teaching.py").read_bytes()
     files["scripts/check_intensive_teaching.py"] = (repo / "scripts/check_intensive_teaching.py").read_bytes()
     files["tests/test_decision_grounding.py"] = (repo / "tests/test_decision_grounding.py").read_bytes()
+    files["tests/test_context_capacity.py"] = (repo / "tests/test_context_capacity.py").read_bytes()
     files["tests/fixtures/rejected_draft_20261024.json"] = (repo / "tests/fixtures/rejected_draft_20261024.json").read_bytes()
     files["scripts/check_decision_grounding.py"] = (repo / "scripts/check_decision_grounding.py").read_bytes()
     if args.world == "cedar":

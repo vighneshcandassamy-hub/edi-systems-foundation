@@ -1,0 +1,94 @@
+{
+  "scope": "Context capacity correction only; central requirement status remains unchanged",
+  "source": "docs/implementation/TRACEABILITY.json",
+  "requirements": [
+    {
+      "id": "CP-01",
+      "parents": [
+        "IMP-R09",
+        "IMP-R19"
+      ],
+      "owner": "C0/C4",
+      "functions": [
+        "F02",
+        "F42"
+      ],
+      "requirement": "Size complete prospective input before freezing; retain exact dispatch gate and explicit stage margin",
+      "source": [
+        "src/edi/inquiry/benchmark.py",
+        "src/edi/reason/service.py",
+        "src/edi/reason/gateway.py"
+      ],
+      "evidence": "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+    },
+    {
+      "id": "CP-02",
+      "parents": [
+        "IMP-R26",
+        "IMP-R19"
+      ],
+      "owner": "C1/C0",
+      "functions": [
+        "F11",
+        "F13"
+      ],
+      "requirement": "Verify and retain complete native bytes already returned without extra acquisition or independent-source claim",
+      "source": [
+        "src/edi/observe/benchmark.py",
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "evidence": "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+    },
+    {
+      "id": "CP-03",
+      "parents": [
+        "IMP-R09",
+        "IMP-R26"
+      ],
+      "owner": "C0/C4",
+      "functions": [
+        "F02",
+        "F42"
+      ],
+      "requirement": "Keep mission; make omitted and partial evidence explicit; retain original records",
+      "source": [
+        "src/edi/inquiry/benchmark.py",
+        "src/edi/reason/service.py"
+      ],
+      "evidence": "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+    },
+    {
+      "id": "CP-04",
+      "parents": [
+        "IMP-R19"
+      ],
+      "owner": "C0/C4",
+      "functions": [
+        "F02",
+        "F42"
+      ],
+      "requirement": "Terminate deterministic capacity failure without provider dispatch or availability retry",
+      "source": [
+        "src/edi/inquiry/benchmark.py"
+      ],
+      "evidence": "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+    },
+    {
+      "id": "CP-05",
+      "parents": [
+        "IMP-R26"
+      ],
+      "owner": "C4",
+      "functions": [
+        "F42"
+      ],
+      "requirement": "Align revision grammar with native required feedback explanation; no forced action/content",
+      "source": [
+        "src/edi/reason/gateway.py"
+      ],
+      "evidence": "docs\\implementation\\evidence\\context-capacity-20261024\\native-regression.json"
+    }
+  ],
+  "checked": true,
+  "product_qualification": "not_run"
+}

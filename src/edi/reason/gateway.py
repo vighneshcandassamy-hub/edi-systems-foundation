@@ -20,7 +20,8 @@ from edi.shared.errors import EDIError, ErrorCode
 def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_image_bytes=65536, schema_in_transport=False):
     if job.binding != binding or job.context_sha256 != episode.context.sha256:
         raise EDIError(ErrorCode.INTEGRITY, "gateway binding/context differs from pending native job")
-    exported = runtime.reasoning.export_job(episode.request.inquiry_id, job.job_id)
+    from edi.reason.service import export_episode_job
+    exported = export_episode_job(episode, job.job_id)
     earlier = {j.job_id for j in episode.jobs[:next(i for i, j in enumerate(episode.jobs) if j.job_id == job.job_id)]}
     if episode.request.teaching_mode == "intensive" and job.teaching_stage in ("independent", "draft"):
         earlier = {j.job_id for j in episode.jobs if j.job_id in earlier and
@@ -230,6 +231,32 @@ class NativeGateway:
             max_images=self.max_images, max_image_bytes=self.max_image_bytes,
             schema_in_transport=hasattr(self.send, "generation_schema_for"))
 
+    def preview(self, request):
+        """Size a prospective initial student prompt; never create a job or inference intent.
+
+        UUIDs and later generated responses differ at execution. C0 reserves explicit
+        stage headroom; the exact dispatch check remains authoritative at every stage.
+        """
+        from edi.reason.contracts import Job
+        from edi.reason.protocol import PROTOCOL_ID, questions
+        from edi.shared.contracts import utc_now
+        if self.count_tokens is None:
+            raise EDIError(ErrorCode.UNAVAILABLE, "exact pinned tokenizer/processor is not configured")
+        episode = self.runtime.reasoning.preview(request)
+        job = Job(job_id="01234567-89ab-cdef-0123-456789abcdef", role="student", round=1,
+            binding=self.binding, context_sha256=episode.context.sha256, protocol_id=PROTOCOL_ID,
+            questions=questions(request.axes), input_token_cap=request.budget.input_token_cap,
+            output_token_cap=request.budget.output_token_cap, created_at=utc_now(),
+            reason="Prospective sizing only; no job allocated",
+            teaching_stage="draft" if request.teaching_mode == "intensive" else "standard")
+        episode = episode.model_copy(update={"jobs": (job,)})
+        messages, _ = self.messages(job, episode)
+        count = self.count_tokens(messages)
+        if type(count) is not int or count < 0:
+            raise EDIError(ErrorCode.INTEGRITY, "tokenizer returned an invalid prospective count")
+        return {"input_tokens": count, "context_sha256": episode.context.sha256,
+            "messages_sha256": digest(messages), "basis": "exact prospective rendering; no provider dispatch"}
+
     def complete(self, job, episode):
         if not self.lock.acquire(blocking=False):
             raise EDIError(ErrorCode.CAPACITY, "native inference worker already in use")
@@ -327,9 +354,19 @@ class VllmBackend:
 
     def generation_schema_for(self, messages):
         data = json.loads(messages[1]["content"][0]["text"])
-        return serving_schema(evidence_references=[item["reference"] for item in data["context"]["evidence"]],
+        schema = serving_schema(evidence_references=[item["reference"] for item in data["context"]["evidence"]],
             controller_turn=data["inquiry"].get("response_mode", "proposal") == "controller-turn",
             controller_policy=data["inquiry"].get("controller_policy", "legacy"))
+        control = json.loads(messages[0]["content"])
+        if (data["inquiry"].get("controller_policy") == "information-seeking/1.1" and
+                control.get("teaching", {}).get("stage") == "revision"):
+            basis = schema["$defs"]["DecisionBasis"]
+            feedback = basis["properties"]["feedback_response"]
+            basis["properties"]["feedback_response"] = next(
+                part for part in feedback["anyOf"] if part.get("type") == "string")
+            if "feedback_response" not in basis["required"]:
+                basis["required"].append("feedback_response")
+        return schema
 
     def count_tokens(self, messages):
         status, wire = self.transport(self.endpoint + "/tokenize",
