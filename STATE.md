@@ -1,5 +1,11 @@
 # EDI Systems Foundation - checkpoint
 
+## Latest checkpoint - 24 October 2026 IST, actual Cedar run blocked by prompt capacity
+
+Recovered the owner's 1,327,341-byte ZIP, SHA256 `53d2c145d033e9fcfe0d775efd1bf5fc647be00e221b67104abe46308e45ac34`; ZIP CRC and all nine databases pass integrity. Native state is waiting-model at turn 4: exact input 18,107 tokens exceeds frozen 16,384 cap. The blocked job has no provider-journal dispatch. Four cycles completed through a forest document read; 11 student calls reported 106,988 input / 5,118 output tokens. Eight teacher responses completed. There is no final submission, terminal receipt or benchmark score in the export. GPU shutdown is unverified.
+
+[Detailed blocked-run assessment](docs/implementation/CEDAR_BLOCKED_ASSESSMENT_20261024.md) records actual draft/revision behavior, rationale-to-action inconsistencies, partial feedback uptake, encoded-payload context waste, the exact capacity failure and proposed repairs. Browser access loss was a separate later operational failure; restoring it alone cannot repair this frozen oversized job. Runtime source and benchmark remain unchanged. Stop owned compute after preservation; do not relaunch, raise frozen caps or replay stale teacher feedback.
+
 ## Latest checkpoint - 24 October 2026 UTC, Cedar started; execution access interrupted
 
 The explicit bundle-upload authorization was received and used. The private Kaggle input was uploaded and the actual frozen-source Cedar run `edi-cedar-20261024` started. Four teaching cycles were observed through archive discovery and a successful historical observation-file read. No final submission or benchmark score was confirmed. Earlier upload-blocker and GPU-off entries below describe older checkpoints.
