@@ -57,7 +57,10 @@ class TeachingMemory:
             value=json.loads(row[0])
             guidance=[x for x in value['guidance'] if len(x.encode('utf-8'))<=1024]
             view={key:value[key] for key in ('lesson_id','inquiry_id','critique_response_id','outcome_record_id','status','controller_state')}
-            view.update(guidance=guidance, guidance_complete=len(guidance)==len(value['guidance']),
+            chosen = value["chosen_operation"]
+            chosen_complete = len(canonical(chosen).encode("utf-8")) <= 1024
+            view.update(chosen_operation=chosen if chosen_complete else None,
+                chosen_operation_complete=chosen_complete, guidance=guidance, guidance_complete=len(guidance)==len(value['guidance']),
                 objective=value['objective'] if len(value['objective'].encode('utf-8'))<=512 else 'Objective omitted; consult native episode',
                 limitation=value['limitation'])
             # Omit whole lessons rather than truncate an instruction or remove

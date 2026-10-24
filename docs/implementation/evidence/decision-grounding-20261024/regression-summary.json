@@ -1,0 +1,25 @@
+{
+  "scope": "Scoped authored regression results; no live model calls.",
+  "initial_run": {
+    "tests_run": 7,
+    "passed": 6,
+    "failed": 1,
+    "failure": "Offline reopen substituted the new policy for the explicit 1.0 fixture; C0 correctly rejected changed frozen configuration."
+  },
+  "correction": "Offline reopen now reads controller_policy from the frozen C0 configuration; unsupported old C0 versions are not migrated.",
+  "affected_case_rerun": {
+    "case": "test_intensive_teaching.IntensiveTeachingTests.test_full_guided_acquire_read_submit_and_retained_history",
+    "passed": true,
+    "seconds": 7.151
+  },
+  "other_initial_passes": [
+    "explicit frozen input cap and reservations",
+    "independent file teacher/student pauses and resume",
+    "provisional memory across a separate controller",
+    "reduced assistance versus clean context",
+    "teacher outage without silent downgrade",
+    "native source identities after reopen"
+  ],
+  "new_mission": "native-case.json",
+  "remaining": "Qwen benefit and Meadows readiness are not established; serving grammar compiles on Kaggle before inference."
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "interface_inventory_consistency_only",
+  "semantics_independently_verified": false,
+  "component_count": 8,
+  "pair_count": 28,
+  "directed_lane_count": 56,
+  "contract_count": 40,
+  "feedback_groups": [
+    [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ]
+  ],
+  "consistent": true,
+  "errors": []
+}

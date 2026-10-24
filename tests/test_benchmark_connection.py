@@ -280,7 +280,7 @@ class ConnectionTests(unittest.TestCase):
             step += 1
             data = {**identity, 'rationale_summary':'Authored dynamic dispatch control', 'limitation':'No real model executed', 'operation_proposals':[operation]}
             return canonical({'fixture':data}).encode(), canonical(data), 100, 50
-        investigation = Investigation(self.runtime, self.connector, self.gateway(send=chosen), self.root/'c0.sqlite', 'dynamic', max_turns=4)
+        investigation = Investigation(self.runtime, self.connector, self.gateway(send=chosen), self.root/'c0.sqlite', 'dynamic', controller_policy="information-seeking/1.0", max_turns=4)
         first = investigation.step(); self.assertEqual(first['state'], 'ready')
         second = investigation.step(); self.assertEqual(second['state'], 'completed')
         self.assertEqual(step, 2)
@@ -370,7 +370,7 @@ class ConnectionTests(unittest.TestCase):
             chosen_count+=1
             output={"rationale_summary":"Authored boundary fixture","limitation":"No inference ran","operation_proposals":[operation]}
             return canonical(output).encode(),canonical(output),100,50
-        loop=Investigation(self.runtime,self.connector,self.gateway(send=chosen),self.root/"c0.sqlite","limit-boundary",max_turns=2)
+        loop=Investigation(self.runtime,self.connector,self.gateway(send=chosen),self.root/"c0.sqlite","limit-boundary",controller_policy="information-seeking/1.0", max_turns=2)
         self.assertEqual(loop.step()["state"],"ready")
         self.assertEqual(loop.step()["state"],"completed")
         self.assertEqual(loop.state()["state"],"completed")

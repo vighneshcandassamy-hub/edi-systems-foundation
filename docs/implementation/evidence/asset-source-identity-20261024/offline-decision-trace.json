@@ -1,0 +1,498 @@
+{
+  "scope": "Offline reconstruction at saved source 3ffa1091; no provider or broker dispatch. Raw native backups are copied before owner initialization.",
+  "source_revision": "3ffa1091c5e4e32237f49c0d9626aca53f622d36",
+  "calls": [
+    {
+      "turn": 0,
+      "stage": "draft",
+      "messages_sha256": "50c960d3198b78ca045637609cd10cfdcf184efc4c167ccd7f29f401fe6b4b82",
+      "schema_sha256": "297f81c45d7b165a1d22c3156c3175518683f57fec335ec7fe9b9f14dac63f5a",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 7710,
+      "output_tokens": 165,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "39d7bfb1f8c9c1b5abbc5e00ff5a18ecf18ba05a723e31e8d7d390fa1cb7d825",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "588c9574-3acd-4830-9a41-495facfc2c09"
+          },
+          "operation": "acquire-asset"
+        }
+      ],
+      "revision_dispatch_matches": null,
+      "evidence_count": 1,
+      "evidence_excerpt_characters": 1309,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 270,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 818
+      },
+      "user_top_level_characters": {
+        "context": 3421,
+        "inquiry": 2998,
+        "prior_rejections": 2,
+        "prior_responses": 2
+      },
+      "prior_roles": []
+    },
+    {
+      "turn": 0,
+      "stage": "revision",
+      "messages_sha256": "d881118153c6f07a1ef9f0d2e3288b211f3fce5585014ddee5e20d7945508137",
+      "schema_sha256": "297f81c45d7b165a1d22c3156c3175518683f57fec335ec7fe9b9f14dac63f5a",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 9369,
+      "output_tokens": 186,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "ee88236d33866ee6fc2ae925efe52c7bba16ab4671205e9e22772addbc38e572",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "body": {},
+            "operation": "sources"
+          },
+          "operation": "world-call"
+        }
+      ],
+      "revision_dispatch_matches": true,
+      "evidence_count": 1,
+      "evidence_excerpt_characters": 1309,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 270,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 879
+      },
+      "user_top_level_characters": {
+        "context": 3421,
+        "inquiry": 2998,
+        "prior_rejections": 2,
+        "prior_responses": 5635
+      },
+      "prior_roles": [
+        "local-vllm",
+        "manual-file-exchange",
+        "manual-file-exchange"
+      ]
+    },
+    {
+      "turn": 1,
+      "stage": "draft",
+      "messages_sha256": "44fb988899359b7851a893fcc3ae31552821d93af8f86f39b6d12490b5fa4d1b",
+      "schema_sha256": "e923895cc781a9e18273f5b21b19d26ab365c0f005c434666b5d7da15349ac36",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 9366,
+      "output_tokens": 159,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "2d02648abff5a8e108b2c0896415cf07828585eede3d32519758371969701b16",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset"
+        }
+      ],
+      "revision_dispatch_matches": null,
+      "evidence_count": 2,
+      "evidence_excerpt_characters": 1660,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 418,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 818,
+        "teaching_memory_rule": 199
+      },
+      "user_top_level_characters": {
+        "context": 5917,
+        "inquiry": 4871,
+        "prior_rejections": 2,
+        "prior_responses": 2
+      },
+      "prior_roles": []
+    },
+    {
+      "turn": 1,
+      "stage": "revision",
+      "messages_sha256": "b5c9864cf2a677e1756f619096c75040b3318a0d8e95e051b5f272713c15aec9",
+      "schema_sha256": "e923895cc781a9e18273f5b21b19d26ab365c0f005c434666b5d7da15349ac36",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 10980,
+      "output_tokens": 169,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "ed76dccb0f4feefa5413ab8b126af5025eaebf71093635c65f81dd02bde6091c",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_dispatch_matches": true,
+      "evidence_count": 2,
+      "evidence_excerpt_characters": 1660,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 418,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 879,
+        "teaching_memory_rule": 199
+      },
+      "user_top_level_characters": {
+        "context": 5917,
+        "inquiry": 4871,
+        "prior_rejections": 2,
+        "prior_responses": 5585
+      },
+      "prior_roles": [
+        "local-vllm",
+        "manual-file-exchange",
+        "manual-file-exchange"
+      ]
+    },
+    {
+      "turn": 2,
+      "stage": "draft",
+      "messages_sha256": "1369cda0fc57fd2fc0a7051f1eb4ffa6dd8f8cfa9ce61d7e5062961f32beb18d",
+      "schema_sha256": "fd573e38c13f7a0cae15afcad31aec35851d20e4cd337b230f16ed8067aa0cec",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 10670,
+      "output_tokens": 248,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "30fe237f0f6842e1465c607b6aa76a28f0d0d14b68752049a0e06decce4f1be3",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset"
+        }
+      ],
+      "revision_dispatch_matches": null,
+      "evidence_count": 3,
+      "evidence_excerpt_characters": 1701,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 418,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 818,
+        "teaching_memory_rule": 199
+      },
+      "user_top_level_characters": {
+        "context": 8062,
+        "inquiry": 6429,
+        "prior_rejections": 2,
+        "prior_responses": 2
+      },
+      "prior_roles": []
+    },
+    {
+      "turn": 2,
+      "stage": "revision",
+      "messages_sha256": "b845112a7ee6cab65da365b4d5b82df0c0eb18bb1de9f8912e7143a7d1cb3b4c",
+      "schema_sha256": "fd573e38c13f7a0cae15afcad31aec35851d20e4cd337b230f16ed8067aa0cec",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 12447,
+      "output_tokens": 307,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "60f9eb2d7017428c3bf1a251d630df2734cd09f96c4c8055ffb851fea402486a",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "r22"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_dispatch_matches": true,
+      "evidence_count": 3,
+      "evidence_excerpt_characters": 1701,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 418,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 879,
+        "teaching_memory_rule": 199
+      },
+      "user_top_level_characters": {
+        "context": 8062,
+        "inquiry": 6429,
+        "prior_rejections": 2,
+        "prior_responses": 6092
+      },
+      "prior_roles": [
+        "local-vllm",
+        "manual-file-exchange",
+        "manual-file-exchange"
+      ]
+    },
+    {
+      "turn": 3,
+      "stage": "draft",
+      "messages_sha256": "688e4d12d0d627b8187a6e6562be5c602ad79ca6ea0c9302a2edb3265dfd2610",
+      "schema_sha256": "a430d9173a90eff6267326afd0df48368580a0f779b381b0df034ef607f2e96b",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 12012,
+      "output_tokens": 264,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "1834b3e33a5d81deac39310376341eb25f609d2ce86e36d5a0cfe2dba98f8709",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset"
+        }
+      ],
+      "revision_dispatch_matches": null,
+      "evidence_count": 4,
+      "evidence_excerpt_characters": 1913,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 418,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 818,
+        "teaching_memory_rule": 199
+      },
+      "user_top_level_characters": {
+        "context": 10378,
+        "inquiry": 7959,
+        "prior_rejections": 2,
+        "prior_responses": 2
+      },
+      "prior_roles": []
+    },
+    {
+      "turn": 3,
+      "stage": "revision",
+      "messages_sha256": "5b439266f4864bb3cf067dd0b419e43d61c6af4406dccfa02be2dabd9e331b6f",
+      "schema_sha256": "a430d9173a90eff6267326afd0df48368580a0f779b381b0df034ef607f2e96b",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 13978,
+      "output_tokens": 274,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "c88210a1b862681fa587fe1689cbce78833c0322be34fcd26f9db5ef2c6653f7",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "r22"
+          },
+          "operation": "acquire-asset",
+          "schema_version": "1.0"
+        }
+      ],
+      "revision_dispatch_matches": true,
+      "evidence_count": 4,
+      "evidence_excerpt_characters": 1913,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 418,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 879,
+        "teaching_memory_rule": 199
+      },
+      "user_top_level_characters": {
+        "context": 10378,
+        "inquiry": 7959,
+        "prior_rejections": 2,
+        "prior_responses": 7302
+      },
+      "prior_roles": [
+        "local-vllm",
+        "manual-file-exchange",
+        "manual-file-exchange"
+      ]
+    },
+    {
+      "turn": 4,
+      "stage": "draft",
+      "messages_sha256": "4c18234b4140a46f227f11d46fde79a3c455ca6cfa1148e75afc2289ea653183",
+      "schema_sha256": "a21ae6643d6a60fea8d4e82b1c396bc83e2649051453a51b91323fdaff9fce1d",
+      "exact_prompt_reconstruction": true,
+      "native_parse_matches_raw_with_declared_defaults": true,
+      "input_tokens": 13162,
+      "output_tokens": 228,
+      "provider_finish_reason": "stop",
+      "raw_wire_sha256": "4e9a3c34fb3b10426051b351177e4b619e80bbe422b05c20bff459066b8a9427",
+      "proposed_operations": [
+        {
+          "arguments": {
+            "document_id": "m17"
+          },
+          "operation": "acquire-asset"
+        }
+      ],
+      "revision_dispatch_matches": null,
+      "evidence_count": 5,
+      "evidence_excerpt_characters": 2125,
+      "control_characters": {
+        "access_authority": 277,
+        "authority": 68,
+        "available_component_operations": 576,
+        "component_call_rule": 291,
+        "controller_access": 861,
+        "controller_policy": 25,
+        "controller_progress": 418,
+        "controller_turn": 2981,
+        "generation_rule": 228,
+        "operation_argument_contracts": 1725,
+        "operation_contract_version": 27,
+        "operation_rules": 181,
+        "protocol_questions": 3271,
+        "response_fields": 13514,
+        "response_identity": 669,
+        "response_reference_contract": 1105,
+        "rule": 263,
+        "teacher_rule": 96,
+        "teaching": 818,
+        "teaching_memory_rule": 199
+      },
+      "user_top_level_characters": {
+        "context": 12694,
+        "inquiry": 8939,
+        "prior_rejections": 2,
+        "prior_responses": 2
+      },
+      "prior_roles": []
+    }
+  ],
+  "all_prompt_hashes_match": true,
+  "all_grammar_hashes_match": true,
+  "all_native_parse_matches_raw_with_declared_defaults": true,
+  "all_revision_dispatches_match": true,
+  "model_calls": 0,
+  "broker_calls": 0
+}

@@ -48,6 +48,9 @@ def generation_schema(*, controller_policy="legacy"):
         schema["properties"].pop(key,None)
     schema["required"]=[x for x in schema.get("required",[]) if x not in supplied]
     definitions=schema.setdefault("$defs",{})
+    if controller_policy == "information-seeking/1.1":
+        schema["properties"]["decision_basis"] = {"$ref": "#/$defs/DecisionBasis"}
+        schema["required"].append("decision_basis")
     def native(model):
         value=copy.deepcopy(model.model_json_schema())
         for key,definition in value.pop("$defs",{}).items():
@@ -68,7 +71,7 @@ def generation_schema(*, controller_policy="legacy"):
         "teacher-review":obj({"trigger":{"type":"string","enum":list(TRIGGERS)}},["trigger"]),
         "yield":obj({"reason":{"type":"string"}, "assessment":native(YieldAssessment)},[])
     }
-    if controller_policy == "information-seeking/1.0":
+    if controller_policy in ("information-seeking/1.0", "information-seeking/1.1"):
         arguments["yield"]["properties"]["reason"]["minLength"] = 1
         arguments["yield"]["properties"]["reason"]["maxLength"] = 8192
         arguments["yield"]["required"] = ["reason", "assessment"]
@@ -111,6 +114,12 @@ def serving_schema(*, evidence_references=None, controller_turn=False, controlle
         from edi.shared.contracts import EvidenceRef
         references = [EvidenceRef.model_validate_json(json.dumps(ref, allow_nan=False)).model_dump(mode="json")
                       for ref in evidence_references]
+        if controller_policy == "information-seeking/1.1":
+            ids = schema["$defs"]["DecisionBasis"]["properties"]["evidence_record_ids"]
+            if references:
+                ids["items"] = {"type": "string", "enum": list(dict.fromkeys(ref["record_id"] for ref in references))}
+            else:
+                ids["maxItems"] = 0
         if references:
             # Address choices are exactly the complete references already in the
             # pinned context, including lineage; no output is silently rewritten.

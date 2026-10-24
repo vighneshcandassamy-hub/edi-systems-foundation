@@ -1,5 +1,29 @@
 # EDI Systems Foundation - checkpoint
 
+## Current checkpoint - 24 October 2026 IST, decision grounding repair
+
+Source **0.10.11.dev0**, C0 `edi-c0/integrated-1.7`, controller policy
+`information-seeking/1.1`. Offline reconstruction matches all nine preserved
+prompt/schema hashes and all four revised dispatches from the stopped prior
+run. Qwen itself returned the repeated action; no parser substitution was found.
+
+The repaired decision view retains full evidence and teacher guidance, removes
+the large duplicate schema index and requires concise evidence-linked decision
+justifications. C4 rejects outside-cut IDs, unexplained complete-source rereads
+and revisions that do not address critique. A reasoned repeat and teacher
+disagreement remain allowed. Advice and explanations remain generated judgments.
+C0 requires a fresh workspace and freezes policy; offline reopen uses that
+exact saved policy. No weights changed. One authored native mission passes;
+serving grammar and live model benefit remain pre-inference/runtime obligations.
+See [repair and acceptance](docs/implementation/DECISION_GROUNDING.md).
+
+The counterfactual saved-failure prompt keeps identical Context and guidance;
+system characters fall 28,082 -> 16,593, user characters 25,703 -> 23,995,
+and schema-index characters 13,514 -> 765. These are character counts, not
+measured token, latency or energy savings. One fresh pinned live mission is
+planned; no launch or readiness is claimed at this checkpoint. Prior sections
+below preserve their dated evidence and scope.
+
 ## Current checkpoint - 24 October 2026 IST, native asset identity correction
 
 Source **0.10.10.dev0**, C0 `edi-c0/integrated-1.6`. The corrected source now

@@ -302,13 +302,13 @@ class Reasoning:
         if response.procedural_guidance and (job.role != "teacher" or job.teaching_stage != "critique"):
             raise EDIError(ErrorCode.DENIED, "reusable guidance belongs only to intensive teacher critique")
         if job.role == "teacher":
-            if response.hypotheses or response.candidates or response.tests or response.frontier or response.operation_proposals or response.feedback_disposition == "not-applicable":
+            if response.decision_basis is not None or response.hypotheses or response.candidates or response.tests or response.frontier or response.operation_proposals or response.feedback_disposition == "not-applicable":
                 raise EDIError(ErrorCode.DENIED, "teacher output is fallible critique only; student must revise proposals")
         elif response.feedback_disposition != "not-applicable":
             raise EDIError(ErrorCode.INVALID, "student output cannot label itself teacher feedback")
         if job.role == "student" and old.request.response_mode == "controller-turn" and len(response.operation_proposals) != 1:
             raise EDIError(ErrorCode.INVALID, "controller turn requires one next-operation proposal or explicit yield")
-        if job.role == "student" and old.request.controller_policy == "information-seeking/1.0":
+        if job.role == "student" and old.request.controller_policy in ("information-seeking/1.0", "information-seeking/1.1"):
             decision = response.operation_proposals[0]
             progress = old.request.controller_progress
             if decision.operation == "teacher-review" and not progress.teacher_available:
@@ -326,6 +326,9 @@ class Reasoning:
                     available.add("teacher-review")
                 if any(item.operation not in available for item in assessment.alternatives_considered):
                     raise EDIError(ErrorCode.INVALID, "stop alternatives must name advertised public or native operations; teacher-review requires a configured teacher")
+        if job.role == "student" and old.request.controller_policy == "information-seeking/1.1":
+            from edi.reason.decision import validate_decision_basis
+            validate_decision_basis(old, response, job)
         if len(response.hypotheses) > old.request.budget.rivals_per_round:
             raise EDIError(ErrorCode.CAPACITY, "rival budget exceeded")
         prior_ids = {h.hypothesis_id for r in old.responses for h in r.hypotheses}

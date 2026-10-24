@@ -82,7 +82,7 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
             "grounding": "The objective is fallible task framing, not a measurement. Distinguish source content from assumptions and unobserved mechanisms. Optional formal hypotheses and tests are not required to request information.",
             "information_access": "An authorized information request does not require observations that have not yet been acquired. Missing evidence in this bounded context is distinct from evidence being unavailable in the accessible world. The operation catalogue describes permitted access; empirical claims still require evidence. Choose whether and how to inquire independently; yield remains available for a justified stop."}
         control["operation_rules"] = "Return exactly one operation_proposals entry, including teacher-review or yield when appropriate. Select the operation independently. Never request operator admission or adoption."
-        if episode.request.controller_policy == "information-seeking/1.0":
+        if episode.request.controller_policy in ("information-seeking/1.0", "information-seeking/1.1"):
             control["controller_policy"] = episode.request.controller_policy
             control["controller_progress"] = episode.request.controller_progress.model_dump(mode="json")
             control["controller_turn"]["decision_basis"] = (
@@ -177,6 +177,9 @@ def render_job_messages(runtime, binding, job, episode, *, max_images=2, max_ima
         exported["data"]["prior_rejections"].append({"receipt": rejection.model_dump(mode="json"),
             "unaccepted_generated_output_utf8": raw.decode("utf-8", errors="replace"),
             "selected_bytes": length, "complete": length == source.manifest.byte_count})
+    if episode.request.controller_policy == "information-seeking/1.1":
+        from edi.reason.decision import apply_decision_view
+        exported["data"] = apply_decision_view(control, exported["data"], job, episode)
     parts = [{"type": "text", "text": canonical(exported["data"])}]
     image_refs = []
     for item in episode.context.evidence:

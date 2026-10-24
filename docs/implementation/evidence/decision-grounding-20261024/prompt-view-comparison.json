@@ -1,0 +1,14 @@
+{
+  "scope": "Counterfactual renderer comparison on the preserved failed revision; no inference or new outcomes, and not a tokenizer measurement.",
+  "old_messages_sha256": "5b439266f4864bb3cf067dd0b419e43d61c6af4406dccfa02be2dabd9e331b6f",
+  "new_messages_sha256": "e8017b566becc92efaad61846394805fc4e02738bcc70cf8909e24b3fb0afec8",
+  "old_system_characters": 28082,
+  "new_system_characters": 16593,
+  "old_user_characters": 25703,
+  "new_user_characters": 23995,
+  "old_response_index_characters": 13514,
+  "new_response_index_characters": 765,
+  "complete_context_identical": true,
+  "prior_rationale_and_teacher_guidance_identical": true,
+  "model_calls": 0
+}

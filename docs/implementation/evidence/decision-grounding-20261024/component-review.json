@@ -1,0 +1,124 @@
+{
+  "schema": "edi-component-review-v1",
+  "reviewed_component": "C4 decision view/admission and C0 frozen controller policy; existing C1 evidence consumption",
+  "gate": "contract",
+  "requested_scope": "authorized targeted decision integration repair following exact saved-call trace",
+  "input_revision": "0.10.11.dev0 source over 484efdcb74c1b0cf2f17ede9be7e8f1aa42a2aee",
+  "reviewer": {
+    "role": "implementer_and_architecture_critic",
+    "independent": false
+  },
+  "traceability": {
+    "source": "docs/implementation/DECISION_GROUNDING.md",
+    "checked": true,
+    "evidence_ref": "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+  },
+  "criteria": [
+    {
+      "id": "mission_trace",
+      "status": "pass",
+      "rationale": "IMP-R08/R09/R18/R19/R26/R32/R33 connect purpose, acquired evidence and next inquiry through the existing owners.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "boundary_contract",
+      "status": "pass",
+      "rationale": "Policy 1.1 adds bounded attributed decision data; C4 validates, C0 schedules, C7 authorizes and C3 admission is unchanged.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "necessity_simplicity",
+      "status": "pass",
+      "rationale": "Remove duplicate schema index and expose decision references; no forced source sequence, blanket repeat ban or new owner.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "evidence_uncertainty",
+      "status": "pass",
+      "rationale": "Selected IDs index a pinned cut; advice, justifications and repeated content are not independent world evidence or full empirical citations.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "resource_envelope",
+      "status": "pass",
+      "rationale": "16 selected IDs, 1024-character explanations, bounded lessons and existing actual token/job/time admission; only character reduction measured offline.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "failure_recovery",
+      "status": "pass",
+      "rationale": "Native rejection accounting and unknown-completion fencing retained; fresh C0 version required and reopen uses its frozen policy.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "sourced_choices",
+      "status": "pass",
+      "rationale": "Saved nine-call hash/raw/dispatch trace motivates the repair; architectural authorities and exact limits are in the decision record.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    },
+    {
+      "id": "verification_scope",
+      "status": "pass",
+      "rationale": "One authored native mission passes; model benefit and Meadows readiness remain unqualified; serving grammar compilation required before inference.",
+      "references": [
+        "docs/implementation/DECISION_GROUNDING.md",
+        "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+      ]
+    }
+  ],
+  "findings": [],
+  "changes": [
+    "src/edi/reason/contracts.py",
+    "src/edi/reason/decision.py",
+    "src/edi/reason/gateway.py",
+    "src/edi/reason/operation_args.py",
+    "src/edi/reason/service.py",
+    "src/edi/reason/teaching.py",
+    "src/edi/inquiry/benchmark.py",
+    "examples/autonomous/offline_restart.py",
+    "examples/autonomous/prepare_kaggle_run.py",
+    "tests/test_decision_grounding.py",
+    "tests/test_information_seeking.py",
+    "tests/test_benchmark_connection.py",
+    "scripts/check_autonomous_dispatch.py",
+    "scripts/check_decision_grounding.py",
+    "VERSION",
+    "pyproject.toml",
+    "src/edi/__init__.py"
+  ],
+  "verification": [
+    {
+      "id": "DECISION-NATIVE-01",
+      "kind": "runtime",
+      "required": true,
+      "status": "passed",
+      "revision": "0.10.11.dev0, file hashes in native-case.json",
+      "evidence_ref": "docs/implementation/evidence/decision-grounding-20261024/native-case.json"
+    }
+  ],
+  "measurements": [],
+  "product_qualification": "not_run",
+  "verdict": "pass",
+  "next_step": "One pinned fresh live engineering mission after serving grammar preflight; stop and preserve repeated nonprogress. Model benefit and Meadows readiness unqualified."
+}

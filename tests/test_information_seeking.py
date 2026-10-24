@@ -76,7 +76,7 @@ class InformationSeekingTests(unittest.TestCase):
         gc.collect()
         self.temp.cleanup()
 
-    def open(self, choose, *, teacher=False, teaching_mode="selective", teacher_feedback=None, file_teacher=False, workflow_name="owners.workflows.sqlite3", run_id="run", use_teaching_memory=False, input_token_cap=12288):
+    def open(self, choose, *, teacher=False, teaching_mode="selective", teacher_feedback=None, file_teacher=False, workflow_name="owners.workflows.sqlite3", run_id="run", use_teaching_memory=False, input_token_cap=12288, controller_policy="information-seeking/1.0", decision_basis=None):
         from edi.inquiry.contracts import WorkflowProfile
         runtime = Runtime(LocalProfile(database=self.root/'owners.sqlite3', workspace_id='test', min_free_disk_bytes=0),
             reasoning_profile=ReasoningProfile(database=self.root/'reason.sqlite3', workspace_id='test',
@@ -96,9 +96,16 @@ class InformationSeekingTests(unittest.TestCase):
             else:
                 content = {'rationale_summary': 'Authored regression', 'limitation': 'No inference',
                     'operation_proposals': [choose(control, data)]}
+                if decision_basis is not None:
+                    content['decision_basis'] = decision_basis(control, data, content['operation_proposals'][0])
             return canonical(content).encode(), canonical(content), 100, 50
+        student_send = send
+        if controller_policy == "information-seeking/1.1":
+            from edi.reason.gateway import VllmBackend
+            def student_send(messages, job): return send(messages, job)
+            student_send.generation_schema_for = VllmBackend('http://127.0.0.1:8008', self.binding.model_id).generation_schema_for
         student = NativeGateway(runtime, self.binding, runtime.reasoning.profile.database,
-            send, lambda messages: 100, attribution='Authored fixture; no live model')
+            student_send, lambda messages: 100, attribution='Authored fixture; no live model')
         teacher_gateway = NativeGateway(runtime, self.teacher_binding, runtime.reasoning.profile.database,
             send, lambda messages: 100, attribution='Authored teacher fixture; no live model',
 ) if teacher else None
@@ -122,7 +129,7 @@ class InformationSeekingTests(unittest.TestCase):
         connector = BrokerConnector(runtime, self.endpoint, self.token, 'test', authority,
             runtime.workflow.profile.database, transport=transport)
         return Investigation(runtime, connector, student, runtime.workflow.profile.database, run_id,
-            teacher_gateway=teacher_gateway, max_turns=5, max_tokens=393216 if teaching_mode=='intensive' else 131072, teaching_mode=teaching_mode, use_teaching_memory=use_teaching_memory, input_token_cap=input_token_cap)
+            teacher_gateway=teacher_gateway, max_turns=5, max_tokens=393216 if teaching_mode=='intensive' else 131072, teaching_mode=teaching_mode, use_teaching_memory=use_teaching_memory, input_token_cap=input_token_cap, controller_policy=controller_policy)
 
     def test_native_asset_identity_reaches_both_roles_and_survives_reopen(self):
         """Authored native regression for the actual source-mapping gap; no LLM."""

@@ -120,7 +120,7 @@ class InquiryRequest(Record):
     response_mode: Literal["proposal", "controller-turn"] = Field(default="proposal",
         description="A controller turn needs exactly one next-operation proposal or explicit yield; proposal mode permits reasoning-only output.")
     controller_access: ControllerAccess | None = None
-    controller_policy: Literal["legacy", "information-seeking/1.0"] = "legacy"
+    controller_policy: Literal["legacy", "information-seeking/1.0", "information-seeking/1.1"] = "legacy"
     teaching_mode: Literal["selective", "intensive"] = "selective"
     teaching_history: tuple[dict[str, JsonValue], ...] = Field(default=(), max_length=4)
     controller_progress: ControllerProgress | None = None
@@ -136,7 +136,7 @@ class InquiryRequest(Record):
     @model_validator(mode="after")
     def unique(self):
         if self.teaching_mode == "intensive" and (
-                self.controller_policy != "information-seeking/1.0" or self.controller_progress is None or
+                self.controller_policy == "legacy" or self.controller_progress is None or
                 not self.controller_progress.teacher_available):
             raise ValueError("intensive teaching requires information-seeking policy and a configured teacher")
         if len(str(self.teaching_history).encode('utf-8')) > 16384:
@@ -274,6 +274,33 @@ class OperationProposal(Record):
         return self
 
 
+DecisionText = Annotated[str, Field(min_length=1, max_length=1024)]
+
+
+class DecisionBasis(Record):
+    """Concise attributed decision justification, never world evidence or a grant.
+
+    Record IDs index the same pinned context; empirical hypothesis support still
+    requires the complete native EvidenceRef. These fields are not private traces.
+    """
+    evidence_record_ids: tuple[Identifier, ...] = Field(max_length=16)
+    understanding: DecisionText
+    information_need: DecisionText
+    expected_use: DecisionText
+    repeat_reason: DecisionText | None = None
+    feedback_response: DecisionText | None = None
+
+    @model_validator(mode="after")
+    def distinct_and_nonblank(self):
+        if len(set(self.evidence_record_ids)) != len(self.evidence_record_ids):
+            raise ValueError("decision evidence IDs must be distinct")
+        for name in ("understanding", "information_need", "expected_use", "repeat_reason", "feedback_response"):
+            value = getattr(self, name)
+            if value is not None and not value.strip():
+                raise ValueError("decision justification must not be blank")
+        return self
+
+
 class Response(Record):
     workspace_id: Identifier
     inquiry_id: Identifier
@@ -284,6 +311,7 @@ class Response(Record):
     origin: Literal["human-authored", "external-model-output"]
     attribution: Text
     binding: ModelBinding
+    decision_basis: DecisionBasis | None = None
     rationale_summary: Text
     procedural_guidance: tuple[Text, ...] = Field(default=(), max_length=4)
     hypotheses: tuple[Hypothesis, ...] = Field(default=(), max_length=3)

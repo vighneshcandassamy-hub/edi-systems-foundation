@@ -30,6 +30,8 @@ def main():
     files["tests/test_information_seeking.py"] = (repo / "tests/test_information_seeking.py").read_bytes()
     files["tests/test_intensive_teaching.py"] = (repo / "tests/test_intensive_teaching.py").read_bytes()
     files["scripts/check_intensive_teaching.py"] = (repo / "scripts/check_intensive_teaching.py").read_bytes()
+    files["tests/test_decision_grounding.py"] = (repo / "tests/test_decision_grounding.py").read_bytes()
+    files["scripts/check_decision_grounding.py"] = (repo / "scripts/check_decision_grounding.py").read_bytes()
     if args.source_revision is not None:
         if not re.fullmatch(r"[0-9a-f]{40}", args.source_revision):
             parser.error("source-revision must be a verified full remote commit SHA")
@@ -93,6 +95,9 @@ while time.monotonic()<deadline:
    with (out/"intensive-teaching-preflight.log").open("x") as checklog:
     check=subprocess.run(["/kaggle/temp/edi-engineering-compute/bin/python",str(root/"scripts/check_intensive_teaching.py"),"--output",str(out/"intensive-teaching-preflight.json")],env=checkenv,stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
    if check.returncode:raise RuntimeError("Intensive teaching preflight failed; inspect log before inference")
+   with (out/"decision-grounding-preflight.log").open("x") as checklog:
+    check=subprocess.run(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"scripts/check_decision_grounding.py"),"--grammar","--output",str(out/"decision-grounding-preflight.json")],env=checkenv,stdout=checklog,stderr=subprocess.STDOUT,timeout=180)
+   if check.returncode:raise RuntimeError("Decision-grounding preflight failed; inspect log before inference")
   env=dict(os.environ,EDI_AUTONOMOUS_ROOT=str(out),EDI_TEACHING_MODE=__EDI_TEACHING_MODE__);env.pop("PYTHONPATH",None)
   with (out/"supervisor.log").open("x") as log:
    server=subprocess.Popen(["/kaggle/temp/edi-engineering-serve/bin/python",str(root/"server.py")],env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)

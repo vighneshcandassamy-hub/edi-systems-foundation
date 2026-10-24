@@ -86,7 +86,7 @@ def main():
             connector = BrokerConnector(runtime, grant.endpoint, token, workspace, authority,
                 runtime.workflow.profile.database, max_requests=32, transport=transport)
             return Investigation(runtime, connector, gateway, runtime.workflow.profile.database,
-                "dispatch-regression", max_turns=8, max_tokens=262144)
+                "dispatch-regression", controller_policy="information-seeking/1.0", max_turns=8, max_tokens=262144)
         try:
             controller = reopen()
             state = controller.step()

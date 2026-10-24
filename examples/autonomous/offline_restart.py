@@ -39,13 +39,21 @@ def main():
     runtime.interpretation
     runtime.analysis
     runtime.assessment
+    # A read-only reopen must use the exact C0-frozen decision policy, including
+    # an explicit historical baseline; never substitute a newer default.
+    with sqlite3.connect(runtime.workflow.profile.database) as db:
+        row = db.execute("SELECT request FROM io_investigation_c0 WHERE id=?", ("configuration",)).fetchone()
+    if row is None:
+        raise RuntimeError("No frozen native investigation configuration to reopen")
+    controller_policy = json.loads(row[0])["controller_policy"]
     investigation = Investigation(runtime, ForbiddenPort(session_id=profile.broker.grant.session_id),
         ForbiddenPort(binding=profile.student.binding), runtime.workflow.profile.database,
         profile.run_id, teacher_gateway=None if profile.teacher.mode == "disabled" else ForbiddenPort(binding=profile.teacher.binding),
         max_turns=profile.max_turns, max_tokens=profile.max_tokens,
         session_seconds=profile.session_seconds, max_corrections=profile.max_corrections,
         teaching_mode=profile.teaching_mode, use_teaching_memory=profile.use_teaching_memory,
-        input_token_cap=min(16384, profile.student.max_model_len - 4096))
+        input_token_cap=min(16384, profile.student.max_model_len - 4096),
+        controller_policy=controller_policy)
     baseline = json.loads((root / "restart-baseline.json").read_bytes())
     observed = snapshot(SimpleNamespace(runtime=runtime, investigation=investigation))
     differences = snapshot_differences(baseline, observed)

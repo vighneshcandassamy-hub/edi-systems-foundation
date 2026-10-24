@@ -1,0 +1,23 @@
+{
+  "version": "0.10.11.dev0",
+  "scope": "One authored native five-turn mission, actual broker handler, admission rejections, blind first assessments, revision feedback, closure and no-redispatch reopen. No model inference or autonomous reasoning result.",
+  "passed": true,
+  "tests_run": 1,
+  "grammar": "not-run-on-this-host",
+  "json_schema": "native Pydantic admission exercised; external schema checker not run",
+  "errors": [],
+  "failures": [],
+  "model_calls": 0,
+  "neural_weight_updates": 0,
+  "files_sha256": {
+    "src/edi/reason/contracts.py": "0e3c7c45aae6381934fb4d465a1d82b27e444df3fce858e5a6f28d52a4a4f868",
+    "src/edi/reason/decision.py": "803d2f17b1998003c28c8c29cc80d2f855ec786ea8b226cf5ef6ef415f903f0c",
+    "src/edi/reason/gateway.py": "af6672ed322baec6b6533595bf54a0901bc2de100a1f4748ddbead7d8a0d6a35",
+    "src/edi/reason/operation_args.py": "5e474be7a8a30aae039015fb0d2eb673be9406862bffd71ea3caf0eb06f7af93",
+    "src/edi/reason/service.py": "7de2176ce8c2e79c706e03c2b1540bf7a4e4a2a7d2a17714d9835a060bdc119e",
+    "src/edi/reason/teaching.py": "3f090bebaacb0254ba4bf9db18cf225d18c02c1c423799fe8369da1b754915be",
+    "src/edi/inquiry/benchmark.py": "2a3d0a1a08a9a381a5229d91fdf2b4c2fa0abdf9ff73b893549faa31e474840a",
+    "tests/test_decision_grounding.py": "898c5930208d41686b2e475b48d117493e5f6f55e5be9f09ba76288d7aa092ab",
+    "tests/test_information_seeking.py": "62a3f26399e7e26fef38dc7b803aae72c93237f973155575109a6caa2aa20eb3"
+  }
+}
