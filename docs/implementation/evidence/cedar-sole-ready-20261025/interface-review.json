@@ -1,0 +1,630 @@
+{
+  "schema": "edi-cedar-sole-prelaunch-review/1.0",
+  "base_revision": "d6e65ef4b81dbddf67e705f4873a6110572b262a",
+  "components": [
+    {
+      "id": "C0",
+      "name": "Inquiry and coordination"
+    },
+    {
+      "id": "C1",
+      "name": "Observation and evidence"
+    },
+    {
+      "id": "C2",
+      "name": "Interpretation and correspondence"
+    },
+    {
+      "id": "C3",
+      "name": "Shared world-model substrate"
+    },
+    {
+      "id": "C4",
+      "name": "Reasoning and inquiry development"
+    },
+    {
+      "id": "C5",
+      "name": "Analysis and dynamics"
+    },
+    {
+      "id": "C6",
+      "name": "Assessment and learning"
+    },
+    {
+      "id": "C7",
+      "name": "Agency and adoption"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "C0",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-01A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C0",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-02A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C0",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-03A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C0",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-04A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C0",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-05A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C0",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-06A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C0",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-07A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C1",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-01B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C1",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-08A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C1",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-09A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C1",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-10A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C1",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-11A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C1",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-12A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C1",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-13A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C2",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-02B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C2",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-08B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C2",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-14A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C2",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C2",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C2",
+      "to": "C6",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C2",
+      "to": "C7",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C3",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-03B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C3",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-09B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C3",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-14B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C3",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-15A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C3",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-16A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C3",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-17A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C3",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-18A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C4",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-04B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C4",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-10B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C4",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C4",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-15B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C4",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C4",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-19A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C4",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C5",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-05B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C5",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-11B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C5",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C5",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-16B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C5",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C5",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-20A"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C5",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C6",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-06B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C6",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-12B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C6",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C6",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-17B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C6",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-19B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C6",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-20B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C6",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C7",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-07B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C7",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-13B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C7",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C7",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-18B"
+      ],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C7",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C7",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    },
+    {
+      "from": "C7",
+      "to": "C6",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "Native producer/consumer contract unchanged; Cedar deployment uses existing composition and preserves baseline qualification"
+    }
+  ],
+  "pair_count": 28,
+  "lane_count": 56,
+  "external_dependency": {
+    "name": "Current assistant session",
+    "role": "sole C4 proposer",
+    "teacher": "disabled",
+    "request": "C4 immutable cut + schema -> explicitly transported session input",
+    "return": "session proposal bytes -> C1 generated provenance -> C4 admission -> C0 scheduling",
+    "identity": "operator-declared; unauthenticated",
+    "usage": "unknown unless declared, full native reservation when unknown",
+    "capacity": "export/response byte envelopes; no exact token-count assertion",
+    "prohibited": [
+      "direct world/evaluator reads",
+      "direct C3 mutation",
+      "teacher cycle",
+      "paid or background API",
+      "retry of unknown completion"
+    ]
+  },
+  "component_review": {
+    "C4": "Existing reasoning/proposal authority; added explicit sole-model exchange, native reference admission unchanged",
+    "C0": "Distinct waiting-reasoner state and resumable native proposal import; manual byte-budget path separated from exact-token serving path",
+    "C1": "Immutable raw generated output and lineage retained; no external response becomes independent world evidence",
+    "C3_C7": "Admission and action authority unchanged",
+    "C2_C5_C6": "Existing capabilities preserved; not newly qualified by transport changes"
+  },
+  "gates": {
+    "architecture": "pass scoped implementer self-review; existing owner/port contracts unchanged",
+    "contract": "pass Cedar exact public-access/schema/identity and explicit handoff guards",
+    "runtime": "pass disposable Cedar mission/export, native image/large-text byte envelope and six DB integrity checks",
+    "integration": "pass operational launch readiness at recorded source/config; actual benchmark unstarted",
+    "scientific": "not run; no Cedar result, comparative advantage or blind generalization claimed"
+  },
+  "review_limit": "Self-review only. Existing baseline REVISE statuses are not promoted. Bundled skill reference/checker files unavailable through supplied skill resource; explicit 56-lane inventory consistency checked here, not claimed as that checker result.",
+  "evidence": [
+    "readiness-result.json",
+    "archive-verification.json",
+    "../../CEDAR_SOLE_LAUNCH_PROTOCOL.md"
+  ],
+  "source_hashes": {
+    "examples/autonomous/cedar_session.py": "68f591f556228259f9b7bfa1a4d52cf39df0fc6427a132cd1ea6a340b024c20a",
+    "examples/autonomous/cedar_readiness.py": "2082c9598bc5becd33d1bde61334770a2766c68bb01685d78c6b7cde9013faab"
+  },
+  "tested_source_revision": "44b49adabf9eeedf5d2e1f4c6dc1c7b52a4c899f",
+  "deployment_scope": {
+    "source": "examples/autonomous/cedar_session.py and cedar_readiness.py; no C0-C7 production source change",
+    "requirements": [
+      "IMP-R09 budgeted informative inquiry",
+      "IMP-R19 bounded resource accounting",
+      "IMP-R26 attributed model assistance and evidence lineage"
+    ],
+    "C0_C4": "Sole standard-stage exact native export/import; manual UI handoff; 262144-byte request,65536-byte response; unknown tokens fully reserved",
+    "C1_C4": "Original selected records, byte hashes, source identities and generated proposal lineage retained; synthetic probe stays in disposable stores",
+    "C4_C3": "Existing candidate submission/admission policy unchanged; no automatic acceptance",
+    "C0_C7_broker": "Same public Cedar manual, loopback broker, exact mission digest and frozen corpus; new grant only at actual start; one mission-only disposable probe",
+    "outside_dependency": "Current session identity/usage unauthenticated; not an unattended API; shared case/implementation context prevents blind/comparative claims",
+    "time_and_recovery": "Fresh64-turn/six-hour/256-request bounds. Same-kernel process reopen preserves pending job and makes zero extra calls. No kernel or expired-authority automatic restart.",
+    "failure_and_saturation": "Native bounded correction and capacity/access termination retained. Wrapper rejects JSON strings/stale jobs before writing. No automatic unknown-completion retry.",
+    "evaluator": "Explicitly fenced before native termination; never included in pending reasoner inputs",
+    "launch": "No top-level benchmark start/evaluation/import call in any saved preparation cell; start_actual_cedar() is defined, uncalled"
+  },
+  "preparation_ast_checked": true
+}
