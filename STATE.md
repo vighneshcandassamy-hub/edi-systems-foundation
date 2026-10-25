@@ -1,3 +1,13 @@
+## Latest checkpoint - 25 October 2026, sole assistant reasoner connected
+
+Owner direction replaces the active teacher/student arrangement with this ChatGPT session as the sole C4 reasoner. Added explicit file-exchange mode with teacher-disabled invariant; EDI retains evidence, validates hypotheses/references, admits C3 candidates, schedules and authorizes operations. No Qwen, teacher service, paid API or unattended connection is used. Identity and token use are declared/unmeasured, not independently authenticated.
+
+A fresh private CPU Kaggle integration case completed six accepted decisions: source catalogue, three documents, an attributed interview and an actual closure receipt. Two rival hypotheses and valid test references were admitted; C3 retained a source-linked conditional descriptive relationship as a candidate. Restart returned identical state with zero additional calls. Six database integrity checks pass; 109 runtime source hashes verify. Authored regressions passed 29 unique cases / 39 executions, including eight new cases. Original parsing errors, one rejected double-encoded response and a wrapper-rejected stale handoff remain preserved.
+
+This is a known neutral engineering fixture, not a Cedar or intelligence benchmark. No comparative/transfer/training result or final Cedar score is claimed. The previous repaired Qwen Cedar run ended yielded at turn5 after repeated invalid hypothesis references; no district evidence or final benchmark score. Those failed and expired runs are not resumed. The previous proposed capped12 Qwen repair batch is superseded by owner direction.
+
+See [connection and evidence](docs/implementation/SINGLE_ASSISTANT_REASONER.md). Private notebook: https://www.kaggle.com/code/vigini/edi-assistant-native-20261025/edit . Native checkpoint SHA256 d1a51b7cbc85e2015c4bbaefeca3e5befd7325df4b3ee2536da88013cc6c844f, 872034 bytes. Broker stopped; Kaggle draft off and Active Events shows none. Next work is a separately scoped fresh task using this sole reasoner; no pending response import or run to restart.
+
 # EDI Systems Foundation - checkpoint
 
 ## Latest checkpoint - 24 October 2026 IST, context repair implemented offline
