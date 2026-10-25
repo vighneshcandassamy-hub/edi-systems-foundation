@@ -1,0 +1,18 @@
+{
+  "export": {
+    "bytes": 108362,
+    "sha256": "13b016687b2cd03747c74154c71fc212f7e44e03c58d9e954894a5ae46855125",
+    "benchmark_started": false,
+    "source_revision": "44b49adabf9eeedf5d2e1f4c6dc1c7b52a4c899f",
+    "scope": "Readiness evidence, disposable public-mission probe only"
+  },
+  "integrity": {
+    "disposable-probe-16119d4a79/cedar-world/run.sqlite": "ok",
+    "disposable-probe-16119d4a79/owners.agency.sqlite3": "ok",
+    "disposable-probe-16119d4a79/owners.reason.sqlite3": "ok",
+    "disposable-probe-16119d4a79/owners.sqlite3": "ok",
+    "disposable-probe-16119d4a79/owners.workflows.sqlite3": "ok",
+    "disposable-probe-16119d4a79/owners.world.sqlite3": "ok"
+  },
+  "notebook_sha256": "268f2347c427e6dd2efa85fab103f5b913685b0439caeaf70b610508a8bd3dfd"
+}
