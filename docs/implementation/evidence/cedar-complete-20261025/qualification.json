@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "benchmark_started": false,
+  "source_manifest_sha256": "107caf2bbd812789f0371c91f987d97c8e95919fafd784f8f4ea37de6ab7456b",
+  "source_revision": "d4267f264764f97a90096421aa388f8372ad6f70",
+  "verified_source_and_input_files": 126,
+  "full_horizon": {
+    "passed": true,
+    "scope": "Authored neutral64-decision lifecycle; no model or Cedar science",
+    "accepted_responses": 64,
+    "native_rejections": 0,
+    "completed": true,
+    "report_preserved_exact": true,
+    "report_chars": 12250,
+    "pending_reopens": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56
+    ],
+    "terminal_reopen_new_calls": 0,
+    "request_peak_bytes": 186326,
+    "journals": {
+      "io_investigation_c0": {
+        "rows": 66,
+        "reserved_bytes": 270802132
+      },
+      "io_investigation_phases_c0": {
+        "rows": 128,
+        "reserved_bytes": 537258066
+      }
+    },
+    "historical_fixed_budget_admitted": 63,
+    "integrity": {
+      "owners.reason.sqlite3": "ok",
+      "owners.agency.sqlite3": "ok",
+      "owners.interpret.sqlite3": "ok",
+      "owners.workflows.sqlite3": "ok",
+      "owners.sqlite3": "ok",
+      "owners.world.sqlite3": "ok"
+    },
+    "source_frozen": true
+  },
+  "regressions_unique_passed": 36,
+  "regression_executions_on_final_runtime": 37,
+  "development_failures_preserved": true,
+  "scope": "Unblinded manual Cedar development assessment; engineering gate only; no advantage or scientific result",
+  "archive": {
+    "bytes": 5074805,
+    "sha256": "67c0bb309d899fabc5587bf1a951556ceee01cc94d1779795544effc1027d794",
+    "crc": "ok",
+    "database_integrity": "seven retained databases ok"
+  },
+  "development_failures": [
+    "initial missing typed completion fields: lifecycle stopped before decision1;36 regressions with30 errors",
+    "final runtime:35/36 passed;one missing fixture;exact affected test passed after fixture supplied",
+    "one incorrect fully qualified test selector failed to load;retained separately, not counted as an executed intended case"
+  ]
+}
