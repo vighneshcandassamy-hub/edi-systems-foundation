@@ -1,0 +1,609 @@
+{
+  "schema": "edi-sole-reasoner-review/1.0",
+  "base_revision": "6ca72f16c346add1c777da2cb57ea65406d0766c",
+  "components": [
+    {
+      "id": "C0",
+      "name": "Inquiry and coordination"
+    },
+    {
+      "id": "C1",
+      "name": "Observation and evidence"
+    },
+    {
+      "id": "C2",
+      "name": "Interpretation and correspondence"
+    },
+    {
+      "id": "C3",
+      "name": "Shared world-model substrate"
+    },
+    {
+      "id": "C4",
+      "name": "Reasoning and inquiry development"
+    },
+    {
+      "id": "C5",
+      "name": "Analysis and dynamics"
+    },
+    {
+      "id": "C6",
+      "name": "Assessment and learning"
+    },
+    {
+      "id": "C7",
+      "name": "Agency and adoption"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "C0",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-01A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C0",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-02A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C0",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-03A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C0",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-04A"
+      ],
+      "delta": "scoped provider/composition review"
+    },
+    {
+      "from": "C0",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-05A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C0",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-06A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C0",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-07A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C1",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-01B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C1",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-08A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C1",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-09A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C1",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-10A"
+      ],
+      "delta": "scoped provider/composition review"
+    },
+    {
+      "from": "C1",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-11A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C1",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-12A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C1",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-13A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C2",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-02B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C2",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-08B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C2",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-14A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C2",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C2",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C2",
+      "to": "C6",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C2",
+      "to": "C7",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C3",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-03B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C3",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-09B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C3",
+      "to": "C2",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-14B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C3",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-15A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C3",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-16A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C3",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-17A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C3",
+      "to": "C7",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-18A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C4",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-04B"
+      ],
+      "delta": "scoped provider/composition review"
+    },
+    {
+      "from": "C4",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-10B"
+      ],
+      "delta": "scoped provider/composition review"
+    },
+    {
+      "from": "C4",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C4",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-15B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C4",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C4",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-19A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C4",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C5",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-05B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C5",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-11B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C5",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C5",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-16B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C5",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C5",
+      "to": "C6",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-20A"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C5",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C6",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-06B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C6",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-12B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C6",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C6",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-17B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C6",
+      "to": "C4",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-19B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C6",
+      "to": "C5",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-20B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C6",
+      "to": "C7",
+      "disposition": "prohibited",
+      "rationale": "No direct action/adoption bypass: route proposal through C0 and the explicit C7 authorization policy.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C7",
+      "to": "C0",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-07B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C7",
+      "to": "C1",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-13B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C7",
+      "to": "C2",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C7",
+      "to": "C3",
+      "disposition": "required",
+      "rationale": "Typed operation/result needed for the named owner responsibilities; authority is operation-specific, not symmetric.",
+      "contract_ids": [
+        "IF-18B"
+      ],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C7",
+      "to": "C4",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C7",
+      "to": "C5",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    },
+    {
+      "from": "C7",
+      "to": "C6",
+      "disposition": "not_needed",
+      "rationale": "No direct operation is needed in the first architecture. Coordinate work through C0 and read canonical evidence/model through C1/C3. Reassess this no-link decision if responsibilities change.",
+      "contract_ids": [],
+      "delta": "owner authority and native contract unchanged in this increment; baseline qualification not promoted"
+    }
+  ],
+  "pair_count": 28,
+  "lane_count": 56,
+  "external_dependency": {
+    "name": "Current assistant session",
+    "role": "sole C4 proposer",
+    "teacher": "disabled",
+    "request": "C4 immutable cut + schema -> explicitly transported session input",
+    "return": "session proposal bytes -> C1 generated provenance -> C4 admission -> C0 scheduling",
+    "identity": "operator-declared; unauthenticated",
+    "usage": "unknown unless declared, full native reservation when unknown",
+    "capacity": "export/response byte envelopes; no exact token-count assertion",
+    "prohibited": [
+      "direct world/evaluator reads",
+      "direct C3 mutation",
+      "teacher cycle",
+      "paid or background API",
+      "retry of unknown completion"
+    ]
+  },
+  "component_review": {
+    "C4": "Existing reasoning/proposal authority; added explicit sole-model exchange, native reference admission unchanged",
+    "C0": "Distinct waiting-reasoner state and resumable native proposal import; manual byte-budget path separated from exact-token serving path",
+    "C1": "Immutable raw generated output and lineage retained; no external response becomes independent world evidence",
+    "C3_C7": "Admission and action authority unchanged",
+    "C2_C5_C6": "Existing capabilities preserved; not newly qualified by transport changes"
+  },
+  "gates": {
+    "architecture": "scoped self-review",
+    "contract": "passed scoped Kaggle native regressions: 29 unique cases, 39 executions, 8 new cases",
+    "runtime": "passed sole current-session known-fixture integration; six accepted decisions, actual closure, C3 candidate and no-replay restart",
+    "scientific": "unqualified; no Cedar score, comparative or independent unfamiliar-task result"
+  },
+  "review_limit": "Self-review only. Existing baseline REVISE statuses are not promoted. Bundled skill reference/checker files unavailable through supplied skill resource; explicit 56-lane inventory consistency checked here, not claimed as that checker result.",
+  "evidence": "native-result.json",
+  "source_hashes": {
+    "src/edi/reason/reasoner_exchange.py": "34d3499e98277806018e441ea95c9f2fabb5c8f1b9bd100bade41e80ca65b024",
+    "src/edi/inquiry/application.py": "989bf6043dbe847f1450cb7a7388bfee71ac5c57bb25df2d91837e142dbc37db",
+    "src/edi/inquiry/benchmark.py": "73280a85453cf605b7dae137064569eb739dae7dadf52f0707c82b03cdb80461",
+    "tests/test_sole_reasoner.py": "b6191c421b5b56b979137dfee09b738621f241086d22f1cac169c95f0d7d1cdd",
+    "examples/autonomous/assistant_run.py": "b5dc3921f54ec716584a3bdd0acbc614ff297b751f59a452b06d8b62b6f6cd5f"
+  }
+}
