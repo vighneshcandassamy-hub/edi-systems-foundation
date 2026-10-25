@@ -1,0 +1,449 @@
+{
+  "scope": "Current assistant sole reasoner, known neutral engineering fixture; no Cedar/intelligence benchmark",
+  "state": "completed",
+  "turns": 6,
+  "accepted_responses": 6,
+  "retained_rejections": 1,
+  "teacher_jobs": 0,
+  "qwen_calls": 0,
+  "usage_unknown_jobs": 7,
+  "reserved_policy_units": 114688,
+  "closure_receipt": {
+    "body": {
+      "conclusion_received": true,
+      "status": "closed"
+    },
+    "evidence_record_id": "35c1d77e-a17f-4be9-8f7e-e72e06955cac",
+    "http_status": 200,
+    "response_bytes": 46,
+    "sha256": "d19f4a09f6f8496d2e9c01ef9d82c31db3c182d67e05c22ffbb81a4ad3157e6b"
+  },
+  "world_operations": [
+    {
+      "operation": "mission",
+      "body": {
+        "request_id": "assistant-edi-sole-assistant-20261025:mission"
+      },
+      "http_status": 200,
+      "response": {
+        "mission": {
+          "objective": "Investigate the recorded change in instrument readings. Determine what the available information supports about the change and a next-reading prediction. Obtain information as needed, then submit findings, uncertainty and any further information needed.",
+          "scope": "Authored neutral instrument engineering environment; no forest case or empirical science.",
+          "public_operations": {
+            "mission": {
+              "body": {},
+              "returns": "original objective and access catalogue"
+            },
+            "sources": {
+              "body": {},
+              "returns": "available document and interview identifiers"
+            },
+            "read": {
+              "body": {
+                "document_id": "catalogue document ID"
+              },
+              "returns": "raw document, source attribution and digest"
+            },
+            "ask": {
+              "body": {
+                "person_id": "catalogue interview ID",
+                "question": "your information request"
+              },
+              "returns": "available interview record; unsupported requests remain unknown"
+            },
+            "status": {
+              "body": {},
+              "returns": "session status"
+            },
+            "submit": {
+              "body": {
+                "conclusion": "findings and limitations"
+              },
+              "returns": "closure receipt"
+            }
+          },
+          "access_protocol": "Public operations use world-call with arguments {operation: public name, body: operation-specific object}. C0 assigns request_id. This catalogue defines available access, not an investigation sequence. Native EDI component operations and selective teacher review are also available through the configured controller."
+        }
+      },
+      "duplicate": false
+    },
+    {
+      "operation": "sources",
+      "body": {
+        "request_id": "c0:be182cb1aed5f6039d199b691a83743d61cf8a25bb901e53c3185a5a3c3817cc"
+      },
+      "http_status": 200,
+      "response": {
+        "documents": [
+          {
+            "document_id": "m17",
+            "format": "csv",
+            "description": "Instrument register export"
+          },
+          {
+            "document_id": "r22",
+            "format": "txt",
+            "description": "Capture desk notebook"
+          },
+          {
+            "document_id": "b04",
+            "format": "txt",
+            "description": "Instrument service bulletin"
+          }
+        ],
+        "people": [
+          {
+            "person_id": "capture-operator",
+            "description": "Available capture desk interview record"
+          }
+        ]
+      },
+      "duplicate": false
+    },
+    {
+      "operation": "read",
+      "body": {
+        "asset_limit": 65536,
+        "asset_offset": 0,
+        "document_id": "m17",
+        "include_asset": true,
+        "request_id": "c0:0fe32724753f7bcb9a98794dae1719a04caf31a62e35ef1e1ea8f011f6e31c50:0"
+      },
+      "http_status": 200,
+      "response": {
+        "document_id": "m17",
+        "format": "csv",
+        "source": "simulation",
+        "sha256": "5dafb1d56531e465624e0aee355d5cf3c36fe4ab43dd1c17f648360ef91340fb",
+        "content": "sample_label,reading_bytes\n0,8\n1,12\n2,16\n",
+        "asset": {
+          "encoding": "base64",
+          "offset": 0,
+          "total_bytes": 41,
+          "data": "c2FtcGxlX2xhYmVsLHJlYWRpbmdfYnl0ZXMKMCw4CjEsMTIKMiwxNgo=",
+          "has_more": false
+        }
+      },
+      "duplicate": false
+    },
+    {
+      "operation": "read",
+      "body": {
+        "asset_limit": 65536,
+        "asset_offset": 0,
+        "document_id": "r22",
+        "include_asset": true,
+        "request_id": "c0:1e2c0a8aef8fad883461526a873060a424236129b2e88db3b6900bf22606c3ba:0"
+      },
+      "http_status": 200,
+      "response": {
+        "document_id": "r22",
+        "format": "txt",
+        "source": "simulation",
+        "sha256": "537d188fcea948551e538b488a722fe9c2ab50df3a19eb819e867fd2392a698d",
+        "content": "Register export batch A. Rows were transcribed from one prepared fixture. Sample labels preserve entry order. Clock readings were not retained. No independent repeat is filed in this batch. Author: capture desk.\n",
+        "asset": {
+          "encoding": "base64",
+          "offset": 0,
+          "total_bytes": 212,
+          "data": "UmVnaXN0ZXIgZXhwb3J0IGJhdGNoIEEuIFJvd3Mgd2VyZSB0cmFuc2NyaWJlZCBmcm9tIG9uZSBwcmVwYXJlZCBmaXh0dXJlLiBTYW1wbGUgbGFiZWxzIHByZXNlcnZlIGVudHJ5IG9yZGVyLiBDbG9jayByZWFkaW5ncyB3ZXJlIG5vdCByZXRhaW5lZC4gTm8gaW5kZXBlbmRlbnQgcmVwZWF0IGlzIGZpbGVkIGluIHRoaXMgYmF0Y2guIEF1dGhvcjogY2FwdHVyZSBkZXNrLgo=",
+          "has_more": false
+        }
+      },
+      "duplicate": false
+    },
+    {
+      "operation": "read",
+      "body": {
+        "asset_limit": 65536,
+        "asset_offset": 0,
+        "document_id": "b04",
+        "include_asset": true,
+        "request_id": "c0:258385ff732a32c9f1561db8936596b94a468fead787179657a9184febc04c5f:0"
+      },
+      "http_status": 200,
+      "response": {
+        "document_id": "b04",
+        "format": "txt",
+        "source": "simulation",
+        "sha256": "6c96f7c6fc5fec053aef8e579585903e6ebe5ede4499baf999207ff8ac72fb5c",
+        "content": "The dashboard has four display columns. Its enclosure has sixteen fasteners. Replacement labels are sold in packs of twelve. This bulletin records enclosure inventory; it contains no measurement of the registered quantity.\n",
+        "asset": {
+          "encoding": "base64",
+          "offset": 0,
+          "total_bytes": 223,
+          "data": "VGhlIGRhc2hib2FyZCBoYXMgZm91ciBkaXNwbGF5IGNvbHVtbnMuIEl0cyBlbmNsb3N1cmUgaGFzIHNpeHRlZW4gZmFzdGVuZXJzLiBSZXBsYWNlbWVudCBsYWJlbHMgYXJlIHNvbGQgaW4gcGFja3Mgb2YgdHdlbHZlLiBUaGlzIGJ1bGxldGluIHJlY29yZHMgZW5jbG9zdXJlIGludmVudG9yeTsgaXQgY29udGFpbnMgbm8gbWVhc3VyZW1lbnQgb2YgdGhlIHJlZ2lzdGVyZWQgcXVhbnRpdHkuCg==",
+          "has_more": false
+        }
+      },
+      "duplicate": false
+    },
+    {
+      "operation": "ask",
+      "body": {
+        "person_id": "capture-operator",
+        "question": "What physical quantity and units do reading_bytes represent? Were capture settings stable across labels 0, 1, 2, are clock times or independent repeats available, and what conditions would apply to a next reading?",
+        "request_id": "c0:2a200c6462fa2727599e58648c49582386dda3b4e1f068130ad9dc2da7e8e220"
+      },
+      "http_status": 200,
+      "response": {
+        "person_id": "capture-operator",
+        "requested_question": "What physical quantity and units do reading_bytes represent? Were capture settings stable across labels 0, 1, 2, are clock times or independent repeats available, and what conditions would apply to a next reading?",
+        "available_record": "Capture operator record: the sample labels are ordinal entries. Elapsed intervals and the mechanism generating these entries were not measured. There is no withheld repeat experiment or measured next sample in this engineering fixture. These statements are operator attribution, not an independent measurement.",
+        "basis": "pre-authored attributed interview; no new experiment or outside retrieval"
+      },
+      "duplicate": false
+    },
+    {
+      "operation": "submit",
+      "body": {
+        "conclusion": "The register m17 records 8, 12, 16 at ordinal labels 0, 1, 2: a descriptive increase of four per entry. The capture notebook r22 and attributed operator interview establish neither elapsed times nor an independently measured generating mechanism or repeat. Therefore no physical rate or causal explanation is identified. The enclosure inventory b04 is not evidence for the measured change. If a next ordinal entry continues the same additive rule under comparable capture and reporting conditions, its reading would be 20; this is an untested conditional extrapolation, not a measured or calibrated forecast. Other continuations and measurement/reporting changes remain possible. Further evidence needed: quantity and units, timestamped repeated observations, capture settings/calibration and an independent reference or controlled comparison. There is no measured next sample or repeat available in the provided engineering fixture. This completes a known-fixture integration exercise, not Cedar or an intelligence benchmark.",
+        "request_id": "c0:ac85ae954072b4409f98105723eaf05c1a2ab102b6aa0ab3bf5719a6b4f50f5a"
+      },
+      "http_status": 200,
+      "response": {
+        "status": "closed",
+        "conclusion_received": true
+      },
+      "duplicate": false
+    }
+  ],
+  "candidate": {
+    "schema_version": "1.0",
+    "workspace_id": "edi-sole-assistant-20261025",
+    "version": 1,
+    "known_at": "2026-10-25T08:00:35.852520Z",
+    "proposer": "C4",
+    "change_kind": "explanation",
+    "representation": {
+      "schema_version": "1.0",
+      "record_id": "instrument-conditional-ordinal-pattern",
+      "scope_id": "world",
+      "structure": {
+        "schema_version": "1.0",
+        "family": "response-relationship",
+        "participants": [],
+        "mechanism": {
+          "rule": "reading[n+1] = reading[n] + 4; conditional descriptive fit only"
+        },
+        "parameters": {
+          "conditional_next": 20,
+          "observed_values": [
+            8,
+            12,
+            16
+          ]
+        },
+        "domains": {
+          "sample_axis": "ordinal entry order; elapsed time unknown"
+        },
+        "delays": {
+          "status": "unknown"
+        },
+        "capacities": {},
+        "execution_status": "descriptive"
+      },
+      "label": "Conditional +4 entry pattern; mechanism unknown",
+      "dependencies": [],
+      "alternatives": [],
+      "alternative_group": null,
+      "basis": "hypothesis",
+      "support": [
+        {
+          "schema_version": "1.0",
+          "workspace_id": "edi-sole-assistant-20261025",
+          "record_id": "40d98df2-778e-4b95-a0fe-2aeb5a88d4af",
+          "sha256": "5dafb1d56531e465624e0aee355d5cf3c36fe4ab43dd1c17f648360ef91340fb",
+          "selector": "whole-object",
+          "origin_class": "simulation",
+          "lineage": [
+            "broker-acquisition-v1",
+            "edi-sole-assistant-20261025",
+            "c0:0fe32724753f7bcb9a98794dae1719a04caf31a62e35ef1e1ea8f011f6e31c50",
+            "native-asset"
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "workspace_id": "edi-sole-assistant-20261025",
+          "record_id": "1ff2efcc-2dbe-4776-895e-ee736f1d62f3",
+          "sha256": "537d188fcea948551e538b488a722fe9c2ab50df3a19eb819e867fd2392a698d",
+          "selector": "whole-object",
+          "origin_class": "simulation",
+          "lineage": [
+            "broker-acquisition-v1",
+            "edi-sole-assistant-20261025",
+            "c0:1e2c0a8aef8fad883461526a873060a424236129b2e88db3b6900bf22606c3ba",
+            "native-asset"
+          ]
+        },
+        {
+          "schema_version": "1.0",
+          "workspace_id": "edi-sole-assistant-20261025",
+          "record_id": "d31efac4-8139-44db-ba4c-850cbbc57343",
+          "sha256": "4ee347f5ace983c9adef9f971d203e779a83040657a29f775054fae5df65e9ff",
+          "selector": "whole-object",
+          "origin_class": "simulation",
+          "lineage": [
+            "broker-acquisition-v1",
+            "edi-sole-assistant-20261025",
+            "c0:2a200c6462fa2727599e58648c49582386dda3b4e1f068130ad9dc2da7e8e220",
+            "response"
+          ]
+        }
+      ],
+      "counterevidence": [],
+      "assumptions": [
+        "Ordinal continuation and comparable capture conditions; untested.",
+        "The next entry follows the same additive rule and is comparable to the current register."
+      ],
+      "uncertainty": {
+        "causal_identification": "unidentified",
+        "next_reading": "unobserved",
+        "probability": "uncalibrated"
+      },
+      "validity": {
+        "schema_version": "1.0",
+        "status": "unknown",
+        "start": null,
+        "end": null,
+        "clock_id": "UTC"
+      },
+      "properties": {
+        "edi_c4": {
+          "attribution": "Current ChatGPT assistant as sole C4 reasoner; manual transport; implementation context known; identity/usage not independently verified",
+          "binding": {
+            "engine": "current-session-unverified",
+            "model_id": "ChatGPT-current-assistant-session",
+            "provider": "explicit-session-file-exchange",
+            "revision": "operator-declared-20261025",
+            "schema_version": "1.0",
+            "tokenizer_revision": "unmeasured",
+            "weights": "fixed"
+          },
+          "context_sha256": "02d7cb606cfabf38a7df8f4d66e8f3be3d2b71081d733fb83b29521e0fbb6f1d",
+          "hypothesis": {
+            "applicability": "Conditional on unchanged capture/reporting and continuation of the fitted arithmetic pattern; not a time rate.",
+            "assumptions": [
+              "The next entry follows the same additive rule and is comparable to the current register."
+            ],
+            "claim": "If the additive +4 ordinal rule and comparable capture conditions continue, the next entry is 20.",
+            "confounders": [
+              "Alternative sequences fit the same three points; capture/reporting changes or real variations could alter the next value."
+            ],
+            "counterevidence": [],
+            "dependence_groups": [
+              "m17-r22-attributed-capture-batch"
+            ],
+            "hypothesis_id": "h-conditional-next",
+            "mechanism": "Descriptive recurrence only, reading[n+1]=reading[n]+4; the physical generating mechanism is unmeasured.",
+            "predictions": [],
+            "rivals": [],
+            "schema_version": "1.0",
+            "scope": "One three-entry engineering fixture and a hypothetical next ordinal entry.",
+            "status": "candidate",
+            "support": [
+              {
+                "lineage": [
+                  "broker-acquisition-v1",
+                  "edi-sole-assistant-20261025",
+                  "c0:0fe32724753f7bcb9a98794dae1719a04caf31a62e35ef1e1ea8f011f6e31c50",
+                  "native-asset"
+                ],
+                "origin_class": "simulation",
+                "record_id": "40d98df2-778e-4b95-a0fe-2aeb5a88d4af",
+                "schema_version": "1.0",
+                "selector": "whole-object",
+                "sha256": "5dafb1d56531e465624e0aee355d5cf3c36fe4ab43dd1c17f648360ef91340fb",
+                "workspace_id": "edi-sole-assistant-20261025"
+              },
+              {
+                "lineage": [
+                  "broker-acquisition-v1",
+                  "edi-sole-assistant-20261025",
+                  "c0:1e2c0a8aef8fad883461526a873060a424236129b2e88db3b6900bf22606c3ba",
+                  "native-asset"
+                ],
+                "origin_class": "simulation",
+                "record_id": "1ff2efcc-2dbe-4776-895e-ee736f1d62f3",
+                "schema_version": "1.0",
+                "selector": "whole-object",
+                "sha256": "537d188fcea948551e538b488a722fe9c2ab50df3a19eb819e867fd2392a698d",
+                "workspace_id": "edi-sole-assistant-20261025"
+              },
+              {
+                "lineage": [
+                  "broker-acquisition-v1",
+                  "edi-sole-assistant-20261025",
+                  "c0:2a200c6462fa2727599e58648c49582386dda3b4e1f068130ad9dc2da7e8e220",
+                  "response"
+                ],
+                "origin_class": "simulation",
+                "record_id": "d31efac4-8139-44db-ba4c-850cbbc57343",
+                "schema_version": "1.0",
+                "selector": "whole-object",
+                "sha256": "4ee347f5ace983c9adef9f971d203e779a83040657a29f775054fae5df65e9ff",
+                "workspace_id": "edi-sole-assistant-20261025"
+              }
+            ],
+            "unknowns": [
+              "Next reading, physical quantity and units, elapsed times, calibration and causal mechanism."
+            ]
+          },
+          "inquiry_id": "assistant-edi-sole-assistant-20261025:inquiry:5",
+          "limitation": "No independent prediction test, causal identification, calibrated probability, scientific generalization or comparative model advantage is demonstrated.",
+          "origin": "external-model-output",
+          "rationale_summary": "Retain the descriptive conditional relationship as a candidate, then submit the finding and its unresolved causal and measurement limits through the authorized closure operation.",
+          "response_id": "reasoner:bcff64b2-d07c-43ff-8094-3af7859d72ee",
+          "uncertainty": "candidate only; no calibrated posterior or causal proof"
+        }
+      },
+      "method_lineage": [
+        "C4:assistant-edi-sole-assistant-20261025:inquiry:5",
+        "reasoner:bcff64b2-d07c-43ff-8094-3af7859d72ee",
+        "h-conditional-next",
+        "meadows-inquiry/1.0",
+        "external-model-output",
+        "02d7cb606cfabf38a7df8f4d66e8f3be3d2b71081d733fb83b29521e0fbb6f1d"
+      ]
+    },
+    "state": "candidate",
+    "admission": {
+      "schema_version": "1.0",
+      "decision": "candidate",
+      "rationale": "retained candidate; no automatic promotion",
+      "use_scope": null,
+      "verification_obligation": null,
+      "policy_id": "local-modeling-use/1.0"
+    },
+    "decision_authority": "C3-candidate-policy",
+    "use_validity": "not-certified; inspect-dependencies-and-evidence"
+  },
+  "restart": {
+    "identical_state": true,
+    "new_broker_calls": 0,
+    "new_io_journal_rows": 0
+  },
+  "integrity": {
+    "owners.workflows.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.agency.sqlite3": "ok",
+    "owners.world.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok"
+  },
+  "source_files_verified": 109,
+  "authored_checks": {
+    "executions": 39,
+    "unique_cases": 29,
+    "new_cases": 8,
+    "result": "passed",
+    "not_model_inference": true
+  },
+  "operator_errors": [
+    "First response double-encoded as JSON string; native rejection preserved and corrected.",
+    "One later UI handoff used a stale completed job; wrapper rejected before file creation or model import."
+  ],
+  "scientific_qualification": "not established",
+  "transport": "explicit manual current-session exchange; no unattended API"
+}
