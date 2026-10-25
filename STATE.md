@@ -1,3 +1,15 @@
+## Latest checkpoint - 25 October 2026, ready for sole-assistant Cedar start
+
+Owner requested preparation up to the actual Cedar benchmark launch, without starting it. The scoped readiness gate now passes. Tested deployment source is 44b49adabf9eeedf5d2e1f4c6dc1c7b52a4c899f on integration/cedar-sole-ready-20261025, based on d6e65ef4b81dbddf67e705f4873a6110572b262a. C0-C7 production source is unchanged. Two explicit deployment helpers and a frozen launch protocol were added.
+
+Private CPU Kaggle notebook https://www.kaggle.com/code/vigini/edi-cedar-sole-readiness-20261025/edit is saved as Version1, Quick Save with outputs, title Ready - benchmark unstarted. All116 runtime/input files verify, including all38 unchanged Cedar files. Dependencies are pinned. A disposable connection probe performed only the public mission and exported one pending sole standard-stage job; zero participant responses, teacher jobs, Qwen calls, interventions, advances or final submissions. No actual benchmark workspace/grant was created.
+
+Cedar initial request158195 bytes; a synthetic image plus65536-byte text selection exports230041 bytes within262144. Exact tokens remain unknown. Native schema, image provenance, stale/string handoff guards, preterminal evaluator fence, identical pending-job process reopen with zero additional broker calls, and six databases pass. Probe broker stopped. Kaggle draft session is stopped. Actual Cedar remains unstarted and has no score.
+
+[Launch protocol and exact next action](docs/implementation/CEDAR_SOLE_LAUNCH_PROTOCOL.md) and [readiness evidence](docs/implementation/evidence/cedar-sole-ready-20261025/readiness-result.json) record the conditions. The next authorized benchmark step is to restore the frozen source/dependencies/definitions if necessary and invoke start_actual_cedar() once. Use exact pending-job imports afterward; never Run All/reinitialize a started run. New run bounds are64 decisions, six hours,2097152 reserved policy units,256 public request identities and one correction. New validity starts at actual launch; no historical authority extension.
+
+Native readiness evidence ZIP108362 bytes SHA25613b016687b2cd03747c74154c71fc212f7e44e03c58d9e954894a5ae46855125; notebook and archive verified after download. This is operational readiness for a case-aware manual development assessment, not an intelligence, training, independent generalization or matched-comparison result. No further source-development gate is planned before this scoped actual run.
+
 ## Latest checkpoint - 25 October 2026, sole assistant reasoner connected
 
 Owner direction replaces the active teacher/student arrangement with this ChatGPT session as the sole C4 reasoner. Added explicit file-exchange mode with teacher-disabled invariant; EDI retains evidence, validates hypotheses/references, admits C3 candidates, schedules and authorizes operations. No Qwen, teacher service, paid API or unattended connection is used. Identity and token use are declared/unmeasured, not independently authenticated.
