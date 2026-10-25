@@ -1,0 +1,120 @@
+{
+  "run_id": "cedar-sole-b0c5f8500ece",
+  "source_revision": "44b49adabf9eeedf5d2e1f4c6dc1c7b52a4c899f",
+  "state": "yielded",
+  "stop_reason": "external-call journal capacity exhausted",
+  "controller_turn": 32,
+  "model_jobs": 32,
+  "accepted_responses": 32,
+  "native_rejections": 0,
+  "teacher_jobs": 0,
+  "qwen_calls": 0,
+  "hypotheses": 5,
+  "proposed_tests": 2,
+  "proposed_candidates": 3,
+  "reserved_policy_units": 524288,
+  "usage_unknown_jobs": 32,
+  "actual_tokens_and_energy": "unmeasured",
+  "public_operations": {
+    "mission": 1,
+    "sources": 1,
+    "search": 10,
+    "people": 1,
+    "ask": 3,
+    "status": 1,
+    "read": 9,
+    "measure": 2,
+    "act": 2,
+    "advance": 1
+  },
+  "io_journals": {
+    "owners.agency.sqlite3:io_benchmark_c7": {
+      "rows": 33,
+      "reserved_bytes": 48251,
+      "pending": 0
+    },
+    "owners.workflows.sqlite3:io_benchmark_c0": {
+      "rows": 32,
+      "reserved_bytes": 33561407,
+      "pending": 0
+    },
+    "owners.workflows.sqlite3:io_investigation_c0": {
+      "rows": 34,
+      "reserved_bytes": 136463023,
+      "pending": 0
+    },
+    "owners.workflows.sqlite3:io_investigation_phases_c0": {
+      "rows": 63,
+      "reserved_bytes": 264606699,
+      "pending": 0
+    },
+    "owners.reason.sqlite3:io_reasoner_exchange_c4": {
+      "rows": 32,
+      "reserved_bytes": 8220530,
+      "pending": 0
+    }
+  },
+  "capacity_cause": "C0 phase journal retains4MiB reservations per completed phase;256MiB cumulative allowance exhausted before32nd dispatch. Full reservation remains charged after finish.",
+  "restart": {
+    "identical_terminal_state": true,
+    "new_io_rows": 0,
+    "new_broker_calls": 0
+  },
+  "integrity": {
+    "owners.world.sqlite3": "ok",
+    "owners.agency.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "cedar-world/run.sqlite": "ok"
+  },
+  "source_files_verified": 116,
+  "official_post_terminal": {
+    "controller_state": "yielded",
+    "official_outcome": {
+      "status": "constructed_development_outcomes",
+      "years_elapsed": 1,
+      "mean_damage_fraction": 0.4168161571211,
+      "total_operational_spending": 88.0,
+      "total_timber_delivery": 99.36908240528491,
+      "five_year_committed_delivery_shortfall": 0.0,
+      "broad_treatment_dose_sum": 0,
+      "terminal_mean_foliage": 0.2220750648904181,
+      "terminal_mean_enemy_index": 0.19421577513586566,
+      "objective_proposals": [],
+      "final_report": null,
+      "logical_operations": {
+        "act": 2,
+        "advance": 1,
+        "ask": 3,
+        "measure": 2,
+        "mission": 1,
+        "people": 1,
+        "read": 9,
+        "search": 10,
+        "sources": 1,
+        "status": 1
+      },
+      "http_attempts": 32,
+      "http_failures": 1,
+      "transport_bytes": 99083,
+      "broker_service_seconds": 0.39587148200007505,
+      "model_tokens_energy_and_reasoning_latency_measured": false,
+      "limits": "Outcome vector only. No ecological fidelity, causal discovery, optimum policy, calibration, human preference validity or EDI advantage is established."
+    },
+    "scope": "Unblinded operator-assisted development assessment; no comparative advantage claim"
+  },
+  "benchmark_completed": false,
+  "participant_final_report": false,
+  "automatic_restart": false,
+  "observation_transport_note": "Kaggle33MiB autosave limit removed notebook outputs during the run. Later UI wrapper suppressed repeated checkpoint previews; raw C1/C4 files and native checkpoints retained. Runtime source unchanged.",
+  "qualification": "Case-aware manual development run; no blind independence or model-only comparison; year1 results only",
+  "archive": {
+    "native_zip_bytes": 3960901,
+    "native_zip_sha256": "e8abc33d8bbc17eaa4178fbb3e34a1f37309c5b1a39ff8839deeb0df09ff1860",
+    "retained_source_files_verified": 84,
+    "all_runtime_hashes_verified_on_kaggle": 116,
+    "audit_json_bytes": 7210
+  }
+}
