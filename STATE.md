@@ -1,3 +1,17 @@
+## Latest checkpoint - 25 October 2026, actual sole-assistant Cedar run terminal
+
+The owner authorized the actual run. Fresh run cedar-sole-b0c5f8500ece ended yielded at decision32, year1: external-call journal capacity exhausted. No participant final report or successful closure exists. The next-year harvest reduction was accepted into C4/C3 but never dispatched. Source stayed44b49adabf9eeedf5d2e1f4c6dc1c7b52a4c899f; all116 source/input hashes verify. No cap extension, source repair, original-run migration or automatic rerun occurred.
+
+C0 phase journal retained63 completed4MiB reservations,264606699 bytes of its256MiB allowance. Remaining capacity could not admit the next dispatch reservation. The readiness probe missed this cumulative constraint; its ready-to-start qualification was incomplete for the configured64-turn scope. Preserve the original readiness record as historical evidence and use the actual result as the current status.
+
+There were32 accepted current-assistant responses, zero native response rejections, five hypotheses, two proposed tests, three retained C3 candidates, zero teachers and zero Qwen calls. One public action failed because kind=treatment was unsupported; feedback corrected it to treat. The broker committed31 logical operations and recorded32 HTTP attempts with one failure. One year executed: selective-treated commissioned insect mean1.34769 versus2.25442 in nonrandom comparators; reported mean foliage0.22287; timber99.36908 versus18 required; spending88/240. Ecological recovery and remaining four supply years are untested. No matched comparison or EDI advantage is established.
+
+[Full actual result and readiness miss](docs/implementation/ACTUAL_CEDAR_SOLE_RESULT_20261025.md) and [reviewed aggregate audit](docs/implementation/evidence/cedar-sole-actual-20261025/run-result.json) give exact outcome, reservation arithmetic, limits and preservation. The official evaluator ran after termination only and supplies an outcome vector, not a composite score. Actual token usage/energy unmeasured; native reservations524288 policy units.
+
+Terminal reopen gives identical state with zero additional broker calls or journal rows. Seven databases pass integrity. Original full notebook and native ZIP3960901 bytes SHA256e8abc33d8bbc17eaa4178fbb3e34a1f37309c5b1a39ff8839deeb0df09ff1860 preserved. Redundant notebook output previews exceeded Kaggle33MiB; native raw records remained intact, a full notebook was downloaded, and a compact view saved with the same records. Compact ZIP3960901 bytes SHA25653f77dc5be5d419fbf5087c2b47c9e04a7084d4932c75c564e5c7ba55d312997 also verifies. Broker stopped; notebook terminal version is saved and compute is stopped.
+
+Do not resume or import into this terminal run. Any future budget repair needs a scoped change and cumulative-capacity verification before a separately authorized fresh assessment. This result is incomplete, not a successful Cedar benchmark.
+
 ## Latest checkpoint - 25 October 2026, ready for sole-assistant Cedar start
 
 Owner requested preparation up to the actual Cedar benchmark launch, without starting it. The scoped readiness gate now passes. Tested deployment source is 44b49adabf9eeedf5d2e1f4c6dc1c7b52a4c899f on integration/cedar-sole-ready-20261025, based on d6e65ef4b81dbddf67e705f4873a6110572b262a. C0-C7 production source is unchanged. Two explicit deployment helpers and a frozen launch protocol were added.
