@@ -1,0 +1,23 @@
+# Cumulative capacity and final-report lifecycle - 25 October 2026
+
+Owner authorized one scoped correction, full-lifecycle verification on Kaggle, and one distinct fresh Cedar assessment conditional on verification. The terminal cedar-sole-b0c5f8500ece remains frozen. No teacher, Qwen, paid API, new component, scientific answer, changed world or relaxed native validity rule is introduced.
+
+## Decision
+
+C0 reserves4MiB result allowance per phase and ordinary turn. CallJournal intentionally retains these allowances after completion. Keep this prepaid completion guarantee, identity conflict detection and terminal immutability unchanged. Replace fixed256MiB aggregate limits with a finite bound derived from the configured horizon: max_turns+2 turn rows and3*max_turns+4 phase rows, each allowing4MiB request plus4MiB result reservation. The three possible phases are context-fit, dispatch and intensive-teaching-memory. Bound requests to their declared slots before admission. At64 turns this is528MiB and1568MiB of logical prepaid allowance; it is not preallocated RAM or a measurement of physical disk usage. Individual result sizes, owner-store quotas, free disk and deadlines remain separately enforced. No claim that arbitrary component payloads always fit is made.
+
+Freeze the derived values in C0 configuration. Controller version1.10 requires fresh stores rather than interpreting historical1.9 configuration. Include a general written-synthesis completion requirement and final-two-slots flag in the native C4 progress view. The reasoner still chooses the content/actions; the flag is not proof of report quality. A successful broker submit receipt remains the completion authority. Capacity/unknown/provider failure does not become success.
+
+Default notebook handoffs write a consistent native ZIP and concise digest to the Kaggle workspace, without embedding a new full base64 ZIP in every output. Explicit archive handoffs embed the same file for owner download. Terminal finalization embeds an archive. Acquire periodic exports and final report before compute shutdown. Notebook presentation cannot substitute for durable native records.
+
+## Acceptance and stop rule
+
+On Kaggle, execute a64-decision authored neutral file-exchange case, including actual public reads, an interview, accumulated native records, pending process reopens, a substantial report in slot64, a successful closure receipt, exact report retention, terminal reopen with zero new calls, source hashes and database integrity. Reproduce the old256MiB reservation failure in a separate negative-control journal. Run existing sole-reasoner and affected controller regressions. Authored responses test engineering only.
+
+If verification fails, stop this batch with its failed criterion; do not launch Cedar. If it passes, freeze/publish source and run one fresh unblinded manual Cedar assessment under unchanged64-turn/six-hour/2097152-policy-unit/256-request bounds. Retain case-aware context limitation. Reserve the final two decision slots for synthesis, or submit earlier when justified. The report must discuss observations, evidence-linked hypotheses/rivals and feedback/delays where warranted, tests/outcomes, recommendations/trade-offs, predictions, uncertainty and further checks. Review these substantive dimensions separately from transport completion and official outcome vector. Never invent a composite score or superiority claim.
+
+## Interface scope and review
+
+Existing eight owners and28pairs/56directed dispositions are retained from INTERFACES.json. C0-to-C4 progress receives budget/closure metadata; C4-to-C0 proposals and C0-to-C7 public dispatch/closure retain their validators and authority. C0 retains journal/configuration authority, C1 raw evidence, C3 candidate admission, C4 hypothesis/proposal ownership and C7 grant admission. C2/C5/C6 operations are unchanged. No new direct lane is added. Resource saturation is reviewed across C0 phases, C4 exchanges, C7 authorization, broker calls, source/store limits, notebook outputs and final report/export. Prepaid reservations remain cumulative; request/result limits are distinct from aggregate limits and physical storage. Failure, duplicate and reopen behavior must be checked at runtime.
+
+The interface-review skill's referenced template/checklist/checker resources could not be fetched, as in the preceding batch. This is a scoped self-review, not an independently checked architecture qualification. Broader unresolved original contracts remain unresolved. Runtime and integration gates remain pending until actual evidence is retained; scientific validity/advantage is not established by an engineering pass.
