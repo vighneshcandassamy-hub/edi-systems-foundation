@@ -210,6 +210,12 @@ class Investigation:
         preview = getattr(self.student, "preview", None)
         if not callable(preview):
             raise EDIError(ErrorCode.UNAVAILABLE, "student port has no exact prospective prompt sizing")
+        if getattr(self.student, "capacity_basis", None) == "external-session-byte-bounded":
+            sized = preview(request)
+            return {"request": request.model_dump(mode="json"), "trials": [sized],
+                "stage_headroom_tokens": None, "omissions": [],
+                "policy": "edi-external-session-byte-cut/1.0",
+                "limitation": "Export bytes bounded; provider context/token usage unmeasured. No exact-token qualification is claimed."}
         candidate = request.model_dump(mode="json")
         reserve = 4096 if request.teaching_mode == "intensive" else 512
         omissions, trials = [], []
@@ -277,7 +283,7 @@ class Investigation:
                     if row is not None and row["state"] == "pending" and row["attempts"]:
                         raise EDIError(ErrorCode.UNKNOWN_COMMIT, "Provider call remains unresolved; original inference must not be resent") from exc
                     if row is None or (row["state"] == "pending" and not row["attempts"]):
-                        if exc.code == ErrorCode.CAPACITY:
+                        if exc.code in (ErrorCode.CAPACITY, ErrorCode.INTEGRITY):
                             raise
                         raise AwaitingModelAvailability(job.job_id, str(exc)) from exc
                     raise
@@ -420,6 +426,11 @@ class Investigation:
                 "inquiry_id": inquiry_id, "error": exc.as_dict(),
                 "resume_rule": "Original job has no recorded provider dispatch; restore its configured dependency and resume"}
         except AwaitingModelResponse as exc:
+            from edi.reason.reasoner_exchange import AwaitingReasonerResponse
+            if isinstance(exc, AwaitingReasonerResponse):
+                return {**state, "state": "waiting-reasoner", "job_id": exc.job_id,
+                    "request_path": exc.request_path, "inquiry_id": inquiry_id,
+                    "resume_rule": "Import this original sole reasoner proposal, then resume"}
             return {**state, "state": "waiting-teacher", "job_id": exc.job_id, "request_path": exc.request_path,
                 "inquiry_id": inquiry_id, "resume_rule": "Import feedback, then resume this original turn"}
         except EDIError as exc:
