@@ -53,3 +53,8 @@ python scripts/verify_baseline.py
 ```
 
 Extension input revision: `2af45f59169ec3855f10a8861d6e6acc4c8cfb07`. The next implementation artifact is the concrete typed contracts, including ModelDelta, projection validity, RefinementBridge and KnowledgeRequest, and one source/identity/time fixture for the first chosen capability. No runtime build or inference benchmark was started in this assessment.
+
+
+## Active single-reasoner configuration — 25 October 2026
+
+The owner selected the current assistant as EDI's sole C4 reasoning model, with teacher disabled and explicit native proposal exchange. [Single-assistant connection](SINGLE_ASSISTANT_REASONER.md) records the active configuration and its qualification limits. Historical teacher/student source snapshots remain preserved.
