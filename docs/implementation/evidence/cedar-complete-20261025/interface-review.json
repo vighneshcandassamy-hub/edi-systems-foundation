@@ -1,0 +1,30 @@
+{
+  "scope": "C0 finite-horizon journal capacity and C4 closure progress; bounded notebook presentation",
+  "components": [
+    "C0",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7"
+  ],
+  "pairs": 28,
+  "directed_lanes": 56,
+  "baseline_catalogue_sha256": "2c60b20ec64dba246bff922e4183739641e3094451a6fe9179363bf11963f4e1",
+  "new_lanes": 0,
+  "affected_lanes": [
+    "C0->C4:progress",
+    "C4->C0:proposal and submit selection",
+    "C0->C7:authorized public dispatch",
+    "C7->C0:grant/receipt"
+  ],
+  "authority_changes": false,
+  "shared_CallJournal_changed": false,
+  "historical_migration": false,
+  "source_review": "scoped self-review",
+  "runtime": "pending",
+  "scientific_qualification": "not established",
+  "skill_resources": "referenced checklist/template/checker unavailable; not claimed run"
+}
