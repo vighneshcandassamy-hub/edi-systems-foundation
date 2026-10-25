@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "benchmark_started": false,
+  "scope": "Disposable Cedar connection/export preflight; actual benchmark not launched",
+  "source_manifest_sha256": "c9b13fb835b5bd765802e118e0839ea507c75430f74381c4fcbf3402cbcda9ff",
+  "source_revision": "44b49adabf9eeedf5d2e1f4c6dc1c7b52a4c899f",
+  "verified_source_and_input_files": 116,
+  "frozen_world_files": 38,
+  "initial_request_bytes": 158195,
+  "restart_same_pending_job": true,
+  "restart_new_broker_calls": 0,
+  "broker_operations": [
+    "mission"
+  ],
+  "fresh_actual_run_created": false,
+  "handoff_guards_passed": true,
+  "preterminal_evaluator_fenced": true,
+  "integrity": {
+    "owners.world.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.reason.sqlite3": "ok",
+    "owners.agency.sqlite3": "ok",
+    "cedar-world/run.sqlite": "ok"
+  },
+  "native_checks": {
+    "schema_checked": true,
+    "synthetic_image_identity_verified": true,
+    "image_request_bytes": 160386,
+    "large_selected_text_bytes": 65536,
+    "large_plus_image_request_bytes": 230041,
+    "byte_limit": 262144,
+    "exact_tokens": "unknown",
+    "teacher_jobs": 0,
+    "qwen_calls": 0,
+    "participant_responses": 0,
+    "versions": {
+      "python": "3.13.15",
+      "pydantic": "2.12.5",
+      "numpy": "2.5.3",
+      "scipy": "1.17.0"
+    }
+  },
+  "bounds_for_actual_run": {
+    "max_turns": 64,
+    "max_tokens": 2097152,
+    "session_seconds": 21600,
+    "max_corrections": 1,
+    "maximum_requests": 256
+  },
+  "qualification": "Operational readiness for an unblinded manual assessment only; no model advantage or scientific result",
+  "probe_broker_stopped": true
+}
