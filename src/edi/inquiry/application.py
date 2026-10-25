@@ -24,6 +24,10 @@ from edi.world.config import WorldProfile
 
 
 class StudentConnection(Record):
+    # Legacy slot name; file-exchange config is a sole reasoner, never a student/teacher cycle.
+    mode: Literal["vllm", "file-exchange"] = "vllm"
+    directory: Path = Field(default_factory=lambda: Path(".local/reasoner-exchange"))
+    max_request_bytes: int = Field(default=262144, ge=16384, le=1048576)
     binding: ModelBinding
     endpoint: str = "http://127.0.0.1:8008"
     api_key_env: Identifier = "EDI_VLLM_API_KEY"
@@ -71,10 +75,12 @@ class ApplicationProfile(Record):
     def bindings(self):
         from urllib.parse import urlsplit
         endpoint = urlsplit(self.student.endpoint)
-        if endpoint.scheme != "http" or endpoint.hostname != "127.0.0.1" or not endpoint.port or endpoint.path not in ("", "/") or endpoint.query or endpoint.fragment or endpoint.username:
+        if self.student.mode == "vllm" and (endpoint.scheme != "http" or endpoint.hostname != "127.0.0.1" or not endpoint.port or endpoint.path not in ("", "/") or endpoint.query or endpoint.fragment or endpoint.username):
             raise ValueError("student service must be explicitly configured on loopback")
         if self.teaching_mode == "intensive" and self.teacher.mode == "disabled":
             raise ValueError("intensive teaching requires a teacher connection")
+        if self.student.mode == "file-exchange" and (self.teacher.mode != "disabled" or self.teaching_mode != "selective" or self.use_teaching_memory):
+            raise ValueError("sole reasoner requires teacher disabled and no teaching-memory cycle")
         active = [self.student.binding] + ([self.teacher.binding] if self.teacher.mode != "disabled" else [])
         if any(value.model_id == "unbound" or value.revision == "unbound" or value.tokenizer_revision == "unknown"
                 or any(item.startswith("REPLACE_") for item in (value.model_id, value.revision, value.tokenizer_revision)) for value in active):
@@ -113,6 +119,9 @@ class ApplicationProfile(Record):
                 value = Path(owner.get("database", str(base.with_name(base.stem + "." + suffix + ".sqlite3"))))
                 owner["database"] = str(value if value.is_absolute() else path.parent / value)
                 owner.setdefault("workspace_id", observation.get("workspace_id", "default"))
+        if data.get("student") is not None:
+            value = Path(data["student"].get("directory", ".local/reasoner-exchange"))
+            data["student"]["directory"] = str(value if value.is_absolute() else path.parent / value)
         if data.get("teacher") is not None:
             value = Path(data["teacher"].get("directory", ".local/teacher-exchange"))
             data["teacher"]["directory"] = str(value if value.is_absolute() else path.parent / value)
@@ -131,7 +140,7 @@ class IntegratedApplication:
         # Only named environment values are read; secret values never enter profiles.
         token = os.environ.get(profile.broker.token_env)
         serving_key = os.environ.get(profile.student.api_key_env)
-        if not token or not serving_key:
+        if not token or (profile.student.mode == "vllm" and not serving_key):
             raise EDIError(ErrorCode.UNAVAILABLE, "configured broker/student environment credentials are absent")
         reason_profile = profile.reasoning or ReasoningProfile(workspace_id=profile.observation.workspace_id,
             database=profile.observation.database.with_name(profile.observation.database.stem + ".reason.sqlite3"),
@@ -146,12 +155,21 @@ class IntegratedApplication:
             session_id=grant.session_id)
         connector = BrokerConnector(r, grant.endpoint, token, grant.session_id, authority,
             r.workflow.profile.database, max_requests=grant.maximum_requests)
-        backend = VllmBackend(profile.student.endpoint, profile.student.binding.model_id,
-            api_key=serving_key, max_model_len=profile.student.max_model_len,
-            completion_timeout=profile.student.completion_timeout_seconds)
-        student = NativeGateway(r, profile.student.binding, r.reasoning.profile.database, backend,
-            backend.count_tokens, attribution=profile.student.attribution,
-            max_images=profile.student.max_images, max_calls=profile.max_turns * 6)
+        self.reasoner = None
+        if profile.student.mode == "file-exchange":
+            from edi.reason.reasoner_exchange import ReasonerExchangeGateway
+            student = ReasonerExchangeGateway(r, profile.student.binding,
+                r.reasoning.profile.database, profile.student.directory,
+                attribution=profile.student.attribution, max_images=profile.student.max_images,
+                max_request_bytes=profile.student.max_request_bytes, max_calls=profile.max_turns * 2)
+            self.reasoner = student
+        else:
+            backend = VllmBackend(profile.student.endpoint, profile.student.binding.model_id,
+                api_key=serving_key, max_model_len=profile.student.max_model_len,
+                completion_timeout=profile.student.completion_timeout_seconds)
+            student = NativeGateway(r, profile.student.binding, r.reasoning.profile.database, backend,
+                backend.count_tokens, attribution=profile.student.attribution,
+                max_images=profile.student.max_images, max_calls=profile.max_turns * 6)
         self.teacher = None if profile.teacher.mode == "disabled" else TeacherExchangeGateway(
             r, profile.teacher.binding, r.reasoning.profile.database, profile.teacher.directory,
             attribution=profile.teacher.attribution, max_calls=profile.max_turns * 2)
@@ -168,3 +186,8 @@ class IntegratedApplication:
         if self.teacher is None:
             raise EDIError(ErrorCode.UNAVAILABLE, "teacher disabled in this application profile")
         return self.teacher.import_feedback(job_id, feedback)
+
+    def import_reasoner(self, job_id, response):
+        if self.reasoner is None:
+            raise EDIError(ErrorCode.UNAVAILABLE, "external reasoner is not configured")
+        return self.reasoner.import_response(job_id, response)
