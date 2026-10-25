@@ -96,8 +96,8 @@ class CedarSession:
             self.save('reasoner-rejection-'+job_id+'.json',{'error':str(exc),'native_original_retained':True})
         # Native bounded correction may export a new job; never generates a response.
         return self.step()
-    def handoff(self):
-        runpy.run_path(str(self.source/'checkpoint.py'))['display_checkpoint'](self.out,self.source)
+    def handoff(self, *, archive=False):
+        runpy.run_path(str(self.source/'checkpoint.py'))['display_checkpoint'](self.out,self.source,emit_payload=archive)
         state=json.loads((self.out/'latest-state.json').read_bytes())
         if state['state']=='waiting-reasoner':
             _,request=self.pending()
@@ -106,7 +106,7 @@ class CedarSession:
             for part in request['messages'][1]['content']:
                 if part['type']=='image_url':
                     display(Image(data=base64.b64decode(part['image_url']['url'].split(',',1)[1],validate=True)))
-        print('CEDAR_SESSION_STATE',json.dumps({k:v for k,v in state.items() if k not in ('mission','evidence','artifact_frontier')}),flush=True)
+        print('CEDAR_SESSION_STATE',json.dumps({k:v for k,v in state.items() if k not in ('mission','evidence','artifact_frontier','last_public_result')}),flush=True)
     def reopen(self):
         from edi.inquiry.application import IntegratedApplication
         os.environ['EDI_BROKER_TOKEN']=self.token
@@ -124,7 +124,7 @@ class CedarSession:
         report=meadows_world.evaluate_closed(self.out)
         self.save('post-terminal-evaluation.json',{'controller_state':state['state'],'official_outcome':report,
             'scope':'Unblinded operator-assisted development assessment; no comparative advantage claim'})
-        self.stop();self.handoff()
+        self.stop();self.handoff(archive=True)
         return report
 
 class NotebookCedar(CedarSession):
@@ -162,7 +162,7 @@ class NotebookCedar(CedarSession):
     def finalize(self):
         state=json.loads((self.out/'latest-state.json').read_bytes())
         if state['state'] not in ('completed','yielded'):raise ValueError('Evaluator unavailable before native termination')
-        self._native('evaluate');self.stop();self.handoff()
+        self._native('evaluate');self.stop();self.handoff(archive=True)
         return json.loads((self.out/'post-terminal-evaluation.json').read_bytes())
 
 # Override the simple in-process entry point with the verified notebook/CPU boundary.
