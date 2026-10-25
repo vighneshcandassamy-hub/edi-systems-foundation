@@ -26,3 +26,8 @@ The [v0.8 integrated master](world-model/Meadows_EDI_Integrated_Architecture_v0_
 ## Consolidated implementation reference
 
 [Architecture, tools and mathematics reference v1.0](../docs/implementation/ARCHITECTURE_TOOLS_AND_MATH_REFERENCE.md) consolidates the agreed direction, initial tool preferences, conditional/deferred options, 22 mathematical techniques, original-code responsibilities, model roles and open bindings. It introduces no architectural change or qualification result.
+
+
+## Active single-reasoner configuration — 25 October 2026
+
+The owner selected the current assistant as EDI's sole C4 reasoning model, with teacher disabled and explicit native proposal exchange. [Single-assistant connection](../docs/implementation/SINGLE_ASSISTANT_REASONER.md) records the active configuration and its qualification limits. Historical teacher/student source snapshots remain preserved.
