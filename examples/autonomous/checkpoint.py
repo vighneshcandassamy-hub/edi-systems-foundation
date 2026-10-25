@@ -9,7 +9,7 @@ import sqlite3
 import zipfile
 
 
-def display_checkpoint(out, source):
+def display_checkpoint(out, source, *, emit_payload=True):
     from IPython.display import HTML, display
     out, source = Path(out), Path(source)
     if not out.exists():
@@ -63,6 +63,9 @@ def display_checkpoint(out, source):
     path = out / "checkpoint-native.zip"
     path.write_bytes(data)
     (out / "checkpoint-manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    if not emit_payload:
+        print("EDI_CHECKPOINT_SAVED", json.dumps({k:manifest[k] for k in ("bytes","sha256","run_directory")}), flush=True)
+        return manifest
     encoded = base64.b64encode(data).decode()
     display(HTML('<a download="edi-native-checkpoint.zip" href="data:application/zip;base64,' + encoded
         + '">Download native checkpoint ZIP</a><pre>EDI_NATIVE_CHECKPOINT_MANIFEST_V1 '
