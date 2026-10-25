@@ -71,10 +71,18 @@ class Investigation:
         self.student, self.teacher = runtime.reasoning.student, (runtime.reasoning.teacher if teacher_gateway is not None else None)
         self.run_id, self.max_turns, self.max_tokens = run_id, max_turns, max_tokens
         self.max_corrections, self.lock = max_corrections, Lock()
-        self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=256 * 1024**2)
-        self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 32 + 4, max_bytes=256 * 1024**2)
+        # Prepaid result allowances remain charged after completion. Derive the
+        # aggregate allowance from the full finite horizon, not a fixed 256MiB.
+        # At most context-fit, dispatch and teaching-memory occur per turn.
+        self.io_request_limit = 4 * 1024**2
+        self.io_result_reserve = 4 * 1024**2
+        self.journal_limits = {"turn_calls": max_turns + 2, "phase_calls": max_turns * 3 + 4,
+            "request_bytes": self.io_request_limit, "result_reserve_bytes": self.io_result_reserve}
+        slot = self.io_request_limit + self.io_result_reserve
+        self.journal = CallJournal(path, "investigation_c0", max_calls=max_turns + 2, max_bytes=(max_turns + 2) * slot)
+        self.phases = CallJournal(path, "investigation_phases_c0", max_calls=max_turns * 3 + 4, max_bytes=(max_turns * 3 + 4) * slot)
         previous = self.journal.get("configuration")
-        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.9":
+        if previous and json.loads(previous["request"]).get("controller") != "edi-c0/integrated-1.10":
             raise EDIError(ErrorCode.UNSUPPORTED, "use a fresh integration workspace; historical C0 state is not migrated")
         deadline = (json.loads(previous["request"])["deadline"] if previous else
                     (utc_now() + timedelta(seconds=session_seconds)).isoformat())
@@ -83,14 +91,16 @@ class Investigation:
             "workspace": runtime.profile.workspace_id, "student": student_gateway.binding.model_dump(mode="json"),
             "teacher": teacher_gateway.binding.model_dump(mode="json") if teacher_gateway else None,
             "max_turns": max_turns, "max_tokens": max_tokens, "session_seconds": session_seconds,
-            "controller_policy": controller_policy, "input_token_cap": input_token_cap, "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "controller": "edi-c0/integrated-1.9"})
+            "controller_policy": controller_policy, "input_token_cap": input_token_cap, "max_corrections": max_corrections, "teaching_mode": teaching_mode, "use_teaching_memory": self.use_teaching_memory, "deadline": deadline, "journal_limits": self.journal_limits, "controller": "edi-c0/integrated-1.10"})
         self.journal.finish("configuration", {"frozen": True})
         self.origin = runtime.register_origin(OriginSpec(namespace="edi.component.results", native_source_id=run_id,
-            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.9",
+            epoch="1", deliverer="C0-native-ports", channel="component-results", adapter="edi-c0/integrated-1.10",
             binding_basis="configured", descriptor={"independent_world_evidence": False}))
 
     def _phase(self, key, body, operation):
-        row = self.phases.begin(key, body, reserve_bytes=4 * 1024**2)
+        if len(canonical(body).encode()) > self.io_request_limit:
+            raise EDIError(ErrorCode.CAPACITY, "phase request exceeds frozen journal slot")
+        row = self.phases.begin(key, body, reserve_bytes=self.io_result_reserve)
         if row["state"] == "completed":
             return json.loads(row["result"])
         # Only native idempotent commands or reads use this helper. Model/network
@@ -184,7 +194,10 @@ class Investigation:
             "teaching_history": r.reasoning.teaching_history() if self.teaching_mode == "intensive" or self.use_teaching_memory else [],
             "axes": list(__import__('edi.reason.protocol', fromlist=['QUESTIONS']).QUESTIONS) if self.teaching_mode == "intensive" else ["evidence", "boundary", "rivals", "learning"],
             "controller_progress": {"turn": state["turn"], "remaining_turns": self.max_turns - state["turn"],
-                "remaining_policy_units": remaining, "teacher_available": self.teacher is not None,
+                "remaining_policy_units": remaining,
+                "final_submission_due": self.max_turns - state["turn"] <= 2,
+                "completion_requirement": "Before the final two decision slots are exhausted, submit a written synthesis through granted submit access: observations, evidence-linked hypotheses and rivals, tests/outcomes, recommendations, predictions, uncertainty and further checks. Closure does not establish scientific success. If submit is unavailable, retain a considered yield assessment.",
+                "teacher_available": self.teacher is not None,
                 "public_outcomes": state["public_outcomes"]},
             "controller_access": describe_access(state["mission"], self.connector.authority.grant).model_dump(mode="json"),
             "model_revision": r.world.head(),
@@ -376,7 +389,9 @@ class Investigation:
         if state["used_tokens"] + ((4 if self.teaching_mode == "intensive" else 1) * (self.input_token_cap + 4096)) > self.max_tokens:
             return {**state, "state": "yielded", "stop_reason": "remaining token budget cannot admit another job"}
         key, inquiry_id = "turn:" + str(turn), self.run_id + ":inquiry:" + str(turn)
-        self.journal.begin(key, state, reserve_bytes=4 * 1024**2)
+        if len(canonical(state).encode()) > self.io_request_limit:
+            return {**state, "state": "yielded", "stop_reason": "turn request exceeds frozen journal slot"}
+        self.journal.begin(key, state, reserve_bytes=self.io_result_reserve)
         next_state = {**state, "turn": turn + 1}
         try:
             self._inquiry(state, inquiry_id)
