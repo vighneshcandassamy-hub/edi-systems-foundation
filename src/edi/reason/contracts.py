@@ -84,6 +84,8 @@ class ControllerProgress(Record):
     remaining_turns: int = Field(ge=0)
     remaining_policy_units: int = Field(ge=0)
     teacher_available: bool
+    final_submission_due: bool = False
+    completion_requirement: Text | None = None
     public_outcomes: tuple[PublicOutcome, ...] = Field(default=(), max_length=16)
 
 
