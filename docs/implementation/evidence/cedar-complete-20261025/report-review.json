@@ -1,0 +1,47 @@
+{
+  "assessment": "scoped operator self-review, not independent C6 validation",
+  "run_id": "cedar-sole-cd05b18d100b",
+  "completion": {
+    "native_state": "completed",
+    "successful_submit": true,
+    "accepted_responses": 50,
+    "final_report_characters": 12407,
+    "five_observed_commitment_years": true
+  },
+  "report_requirements": {
+    "observations_and_sources": "present",
+    "hypotheses_and_rivals": "present",
+    "feedback_and_delays": "conditional and explicitly limited",
+    "prospective_tests": "four retained and executed observation plans",
+    "interventions_and_adaptation": "actual receipts and annual outcomes",
+    "recommendations_and_tradeoffs": "present",
+    "uncertainty_and_further_checks": "present",
+    "final_forecast": "explicitly provisional and untested beyondyear5"
+  },
+  "observed_objective_outcomes": {
+    "annual_timber_obligations": "all five met separately",
+    "annual_operating_envelope": "respected every year",
+    "foliage": "declined initially;partial recovery to reported0.3605908333 inyear5",
+    "withdrawal": "one-year practical forecasts held;larvae rebounded",
+    "cumulative_all_in_cost_advantage": "not demonstrated",
+    "long_run_stability": "not demonstrated"
+  },
+  "scientific_limits": [
+    "nonrandom small treatment groups",
+    "common environment and spillover possible",
+    "enemy activity not direct causal mediation measure",
+    "host/weather alternatives incompletely investigated",
+    "known case and implementation context",
+    "no matched model-only comparison",
+    "no C5 mechanistic simulation or C6 scientific qualification",
+    "tokens/energy/end-to-end reasoning latency unmeasured"
+  ],
+  "native_rejections": {
+    "count": 2,
+    "originals_retained": true,
+    "bounded_corrections_accepted": true,
+    "rules_weakened": false
+  },
+  "broader_architecture_contracts": "remain qualified only to existing scopes;no blanket readiness pass",
+  "composite_score": "not supplied by evaluator;none invented"
+}
