@@ -1,0 +1,130 @@
+{
+  "run_id": "cedar-sole-cd05b18d100b",
+  "source_revision": "d4267f264764f97a90096421aa388f8372ad6f70",
+  "state": "completed",
+  "stop_reason": "Student submitted a final report",
+  "controller_turn": 50,
+  "model_jobs": 52,
+  "accepted_responses": 50,
+  "native_rejections": 2,
+  "teacher_jobs": 0,
+  "qwen_calls": 0,
+  "hypotheses": 13,
+  "proposed_tests": 4,
+  "proposed_candidates": 4,
+  "world_ids": [
+    "cedar-broad-enemy-feedback-candidate",
+    "cedar-year1-three-arm-result",
+    "cedar-year2-carryover-result",
+    "cedar-withdrawal-partial-recovery-result"
+  ],
+  "reserved_policy_units": 851968,
+  "usage_unknown_jobs": 52,
+  "actual_tokens_and_energy": "unmeasured",
+  "public_operations": {
+    "mission": 1,
+    "sources": 1,
+    "people": 1,
+    "ask": 2,
+    "search": 7,
+    "read": 7,
+    "measure": 10,
+    "act": 10,
+    "advance": 5,
+    "submit": 1
+  },
+  "io_journals": {
+    "owners.reason.sqlite3:io_reasoner_exchange_c4": {
+      "rows": 52,
+      "reserved_bytes": 13709542,
+      "pending": 0
+    },
+    "owners.agency.sqlite3:io_benchmark_c7": {
+      "rows": 46,
+      "reserved_bytes": 76961,
+      "pending": 0
+    },
+    "owners.workflows.sqlite3:io_benchmark_c0": {
+      "rows": 45,
+      "reserved_bytes": 47208462,
+      "pending": 0
+    },
+    "owners.workflows.sqlite3:io_investigation_c0": {
+      "rows": 52,
+      "reserved_bytes": 212049284,
+      "pending": 0
+    },
+    "owners.workflows.sqlite3:io_investigation_phases_c0": {
+      "rows": 100,
+      "reserved_bytes": 420045433,
+      "pending": 0
+    }
+  },
+  "capacity_correction": "Frozen C0 per-horizon aggregate limits; original per-phase prepaid reservations unchanged; no runtime cap extension",
+  "restart": {
+    "identical_terminal_state": true,
+    "new_io_rows": 0,
+    "new_broker_calls": 0
+  },
+  "integrity": {
+    "owners.reason.sqlite3": "ok",
+    "owners.agency.sqlite3": "ok",
+    "owners.interpret.sqlite3": "ok",
+    "owners.workflows.sqlite3": "ok",
+    "owners.sqlite3": "ok",
+    "owners.world.sqlite3": "ok",
+    "cedar-world/run.sqlite": "ok"
+  },
+  "source_files_verified": 126,
+  "benchmark_completed": true,
+  "participant_final_report": true,
+  "automatic_restart": false,
+  "observation_transport_note": "Automatic compact native checkpoints; explicit engineering/decision16/decision32 exports downloaded and verified. Redundant visible outputs cleared only after preservation at32; original native records and runtime source unchanged.",
+  "qualification": "Case-aware manual development run; no blind independence or model-only comparison; five observed commitment years; one monitored withdrawal year",
+  "final_report_characters": 12407,
+  "official_outcome_summary": {
+    "status": "constructed_development_outcomes",
+    "years_elapsed": 5,
+    "mean_damage_fraction": 0.3055058336299349,
+    "total_operational_spending": 518.1,
+    "total_timber_delivery": 106.35826483432528,
+    "five_year_committed_delivery_shortfall": 0.0,
+    "broad_treatment_dose_sum": 3,
+    "terminal_mean_foliage": 0.3587640522743625,
+    "terminal_mean_enemy_index": 0.3282439672741459,
+    "objective_proposals": [],
+    "logical_operations": {
+      "act": 10,
+      "advance": 5,
+      "ask": 2,
+      "measure": 10,
+      "mission": 1,
+      "people": 1,
+      "read": 7,
+      "search": 7,
+      "sources": 1,
+      "submit": 1
+    },
+    "http_attempts": 45,
+    "http_failures": 0,
+    "transport_bytes": 105077,
+    "broker_service_seconds": 0.4720402389998526,
+    "model_tokens_energy_and_reasoning_latency_measured": false,
+    "limits": "Outcome vector only. No ecological fidelity, causal discovery, optimum policy, calibration, human preference validity or EDI advantage is established.",
+    "final_report_present": true,
+    "evaluated_only_after_native_completion": true
+  },
+  "archive": {
+    "bytes": 6759035,
+    "sha256": "5cc1841ca462b2b9b2ef7448affd8fa3b4ab281e10ff4665865d4f5e2741f09a",
+    "crc": "ok",
+    "retained_source_files_verified": 93,
+    "all_runtime_and_input_hashes_verified_on_kaggle": 126
+  },
+  "participant_report": {
+    "characters": 12407,
+    "sha256_utf8": "b1463faf0d765484961618e492bb4997275d449fcf244885b615f34c1406b583",
+    "markdown_path": "docs/implementation/CEDAR_PARTICIPANT_FINAL_REPORT_20261025.md",
+    "text_preservation": "Native archive retains original CRLF text; published Markdown normalized to LF"
+  }
+}
