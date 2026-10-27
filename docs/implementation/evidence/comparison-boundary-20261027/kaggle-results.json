@@ -26,10 +26,25 @@
       "paid_calls": 0,
       "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
       "directory": "/kaggle/working/comparison-neutral-boundary-20261027-a51d74a8"
+    },
+    {
+      "scope": "Neutral comparison boundary only; no native Cedar/model/provider qualification",
+      "returncode": 0,
+      "source_sha256": {
+        "offline_runner.py": "f1072d3477459a91e8d61e8ae8760b49211a4bad8469cf3536616972bc08cd0a",
+        "test_offline_runner.py": "4b2a533e5b344b66abfbc453717abbcad03717ad1eddff9d03eaeb9d0713e1b2"
+      },
+      "model_calls": 0,
+      "cedar_episodes": 0,
+      "paid_calls": 0,
+      "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+      "directory": "/kaggle/working/comparison-neutral-boundary-20261027-cffca9f3"
     }
   ],
   "tests_first": 15,
+  "tests_intermediate": 18,
   "tests_final": 18,
   "final_passed": true,
+  "final_resource_warning": false,
   "scope": "Neutral provider-free boundary only; no Cedar integration/model isolation qualification"
 }
