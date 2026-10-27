@@ -1,0 +1,35 @@
+{
+  "kind": "UI-readback-not-raw-provider-response",
+  "runs": [
+    {
+      "scope": "Neutral comparison boundary only; no native Cedar/model/provider qualification",
+      "returncode": 0,
+      "source_sha256": {
+        "offline_runner.py": "a2e39432175e26a5509f63582baa848bf5fe066f799b3df68e1f2e32b5a72122",
+        "test_offline_runner.py": "9dbc7d7eabbe1a85d1c25f4b1d6d750f2d9207f7aa88c5590fcffab23825f622"
+      },
+      "model_calls": 0,
+      "cedar_episodes": 0,
+      "paid_calls": 0,
+      "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+      "directory": "/kaggle/working/comparison-neutral-boundary-20261027-30d1fde6"
+    },
+    {
+      "scope": "Neutral comparison boundary only; no native Cedar/model/provider qualification",
+      "returncode": 0,
+      "source_sha256": {
+        "offline_runner.py": "1021c000d56495eb33f1c2196d8932c2aafaf11494ef0a3642dfe255aabe743a",
+        "test_offline_runner.py": "4b2a533e5b344b66abfbc453717abbcad03717ad1eddff9d03eaeb9d0713e1b2"
+      },
+      "model_calls": 0,
+      "cedar_episodes": 0,
+      "paid_calls": 0,
+      "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+      "directory": "/kaggle/working/comparison-neutral-boundary-20261027-a51d74a8"
+    }
+  ],
+  "tests_first": 15,
+  "tests_final": 18,
+  "final_passed": true,
+  "scope": "Neutral provider-free boundary only; no Cedar integration/model isolation qualification"
+}
