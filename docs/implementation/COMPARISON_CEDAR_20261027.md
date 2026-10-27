@@ -59,3 +59,7 @@ Feedback loops:baseline public actionraw receiptordinary notesnext decision; 
 Source/archive and stated engineering fixtures pass. Live model identity, authenticated prompt caps, provider response-schema/image/usage behavior, API credentials, financial/security approval and provider controls remain unqualified/absent. No paired model outcomes or detailed model reports exist. EDI superiority remains unproven.
 
 Previous ChatGPT chat-isolation attempts failed; that route is closed. Documented ChatGPT-plan token sharing is not provisioned/established as eligible here. The proposed API model/config can be held equal across arms, but exact Work Mode backend identity and an immutable dated snapshot are not established. One constructed Cedar pair cannot establish general superiority, significance or historical ecological causality.
+
+## Browser checkpoint
+
+Private comparison notebook Version5 Quick Save WITH OUTPUTS, named Cedar pair - 39 checks - paid adapter disabled, is Successful. Draft compute is explicitly off. The OpenAI Platform API billing/access page redirected to sign-in; no API account/balance/limit was verified and no sign-in, credential, billing change or paid call was performed. Financial/security approval remains absent. This confirms an access blocker, not a successful API qualification.
