@@ -65,6 +65,7 @@ class Channel:
                   "limits": asdict(limits), "paid_calls_enabled": False}
         old = self.db.execute("SELECT value FROM meta WHERE key='config'").fetchone()
         if old is not None and old[0] != wire(config):
+            self.db.close()
             raise BoundaryError("Existing arm configuration is immutable")
         with self.db:
             self.db.execute("INSERT OR IGNORE INTO meta VALUES ('config',?)", (wire(config),))
@@ -388,6 +389,7 @@ class Pair:
 
     def invoke_paid_model(self, *args, **kwargs):
         raise BoundaryError("Paid inference disabled; no provider adapter or credential handling exists")
+
 
 
 
