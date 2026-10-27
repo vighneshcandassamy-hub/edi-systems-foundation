@@ -1,3 +1,8 @@
+## 27 October 2026 - final boundary source and warning cleanup
+
+Final source f1072d3477459a91e8d61e8ae8760b49211a4bad8469cf3536616972bc08cd0a closes a SQLite connection before rejecting changed configuration. Earlier passing runs emitted a ResourceWarning; their exact outputs remain retained. Third immutable source archive passes the same18 neutral checks on Kaggle in2.690s without that warning. Test hash remains4b2a533e5b344b66abfbc453717abbcad03717ad1eddff9d03eaeb9d0713e1b2. No model/Cedar/provider run occurred. Kaggle Version4 Quick Save WITH OUTPUTS named Neutral boundary - final 18 checks - no models supersedes the Version3 source. The completed Cedar run remains unchanged. All previously recorded integration/model/isolation/financial gates remain blocked or disabled; no scientific launch readiness claim.
+
+
 ## 27 October 2026 - provider-free comparison boundary implemented, limited checks pass
 
 Implemented examples/comparison/offline_runner.py and neutral tests. Arm-local durable requests, explicit routed responses, ordinary editable notes plus raw history search, native EDI adapter checks, finite reservations and elapsed limits, prediction-before-dispatch retention, no automatic replay on unknown action outcomes, bounded correction, and pair-terminal evaluation fence. No provider adapter or credentials; paid invocation always raises. This is an external preparation boundary, not a fully connected unattended comparison runner.
