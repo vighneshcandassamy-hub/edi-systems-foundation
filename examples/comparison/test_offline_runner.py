@@ -162,6 +162,20 @@ class BoundaryChecks(unittest.TestCase):
         with self.assertRaises(BoundaryError): NativeEDI(c, Session()).export()
         self.assertEqual(c.usage()["calls"], 0)
 
+    def test_unknown_request_id_leaves_live_pending_request_unchanged(self):
+        b = self.baseline(); packet = b.export(); before = b.state()
+        with self.assertRaises(BoundaryError): b.consume("foreign-request", answer(packet))
+        self.assertEqual(b.state(), before)
+        self.assertEqual(b.export(), packet)
+
+    def test_inline_notes_and_world_action_use_one_decision(self):
+        b = self.baseline(); packet = b.export(); raw = json.loads(answer(packet,"read",{}))
+        raw["proposal"]["notes"] = "Ordinary notes alongside the public action"
+        b.consume(packet["request_id"],wire(raw).encode())
+        self.assertEqual(b.state()["decisions"],1)
+        self.assertEqual(b.state()["notes"],raw["proposal"]["notes"])
+        self.assertEqual(b.channel.usage()["calls"],1)
+
     def test_native_adapter_rejects_shared_or_foreign_directory(self):
         c = self.channel("edi")
         class Session: out = self.root / "baseline" / "native"
