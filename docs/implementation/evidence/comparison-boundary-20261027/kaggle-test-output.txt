@@ -53,3 +53,30 @@ OK
 
 COMPARISON_NEUTRAL_RECEIPT {"scope": "Neutral comparison boundary only; no native Cedar/model/provider qualification", "returncode": 0, "source_sha256": {"offline_runner.py": "1021c000d56495eb33f1c2196d8932c2aafaf11494ef0a3642dfe255aabe743a", "test_offline_runner.py": "4b2a533e5b344b66abfbc453717abbcad03717ad1eddff9d03eaeb9d0713e1b2"}, "model_calls": 0, "cedar_episodes": 0, "paid_calls": 0, "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]", "directory": "/kaggle/working/comparison-neutral-boundary-20261027-a51d74a8"}
 PAID_API_DISABLED; COMPLETED_CEDAR_UNTOUCHED
+
+test_configuration_cannot_change_on_reopen (test_offline_runner.BoundaryChecks.test_configuration_cannot_change_on_reopen) ... ok
+test_credentials_and_evaluator_are_not_model_operations (test_offline_runner.BoundaryChecks.test_credentials_and_evaluator_are_not_model_operations) ... ok
+test_duplicate_public_action_is_never_replayed (test_offline_runner.BoundaryChecks.test_duplicate_public_action_is_never_replayed) ... ok
+test_expired_pending_request_and_late_response_are_blocked (test_offline_runner.BoundaryChecks.test_expired_pending_request_and_late_response_are_blocked) ... ok
+test_final_submit_requires_successful_public_receipt (test_offline_runner.BoundaryChecks.test_final_submit_requires_successful_public_receipt) ... ok
+test_foreign_response_never_dispatches (test_offline_runner.BoundaryChecks.test_foreign_response_never_dispatches) ... ok
+test_native_adapter_rejects_shared_or_foreign_directory (test_offline_runner.BoundaryChecks.test_native_adapter_rejects_shared_or_foreign_directory) ... ok
+test_native_model_and_cap_mismatch_cannot_export (test_offline_runner.BoundaryChecks.test_native_model_and_cap_mismatch_cannot_export) ... ok
+test_no_silent_request_truncation (test_offline_runner.BoundaryChecks.test_no_silent_request_truncation) ... ok
+test_nonfinite_and_duplicate_json_are_retained_and_rejected (test_offline_runner.BoundaryChecks.test_nonfinite_and_duplicate_json_are_retained_and_rejected) ... ok
+test_notes_and_searchable_raw_history_are_retained (test_offline_runner.BoundaryChecks.test_notes_and_searchable_raw_history_are_retained) ... ok
+test_pair_fences_evaluation_and_preserves_failure (test_offline_runner.BoundaryChecks.test_pair_fences_evaluation_and_preserves_failure) ... ok
+test_pending_reopen_is_identical_without_extra_reservation (test_offline_runner.BoundaryChecks.test_pending_reopen_is_identical_without_extra_reservation) ... ok
+test_rejected_response_bytes_are_preserved (test_offline_runner.BoundaryChecks.test_rejected_response_bytes_are_preserved) ... ok
+test_reservation_budget_includes_rejected_outputs (test_offline_runner.BoundaryChecks.test_reservation_budget_includes_rejected_outputs) ... ok
+test_unfinished_response_application_blocks_new_model_job (test_offline_runner.BoundaryChecks.test_unfinished_response_application_blocks_new_model_job) ... ok
+test_unknown_transport_outcome_survives_reopen_and_blocks (test_offline_runner.BoundaryChecks.test_unknown_transport_outcome_survives_reopen_and_blocks) ... ok
+test_validation_gets_only_one_correction (test_offline_runner.BoundaryChecks.test_validation_gets_only_one_correction) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.690s
+
+OK
+
+COMPARISON_NEUTRAL_RECEIPT {"scope": "Neutral comparison boundary only; no native Cedar/model/provider qualification", "returncode": 0, "source_sha256": {"offline_runner.py": "f1072d3477459a91e8d61e8ae8760b49211a4bad8469cf3536616972bc08cd0a", "test_offline_runner.py": "4b2a533e5b344b66abfbc453717abbcad03717ad1eddff9d03eaeb9d0713e1b2"}, "model_calls": 0, "cedar_episodes": 0, "paid_calls": 0, "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]", "directory": "/kaggle/working/comparison-neutral-boundary-20261027-cffca9f3"}
+PAID_API_DISABLED; COMPLETED_CEDAR_UNTOUCHED
