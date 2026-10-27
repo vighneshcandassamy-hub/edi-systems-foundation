@@ -1,3 +1,12 @@
+## 27 October 2026 - provider-free comparison boundary implemented, limited checks pass
+
+Implemented examples/comparison/offline_runner.py and neutral tests. Arm-local durable requests, explicit routed responses, ordinary editable notes plus raw history search, native EDI adapter checks, finite reservations and elapsed limits, prediction-before-dispatch retention, no automatic replay on unknown action outcomes, bounded correction, and pair-terminal evaluation fence. No provider adapter or credentials; paid invocation always raises. This is an external preparation boundary, not a fully connected unattended comparison runner.
+
+Signed-in Kaggle preparation Version3 Quick Save WITH OUTPUTS: Neutral boundary - 18 checks pass - no model calls. Initial15 checks passed, final18 passed after adding expiry/strict JSON/streaming-search controls. Final runner SHA256 1021c000d56495eb33f1c2196d8932c2aafaf11494ef0a3642dfe255aabe743a; tests 4b2a533e5b344b66abfbc453717abbcad03717ad1eddff9d03eaeb9d0713e1b2. Both source archives/results preserved. All runtime checks on Kaggle via CUA; local AST/source packaging only. Draft session stopped. No model, Cedar episode, paid call, new secret, billing change or completed-run mutation.
+
+See docs/implementation/COMPARISON_BOUNDARY_20261027.md and evidence/comparison-boundary-20261027. Neutral boundary fixture gate PASS; complete architecture/contracts REVISE; live provider/model/context/usage and native paired Cedar integration BLOCKED. Multimodal parity, exact initial-state parity and provider-specific cost enforcement remain unimplemented/unqualified. No EDI superiority or ready-to-run claim. Supplemental skill resources/checker unavailable; self-review recorded, not a checker pass. No additional owner setup requested.
+
+
 ## Latest checkpoint - 26 October 2026 handoff: completed five-year Cedar assessment
 
 Fresh run cedar-sole-cd05b18d100b completed natively at decision50 with a successful final submit receipt. It produced the actual 12,407-character participant final report covering observations, hypotheses/rivals, feedback/delays, prospective tests, interventions, full accounting, recommendations, forecasts and uncertainty. [Participant final report](docs/implementation/CEDAR_PARTICIPANT_FINAL_REPORT_20261025.md), [completed result](docs/implementation/CEDAR_COMPLETE_RESULT_20261025.md), and [reviewed audit](docs/implementation/evidence/cedar-complete-20261025/run-result.json) are current.
