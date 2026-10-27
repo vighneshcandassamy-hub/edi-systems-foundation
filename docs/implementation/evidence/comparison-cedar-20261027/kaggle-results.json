@@ -1,0 +1,66 @@
+{
+  "scope": "Kaggle source, boundary, mocked-provider and authored Cedar connection qualification; NOT model comparison",
+  "source_manifest_sha256": "2812d28366b8f96c7323859a0bb9b37068c0e6983ba73731891a2f9551c62292",
+  "unit_checks": 39,
+  "unit_exit": 0,
+  "connection": {
+    "scope": "Actual Cedar connection qualification with authored responses; NOT an intelligence comparison",
+    "model_calls": 0,
+    "paid_calls": 0,
+    "scientific_benchmark_started": false,
+    "repeat_export_no_world_replay": true,
+    "cross_arm_import_blocked_without_pending_mutation": true,
+    "passed": true,
+    "initial_state_sha256": "ea04765b572e89709f2bc63e822d46812b75668fc2b9cc1842ba3c0b8077ceb0",
+    "public_operations_each": [
+      "mission",
+      "sources",
+      "status"
+    ],
+    "authored_accepted_proposals_each": 3,
+    "post_terminal_evaluation_returned": true,
+    "outcomes_are_zero_year_connection_fixtures": true,
+    "transport_usage": {
+      "baseline": {
+        "calls": 3,
+        "reserved_policy_tokens": 49152,
+        "actual_tokens": null,
+        "energy": null,
+        "paid_model_calls": null,
+        "provider_usage_scope": "External adapter ledger required"
+      },
+      "edi": {
+        "calls": 3,
+        "reserved_policy_tokens": 49152,
+        "actual_tokens": null,
+        "energy": null,
+        "paid_model_calls": null,
+        "provider_usage_scope": "External adapter ledger required"
+      }
+    },
+    "initial_and_final_world_states_identical": true,
+    "teacher_enabled": false,
+    "source_manifest_sha256": "2812d28366b8f96c7323859a0bb9b37068c0e6983ba73731891a2f9551c62292",
+    "inline_baseline_notes_verified": true,
+    "integrity": {
+      "pair.sqlite3": "ok",
+      "baseline/exchange.sqlite3": "ok",
+      "edi/exchange.sqlite3": "ok",
+      "edi/native/owners.reason.sqlite3": "ok",
+      "edi/native/owners.sqlite3": "ok",
+      "edi/native/owners.workflows.sqlite3": "ok",
+      "edi/native/owners.interpret.sqlite3": "ok",
+      "edi/native/owners.world.sqlite3": "ok",
+      "edi/native/owners.agency.sqlite3": "ok",
+      "edi/native/cedar-world/run.sqlite": "ok",
+      "baseline/native/cedar-world/run.sqlite": "ok"
+    }
+  },
+  "native_archive_bytes": 11242174,
+  "native_archive_sha256": "72672565fdb6329d6f5f4fb6aaa1df17fd5f5636c2c085511dd7f79dcf15b136",
+  "model_calls": 0,
+  "api_calls": 0,
+  "paid_adapter_enabled": false,
+  "scientific_comparison_complete": false,
+  "live_provider_qualification": "Requires explicit financial/security approval, restricted key, verified provider controls, and authenticated prompt counts"
+}
