@@ -1,0 +1,69 @@
+{
+  "run": "qwen-cedar-954b8c9569bb",
+  "version": 4,
+  "script_version_id": 363058667,
+  "archive_bytes": 30203800,
+  "archive_sha256": "c65586e4d9fcea10fdb34ba49ea1989f52b021df9557b528b77aecde66248861",
+  "archive_crc_failure": null,
+  "source_manifest_sha256": "4c7160867183710c042c76bd2c340f3adc35f98faddeed9796cb3bd650405a19",
+  "source_files_checked": 131,
+  "source_hash_failures": [],
+  "database_integrity": {
+    "actual-pair/local-model.sqlite3": "ok",
+    "actual-pair/pair/baseline/exchange.sqlite3": "ok",
+    "actual-pair/pair/baseline/native/cedar-world/run.sqlite": "ok",
+    "actual-pair/pair/edi/exchange.sqlite3": "ok",
+    "actual-pair/pair/edi/native/cedar-world/run.sqlite": "ok",
+    "actual-pair/pair/edi/native/owners.agency.sqlite3": "ok",
+    "actual-pair/pair/edi/native/owners.reason.sqlite3": "ok",
+    "actual-pair/pair/edi/native/owners.sqlite3": "ok",
+    "actual-pair/pair/edi/native/owners.workflows.sqlite3": "ok",
+    "actual-pair/pair/edi/native/owners.world.sqlite3": "ok",
+    "actual-pair/pair/pair.sqlite3": "ok"
+  },
+  "comparison_matches_browser_log": true,
+  "initial_state_sha256": "ea04765b572e89709f2bc63e822d46812b75668fc2b9cc1842ba3c0b8077ceb0",
+  "final_state_sha256": {
+    "baseline": "ea04765b572e89709f2bc63e822d46812b75668fc2b9cc1842ba3c0b8077ceb0",
+    "edi": "ea04765b572e89709f2bc63e822d46812b75668fc2b9cc1842ba3c0b8077ceb0"
+  },
+  "states_unchanged": true,
+  "model_calls": [
+    [
+      "baseline",
+      2,
+      3948,
+      348
+    ],
+    [
+      "edi",
+      64,
+      449865,
+      34570
+    ]
+  ],
+  "noncomplete_model_calls": 0,
+  "neutral_smoke": {
+    "passed": true,
+    "calls": [
+      {
+        "label": "first-neutral",
+        "input_tokens": 65,
+        "output_tokens": 21,
+        "vision_input": false
+      },
+      {
+        "label": "second-neutral",
+        "input_tokens": 142,
+        "output_tokens": 28,
+        "vision_input": true
+      }
+    ],
+    "cedar_world_started": false
+  },
+  "shutdown": {
+    "local_model_stopped": true
+  },
+  "boundary_test_tail": "e_totals_do_not_equal_reserved_tokens) ... ok\n\n----------------------------------------------------------------------\nRan 58 tests in 5.289s\n\nOK\n",
+  "verdict": "Both configurations failed the Cedar task; no successful five-year comparison or EDI benefit established."
+}
