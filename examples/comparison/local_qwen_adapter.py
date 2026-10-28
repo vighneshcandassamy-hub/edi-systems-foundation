@@ -44,7 +44,7 @@ def strict(raw):
     def reject(_): raise BoundaryError("Nonfinite JSON value")
     return json.loads(raw,object_pairs_hook=unique,parse_constant=reject)
 
-def native_messages(native):
+def native_messages(native, public_view=None):
     messages=copy.deepcopy(native["messages"])
     control=json.loads(messages[0]["content"])
     control["response_fields"]["transport"]=(
@@ -52,6 +52,10 @@ def native_messages(native):
         "exact server token count is required before inference. "
         "Transport supplies request identity and measured usage.")
     messages[0]["content"]=wire(control)
+    if public_view is not None:
+        from public_protocol import GUIDANCE
+        return [{"role":"system","content":COMMON+" "+GUIDANCE},
+                {"role":"user","content":"CURRENT PUBLIC TOOL BINDINGS AND RECEIPTS: "+wire(public_view)},*messages]
     return [{"role":"system","content":COMMON},*messages]
 
 def baseline_messages(payload):
@@ -72,7 +76,7 @@ def baseline_messages(payload):
     return [{"role":"system","content":COMMON},
             {"role":"user","content":[{"type":"text","text":wire(text)},*images]}]
 
-def generation(packet):
+def generation(packet, public_view=None):
     if packet["model"] != MODEL or fingerprint(packet["payload"])!=packet["payload_sha256"]:
         raise BoundaryError("Changed model or participant cut")
     if packet["arm"]=="baseline":
@@ -91,8 +95,14 @@ def generation(packet):
             evidence_references=[e["reference"] for e in data["context"]["evidence"]],
             controller_turn=data["inquiry"].get("response_mode")=="controller-turn",
             controller_policy=data["inquiry"].get("controller_policy","legacy"))
-        messages=native_messages(native)
+        messages=native_messages(native, public_view)
     else: raise BoundaryError("Unknown arm")
+    if public_view is not None:
+        from public_protocol import bind_schema, GUIDANCE
+        schema=bind_schema(schema,packet["arm"],public_view)
+        if packet["arm"]=="baseline":
+            messages[0]["content"]+=" "+GUIDANCE
+            messages.insert(1,{"role":"user","content":"CURRENT PUBLIC TOOL BINDINGS AND RECEIPTS: "+wire(public_view)})
     return {"model":MODEL["id"],"messages":messages,
             "max_tokens":packet["limits"]["output_token_cap"],
             "temperature":0,"seed":17,
@@ -132,9 +142,10 @@ class Loopback:
         return raw
 
 class LocalQwen:
-    def __init__(self,path,*,post,limits=Limits()):
+    def __init__(self,path,*,post,limits=Limits(),public_protocol=None):
         if not callable(post):raise BoundaryError("Explicit local transport required")
         self.post,self.limits=post,limits
+        self.public_protocol=public_protocol
         self.db=sqlite3.connect(Path(path))
         self.db.executescript("""
         PRAGMA journal_mode=WAL;
@@ -147,6 +158,9 @@ class LocalQwen:
           input_tokens INTEGER,raw BLOB,output_tokens INTEGER,envelope BLOB);
         """)
         cfg=wire({"model":MODEL,"limits":limits.__dict__,"max_model_len":16384,"seed":17})
+        if public_protocol is not None:
+            from public_protocol import VERSION
+            cfg=wire({"base":json.loads(cfg),"public_protocol":VERSION})
         old=self.db.execute("SELECT value FROM meta WHERE key='config'").fetchone()
         if old and old[0]!=cfg:
             self.db.close();raise BoundaryError("Existing model configuration differs")
@@ -176,7 +190,7 @@ class LocalQwen:
     def count_native_request(self,native):
         # Preview has synthetic job identity. Admission adds a declared128-token
         # conservative identity margin; actual pending packet is counted again.
-        return self.count_messages(native_messages(native))
+        return self.count_messages(native_messages(native,self.public_protocol("edi") if self.public_protocol else None))
     def prepare(self,packet):
         if packet["limits"]!=self.limits.__dict__:raise BoundaryError("Changed arm limits")
         if self.db.execute("SELECT count(*) FROM calls WHERE state NOT IN ('prepared','complete')").fetchone()[0]:
@@ -192,7 +206,7 @@ class LocalQwen:
         count=self.db.execute("SELECT count(*) FROM calls WHERE arm=?",(packet["arm"],)).fetchone()[0]
         if count>=self.limits.max_calls or (count+1)*16384>self.limits.max_reserved_tokens:
             raise BoundaryError("Per-arm model reservation cap")
-        body=generation(packet)
+        body=generation(packet,self.public_protocol(packet["arm"]) if self.public_protocol else None)
         if len(wire(body).encode())>self.limits.max_request_bytes:
             raise BoundaryError("Rendered request exceeds byte cap")
         with self.db:
