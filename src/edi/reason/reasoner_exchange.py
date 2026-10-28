@@ -27,6 +27,7 @@ class ReasonerExchangeGateway:
         if not 0 <= max_images <= 2 or not 16384 <= max_request_bytes <= 1048576 or not 1024 <= max_response_bytes <= 1048576:
             raise EDIError(ErrorCode.INVALID, 'invalid explicit byte/image capacity')
         self.runtime, self.binding, self.attribution = runtime, binding, attribution
+        self.request_token_counter = None
         self.max_images, self.max_request_bytes, self.max_response_bytes = max_images, max_request_bytes, max_response_bytes
         self.directory = Path(directory).resolve(); self.directory.mkdir(parents=True, exist_ok=True)
         self.journal = CallJournal(journal_path, 'reasoner_exchange_c4', max_calls=max_calls, max_bytes=128*1024**2)
@@ -35,6 +36,13 @@ class ReasonerExchangeGateway:
             adapter='edi-reasoner-exchange/1.0', binding_basis='configured',
             descriptor={'binding':binding.model_dump(mode='json'),'identity':'operator-declared; unauthenticated',
                         'usage':'unmeasured unless explicitly supplied'}))
+    def bind_request_token_counter(self, counter):
+        # Operator initialization port: bind once before the first export.
+        # Callback may count the prospective request; it may not generate.
+        if not callable(counter) or self.request_token_counter is not None or any(self.directory.glob('*.request.json')):
+            raise EDIError(ErrorCode.CONFLICT, 'token counter must bind once before export')
+        self.request_token_counter = counter
+        self.capacity_basis = 'local-server-count-plus-declared-identity-headroom'
     def request_path(self, job_id):
         return self.directory/(sha256(job_id.encode()).hexdigest()+'.request.json')
     def _request(self, job, episode):
@@ -65,9 +73,19 @@ class ReasonerExchangeGateway:
             input_token_cap=request.budget.input_token_cap,output_token_cap=request.budget.output_token_cap,
             created_at=utc_now(),reason='Prospective external export; no job allocated',teaching_stage='standard')
         episode=episode.model_copy(update={'jobs':(job,)})
-        size=len(canonical(self._request(job,episode)).encode('utf-8'))+1
+        exported=self._request(job,episode)
+        size=len(canonical(exported).encode('utf-8'))+1
         if size>self.max_request_bytes:raise EDIError(ErrorCode.CAPACITY,'reasoner export exceeds byte budget')
-        return {'input_tokens':None,'request_bytes':size,'max_request_bytes':self.max_request_bytes,
+        measured=self.request_token_counter(exported) if self.request_token_counter is not None else None
+        if measured is not None and (type(measured) is not int or measured<0):
+            raise EDIError(ErrorCode.INTEGRITY,'invalid prospective local token count')
+        # Synthetic preview identity can tokenize differently from allocated UUIDs.
+        # Retain measured count separately from the conservative admission count.
+        # Transport recounts the actual pending packet before ANY generation.
+        margin=128 if measured is not None else 0
+        return {'input_tokens':measured+margin if measured is not None else None,
+                'measured_input_tokens':measured,'identity_headroom_tokens':margin,
+                'request_bytes':size,'max_request_bytes':self.max_request_bytes,
                 'basis':self.capacity_basis,'context_sha256':episode.context.sha256}
     def complete(self, job, episode):
         request=self._request(job,episode);payload=(canonical(request)+'\n').encode('utf-8')
