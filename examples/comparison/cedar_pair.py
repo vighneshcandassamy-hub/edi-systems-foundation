@@ -96,7 +96,9 @@ def application_profile(out, model, world, limits):
 
 
 class CedarPair:
-    def __init__(self, source, directory, model, limits=Limits()):
+    def __init__(self, source, directory, model, limits=Limits(), *, native_request_token_counter=None):
+        if native_request_token_counter is not None and not callable(native_request_token_counter):
+            raise BoundaryError("Explicit native token counter must be callable")
         if limits.input_token_cap != 12288 or limits.output_token_cap != 4096:
             raise BoundaryError("Native Cedar composition fixes 12288/4096 job caps")
         self.source, self.directory = Path(source).resolve(), Path(directory).resolve()
@@ -132,6 +134,8 @@ class CedarPair:
             os.environ["EDI_BROKER_TOKEN"] = edi_world.token
             self.native = CedarSession(self.source, edi_world.out, token=edi_world.token)
             self.native.app = IntegratedApplication(profile)
+            if native_request_token_counter is not None:
+                self.native.app.reasoner.bind_request_token_counter(native_request_token_counter)
             self.native.step()
             self.edi = NativeEDI(self.pair.channels["edi"], self.native)
             if self.worlds["baseline"].snapshot()["state_sha256"] != self.worlds["edi"].snapshot()["state_sha256"]:
