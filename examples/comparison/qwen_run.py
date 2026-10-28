@@ -10,6 +10,7 @@ import secrets
 from offline_runner import BoundaryError,Limits,wire
 from cedar_pair import CedarPair
 from local_qwen_adapter import MODEL,LocalQwen,Loopback
+from public_protocol import PublicProtocol, VERSION
 
 METRICS=("years_elapsed","mean_damage_fraction","total_operational_spending",
          "total_timber_delivery","five_year_committed_delivery_shortfall",
@@ -17,7 +18,7 @@ METRICS=("years_elapsed","mean_damage_fraction","total_operational_spending",
 
 def validate(approval,receipt):
     expected={"authorized":True,"kaggle_only":True,"paid_services":False,
-              "model":MODEL,"neutral_checks_passed":True,"local_model_smoke_passed":True}
+              "model":MODEL,"neutral_checks_passed":True,"local_model_smoke_passed":True,"actual_tool_gate_passed":True}
     if not isinstance(approval,dict) or any(approval.get(k)!=v for k,v in expected.items()):
         raise BoundaryError("Explicit Kaggle authorization and completed qualification receipts required")
     if not isinstance(receipt,dict) or receipt.get("model")!=MODEL:
@@ -67,9 +68,12 @@ def run(source,directory,*,endpoint,serving_token,approval=None,serving_receipt=
         directory.mkdir(parents=True,exist_ok=False)
         # Separate provider ledger from the new pair directory, whose owner
         # requires exclusive creation. No world starts during client construction.
-        client=LocalQwen(directory/"local-model.sqlite3",post=post or Loopback(endpoint,serving_token))
+        views={}
+        client=LocalQwen(directory/"local-model.sqlite3",post=post or Loopback(endpoint,serving_token),
+                         public_protocol=lambda arm:views[arm].snapshot())
         pair=CedarPair(source,directory/"pair",MODEL,Limits(),
-                       native_request_token_counter=client.count_native_request)
+                       native_request_token_counter=client.count_native_request,
+                       protocol_factory=lambda arm,world:views.setdefault(arm,PublicProtocol(world.out,world.world.PUBLIC_OPERATIONS)))
         order=["baseline","edi"]
         if secrets.randbelow(2):order.reverse()
         launch={"created_at":datetime.now(timezone.utc).isoformat(),"model":MODEL,
@@ -77,6 +81,7 @@ def run(source,directory,*,endpoint,serving_token,approval=None,serving_receipt=
                 "source_manifest_sha256":sha256((source/"source-manifest.json").read_bytes()).hexdigest(),
                 "initial_state_sha256":pair.initial_state_sha256,"serving_receipt":serving_receipt,
                 "qualification":approval,
+                "shared_public_tool_binding":VERSION,
                 "prior_case_solution_supplied":False}
         (directory/"launch.json").write_text(json.dumps(launch,indent=2),encoding="utf-8")
         counts={}
@@ -89,8 +94,14 @@ def run(source,directory,*,endpoint,serving_token,approval=None,serving_receipt=
             if len(terminal)==2:break
             for arm in order:
                 if arm in terminal:continue
+                if arm=="baseline" and pair.baseline.state()["decisions"]>=Limits().max_decisions:
+                    state=pair.baseline.state();state["terminal"]="yielded-budget"
+                    with pair.baseline.db:pair.baseline.save(state)
+                    pair.pair.mark_terminal(arm,"yielded")
+                    continue
                 packet=pair.export(arm) # Capacity expiry blocks; never invent a terminal receipt.
                 raw=client.complete(packet)
+                views[arm].begin(json.loads(raw)["proposal"])
                 try:pair.consume(arm,packet["request_id"],raw)
                 except BoundaryError:
                     if arm!="baseline":raise
@@ -98,6 +109,12 @@ def run(source,directory,*,endpoint,serving_token,approval=None,serving_receipt=
                     if state["terminal"]=="blocked-unknown-action":raise
                     if state["terminal"]:pair.pair.mark_terminal(arm,"yielded")
                     elif state["corrections"]!=1:raise
+                views[arm].finish()
+                public=views[arm].snapshot()
+                (directory/(arm+"-public-binding.json")).write_text(json.dumps(public,indent=2),encoding="utf-8")
+                print("QWEN_PUBLIC_PROGRESS",json.dumps({"arm":arm,"decision":public["decision"],
+                      "year":public["public_year"],"successful_public_operations":public["public_event_count"],
+                      "public_attempts":public["public_attempt_count"],"failures":len(views[arm].failures)}),flush=True)
                 (directory/"progress.json").write_text(json.dumps(client.summary(),indent=2),encoding="utf-8")
         evaluated=pair.evaluate()
         return write_result(directory,evaluated,client.summary())
