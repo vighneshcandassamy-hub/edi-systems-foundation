@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "calls": [
+    {
+      "label": "first-neutral",
+      "input_tokens": 65,
+      "output_tokens": 21,
+      "vision_input": false
+    },
+    {
+      "label": "second-neutral",
+      "input_tokens": 142,
+      "output_tokens": 28,
+      "vision_input": true
+    }
+  ],
+  "cedar_world_started": false
+}
