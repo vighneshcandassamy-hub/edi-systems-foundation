@@ -1,0 +1,860 @@
+{
+  "schema": "edi-interface-review-v1",
+  "scope": "Common public tool binding and fresh Qwen paired Cedar trial",
+  "input_revision": "qwen-public-tool-binding-20261028-v1; exact packaged manifest in outputs/qwen-toolbinding-build.json",
+  "components": [
+    {
+      "id": "driver",
+      "name": "driver"
+    },
+    {
+      "id": "baseline",
+      "name": "baseline"
+    },
+    {
+      "id": "edi",
+      "name": "edi"
+    },
+    {
+      "id": "world_baseline",
+      "name": "world_baseline"
+    },
+    {
+      "id": "world_edi",
+      "name": "world_edi"
+    },
+    {
+      "id": "model_adapter",
+      "name": "model_adapter"
+    },
+    {
+      "id": "qwen_server",
+      "name": "qwen_server"
+    },
+    {
+      "id": "evaluator_reporter",
+      "name": "evaluator_reporter"
+    }
+  ],
+  "lanes": [
+    {
+      "from": "driver",
+      "to": "baseline",
+      "disposition": "required",
+      "rationale": "own-arm export/import and native terminal state",
+      "contract_ids": [
+        "driver__baseline"
+      ]
+    },
+    {
+      "from": "driver",
+      "to": "edi",
+      "disposition": "required",
+      "rationale": "own-arm native export/import and native terminal state",
+      "contract_ids": [
+        "driver__edi"
+      ]
+    },
+    {
+      "from": "driver",
+      "to": "world_baseline",
+      "disposition": "required",
+      "rationale": "fresh lifecycle and operator-only initial parity audit",
+      "contract_ids": [
+        "driver__world_baseline"
+      ]
+    },
+    {
+      "from": "driver",
+      "to": "world_edi",
+      "disposition": "required",
+      "rationale": "fresh lifecycle and operator-only initial parity audit",
+      "contract_ids": [
+        "driver__world_edi"
+      ]
+    },
+    {
+      "from": "driver",
+      "to": "model_adapter",
+      "disposition": "required",
+      "rationale": "prepare/generate exact current-arm packet and retain envelope/usage",
+      "contract_ids": [
+        "driver__model_adapter"
+      ]
+    },
+    {
+      "from": "driver",
+      "to": "qwen_server",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "driver",
+      "to": "evaluator_reporter",
+      "disposition": "required",
+      "rationale": "closed-pair evaluation and verbatim participant reports",
+      "contract_ids": [
+        "driver__evaluator_reporter"
+      ]
+    },
+    {
+      "from": "baseline",
+      "to": "driver",
+      "disposition": "required",
+      "rationale": "own-arm export/import and native terminal state",
+      "contract_ids": [
+        "baseline__driver"
+      ]
+    },
+    {
+      "from": "baseline",
+      "to": "edi",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    },
+    {
+      "from": "baseline",
+      "to": "world_baseline",
+      "disposition": "required",
+      "rationale": "ordinary public operations and actual public receipts",
+      "contract_ids": [
+        "baseline__world_baseline"
+      ]
+    },
+    {
+      "from": "baseline",
+      "to": "world_edi",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    },
+    {
+      "from": "baseline",
+      "to": "model_adapter",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "baseline",
+      "to": "qwen_server",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "baseline",
+      "to": "evaluator_reporter",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "edi",
+      "to": "driver",
+      "disposition": "required",
+      "rationale": "own-arm native export/import and native terminal state",
+      "contract_ids": [
+        "edi__driver"
+      ]
+    },
+    {
+      "from": "edi",
+      "to": "baseline",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    },
+    {
+      "from": "edi",
+      "to": "world_baseline",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    },
+    {
+      "from": "edi",
+      "to": "world_edi",
+      "disposition": "required",
+      "rationale": "native authorized public operations and observation feedback",
+      "contract_ids": [
+        "edi__world_edi"
+      ]
+    },
+    {
+      "from": "edi",
+      "to": "model_adapter",
+      "disposition": "required",
+      "rationale": "prospective count-only callback; no generation authority",
+      "contract_ids": [
+        "edi__model_adapter"
+      ]
+    },
+    {
+      "from": "edi",
+      "to": "qwen_server",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "edi",
+      "to": "evaluator_reporter",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "world_baseline",
+      "to": "driver",
+      "disposition": "required",
+      "rationale": "fresh lifecycle and operator-only initial parity audit",
+      "contract_ids": [
+        "world_baseline__driver"
+      ]
+    },
+    {
+      "from": "world_baseline",
+      "to": "baseline",
+      "disposition": "required",
+      "rationale": "ordinary public operations and actual public receipts",
+      "contract_ids": [
+        "world_baseline__baseline"
+      ]
+    },
+    {
+      "from": "world_baseline",
+      "to": "edi",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "world_baseline",
+      "to": "world_edi",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "world_baseline",
+      "to": "model_adapter",
+      "disposition": "required",
+      "rationale": "own-arm previously committed public receipts and status feed common public tool bindings",
+      "contract_ids": [
+        "world_baseline__model_adapter__public_view"
+      ]
+    },
+    {
+      "from": "world_baseline",
+      "to": "qwen_server",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "world_baseline",
+      "to": "evaluator_reporter",
+      "disposition": "required",
+      "rationale": "post-terminal read-only official outcome",
+      "contract_ids": [
+        "world_baseline__evaluator_reporter"
+      ]
+    },
+    {
+      "from": "world_edi",
+      "to": "driver",
+      "disposition": "required",
+      "rationale": "fresh lifecycle and operator-only initial parity audit",
+      "contract_ids": [
+        "world_edi__driver"
+      ]
+    },
+    {
+      "from": "world_edi",
+      "to": "baseline",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "world_edi",
+      "to": "edi",
+      "disposition": "required",
+      "rationale": "native authorized public operations and observation feedback",
+      "contract_ids": [
+        "world_edi__edi"
+      ]
+    },
+    {
+      "from": "world_edi",
+      "to": "world_baseline",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "world_edi",
+      "to": "model_adapter",
+      "disposition": "required",
+      "rationale": "own-arm previously committed public receipts and status feed common public tool bindings",
+      "contract_ids": [
+        "world_edi__model_adapter__public_view"
+      ]
+    },
+    {
+      "from": "world_edi",
+      "to": "qwen_server",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "world_edi",
+      "to": "evaluator_reporter",
+      "disposition": "required",
+      "rationale": "post-terminal read-only official outcome",
+      "contract_ids": [
+        "world_edi__evaluator_reporter"
+      ]
+    },
+    {
+      "from": "model_adapter",
+      "to": "driver",
+      "disposition": "required",
+      "rationale": "prepare/generate exact current-arm packet and retain envelope/usage",
+      "contract_ids": [
+        "model_adapter__driver"
+      ]
+    },
+    {
+      "from": "model_adapter",
+      "to": "baseline",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "model_adapter",
+      "to": "edi",
+      "disposition": "required",
+      "rationale": "prospective count-only callback; no generation authority",
+      "contract_ids": [
+        "model_adapter__edi"
+      ]
+    },
+    {
+      "from": "model_adapter",
+      "to": "world_baseline",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "model_adapter",
+      "to": "world_edi",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "model_adapter",
+      "to": "qwen_server",
+      "disposition": "required",
+      "rationale": "exact tokenize and single constrained local generation",
+      "contract_ids": [
+        "model_adapter__qwen_server"
+      ]
+    },
+    {
+      "from": "model_adapter",
+      "to": "evaluator_reporter",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "qwen_server",
+      "to": "driver",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "qwen_server",
+      "to": "baseline",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "qwen_server",
+      "to": "edi",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "qwen_server",
+      "to": "world_baseline",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "qwen_server",
+      "to": "world_edi",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "qwen_server",
+      "to": "model_adapter",
+      "disposition": "required",
+      "rationale": "exact tokenize and single constrained local generation",
+      "contract_ids": [
+        "qwen_server__model_adapter"
+      ]
+    },
+    {
+      "from": "qwen_server",
+      "to": "evaluator_reporter",
+      "disposition": "not_needed",
+      "rationale": "No direct port required; existing coordinator ownership applies.",
+      "contract_ids": []
+    },
+    {
+      "from": "evaluator_reporter",
+      "to": "driver",
+      "disposition": "required",
+      "rationale": "closed-pair evaluation and verbatim participant reports",
+      "contract_ids": [
+        "evaluator_reporter__driver"
+      ]
+    },
+    {
+      "from": "evaluator_reporter",
+      "to": "baseline",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    },
+    {
+      "from": "evaluator_reporter",
+      "to": "edi",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    },
+    {
+      "from": "evaluator_reporter",
+      "to": "world_baseline",
+      "disposition": "required",
+      "rationale": "post-terminal read-only official outcome",
+      "contract_ids": [
+        "evaluator_reporter__world_baseline"
+      ]
+    },
+    {
+      "from": "evaluator_reporter",
+      "to": "world_edi",
+      "disposition": "required",
+      "rationale": "post-terminal read-only official outcome",
+      "contract_ids": [
+        "evaluator_reporter__world_edi"
+      ]
+    },
+    {
+      "from": "evaluator_reporter",
+      "to": "model_adapter",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    },
+    {
+      "from": "evaluator_reporter",
+      "to": "qwen_server",
+      "disposition": "prohibited",
+      "rationale": "Cross-arm or private-evaluator feedback is forbidden.",
+      "contract_ids": []
+    }
+  ],
+  "contract_profiles": {
+    "local_qwen_lane": {
+      "ownership": "Each arm's durable ledgers/world state are isolated directories; native owners admit their own state. The adapter owns counts, raw model bytes, measured usage and timings; server owns transient inference state.",
+      "authority": "Explicit initialization/read/proposal ports only. Public world mutations require native/ordinary public dispatch. Model text cannot execute code or read files. Count-only preview cannot generate. Private evaluation requires both terminal.",
+      "shape_versions": "comparison-exchange/1 plus existing native response/operation schemas. Fixed MODEL revision and Limits. Serving schema reuse does not replace native admission. Unknown metrics stay null.",
+      "identity_scope": "Arm/request/payload hash bound before dispatch; source/document/hypothesis identities remain distinct. Same model weights/tokenizer hashes per serving receipt; no cross-arm request import.",
+      "time_order": "Predictions/proposals retained before action; preview is prospective, actual pending input counted again; generation and validation wall time separated from unmeasured GPU/energy.",
+      "delivery_idempotency": "Completed exact request replay returns retained envelope without inference. Conflicting request IDs, unresolved counting/generation and unknown outcomes block; no automatic retries.",
+      "commit_recovery": "SQLite states counting/prepared/generating/complete/blocked and raw bytes committed around network boundary. Uncertain completion never triggers another model/world dispatch.",
+      "retention": "All case requests, rejections, raw receipts and usage retained under finite limits; original expired/completed runs preserved; no claim of unbounded memory or crash qualification.",
+      "resource_limits": "Per arm64 decisions/128 exchanges/12288+4096 token caps/256 public calls/2097152 reservations/six-hour admission.4096 tokenizer count calls; bounded bytes/timeouts; two-T4 profile. GPU quota unverified.",
+      "errors": "Invalid/unsupported/oversize/unknown/expired conditions fail closed with retained artifacts. Missing reports/evaluation remain missing. Runtime failures are not model success.",
+      "feedback_grounding": "Current-arm public observations feed baseline notes or actual EDI processing, then model proposal and genuine broker outcome. Generated component results remain attributed; no solved Cedar answers or evaluator data enter participants."
+    },
+    "public_receipt_view": {
+      "ownership": "Broker owns public receipts; common transport view reads only own-arm committed events and attempt statuses. Native/ordinary owners retain action authority. Exact rendered view retained in model ledger.",
+      "authority": "SELECT operation,response FROM events and SELECT operation,status FROM attempts only. No state/identity/evaluator/other-arm read. No direct public mutation from view.",
+      "shape_versions": "public-tool-binding/1.0; domains copied from public API; known-ID decoder enums supplement unchanged native/broker admission. submit recommendations and uncertainties are arrays.",
+      "identity_scope": "Own-arm public document/source/person/stand namespaces kept separate from EDI record/hypothesis IDs. Observed IDs only; definite404 document removed.",
+      "time_order": "Proposal intent and incremented decision visible before import. Committed broker failure visible before next native token preview; actual rendered request counted again.",
+      "delivery_idempotency": "Completed exact request replay returns retained envelope without inference. Conflicting request IDs, unresolved counting/generation and unknown outcomes block; no automatic retries.",
+      "commit_recovery": "View is bounded in-memory derivative; exact render and underlying events/proposals are durable. Driver supports fresh-only runs and blocks uncertain completion; no recovery/replay qualification.",
+      "retention": "Full receipts preserved with native/ordinary owners. View contains bounded ID registry and9000-character latest receipt preview; no promise of full context.",
+      "resource_limits": "Same64 decisions/128 exchanges/12288+4096/256 public calls/six hours per arm.512document/128stand/person registry,1 immediate operation. Eight synthetic model-gate calls outside participant totals.",
+      "errors": "Definite rejected operation excluded at fixed public event cut;404read ID removed. New discovery permits reconsideration. Unknown dispatch blocks; no automatic retry.",
+      "feedback_grounding": "Already received public data only, equal generic instructions and API binding both arms. No old Cedar policy/outcomes. Generated EDI records remain attributed, not new public observations."
+    }
+  },
+  "contracts": [
+    {
+      "id": "driver__baseline",
+      "producer": "driver",
+      "consumer": "baseline",
+      "profile": "local_qwen_lane",
+      "operation": "own-arm export/import and native terminal state",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "driver__edi",
+      "producer": "driver",
+      "consumer": "edi",
+      "profile": "local_qwen_lane",
+      "operation": "own-arm native export/import and native terminal state",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "driver__world_baseline",
+      "producer": "driver",
+      "consumer": "world_baseline",
+      "profile": "local_qwen_lane",
+      "operation": "fresh lifecycle and operator-only initial parity audit",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "driver__world_edi",
+      "producer": "driver",
+      "consumer": "world_edi",
+      "profile": "local_qwen_lane",
+      "operation": "fresh lifecycle and operator-only initial parity audit",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "driver__model_adapter",
+      "producer": "driver",
+      "consumer": "model_adapter",
+      "profile": "local_qwen_lane",
+      "operation": "prepare/generate exact current-arm packet and retain envelope/usage",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "driver__evaluator_reporter",
+      "producer": "driver",
+      "consumer": "evaluator_reporter",
+      "profile": "local_qwen_lane",
+      "operation": "closed-pair evaluation and verbatim participant reports",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "baseline__driver",
+      "producer": "baseline",
+      "consumer": "driver",
+      "profile": "local_qwen_lane",
+      "operation": "own-arm export/import and native terminal state",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "baseline__world_baseline",
+      "producer": "baseline",
+      "consumer": "world_baseline",
+      "profile": "local_qwen_lane",
+      "operation": "ordinary public operations and actual public receipts",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "edi__driver",
+      "producer": "edi",
+      "consumer": "driver",
+      "profile": "local_qwen_lane",
+      "operation": "own-arm native export/import and native terminal state",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "edi__world_edi",
+      "producer": "edi",
+      "consumer": "world_edi",
+      "profile": "local_qwen_lane",
+      "operation": "native authorized public operations and observation feedback",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "edi__model_adapter",
+      "producer": "edi",
+      "consumer": "model_adapter",
+      "profile": "local_qwen_lane",
+      "operation": "prospective count-only callback; no generation authority",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "world_baseline__driver",
+      "producer": "world_baseline",
+      "consumer": "driver",
+      "profile": "local_qwen_lane",
+      "operation": "fresh lifecycle and operator-only initial parity audit",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "world_baseline__baseline",
+      "producer": "world_baseline",
+      "consumer": "baseline",
+      "profile": "local_qwen_lane",
+      "operation": "ordinary public operations and actual public receipts",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "world_baseline__evaluator_reporter",
+      "producer": "world_baseline",
+      "consumer": "evaluator_reporter",
+      "profile": "local_qwen_lane",
+      "operation": "post-terminal read-only official outcome",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "world_edi__driver",
+      "producer": "world_edi",
+      "consumer": "driver",
+      "profile": "local_qwen_lane",
+      "operation": "fresh lifecycle and operator-only initial parity audit",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "world_edi__edi",
+      "producer": "world_edi",
+      "consumer": "edi",
+      "profile": "local_qwen_lane",
+      "operation": "native authorized public operations and observation feedback",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "world_edi__evaluator_reporter",
+      "producer": "world_edi",
+      "consumer": "evaluator_reporter",
+      "profile": "local_qwen_lane",
+      "operation": "post-terminal read-only official outcome",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "model_adapter__driver",
+      "producer": "model_adapter",
+      "consumer": "driver",
+      "profile": "local_qwen_lane",
+      "operation": "prepare/generate exact current-arm packet and retain envelope/usage",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "model_adapter__edi",
+      "producer": "model_adapter",
+      "consumer": "edi",
+      "profile": "local_qwen_lane",
+      "operation": "prospective count-only callback; no generation authority",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "model_adapter__qwen_server",
+      "producer": "model_adapter",
+      "consumer": "qwen_server",
+      "profile": "local_qwen_lane",
+      "operation": "exact tokenize and single constrained local generation",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "qwen_server__model_adapter",
+      "producer": "qwen_server",
+      "consumer": "model_adapter",
+      "profile": "local_qwen_lane",
+      "operation": "exact tokenize and single constrained local generation",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "evaluator_reporter__driver",
+      "producer": "evaluator_reporter",
+      "consumer": "driver",
+      "profile": "local_qwen_lane",
+      "operation": "closed-pair evaluation and verbatim participant reports",
+      "direction_note": "return/receipt direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "evaluator_reporter__world_baseline",
+      "producer": "evaluator_reporter",
+      "consumer": "world_baseline",
+      "profile": "local_qwen_lane",
+      "operation": "post-terminal read-only official outcome",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "evaluator_reporter__world_edi",
+      "producer": "evaluator_reporter",
+      "consumer": "world_edi",
+      "profile": "local_qwen_lane",
+      "operation": "post-terminal read-only official outcome",
+      "direction_note": "request/authority direction",
+      "verification": "planned; not executed"
+    },
+    {
+      "id": "world_baseline__model_adapter__public_view",
+      "producer": "world_baseline",
+      "consumer": "model_adapter",
+      "profile": "public_receipt_view",
+      "operation": "read prior public receipts and attempt statuses only",
+      "verification": "planned on Kaggle; no runtime pass yet"
+    },
+    {
+      "id": "world_edi__model_adapter__public_view",
+      "producer": "world_edi",
+      "consumer": "model_adapter",
+      "profile": "public_receipt_view",
+      "operation": "read prior public receipts and attempt statuses only",
+      "verification": "planned on Kaggle; no runtime pass yet"
+    }
+  ],
+  "cases": [
+    {
+      "id": "QWEN-1",
+      "name": "token overflow prevents generation",
+      "status": "planned"
+    },
+    {
+      "id": "QWEN-2",
+      "name": "same-request replay without network",
+      "status": "planned"
+    },
+    {
+      "id": "QWEN-3",
+      "name": "unknown dispatch blocks reopen",
+      "status": "planned"
+    },
+    {
+      "id": "QWEN-4",
+      "name": "usage mismatch and incomplete output retained",
+      "status": "planned"
+    },
+    {
+      "id": "QWEN-5",
+      "name": "both first counts precede generation",
+      "status": "planned"
+    },
+    {
+      "id": "QWEN-6",
+      "name": "native request-token-counter binds before export",
+      "status": "planned"
+    },
+    {
+      "id": "QWEN-7",
+      "name": "actual ecological intake and update",
+      "status": "planned"
+    },
+    {
+      "id": "QWEN-8",
+      "name": "terminal-pair evaluation fence",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-1",
+      "name": "empty-ID discovery",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-2",
+      "name": "source/document separation",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-3",
+      "name": "public CSV stand binding",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-4",
+      "name": "404 visible before next native preview",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-5",
+      "name": "valid submit arrays and acquired citations",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-6",
+      "name": "native internal capabilities retained",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-7",
+      "name": "history argument compatibility",
+      "status": "planned"
+    },
+    {
+      "id": "TOOL-8",
+      "name": "actual model discovery/read/recovery/report",
+      "status": "planned"
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "loop": "public observation -> baseline notes or EDI native owners -> Qwen proposal -> admitted world action -> observation",
+      "status": "source reviewed; runtime unqualified"
+    },
+    {
+      "loop": "native preview -> loopback token count -> context fit -> actual count -> generation -> usage comparison",
+      "status": "source reviewed; actual fit/schema/vision unqualified"
+    },
+    {
+      "loop": "public rejected intent -> same-arm public view -> native preview and exact generation -> changed proposal -> broker receipt",
+      "status": "self-reviewed source; actual model/runtime pending"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "resolved_scope",
+      "finding": "Browser UI control and signed-in Vigini available; original64-retry loop retained as failure."
+    },
+    {
+      "severity": "blocker",
+      "finding": "New65software checks and actual synthetic tool-use gate pending Kaggle execution; no new Cedar result."
+    }
+  ],
+  "review": {
+    "gate": "contract",
+    "verdict": "revise",
+    "independent": false,
+    "product_qualification": "not_run",
+    "scope_limit": "Self-review; supplied skill checker resource unavailable. Runtime and scientific gates remain pending."
+  }
+}
