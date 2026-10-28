@@ -43,6 +43,7 @@ def run(source):
             raise RuntimeError("Reviewed launch configuration requires two T4 GPUs; no silent hardware/model substitution")
         (root/"gpu-inventory.txt").write_text(gpu_text,encoding="utf-8")
         envs={}
+        print("QWEN_STAGE", "installing pinned environments",flush=True)
         for kind,packages in [
             ("serve",["vllm==0.21.0","transformers==4.57.6","pydantic==2.12.5","numpy<2.5"]),
             ("compute",["pydantic==2.12.5","numpy==2.5.3","scipy==1.17.0"])]:
@@ -58,10 +59,11 @@ def run(source):
         # Mandatory mock/boundary checks, including the unchanged older gates.
         with (root/"boundary-tests.log").open("xb") as log:
             subprocess.run([envs["compute"],"-m","unittest","test_offline_runner",
-                "test_responses_adapter","test_controlled_run","test_local_qwen_adapter","-v"],
+                "test_responses_adapter","test_controlled_run","test_local_qwen_adapter","test_public_protocol","-v"],
                 cwd=source,env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=300)
         # Fetch the public pinned snapshot without looking for account tokens.
         fetch=source/"qwen_fetch_snapshot.py"
+        print("QWEN_STAGE", "boundary checks passed; fetching pinned weights",flush=True)
         subprocess.run([envs["serve"],str(fetch),str(root/"model-snapshot.json")],check=True,timeout=2400)
         snapshot=json.loads((root/"model-snapshot.json").read_bytes())
         with socket.socket() as sock:
@@ -80,6 +82,7 @@ def run(source):
               "--gpu-memory-utilization","0.85","--enforce-eager","--no-enable-prefix-caching",
               "--limit-mm-per-prompt",'{"image":1,"video":0}',"--mm-processor-cache-gb","0"]
         server=subprocess.Popen(args,env=serve_env,stdout=serve_log,stderr=subprocess.STDOUT)
+        print("QWEN_STAGE", "starting local Qwen",flush=True)
         # Readiness polling never generates or restarts the worker.
         from urllib.request import Request,build_opener,ProxyHandler
         opener=build_opener(ProxyHandler({}));deadline=time.time()+900;ready=False
@@ -104,6 +107,7 @@ def run(source):
         # Secret is supplied to this one child process via explicit env only.
         worker_env=dict(env,QWEN_LOCAL_EPHEMERAL_KEY=secret)
         worker=source/"qwen_worker.py"
+        print("QWEN_STAGE", "local model ready; qualifying tool behavior",flush=True)
         subprocess.run([envs["compute"],str(worker),str(source),str(root),endpoint],
                        env=worker_env,check=True,timeout=22200)
         print("QWEN_PAIR_TERMINAL",str(root),flush=True)
