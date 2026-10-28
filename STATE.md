@@ -1,3 +1,87 @@
+## 28 October2026 - local Qwen source published privately; Version4 serving qualification pending
+
+Verified authorized GitHub primary account vighneshcandassamy-hub, repository edi-systems-foundation visibility PRIVATE and push/admin permission. Created integration/qwen-paired-20261028 from prior qualified comparison commit bbfb1267c19e5d0c7d7a47aa43cfc223d0037bb2. Published2 modified and6 new source/test files; source head eedd622414c2f60e47b19b13e26a059d68582d91. All8 remote Git blob SHAs match actual local source bytes at that immutable commit. No world files changed. Repository source publication is not benchmark success. CUDA wrapper/qualification reviews and captured boundary evidence are being retained separately on this branch.
+
+Version4 scriptVersionId363058667 passes actual CUDA compiler/driver preflight and reached pinned model snapshot fetch after the required software test subprocess succeeded. Snapshot fetch completes at292seconds. Serving readiness, neutral real text/image smoke and both participant arms remain unverified. No actual-pair result yet. Existing full boundary log from Version1 explicitly reports58 tests passed in6.176seconds. No paid calls, cap changes or original/completed Cedar run restart.
+
+## 28 October2026 - Version4 RUNNING, actual CUDA linker preflight PASSES
+
+Current live Kaggle Version4 scriptVersionId363058667 on GPU T4x2. Logs https://www.kaggle.com/code/vigini/edi-qwen-paired-cedar-20261028/log?scriptVersionId=363058667 in Opera tab1902020333. At launch, actual source131 hashes verified and CUDA_LINK_PREFLIGHT_PASS reports real driver /usr/local/nvidia/lib64/libcuda.so.580.178.04, driver API version13000. Host C compilation against -lcuda and real driver loading succeed with compiler-only LIBRARY_PATH private symlink. LD_LIBRARY_PATH unchanged; no CUDA stubs loaded or system driver installation. The exact actual driver hash and compiler receipt are saved in this batch's cuda-link-qualification.json. No participant model request or Cedar outcome yet verified. Runtime source/model/budgets unchanged.
+
+Intermediate Version2 scriptVersionId363057056 stopped after18.3seconds because actual driver absent from ldconfig cache; no package install/model/world. Changed lookup to CDLL(libcuda.so.1) plus unique /proc/self/maps actual driver. Version3 scriptVersionId363058070 stopped after19seconds because launch code assumed /kaggle/temp parent exists. Corrected mkdir(parents=True), acknowledged own implementation error. No failed version was resumed or silently deleted. All stages are engineering qualification, not scientific runs. Version1 remains actual58-tests-pass/server-link-failure evidence.
+
+Current wrapper outputs/QWEN_CEDAR_CUDA_LINK_FIX_20261028.ipynb7622bytes was imported through browser UI, saved separately as Version4 Run All with GPU. No local project runtime/tests, Kaggle CLI/REST execution route, paid calls, external provider keys or billing changes. Existing completed/expired Cedar runs untouched. Do NOT resubmit while Version4 active. Monitor serving/tests/smoke/paired receipts and retain failures; no score until actual-pair/comparison.json and terminal evidence exist. Manual dependency addendum docs/implementation/QWEN_CUDA_LAUNCH_REVIEW_20261028.md; checker unavailable, no independent/structural pass claimed.
+
+## 28 October 2026 - Version1 FAILED at CUDA linker startup; all58 software tests pass; no Cedar comparison
+
+Actual Kaggle Version1 scriptVersionId362976939 ended failure after1191.7seconds. Source131 hashes verified;58 named software boundary/mocked-provider/driver/counter tests pass in6.176seconds. Browser-read full boundary log retained at docs/implementation/evidence/qwen-startup-failure-20261028/boundary-tests.browser-capture.log. It retains preexisting sitecustomize missing-wrapt warning; that warning did not prevent tests/server imports.
+
+Public fixed Qwen snapshot downloaded; vLLM0.21.0 recognized Qwen3VL architecture and loaded16.33GiB weights (8.49GiB per tensor-parallel worker). Server then failed its profiling sampler JIT link: /usr/bin/ld: cannot find -lcuda: No such file or directory, followed by Ninja/FlashInfer sampling.so failure. This exact missing linker library is the immediate fatal cause; FA2/T4 warnings fell back to TORCH_SDPA for vision and FLASHINFER attention. Do not misattribute to student learning, prompt overflow, an OOM or an ecological decision.
+
+Main entry records QWEN_COMPARISON_BLOCKED RuntimeError /kaggle/working/qwen-cedar-a675b6e46494. Server readiness never succeeded; no neutral smoke calls, participant requests, Cedar worlds, terminal outcomes or comparison score. Startup profiling did execute internal model work; do not label all GPU inference zero. Native shutdown.json inspected through Kaggle Output shows local_model_stopped true. Failed native outputs remain preserved in Version1; no restart/resume occurred. No paid service/key/billing change.
+
+Prepared separate7173-byte notebook revision outputs/QWEN_CEDAR_CUDA_LINK_FIX_20261028.ipynb, AST inspected only. It leaves all131 runtime source files/model/pins/limits unchanged, discovers actual64-bit libcuda.so.1 from ldconfig, makes only a private unversioned linker symlink to real driver, prepends LIBRARY_PATH, and runs actual C compilation plus driver API load qualification on Kaggle before invoking entry. LD_LIBRARY_PATH is unchanged; no stubs are loaded or drivers installed. New revision is not yet launched or qualified. Previous benchmark never started. Existing failed Version1 is immutable evidence.
+
+Current browser IDs after Opera restart: editor1902020242, actual result/output1902020330. Desktop Commander personal device online; Opera process10172/window656242; browser helper updated. Read/write/control restored; no alternate Kaggle CLI/REST execution route. Skill structural checker resource still unavailable; review remains manual, not checker/independent pass.
+
+## 28 October 2026 - live Kaggle Version1 running; source131 hashes verified
+
+Replaced embedded14MB notebook with4098-byte QWEN_CEDAR_PRIVATE_INPUT_20261028.ipynb. Private input dataset vigini/edi-qwen-runtime-20261028 created successfully via browser UI and attached; binary edi-qwen-runtime-20261028.bin is exact bytes of fd9dddda55f6963b1578d757f3e8765a49ab55acb1a15b094c72cca17b695dfe source ZIP. No runtime source change. Small launcher verifies archive hash and all131 source hashes before same Kaggle entry. Verified small notebook persists after refresh, GPU T4 x2 selected, Internet on.
+
+Initial large notebook Save & Run All stuck Committing with Version0 and no active event; status link opened /sv/null. No job registered. Refresh removed stale spinner. Large cells eventually loaded after delayed rendering: earlier assertion that import cells were lost was premature and corrected to owner. No project test/model/world runtime occurred from that submission.
+
+Small launcher batch Save & Run All is now CONFIRMED RUNNING: Version1 scriptVersionId362976939, GPU T4x2, one active event. Logs page https://www.kaggle.com/code/vigini/edi-qwen-paired-cedar-20261028?scriptVersionId=362976939 in Opera tab1902019955. Actual logs show QWEN_SOURCE_HASHES_VERIFIED131. Install/test/model/benchmark outcomes pending. Draft editor tab1902019952 remains compute OFF. Do not Run All or resubmit while this batch is active. Read and monitor current actual log/evidence; no paid provider or old-run restart.
+
+## 28 October 2026 - Commander restored; signed-in Kaggle UI controlled; batch submission pending
+
+Owner reconnected Commander. Personal device LAPTOP-ER0KC56L 9fa8f113-f0a5-43db-9c90-805e5d656a52 is ONLINE; primary link remains offline. Desktop Commander executes native browser UI actions on the authorized laptop. No project runtime/tests executed locally. Opera connector reads browser AX/screenshots; native Windows mouse/file-dialog UI supplies control. Verified control by opening File menu and creating a distinct notebook under /code/vigini/notebookc68b4cd3d4/edit, Opera tab1902019952. Share UI explicitly shows Private checked and Vigini Owner. Imported the exact unexecuted QWEN_CEDAR_PAIRED_RUNTIME_DRAFT_20261028.ipynb, renamed notebook EDI Qwen Paired Cedar 20261028. Internet already on; selected GPU T4 x2 and confirmed dialog reporting26 GPU hours remaining. Actual hardware remains unverified until runtime.
+
+Submitted Save Version > Save & Run All (Commit), advanced setting Run with GPU for this session. UI shows Committing... with no Version1/Active Event yet. Submission outcome PENDING/UNKNOWN; do not issue a duplicate Run All or save-run until resolved. No new test/model/Cedar result yet. Old preparation, expired and completed notebooks untouched. Current helper outputs/edi-browser-ui.ps1 controls only Opera process17148 / window460054 through native UI; file-dialog upload used observed native control handles. No REST/CLI Kaggle execution route or paid services.
+
+## 28 October 2026 - local Qwen adapter/driver/notebook written; runtime tests and benchmark BLOCKED
+
+Owner authorized completing all Qwen-only and Qwen+real-EDI steps, tests and fresh Cedar comparison. Implemented local source preparation; NO new runtime test, Qwen inference, Cedar episode, evaluator call, paid service, credential creation or billing change executed. Do not report this as a successful benchmark or58 passed tests.
+
+New files examples/comparison/local_qwen_adapter.py, qwen_run.py, qwen_kaggle_entry.py, qwen_worker.py, qwen_fetch_snapshot.py, test_local_qwen_adapter.py. Modified src/edi/reason/reasoner_exchange.py with count-only initialization port and measured prospective count plus128 declared identity headroom; actual pending packet recounted before generation. Modified examples/comparison/cedar_pair.py to bind the optional callback before the first native step. Original default path remains unmeasured; new path requires server counts. Source changes are LOCAL, UNCOMMITTED and UNPUBLISHED. Prior qualified39 checks do not qualify this changed source.
+
+Adapter uses fixed Qwen3-VL-8B-Instruct revision0c351dd01ed87e9c1b53cbc748cba10e6187ff3b, greedy temperature0/seed17, loopback-only transport with explicit ephemeral serving key, image binding checks, token admission, raw response/usage/timing ledgers, uncertain-outcome no-retry fence and no paid fallback. Known usage retained for rejected/truncated proposals as well as success; unknown remains unknown. Driver counts both first actual packets before generation, alternates own-arm requests through real native EDI/public baseline, and evaluates only after both native arms terminate. Failures stop without invented terminal receipts or scores.
+
+Entry fixes two-T4 configuration, pinned serve/compute environments, public snapshot fetch token=False with weight/tokenizer hashes, runs39 older and19 new mock/boundary test definitions on Kaggle, then two domain-neutral real Qwen smoke calls (IDs/text and synthetic-color image plus exact token/usage consistency), then attempts one fresh Cedar pair. Prefix and vision-preprocessor caches disabled. Source changes/hardware/packages/schema/vision/all runtime behavior remain UNQUALIFIED. Execution may fail; no success promised. Local server terminated in finally; Kaggle job/session lifecycle still must end through platform UI/batch lifecycle. No new training/weights update or Cedar answers supplied to participants.
+
+Local AST parsing passed for8 changed Python files; notebook code cells syntax parsed without execution; sourceZIP CRC/hashes verified; all38 frozen world files unchanged. Source manifest4c7160867183710c042c76bd2c340f3adc35f98faddeed9796cb3bd650405a19 covers131 source files. Source archive outputs/qwen-paired-source-20261028.zip SHA256fd9dddda55f6963b1578d757f3e8765a49ab55acb1a15b094c72cca17b695dfe. Notebook outputs/QWEN_CEDAR_PAIRED_RUNTIME_DRAFT_20261028.ipynb is14327234bytes SHA2561dd3f9a075c2df4fbc2216efdb8105617afb56880f915f250e4ecd5aaebbcd2a. Empty outputs/execution_count verified. Build receipt outputs/qwen-draft-build-20261028.json. Saved notebook Library libfile_be9c36a7ae6c8191b2c15bb65adeb320 (version0). This is an UNEXECUTED draft, not ready/qualified evidence.
+
+Manual self-review docs/implementation/QWEN_LOCAL_COMPARISON_20261028.md and QWEN_LOCAL_INTERFACE_REVIEW_20261028.json enumerate8 logical components,56 directed lanes,24 active lane contracts and eleven facets. Structural lane inventory checked with ordinary artifact parsing; skill checker source retrieval failed during environment outage and checker did not run. Runtime/integration/science gates BLOCKED. No independent review claimed.
+
+Execution access: CUA/repl/click/edit/execute tools absent. Opera connector can navigate/read only; previous notebook last verified Draft Session off. Both configured Desktop Commander device connections for LAPTOP-ER0KC56L report OFFLINE (primary last seen463h, personal41h). Workspace exec briefly became unavailable during environment switch, then returned. A scoped native Opera-window query in workspace found no usable interactive browser control; no input was injected. No Kaggle cell/session/run was started or modified. No alternate execution route used. Necessary external dependency is restored browser execution control or an online authorized desktop device; permission already granted. Do not repeat old fixture tests or ship another static comparison as substitute.
+
+## 28 October 2026 - owner authorizes local Qwen-only versus Qwen plus actual EDI
+
+Owner requests return to Kaggle execution: same Qwen model alone and connected to real EDI, each on fresh Cedar, using lessons from earlier assistant development run. Interpreted transcriptions Quid/Quen as Qwen and SEDA as Cedar. No paid provider, API key, purchase, training job or billing change authorized/started. Appropriate first experiment keeps identical pinned weights/tokenizer/decoding/budgets in both arms; transfers generic schema/identifier/capacity engineering lessons, withholding earlier Cedar solutions/actions/reports. Case-specific teaching, if later requested, must be disclosed and separated from held-out discovery claims.
+
+Existing prior configuration identifies Qwen/Qwen3-VL-8B-Instruct revision0c351dd01ed87e9c1b53cbc748cba10e6187ff3b. Current controlled_run.py is GPT paid-API-specific, so local Qwen integration is NOT merely a config flip and no local Qwen comparison adapter is claimed implemented. Native paired world/EDI composition remains existing source; no core/source modifications in this turn.
+
+Opened the existing comparison notebook in Opera tab1902019951 via browser connector. Server-side accessibility query confirms notebook editor, Save Version, Run controls and Draft Session off (run a cell to start). Current browser connector supplies navigation/read/screenshot only; no click/edit/execute CUA/repl tool available. Plugin search did not restore that capability. Thus account execution control, GPU allocation/quota and live Qwen launch remain UNVERIFIED/BLOCKED. No cell/session/model/benchmark started and no original expired/completed run touched. No alternate execution route used. User authorization is clear; execution capability is the immediate blocker.
+
+## 28 October 2026 - actual A/B pasted outputs reviewed; document comparison complete
+
+Read Project A report libfile_dc65799321dc8191a9f4a75de07c57af and key audit sections libfile_4f9dd36e95708191b449a3fe1cc1cc09. Read B report libfile_9381d8e145808191a44b970880d5495f and complete1776-line audit libfile_dee03a4094108191901b228046121843; audit parses as JSON with137 inventory entries. Both actual reports identify the same treatment/enemy feedback, untreated outbreaks/rivals, annual constraints and controlled comparisons. B is more explicit about treatment-selection confounding and accounts-versus-sheet insect mean discrepancy; A keeps harvest outside its six-stand pilot, but has two stands/arm versus B's four. No overall performance winner or causal EDI attribution established.
+
+Read-only artifact arithmetic reproduces137 documents,106 CSVs,8155 rows; last-decade sheet insects1.2963219167 versus account1.2934418247; yearzero1.27143; enclosure broad/selective means; A partial proposed112.9 and B alternative93/131/225 budgets. Schedules differ and do not prove timber delivery or savings. Both audits report no live actions, no official outcomes and unknown model identity/isolation/measured usage. Self-reports do not certify absence of leakage.
+
+Main verdict: baseline can formulate core mechanism/test plan from the guided snapshot. Added archived B supplement processed ZERO ecological documents, has no ecological causal model or active EDI loop; this package design did not test the implemented EDI architecture. No EDI advantage or failure of full architecture established. Document-analysis comparison complete; full live Cedar comparison remains UNRUN. Review is unblinded/case-aware, not independent blind grading. No new model/world/EDI/evaluator execution, paid call, key, billing change or resumed run. No new GitHub publication claimed.
+
+Detailed memo outputs/CEDAR_A_B_COMPARISON_20261028.md saved as Library libfile_2fb6f5d68cbc8191bdff211645afd8d6. Original participant outputs preserved.
+
+## 28 October 2026 - self-contained upload packages; document comparison scope only
+
+Owner requested actual participant inputs and exact startup prompts after earlier instructions-only ZIP omitted case data and initially omitted configuration files. Created outputs/EDI_READY_TO_UPLOAD_CASE_PACKAGES_20261028.zip with separate PROJECT_A_INPUT_PACKAGE.json and PROJECT_B_INPUT_PACKAGE.json, common CEDAR_PUBLIC_VISUALS.pdf, user instructions and paste-ready prompt. JSON embeds configuration/instructions plus all137 non-external public district archive documents (years-79 through0), five recorded role statements, public manuals/directory and saved year-zero public receipts. Entire28-document external collection uniformly excluded; no hidden initial state, transition equations, evaluator data, previous participant reports or outcomes supplied. No raw SQLite database is in the participant archive.
+
+Both public payloads verify identical SHA25647b12fb8481055649ec591056455f5626b265495c9980fbd53cbe5539db1c5b1. All137 original native asset SHA256 values match. Three existing public map PNGs embedded losslessly into identical PDF; no new charts or observations generated. Package ZIP CRC, JSON parsing, public fact equality, asset hashes, PNG RGB stream preservation and no-known-previous-result/credential marker checks pass. Source archive72672565fdb6329d6f5f4fb6aaa1df17fd5f5636c2c085511dd7f79dcf15b136. Deliverable ZIP200919 bytes SHA256d630e7b2e8a11ff871487ef401bde6c29890aae5cc43c5b87d31a1789317873f. Verification receipt outputs/edi-ready-upload-verification-20261028.json. Artifact preparation/SQLite read-only extraction only; no local project runtime or tests executed.
+
+B supplement is genuine ARCHIVED C2/interface data from27 October year-zero connection fixture (directory/status transforms only). It processed ZERO of the137 ecological documents; selected world representation and semantic claims are empty. It is not a fresh EDI export, active EDI loop, full architecture comparison, successful benchmark or proof of EDI advantage. Both participant instructions explicitly disclose this scope and require honest detailed reports/audits now, with no fabricated actions, future observations, official scores or measured usage. The earlier fresh-export requirement is superseded only for this limited document-analysis protocol, not for a live comparison. Full live Cedar comparison remains unrun.
+
+Current tool set exposes no CUA/repl execution control. Opera connector can read/navigate but not operate notebook execution; plugin discovery did not restore the signed-in execution route. No alternative execution route, new Kaggle session, model call, key, billing change, purchase or new runtime export was attempted. Existing terminal/expired episodes untouched. New user-facing instructions do not verify project memory isolation/backend model identity. Stored as version2 of existing Library artifactlibfile_ed254452f5bc8191bc839aecbb6c7e4a. Local state only; no new GitHub publication claimed.
+
 ## 27 October 2026 - paired Cedar connected; 39 engineering checks pass; live comparison blocked
 
 Fresh paired public Cedar worlds and native EDI application are connected over unchanged core d4267f264764f97a90096421aa388f8372ad6f70. On Kaggle,39 boundary/mocked-provider/launch/report checks pass in8.099s and an authored sources/status/yield connection fixture passes. Both worlds have identical initial/final state hashes; all11 DB integrity checks pass. No ecological intervention/advance/submit or model/API inference occurred. These are engineering receipts, not model comparison outcomes.
@@ -502,7 +586,7 @@ for this new source. No paid inference or training was used.
 
 
 
-## Current checkpoint —23 October 2026
+## Current checkpoint -23 October 2026
 
 
 
@@ -546,9 +630,9 @@ Date: 21 October 2026. Code version: 0.9.0; conceptual source baseline retained.
 
 
 
-- Integrated Meadows Chapters 1–7 conceptual architecture, internal v0.7, saved source version 5.
+- Integrated Meadows Chapters 1-7 conceptual architecture, internal v0.7, saved source version 5.
 
-- Appendix pages 187–203 semantic reference, v1.0.
+- Appendix pages 187-203 semantic reference, v1.0.
 
 - Retained observation, substrate and integration planning snapshots with their original evidence.
 
@@ -562,7 +646,7 @@ Date: 21 October 2026. Code version: 0.9.0; conceptual source baseline retained.
 
 
 
-The conceptual documents have consistency/traceability reviews. The master architecture contains nine representation families, 346 catalogue units, 54 requirements and 192 prospective scenarios. Its master graph has 82 nodes and 241 named connections. The appendix reference allocates 102 source entries, 20 working requirements and 24 prospective reference-use cases. All model scenarios remain PLANNED — NOT RUN. Earlier retained checks are historical and do not establish a new runtime.
+The conceptual documents have consistency/traceability reviews. The master architecture contains nine representation families, 346 catalogue units, 54 requirements and 192 prospective scenarios. Its master graph has 82 nodes and 241 named connections. The appendix reference allocates 102 source entries, 20 working requirements and 24 prospective reference-use cases. All model scenarios remain PLANNED - NOT RUN. Earlier retained checks are historical and do not establish a new runtime.
 
 
 
@@ -830,7 +914,7 @@ Eleven scoped coordination requirements and twenty-four planned unrun cases are 
 
 
 
-## Benchmark connection execution checkpoint — 21 October 2026
+## Benchmark connection execution checkpoint - 21 October 2026
 
 
 
@@ -856,7 +940,7 @@ Combined-tree foundation verification additionally passes on the desktop: 40 imp
 
 
 
-## Free model feasibility checkpoint — 22 October 2026
+## Free model feasibility checkpoint - 22 October 2026
 
 
 
@@ -870,7 +954,7 @@ No EDI production module, frozen benchmark byte, model weight, credential or bro
 
 
 
-## Native Qwen source integration checkpoint — 22 October 2026
+## Native Qwen source integration checkpoint - 22 October 2026
 
 
 
@@ -932,7 +1016,7 @@ No Runtime/store, workflow, model call, simulation, product test or benchmark ra
 
 
 
-## Completed controlled engineering walkthrough — 22 October 2026
+## Completed controlled engineering walkthrough - 22 October 2026
 
 
 
@@ -954,7 +1038,7 @@ Documentation release check: corrected the Markdown link validator to accept exi
 
 
 
-## Autonomous controller diagnostic — 23 October 2026
+## Autonomous controller diagnostic - 23 October 2026
 
 
 
@@ -963,4 +1047,9 @@ On integration/autonomous-controller-20261023, the existing 0.10.1 Investigation
 
 
 A fresh repeat keeps the objective, native validation, pinned model and engine unchanged. Harness-only changes automatically embed consistent native ZIP checkpoints in notebook output, add restart-difference/integrity diagnostics, distinguish run identities, and correct copied serving metadata from 2,048 to the actual native 4,096 output cap. The repeat is pending. Broader readiness remains REVISE; no forest or scientific comparison is authorized by this checkpoint.
+
+
+
+
+
 
