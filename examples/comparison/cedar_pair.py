@@ -96,7 +96,7 @@ def application_profile(out, model, world, limits):
 
 
 class CedarPair:
-    def __init__(self, source, directory, model, limits=Limits(), *, native_request_token_counter=None):
+    def __init__(self, source, directory, model, limits=Limits(), *, native_request_token_counter=None, protocol_factory=None):
         if native_request_token_counter is not None and not callable(native_request_token_counter):
             raise BoundaryError("Explicit native token counter must be callable")
         if limits.input_token_cap != 12288 or limits.output_token_cap != 4096:
@@ -113,6 +113,7 @@ class CedarPair:
         try:
             for arm in ("baseline","edi"):
                 self.worlds[arm] = CedarPublic(meadows_world, self.directory/arm/"native", limits)
+                if protocol_factory is not None:protocol_factory(arm,self.worlds[arm])
             snapshots = {a:w.snapshot() for a,w in self.worlds.items()}
             if snapshots["baseline"]["state_sha256"] != snapshots["edi"]["state_sha256"]:
                 raise BoundaryError("Initial private world states differ; no participant request exported")
