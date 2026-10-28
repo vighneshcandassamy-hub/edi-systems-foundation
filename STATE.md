@@ -1053,3 +1053,17 @@ A fresh repeat keeps the objective, native validation, pinned model and engine u
 
 
 
+
+## 28 October 2026 - fresh common public tool binding trial
+
+Owner authorized repair and a fresh paired benchmark after negative Qwen run qwen-cedar-954b8c9569bb (Kaggle version363058667). Both participants terminated without a report or elapsed year: baseline2calls/4296tokens, EDI64calls/484435tokens. EDI repeated an internal-record-ID public read64times despite selected error material. No EDI benefit established. Full original artifact outputs/qwen-cedar-954b8c9569bb-kaggle-results.zip SHA256 c65586e4d9fcea10fdb34ba49ea1989f52b021df9557b528b77aecde66248861 remains preserved.
+
+New source/common public tool binding is privately published on integration/qwen-toolbinding-20261028 at5bf2f36649aa5fda7ea99a2f3a21cc28eb3d6cd6. Nine source paths and two self-review documents fetched back with exact Git blob hashes. Deployed flat meadows_world.py aliases examples/autonomous/meadows_world.py. New archive134files,38unchanged frozen world files; archive SHA25680f13e498a39438b90b455e35eae4cf0bec14fcfc618e32d42a9b056a096ee27; manifest1d6f1ee050587de78bd5b769c547ccd34cf3f82d10ba2ed1e861e81edc5bbbcb.
+
+Fix supplies public argument domains, own-arm observed-ID enums, recent public receipts/failed intents, failure exclusion at fixed cut, equal final-report instructions and one immediate operation per response. Native EDI/component tools and broker admission remain actual. No previous ecological answer, hidden state or evaluator data enters participants. New synthetic actual-model discovery/read/stale-ID recovery/report gate must pass after65software tests and text/image smoke before a fresh Cedar pair. New runtime/model/science qualification is pending; local work AST/archive/document inspection only.
+
+Signed-in Vigini read and native browser control verified, Desktop Commander Personal device LAPTOP-ER0KC56L online. Kaggle private runtime dataset Version2 uploaded through UI with added edi-qwen-toolbinding-20261028.bin; prior input retained. Notebook imported QWEN_CEDAR_TOOLBINDING_TRIAL_20261028.ipynb; draft session off. Input version update and fresh SaveRun still pending at this written checkpoint. Never resume old runs; new job gets new random run directory. Paid calls/keys/billing changes remain prohibited.
+
+Kaggle Version5 SaveRun submitted once; GPU T4x2 verified in actual event card. Installing pinned environments; no Cedar success claimed.
+
+Exact fresh job scriptVersionId363088966, results tab1902020335. Do not submit again while this job runs.
