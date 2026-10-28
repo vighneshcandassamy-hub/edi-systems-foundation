@@ -10,6 +10,7 @@ import sys
 from offline_runner import BoundaryError,wire
 from local_qwen_adapter import MODEL,Loopback,strict
 from qwen_run import run
+from qwen_tool_gate import qualify
 
 def smoke(post,root):
     prompt=[{"role":"system","content":"Neutral format check only. No ecology or benchmark answers."},
@@ -60,8 +61,9 @@ if __name__=="__main__":
     key=os.environ.pop("QWEN_LOCAL_EPHEMERAL_KEY")
     post=Loopback(sys.argv[3],key)
     smoke(post,root)
+    qualify(post,root)
     receipt=json.loads((root/"serving-receipt.json").read_bytes())
     approval={"authorized":True,"kaggle_only":True,"paid_services":False,
-              "model":MODEL,"neutral_checks_passed":True,"local_model_smoke_passed":True}
+              "model":MODEL,"neutral_checks_passed":True,"local_model_smoke_passed":True,"actual_tool_gate_passed":True}
     run(source,root/"actual-pair",endpoint=sys.argv[3],serving_token=key,
         approval=approval,serving_receipt=receipt,post=post)
