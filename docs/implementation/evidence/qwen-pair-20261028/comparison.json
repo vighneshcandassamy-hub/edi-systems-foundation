@@ -1,0 +1,111 @@
+{
+  "status": "paired_run_terminated",
+  "model": {
+    "id": "Qwen/Qwen3-VL-8B-Instruct",
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "reasoning": "greedy-seed17"
+  },
+  "evaluation": {
+    "terminal": {
+      "baseline": "yielded",
+      "edi": "yielded"
+    },
+    "outcome": {
+      "baseline": {
+        "status": "constructed_development_outcomes",
+        "years_elapsed": 0,
+        "mean_damage_fraction": null,
+        "total_operational_spending": 0,
+        "total_timber_delivery": 0,
+        "five_year_committed_delivery_shortfall": 0,
+        "broad_treatment_dose_sum": 0,
+        "terminal_mean_foliage": 0.2528805718233777,
+        "terminal_mean_enemy_index": 0.09498791210367503,
+        "objective_proposals": [],
+        "final_report": null,
+        "logical_operations": {
+          "mission": 1
+        },
+        "http_attempts": 2,
+        "http_failures": 1,
+        "transport_bytes": 1915,
+        "broker_service_seconds": 0.008685340999932123,
+        "model_tokens_energy_and_reasoning_latency_measured": false,
+        "limits": "Outcome vector only. No ecological fidelity, causal discovery, optimum policy, calibration, human preference validity or EDI advantage is established."
+      },
+      "edi": {
+        "status": "constructed_development_outcomes",
+        "years_elapsed": 0,
+        "mean_damage_fraction": null,
+        "total_operational_spending": 0,
+        "total_timber_delivery": 0,
+        "five_year_committed_delivery_shortfall": 0,
+        "broad_treatment_dose_sum": 0,
+        "terminal_mean_foliage": 0.2528805718233777,
+        "terminal_mean_enemy_index": 0.09498791210367503,
+        "objective_proposals": [],
+        "final_report": null,
+        "logical_operations": {
+          "mission": 1
+        },
+        "http_attempts": 65,
+        "http_failures": 64,
+        "transport_bytes": 7290,
+        "broker_service_seconds": 0.10292538200133095,
+        "model_tokens_energy_and_reasoning_latency_measured": false,
+        "limits": "Outcome vector only. No ecological fidelity, causal discovery, optimum policy, calibration, human preference validity or EDI advantage is established."
+      }
+    },
+    "usage": {
+      "baseline": {
+        "calls": 2,
+        "reserved_policy_tokens": 32768,
+        "actual_tokens": null,
+        "energy": null,
+        "paid_model_calls": null,
+        "provider_usage_scope": "External adapter ledger required"
+      },
+      "edi": {
+        "calls": 64,
+        "reserved_policy_tokens": 1048576,
+        "actual_tokens": null,
+        "energy": null,
+        "paid_model_calls": null,
+        "provider_usage_scope": "External adapter ledger required"
+      }
+    },
+    "scope": "Operator-controlled comparison; independent provider isolation and world parity require separate evidence"
+  },
+  "local_model_usage": {
+    "arms": {
+      "baseline": {
+        "model_requests_reserved": 2,
+        "completed": 2,
+        "actual_prompt_tokens_completed": 3948,
+        "actual_completion_tokens_completed": 348,
+        "unknown_or_failed_calls": 0,
+        "unknown_usage_calls": 0,
+        "actual_prompt_tokens_all_measured": 3948,
+        "actual_completion_tokens_all_measured": 348,
+        "transport_plus_validation_seconds": 28.46191126699989,
+        "policy_tokens_reserved": 32768
+      },
+      "edi": {
+        "model_requests_reserved": 64,
+        "completed": 64,
+        "actual_prompt_tokens_completed": 449865,
+        "actual_completion_tokens_completed": 34570,
+        "unknown_or_failed_calls": 0,
+        "unknown_usage_calls": 0,
+        "actual_prompt_tokens_all_measured": 449865,
+        "actual_completion_tokens_all_measured": 34570,
+        "transport_plus_validation_seconds": 2864.0504810260018,
+        "policy_tokens_reserved": 1048576
+      }
+    },
+    "paid_provider_calls": 0,
+    "energy": null,
+    "scope": "Loopback vLLM usage receipts; no external billing or energy measurement"
+  },
+  "scope": "One fresh constructed Cedar pair; no general superiority or energy claim"
+}
