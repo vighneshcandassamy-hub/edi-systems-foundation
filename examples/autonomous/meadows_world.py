@@ -26,6 +26,8 @@ PUBLIC_OPERATIONS={x["operation"]:{"description":x["description"],
     "note":"C0 supplies request_id. Consult the public participant manual for allowed values."} for x in MANUAL["operations"]}
 # Public documentation supplements argument domains, not observations or plans.
 PUBLIC_OPERATIONS["act"]["public_manual"]=(ENV/"PARTICIPANT.md").read_text(encoding="utf-8")
+PUBLIC_OPERATIONS["act"]["action_shapes"]=MANUAL["action_shapes"]
+PUBLIC_OPERATIONS["measure"]["measurement"]=MANUAL["measurement"]
 
 def load_broker():
     # The unchanged broker imports its pinned sibling world module.
